@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Mi sistema operativo actual · Hostly</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+    color: #0f172a;
+    background: #fff;
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 14mm 14mm 12mm 14mm;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* HEADER */
+  .hero {
+    border-bottom: 4px solid #1a3a8f;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .hero .brand {
+    color: #1a3a8f;
+    font-weight: 800;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    color: #0f172a;
+    font-size: 26pt;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-top: 4px;
+  }
+  .hero .sub {
+    color: #475569;
+    font-size: 11pt;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* SECTION TITLE */
+  h2.section {
+    font-size: 13pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 14px 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  h2.section span {
+    color: #1a3a8f;
+  }
+
+  /* 7 CARDS GRID — 4 + 3 layout */
+  .grid-7 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 8px;
+  }
+  .grid-7 > .card:nth-child(-n+4) { grid-column: span 3; }
+  .grid-7 > .card:nth-child(n+5) { grid-column: span 4; }
+  .card {
+    background: #f0f6ff;
+    border: 2px solid #1a3a8f;
+    border-radius: 8px;
+    padding: 11px 11px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card .icon {
+    font-size: 18pt;
+    margin-bottom: 4px;
+  }
+  .card .num {
+    color: #1a3a8f;
+    font-weight: 800;
+    font-size: 7.5pt;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .card h3 {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+    line-height: 1.15;
+  }
+  .card p {
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.4;
+  }
+
+  /* HIGHLIGHT BOX */
+  .stat-box {
+    background: #1a3a8f;
+    color: #fff;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-top: 14px;
+    text-align: center;
+  }
+  .stat-box .stat-quote {
+    font-size: 19pt;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+    letter-spacing: -0.01em;
+    font-style: italic;
+  }
+  .stat-box .stat-after {
+    font-size: 15pt;
+    font-weight: 800;
+    color: #f59e0b;
+    margin-top: 10px;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+  }
+  .stat-box .stat-detail {
+    font-size: 9pt;
+    margin-top: 12px;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* TWO COLUMN BLOCKS */
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .block {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 11px 12px;
+    background: #fafafa;
+  }
+  .block.dark {
+    background: #0f172a;
+    color: #fff;
+    border-color: #0f172a;
+  }
+  .block.accent {
+    background: #f0f6ff;
+    border-color: #1a3a8f;
+  }
+  .block .label {
+    color: #1a3a8f;
+    font-weight: 800;
+    font-size: 8pt;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .block.dark .label { color: #f59e0b; }
+  .block h3 {
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 4px 0 7px 0;
+    color: #0f172a;
+  }
+  .block.dark h3 { color: #fff; }
+  .block ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .block li {
+    font-size: 8.5pt;
+    margin-bottom: 4px;
+    padding-left: 12px;
+    position: relative;
+    line-height: 1.4;
+    color: #334155;
+  }
+  .block.dark li { color: #e2e8f0; }
+  .block li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #1a3a8f;
+    font-weight: 800;
+  }
+  .block.dark li::before { color: #f59e0b; }
+  .block .time-stat {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e2e8f0;
+    color: #16a34a;
+    font-weight: 700;
+    font-size: 9pt;
+  }
+  .block.dark .time-stat {
+    border-top-color: #1e293b;
+    color: #4ade80;
+  }
+
+  /* COMPARISON TABLE */
+  table.compare {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+    margin-top: 4px;
+  }
+  table.compare th {
+    background: #0f172a;
+    color: #fff;
+    text-align: left;
+    padding: 7px 10px;
+    font-weight: 700;
+    font-size: 8.5pt;
+  }
+  table.compare th.before { background: #475569; }
+  table.compare th.after { background: #1a3a8f; }
+  table.compare td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+  table.compare tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+  table.compare td.task {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  table.compare td.before-cell {
+    color: #94a3b8;
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+  }
+  table.compare td.after-cell {
+    color: #16a34a;
+    font-weight: 700;
+  }
+
+  /* RULES */
+  .rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .rule {
+    background: #fafafa;
+    border-left: 3px solid #1a3a8f;
+    padding: 9px 12px;
+    border-radius: 4px;
+  }
+  .rule .num {
+    color: #1a3a8f;
+    font-weight: 900;
+    font-size: 14pt;
+    line-height: 1;
+  }
+  .rule h4 {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 3px;
+  }
+  .rule p {
+    font-size: 8.5pt;
+    color: #475569;
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+
+  /* CTA */
+  .cta-final {
+    margin-top: 14px;
+    background: linear-gradient(135deg, #1a3a8f 0%, #0f1f5c 100%);
+    color: #fff;
+    padding: 18px 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .cta-final h3 {
+    font-size: 16pt;
+    font-weight: 900;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .cta-final p {
+    font-size: 10pt;
+    opacity: 0.95;
+    margin-bottom: 10px;
+  }
+  .cta-final .btn {
+    display: inline-block;
+    background: #fff;
+    color: #1a3a8f;
+    font-weight: 800;
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-size: 10pt;
+    text-decoration: none;
+  }
+
+  /* FOOTER */
+  .footer {
+    position: absolute;
+    bottom: 6mm;
+    left: 14mm;
+    right: 14mm;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    color: #94a3b8;
+    font-size: 7.5pt;
+  }
+  .footer .brand-foot {
+    color: #1a3a8f;
+    font-weight: 700;
+  }
+
+  .pageno {
+    color: #cbd5e1;
+    font-size: 8pt;
+    font-weight: 700;
+  }
+
+  /* Highlight */
+  .hl {
+    background: #dbeafe;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 700;
+  }
+  .hl-yellow {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 700;
+  }
+
+  /* Personal quote */
+  .quote {
+    background: #f0f6ff;
+    border-left: 3px solid #1a3a8f;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-style: italic;
+    color: #334155;
+    font-size: 9.5pt;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ====================== PÁGINA 1 ====================== -->
+<div class="page">
+  <div class="hero">
+    <div class="brand">HOSTLY · MI SISTEMA OPERATIVO</div>
+    <h1>Cómo gestiono 3 Airbnbs sin que me ocupen la cabeza.</h1>
+    <div class="sub">El sistema que hago hoy. Sin fórmulas. Sin teoría. Lo que de verdad funciona después de 3 años.</div>
+  </div>
+
+  <div class="quote">
+    "Hace 3 años empecé con un Excel y un grupo de WhatsApp con la limpiadora. Hoy gestiono 3 pisos sin que me ocupen la cabeza — y construí Hostly para que tú puedas hacer lo mismo."
+  </div>
+
+  <h2 class="section">EL <span>SISTEMA</span> EN 7 ÁREAS</h2>
+
+  <div class="grid-7">
+    <div class="card">
+      <div class="icon">📅</div>
+      <div class="num">01 · RESERVAS</div>
+      <h3>Un solo calendario</h3>
+      <p>Airbnb + Booking sincronizados. Sin doble booking nunca.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💶</div>
+      <div class="num">02 · PRECIOS</div>
+      <h3>Suben y bajan solos</h3>
+      <p>Cada noche se ajustan según demanda real. Yo solo pongo el techo y el suelo.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💬</div>
+      <div class="num">03 · MENSAJES</div>
+      <h3>Respuesta en 30s</h3>
+      <p>IA contesta el 80%. Yo solo entro si escala.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔑</div>
+      <div class="num">04 · CHECK-IN</div>
+      <h3>El huésped llega solo</h3>
+      <p>Código de acceso + SES automático. Yo no toco la puerta.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🧹</div>
+      <div class="num">05 · LIMPIEZA</div>
+      <h3>Coordinada sola</h3>
+      <p>Cuando entra una reserva, la limpiadora recibe la fecha y sube foto del estado.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⭐</div>
+      <div class="num">06 · REVIEWS</div>
+      <h3>5 segundos por estancia</h3>
+      <p>Plantilla automática. Solo edito si pasó algo destacable.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <div class="num">07 · FINANZAS</div>
+      <h3>Resumen sin Excel</h3>
+      <p>Cierre mensual automático. Si gestiono para otros, lo envío en 1 clic.</p>
+    </div>
+  </div>
+
+  <div class="stat-box">
+    <div class="stat-quote">"Hace 2 años, con 2 pisos no dormía."</div>
+    <div class="stat-after">Ahora gestiono 3 y voy a por el 4º.</div>
+    <div class="stat-detail">3 apartamentos · 0 dependencia de mí · 0 multas</div>
+  </div>
+
+  <div class="footer">
+    <div><span class="brand-foot">HOSTLY</span> · Hecha por quien también gestiona</div>
+    <div class="pageno">1 / 3</div>
+  </div>
+</div>
+
+<!-- ====================== PÁGINA 2 ====================== -->
+<div class="page">
+  <h2 class="section">EL <span>SISTEMA</span>, PASO A PASO</h2>
+
+  <div class="row">
+    <div class="block accent">
+      <div class="label">📅 RESERVAS — UN CALENDARIO ÚNICO</div>
+      <h3>Airbnb + Booking, sincronizados</h3>
+      <ul>
+        <li>Channel manager unifica los 2 canales en 1 calendario</li>
+        <li>Bloqueo manual desde 1 sola pantalla (vacaciones, mantenimiento)</li>
+        <li>Si quiero cerrar un apartamento, lo hago en 5 segundos</li>
+        <li>Cero double booking en 18 meses</li>
+      </ul>
+      <div class="time-stat">⏱️ 2 min al día</div>
+    </div>
+
+    <div class="block accent">
+      <div class="label">💶 PRECIOS — DINÁMICOS, AUTOMÁTICOS</div>
+      <h3>Suben y bajan solos cada noche</h3>
+      <ul>
+        <li>Análisis de demanda real (eventos, festivos, ocupación de la zona)</li>
+        <li>Ajuste automático cada noche, sin que yo toque nada</li>
+        <li>Yo solo pongo el techo y el suelo (mínimos y máximos)</li>
+        <li>Antes dejaba precios bajos en fines de semana ocupados sin darme cuenta</li>
+      </ul>
+      <div class="time-stat">⏱️ 1 min al día (revisar anomalías)</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="block accent">
+      <div class="label">💬 MENSAJES — IA + PLANTILLAS</div>
+      <h3>El 80% se responde solo</h3>
+      <ul>
+        <li>Pre-llegada: secuencia automática (instrucciones, wifi, reglas)</li>
+        <li>Durante estancia: IA contesta preguntas frecuentes en segundos</li>
+        <li>Si la IA no sabe → me escala el mensaje al móvil</li>
+        <li>Yo solo toco mensajes "raros" (3-5 al día max)</li>
+      </ul>
+      <div class="time-stat">⏱️ 8 min al día</div>
+    </div>
+
+    <div class="block accent">
+      <div class="label">🔑 CHECK-IN — EL HUÉSPED ENTRA SOLO</div>
+      <h3>Acceso digital + SES automático</h3>
+      <ul>
+        <li>Código de acceso (caja fuerte / cerradura inteligente)</li>
+        <li>Instrucciones por WhatsApp 24h antes</li>
+        <li>SES.Hospedajes se envía solo en cuanto entran</li>
+        <li>Yo no entrego llaves. Yo no estoy ahí.</li>
+      </ul>
+      <div class="time-stat">⏱️ 0 min · 100% automatizado</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="block accent">
+      <div class="label">🧹 LIMPIEZA — COORDINADA SOLA</div>
+      <h3>La limpiadora ya sabe cuándo</h3>
+      <ul>
+        <li>Cuando entra reserva, la app avisa a la limpiadora</li>
+        <li>Ella confirma con 1 clic (puede / no puede)</li>
+        <li>Sube foto del estado en que dejó el piso</li>
+        <li>Yo veo la foto en el móvil. Si todo bien, no hago nada.</li>
+      </ul>
+      <div class="time-stat">⏱️ 5 min al día (revisar fotos)</div>
+    </div>
+
+    <div class="block accent">
+      <div class="label">⭐ REVIEWS — 5 SEGUNDOS</div>
+      <h3>Plantilla + foto del estado</h3>
+      <ul>
+        <li>Plantilla pre-cargada por defecto (5 estrellas, comentario neutral)</li>
+        <li>Foto post-limpieza me dice si cambio algo (huésped problemático = baja a 4★)</li>
+        <li>Edito solo si pasó algo destacable</li>
+        <li>El huésped recibe la mía → me deja la suya</li>
+      </ul>
+      <div class="time-stat">⏱️ 5 min a la semana</div>
+    </div>
+  </div>
+
+  <div class="block accent">
+    <div class="label">📊 FINANZAS — CIERRE AUTOMÁTICO</div>
+    <h3>Resumen mensual sin Excel</h3>
+    <ul>
+      <li>Ingresos brutos, comisiones OTA, neteja, taxes: calculado solo</li>
+      <li>Si gestiono pisos de otros, envío resumen en 1 clic al propietario</li>
+      <li>IRPF y modelo 179: datos ya listos para Hacienda · Cero hojas de cálculo. Cero gestoría.</li>
+    </ul>
+    <div class="time-stat">⏱️ 20 min al mes (1 vez)</div>
+  </div>
+
+  <div class="block dark">
+    <div class="label">⚡ INCIDENCIAS — LO ÚNICO QUE EXIGE TU ATENCIÓN</div>
+    <h3>3 al mes. Resolución en 10 minutos cada una.</h3>
+    <ul>
+      <li>Aviso por notificación push (no WhatsApp personal)</li>
+      <li>IA categoriza: urgente / puede esperar / falsa alarma</li>
+      <li>Si urgente → llamo al contacto local (limpiadora, técnico)</li>
+      <li>Resolución, foto del fix, mensaje al huésped</li>
+    </ul>
+    <div class="time-stat">⏱️ ~30 min al mes en total</div>
+  </div>
+
+  <div class="footer">
+    <div><span class="brand-foot">HOSTLY</span> · Hecha por quien también gestiona</div>
+    <div class="pageno">2 / 3</div>
+  </div>
+</div>
+
+<!-- ====================== PÁGINA 3 ====================== -->
+<div class="page">
+  <h2 class="section">LAS <span>5 REGLAS</span> QUE NO ROMPO</h2>
+
+  <div class="rules">
+    <div class="rule">
+      <div class="num">01</div>
+      <h4>Si pasa 2 veces, lo automatizo.</h4>
+      <p>La primera vez lo hago manual. La segunda vez, dedico 10 min a montar la regla. La tercera ya es gratis.</p>
+    </div>
+    <div class="rule">
+      <div class="num">02</div>
+      <h4>El móvil no es la oficina.</h4>
+      <p>Notificaciones solo de incidencias urgentes. Lo demás se mira 2 veces al día (mañana / noche), nunca a demanda.</p>
+    </div>
+    <div class="rule">
+      <div class="num">03</div>
+      <h4>WhatsApp personal jamás.</h4>
+      <p>Todos los mensajes con huéspedes, dentro de la app. WhatsApp personal es solo para mi gente.</p>
+    </div>
+    <div class="rule">
+      <div class="num">04</div>
+      <h4>Excel está prohibido.</h4>
+      <p>Si necesito hacer un Excel, es señal de que el sistema está roto. O lo arreglo o pago a alguien que lo arregle.</p>
+    </div>
+    <div class="rule">
+      <div class="num">05</div>
+      <h4>Reviews y fotos cada vez.</h4>
+      <p>Sin foto post-limpieza no hay confianza. Sin review tuya no hay review del huésped. Es la única tarea que no automatizo.</p>
+    </div>
+  </div>
+
+  <h2 class="section">ANTES <span>vs AHORA</span></h2>
+
+  <table class="compare">
+    <tr>
+      <th style="width:30%">Tarea</th>
+      <th class="before" style="width:35%">Antes (Excel + WhatsApp)</th>
+      <th class="after" style="width:35%">Ahora (sistema)</th>
+    </tr>
+    <tr>
+      <td class="task">Reservas + calendario</td>
+      <td class="before-cell">30 min al día revisando 2 plataformas</td>
+      <td class="after-cell">2 min al día, 1 sola pantalla</td>
+    </tr>
+    <tr>
+      <td class="task">Ajustar precios</td>
+      <td class="before-cell">Manual, 1 vez por semana, equivocándome</td>
+      <td class="after-cell">Automático cada noche, reviso 1 min</td>
+    </tr>
+    <tr>
+      <td class="task">Mensajes con huéspedes</td>
+      <td class="before-cell">~50 mensajes manuales al día</td>
+      <td class="after-cell">3-5 mensajes manuales (resto: IA)</td>
+    </tr>
+    <tr>
+      <td class="task">Check-in legal (SES)</td>
+      <td class="before-cell">15 min por reserva</td>
+      <td class="after-cell">0 min (automático)</td>
+    </tr>
+    <tr>
+      <td class="task">Coordinar limpieza</td>
+      <td class="before-cell">3-4 WhatsApps por reserva</td>
+      <td class="after-cell">0 mensajes (la app lo hace sola)</td>
+    </tr>
+    <tr>
+      <td class="task">Cierre mensual</td>
+      <td class="before-cell">2-3 horas de Excel</td>
+      <td class="after-cell">20 min revisando lo ya calculado</td>
+    </tr>
+    <tr>
+      <td class="task">Gestoría externa</td>
+      <td class="before-cell">85 €/mes por piso</td>
+      <td class="after-cell">0 € (compliance dentro de Hostly)</td>
+    </tr>
+  </table>
+
+  <div class="cta-final">
+    <h3>Esto es lo que ahora hago dentro de Hostly.</h3>
+    <p>Si quieres montar el mismo sistema en tu Airbnb,<br>la app está construida para que arranques en menos de 15 minutos.</p>
+    <a class="btn" href="https://home.hostlylabs.com">14 días gratis · Sin tarjeta →</a>
+  </div>
+
+  <div class="footer">
+    <div><span class="brand-foot">HOSTLY</span> · Hecha por quien también gestiona</div>
+    <div class="pageno">3 / 3</div>
+  </div>
+</div>
+
+</body>
+</html>

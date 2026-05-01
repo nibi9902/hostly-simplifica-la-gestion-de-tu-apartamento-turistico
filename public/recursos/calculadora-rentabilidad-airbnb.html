@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Cuánto ganas de verdad con tu Airbnb? · Calculadora · Hostly</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #1a3a8f;
+    --blue-deep: #0f1f5c;
+    --blue-pale: #f0f6ff;
+    --blue-light: #dbeafe;
+    --slate-900: #0f172a;
+    --slate-700: #334155;
+    --slate-500: #64748b;
+    --slate-300: #cbd5e1;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+    --slate-50: #f8fafc;
+    --green: #16a34a;
+    --green-pale: #dcfce7;
+    --red: #dc2626;
+    --red-pale: #fee2e2;
+    --amber: #f59e0b;
+    --amber-pale: #fef3c7;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+    color: var(--slate-900);
+    background: linear-gradient(180deg, var(--blue-pale) 0%, #fff 30%);
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--slate-200);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  header .brand {
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 24px 30px 24px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--slate-900);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+  .hero .stat-headline {
+    font-size: 18px;
+    color: var(--slate-700);
+    max-width: 540px;
+    margin: 0 auto 8px auto;
+  }
+  .hero .stat-headline strong {
+    color: var(--blue);
+    font-weight: 800;
+  }
+  .hero .subnote {
+    color: var(--slate-500);
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* SECTION */
+  section.calc {
+    background: #fff;
+    border-radius: 24px;
+    padding: 36px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 30px rgba(15,31,92,0.06);
+    border: 1px solid var(--slate-200);
+  }
+  section.calc h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--slate-900);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  section.calc p.section-sub {
+    color: var(--slate-500);
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  /* FORM */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 32px; }
+    section.calc { padding: 24px; }
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .field.full { grid-column: 1 / -1; }
+  .field label {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--slate-700);
+  }
+  .field .help {
+    font-size: 12px;
+    color: var(--slate-500);
+    font-weight: 500;
+  }
+  .input-wrap {
+    position: relative;
+  }
+  .input-wrap .euro {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--slate-500);
+    font-weight: 600;
+    pointer-events: none;
+  }
+  input[type="number"], input[type="email"], select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--slate-200);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--slate-900);
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    font-family: inherit;
+  }
+  input[type="number"].with-euro { padding-left: 32px; }
+  input[type="number"]:focus, input[type="email"]:focus, select:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px var(--blue-light);
+  }
+  .toggle-group {
+    display: flex;
+    gap: 8px;
+  }
+  .toggle-btn {
+    flex: 1;
+    padding: 12px;
+    border: 1.5px solid var(--slate-200);
+    border-radius: 10px;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--slate-700);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .toggle-btn:hover { border-color: var(--blue); }
+  .toggle-btn.active {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+  }
+
+  /* RESULTS */
+  .results {
+    margin-top: 12px;
+  }
+  .results-headline {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .results-headline .label {
+    color: var(--slate-500);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .results-headline .lost-pct {
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .results-headline .lost-amount {
+    font-size: 16px;
+    color: var(--slate-700);
+    margin-top: 8px;
+    font-weight: 600;
+  }
+
+  .breakdown {
+    background: var(--slate-50);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--slate-200);
+  }
+  .breakdown-row:last-child { border-bottom: none; }
+  .breakdown-row.total {
+    padding-top: 14px;
+    margin-top: 6px;
+    border-top: 2px solid var(--slate-900);
+    border-bottom: none;
+  }
+  .breakdown-row .label {
+    font-weight: 600;
+    color: var(--slate-700);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .breakdown-row .label .icon {
+    font-size: 16px;
+  }
+  .breakdown-row .amount {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--slate-900);
+    font-variant-numeric: tabular-nums;
+  }
+  .breakdown-row .amount.neg { color: var(--red); }
+  .breakdown-row.total .label {
+    color: var(--slate-900);
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .breakdown-row.total .amount {
+    color: var(--green);
+    font-size: 22px;
+    font-weight: 900;
+  }
+
+  /* COMPARISON */
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 600px) {
+    .comparison { grid-template-columns: 1fr; }
+  }
+  .compare-card {
+    padding: 18px 20px;
+    border-radius: 14px;
+    text-align: center;
+  }
+  .compare-card.before {
+    background: var(--red-pale);
+    border: 2px solid #fca5a5;
+  }
+  .compare-card.after {
+    background: var(--green-pale);
+    border: 2px solid var(--green);
+    position: relative;
+  }
+  .compare-card .label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .compare-card.before .label { color: #b91c1c; }
+  .compare-card.after .label { color: #15803d; }
+  .compare-card .amount {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .compare-card.before .amount { color: #991b1b; }
+  .compare-card.after .amount { color: #166534; }
+  .compare-card .detail {
+    font-size: 13px;
+    color: var(--slate-700);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  .savings-banner {
+    background: var(--blue);
+    color: #fff;
+    padding: 22px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .savings-banner .label {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--amber);
+    margin-bottom: 6px;
+  }
+  .savings-banner .amount {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .savings-banner .amount span {
+    color: var(--amber);
+  }
+  .savings-banner .detail {
+    font-size: 14px;
+    margin-top: 6px;
+    opacity: 0.9;
+  }
+
+  /* TIME BLOCK */
+  .time-block {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--slate-200);
+  }
+  .time-label {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--slate-500);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .time-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 600px) {
+    .time-grid { grid-template-columns: 1fr; }
+  }
+  .time-card {
+    padding: 16px 18px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1.5px solid var(--slate-200);
+    background: var(--slate-50);
+  }
+  .time-card.after {
+    border-color: var(--blue);
+    background: var(--blue-pale);
+  }
+  .time-card .time-headline {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--slate-900);
+    line-height: 1;
+  }
+  .time-card.after .time-headline { color: var(--blue); }
+  .time-card .time-detail {
+    font-size: 12px;
+    color: var(--slate-500);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  .time-note {
+    background: var(--slate-50);
+    padding: 12px 16px;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--slate-700);
+    font-size: 13px;
+    line-height: 1.5;
+    border-left: 3px solid var(--blue);
+  }
+  .time-note span {
+    color: var(--blue);
+    font-weight: 800;
+  }
+
+  /* EMAIL CAPTURE */
+  .email-capture {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%);
+    color: #fff;
+    padding: 36px;
+    border-radius: 24px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .email-capture h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  .email-capture p {
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+    margin-bottom: 22px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .email-form {
+    display: flex;
+    gap: 8px;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+  .email-form input {
+    flex: 1;
+    background: rgba(255,255,255,0.95);
+    border: 2px solid transparent;
+  }
+  .email-form button {
+    background: var(--amber);
+    color: var(--blue-deep);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.15s;
+    white-space: nowrap;
+  }
+  .email-form button:hover { transform: translateY(-1px); }
+  .email-capture .small {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 12px;
+  }
+
+  /* CTA secondary */
+  .secondary-cta {
+    text-align: center;
+    padding: 24px 0;
+    color: var(--slate-500);
+    font-size: 14px;
+  }
+  .secondary-cta a {
+    color: var(--blue);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    color: var(--slate-500);
+    font-size: 12px;
+  }
+  footer .brand-foot {
+    color: var(--blue);
+    font-weight: 800;
+  }
+
+  /* utility */
+  .placeholder { color: var(--slate-300); font-style: italic; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">HOSTLY · Calculadora de rentabilidad</div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Lo que de verdad ganas</div>
+  <h1>¿Cuánto ganas de verdad con tu Airbnb?</h1>
+  <p class="stat-headline">El propietario medio se queda con <strong>el 47%</strong> de lo que cree. Calcula el tuyo en 1 minuto.</p>
+  <p class="subnote">Sin registro. Resultado al instante. Tus datos no se guardan a menos que pidas el informe.</p>
+</div>
+
+<div class="container">
+
+  <section class="calc">
+    <h2>Tus datos</h2>
+    <p class="section-sub">Solo lo esencial. Calculamos el resto con datos oficiales 2026.</p>
+
+    <div class="form-grid">
+
+      <div class="field">
+        <label for="ingresos">Ingresos brutos mensuales</label>
+        <span class="help">Lo que te paga Airbnb / Booking sumando todos tus pisos</span>
+        <div class="input-wrap">
+          <span class="euro">€</span>
+          <input type="number" id="ingresos" class="with-euro" min="0" step="100" placeholder="Ej: 4500" value="4500">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="apartamentos">Número de apartamentos</label>
+        <span class="help">Cuántos pisos gestionas en total</span>
+        <input type="number" id="apartamentos" min="1" max="50" placeholder="Ej: 3" value="3">
+      </div>
+
+      <div class="field">
+        <label for="reservas">Reservas/mes (todos los pisos)</label>
+        <span class="help">Aprox. — afecta a limpieza y check-in</span>
+        <input type="number" id="reservas" min="0" max="200" placeholder="Ej: 18" value="18">
+      </div>
+
+      <div class="field">
+        <label for="ccaa">CCAA principal</label>
+        <span class="help">Para tasa turística e impuestos</span>
+        <select id="ccaa">
+          <option value="cataluna">Cataluña</option>
+          <option value="andalucia">Andalucía</option>
+          <option value="madrid">Madrid</option>
+          <option value="baleares">Baleares</option>
+          <option value="valencia">Valencia</option>
+          <option value="otras" selected>Otras</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>¿Pagas gestoría?</label>
+        <span class="help">Asesor fiscal externo para tus pisos</span>
+        <div class="toggle-group">
+          <button type="button" class="toggle-btn" data-target="gestoria" data-value="0">No</button>
+          <button type="button" class="toggle-btn active" data-target="gestoria" data-value="80">Sí, ~80€/mes</button>
+        </div>
+        <input type="hidden" id="gestoria" value="80">
+      </div>
+
+      <div class="field">
+        <label>¿Pagas Chekin u otro check-in?</label>
+        <span class="help">Software de check-in legal de pago</span>
+        <div class="toggle-group">
+          <button type="button" class="toggle-btn" data-target="chekin" data-value="0">No</button>
+          <button type="button" class="toggle-btn active" data-target="chekin" data-value="3">Sí (~3€/check-in)</button>
+        </div>
+        <input type="hidden" id="chekin" value="3">
+      </div>
+
+      <div class="field">
+        <label>¿Pagas channel manager?</label>
+        <span class="help">Smoobu, Lodgify, Hostaway, etc.</span>
+        <div class="toggle-group">
+          <button type="button" class="toggle-btn active" data-target="channel" data-value="0">No</button>
+          <button type="button" class="toggle-btn" data-target="channel" data-value="25">Sí, ~25€/mes</button>
+        </div>
+        <input type="hidden" id="channel" value="0">
+      </div>
+
+      <div class="field">
+        <label for="ajustes">Ajustes de precio por semana</label>
+        <span class="help">Cuántas veces revisas y cambias precios manualmente</span>
+        <input type="number" id="ajustes" min="0" max="20" placeholder="Ej: 2" value="2">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="calc">
+    <h2>Lo que de verdad llega a tu bolsillo</h2>
+    <p class="section-sub">Con estimaciones medias del mercado 2026.</p>
+
+    <div class="results">
+
+      <div class="results-headline">
+        <div class="label">Pierdes en el camino</div>
+        <div class="lost-pct" id="lostPct">53%</div>
+        <div class="lost-amount" id="lostAmount">≈ 2.385 € de los 4.500 € que crees ganar</div>
+      </div>
+
+      <div class="breakdown">
+        <div class="breakdown-row">
+          <div class="label"><span class="icon">💸</span>Ingresos brutos</div>
+          <div class="amount" id="rIngresos">4.500 €</div>
+        </div>
+        <div class="breakdown-row">
+          <div class="label"><span class="icon">📲</span>Comisiones OTA (Airbnb/Booking ~12%)</div>
+          <div class="amount neg" id="rOta">−540 €</div>
+        </div>
+        <div class="breakdown-row">
+          <div class="label"><span class="icon">🧹</span>Limpieza (≈35€/reserva)</div>
+          <div class="amount neg" id="rLimpieza">−630 €</div>
+        </div>
+        <div class="breakdown-row">
+          <div class="label"><span class="icon">💶</span>Tasa turística</div>
+          <div class="amount neg" id="rTasa">0 €</div>
+        </div>
+        <div class="breakdown-row">
+          <div class="label"><span class="icon">🛂</span>Chekin / check-in</div>
+          <div class="amount neg" id="rChekin">−54 €</div>
+        </div>
+        <div class="breakdown-row">
+          <div class="label"><span class="icon">🏛️</span>Gestoría</div>
+          <div class="amount neg" id="rGestoria">−80 €</div>
+        </div>
+        <div class="breakdown-row">
+          <div class="label"><span class="icon">🔄</span>Channel manager</div>
+          <div class="amount neg" id="rChannel">0 €</div>
+        </div>
+        <div class="breakdown-row">
+          <div class="label"><span class="icon">📊</span>IRPF estimado (24%)</div>
+          <div class="amount neg" id="rIrpf">−647 €</div>
+        </div>
+        <div class="breakdown-row total">
+          <div class="label">Te queda al mes</div>
+          <div class="amount" id="rNeto">2.549 €</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="calc">
+    <h2>Lo que ganarías con Hostly</h2>
+    <p class="section-sub">Reemplazando gestoría + Chekin + Excel. Hostly cuesta 40 €/apartamento/mes.</p>
+
+    <div class="comparison">
+      <div class="compare-card before">
+        <div class="label">Ahora</div>
+        <div class="amount" id="cBefore">2.549 €</div>
+        <div class="detail">Neto al mes con tu setup actual</div>
+      </div>
+      <div class="compare-card after">
+        <div class="label">Con Hostly</div>
+        <div class="amount" id="cAfter">2.629 €</div>
+        <div class="detail">Sin gestoría, sin Chekin, todo en una app</div>
+      </div>
+    </div>
+
+    <div class="savings-banner">
+      <div class="label">Recuperas al año</div>
+      <div class="amount"><span id="savingsYear">+960 €</span></div>
+      <div class="detail">cancelando lo que ya pagas. Sin trabajar más.</div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-label">Y además, lo que te ocupaba la cabeza</div>
+      <div class="time-grid">
+        <div class="time-card before">
+          <div class="time-headline" id="timeBefore">~12 h/mes</div>
+          <div class="time-detail" id="timeBreakdown">~6h coordinando limpieza · ~6h ajustando precios</div>
+        </div>
+        <div class="time-card after">
+          <div class="time-headline" id="timeAfter">~1 h/mes</div>
+          <div class="time-detail">−90% · limpieza coordinada sola + precios automáticos</div>
+        </div>
+      </div>
+      <div class="time-note">Estimado desde tus reservas y ajustes de precio reales. Hostly reduce este tiempo ~90%: son <span id="timeFreedHours">11</span> horas/mes que tu cabeza deja de tener un Excel y un grupo de WhatsApp abiertos.</div>
+    </div>
+  </section>
+
+  <section class="email-capture">
+    <h2>¿Quieres tu informe completo en PDF?</h2>
+    <p>Te lo enviamos por email con el desglose detallado, una calculadora editable y un análisis de optimización personalizado para tus pisos.</p>
+    <form class="email-form" onsubmit="event.preventDefault(); alert('Aquí conectaremos con n8n + Resend para enviar el informe.')">
+      <input type="email" placeholder="tu@email.com" required>
+      <button type="submit">Enviar informe</button>
+    </form>
+    <div class="small">Sin spam. Recibirás solo el informe + 1 email opcional con consejos para tu Airbnb.</div>
+  </section>
+
+  <div class="secondary-cta">
+    ¿Quieres probarlo directamente? <a href="https://home.hostlylabs.com">14 días gratis de Hostly →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div><span class="brand-foot">HOSTLY</span> · La app que simplifica tu Airbnb</div>
+  <div style="margin-top:8px;">Datos verificados 2026 · Estimaciones basadas en medias del sector · No es asesoramiento fiscal personalizado</div>
+</footer>
+
+<script>
+  // Toggle buttons
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      const group = btn.parentElement;
+      group.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(target).value = btn.dataset.value;
+      calcular();
+    });
+  });
+
+  // Tasa turística por CCAA (€/noche/persona promedio aplicado a num_reservas × 2 personas × 3 noches)
+  const TASA_CCAA = {
+    cataluna: 4.5,    // BCN puede ser 8, fuera 4
+    baleares: 2.5,
+    valencia: 1.0,
+    andalucia: 0,
+    madrid: 0,
+    otras: 0.5,
+  };
+
+  function fmt(n) {
+    if (n === 0) return '0 €';
+    const abs = Math.abs(Math.round(n));
+    const formatted = abs.toLocaleString('es-ES');
+    return (n < 0 ? '−' : '') + formatted + ' €';
+  }
+  function fmtPlain(n) {
+    return Math.round(n).toLocaleString('es-ES') + ' €';
+  }
+
+  function calcular() {
+    const ingresos = parseFloat(document.getElementById('ingresos').value) || 0;
+    const aps = parseFloat(document.getElementById('apartamentos').value) || 1;
+    const reservas = parseFloat(document.getElementById('reservas').value) || 0;
+    const ccaa = document.getElementById('ccaa').value;
+    const gestoriaMes = parseFloat(document.getElementById('gestoria').value) || 0;
+    const chekinPorReserva = parseFloat(document.getElementById('chekin').value) || 0;
+    const channelMes = parseFloat(document.getElementById('channel').value) || 0;
+    const ajustesSemana = parseFloat(document.getElementById('ajustes').value) || 0;
+
+    // Comisiones OTA promedio 12%
+    const ota = ingresos * 0.12;
+    // Limpieza 35€/reserva
+    const limpieza = reservas * 35;
+    // Tasa turística (€/noche/persona) × reservas × 2 personas × 3 noches promedio
+    const tasaPorReserva = (TASA_CCAA[ccaa] || 0) * 2 * 3;
+    const tasa = reservas * tasaPorReserva;
+    // Chekin
+    const chekin = reservas * chekinPorReserva;
+    // Gestoría: declarada por el usuario (mensual TOTAL para todos sus pisos)
+    const gestoria = gestoriaMes * aps;
+    // Channel manager: mensual TOTAL para todos los pisos
+    const channel = channelMes;
+    // Subtotal pre-IRPF
+    const preIrpf = ingresos - ota - limpieza - tasa - chekin - gestoria - channel;
+    // IRPF 24% sobre lo que queda (rendimiento de capital típico)
+    const irpf = Math.max(preIrpf, 0) * 0.24;
+    const neto = preIrpf - irpf;
+
+    // Pintar resultados
+    document.getElementById('rIngresos').textContent = fmtPlain(ingresos);
+    document.getElementById('rOta').textContent = '−' + fmtPlain(ota);
+    document.getElementById('rLimpieza').textContent = '−' + fmtPlain(limpieza);
+    document.getElementById('rTasa').textContent = tasa > 0 ? '−' + fmtPlain(tasa) : '0 €';
+    document.getElementById('rChekin').textContent = chekin > 0 ? '−' + fmtPlain(chekin) : '0 €';
+    document.getElementById('rGestoria').textContent = gestoria > 0 ? '−' + fmtPlain(gestoria) : '0 €';
+    document.getElementById('rChannel').textContent = channel > 0 ? '−' + fmtPlain(channel) : '0 €';
+    document.getElementById('rIrpf').textContent = '−' + fmtPlain(irpf);
+    document.getElementById('rNeto').textContent = fmtPlain(Math.max(neto, 0));
+
+    // Headline lost
+    const lost = ingresos - neto;
+    const lostPct = ingresos > 0 ? Math.round((lost / ingresos) * 100) : 0;
+    document.getElementById('lostPct').textContent = lostPct + '%';
+    document.getElementById('lostAmount').textContent = '≈ ' + fmtPlain(lost) + ' de los ' + fmtPlain(ingresos) + ' que crees ganar';
+
+    // Comparison: con Hostly
+    // Hostly: 40€/apartamento. Cancelas gestoría + chekin + channel manager
+    const costHostly = 40 * aps;
+    const ahorroMes = gestoria + chekin + channel - costHostly;
+    const netoHostly = neto + ahorroMes;
+    document.getElementById('cBefore').textContent = fmtPlain(Math.max(neto, 0));
+    document.getElementById('cAfter').textContent = fmtPlain(Math.max(netoHostly, 0));
+
+    // Savings/year
+    const savingsYear = Math.max(ahorroMes * 12, 0);
+    document.getElementById('savingsYear').textContent = '+' + fmtPlain(savingsYear);
+
+    // Time block — estimación basada en proxies reales
+    // Coordinación de limpieza: 20 min por reserva (confirmar limpiadora + recordatorio + revisar foto + apuntar incidencias)
+    // Ajuste de precios: 45 min por ajuste (revisar calendario + comparar zona + decidir + aplicar a 2 plataformas)
+    const tiempoLimpieza = (reservas * 20) / 60;
+    const tiempoPrecios = (ajustesSemana * 45 * 4) / 60;
+    const tiempoTotal = tiempoLimpieza + tiempoPrecios;
+    // Hostly reduce ~90% (queda solo revisar fotos + anomalías ocasionales)
+    const tiempoConHostly = tiempoTotal * 0.10;
+    const timeFreed = Math.max(tiempoTotal - tiempoConHostly, 0);
+
+    function fmtTime(h) {
+      if (h < 1) return '~' + Math.round(h * 60) + ' min/mes';
+      return '~' + Math.round(h) + ' h/mes';
+    }
+
+    document.getElementById('timeBefore').textContent = fmtTime(tiempoTotal);
+    document.getElementById('timeAfter').textContent = fmtTime(tiempoConHostly);
+    document.getElementById('timeBreakdown').textContent =
+      '~' + Math.round(tiempoLimpieza) + 'h coordinando limpieza · ~' + Math.round(tiempoPrecios) + 'h ajustando precios';
+    document.getElementById('timeFreedHours').textContent = Math.round(timeFreed);
+  }
+
+  // Live update on any input change
+  document.querySelectorAll('input[type="number"], select').forEach(input => {
+    input.addEventListener('input', calcular);
+  });
+
+  // Initial render
+  calcular();
+</script>
+
+</body>
+</html>

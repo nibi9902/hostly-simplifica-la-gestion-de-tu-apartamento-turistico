@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Las 5 plantillas de mensajes con huéspedes · Hostly</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+    color: #0f172a;
+    background: #fff;
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 14mm 14mm 12mm 14mm;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* HEADER */
+  .hero {
+    border-bottom: 4px solid #1a3a8f;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+  .hero .brand {
+    color: #1a3a8f;
+    font-weight: 800;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    color: #0f172a;
+    font-size: 24pt;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-top: 4px;
+  }
+  .hero .sub {
+    color: #475569;
+    font-size: 11pt;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* SECTION TITLE */
+  h2.section {
+    font-size: 12pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 12px 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  h2.section span {
+    color: #1a3a8f;
+  }
+
+  /* QUOTE */
+  .quote {
+    background: #f0f6ff;
+    border-left: 3px solid #1a3a8f;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    font-style: italic;
+    color: #334155;
+    font-size: 9.5pt;
+    border-radius: 4px;
+  }
+
+  /* OVERVIEW CARDS — 3 + 3 layout for 6 cards */
+  .grid-6 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .card-overview {
+    background: #f0f6ff;
+    border: 2px solid #1a3a8f;
+    border-radius: 8px;
+    padding: 10px 11px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-overview.money {
+    background: #fef3c7;
+    border-color: #f59e0b;
+    position: relative;
+  }
+  .card-overview.money::after {
+    content: '💰 +25€/reserva';
+    position: absolute;
+    top: -8px;
+    right: 8px;
+    background: #f59e0b;
+    color: #1a3a8f;
+    font-weight: 900;
+    font-size: 6.5pt;
+    padding: 2px 7px;
+    border-radius: 10px;
+    letter-spacing: 0.3px;
+  }
+  .card-overview .icon {
+    font-size: 18pt;
+    margin-bottom: 4px;
+  }
+  .card-overview .num {
+    color: #1a3a8f;
+    font-weight: 800;
+    font-size: 7.5pt;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .card-overview.money .num { color: #92400e; }
+  .card-overview h3 {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .card-overview p {
+    font-size: 8pt;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .card-overview.money p { color: #78350f; }
+
+  /* MONEY plantilla header variant */
+  .plantilla.money .plantilla-header {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #1a3a8f;
+  }
+  .plantilla.money .plantilla-header .num {
+    background: #1a3a8f;
+    color: #f59e0b;
+  }
+  .plantilla.money .plantilla-header .when {
+    background: rgba(26,58,143,0.2);
+    color: #1a3a8f;
+  }
+  .plantilla.money .message {
+    background: #fffbeb;
+  }
+
+  /* STAT BOX */
+  .stat-box {
+    background: #1a3a8f;
+    color: #fff;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-top: 12px;
+    text-align: center;
+  }
+  .stat-box .stat-quote {
+    font-size: 19pt;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+    letter-spacing: -0.01em;
+    font-style: italic;
+  }
+  .stat-box .stat-after {
+    font-size: 14pt;
+    font-weight: 800;
+    color: #f59e0b;
+    margin-top: 8px;
+    line-height: 1.2;
+  }
+  .stat-box .stat-detail {
+    font-size: 9pt;
+    margin-top: 10px;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* PLANTILLA */
+  .plantilla {
+    background: #fff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    margin-bottom: 11px;
+    overflow: hidden;
+  }
+  .plantilla-header {
+    background: #1a3a8f;
+    color: #fff;
+    padding: 8px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .plantilla-header .num-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .plantilla-header .num {
+    background: #f59e0b;
+    color: #1a3a8f;
+    font-weight: 900;
+    font-size: 11pt;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .plantilla-header h3 {
+    font-size: 10.5pt;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .plantilla-header .when {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    padding: 3px 9px;
+    border-radius: 12px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .message {
+    background: #f0f6ff;
+    padding: 11px 14px;
+    font-size: 9pt;
+    line-height: 1.55;
+    color: #1e293b;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .message .var {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 0 4px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 8.5pt;
+  }
+  .message .signature {
+    margin-top: 6px;
+    color: #475569;
+    font-style: italic;
+  }
+  .why {
+    background: #fafafa;
+    padding: 7px 14px;
+    font-size: 8pt;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .why strong {
+    color: #16a34a;
+    font-weight: 800;
+  }
+
+  /* RULES */
+  .rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .rule {
+    background: #fafafa;
+    border-left: 3px solid #1a3a8f;
+    padding: 8px 11px;
+    border-radius: 4px;
+  }
+  .rule .num {
+    color: #1a3a8f;
+    font-weight: 900;
+    font-size: 13pt;
+    line-height: 1;
+  }
+  .rule h4 {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 3px;
+  }
+  .rule p {
+    font-size: 8pt;
+    color: #475569;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  /* CTA */
+  .cta-final {
+    margin-top: 12px;
+    background: linear-gradient(135deg, #1a3a8f 0%, #0f1f5c 100%);
+    color: #fff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .cta-final h3 {
+    font-size: 14pt;
+    font-weight: 900;
+    margin-bottom: 5px;
+    letter-spacing: -0.01em;
+  }
+  .cta-final p {
+    font-size: 9.5pt;
+    opacity: 0.95;
+    margin-bottom: 10px;
+  }
+  .cta-final .btn {
+    display: inline-block;
+    background: #fff;
+    color: #1a3a8f;
+    font-weight: 800;
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-size: 10pt;
+    text-decoration: none;
+  }
+
+  /* FOOTER */
+  .footer {
+    position: absolute;
+    bottom: 6mm;
+    left: 14mm;
+    right: 14mm;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    color: #94a3b8;
+    font-size: 7.5pt;
+  }
+  .footer .brand-foot {
+    color: #1a3a8f;
+    font-weight: 700;
+  }
+
+  .pageno {
+    color: #cbd5e1;
+    font-size: 8pt;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<!-- ====================== PÁGINA 1 ====================== -->
+<div class="page">
+  <div class="hero">
+    <div class="brand">HOSTLY · PLANTILLAS DE MENSAJES</div>
+    <h1>Las 6 plantillas que envío a cada huésped.</h1>
+    <div class="sub">Una de ellas me genera +25 € extra por reserva. Cópialas, adáptalas, úsalas.</div>
+  </div>
+
+  <div class="quote">
+    "Antes contestaba 50 mensajes al día. Ahora respondo 5 — los raros. El resto se manda solo en el momento exacto. Lo que cambia no es el tono, es <strong>cuándo y cómo</strong>."
+  </div>
+
+  <h2 class="section">EL <span>FLUJO</span> DE UNA RESERVA, MENSAJE A MENSAJE</h2>
+
+  <div class="grid-6">
+    <div class="card-overview">
+      <div class="icon">📨</div>
+      <div class="num">01 · 24h ANTES</div>
+      <h3>Pre-llegada</h3>
+      <p>Toda la info para entrar sin preguntar. Anticipas el 80% de las dudas.</p>
+    </div>
+    <div class="card-overview">
+      <div class="icon">👋</div>
+      <div class="num">02 · CHECK-IN</div>
+      <h3>Bienvenida</h3>
+      <p>"¿Todo bien?" + 3 sitios del barrio. Subes el ranking del anuncio.</p>
+    </div>
+    <div class="card-overview">
+      <div class="icon">⚡</div>
+      <div class="num">03 · INCIDENCIA</div>
+      <h3>Acuse + respuesta</h3>
+      <p>"Lo veo, dame 5 min" calma al instante. Después, solución concreta.</p>
+    </div>
+    <div class="card-overview money">
+      <div class="icon">💰</div>
+      <div class="num">04 · 24-48h ANTES</div>
+      <h3>Late checkout offer</h3>
+      <p>El huésped paga +25€ por salir más tarde. 1 de cada 4 dice sí.</p>
+    </div>
+    <div class="card-overview">
+      <div class="icon">📤</div>
+      <div class="num">05 · 24h ANTES</div>
+      <h3>Pre-checkout</h3>
+      <p>Recordatorio de horario + petición review. Sin sorpresas.</p>
+    </div>
+    <div class="card-overview">
+      <div class="icon">⭐</div>
+      <div class="num">06 · CHECKOUT</div>
+      <h3>Review request</h3>
+      <p>"Yo te dejé 5⭐". El huésped corresponde. Estrategia review-first.</p>
+    </div>
+  </div>
+
+  <div class="stat-box">
+    <div class="stat-quote">"Antes contestaba 50 mensajes al día."</div>
+    <div class="stat-after">Ahora respondo 5. Los importantes.</div>
+    <div class="stat-detail">El 80% de las preguntas, anticipadas en estas 5 plantillas</div>
+  </div>
+
+  <div class="footer">
+    <div><span class="brand-foot">HOSTLY</span> · Hecha por quien también gestiona</div>
+    <div class="pageno">1 / 3</div>
+  </div>
+</div>
+
+<!-- ====================== PÁGINA 2 ====================== -->
+<div class="page">
+  <h2 class="section">LAS PLANTILLAS · <span>1 → 3</span></h2>
+
+  <div class="plantilla">
+    <div class="plantilla-header">
+      <div class="num-title">
+        <span class="num">1</span>
+        <h3>Pre-llegada</h3>
+      </div>
+      <div class="when">24h antes del check-in</div>
+    </div>
+    <div class="message">
+      Hola <span class="var">{{nombre}}</span>!<br><br>
+      Mañana es tu llegada. Te dejo aquí todo lo que necesitas para entrar sin problema:<br><br>
+      📍 <strong>Dirección:</strong> <span class="var">{{direccion_completa}}</span><br>
+      🔑 <strong>Código del portal:</strong> <span class="var">{{codigo_portal}}</span><br>
+      🔑 <strong>Código del piso:</strong> <span class="var">{{codigo_piso}}</span><br>
+      📶 <strong>WiFi:</strong> <span class="var">{{nombre_wifi}}</span> · clave: <span class="var">{{clave_wifi}}</span><br>
+      🅿️ <strong>Parking:</strong> <span class="var">{{instrucciones_parking}}</span><br><br>
+      Llegada a partir de las <span class="var">{{hora_checkin}}</span>. Si llegas más tarde no pasa nada, los códigos funcionan 24h.<br><br>
+      Cualquier cosa, escríbeme aquí. Buen viaje 👋
+      <div class="signature">— <span class="var">{{tu_nombre}}</span></div>
+    </div>
+    <div class="why">
+      <strong>POR QUÉ FUNCIONA:</strong> anticipa el 80% de las dudas (cómo entro, wifi, parking) en un solo mensaje. Tono cercano. Invita a usar el chat de la app, no WhatsApp personal.
+    </div>
+  </div>
+
+  <div class="plantilla">
+    <div class="plantilla-header">
+      <div class="num-title">
+        <span class="num">2</span>
+        <h3>Bienvenida</h3>
+      </div>
+      <div class="when">30 min después del check-in</div>
+    </div>
+    <div class="message">
+      <span class="var">{{nombre}}</span>, ¿todo bien con la entrada?<br><br>
+      Si necesitas algo del apartamento, escríbeme por aquí.<br><br>
+      Por si te apetecen, mis 3 sitios favoritos del barrio:<br>
+      🍴 <span class="var">{{restaurante_local}}</span> — el bar del barrio<br>
+      ☕ <span class="var">{{cafeteria}}</span> — para desayunar<br>
+      🌳 <span class="var">{{plan_local}}</span> — paseo / actividad<br><br>
+      Disfruta <span class="var">{{ciudad}}</span> 🙌
+    </div>
+    <div class="why">
+      <strong>POR QUÉ FUNCIONA:</strong> confirma que han entrado bien. Las 3 recomendaciones suben el ranking del anuncio (Airbnb premia respuesta rápida + valor añadido) y abren canal para incidencias.
+    </div>
+  </div>
+
+  <div class="plantilla">
+    <div class="plantilla-header">
+      <div class="num-title">
+        <span class="num">3</span>
+        <h3>Acuse de recibo</h3>
+      </div>
+      <div class="when">Cuando preguntan algo urgente</div>
+    </div>
+    <div class="message">
+      <span class="var">{{nombre}}</span>, lo veo. Dame 5 minutos y te respondo con la solución.
+    </div>
+    <div class="why">
+      <strong>POR QUÉ FUNCIONA:</strong> el huésped no se siente ignorado. Esta línea sola baja la ansiedad un 90%. La respuesta concreta puede llegar 10 minutos después y nadie se queja. Lo automatizo: si la IA detecta urgencia, manda este acuse mientras me llama.
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><span class="brand-foot">HOSTLY</span> · Hecha por quien también gestiona</div>
+    <div class="pageno">2 / 3</div>
+  </div>
+</div>
+
+<!-- ====================== PÁGINA 3 ====================== -->
+<div class="page">
+  <h2 class="section">LAS PLANTILLAS · <span>4 → 6</span></h2>
+
+  <div class="plantilla money">
+    <div class="plantilla-header">
+      <div class="num-title">
+        <span class="num">4</span>
+        <h3>💰 Late checkout offer</h3>
+      </div>
+      <div class="when">24-48h antes de la salida</div>
+    </div>
+    <div class="message">
+      Hola <span class="var">{{nombre}}</span>!<br><br>
+      Mañana toca despedirse, pero antes:<br><br>
+      🕐 ¿Quieres alargar tu estancia hasta las <span class="var">{{hora_late_checkout}}</span>?<br>
+      💶 Coste: <span class="var">{{precio_late_checkout}} €</span><br><br>
+      Te da margen para almorzar tranquilamente, dejar la maleta o terminar el trabajo — sin la presión del checkout a las 11h.<br><br>
+      Si te interesa, dime "<strong>sí</strong>" y lo bloqueo para ti.<br>
+      <em>(Solo si nadie reserva ese mismo día.)</em>
+    </div>
+    <div class="why">
+      <strong>POR QUÉ FUNCIONA — LA QUE GENERA INGRESOS:</strong> 1 de cada 4 huéspedes lo acepta. Eso son <strong style="color:#d97706;">+25€ extra por reserva</strong> sin trabajo extra. Con 60 reservas/año por piso = <strong style="color:#d97706;">+375€/año por piso</strong>. Multiplica por tus apartamentos. Dentro de Hostly el offer va automático y solo aparece si la noche siguiente está libre.
+    </div>
+  </div>
+
+  <div class="plantilla">
+    <div class="plantilla-header">
+      <div class="num-title">
+        <span class="num">5</span>
+        <h3>Pre-checkout</h3>
+      </div>
+      <div class="when">La víspera de la salida</div>
+    </div>
+    <div class="message">
+      <span class="var">{{nombre}}</span>, mañana toca despedirse 😢<br><br>
+      🕚 <strong>Hora límite:</strong> <span class="var">{{hora_checkout}}</span><br>
+      🔑 <strong>Cierra puerta</strong> y deja los códigos como estaban<br>
+      🗑️ Si puedes, vacía los cubos pequeños (¡gracias!)<br>
+      💬 Si todo bien, te agradeceré tu reseña — me ayuda mucho<br><br>
+      Buen viaje de vuelta!
+      <div class="signature">— <span class="var">{{tu_nombre}}</span></div>
+    </div>
+    <div class="why">
+      <strong>POR QUÉ FUNCIONA:</strong> recordatorio del horario evita extensiones no autorizadas. Anticipa la review. El "🗑️ vacía los cubos" es el detalle humano que marca diferencia.
+    </div>
+  </div>
+
+  <div class="plantilla">
+    <div class="plantilla-header">
+      <div class="num-title">
+        <span class="num">6</span>
+        <h3>Review request</h3>
+      </div>
+      <div class="when">2-3h después del checkout</div>
+    </div>
+    <div class="message">
+      <span class="var">{{nombre}}</span>, gracias por dejar el piso impecable. Cualquier huésped futuro te lo agradecerá.<br><br>
+      Te he dejado una review de 5⭐. ¿Podrías dejarme la tuya?<br><br>
+      Tienes 14 días desde Airbnb/Booking. Cuanto antes mejor — luego se olvida 😉<br><br>
+      Espero verte de vuelta por <span class="var">{{ciudad}}</span> 👋
+    </div>
+    <div class="why">
+      <strong>POR QUÉ FUNCIONA:</strong> estrategia "review-first" — al decir que tú ya le dejaste 5⭐, el huésped se siente obligado a corresponder. Aumenta la conversión un 30%.
+    </div>
+  </div>
+
+  <div class="cta-final">
+    <h3>Las 6 plantillas, automatizadas según el momento exacto.</h3>
+    <p>Dentro de Hostly se mandan solas cuando toca. La del late checkout solo aparece si la noche siguiente está libre.<br>Tú solo respondes los raros.</p>
+    <a class="btn" href="https://home.hostlylabs.com">14 días gratis · Sin tarjeta →</a>
+  </div>
+
+  <div class="footer">
+    <div><span class="brand-foot">HOSTLY</span> · Hecha por quien también gestiona</div>
+    <div class="pageno">3 / 3</div>
+  </div>
+</div>
+
+</body>
+</html>

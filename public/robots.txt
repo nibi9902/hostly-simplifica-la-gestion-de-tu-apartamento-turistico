@@ -6,6 +6,7 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
+Disallow: /recursos/
 Disallow: /*.json$
 
 # ─── Bots de cerca AI ───────────────────────────────────
