@@ -4,11 +4,14 @@
     "h1_line2": "O et gestionen ells a tu?",
     "subtitle": "Hostly simplifica tot el que implica tenir un pis turístic.",
     "partner_label": "Partner oficial de",
-    "cta_tagline": "Per a propietaris que volen sistema, no caos",
-    "cta_h2_start": "Comença",
-    "cta_h2_accent": "gratis",
-    "cta_h2_end": "avui mateix.",
-    "cta_sub": "Sense permanència. Sense targeta. Una sola app per a tot el teu pis.",
+    "cta_tagline": "Check-in + part a la policia",
+    "cta_compare_price": "180 €",
+    "cta_compare_rest": "l'any en altres apps.",
+    "cta_main_price": "0 €",
+    "cta_main_text": "a",
+    "cta_main_brand": "Hostly",
+    "cta_forever": "Per sempre.",
+    "cta_sub": "Hostly envia el part de viatgers a la policia cada vegada que entra un hoste. Tu no pagues res — i així es queda.",
     "stat_messages": "missatges contestats",
     "stat_police": "registres policials",
     "stat_cleanings": "neteges coordinades",
@@ -99,8 +102,8 @@
       },
       {
         "tag": "Segon",
-        "title": "Connecta Airbnb, Booking i el teu pany.",
-        "description": "Un clic per canal. El calendari se sincronitza, els preus s'ajusten, el pany genera codis únics per hoste. Tot des d'un sol panell."
+        "title": "Connecta Airbnb i Booking en un clic.",
+        "description": "El calendari se sincronitza, els preus s'ajusten i les reserves entren soles. Tot des d'un sol panell — sense saltar entre apps."
       },
       {
         "tag": "Tercer",

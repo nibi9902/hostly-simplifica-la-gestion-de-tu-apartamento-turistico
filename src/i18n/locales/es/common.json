@@ -56,9 +56,9 @@
   },
   "not_found": {
     "title": "Página no encontrada · Hostly",
-    "badge": "Error 404",
-    "heading": "Aquí no hay nada.",
-    "body": "La página que buscas no existe o se ha movido. Vuelve al inicio o explora la web desde ahí.",
+    "badge": "404",
+    "heading": "Esta página no está en el sistema.",
+    "body": "Quizás se ha mudado. Quizás nunca existió. El resto sí está donde toca — vuelve al inicio y sigue.",
     "go_home": "Volver al inicio",
     "go_back": "Página anterior"
   },

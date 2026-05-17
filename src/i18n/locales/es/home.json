@@ -4,11 +4,14 @@
     "h1_line2": "¿O te gestionan ellos a ti?",
     "subtitle": "Hostly simplifica todo lo que implica tener un piso turístico.",
     "partner_label": "Partner oficial de",
-    "cta_tagline": "Para propietarios que quieren sistema, no caos",
-    "cta_h2_start": "Empieza",
-    "cta_h2_accent": "gratis",
-    "cta_h2_end": "hoy mismo.",
-    "cta_sub": "Sin permanencia. Sin tarjeta. Una sola app para todo tu piso.",
+    "cta_tagline": "Check-in + parte a la policía",
+    "cta_compare_price": "180 €",
+    "cta_compare_rest": "al año en otras apps.",
+    "cta_main_price": "0 €",
+    "cta_main_text": "en",
+    "cta_main_brand": "Hostly",
+    "cta_forever": "Para siempre.",
+    "cta_sub": "Hostly envía el parte de viajeros a la policía cada vez que entra un huésped. Tú no pagas nada — y se queda así.",
     "stat_messages": "mensajes respondidos",
     "stat_police": "registros policiales",
     "stat_cleanings": "limpiezas coordinadas",
@@ -99,8 +102,8 @@
       },
       {
         "tag": "Segundo",
-        "title": "Conecta Airbnb, Booking y tu cerradura.",
-        "description": "Un clic por canal. El calendario se sincroniza, los precios se ajustan, la cerradura genera códigos únicos por huésped. Todo desde un solo panel."
+        "title": "Conecta Airbnb y Booking en un clic.",
+        "description": "El calendario se sincroniza, los precios se ajustan y las reservas entran solas. Todo desde un solo panel — sin saltar entre apps."
       },
       {
         "tag": "Tercero",

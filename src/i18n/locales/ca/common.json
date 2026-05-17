@@ -56,9 +56,9 @@
   },
   "not_found": {
     "title": "Pàgina no trobada · Hostly",
-    "badge": "Error 404",
-    "heading": "Aquí no hi ha res.",
-    "body": "La pàgina que busques no existeix o s'ha mogut. Torna a l'inici o explora la web des d'allà.",
+    "badge": "404",
+    "heading": "Aquesta pàgina no és al sistema.",
+    "body": "Potser s'ha mogut. Potser no va existir mai. La resta sí és on toca — torna a l'inici i continua.",
     "go_home": "Tornar a l'inici",
     "go_back": "Pàgina anterior"
   },

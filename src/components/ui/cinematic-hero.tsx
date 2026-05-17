@@ -531,7 +531,8 @@ export function CinematicHero({ onOpenQuiz, className, ...props }: CinematicHero
       gsap.set([".card-left-text", ".card-right-text", ".mockup-scroll-wrapper"], { autoAlpha: 0 });
       gsap.set([".bubble-0",".bubble-1",".bubble-2",".bubble-3",".bubble-4",".bubble-5"], { autoAlpha: 0 });
       gsap.set(".phone-notif",   { autoAlpha: 0, y: -60, scale: 0.88 });
-      gsap.set(".cta-wrapper",   { autoAlpha: 0, y: 50, filter: "blur(20px)" });
+      gsap.set(".cta-wrapper",   { autoAlpha: 0, y: 40 });
+      gsap.set(".hero-brand-underline", { scaleX: 0 });
 
       // Intro
       const introTl = gsap.timeline({ delay: 0.3 });
@@ -540,107 +541,85 @@ export function CinematicHero({ onOpenQuiz, className, ...props }: CinematicHero
         .to(".text-days",     { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut" }, "-=1.0")
         .to(".hero-subtitle", { duration: 1.0, autoAlpha: 1, y: 0, ease: "expo.out" }, "-=0.4");
 
-      // Scroll-driven — a mòbil reduïm el pin (de 12000 → 6500) perquè
-      // el flux cap a la següent secció no demani scroll excessiu
+      // Scroll-driven — pin compactat (~50% més curt) per evitar sensació "encallat"
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: isMobile ? "+=6500" : "+=12000",
+          end: isMobile ? "+=2000" : "+=3200",
           pin: true,
-          scrub: 1,
+          scrub: 0.3,
           anticipatePin: 1,
         },
       });
 
       scrollTl
-        // ── Phase 0: hero text fades, card rises ──
-        .to([".hero-text-wrapper", ".bg-grid-hostly"], { scale: 1.15, filter: "blur(20px)", opacity: 0.2, ease: "power2.inOut", duration: 2 }, 0)
-        .to(".main-card", { y: 0, ease: "power3.inOut", duration: 2 }, 0)
+        // ── Phase 0: hero text fades + card rises (simultanis) ──
+        .to([".hero-text-wrapper", ".bg-grid-hostly"], { scale: 1.15, filter: "blur(20px)", opacity: 0.2, ease: "power2.inOut", duration: 1.2 }, 0)
+        .to(".main-card", { y: 0, ease: "power3.inOut", duration: 1.2 }, 0)
 
-        // ── Phase 1: card expands to fullscreen ──
-        .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: 1.5 })
+        // ── Phase 1: card expands ──
+        .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: 0.8 })
 
         // ── Phase 2: iPhone appears ──
         .fromTo(".mockup-scroll-wrapper",
-          { y: 300, z: -500, rotationX: 50, rotationY: -30, autoAlpha: 0, scale: 0.6 },
-          { y: 0, z: 0, rotationX: 0, rotationY: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: 2 }, "-=0.5"
+          { y: 250, z: -400, rotationX: 40, rotationY: -25, autoAlpha: 0, scale: 0.65 },
+          { y: 0, z: 0, rotationX: 0, rotationY: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: 1.2 }, "-=0.3"
         )
 
-        // ── Phase 3+4: cada notif apareix → ES QUEDA 1.6s llegible → es transforma en bubble → següent ──
-        // 0
-        .to(".phone-notif-0", { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, ease: "expo.out" }, "+=0.8")
-        .to(".phone-notif-0", { autoAlpha: 0, scale: 0.8, duration: 0.3, ease: "power2.in" }, "+=1.6")
-        .fromTo(".bubble-0",
-          { autoAlpha: 0, x: "160px", y: "220px", scale: 0.15, rotationZ: 8 },
-          { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.8 }, "+=0.1"
+        // ── Phase 3: totes les notifs flashen alhora ──
+        .to(
+          [".phone-notif-0",".phone-notif-1",".phone-notif-2",".phone-notif-3",".phone-notif-4",".phone-notif-5"],
+          { autoAlpha: 1, y: 0, scale: 1, duration: 0.28, ease: "expo.out", stagger: 0.04 }, "+=0.15"
         )
-        // 1
-        .to(".phone-notif-1", { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, ease: "expo.out" }, "+=0.6")
-        .to(".phone-notif-1", { autoAlpha: 0, scale: 0.8, duration: 0.3, ease: "power2.in" }, "+=1.6")
-        .fromTo(".bubble-1",
-          { autoAlpha: 0, x: "-160px", y: "180px", scale: 0.15, rotationZ: -8 },
-          { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.8 }, "+=0.1"
-        )
-        // 2
-        .to(".phone-notif-2", { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, ease: "expo.out" }, "+=0.6")
-        .to(".phone-notif-2", { autoAlpha: 0, scale: 0.8, duration: 0.3, ease: "power2.in" }, "+=1.6")
-        .fromTo(".bubble-2",
-          { autoAlpha: 0, x: "180px", y: "60px", scale: 0.15, rotationZ: 5 },
-          { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.8 }, "+=0.1"
-        )
-        // 3 — mid-right: surt del telèfon cap a la dreta
-        .to(".phone-notif-3", { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, ease: "expo.out" }, "+=0.6")
-        .to(".phone-notif-3", { autoAlpha: 0, scale: 0.8, duration: 0.3, ease: "power2.in" }, "+=1.6")
-        .fromTo(".bubble-3",
-          { autoAlpha: 0, x: "-180px", y: "0px", scale: 0.15, rotationZ: -5 },
-          { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.8 }, "+=0.1"
-        )
-        // 4 — bottom-left: surt del telèfon cap avall-esquerra
-        .to(".phone-notif-4", { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, ease: "expo.out" }, "+=0.6")
-        .to(".phone-notif-4", { autoAlpha: 0, scale: 0.8, duration: 0.3, ease: "power2.in" }, "+=1.6")
-        .fromTo(".bubble-4",
-          { autoAlpha: 0, x: "150px", y: "-180px", scale: 0.15, rotationZ: 6 },
-          { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.8 }, "+=0.1"
-        )
-        // 5 — bottom-right: surt del telèfon cap avall-dreta (simètric a bubble-4)
-        .to(".phone-notif-5", { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, ease: "expo.out" }, "+=0.6")
-        .to(".phone-notif-5", { autoAlpha: 0, scale: 0.8, duration: 0.3, ease: "power2.in" }, "+=1.6")
-        .fromTo(".bubble-5",
-          { autoAlpha: 0, x: "-150px", y: "-180px", scale: 0.15, rotationZ: -6 },
-          { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.8 }, "+=0.1"
+        .to(
+          [".phone-notif-0",".phone-notif-1",".phone-notif-2",".phone-notif-3",".phone-notif-4",".phone-notif-5"],
+          { autoAlpha: 0, scale: 0.82, duration: 0.18, ease: "power2.in" }, "+=0.2"
         )
 
-        // ── Phase 5: text entra ──
-        .fromTo(".card-left-text",  { x: -50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, ease: "power4.out", duration: 1.5 }, "-=1.2")
-        .fromTo(".card-right-text", { x: 50, autoAlpha: 0, scale: 0.8 }, { x: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: 1.5 }, "<")
+        // ── Phase 4: les 6 bombolles surten simultàniament ──
+        .fromTo(".bubble-0", { autoAlpha: 0, x: "160px",  y: "220px",  scale: 0.15, rotationZ:  8 }, { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.7 }, "+=0.05")
+        .fromTo(".bubble-1", { autoAlpha: 0, x: "-160px", y: "180px",  scale: 0.15, rotationZ: -8 }, { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.7 }, "<0.05")
+        .fromTo(".bubble-2", { autoAlpha: 0, x: "180px",  y: "60px",   scale: 0.15, rotationZ:  5 }, { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.7 }, "<0.05")
+        .fromTo(".bubble-3", { autoAlpha: 0, x: "-180px", y: "0px",    scale: 0.15, rotationZ: -5 }, { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.7 }, "<0.05")
+        .fromTo(".bubble-4", { autoAlpha: 0, x: "150px",  y: "-180px", scale: 0.15, rotationZ:  6 }, { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.7 }, "<0.05")
+        .fromTo(".bubble-5", { autoAlpha: 0, x: "-150px", y: "-180px", scale: 0.15, rotationZ: -6 }, { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationZ: 0, ease: "expo.out", duration: 0.7 }, "<0.05")
 
-        // ── Pausa final ──
-        .to({}, { duration: 2.5 })
+        // ── Phase 5: text entra solapant ──
+        .fromTo(".card-left-text",  { x: -50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, ease: "power4.out", duration: 0.9 }, "-=0.5")
+        .fromTo(".card-right-text", { x: 50, autoAlpha: 0, scale: 0.85 }, { x: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: 0.9 }, "<")
 
-        // ── Phase 6: contingut de la targeta desapareix ──
+        // ── Phase 6: contingut surt (sense pausa morta) ──
         .to(
           [".mockup-scroll-wrapper", ".bubble-0", ".bubble-1", ".bubble-2", ".bubble-3", ".bubble-4", ".bubble-5", ".card-left-text", ".card-right-text"],
-          { autoAlpha: 0, y: -30, ease: "power2.in", duration: 1.0, stagger: 0.04 },
-          "+=0.5"
+          { autoAlpha: 0, y: -20, ease: "power2.in", duration: 0.45, stagger: 0.02 },
+          "+=0.3"
         )
 
-        // ── Targeta s'enretira (invers de l'entrada) ──
+        // ── Targeta surt (un sol moviment, scale + y + opacity alhora) ──
         .to(".main-card", {
-          width: isMobile ? "92vw" : "85vw",
-          height: isMobile ? "88vh" : "82vh",
+          scale: 0.88,
+          y: window.innerHeight + 200,
+          autoAlpha: 0,
           borderRadius: isMobile ? "32px" : "40px",
-          ease: "expo.inOut", duration: 1.8,
-        })
-        .to(".main-card", { y: window.innerHeight + 300, ease: "power3.in", duration: 1.5 })
+          ease: "power3.in",
+          duration: 0.8,
+        }, "-=0.2")
 
-        // ── CTA apareix sobre el fons blanc (com el primer hero) ──
-        .to(".cta-wrapper", { autoAlpha: 1, y: 0, filter: "blur(0px)", ease: "expo.out", duration: 1.8,
+        // ── CTA apareix (solapat amb sortida de targeta) ──
+        .to(".cta-wrapper", {
+          autoAlpha: 1,
+          y: 0,
+          ease: "expo.out",
+          duration: 0.9,
           onStart: () => window.dispatchEvent(new CustomEvent('hostly:hero-cta-visible')),
-        })
+        }, "-=0.45")
 
-        // ── Pausa: l'usuari llegeix el CTA ──
-        .to({}, { duration: 4.0 });
+        // ── Línia animada sota "Hostly" ──
+        .to(".hero-brand-underline", { scaleX: 1, ease: "expo.out", duration: 0.7 }, "-=0.35")
+
+        // ── Mini breath final ──
+        .to({}, { duration: 0.4 });
 
     }, containerRef);
 
@@ -693,13 +672,67 @@ export function CinematicHero({ onOpenQuiz, className, ...props }: CinematicHero
           </div>
         </div>
 
+        {/* Eyebrow — què estem comparant */}
         <p className="hero-cta-tagline text-xs font-bold tracking-[0.18em] uppercase text-blue-600 mb-5">
           {t("hero.cta_tagline")}
         </p>
-        <h2 className="hero-cta-h2 text-5xl md:text-7xl lg:text-[5.5rem] font-bold mb-5 tracking-tight text-card-dark leading-[1.15]">
-          {t("hero.cta_h2_start")} <span className="font-accent text-[1.6em] text-[#1a3a8f] pr-1">{t("hero.cta_h2_accent")}</span> {t("hero.cta_h2_end")}
+        {/* Disseny 3-línies amb font-heading (General Sans) — més modern/geomètric */}
+        <h2 className="hero-cta-h2 font-heading font-bold mb-7 md:mb-8 tracking-tight text-card-dark text-center">
+          {/* Línia 1 — comparació tatxada, una mida més gran */}
+          <span className="block text-2xl md:text-3xl lg:text-[2.5rem] text-slate-400 font-medium mb-5 md:mb-6 leading-tight">
+            <span className="line-through decoration-slate-300 decoration-[3px] md:decoration-4">{t("hero.cta_compare_price")}</span> {t("hero.cta_compare_rest")}
+          </span>
+          {/* Línia 2 — l'impacte: "0 €" amb gradient + "Hostly" amb línia animada */}
+          <span className="block text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight">
+            <span
+              className="text-[1.4em] font-black mr-4 md:mr-5 inline-block align-baseline"
+              style={{
+                background: 'linear-gradient(135deg, #1a3a8f 0%, #2563EB 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                filter: 'drop-shadow(0 6px 18px rgba(37,99,235,0.18))',
+              }}
+            >
+              {t("hero.cta_main_price")}
+            </span>
+            {t("hero.cta_main_text")}{' '}
+            <span
+              className="hero-brand-wrap relative inline-block"
+              style={{
+                background: 'linear-gradient(180deg, #0f172a 0%, #475569 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              {t("hero.cta_main_brand")}
+              <span
+                className="hero-brand-underline"
+                aria-hidden="true"
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  bottom: '-0.14em',
+                  width: '100%',
+                  height: '0.045em',
+                  background: 'linear-gradient(90deg, #1a3a8f 0%, #2563EB 100%)',
+                  borderRadius: '999px',
+                  transformOrigin: 'left center',
+                  WebkitTextFillColor: 'initial',
+                  boxShadow: '0 2px 12px rgba(37,99,235,0.18)',
+                }}
+              />
+            </span>
+            .
+          </span>
+          {/* Línia 3 — el twist */}
+          <span className="block text-3xl md:text-5xl lg:text-[3.5rem] font-light text-[#1a3a8f] mt-3 md:mt-4 tracking-tight">
+            {t("hero.cta_forever")}
+          </span>
         </h2>
-        <p className="hero-cta-sub text-slate-500 text-lg md:text-2xl mb-12 md:mb-14 max-w-2xl mx-auto font-light leading-relaxed">
+
+        <p className="hero-cta-sub text-slate-500 text-base md:text-lg lg:text-xl mb-12 md:mb-14 max-w-2xl mx-auto font-light leading-relaxed">
           {t("hero.cta_sub")}
         </p>
 
@@ -718,16 +751,17 @@ export function CinematicHero({ onOpenQuiz, className, ...props }: CinematicHero
           ))}
         </div>
 
-        <div className="hero-cta-buttons flex flex-col sm:flex-row gap-4">
+        <div className="hero-cta-buttons flex flex-col sm:flex-row gap-3 md:gap-4">
           <button
+            type="button"
             onClick={onOpenQuiz}
-            className="hero-cta-btn btn-hostly-primary-light flex items-center justify-center gap-3 px-12 py-5 rounded-[1.25rem] text-base md:text-lg font-bold"
+            className="hero-cta-btn inline-flex items-center justify-center gap-2 px-10 py-4 md:px-12 md:py-[1.1rem] rounded-full bg-[#1a3a8f] text-white text-base md:text-lg font-semibold shadow-[0_10px_30px_-8px_rgba(26,58,143,0.45)] hover:shadow-[0_14px_36px_-6px_rgba(26,58,143,0.55)] hover:-translate-y-1 hover:bg-[#1f4ab0] active:translate-y-0 active:scale-[0.98] transition-all duration-300"
           >
             {t("hero.btn_start")}
           </button>
           <LangLink
             to="/demo"
-            className="hero-cta-btn btn-hostly-secondary-light flex items-center justify-center gap-3 px-12 py-5 rounded-[1.25rem] text-base md:text-lg font-semibold"
+            className="hero-cta-btn inline-flex items-center justify-center gap-2 px-10 py-4 md:px-12 md:py-[1.1rem] rounded-full border border-slate-200 bg-white text-slate-900 text-base md:text-lg font-semibold shadow-[0_4px_14px_-4px_rgba(15,23,42,0.08)] hover:border-slate-300 hover:bg-slate-50 hover:shadow-[0_8px_22px_-6px_rgba(15,23,42,0.12)] hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] transition-all duration-300"
           >
             {t("hero.btn_how")}
           </LangLink>
