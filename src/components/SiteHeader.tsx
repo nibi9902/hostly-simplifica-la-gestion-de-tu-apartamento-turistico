@@ -25,10 +25,20 @@ export function SiteHeader({ onOpenQuiz }: SiteHeaderProps) {
       setVisible(true);
       return;
     }
+    // A la home el menú espera que acabi l'animació d'ENTRADA (~3 s, s'acaba
+    // sola). L'avís que s'escoltava abans —`hero-cta-visible`— surt de la
+    // seqüència lligada al scroll, així que qui entrava i no baixava els
+    // ~3.200 px del hero es quedava sense menú.
     setVisible(false);
     const show = () => setVisible(true);
-    window.addEventListener('hostly:hero-cta-visible', show);
-    return () => window.removeEventListener('hostly:hero-cta-visible', show);
+    window.addEventListener('hostly:hero-intro-done', show);
+    // Xarxa de seguretat: si l'entrada no arriba a acabar (pestanya en segon
+    // pla, animacions reduïdes, GSAP que falla), el menú surt igualment.
+    const tard = setTimeout(show, 4500);
+    return () => {
+      window.removeEventListener('hostly:hero-intro-done', show);
+      clearTimeout(tard);
+    };
   }, [isHome]);
 
   return (

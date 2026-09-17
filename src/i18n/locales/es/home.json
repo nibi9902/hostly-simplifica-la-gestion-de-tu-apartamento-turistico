@@ -2,7 +2,7 @@
   "hero": {
     "h1_line1": "¿Gestionas apartamentos en Airbnb?",
     "h1_line2": "¿O te gestionan ellos a ti?",
-    "subtitle": "Hostly simplifica todo lo que implica tener un piso turístico.",
+    "subtitle": "Hostly simplifica todo lo que implica tener un apartamento turístico.",
     "partner_label": "Partner oficial de",
     "cta_tagline": "Check-in + parte a la policía",
     "cta_compare_price": "180 €",
@@ -159,7 +159,6 @@
       "Envío automático del parte a la policía",
       "Estado de cada check-in (enviado y recibido)",
       "Lista de huéspedes registrados por reserva",
-      "Sin límite de apartamentos",
       "Sin caducidad. Sin tarjeta."
     ],
     "paid_badge": "Hostly Completo",

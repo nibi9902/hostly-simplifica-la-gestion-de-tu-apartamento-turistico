@@ -535,7 +535,14 @@ export function CinematicHero({ onOpenQuiz, className, ...props }: CinematicHero
       gsap.set(".hero-brand-underline", { scaleX: 0 });
 
       // Intro
-      const introTl = gsap.timeline({ delay: 0.3 });
+      // En acabar l'entrada s'avisa la capçalera perquè aparegui. Abans només
+      // s'avisava quan sortia el CTA, que forma part de la seqüència LLIGADA AL
+      // SCROLL: qui entrava a la home i no baixava els ~3.200 px del hero no
+      // veia MAI el menú. L'entrada, en canvi, acaba sola als ~3 s.
+      const introTl = gsap.timeline({
+        delay: 0.3,
+        onComplete: () => window.dispatchEvent(new CustomEvent('hostly:hero-intro-done')),
+      });
       introTl
         .to(".text-track",    { duration: 1.8, autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)", rotationX: 0, ease: "expo.out" })
         .to(".text-days",     { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut" }, "-=1.0")

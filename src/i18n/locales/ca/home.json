@@ -2,7 +2,7 @@
   "hero": {
     "h1_line1": "Gestiones apartaments a Airbnb?",
     "h1_line2": "O et gestionen ells a tu?",
-    "subtitle": "Hostly simplifica tot el que implica tenir un pis turístic.",
+    "subtitle": "Hostly simplifica tot el que implica tenir un apartament turístic.",
     "partner_label": "Partner oficial de",
     "cta_tagline": "Check-in + part a la policia",
     "cta_compare_price": "180 €",
@@ -159,7 +159,6 @@
       "Enviament automàtic del part a la policia",
       "Estat de cada check-in (enviat i rebut)",
       "Llista d'hostes registrats per reserva",
-      "Sense límit d'apartaments",
       "Sense caducitat. Sense targeta."
     ],
     "paid_badge": "Hostly Complet",
