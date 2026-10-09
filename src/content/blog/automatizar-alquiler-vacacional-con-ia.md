@@ -48,7 +48,7 @@ Un apartamento turístico genera, por reserva, unas **15-25 microtareas** invisi
 - Seguir la reseña
 - Cerrar el ciclo facturalmente
 
-Para 1 apartamento, es entre 1-2 horas por reserva. Para 5 apartamentos con 6-8 reservas al mes, son **40-60 horas al mes** que desaparecen en microtareas. Es la trampa de creer que un piso turístico se lleva solo: el dinero llega, pero tu tiempo también se va.
+Para 1 apartamento, son entre 1 y 2 horas por reserva. Para 5 apartamentos con 6-8 reservas al mes, son **40-60 horas al mes** que desaparecen en microtareas. Es la trampa de creer que un piso turístico se lleva solo: el dinero llega, pero tu tiempo también se va.
 
 La automatización con IA no elimina el trabajo humano importante (branding, decisiones estratégicas, casos complicados). Elimina el **trabajo repetitivo que no requiere criterio**.
 
@@ -56,7 +56,7 @@ La automatización con IA no elimina el trabajo humano importante (branding, dec
 
 ### 1. Respuestas a mensajes rutinarios
 
-La mayoría de los mensajes que recibes caben en unas 20 categorías: hora de check-in, aparcamiento, wifi, toallas, cerca hay… Una IA entrenada con tus respuestas pasadas (o con plantillas que tú defines) responde al huésped en segundos, en el idioma del huésped, 24/7.
+La mayoría de los mensajes que recibes caben en unas 20 categorías: hora de check-in, aparcamiento, wifi, toallas, qué hay cerca… Una IA entrenada con tus respuestas pasadas (o con plantillas que tú defines) responde al huésped en segundos, en el idioma del huésped, 24/7.
 
 Dos claves para que esto funcione sin parecer un bot:
 
@@ -65,7 +65,7 @@ Dos claves para que esto funcione sin parecer un bot:
 
 ### 2. Check-in online + registro a la policía
 
-El huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; fuera de Cataluña, a SES.Hospedajes, que lo activamos contigo). Tú no mueves un dedo.
+El huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; en el resto de España, a SES.Hospedajes o, en Euskadi, a la Ertzaintza, una vez lo activamos contigo). Tú no mueves un dedo.
 
 Ventaja adicional: el huésped ya ha llegado **antes de llegar**. Cuando se presenta, tiene el código, las instrucciones y ya te ha dejado los datos legales. Reduce tensión al check-in real y elimina totalmente la necesidad de quedar en persona.
 
@@ -84,7 +84,7 @@ No confundir con "mandar un mensaje a las 10:00 del día de entrada". Un sistema
 - Confirmación cuando entra la reserva.
 - Recordatorio 3 días antes con las instrucciones detalladas.
 - Código de acceso el día de entrada, cuando el check-in está verificado.
-- Recordatorio de checkout a las 10h del día de salida.
+- Recordatorio de checkout a las 10:00 del día de salida.
 - Petición de reseña 2 horas después del checkout.
 
 Y cada mensaje se adapta al canal del huésped (WhatsApp o chat de Airbnb y Booking) y a su idioma.

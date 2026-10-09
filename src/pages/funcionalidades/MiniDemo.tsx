@@ -34,6 +34,7 @@ interface Props {
 }
 
 export default function MiniDemo({ slug }: Props) {
+  const { t } = useTranslation('demos');
   // Prioritat 1: component React nadiu
   const ReactDemo = REACT_DEMOS[slug];
   if (ReactDemo) {
@@ -185,7 +186,7 @@ export default function MiniDemo({ slug }: Props) {
               animation: 'pulse 1.8s ease-in-out infinite',
             }}
           />
-          DEMO EN VIVO
+          {t('comu.demoEnViu')}
         </motion.div>
       </motion.div>
 

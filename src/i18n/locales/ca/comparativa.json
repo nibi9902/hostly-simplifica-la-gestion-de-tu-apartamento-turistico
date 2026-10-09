@@ -13,8 +13,8 @@
     "who_chekin_p2": "El seu focus és el check-in i el compliment legal. Per a reserves, missatges, neteges i preus, el normal és combinar-lo amb altres eines.",
     "who_hostly_eyebrow": "Hostly",
     "who_hostly_heading": "L'app que ho aplega tot en un sol lloc",
-    "who_hostly_p1": "Hostly inclou gratis per sempre el check-in online, el registre de viatgers a la policia i la taxa turística. A Catalunya, el registre va als Mossos cada dia, sense que hagis de fer res; fora de Catalunya, activem SES.Hospedajes amb tu quan et dones d'alta. Amb Hostly Complet, la mateixa app gestiona també reserves, missatges, neteges, preus i finances.",
-    "who_hostly_p2": "Una app i una sola factura per pis.",
+    "who_hostly_p1": "Hostly inclou gratis per sempre el check-in online, el registre de viatgers a la policia i la taxa turística de Catalunya. A Catalunya, el registre va als Mossos cada dia, sense que hagis de fer res; a la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui. Amb Hostly Complet, la mateixa app gestiona també reserves, missatges, neteges, preus i finances.",
+    "who_hostly_p2": "Una app i una sola factura.",
     "table_heading": "Comparativa directa",
     "table_col_feature": "Funcionalitat",
     "table_col_hostly": "Hostly",
@@ -32,7 +32,7 @@
         "feature": "Mossos d'Esquadra (Catalunya)"
       },
       {
-        "feature": "Taxa turística"
+        "feature": "Taxa turística (Catalunya)"
       },
       {
         "feature": "Pla gratis per sempre"
@@ -72,7 +72,7 @@
     "cost_hostly_label": "Amb Hostly",
     "cost_hostly_row1_label": "Hostly Complet (40 € × 12 mesos)",
     "cost_hostly_row1_value": "480 €/any",
-    "cost_hostly_row2_label": "Check-in + registre policial + taxa",
+    "cost_hostly_row2_label": "Check-in + registre policial + taxa (Catalunya)",
     "cost_hostly_row2_value": "Gratis",
     "cost_hostly_row3_label": "Channel manager (Airbnb i Booking)",
     "cost_hostly_row3_value": "Inclòs",
@@ -84,7 +84,7 @@
     "faqs": [
       {
         "q": "Hostly fa el mateix que Chekin?",
-        "a": "Per al check-in online i el registre de viatgers, sí. Hostly l'inclou gratis per sempre, juntament amb el càlcul de la taxa turística. A Catalunya envia el registre als Mossos cada dia, de manera automàtica; fora de Catalunya, la connexió amb SES.Hospedajes l'activem amb tu quan et dones d'alta. Hostly Complet hi afegeix reserves, missatges, neteges i preus."
+        "a": "Per al check-in online i el registre de viatgers, sí. Hostly l'inclou gratis per sempre, juntament amb el càlcul de la taxa turística de Catalunya. A Catalunya envia el registre als Mossos cada dia, de manera automàtica; a la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui. Hostly Complet hi afegeix reserves, missatges, neteges i preus."
       },
       {
         "q": "Quant m'estalvio si passo de Chekin a Hostly?",
@@ -92,7 +92,7 @@
       },
       {
         "q": "Perdo dades o reserves si migro des de Chekin?",
-        "a": "No. Mentre configurem Hostly amb tu el primer mes, Chekin pot seguir actiu. Quan comproves que el registre ja surt des de Hostly, dones de baixa Chekin."
+        "a": "No. Pots mantenir Chekin mentre proves Hostly; quan vegis que el registre ja surt des de Hostly, el dones de baixa."
       }
     ],
     "cta_heading": "Check-in gratis per sempre.\nI molt més.",

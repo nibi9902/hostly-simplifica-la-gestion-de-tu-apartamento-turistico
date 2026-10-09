@@ -67,7 +67,7 @@ Imprescindible. Con 3 limpiadoras y 10 apartamentos, la asignación manual se ro
 
 Con 40-60 registros al mes, hacerlo manual es inviable y peligroso (errores = sanciones). Debe enviarse desde el check-in online directamente.
 
-**Cómo**: un PMS que lo envíe desde el check-in online, Chekin integrado o Hostify. Hostly envía el registro de viajeros a los Mossos d'Esquadra cada día y guarda el comprobante; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
+**Cómo**: un PMS que lo envíe desde el check-in online, Chekin integrado o Hostify. Hostly envía el registro de viajeros a los Mossos d'Esquadra cada día y guarda el comprobante; en el resto de España, activamos contigo la conexión con la policía que te toque.
 
 ### 5. Precios dinámicos
 
@@ -140,7 +140,7 @@ Pasar de avisar una limpiadora por WhatsApp a 3 limpiadoras con app requiere for
 
 ### 4. No medir
 
-Si no sabes cuánto tiempo dedicas por apartamento, qué % de mensajes responde la IA, cuál es el ingreso medio por noche después de activar los precios dinámicos, no puedes optimizar. El panel del PMS te da todo esto.
+Si no sabes cuánto tiempo dedicas por apartamento, qué porcentaje de mensajes responde la IA, cuál es el ingreso medio por noche después de activar los precios dinámicos, no puedes optimizar. El panel del PMS te da todo esto.
 
 ### 5. No delegar nunca
 
@@ -150,12 +150,12 @@ Hay personas que llegan a 10 apartamentos operando solos. A partir de 10, delega
 
 Señales de que necesitas ayuda:
 
-- **Más de 10-12h/semana** dedicadas aunque tengas el sistema.
+- **Más de 10-12 h/semana** dedicadas aunque tengas el sistema.
 - Respondes mensajes fuera de horario laboral habitualmente.
 - No tienes tiempo para mejorar (fotos, descripciones, nuevas propiedades).
 - Los errores empiezan a ser sistemáticos.
 
-La primera persona a contratar suele ser **gestor operativo a tiempo parcial** (10-15h/semana) o **responsable de limpiezas** si tu equipo es grande. No hace falta contrato laboral desde el día 1: puede ser colaboración autónoma.
+La primera persona a contratar suele ser **gestor operativo a tiempo parcial** (10-15 h/semana) o **responsable de limpiezas** si tu equipo es grande. No hace falta contrato laboral desde el día 1: puede ser colaboración autónoma.
 
 ## Resumen: checklist antes de pasar de 3 a 10
 
@@ -166,4 +166,4 @@ La primera persona a contratar suele ser **gestor operativo a tiempo parcial** (
 - [ ] Precios dinámicos activados con límites.
 - [ ] Panel mensual revisado: ingresos, ocupación, tiempo dedicado, incidencias.
 
-Con esto, 10 apartamentos se gestionan con 5-8h/semana. Sin esto, 10 apartamentos se gestionan con 25-35h/semana y mucho estrés.
+Con esto, 10 apartamentos se gestionan con 5-8 h/semana. Sin esto, 10 apartamentos se gestionan con 25-35 h/semana y mucho estrés.

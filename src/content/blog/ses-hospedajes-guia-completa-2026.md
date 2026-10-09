@@ -31,7 +31,7 @@ faqs:
   - question: "¿Cuánto es la multa por no registrar a un huésped?"
     answer: "Las sanciones van de 100 € hasta 30.000 € según la gravedad. En la práctica, la mayoría de expedientes se abren por no registrar de forma sistemática, no por fallos puntuales. Lo relevante es demostrar un proceso consistente."
   - question: "¿Puedo delegar el registro en una plataforma automática?"
-    answer: "Sí, y es lo recomendable. Hostly, por ejemplo, envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, con los datos que el huésped introduce en el check-in online, y guarda el comprobante. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta."
+    answer: "Sí, y es lo recomendable. Hostly, por ejemplo, envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, con los datos que el huésped introduce en el check-in online, y guarda el comprobante. En el resto de España, activamos contigo la conexión con la policía que te toque: SES.Hospedajes o, en Euskadi, la Ertzaintza."
   - question: "¿Qué datos exactos hay que recoger del huésped?"
     answer: "Los 14 datos incluyen: nombre completo, documento de identidad (tipo y número), fecha de expedición, fecha de nacimiento, nacionalidad, sexo, domicilio, teléfono, email, fecha de check-in y check-out, relación entre adultos, número de habitación y datos del pago. Para menores se añade el parentesco con el adulto responsable."
 ---
@@ -96,12 +96,12 @@ El proceso oficial es:
 2. **Identifícate con certificado digital o Cl@ve**. Si no tienes certificado, este es el primer requisito: sin él no puedes registrar ni consultar.
 3. **Da de alta tu establecimiento**. Necesitarás el número de licencia turística (HUT, VFT, VT, etc.), el nombre del titular y los datos fiscales.
 4. **Registra tu CIF/NIF como responsable del hospedaje**. Si eres autónomo, es tu NIF. Si es sociedad, es el CIF.
-5. **Una vez aprobado** (tarda entre 24-72 horas), puedes empezar a enviar partes.
+5. **Una vez aprobado** (tarda entre 24 y 72 horas), puedes empezar a enviar partes.
 
 Después de darte de alta tienes dos vías para enviar los datos:
 
 - **Manual**: entras en la web, rellenas los 14 datos por cada huésped, envías. Funciona para volúmenes muy pequeños. Es lento y propenso a errores.
-- **API / integración automática**: una plataforma de gestión conecta con SES y envía los datos automáticamente cuando se completa el check-in online. Es lo que hacen las herramientas especializadas en check-in. Hostly lo hace hoy con los Mossos d'Esquadra; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
+- **API / integración automática**: una plataforma de gestión conecta con SES y envía los datos automáticamente cuando se completa el check-in online. Es lo que hacen las herramientas especializadas en check-in. Hostly lo hace hoy con los Mossos d'Esquadra; en el resto de España, activamos contigo la conexión con la policía que te toque (SES.Hospedajes o, en Euskadi, la Ertzaintza).
 
 ## Cataluña y País Vasco: SES no es suficiente
 
@@ -145,7 +145,7 @@ Son plataformas que hacen **solo** check-in online + envío a la policía. El hu
 
 ### Opción B: PMS con el registro de viajeros integrado (tipo Hostly)
 
-Un PMS (Property Management System) moderno incluye el check-in online y el registro de viajeros como una función más dentro del sistema. En Hostly funciona así: cuando entra una reserva de Airbnb o Booking, el huésped recibe su enlace de check-in por WhatsApp o por el chat de la plataforma. Rellena sus datos desde el móvil antes de llegar y Hostly valida cada campo. Después, Hostly envía el registro a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta. Tú ves el estado del registro en el mismo panel donde ves el calendario, la limpieza y los mensajes.
+Un PMS (Property Management System) moderno incluye el check-in online y el registro de viajeros como una función más dentro del sistema. En Hostly funciona así: cuando entra una reserva de Airbnb o Booking, el huésped recibe su enlace de check-in por WhatsApp o por el chat de la plataforma. Rellena sus datos desde el móvil antes de llegar y Hostly valida cada campo. Después, Hostly envía el registro a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. En el resto de España, activamos contigo la conexión con la policía que te toque: SES.Hospedajes o, en Euskadi, la Ertzaintza. Tú ves el estado del registro en el mismo panel donde ves el calendario, la limpieza y los mensajes.
 
 **La ventaja de la opción B**: no duplicas herramientas. Si el huésped no ha hecho el check-in, recibe un recordatorio automático. Si un registro falla, Hostly te avisa. No pagas dos suscripciones para lo mismo.
 

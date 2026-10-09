@@ -39,7 +39,7 @@ const VALIDES = [
 
 // Textos que no poden sortir enlloc (el que no és cert o ja no existeix)
 const PROHIBITS = {
-  comu: [/14 d[ií]as/i, /14 dies/i, /\b37 ?€/, /€ ?37\b/, /Superhog/i, /Akeero/i, /\b5 idiom(as|es)\b/i, /25 idiomas/i, /Evolution API|vía Evolution/i,
+  comu: [/14 d[ií]as (gratis|de prueba)|prueba de 14/i, /14 dies (gratis|de prova)|prova de 14/i, /\b37 ?€/, /€ ?37\b/, /Superhog/i, /Akeero/i, /\b5 idiom(as|es)\b/i, /25 idiomas/i, /Evolution API|vía Evolution/i,
     /asesora|assessora/i, /coach personal/i, /revisión previa|revisió prèvia/i, /firma digital|signatura digital/i, /Probar 14|Provar 14/i,
     /los únicos en España|els únics a Espanya/i, /\{\{|\}\}/, /undefined|NaN €|\[object Object\]/,
     // Auditoria de textos del 09-10-2026: el que no és cert o no es pot defensar
@@ -78,7 +78,9 @@ const CLAU_I18N = /\b(?:hero|pain|steps|pricing|faq|final_cta|glass_cards|testim
         p.on('response', (r) => { const u = r.url(); if (u.startsWith(BASE) && r.status() >= 400) fallades.push(`${r.status()} ${u.replace(BASE, '')}`); });
         let ok = true;
         try {
-          await p.goto(url, { waitUntil: 'networkidle', timeout: 45000 });
+          // «load» i després, si pot, xarxa quieta (/demo té un vídeo que no para mai de baixar)
+          await p.goto(url, { waitUntil: 'load', timeout: 45000 });
+          await p.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
         } catch (e) { ok = false; errors.push('goto: ' + String(e).slice(0, 160)); }
         await p.waitForTimeout(ruta === '' ? 3500 : 900);
         // Baixar per activar les animacions «whileInView»

@@ -320,7 +320,10 @@ export default function Calcula() {
                         {(r.usas ?? []).includes("gestoria") && (
                           <li className="py-3 flex items-start justify-between gap-4 text-sm">
                             <span className="font-semibold text-foreground">{t("calcula.resultado.detalle_gestoria")}</span>
-                            <span className="text-foreground/80 text-right">{t("calcula.resultado.detalle_gestoria_hostly")}</span>
+                            <span className="text-foreground/80 text-right">
+                              {/* La taxa que calcula Hostly és la de Catalunya: fora, la gestoria segueix igual */}
+                              {r.donde === "catalunya" ? t("calcula.resultado.detalle_gestoria_hostly") : t("calcula.resultado.detalle_gestoria_otra")}
+                            </span>
                           </li>
                         )}
                         <li className="py-3 flex items-start justify-between gap-4 text-sm">

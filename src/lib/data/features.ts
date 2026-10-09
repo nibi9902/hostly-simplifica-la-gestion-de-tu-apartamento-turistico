@@ -55,13 +55,13 @@ export const FEATURES: Feature[] = [
       'Contesta a tus huéspedes por WhatsApp, 24/7 y en su idioma, con la información de cada piso. Te avisa solo cuando hace falta una persona.',
     hero: {
       h1: 'Un agente que responde por WhatsApp mientras tú no miras el móvil',
-      sub: 'Contesta dudas de check-in, normas, Wi-Fi o incidencias con la información de cada piso. La mayoría, al instante. El resto te lo pasa a ti.',
+      sub: 'Contesta dudas de check-in, normas, wifi o incidencias con la información de cada piso. La mayoría, al instante. El resto te lo pasa a ti.',
       primaryCta: 'Empezar',
       secondaryCta: 'Ver precios',
     },
     problem: {
       title: 'Tu móvil no debería sonar a las 2 de la mañana por preguntar dónde está el garaje',
-      body: 'Gestionar pisos turísticos acaba siendo responder las mismas preguntas todo el día. El Wi-Fi, cómo abrir la puerta, si pueden entrar antes. Multiplícalo por tres pisos y un fin de semana lleno: ya no descansas.',
+      body: 'Gestionar pisos turísticos acaba siendo responder las mismas preguntas todo el día. El wifi, cómo abrir la puerta, si pueden entrar antes. Multiplícalo por tres pisos y un fin de semana lleno: ya no descansas.',
     },
     howItWorks: [
       {
@@ -72,7 +72,7 @@ export const FEATURES: Feature[] = [
       {
         step: 2,
         title: 'Rellenas la ficha de cada piso',
-        body: 'Wi-Fi, cómo entrar, normas, parking, recomendaciones. La IA responde con eso y con los datos de la reserva: piso, fechas y huéspedes.',
+        body: 'El wifi, cómo entrar, normas, parking, recomendaciones. La IA responde con eso y con los datos de la reserva: piso, fechas y huéspedes.',
       },
       {
         step: 3,
@@ -404,7 +404,7 @@ export const FEATURES: Feature[] = [
       secondaryCta: 'Ver precios',
     },
     problem: {
-      title: 'El precio fijo te deja dinero sobre la mesa',
+      title: 'El precio fijo te hace perder dinero',
       body: 'Poner el mismo precio todo el año pierde ingresos en temporada alta y te deja vacío en baja. Revisar precios a mano cada semana es una tarea que nunca se acaba. Y tener los precios en una app y el calendario en otra es una cosa más que vigilar.',
     },
     howItWorks: [
@@ -600,7 +600,7 @@ export const FEATURES: Feature[] = [
       'Tres papeles claros: gestor, limpieza y propietario',
       'Permisos por piso: cada gestor lleva los pisos que le das',
       'Propietarios en solo lectura: calendario y finanzas',
-      'Cada uno ve lo suyo: la limpieza, limpiezas; el gestor, reservas',
+      'En la app, cada uno ve lo suyo: la limpieza, sus limpiezas; el gestor, sus reservas',
       'Sin límite de usuarios',
       'El huésped no necesita cuenta: recibe un enlace de su estancia',
     ],

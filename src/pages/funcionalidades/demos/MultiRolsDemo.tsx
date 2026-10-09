@@ -613,9 +613,7 @@ export default function MultiRolsDemo() {
   const propietariFrame = usePlaybackFrame(PROPIETARI_FRAMES, FPS, view === 'propietari', containerRef);
   const netejadoraFrame = usePlaybackFrame(NETEJADORA_FRAMES, FPS, view === 'netejadora', containerRef);
 
-  const chromeUrl = view === 'propietari'
-    ? 'app.hostlylabs.com · Propietario'
-    : 'app.hostlylabs.com · Limpieza';
+  const chromeUrl = `app.hostlylabs.com · ${view === 'propietari' ? t('multiRols.tabOwner') : t('multiRols.tabCleaning')}`;
 
   return (
     <div ref={containerRef} style={{ position: 'relative', width: '100%', maxWidth: '520px', margin: '0 auto' }}>

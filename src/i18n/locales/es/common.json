@@ -84,11 +84,11 @@
       },
       {
         "title": "La opción por defecto es correcta",
-        "body": "El 95% de las configuraciones tienen que funcionar sin tocar nada. Hostly toma decisiones por ti cuando la respuesta es obvia."
+        "body": "El 95 % de las configuraciones tienen que funcionar sin tocar nada. Hostly toma decisiones por ti cuando la respuesta es obvia."
       },
       {
         "title": "Proactivo, no reactivo",
-        "body": "No te avisamos cuando el problema ya ha pasado. Te avisamos antes. El registro de viajeros que ha fallado. El plazo de la tasa turística que se acaba de abrir."
+        "body": "Te avisamos a tiempo: el registro de viajeros que ha fallado, el plazo de la tasa turística que se acaba de abrir. Para que llegues antes de que sea un problema."
       },
       {
         "title": "Pensado para España",
@@ -100,7 +100,7 @@
     "contact_cta_start": "Empezar"
   },
   "demo": {
-    "meta_title": "Demo — Hostly",
+    "meta_title": "Vídeo: así funciona Hostly",
     "meta_description": "Mira cómo funciona Hostly en 1 minuto. Check-in automático, limpiezas coordinadas, mensajes con IA y finanzas desde una sola app.",
     "eyebrow": "Vídeo · 1 minuto",
     "heading": "Así funciona Hostly.",
@@ -128,7 +128,7 @@
     ]
   },
   "guia": {
-    "meta_title": "Super Guía de gestión de apartamentos turísticos 2026 | Hostly",
+    "meta_title": "Superguía de gestión de apartamentos turísticos 2026 | Hostly",
     "meta_description": "La guía completa y actualizada para propietarios y gestores de apartamentos turísticos en España. Obligaciones legales, herramientas, operativa y más.",
     "badge_guide": "Guía completa",
     "badge_updated": "Actualizada 2026",
@@ -136,7 +136,7 @@
     "intro": "Desde las obligaciones legales hasta las herramientas del día a día. Esta guía cubre todo lo que necesita saber un propietario o gestor de apartamentos turísticos en España en 2026. La vamos actualizando a medida que cambia la normativa y el mercado.",
     "stats_chapters": "8 capítulos",
     "stats_resources": "{{count}} recursos enlazados",
-    "stats_updated": "Actualizada abril 2026",
+    "stats_updated": "Revisada en octubre de 2026",
     "toc_label": "Índice de contenidos",
     "cta_eyebrow": "Para propietarios que quieren sistema, no caos",
     "cta_heading": "Deja de gestionar 5 apps.\nEmpieza hoy con Hostly.",
@@ -179,7 +179,7 @@
         "id": "gestion-reservas",
         "num": "02",
         "title": "Gestión de reservas y calendarios",
-        "description": "Cómo sincronizar Airbnb y Booking sin dobles reservas, gestionar disponibilidad y cobrar automáticamente.",
+        "description": "Cómo sincronizar Airbnb y Booking sin dobles reservas y gestionar la disponibilidad.",
         "links": [
           {
             "label": "Channel manager: guía para elegir el correcto",
@@ -262,7 +262,7 @@
         "description": "Qué herramientas necesitas realmente, cuáles puedes eliminar y cómo consolidar todo en una sola app.",
         "links": [
           {
-            "label": "El stack real del propietario Airbnb en 2026",
+            "label": "Las herramientas reales del propietario de Airbnb en 2026",
             "href": "/blog/stack-completo-propietario-airbnb"
           },
           {

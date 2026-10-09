@@ -17,7 +17,7 @@ relatedSlugs:
   - "huesped-no-responde-checkin-online"
 faqs:
   - question: "¿Puede Airbnb detectar que uso respuestas automáticas y penalizarme?"
-    answer: "No. Airbnb tiene sus propias respuestas rápidas integradas y las recomienda. Lo que penaliza es tardar más de 24h en responder, no usar plantillas o IA."
+    answer: "No. Airbnb tiene sus propias respuestas rápidas integradas y las recomienda. Lo que penaliza es tardar más de 24 h en responder, no usar plantillas o IA."
   - question: "¿Cuántos mensajes al día se pueden automatizar?"
     answer: "La mayoría. Las preguntas rutinarias (hora, wifi, aparcamiento, normas) se automatizan bien. El resto son consultas que requieren tu criterio."
   - question: "¿Qué pasa si la IA se equivoca en una respuesta?"
@@ -79,7 +79,7 @@ Escoge uno y sé consistente. Mezclar estilos suena a bot.
 > "Existe disponibilidad de estacionamiento público en las proximidades."
 
 **Bien**:
-> "Sí, en la calle hay zona azul desde 9 a 14h. El parking del centro comercial a 3 min está bien para dejar el coche todo el día (unos 8 €/día). Te mando la ubicación exacta con las instrucciones de llegada."
+> "Sí, en la calle hay zona azul de 9:00 a 14:00. El parking del centro comercial a 3 min está bien para dejar el coche todo el día (unos 8 €/día). Te mando la ubicación exacta con las instrucciones de llegada."
 
 ### Pregunta: "¿Cuál es la clave del wifi?"
 
@@ -119,7 +119,7 @@ Las herramientas de IA para huéspedes suelen hacerlo por defecto. En Hostly, la
 
 ### 1-3 apartamentos: respuestas guardadas de Airbnb + disciplina
 
-Las respuestas guardadas de Airbnb son suficientes. Crea 20-25 plantillas y úsalas con 2 segundos de personalización ("Hola Marta" al inicio).
+Las respuestas guardadas de Airbnb son suficientes mientras llegues a contestar a tiempo; si no, te conviene una IA. Crea 20-25 plantillas y úsalas con 2 segundos de personalización ("Hola Marta" al inicio).
 
 ### 3-10 apartamentos: IA sobre Airbnb
 

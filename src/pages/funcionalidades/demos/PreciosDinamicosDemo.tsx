@@ -229,7 +229,7 @@ function PreciosDinamicosView({ frame, fps }: { frame: number; fps: number }) {
               <Sparkles size={11} color="#fff" strokeWidth={2.4} />
             </div>
             <div style={{ fontSize:9, fontWeight:700, color:colors.mutedFg, letterSpacing:0.8 }}>
-              HOSTLY IA
+              PRICELABS
             </div>
             <div style={{ marginLeft:'auto', fontSize:9, color:colors.meta }}>{t('precios.notifNow')}</div>
           </div>

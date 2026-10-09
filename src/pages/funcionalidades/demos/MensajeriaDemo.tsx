@@ -145,20 +145,20 @@ function ChatView({ frame, fps }: { frame: number; fps: number }) {
 
       <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
 
-        <DaySep frame={frame} fps={fps} enterFrame={10} label="22 abr. · Al confirmar la reserva" />
+        <DaySep frame={frame} fps={fps} enterFrame={10} label={t('mensajeria.diaConfirmar')} />
 
         <AiBubble frame={frame} fps={fps} enterFrame={18}
-          text={'✨ **¡Bienvenido David!**\n\nQué ilusión tenerte en tu casa para estos días 😊\n\n· Check-in autónomo a las **15:00**\n· Check-out antes de las **11:00**\n· Caja fuerte: **432126**\n\n¡Disfruta mucho! 😊'}
+          text={t('mensajeria.missatgeBenvinguda')}
           time="15:31"
           channels={<div style={{ display:'flex', gap:4 }}><WaBadge /><OtaBadge name="Booking.com" color="#003580" bg="#EEF4FF" border="#BFDBFE" /></div>}
         />
 
-        <DaySep frame={frame} fps={fps} enterFrame={68} label="25 abr. · 1 día antes del check-in" />
+        <DaySep frame={frame} fps={fps} enterFrame={68} label={t('mensajeria.diaAbans')} />
 
         <Typing frame={frame} fps={fps} enterFrame={76} exitFrame={92} label={t('mensajeria.typingLabel')} />
 
         <AiBubble frame={frame} fps={fps} enterFrame={94}
-          text={'📋 **Instrucciones de acceso**\n\nPortal del edificio: **#2847**\nPiso 3º izquierda · ascensor disponible\n\nCualquier duda, escríbeme 🙌'}
+          text={t('mensajeria.missatgeAcces')}
           time="09:00"
           channels={<div style={{ display:'flex', gap:4 }}><WaBadge /><OtaBadge name="Booking.com" color="#003580" bg="#EEF4FF" border="#BFDBFE" /></div>}
         />
@@ -190,14 +190,14 @@ function PlantillasView({ frame, fps }: { frame: number; fps: number }) {
   const limpiezaActive = tabSwitchP > 0.5;
 
   const HOSTES_TEMPLATES = [
-    { label: t('mensajeria.templateWelcome'),       preview:'✨ ¡Bienvenido David! Qué ilusión tenerte…',      timing: t('mensajeria.timingOnConfirm'),    timingColor:colors.primary, timingBg:colors.primarySoft },
-    { label: t('mensajeria.templateCheckin'),       preview:'El check-in es autónomo a partir de las 15:00…', timing: t('mensajeria.timing1DayCheckin'),  timingColor:'#7C3AED',      timingBg:'#F5F3FF'           },
-    { label: t('mensajeria.templateDataReminder'),  preview:'Hola David! 👋 Necesitamos que nos envíes…',     timing: t('mensajeria.timing3DaysCheckin'), timingColor:'#D97706',      timingBg:'#FFFBEB'           },
-    { label: t('mensajeria.templateCheckout'),      preview:'Recuerda que el check-out debe hacerse antes…',  timing: t('mensajeria.timingCheckoutDay'),  timingColor:'#16A34A',      timingBg:'#ECFDF5'           },
+    { label: t('mensajeria.templateWelcome'),       preview:t('mensajeria.previews.benvinguda'),      timing: t('mensajeria.timingOnConfirm'),    timingColor:colors.primary, timingBg:colors.primarySoft },
+    { label: t('mensajeria.templateCheckin'),       preview:t('mensajeria.previews.checkin'), timing: t('mensajeria.timing1DayCheckin'),  timingColor:'#7C3AED',      timingBg:'#F5F3FF'           },
+    { label: t('mensajeria.templateDataReminder'),  preview:t('mensajeria.previews.dades'),     timing: t('mensajeria.timing3DaysCheckin'), timingColor:'#D97706',      timingBg:'#FFFBEB'           },
+    { label: t('mensajeria.templateCheckout'),      preview:t('mensajeria.previews.checkout'),  timing: t('mensajeria.timingCheckoutDay'),  timingColor:'#16A34A',      timingBg:'#ECFDF5'           },
   ];
   const NETEJA_TEMPLATES = [
-    { label: t('mensajeria.templateNewCleaning'),      preview:'Hola Eva, hay una nueva reserva en Luminoso…',    timing: t('mensajeria.timingOnConfirm'),      timingColor:colors.primary, timingBg:colors.primarySoft },
-    { label: t('mensajeria.templateCancelledCleaning'),preview:'Hola Eva, la reserva prevista ha sido cancelada…', timing: t('mensajeria.timingOnCancel'),       timingColor:'#DC2626',      timingBg:'#FEF2F2'           },
+    { label: t('mensajeria.templateNewCleaning'),      preview:t('mensajeria.previews.netejaNova'),    timing: t('mensajeria.timingOnConfirm'),      timingColor:colors.primary, timingBg:colors.primarySoft },
+    { label: t('mensajeria.templateCancelledCleaning'),preview:t('mensajeria.previews.netejaCancel'), timing: t('mensajeria.timingOnCancel'),       timingColor:'#DC2626',      timingBg:'#FEF2F2'           },
     { label: t('mensajeria.templateCleaningReminder'), preview:'Recuerda que mañana hay limpieza a las 11:00…',   timing: t('mensajeria.timing1DayCheckout'),   timingColor:'#D97706',      timingBg:'#FFFBEB'           },
   ];
 

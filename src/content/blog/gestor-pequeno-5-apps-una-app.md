@@ -99,7 +99,7 @@ Comparado con el stack fragmentado habitual (unos 120-265 € al mes, más gesto
 
 Lo que incluye Hostly Completo:
 
-- Check-in online y registro de viajeros a la policía (con los Mossos d'Esquadra, automático cada día; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta)
+- Check-in online y registro de viajeros a la policía (con los Mossos d'Esquadra, automático cada día; en el resto de España, activamos contigo la conexión con la policía que te toque)
 - Precios al día con PriceLabs integrado
 - Tasa turística de Cataluña calculada por estancia, lista para declarar cada semestre
 - Airbnb y Booking.com conectados en un solo calendario

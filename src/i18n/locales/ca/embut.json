@@ -5,7 +5,7 @@
     "meta_desc": "Tres dades i tries com començar: gratis amb el check-in i la policia, o Hostly Complet amb el primer mes gratis.",
     "paso": "Pas {{n}} de 3",
     "atras": "Enrere",
-    "inicio": "Tornar a la web",
+    "inicio": "Tornar al web",
     "datos": {
       "titulo": "Comencem.",
       "subtitulo": "Tres dades i tries com començar.",
@@ -17,7 +17,7 @@
       "correo": "Correu",
       "correo_placeholder": "anna@gmail.com",
       "continuar": "Continuar",
-      "privacidad_antes": "En continuar acceptes la",
+      "privacidad_antes": "En enviar les teves dades, acceptes que et truquem o t'escrivim sobre Hostly. Més informació a la",
       "privacidad_link": "política de privacitat"
     },
     "error": {
@@ -50,7 +50,7 @@
     },
     "gratis": {
       "titulo": "Tot a punt, {{nombre}}.",
-      "subtitulo": "Crea el teu compte i en un minut tindràs el teu enllaç de check-in.",
+      "subtitulo": "Crea el teu compte i en uns minuts tindràs el teu enllaç de check-in.",
       "boton": "Crear el meu compte gratis",
       "nota": "Et portem a app.hostlylabs.com. Si t'encalles, et truquem."
     },
@@ -136,6 +136,7 @@
       "detalle_excel_hostly": "Finances i liquidacions, dins de Hostly",
       "detalle_gestoria": "Gestoria",
       "detalle_gestoria_hostly": "La taxa turística, calculada i llesta per a la teva gestoria",
+      "detalle_gestoria_otra": "La part fiscal, amb la teva gestoria com fins ara",
       "detalle_por_piso": "{{euros}} €/mes per pis",
       "detalle_horas": "Missatges, neteges i registres",
       "detalle_horas_hostly": "La IA contesta, les neteges s'avisen i els registres surten sols",

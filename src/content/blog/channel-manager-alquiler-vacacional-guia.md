@@ -57,7 +57,7 @@ Mucha gente confunde los términos. La diferencia clara:
 - **Channel manager**: gestiona canales. Calendario, precios, disponibilidad, conexión OTA.
 - **PMS**: gestiona todo lo operativo. Channel manager + check-in + limpiezas + mensajería + precios dinámicos + facturación + cumplimiento legal.
 
-Los **PMS modernos incluyen channel manager**. Por eso la discusión real de 2026 no es "channel manager sí o no", sino **"¿channel manager independiente o PMS que lo incluye?"**. Para un propietario con más de 2 apartamentos, el PMS con channel manager integrado casi siempre gana: menos herramientas, más integración, mismo precio o menor.
+Los **PMS modernos incluyen channel manager**. Por eso la discusión real de 2026 no es "channel manager sí o no", sino **"¿channel manager independiente o PMS que lo incluye?"**. Para un propietario con más de 2 apartamentos, el PMS con channel manager integrado casi siempre gana: menos herramientas, más integración.
 
 ## Conexión iCal vs conexión API
 

@@ -15,13 +15,13 @@ export const FEATURES_CA: Feature[] = [
       'Contesta els teus hostes per WhatsApp, 24/7 i en el seu idioma, amb la informació de cada pis. T\'avisa només quan cal una persona.',
     hero: {
       h1: 'Un agent que respon per WhatsApp mentre tu no mires el mòbil',
-      sub: 'Contesta dubtes de check-in, normes, Wi-Fi o incidències amb la informació de cada pis. La majoria, a l\'instant. La resta te la passa a tu.',
+      sub: 'Contesta dubtes de check-in, normes, wifi o incidències amb la informació de cada pis. La majoria, a l\'instant. La resta te la passa a tu.',
       primaryCta: 'Començar',
       secondaryCta: 'Veure preus',
     },
     problem: {
       title: 'El teu mòbil no hauria de sonar a les 2 de la matinada per preguntar on és el garatge',
-      body: 'Gestionar pisos turístics acaba sent respondre les mateixes preguntes tot el dia. El Wi-Fi, com obrir la porta, si poden entrar abans. Multiplica-ho per tres pisos i un cap de setmana ple: ja no descanses.',
+      body: 'Gestionar pisos turístics acaba sent respondre les mateixes preguntes tot el dia. El wifi, com obrir la porta, si poden entrar abans. Multiplica-ho per tres pisos i un cap de setmana ple: ja no descanses.',
     },
     howItWorks: [
       {
@@ -32,7 +32,7 @@ export const FEATURES_CA: Feature[] = [
       {
         step: 2,
         title: 'Omples la fitxa de cada pis',
-        body: 'Wi-Fi, com entrar, normes, pàrquing, recomanacions. La IA respon amb això i amb les dades de la reserva: pis, dates i hostes.',
+        body: 'El wifi, com entrar, normes, pàrquing, recomanacions. La IA respon amb això i amb les dades de la reserva: pis, dates i hostes.',
       },
       {
         step: 3,
@@ -214,7 +214,7 @@ export const FEATURES_CA: Feature[] = [
       {
         step: 4,
         title: 'I les teves reserves directes, també',
-        body: 'Les que t\'arriben per telèfon les apuntes en un moment. I si vols web pròpia amb reserves directes, la muntem amb tu, a mida.',
+        body: 'Les que t\'arriben per telèfon les apuntes en un moment. I si vols un web propi amb reserves directes, el muntem amb tu, a mida.',
       },
     ],
     advantages: [
@@ -244,7 +244,7 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Quines plataformes connecteu?',
         answer:
-          'Airbnb i Booking.com. Les reserves directes també entren al mateix calendari; si vols web pròpia amb reserves, la muntem a mida.',
+          'Airbnb i Booking.com. Les reserves directes també entren al mateix calendari; si vols un web propi amb reserves, el muntem a mida.',
       },
       {
         question: 'Necessito un altre channel manager?',
@@ -364,7 +364,7 @@ export const FEATURES_CA: Feature[] = [
       secondaryCta: 'Veure preus',
     },
     problem: {
-      title: 'El preu fix et deixa diners sobre la taula',
+      title: 'El preu fix et fa perdre diners',
       body: 'Posar el mateix preu tot l\'any et fa perdre ingressos en temporada alta i et deixa el pis buit en temporada baixa. Revisar preus a mà cada setmana és una feina que no s\'acaba mai. I tenir els preus en una app i el calendari en una altra és una cosa més a vigilar.',
     },
     howItWorks: [
@@ -560,7 +560,7 @@ export const FEATURES_CA: Feature[] = [
       'Tres papers clars: gestor, neteja i propietari',
       'Permisos per pis: cada gestor porta els pisos que li dones',
       'Propietaris només de lectura: calendari i finances',
-      'Cadascú veu el seu: la neteja, neteges; el gestor, reserves',
+      'A l\'app, cadascú veu el seu: la neteja, les seves neteges; el gestor, les seves reserves',
       'Sense límit d\'usuaris',
       'L\'hoste no necessita compte: rep un enllaç de la seva estada',
     ],
@@ -609,16 +609,16 @@ export const FEATURES_CA: Feature[] = [
     name: 'Connecta-ho tot',
     iconName: 'Plug',
     shortDescription:
-      'Automatitzacions a mida: connectem Hostly amb la teva gestoria, la teva web, el teu ERP o el que facis servir. Servei a part, amb quota mensual.',
+      'Automatitzacions a mida: connectem Hostly amb la teva gestoria, el teu web, el teu ERP o el que facis servir. Servei a part, amb quota mensual.',
     hero: {
       h1: 'Automatitzacions a mida: si ho fas servir, ho connectem.',
-      sub: 'Connectem Hostly amb la teva gestoria, la teva web, el teu ERP o el que facis servir. És un servei a part, amb una quota mensual segons el que automatitzem.',
+      sub: 'Connectem Hostly amb la teva gestoria, el teu web, el teu ERP o el que facis servir. És un servei a part, amb una quota mensual segons el que automatitzem.',
       primaryCta: 'Començar',
       secondaryCta: 'Veure preus',
     },
     problem: {
       title: 'Hi ha feines que cap app no fa per tu',
-      body: 'Cada gestor treballa a la seva manera. La gestoria et demana les dades en el seu format, la teva web va per lliure i hi ha feines que repeteixes a mà cada setmana. Cap app no les cobreix totes de sèrie, i acabes fent-les tu per sempre.',
+      body: 'Cada gestor treballa a la seva manera. La gestoria et demana les dades en el seu format, el teu web va per lliure i hi ha feines que repeteixes a mà cada setmana. Cap app no les cobreix totes de sèrie, i acabes fent-les tu per sempre.',
     },
     howItWorks: [
       {
@@ -643,7 +643,7 @@ export const FEATURES_CA: Feature[] = [
       },
     ],
     advantages: [
-      'Connectem Hostly amb la teva gestoria, la teva web, el teu ERP o el que facis servir',
+      'Connectem Hostly amb la teva gestoria, el teu web, el teu ERP o el que facis servir',
       'Ho estudiem amb tu abans de començar',
       'Quota mensual segons el que automatitzem, pactada abans de començar',
       'Avisos i tasques a la mida de la teva manera de treballar',
@@ -656,7 +656,7 @@ export const FEATURES_CA: Feature[] = [
         body: 'Cada mes, la informació que necessita la teva gestoria, en el seu format i sense copiar-la a mà.',
       },
       {
-        title: 'La teva web, connectada',
+        title: 'El teu web, connectat',
         body: 'Si ja tens web, la connectem amb Hostly perquè les reserves directes entrin al mateix calendari.',
       },
       {
@@ -684,7 +684,7 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Què fa Hostly sense aquest servei?',
         answer:
-          'Tot el que veus a les seves funcions, i exporta a Excel i CSV. Aquest servei és per al que va més enllà: la teva gestoria, la teva web, el teu ERP…',
+          'Tot el que veus a les seves funcions, i exporta a Excel i CSV. Aquest servei és per al que va més enllà: la teva gestoria, el teu web, el teu ERP…',
       },
     ],
   },

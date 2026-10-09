@@ -51,7 +51,7 @@ export const NAV_CA: NavConfig = {
             { label: 'Automatitzar amb IA: què funciona', href: '/blog/automatizar-alquiler-vacacional-con-ia',         description: 'Guia honesta del que fa i no fa la IA.' },
             { label: 'De 3 a 10 pisos sense col·lapsar',  href: '/blog/pasar-3-a-10-apartamentos-sin-colapsar',         description: 'Quins sistemes necessites abans de créixer.' },
             { label: 'Quant costa gestionar un pis?',     href: '/blog/cuanto-cuesta-gestionar-piso-turistico',         description: 'Calcula el cost real del teu stack.' },
-            { label: 'L\'stack del propietari el 2026',   href: '/blog/stack-completo-propietario-airbnb',              description: 'Quines eines necessites i quines eliminar.' },
+            { label: 'Les eines del propietari el 2026',   href: '/blog/stack-completo-propietario-airbnb',              description: 'Quines eines necessites i quines eliminar.' },
             { label: 'Respondre missatges a Airbnb',      href: '/blog/responder-mensajes-airbnb-automaticamente',      description: 'Sense convertir-te en un bot.' },
           ],
         },

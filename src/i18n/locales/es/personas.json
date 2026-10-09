@@ -1,7 +1,7 @@
 {
   "propietarios": {
     "meta_title": "Hostly para propietarios de apartamentos turísticos",
-    "meta_description": "Tienes 1, 2 o 3 pisos en Airbnb o Booking. Hostly simplifica todo lo que implica gestionarlos. Check-in, mensajes, limpiezas y registro a la policía. Una sola app.",
+    "meta_description": "Tienes 1 o 2 pisos en Airbnb o Booking. Hostly simplifica todo lo que implica gestionarlos. Check-in, mensajes, limpiezas y registro a la policía. Una sola app.",
     "breadcrumb_label": "Para propietarios",
     "badge": "Para propietarios",
     "h1": "Tienes 1 o 2 pisos.\nNo deberías vivir pendiente de ellos.",
@@ -18,7 +18,7 @@
       },
       {
         "pain": "El registro policial que siempre dejas para última hora",
-        "fix": "El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. Sin logins, sin formularios."
+        "fix": "El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. Sin entrar en ningún portal."
       },
       {
         "pain": "Coordinar a la limpiadora por WhatsApp",
@@ -32,7 +32,7 @@
     "section3_h2": "40 € al mes por piso. Una sola factura.",
     "section3_body": "Reservas, check-in, mensajes, limpiezas y registro a la policía, en una sola app. Y el check-in, gratis para siempre.",
     "cta_h2": "Empieza hoy.",
-    "cta_sub2": "Sin tarjeta. Sin permanencia."
+    "cta_sub2": "Empieza gratis, sin tarjeta. Sin permanencia."
   },
   "gestores": {
     "meta_title": "Hostly para gestores pequeños de apartamentos",
@@ -43,16 +43,16 @@
     "intro": "El channel manager por aquí. Chekin por allá. Excel para los cobros. Un WhatsApp con los huéspedes y otro con las limpiadoras. Hostly lo junta todo en una sola app.",
     "cta_primary": "Empezar",
     "cta_sub": "Sin permanencia. 35 €/apartamento desde 5 pisos.",
-    "section2_h2": "El stack del gestor pequeño hoy.",
-    "section2_sub": "Y lo que cuesta.",
+    "section2_h2": "Las herramientas del gestor pequeño, hoy.",
+    "section2_sub": "Cada una con su factura.",
     "tools": [
       {
         "name": "Channel manager (Smoobu, Hostify…)",
-        "cost": "desde 29 €/mes"
+        "cost": "una cuota que crece con cada piso"
       },
       {
         "name": "Chekin (check-in y registro)",
-        "cost": "desde 3,95 €/mes por piso"
+        "cost": "desde 3,95 € al mes por piso"
       },
       {
         "name": "Plantillas de mensajes o similar",
@@ -63,7 +63,7 @@
         "cost": "Gratis en dinero, carísimo en tiempo"
       }
     ],
-    "hostly_summary": "✅ Con Hostly: 35 € por piso al mes desde 5 pisos. Una app y una sola factura.",
+    "hostly_summary": "✅ Con Hostly: 35 € por piso al mes desde 5 pisos (280 € al mes con 8), con la IA, las limpiezas y los precios dentro. Una app y una sola factura.",
     "cta_h2": "Empieza hoy.",
     "cta_sub2": "35 €/apartamento desde 5 pisos. El primer mes, gratis."
   },
@@ -110,9 +110,9 @@
     "h1": "El piso heredado\nsin quebraderos de cabeza.",
     "intro": "Lo pusiste en Airbnb porque no querías venderlo. Pero ahora tienes mensajes, check-ins, registros policiales y limpiezas que gestionar. Tú tienes otra vida. Hostly se encarga de lo demás.",
     "cta_primary": "Empezar",
-    "cta_sub": "Sin tarjeta. Sin permanencia. Sin aprender nada nuevo.",
+    "cta_sub": "Empieza gratis, sin tarjeta. Sin permanencia. Sin aprender nada nuevo.",
     "section2_h2": "No tienes que ser un experto en alquiler turístico.",
-    "section2_body": "Hostly está pensado para que funcione desde el primer día, sin aprender un software nuevo. El primer mes lo configuramos contigo en una videollamada y después el sistema hace el resto.",
+    "section2_body": "Hostly está pensado para que funcione desde el primer día, sin aprender un software nuevo. En Hostly Completo, el primer mes lo configuramos contigo en una videollamada y después el sistema hace el resto.",
     "features": [
       {
         "icon": "⏱️",
@@ -127,7 +127,7 @@
       {
         "icon": "👤",
         "title": "Soporte humano real",
-        "desc": "Si tienes dudas, el equipo de Hostly te ayuda en español y catalán. Sin bots."
+        "desc": "Si tienes dudas, el equipo de Hostly te ayuda en castellano y catalán. Sin bots."
       }
     ],
     "cta_h2": "Empieza hoy.",

@@ -26,7 +26,7 @@ faqs:
   - question: "¿Qué pasa con mis datos si cambio de PMS?"
     answer: "Todos los PMS modernos permiten exportar tus reservas, huéspedes y facturación en formatos estándar (CSV, JSON) o vía API. Migrar a otro sistema es trabajoso pero posible. Pide siempre a un proveedor la política de exportación antes de contratar."
   - question: "¿Un PMS sustituye a Chekin?"
-    answer: "Depende. Hostly incluye el check-in y el registro a la policía (automático con los Mossos d'Esquadra; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta), así que no necesitas Chekin. Hostify tiene integración con SES. Smoobu o Lodgify se suelen complementar con Chekin. Si quieres todo en uno, elige un PMS que cubra el registro de tu comunidad."
+    answer: "Depende. Hostly incluye el check-in y el registro a la policía (automático con los Mossos d'Esquadra; en el resto de España, activamos contigo la conexión con la policía que te toque), así que no necesitas Chekin. Hostify tiene integración con SES. Smoobu o Lodgify se suelen complementar con Chekin. Si quieres todo en uno, elige un PMS que cubra el registro de tu comunidad."
 ---
 
 Si gestionas apartamentos turísticos y ya has pasado el punto de organizarlo todo con Excel y el calendario de Airbnb, es hora de conocer qué es un PMS y cuándo tiene sentido. Esta guía cubre **qué hace un PMS, en qué se diferencia de otras herramientas, cómo saber si te compensa y los 10 sistemas más relevantes del mercado en 2026** para un propietario o gestor en España.
@@ -43,7 +43,7 @@ Lo que un PMS moderno cubre:
 - **Check-in online + registro legal** (SES.Hospedajes o el sistema de la policía autonómica que toque, como los Mossos en Cataluña).
 - **Coordinación de limpiezas y equipos**: al hacer checkout, se dispara automáticamente la tarea a la persona asignada.
 - **Precios dinámicos** (según el PMS: nativo o vía integración con PriceLabs/Beyond).
-- **Reporting y facturación**: ingresos netos, ocupación, comisiones OTA, impuestos retenidos, repartimiento propietario-gestor.
+- **Reporting y facturación**: ingresos netos, ocupación, comisiones OTA, impuestos retenidos, reparto propietario-gestor.
 
 En resumen: **lo que antes hacías con Excel, el calendario de Airbnb, WhatsApp, Chekin y un cuaderno, lo haces en un solo sistema**.
 
@@ -88,7 +88,7 @@ Análisis honesto de las opciones más relevantes para un propietario o gestor e
 
 **Origen**: Cataluña. **Para quién**: de 1 a 15 pisos en España. **Precio**: gratis para el check-in y el registro a la policía; Hostly Completo, 40 €/mes por piso (35 € desde 5).
 
-Combina IA en WhatsApp, check-in con registro automático en los Mossos d'Esquadra, channel manager para Airbnb y Booking, limpiezas con app propia, precios al día con PriceLabs integrado y atención en castellano y catalán. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta. Pensado específicamente para el mercado español y la operativa del día a día.
+Combina IA en WhatsApp, check-in con registro automático en los Mossos d'Esquadra, channel manager para Airbnb y Booking, limpiezas con app propia, precios al día con PriceLabs integrado y atención en castellano y catalán. En el resto de España, activamos contigo la conexión con la policía que te toque: SES.Hospedajes o, en Euskadi, la Ertzaintza. Pensado específicamente para el mercado español y la operativa del día a día.
 
 **Pros**: check-in, registro, mensajes, limpiezas y precios en una sola app. La IA contesta a los huéspedes por WhatsApp. Registro a los Mossos automático. Plan Gratis para el check-in y el registro.
 **Contras**: marca joven. Solo Airbnb y Booking.com (una web propia con reservas directas se hace a medida, como automatización aparte), muchos menos canales que Hostify.
@@ -113,7 +113,7 @@ De los mejores creadores de webs del sector. Ideal si quieres apostar por la res
 
 ### 4. Hospitable
 
-**Origen**: UK. **Para quién**: anfitrión particular, 1-30 apartamentos. **Precio**: plan gratis (Essentials); de pago, desde 29 €/mes + IVA.
+**Origen**: Reino Unido. **Para quién**: anfitrión particular, 1-30 apartamentos. **Precio**: plan gratis (Essentials); de pago, desde 29 €/mes + IVA.
 
 Referente de IA en el mundo anglosajón. Interfaz cálida, comunidad activa, más de 120.000 anfitriones.
 
@@ -149,7 +149,7 @@ Elite Partner de todas las OTAs grandes. Marketplace con 300+ integraciones. Pen
 
 ### 8. Prohost AI
 
-**Origen**: EE. UU. (YC + Pear VC). **Para quién**: anfitriones de 1-300 propiedades. **Precio**: plan gratis; de pago, desde 10 $ por propiedad al mes (mínimo 30 $/mes).
+**Origen**: EE. UU. (YC + Pear VC). **Para quién**: anfitriones de 1-300 propiedades. **Precio**: plan gratis; de pago, desde 10 $ por propiedad al mes, con un mínimo de 30 $/mes (precio publicado en octubre de 2026).
 
 El más centrado en la IA, y de los más jóvenes. Plan gratis muy agresivo.
 
@@ -158,7 +158,7 @@ El más centrado en la IA, y de los más jóvenes. Plan gratis muy agresivo.
 
 ### 9. Guesty
 
-**Origen**: Tel-Aviv/NY. **Para quién**: gestoras medianas y grandes, 10-10.000+ unidades. **Precio**: plan Lite (1-3 anuncios) desde 9 $ por anuncio al mes; Pro y Enterprise, presupuesto a medida.
+**Origen**: Tel Aviv / Nueva York. **Para quién**: de 1 anuncio (Lite) a miles de unidades; su fuerte, las gestoras medianas y grandes. **Precio**: plan Lite (1-3 anuncios) desde 9 $ por anuncio al mes; Pro y Enterprise, presupuesto a medida.
 
 El "Salesforce" del alquiler vacacional. De los PMS más completos del mercado.
 

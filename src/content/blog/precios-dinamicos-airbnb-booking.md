@@ -29,7 +29,7 @@ faqs:
     answer: "Las herramientas estándar rinden peor en apartamentos muy singulares porque se basan en comparables. Para unidades muy premium o muy aisladas, conviene usar la herramienta como sugerencia y ajustar manualmente, o directamente seguir estrategia manual basada en tu conocimiento local."
 ---
 
-Un apartamento turístico con precio fijo todo el año deja dinero sobre la mesa. Otro con precio que cambia a ojo cada semana te quita tiempo y probablemente también deja dinero sobre la mesa. Los **precios dinámicos** resuelven ambos problemas: el algoritmo decide, tú defines los límites. Esta guía cubre **qué son, cómo funcionan, qué herramientas hay y cómo aplicarlos correctamente** en 2026.
+Un apartamento turístico con precio fijo todo el año pierde dinero. Otro con precio que cambia a ojo cada semana te quita tiempo y probablemente también pierde dinero. Los **precios dinámicos** resuelven ambos problemas: el algoritmo decide, tú defines los límites. Esta guía cubre **qué son, cómo funcionan, qué herramientas hay y cómo aplicarlos correctamente** en 2026.
 
 ## Qué son los precios dinámicos en alquiler vacacional
 
@@ -139,7 +139,7 @@ Por miedo a dejar noches vacías, la gente pone el mínimo muy por debajo del co
 
 ### 2. No mirar el ajuste las primeras semanas
 
-El algoritmo requiere monitoreo inicial. Si pone precios raros en las primeras dos semanas, ajústalo. Si lo dejas "por defecto", puede aprender mal.
+El algoritmo requiere seguimiento al principio. Si pone precios raros en las primeras dos semanas, ajústalo. Si lo dejas "por defecto", puede aprender mal.
 
 ### 3. Confiar a ciegas en "el algoritmo"
 
@@ -165,7 +165,7 @@ Los primeros 30-60 días son aprendizaje. Las ganancias reales se ven comparando
 1. Elige herramienta (integrada en tu PMS o PriceLabs/Beyond externo).
 2. Define precio mínimo, máximo y estrategia base.
 3. Configura temporadas y eventos clave.
-4. Monitorea dos semanas y ajusta.
+4. Vigila dos semanas y ajusta.
 5. Compara resultados a 60 días contra tu histórico.
 
 Si el ingreso medio por noche no ha subido al menos un 8-10 % a los 60 días, revisa la configuración o cambia de herramienta.

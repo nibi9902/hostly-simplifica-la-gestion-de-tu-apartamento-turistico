@@ -10,7 +10,7 @@
     "cta_main_text": "en",
     "cta_main_brand": "Hostly",
     "cta_forever": "Para siempre.",
-    "cta_sub": "Cada vez que entra un huésped, Hostly envía el registro a la policía por ti. Gratis hoy y gratis siempre: es nuestra forma de que nos conozcas.",
+    "cta_sub": "Cada vez que entra un huésped, Hostly envía el registro a la policía por ti. Gratis hoy y gratis siempre: es nuestra forma de darnos a conocer.",
     "stat_messages": "mensajes respondidos",
     "stat_police": "registros policiales",
     "stat_cleanings": "limpiezas coordinadas",
@@ -180,7 +180,7 @@
       },
       {
         "q": "¿Podré hablar con alguien si tengo un problema?",
-        "a": "Sí. El primer mes lo montamos contigo en una videollamada. Después, te responde una persona del equipo, en castellano o en catalán. No un chatbot."
+        "a": "Sí. En Hostly Completo, el primer mes lo montamos contigo en una videollamada y después te responde una persona del equipo, en castellano o en catalán. No un chatbot. Con el plan Gratis, escríbenos a hola@hostlylabs.com y también te contesta una persona."
       }
     ]
   },
@@ -268,7 +268,7 @@
     "founder_role": "Fundador y propietario",
     "promises_title_start": "El primer mes",
     "promises_title_accent": "lo montamos juntos.",
-    "promises_subtitle": "Configuramos contigo tus pisos y tus canales. Después, seguimos a un mensaje de distancia.",
+    "promises_subtitle": "En Hostly Completo, configuramos contigo tus pisos y tus canales. Después, seguimos a un mensaje de distancia.",
     "promises": [
       {
         "title": "Configuración 1 a 1",
@@ -286,14 +286,14 @@
   },
   "glass_cards": {
     "te_ahorras": "Te ahorras",
-    "incluido_en_hostly": "incluido en Hostly",
+    "incluido_en_hostly": "incluido en Hostly Completo",
     "see_more": "Ver cómo funciona",
     "cards": [
       {
         "tab": "Check-in y policía",
         "badge": "✓ Check-in y policía",
         "title": "Registro de viajeros y tasa turística. Sin gestoría.",
-        "description": "Los datos del huésped salen a la policía cada día, solos, sin que tengas que pensar en ello ni pagar a nadie por hacerlo.",
+        "description": "Los datos del huésped salen a la policía cada día, solos, sin que tengas que pensar en ello ni pagar a nadie por hacerlo. Y en Cataluña, la tasa turística, calculada.",
         "replaces_prefix": "Cancela ",
         "replaces_suffix": " hoy",
         "replaces_inclusion": "gratis con Hostly"

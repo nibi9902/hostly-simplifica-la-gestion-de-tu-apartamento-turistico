@@ -2,7 +2,7 @@
   "index": {
     "eyebrow": "Comparativas",
     "metaTitle": "Alternativas a los PMS más populares | Hostly",
-    "metaDescription": "Compara Hostly con Icnea, Hostify, Lodgify, Smoobu, Hospitable, Guesty y Avantio. La alternativa pensada para España, con IA, check-in gratis y el registro de viajeros resuelto.",
+    "metaDescription": "Compara Hostly con Icnea, Hostify, Lodgify, Smoobu, Hospitable, Guesty y Avantio. La alternativa pensada para España, con IA, check-in gratis y el registro de viajeros incluido.",
     "h1": "Hostly vs los demás PMS",
     "subtitle": "Análisis honestos de los principales PMS del mercado para el propietario pequeño y el gestor que trabaja en España.",
     "cardTitle": "Hostly vs {{name}}",
@@ -31,8 +31,8 @@
           "text": "Reservas de Airbnb y Booking, mensajes, limpiezas, precios con PriceLabs integrado y finanzas, en un solo sitio."
         },
         {
-          "titol": "Te lo montamos contigo",
-          "text": "El primer mes configuramos tus pisos y tus canales en una videollamada."
+          "titol": "En Hostly Completo, lo configuramos contigo",
+          "text": "El primer mes, en una videollamada: tus pisos y tus canales."
         }
       ]
     }

@@ -10,6 +10,8 @@ export interface RelatedArticle {
 export interface RelatedFeature {
   path: string;
   label: string;
+  /** El mateix enllaç a /ca: els articles són en castellà, però la capsa de sota és de la web catalana */
+  labelCa: string;
 }
 
 export const featureToArticles: Record<string, RelatedArticle[]> = {
@@ -47,23 +49,23 @@ export const featureToArticles: Record<string, RelatedArticle[]> = {
 
 // Articles → funcions (per ArticleLayout)
 export const articleToFeature: Record<string, RelatedFeature> = {
-  "ses-hospedajes-guia-completa-2026":             { path: "/funcionalidades/check-in-online",  label: "Ver el check-in online" },
-  "ses-hospedajes-un-solo-apartamento":            { path: "/funcionalidades/check-in-online",  label: "Ver el check-in online" },
-  "ses-nrua-taxa-turistica-guia":                  { path: "/funcionalidades/burocracia",  label: "Ver la tasa turística en Hostly" },
-  "sanciones-por-no-cumplir-registro-viajeros":    { path: "/funcionalidades/check-in-online",  label: "Ver el check-in y el registro a la policía" },
-  "registro-viajeros-mossos-esquadra-cataluna":    { path: "/funcionalidades/check-in-online",  label: "Ver el check-in y el registro a la policía" },
-  "checkin-digital-comparativa-espana":            { path: "/funcionalidades/check-in-online",  label: "Ver el check-in online" },
-  "responder-mensajes-airbnb-automaticamente":     { path: "/funcionalidades/ia-whatsapp",  label: "Ver los mensajes con IA" },
-  "whatsapp-business-alquiler-vacacional":         { path: "/funcionalidades/ia-whatsapp",  label: "Ver los mensajes con IA" },
-  "automatizar-alquiler-vacacional-con-ia":        { path: "/funcionalidades/ia-whatsapp",  label: "Ver los mensajes con IA" },
-  "precios-dinamicos-airbnb-booking":              { path: "/funcionalidades/precios-dinamicos",   label: "Ver los precios dinámicos" },
-  "channel-manager-alquiler-vacacional-guia":      { path: "/funcionalidades/channel-manager",  label: "Ver el channel manager" },
-  "hostify-vs-lodgify-vs-smoobu-comparativa":      { path: "/alternativas",        label: "Ver comparativa completa" },
-  "coordinacion-limpiezas-excel-sistema":          { path: "/funcionalidades/gestion-de-limpiezas", label: "Ver las limpiezas" },
-  "5-horas-semana-recuperar-apartamento-turistico":{ path: "/funcionalidades/gestion-de-limpiezas", label: "Ver las limpiezas" },
-  "pasar-3-a-10-apartamentos-sin-colapsar":        { path: "/funcionalidades/gestion-de-limpiezas", label: "Ver las limpiezas" },
-  "cuanto-cuesta-gestionar-piso-turistico":        { path: "/funcionalidades/finanzas",     label: "Ver las finanzas" },
-  "gestor-pequeno-5-apps-una-app":                 { path: "/precios",                    label: "Ver qué incluye Hostly" },
-  "stack-completo-propietario-airbnb":             { path: "/precios",                    label: "Ver qué incluye Hostly" },
-  "pms-apartamentos-turisticos-mejores-2026":      { path: "/alternativas",        label: "Ver comparativa de PMS" },
+  "ses-hospedajes-guia-completa-2026":             { path: "/funcionalidades/check-in-online",  label: "Ver el check-in online", labelCa: "Veure el check-in online" },
+  "ses-hospedajes-un-solo-apartamento":            { path: "/funcionalidades/check-in-online",  label: "Ver el check-in online", labelCa: "Veure el check-in online" },
+  "ses-nrua-taxa-turistica-guia":                  { path: "/funcionalidades/burocracia",  label: "Ver la tasa turística en Hostly", labelCa: "Veure la taxa turística a Hostly" },
+  "sanciones-por-no-cumplir-registro-viajeros":    { path: "/funcionalidades/check-in-online",  label: "Ver el check-in y el registro a la policía", labelCa: "Veure el check-in i el registre a la policia" },
+  "registro-viajeros-mossos-esquadra-cataluna":    { path: "/funcionalidades/check-in-online",  label: "Ver el check-in y el registro a la policía", labelCa: "Veure el check-in i el registre a la policia" },
+  "checkin-digital-comparativa-espana":            { path: "/funcionalidades/check-in-online",  label: "Ver el check-in online", labelCa: "Veure el check-in online" },
+  "responder-mensajes-airbnb-automaticamente":     { path: "/funcionalidades/ia-whatsapp",  label: "Ver los mensajes con IA", labelCa: "Veure els missatges amb IA" },
+  "whatsapp-business-alquiler-vacacional":         { path: "/funcionalidades/ia-whatsapp",  label: "Ver los mensajes con IA", labelCa: "Veure els missatges amb IA" },
+  "automatizar-alquiler-vacacional-con-ia":        { path: "/funcionalidades/ia-whatsapp",  label: "Ver los mensajes con IA", labelCa: "Veure els missatges amb IA" },
+  "precios-dinamicos-airbnb-booking":              { path: "/funcionalidades/precios-dinamicos",   label: "Ver los precios dinámicos", labelCa: "Veure els preus dinàmics" },
+  "channel-manager-alquiler-vacacional-guia":      { path: "/funcionalidades/channel-manager",  label: "Ver el channel manager", labelCa: "Veure el channel manager" },
+  "hostify-vs-lodgify-vs-smoobu-comparativa":      { path: "/alternativas",        label: "Ver comparativa completa", labelCa: "Veure la comparativa sencera" },
+  "coordinacion-limpiezas-excel-sistema":          { path: "/funcionalidades/gestion-de-limpiezas", label: "Ver las limpiezas", labelCa: "Veure les neteges" },
+  "5-horas-semana-recuperar-apartamento-turistico":{ path: "/funcionalidades/gestion-de-limpiezas", label: "Ver las limpiezas", labelCa: "Veure les neteges" },
+  "pasar-3-a-10-apartamentos-sin-colapsar":        { path: "/funcionalidades/gestion-de-limpiezas", label: "Ver las limpiezas", labelCa: "Veure les neteges" },
+  "cuanto-cuesta-gestionar-piso-turistico":        { path: "/funcionalidades/finanzas",     label: "Ver las finanzas", labelCa: "Veure les finances" },
+  "gestor-pequeno-5-apps-una-app":                 { path: "/precios",                    label: "Ver qué incluye Hostly", labelCa: "Veure què inclou Hostly" },
+  "stack-completo-propietario-airbnb":             { path: "/precios",                    label: "Ver qué incluye Hostly", labelCa: "Veure què inclou Hostly" },
+  "pms-apartamentos-turisticos-mejores-2026":      { path: "/alternativas",        label: "Ver comparativa de PMS", labelCa: "Veure la comparativa de PMS" },
 };

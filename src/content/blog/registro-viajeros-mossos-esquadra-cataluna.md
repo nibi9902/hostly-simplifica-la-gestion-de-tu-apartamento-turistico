@@ -19,7 +19,7 @@ faqs:
   - question: "¿Si envío a Mossos también tengo que enviar a SES.Hospedajes?"
     answer: "No. Los apartamentos en Cataluña cumplen enviando a Mossos d'Esquadra. SES.Hospedajes no aplica si ya has registrado al huésped en el sistema de Mossos."
   - question: "¿Qué pasa si tengo apartamentos en Cataluña y en Madrid?"
-    answer: "Necesitas cubrir ambos canales: los de Cataluña van a Mossos y los de Madrid, a SES.Hospedajes. Con Hostly, el envío a los Mossos es automático; la conexión con SES.Hospedajes la activamos contigo al darte de alta."
+    answer: "Necesitas cubrir ambos canales: los de Cataluña van a Mossos y los de Madrid, a SES.Hospedajes. Con Hostly, el envío a los Mossos es automático, y la conexión con SES.Hospedajes para los pisos de Madrid la activamos contigo."
   - question: "¿El plazo para enviar a Mossos es el mismo que SES?"
     answer: "Sí, 24 horas desde el check-in del huésped. Mossos aplica el mismo criterio temporal que el Real Decreto 933/2021."
 ---
@@ -30,7 +30,7 @@ Si gestionas apartamentos turísticos en Cataluña, el registro de viajeros **no
 
 España tiene cuerpos policiales estatales y autonómicos con competencias propias: Policía Nacional y Guardia Civil a nivel estatal, Mossos d'Esquadra en Cataluña y Ertzaintza en Euskadi. El Real Decreto 933/2021 obliga a registrar huéspedes en España, pero deja que las **comunidades con policía propia mantengan su sistema**.
 
-En Cataluña, el sistema operativo se llama **"Registre de Viatgers"** y lo gestionan los Mossos. Cumple la misma función que SES.Hospedajes pero es su propio canal.
+En Cataluña, el sistema se llama **"Registre de Viatgers"** y lo gestionan los Mossos. Cumple la misma función que SES.Hospedajes pero es su propio canal.
 
 ## Qué datos hay que enviar
 
@@ -61,17 +61,17 @@ Para poder enviar datos a Mossos:
 3. **Número identificador del establecimiento** (asignado al darte de alta en turisme de Catalunya).
 4. **Alta en el sistema de registro de viajeros** de Mossos.
 
-El alta tarda entre 48-72 horas normalmente.
+El alta suele tardar entre 48 y 72 horas.
 
 ## Diferencias prácticas con SES
 
 | | Mossos | SES.Hospedajes |
 |---|---|---|
-| Territorio | Cataluña | Resto de España |
+| Territorio | Cataluña | Resto de España (salvo Euskadi) |
 | Organismo | Mossos d'Esquadra | Ministerio del Interior |
 | Acceso | Portal Generalitat | sede.mir.gob.es |
 | API pública | Sí, para PMS | Sí, para PMS |
-| Plazo | 24h desde check-in | 24h desde check-in |
+| Plazo | 24 h desde el check-in | 24 h desde el check-in |
 | Datos | Mismos que SES | Mismos que Mossos |
 
 ## Si tienes apartamentos en varias comunidades
@@ -82,7 +82,7 @@ Si gestionas apartamentos en Cataluña y fuera (Baleares, Madrid, Valencia, Anda
 - **Enviar a SES** los del resto del Estado.
 - **Enviar a Ertzaintza** si tienes en Euskadi.
 
-Hacer esto manualmente es un error esperando a pasar. Lo práctico es dejar configurado desde el alta a qué sistema envía cada piso. En Hostly, los pisos de Cataluña envían a los Mossos de forma automática; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
+Hacer esto manualmente es un error esperando a pasar. Lo práctico es dejar configurado desde el alta a qué sistema envía cada piso. En Hostly, los pisos de Cataluña envían a los Mossos de forma automática; para los del resto de España, activamos contigo la conexión con la policía que toque (SES.Hospedajes o, en Euskadi, la Ertzaintza).
 
 ## Cómo automatizarlo completamente
 
@@ -102,8 +102,8 @@ Es lo que hace Hostly con los pisos de Cataluña, de forma nativa. Otras herrami
 Si tus apartamentos están en Cataluña:
 
 - **No envíes a SES**, envía a Mossos.
-- **Plazo**: 24h desde check-in.
+- **Plazo**: 24 h desde el check-in.
 - **Datos**: los mismos 14 que SES.
 - **Automatización**: imprescindible si gestionas más de un apartamento.
 
-La decisión práctica es elegir un PMS que cubra Mossos nativamente, no como plugin de terceros. Así cumples sin pensarlo.
+La decisión práctica es elegir un PMS que cubra Mossos nativamente, no como plugin de terceros. Así no tienes que acordarte de enviarlo.

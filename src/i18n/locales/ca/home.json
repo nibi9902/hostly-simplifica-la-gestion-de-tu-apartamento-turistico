@@ -10,7 +10,7 @@
     "cta_main_text": "a",
     "cta_main_brand": "Hostly",
     "cta_forever": "Per sempre.",
-    "cta_sub": "Cada vegada que entra un hoste, Hostly envia el registre a la policia per tu. Gratis avui i gratis sempre: és la nostra manera que ens coneguis.",
+    "cta_sub": "Cada vegada que entra un hoste, Hostly envia el registre a la policia per tu. Gratis avui i gratis sempre: és la nostra manera de donar-nos a conèixer.",
     "stat_messages": "missatges contestats",
     "stat_police": "registres policials",
     "stat_cleanings": "neteges coordinades",
@@ -180,7 +180,7 @@
       },
       {
         "q": "Podré parlar amb algú si tinc un problema?",
-        "a": "Sí. El primer mes ho muntem amb tu en una videotrucada. Després, et respon una persona de l'equip, en castellà o en català. No un xatbot."
+        "a": "Sí. A Hostly Complet, el primer mes ho muntem amb tu en una videotrucada i després et respon una persona de l'equip, en castellà o en català. No un xatbot. Amb el pla Gratis, escriu-nos a hola@hostlylabs.com i també et contesta una persona."
       }
     ]
   },
@@ -268,7 +268,7 @@
     "founder_role": "Fundador i propietari",
     "promises_title_start": "El primer mes",
     "promises_title_accent": "ho muntem junts.",
-    "promises_subtitle": "Configurem amb tu els teus pisos i els teus canals. Després, seguim a un missatge de distància.",
+    "promises_subtitle": "A Hostly Complet, configurem amb tu els teus pisos i els teus canals. Després, seguim a un missatge de distància.",
     "promises": [
       {
         "title": "Configuració 1 a 1",
@@ -286,14 +286,14 @@
   },
   "glass_cards": {
     "te_ahorras": "T'estalvies",
-    "incluido_en_hostly": "inclòs a Hostly",
+    "incluido_en_hostly": "inclòs a Hostly Complet",
     "see_more": "Veure com funciona",
     "cards": [
       {
         "tab": "Check-in i policia",
         "badge": "✓ Check-in i policia",
         "title": "Registre de viatgers i taxa turística. Sense gestoria.",
-        "description": "Les dades de l'hoste surten cap a la policia cada dia, soles, sense que hi hagis de pensar ni pagar ningú per fer-ho.",
+        "description": "Les dades de l'hoste surten cap a la policia cada dia, soles, sense que hi hagis de pensar ni pagar ningú per fer-ho. I a Catalunya, la taxa turística, calculada.",
         "replaces_prefix": "Cancel·la ",
         "replaces_suffix": " avui",
         "replaces_inclusion": "gratis amb Hostly"

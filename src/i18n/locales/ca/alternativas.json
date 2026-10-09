@@ -2,7 +2,7 @@
   "index": {
     "eyebrow": "Comparatives",
     "metaTitle": "Alternatives als PMS més populars | Hostly",
-    "metaDescription": "Compara Hostly amb Icnea, Hostify, Lodgify, Smoobu, Hospitable, Guesty i Avantio. L'alternativa pensada per a Espanya, amb IA, check-in gratis i el registre de viatgers resolt.",
+    "metaDescription": "Compara Hostly amb Icnea, Hostify, Lodgify, Smoobu, Hospitable, Guesty i Avantio. L'alternativa pensada per a Espanya, amb IA, check-in gratis i el registre de viatgers inclòs.",
     "h1": "Hostly vs els altres PMS",
     "subtitle": "Anàlisis honestes dels principals PMS del mercat per al propietari petit i el gestor que treballa a Espanya.",
     "cardTitle": "Hostly vs {{name}}",
@@ -16,7 +16,7 @@
         },
         {
           "titol": "Pensat per a Espanya",
-          "text": "Mossos d'Esquadra, taxa turística catalana i suport en castellà i català."
+          "text": "Mossos d'Esquadra, taxa turística de Catalunya i suport en castellà i català."
         },
         {
           "titol": "La IA contesta per WhatsApp",
@@ -31,8 +31,8 @@
           "text": "Reserves d'Airbnb i Booking, missatges, neteges, preus amb PriceLabs integrat i finances, en un sol lloc."
         },
         {
-          "titol": "T'ho muntem amb tu",
-          "text": "El primer mes configurem els teus pisos i els teus canals en una videotrucada."
+          "titol": "A Hostly Complet, ho configurem amb tu",
+          "text": "El primer mes, en una videotrucada: els teus pisos i els teus canals."
         }
       ]
     }
@@ -40,7 +40,7 @@
   "page": {
     "heroEyebrow": "Comparativa",
     "metaDescription": "Compara Hostly amb {{name}}. {{priceNote}}. Alternativa pensada per a Espanya, amb IA i amb el check-in i el registre de viatgers gratis.",
-    "advantagesEyebrow": "Per què Hostly en lloc de {{name}}",
+    "advantagesEyebrow": "Per què Hostly i no {{name}}",
     "comparisonEyebrow": "Comparativa directa",
     "colFeature": "Funcionalitat",
     "colHostly": "Hostly",

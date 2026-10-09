@@ -61,7 +61,7 @@ Si alquilas 1-3 veces al mes, puedes hacerlo tú desde el portal:
 1. **Conseguir certificado digital** o Cl@ve.
 2. **Darte de alta** en la sede electrónica del Interior (o en Mossos/Ertzaintza).
 3. **Rellenar manualmente** los 14 datos por cada huésped.
-4. **Guardar copia** de los documentos de identidad por si hay inspección.
+4. **Conservar los datos registrados**, por si hay inspección. Anota los datos del documento; no hace falta guardar una foto.
 
 Tiempo por reserva: 10-15 minutos. Coste: cero.
 
@@ -70,7 +70,7 @@ Tiempo por reserva: 10-15 minutos. Coste: cero.
 Si quieres delegar solo el cumplimiento legal y mantener lo demás como lo tienes:
 
 - **Chekin**: desde 3,95 €/mes por propiedad (precio publicado en octubre de 2026). Envía los datos del huésped al canal correcto.
-- **Hostly, plan Gratis**: 0 €, para siempre. Envía el registro a los Mossos cada día; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo.
+- **Hostly, plan Gratis**: 0 €, para siempre. Envía el registro a los Mossos cada día; en el resto de España, activamos contigo la conexión con la policía que te toque.
 
 El huésped hace el check-in online y la herramienta envía los datos a la policía. Tú no tocas nada.
 
@@ -78,7 +78,7 @@ El huésped hace el check-in online y la herramienta envía los datos a la polic
 
 Si además de SES quieres: sincronizar Airbnb+Booking, automatizar mensajes, coordinar limpieza y controlar precios, un PMS lo incluye todo:
 
-- **Hostly**: check-in y registro a la policía gratis para siempre; Hostly Completo a 40 €/mes por piso, con IA en WhatsApp. Envía el registro a los Mossos d'Esquadra de forma automática; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
+- **Hostly**: check-in y registro a la policía gratis para siempre; Hostly Completo a 40 €/mes por piso, con IA en WhatsApp. Envía el registro a los Mossos d'Esquadra de forma automática; en el resto de España, activamos contigo la conexión con la policía que te toque.
 - **Hostify**: desde 20 $ por alojamiento al mes, con tramos a partir de 5 alojamientos (precio publicado en octubre de 2026). SES integrado. 400 OTAs.
 - **Lodgify / Smoobu**: más enfocados a otros aspectos, SES parcial o vía Chekin.
 
@@ -97,11 +97,11 @@ Si quieres cumplir sin volverte loco:
 
 - **"Solo es un apartamento, no me verán"**: Airbnb y Booking comparten datos con Hacienda y el Ministerio del Interior. Si operas sin registrar, te detectan.
 - **"Registro al principal y no a los acompañantes"**: hay que registrar a todos los adultos de la reserva.
-- **"Lo hago la semana que viene"**: el plazo es 24h. Fuera de plazo es incumplimiento.
+- **"Lo hago la semana que viene"**: el plazo es 24 h. Fuera de plazo es incumplimiento.
 - **"Uso el canal equivocado"**: Cataluña → Mossos, Euskadi → Ertzaintza, resto → SES.
 
 ## Resumen
 
-Un solo apartamento turístico tiene la misma obligación que una cadena de 50. Buena noticia: **cumplir de forma automática cuesta poco o nada**: con Hostly, el check-in y el registro a la policía son gratis. La peor decisión es no hacerlo, porque las sanciones van desde 100 € hasta 30.000 € y el cruce de datos con las OTAs ya es real.
+Un solo apartamento turístico tiene la misma obligación que una cadena de 50. Buena noticia: **automatizar el envío cuesta poco o nada**: con Hostly, el check-in y el registro a la policía son gratis. La peor decisión es no hacerlo, porque las sanciones van desde 100 € hasta 30.000 € y el cruce de datos con las OTAs ya es real.
 
 Si tu caso es 1 apartamento y no quieres más complicación: un PMS con SES incluido es lo más simple y lo que menos tiempo te va a comer.

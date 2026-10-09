@@ -97,15 +97,15 @@ La gestoría sigue siendo útil para cuestiones fiscales complejas (el modelo 17
 
 ---
 
-## Registro de viajeros y tasa turística en Hostly: gratis para siempre
+## Registro de viajeros y tasa turística de Cataluña en Hostly: gratis para siempre
 
-Hostly incluye el check-in online, el registro de viajeros a la policía y la tasa turística en su plan Gratis: para siempre, sin tarjeta y para todos tus pisos.
+Hostly incluye el check-in online, el registro de viajeros a la policía y la tasa turística de Cataluña en su plan Gratis: para siempre, sin tarjeta y para todos tus pisos.
 
 No es un módulo premium ni una prueba. Es el plan Gratis de Hostly, desde el primer piso.
 
-Lo que ocurre en la práctica: el huésped recibe un enlace antes de llegar y rellena sus datos desde el móvil. Hostly valida cada campo, envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta. La tasa turística de Cataluña se calcula sola por estancia y, cada semestre, queda lista para declarar en la ATC. El NRUA lo tramitas tú una vez y lo pones en tus anuncios.
+Lo que ocurre en la práctica: el huésped recibe un enlace antes de llegar y rellena sus datos desde el móvil. Hostly valida cada campo, envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. En el resto de España, activamos contigo la conexión con la policía que te toque: SES.Hospedajes o, en Euskadi, la Ertzaintza. La tasa turística de Cataluña se calcula sola por estancia y, cada semestre, queda lista para declarar en la ATC. El NRUA lo tramitas tú una vez y lo pones en tus anuncios.
 
-Para un propietario que ahora mismo paga a una gestoría por estos trámites o que los lleva manualmente, esto supone un ahorro real y, sobre todo, dejar de preocuparse por si lo has hecho bien.
+Para un propietario que ahora mismo paga a una gestoría por estos trámites o que los lleva manualmente, esto supone ahorrarse ese pago o esas horas y, sobre todo, no tener que acordarse de enviar el registro cada día.
 
 ---
 

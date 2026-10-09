@@ -36,7 +36,7 @@ export default function FuncionalidadesIndex() {
               {t('index.title_1')}<br className="hidden md:block" /> {t('index.title_2')}
             </h1>
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl leading-relaxed">
-              {t('index.subtitle_count', { count: features.length })}
+              {t('index.subtitle_count', { count: features.filter((f) => f.slug !== 'conecta-todo').length })}
             </p>
           </motion.div>
         </div>

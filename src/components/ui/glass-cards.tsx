@@ -91,7 +91,7 @@ const cardData: CardData[] = [
     icon: ShieldCheck,
     badge: '✓ Check-in y policía',
     title: 'Registro de viajeros y tasa turística. Sin gestoría.',
-    description: 'Los datos del huésped salen a la policía cada día, solos, sin que tengas que pensar en ello ni pagar a nadie por hacerlo.',
+    description: 'Los datos del huésped salen a la policía cada día, solos, sin que tengas que pensar en ello ni pagar a nadie por hacerlo. Y en Cataluña, la tasa turística, calculada.',
     replaces: {
       prefix: 'Cancela ',
       // Superhog i Akeero són verificació d'hostes i dipòsits: no fan el que fa Hostly.
@@ -124,7 +124,7 @@ const cardData: CardData[] = [
     demoComponent: LimpiezasDemo,
     featureSlug: 'gestion-de-limpiezas',
   },
-  // 3. Reservas — Smoobu, des de 29 €/mes (pla Flex, web de Smoobu, octubre 2026)
+  // 3. Reservas — sense «Te ahorras»: passar de Smoobu (des de 29 €) a Hostly Completo (40 €) no estalvia diners
   {
     id: 3,
     tab: 'Calendario',
@@ -132,7 +132,7 @@ const cardData: CardData[] = [
     badge: 'Reservas y calendarios',
     title: 'Airbnb y Booking, siempre sincronizados.',
     description: 'Una reserva entra por un canal y las fechas se bloquean en el otro. Sin refrescar pestañas. Todo en un mismo lugar.',
-    replaces: { prefix: 'Adiós a ', brands: ['Smoobu'], suffix: '', price: '29 €/mes' },
+    replaces: { prefix: 'Adiós a ', brands: ['Smoobu'], suffix: '', price: '' },
     color: 'rgba(96, 165, 250, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #eff6ff 100%)',
     textColor: '#0f172a',

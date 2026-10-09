@@ -67,7 +67,7 @@ Y por encima de todo: **la carga mental**. Tienes que recordar qué app hace qu�
 
 La respuesta honesta es: sí, pero no hace mucho que existen opciones reales para propietarios pequeños.
 
-Los grandes PMS (Property Management Systems) como Guesty, Hostaway o Rentals United lo tienen casi todo integrado, pero están pensados sobre todo para gestores profesionales con 20, 50 o 100+ apartamentos. Sus precios y su complejidad no suelen tener sentido para alguien con 2 o 5 pisos.
+Los grandes PMS (Property Management Systems) como Guesty o Hostaway lo tienen casi todo integrado, pero están pensados sobre todo para gestores profesionales con 20, 50 o 100+ apartamentos. Sus precios y su complejidad no suelen tener sentido para alguien con 2 o 5 pisos.
 
 La alternativa para el propietario pequeño ha sido durante años construirse su propio Frankenstein de apps y convivir con los problemas que eso genera.
 
@@ -82,18 +82,18 @@ Hostly está diseñado para ser la app del día a día de un propietario o gesto
 | Herramienta actual | Lo que hace Hostly |
 |---|---|
 | Channel manager (Smoobu, Lodgify...) | Airbnb y Booking.com sincronizados: reservas, disponibilidad y precios en un solo calendario |
-| Chekin (check-in digital + SES) | Check-in online y registro de viajeros, gratis para siempre. Con los Mossos d'Esquadra va solo cada día; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta |
+| Chekin (check-in digital + SES) | Check-in online y registro de viajeros, gratis para siempre. Con los Mossos d'Esquadra va solo cada día; en el resto de España, activamos contigo la conexión con la policía que te toque |
 | WhatsApp con huéspedes | IA que contesta la mayoría de mensajes al momento, en el idioma del huésped, y mensajes automáticos por plantilla |
 | Excel de control | Panel de reservas, ingresos y ocupación en una sola pantalla |
 | Dropbox / almacenamiento | Los comprobantes del registro de viajeros quedan archivados en la app |
 | Gestión de la tasa turística | Tasa turística de Cataluña calculada por estancia, lista para declarar cada semestre, gratis para siempre |
 | WhatsApp con la limpiadora | Limpiezas asignadas solas en cada salida, con fotos e incidencias |
 
-**Precio:** Hostly Completo, 40 € al mes por piso (35 € desde 5), con el primer mes gratis. El check-in, el registro a la policía y la tasa turística, gratis para siempre con el plan Gratis.
+**Precio:** Hostly Completo, 40 € al mes por piso (35 € desde 5), con el primer mes gratis. El check-in, el registro a la policía y la tasa turística de Cataluña, gratis para siempre con el plan Gratis.
 
-La diferencia no es solo económica. Es que cuando todo está en un solo lugar, no tienes que mantener la coherencia entre sistemas. Una reserva entra, el calendario se actualiza, el huésped recibe el enlace del check-in y el registro llega a la policía. Sin copiar datos de una app a otra.
+La diferencia no está en el precio, sino en tenerlo todo en un solo lugar: no tienes que mantener la coherencia entre sistemas. Una reserva entra, el calendario se actualiza, el huésped recibe el enlace del check-in y el registro llega a la policía. Sin copiar datos de una app a otra.
 
-Para un propietario que ahora mismo gestiona su stack con 5 herramientas distintas, consolidarlo en una sola app no va solo de dinero. Es recuperar tiempo y cabeza para otras cosas.
+Para un propietario que ahora mismo gestiona su stack con 5 herramientas distintas, consolidarlo en una sola app es recuperar tiempo y cabeza para otras cosas. En precio, haz los números con la [calculadora](/calcula).
 
 ---
 

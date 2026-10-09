@@ -53,15 +53,15 @@ Establece expectativa clara y posiciona el check-in como parte normal del proces
 
 El enlace personalizado evita confusión.
 
-### Momento 3: primer recordatorio (24h antes)
+### Momento 3: primer recordatorio (24 h antes)
 
-Si no lo ha hecho a 24h de llegar:
+Si no lo ha hecho a 24 h de llegar:
 
 > "Marta, mañana llegas :) Aún no has completado el check-in online. Es importante porque: 1) es obligatorio por ley 2) te permite entrar directamente sin que nos veamos. Enlace: [enlace]. Tarda 3 minutos."
 
 Explicar **el beneficio para el huésped** (no quedar, entrada directa) funciona mejor que solo el requisito legal.
 
-### Momento 4: último recordatorio (12h antes)
+### Momento 4: último recordatorio (12 h antes)
 
 > "Marta, sigue pendiente el check-in online. Si no lo completas antes de llegar, tendremos que hacerlo en persona y te llevará más tiempo. Enlace: [enlace]. Dudas: 673 XXX XXX."
 
@@ -91,7 +91,7 @@ Si estás presente y rechaza el check-in online:
 
 1. Captura sus datos **allí mismo** con su DNI/pasaporte.
 2. Regístralo tú en la plataforma de la policía que te toque, desde el móvil.
-3. Guarda foto del documento por si hay inspección.
+3. Anota los datos del documento; no hace falta guardar una foto. Esos datos sí debes conservarlos, por si hay inspección.
 
 Es peor para ti (más trabajo) pero cumples la obligación.
 
@@ -102,7 +102,7 @@ Un sistema bien configurado te ahorra este seguimiento:
 - **Envío automático** de los 4 mensajes en los momentos exactos.
 - **Generación automática de enlaces** personalizados por reserva.
 - **Bloqueo automático del código** si el check-in no está completo (opcional, configurable).
-- **Notificación a ti** solo cuando algo requiere intervención (12h antes sin completar).
+- **Notificación a ti** solo cuando algo requiere intervención (12 h antes sin completar).
 
 En Hostly Completo, el enlace de check-in se envía automáticamente con los mensajes programados (por WhatsApp o por el chat de Airbnb o Booking), y el código de acceso solo aparece cuando el huésped ha completado el check-in. Herramientas específicas como Chekin también automatizan esta parte.
 
@@ -118,13 +118,13 @@ Decisión estratégica: ¿envías el código aunque el check-in no esté complet
 - Pro: mejor experiencia.
 - Contra: tienes que registrar tú si no lo han hecho.
 
-**Recomendación práctica**: no bloquear por defecto, pero sí bloquear en perfiles de riesgo (reservas de última hora, huéspedes sin reseñas, estancias largas). Un sistema con reglas configurables por perfil es ideal.
+**Recomendación práctica**: en Hostly, el código solo aparece cuando el check-in está hecho. Con otras herramientas, lo habitual es no bloquear por defecto y sí bloquear en perfiles de riesgo (reservas de última hora, huéspedes sin reseñas, estancias largas), si la herramienta permite reglas por perfil.
 
 ## Cuándo insistir y cuándo dejarlo
 
 Algunos huéspedes nunca completarán el check-in online. Insistir más allá del momento 4 es contraproducente y genera fricción. Mejor:
 
-- Registrarlo tú con los datos que tengas (DNI fotografiado al llegar).
+- Registrarlo tú con los datos del documento, anotados al llegar.
 - Marcar esa reserva como "completada manualmente" en tu sistema.
 - Seguir con la estancia normal.
 
@@ -135,7 +135,7 @@ El objetivo es cumplir, no ganar la batalla.
 1. ¿Se ha enviado el mensaje? → Verifica recepción (no spam, número correcto).
 2. ¿Hay problema técnico? → Ofrece enviar datos por otro canal (email con formulario simple).
 3. ¿Lo ha ignorado? → Recordatorios escalados según el protocolo.
-4. ¿Sigue sin hacerlo a 12h de llegar? → Mensaje directo con contacto y explicación firme.
+4. ¿Sigue sin hacerlo a 12 h de llegar? → Mensaje directo con contacto y explicación firme.
 5. ¿Llega sin completar? → Registro en persona y sigue con la estancia.
 
 La clave: que el protocolo **se ejecute automáticamente** sin que tengas que recordar los horarios. Ahí es donde un PMS marca la diferencia.

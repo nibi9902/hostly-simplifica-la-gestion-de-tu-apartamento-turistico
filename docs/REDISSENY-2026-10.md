@@ -90,7 +90,9 @@
   oficials el 09-10-2026: Chekin 3,95 / 5,95 / 7,95 € per pis i mes · Smoobu 29 €/mes + 0,9 %
   (Flex) o 35 €/mes (31,50 € anual) · Hostify 20 $ per allotjament (des de 5) · Hospitable
   Essentials gratis, Host des de 29 € + IVA · Icnea 150 €/mes fins a 10 pisos · Avantio des de
-  295 €/mes + IVA · Guesty Lite des de 9 $ per anunci · PriceLabs 19,99 $ per anunci. Hostaway
+  295 €/mes + IVA · Guesty Lite des de 9 $ per anunci · PriceLabs 19,99 $ per anunci · Beyond
+  des de l'1 % de les reserves · Wheelhouse 1 % o 19,99 $ per anunci · Prohost pla gratis, de
+  pagament des de 10 $ (mínim 30 $/mes). Hostaway
   i Lodgify: sense xifra (no la publiquen o no s'ha pogut verificar). El web deia «15 €/mes» i
   «180 € a l'any» per a Chekin i «des de 23 €» per a Smoobu: ja no.
 - **`index.html` porta etiquetes SEO per defecte amb `data-rh="true"`.** Així el component
@@ -119,8 +121,11 @@
    huésped». ¿Quant és?
 7. **Preu de «Conéctalo todo»** (les automatitzacions a mida).
 8. «Déjame tu número y te llamo, normalmente el mismo día» (abans «te llamo hoy»). ¿D'acord?
-9. **Encàrrec del tratament** (dades dels hostes, art. 28 RGPD): hi ha una clàusula nova als
-   termes (apartat 11). Convé que la miri un assessor.
+9. **Encàrrec del tractament** (dades dels hostes, art. 28 RGPD): hi ha una clàusula nova als
+   termes (apartat 11), amb els punts de l'art. 28.3, i el desistiment de 14 dies per a
+   consumidors. Convé que la miri un assessor. Atenció: si les converses reals dels hostes
+   serveixen per avaluar o millorar la IA (el joc de proves de l'avaluació en surt), això no és
+   «només per prestar-te el servei» i cal dir-ho i tenir-ne base legal.
 10. Fotos i vídeos reals de gestors (amb permís) i una foto del Biel (ara surt una «B»).
 11. **El missatge de preu.** Amb els preus reals de la competència, Hostly **no sempre surt més
     barat**: Chekin + Smoobu per a 1 pis fan uns 400 €/any i Hostly Completo, 480 €; Icnea
@@ -128,6 +133,17 @@
     check-in i la policia són gratis per sempre i que tot és en una app (IA, neteges,
     finances), més el temps que estalvia (la calculadora ho compta en hores). ¿Aquest és el
     missatge que vols, o es revisa el preu?
+12. **«Partner oficial de» Airbnb, Booking i Google.** Les insígnies es queden (decisió teva),
+    però el partner oficial és Tokeet/Sympl, per on Hostly es connecta, no Hostly directament.
+    Si no hi ha acord propi, dir-ne «partner» pot ser publicitat enganyosa (LCD art. 21). A la
+    versió 11 el text diu «Conectado con» (es desfà amb un `git revert`). Si Hostly és partner
+    de debò, torna-ho a posar.
+13. **La calculadora demana el telèfon per veure el detall.** Ara el text diu que, en enviar-lo,
+    acceptes que et truquem. Condicionar el detall al telèfon pot no ser un consentiment
+    «lliure» (RGPD 7.4): l'alternativa és deixar veure el detall i demanar el telèfon a part.
+14. **Netejadores**: el web diu que, a l'app, cadascú veu el seu. Segons l'estudi de seguretat
+    (ajornat), una netejadora encara pot llegir per l'API les reserves i els DNI dels seus pisos.
+    Convé tancar-ho abans de vendre a gestors nous.
 
 ## Pendents
 

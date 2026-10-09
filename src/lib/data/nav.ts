@@ -59,7 +59,7 @@ export const NAV: NavConfig = {
           footerHref: '/blog',
           footerLabel: 'Ver todas las guías',
           items: [
-            { label: 'Super Guía de gestión',        href: '/guia',                                            description: 'La guía completa del propietario turístico.', badge: 'Nuevo' },
+            { label: 'Superguía de gestión',        href: '/guia',                                            description: 'La guía completa del propietario turístico.', badge: 'Nuevo' },
             { label: 'SES.Hospedajes: guía 2026',    href: '/blog/ses-hospedajes-guia-completa-2026',          description: 'Todo sobre el registro obligatorio de viajeros.' },
             { label: 'SES + NRUA + tasa turística',  href: '/blog/ses-nrua-taxa-turistica-guia',               description: 'Las 3 obligaciones legales del propietario.' },
             { label: 'Mossos d\'Esquadra: registro', href: '/blog/registro-viajeros-mossos-esquadra-cataluna',  description: 'Guía práctica para Cataluña.' },
@@ -76,7 +76,7 @@ export const NAV: NavConfig = {
             { label: 'Automatizar con IA: qué funciona', href: '/blog/automatizar-alquiler-vacacional-con-ia',          description: 'Guía honesta de lo que hace y no hace la IA.' },
             { label: 'De 3 a 10 pisos sin colapsar',     href: '/blog/pasar-3-a-10-apartamentos-sin-colapsar',         description: 'Qué sistemas necesitas antes de crecer.' },
             { label: '¿Cuánto cuesta gestionar un piso?',href: '/blog/cuanto-cuesta-gestionar-piso-turistico',          description: 'Calcula el coste real de tu stack.' },
-            { label: 'El stack del propietario en 2026', href: '/blog/stack-completo-propietario-airbnb',               description: 'Qué herramientas necesitas y cuáles eliminar.' },
+            { label: 'Las herramientas del propietario en 2026', href: '/blog/stack-completo-propietario-airbnb',               description: 'Qué herramientas necesitas y cuáles eliminar.' },
             { label: 'Responder mensajes en Airbnb',     href: '/blog/responder-mensajes-airbnb-automaticamente',       description: 'Sin convertirte en un bot.' },
           ],
         },

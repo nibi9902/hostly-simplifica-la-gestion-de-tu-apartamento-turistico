@@ -48,18 +48,18 @@ De las conversaciones con gestores y los datos que hemos recogido, el reparto t�
 
 | Actividad | Tiempo semanal medio | % |
 |---|---|---|
-| Mensajería con huéspedes | 1h 30min - 2h | 30-40 % |
-| Coordinación de limpiezas | 45min - 1h 15min | 15-25 % |
-| Registro SES / cumplimiento legal | 30min - 45min | 10-15 % |
-| Precios y disponibilidad | 30min - 45min | 10-15 % |
-| Incidencias puntuales | 30min | 10 % |
-| Admin (facturación, bancos, etc.) | 15min - 30min | 5-10 % |
+| Mensajería con huéspedes | 1 h 30 min – 2 h | 30-40 % |
+| Coordinación de limpiezas | 45 min – 1 h 15 min | 15-25 % |
+| Registro SES / cumplimiento legal | 30-45 min | 10-15 % |
+| Precios y disponibilidad | 30-45 min | 10-15 % |
+| Incidencias puntuales | 30 min | 10 % |
+| Admin (facturación, bancos, etc.) | 15-30 min | 5-10 % |
 
 Con 5 apartamentos, todas estas cifras se multiplican casi linealmente. Con 10, exponencialmente (porque surgen dependencias entre apartamentos que multiplican la complejidad).
 
 ## Las 3 automatizaciones que recuperan más tiempo
 
-### 1. Mensajería automática con IA (ahorra 2-3h/semana)
+### 1. Mensajería automática con IA (ahorra 2-3 h/semana)
 
 El mayor consumidor. Automatizando la mayoría de mensajes rutinarios con una IA que conoce tu apartamento, recuperas buena parte de este tiempo. Los casos:
 
@@ -71,25 +71,25 @@ El mayor consumidor. Automatizando la mayoría de mensajes rutinarios con una IA
 - Petición de reseña → automático tras checkout.
 
 **Inversión**: 40 €/mes por piso con Hostly Completo (35 € desde 5).
-**Ahorro**: 2-3h/semana.
+**Ahorro**: 2-3 h/semana.
 
-### 2. Check-in online + registro a la policía (ahorra 1h/semana)
+### 2. Check-in online + registro a la policía (ahorra 1 h/semana)
 
 Sin check-in online: el huésped llega, tú le abres, pides el DNI, haces foto, entras manualmente al portal y rellenas los 14 datos. Por reserva, son 15-20 minutos.
 
-Con check-in online: el huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; fuera de Cataluña, a SES.Hospedajes, que lo activamos contigo). Tú solo intervienes si falta algún check-in: Hostly te avisa.
+Con check-in online: el huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; en el resto de España, a SES.Hospedajes o, en Euskadi, a la Ertzaintza, una vez lo activamos contigo). Tú solo intervienes si falta algún check-in: Hostly te avisa.
 
 **Inversión**: 0 € con el plan Gratis de Hostly. Las herramientas dedicadas, como Chekin, empiezan en 3,95 €/mes por propiedad.
-**Ahorro**: 1h/semana para 6-8 reservas.
+**Ahorro**: 1 h/semana para 6-8 reservas.
 
-### 3. Coordinación automática de limpiezas (ahorra 1h/semana)
+### 3. Coordinación automática de limpiezas (ahorra 1 h/semana)
 
 Sin sistema: tras cada checkout, envías WhatsApp a tu limpiadora, ella confirma, te avisa cuando acaba, le pagas manualmente a final de mes.
 
 Con sistema: el checkout dispara automáticamente la tarea a la limpiadora. Ella recibe notificación en una app, marca como completada, tú ves el estado, el pago se calcula al final de mes sin que tengas que cuadrarlo.
 
 **Inversión**: incluido en PMS modernos.
-**Ahorro**: 1h/semana.
+**Ahorro**: 1 h/semana.
 
 ## Total: de 5 horas a menos de 1 hora a la semana
 
@@ -129,7 +129,7 @@ Si tu apartamento tiene algo especial (una nota escrita a mano, una botella de v
 
 Si valoras tu hora libre a:
 
-- **5 €**: 5h ahorradas = 25 €/semana = **100 €/mes**. La herramienta cuesta 40 €/mes. Positivo.
+- **5 €**: 5 h ahorradas = 25 €/semana = **100 €/mes**. La herramienta cuesta 40 €/mes. Positivo.
 - **10 €**: 50 €/semana = **200 €/mes**. Positivo claro.
 - **20 €**: 100 €/semana = **400 €/mes**. Obviamente positivo.
 
@@ -137,7 +137,7 @@ Para cualquier adulto con ingresos laborales medios, la respuesta es **sí**.
 
 ## Resumen: plan de 30 días
 
-Si quieres recuperar 5h/semana en un mes:
+Si quieres recuperar 5 h/semana en un mes:
 
 - **Semana 1**: elige un PMS con IA, registro de viajeros y limpiezas: Hostly (hecho en España, con el check-in y el registro a la policía gratis) o Hospitable (anglosajón).
 - **Semana 2**: migra calendarios y configura herramienta.

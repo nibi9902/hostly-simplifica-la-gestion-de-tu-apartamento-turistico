@@ -20,7 +20,7 @@ El check-in digital ha pasado de ser un extra a ser prácticamente imprescindibl
 
 ## Qué es el check-in digital y por qué es obligatorio en España
 
-El check-in digital es el proceso por el que el huésped proporciona sus datos de identificación antes de llegar al alojamiento, normalmente a través de un enlace o formulario online. El sistema recoge esa información y la envía automáticamente al registro de viajeros (el SES.Hospedajes, cuyos datos reciben la Guardia Civil o la Policía Nacional según la zona; en Cataluña, el registro de los Mossos d'Esquadra).
+El check-in digital es el proceso por el que el huésped proporciona sus datos de identificación antes de llegar al alojamiento, normalmente a través de un enlace o formulario online. El sistema recoge esa información y la envía automáticamente al registro de viajeros (el SES.Hospedajes, cuyos datos reciben la Guardia Civil o la Policía Nacional según la zona; en Cataluña, el registro de los Mossos d'Esquadra, y en Euskadi, el de la Ertzaintza).
 
 **¿Es realmente obligatorio?** Sí, aunque no el check-in digital en sí, sino la comunicación de datos al registro de viajeros. El Real Decreto 933/2021, en vigor desde enero de 2023, obliga a todos los alojamientos turísticos a comunicar los datos de los huéspedes a las fuerzas de seguridad en un plazo máximo de 24 horas desde la entrada.
 
@@ -96,12 +96,12 @@ Lo que significa en la práctica:
 
 - No pagas por Chekin ni por ninguna herramienta de check-in separada.
 - El check-in está sincronizado con el resto de tu gestión (reservas, calendarios, mensajería).
-- En Cataluña, Hostly envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
+- En Cataluña, Hostly envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. En el resto de España, activamos contigo la conexión con la policía que te toque: SES.Hospedajes o, en Euskadi, la Ertzaintza.
 - La tasa turística de Cataluña también está incluida: Hostly la calcula por estancia y la deja lista para declarar en la ATC cada semestre.
 
-**Precio de Hostly:** el plan Gratis (check-in online, registro a la policía, tasa turística y calendario de Airbnb y Booking, leído cada 30 minutos) cuesta 0 €, para siempre. Hostly Completo cuesta 40 € al mes por piso (35 € desde 5), con el primer mes gratis y sin permanencia.
+**Precio de Hostly:** el plan Gratis (check-in online, registro a la policía, tasa turística de Cataluña y calendario de Airbnb y Booking, leído cada 30 minutos) cuesta 0 €, para siempre. Hostly Completo cuesta 40 € al mes por piso (35 € desde 5), con el primer mes gratis y sin permanencia.
 
-Si ahora mismo pagas por una herramienta de check-in separada y además por un channel manager u otras herramientas de gestión, la comparativa económica suele salir favorable a tener todo en un solo sitio.
+Si ahora mismo pagas por una herramienta de check-in separada y además por un channel manager u otras herramientas de gestión, tener todo en un solo sitio te ahorra tiempo y logins; en precio, haz los números con la [calculadora](/calcula).
 
 ---
 

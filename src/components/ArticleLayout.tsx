@@ -224,7 +224,7 @@ export default function ArticleLayout({ post }: Props) {
             >
               <div className="flex items-center gap-3">
                 <span className="text-primary text-lg">⚡</span>
-                <p className="text-sm font-semibold text-primary">{relatedFeature.label}</p>
+                <p className="text-sm font-semibold text-primary">{lang === 'ca' ? relatedFeature.labelCa : relatedFeature.label}</p>
               </div>
               <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
             </LangLink>

@@ -1,6 +1,6 @@
 ---
 title: "Sanciones por no cumplir con el registro de viajeros: cuánto te puede costar"
-description: "Cuánto son las multas por no registrar a los huéspedes en SES.Hospedajes, Mossos o Ertzaintza, cómo funciona la inspección y cómo evitarlas."
+description: "De cuánto son las multas por no registrar a los huéspedes en SES.Hospedajes, Mossos o Ertzaintza, cómo funciona la inspección y cómo evitarlas."
 slug: "sanciones-por-no-cumplir-registro-viajeros"
 category: "ses-hospedajes-y-compliance"
 author: "biel-alsina"
@@ -71,7 +71,7 @@ Si recibes una inspección, te pedirán:
 
 - Alta en SES/Mossos/Ertzaintza con fecha.
 - Listado de registros enviados en los últimos 12-24 meses.
-- Documentos de identidad de huéspedes (o pruebas de verificación).
+- Los datos de identidad de cada huésped, tal como los registraste.
 - Licencia turística del establecimiento.
 - Declaraciones fiscales relacionadas.
 - Libros o registros internos si los tienes.

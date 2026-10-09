@@ -1,10 +1,10 @@
 {
   "propietarios": {
     "meta_title": "Hostly per a propietaris d'apartaments turístics",
-    "meta_description": "Tens 1, 2 o 3 pisos a Airbnb o Booking. Hostly simplifica tot el que implica gestionar-los. Check-in, missatges, neteges i registre a la policia. Una sola app.",
+    "meta_description": "Tens 1 o 2 pisos a Airbnb o Booking. Hostly simplifica tot el que implica gestionar-los. Check-in, missatges, neteges i registre a la policia. Una sola app.",
     "breadcrumb_label": "Per a propietaris",
     "badge": "Per a propietaris",
-    "h1": "Tens 1 o 2 pisos.\nNo hauries de viure pendent d'ells.",
+    "h1": "Tens 1 o 2 pisos.\nNo n'hauries de viure pendent.",
     "intro": "Vas posar el pis a Airbnb per tenir ingressos extra. No per respondre missatges a les 11 de la nit, coordinar neteges per WhatsApp i recordar-te del registre policial. Hostly ho simplifica tot.",
     "cta_primary": "Començar",
     "cta_sub": "El check-in, gratis per sempre. La resta, el primer mes gratis.",
@@ -18,7 +18,7 @@
       },
       {
         "pain": "El registre policial que sempre deixes per a última hora",
-        "fix": "L'hoste omple les seves dades des del mòbil i Hostly envia el registre a la policia. Sense logins, sense formularis."
+        "fix": "L'hoste omple les seves dades des del mòbil i Hostly envia el registre a la policia. Sense entrar a cap portal."
       },
       {
         "pain": "Coordinar la netejadora per WhatsApp",
@@ -32,7 +32,7 @@
     "section3_h2": "40 € al mes per pis. Una sola factura.",
     "section3_body": "Reserves, check-in, missatges, neteges i registre a la policia, en una sola app. I el check-in, gratis per sempre.",
     "cta_h2": "Comença avui.",
-    "cta_sub2": "Sense targeta. Sense permanència."
+    "cta_sub2": "Comença gratis, sense targeta. Sense permanència."
   },
   "gestores": {
     "meta_title": "Hostly per a gestors petits d'apartaments",
@@ -43,16 +43,16 @@
     "intro": "El channel manager per aquí. Chekin per allà. Excel per als cobraments. Un WhatsApp amb els hostes i un altre amb les netejadores. Hostly ho ajunta tot en una sola app.",
     "cta_primary": "Començar",
     "cta_sub": "Sense permanència. 35 €/apartament des de 5 pisos.",
-    "section2_h2": "L'stack del gestor petit avui.",
-    "section2_sub": "I el que costa.",
+    "section2_h2": "Les eines del gestor petit, avui.",
+    "section2_sub": "Cadascuna amb la seva factura.",
     "tools": [
       {
         "name": "Channel manager (Smoobu, Hostify…)",
-        "cost": "des de 29 €/mes"
+        "cost": "una quota que creix amb cada pis"
       },
       {
         "name": "Chekin (check-in i registre)",
-        "cost": "des de 3,95 €/mes per pis"
+        "cost": "des de 3,95 € al mes per pis"
       },
       {
         "name": "Plantilles de missatges o similar",
@@ -63,7 +63,7 @@
         "cost": "Gratis en diners, caríssim en temps"
       }
     ],
-    "hostly_summary": "✅ Amb Hostly: 35 € per pis al mes des de 5 pisos. Una app i una sola factura.",
+    "hostly_summary": "✅ Amb Hostly: 35 € per pis al mes des de 5 pisos (280 € al mes amb 8), amb la IA, les neteges i els preus a dins. Una app i una sola factura.",
     "cta_h2": "Comença avui.",
     "cta_sub2": "35 €/apartament des de 5 pisos. El primer mes, gratis."
   },
@@ -110,9 +110,9 @@
     "h1": "El pis heretat\nsense maldecaps.",
     "intro": "El vas posar a Airbnb perquè no el volies vendre. Però ara tens missatges, check-ins, registres policials i neteges a gestionar. Tu tens una altra vida. Hostly s'encarrega de la resta.",
     "cta_primary": "Començar",
-    "cta_sub": "Sense targeta. Sense permanència. Sense aprendre res nou.",
+    "cta_sub": "Comença gratis, sense targeta. Sense permanència. Sense aprendre res de nou.",
     "section2_h2": "No has de ser un expert en lloguer turístic.",
-    "section2_body": "Hostly està pensat perquè funcioni des del primer dia, sense aprendre un programari nou. El primer mes el configurem amb tu en una videotrucada i després el sistema fa la resta.",
+    "section2_body": "Hostly està pensat perquè funcioni des del primer dia, sense aprendre un programari nou. A Hostly Complet, el primer mes el configurem amb tu en una videotrucada i després el sistema fa la resta.",
     "features": [
       {
         "icon": "⏱️",
@@ -127,7 +127,7 @@
       {
         "icon": "👤",
         "title": "Suport humà real",
-        "desc": "Si tens dubtes, l'equip de Hostly t'ajuda en espanyol i català. Sense bots."
+        "desc": "Si tens dubtes, l'equip de Hostly t'ajuda en castellà i català. Sense bots."
       }
     ],
     "cta_h2": "Comença avui.",

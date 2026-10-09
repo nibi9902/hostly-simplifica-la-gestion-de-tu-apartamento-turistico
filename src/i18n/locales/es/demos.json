@@ -43,11 +43,23 @@
     "templateCancelledCleaning": "Limpieza cancelada",
     "templateCleaningReminder": "Recordatorio limpieza",
     "timingOnConfirm": "Al confirmar reserva",
-    "timing1DayCheckin": "1 día antes check-in",
+    "timing1DayCheckin": "1 día antes del check-in",
     "timing3DaysCheckin": "3 días antes check-in",
     "timingCheckoutDay": "Día del check-out",
     "timingOnCancel": "Al cancelar reserva",
-    "timing1DayCheckout": "1 día antes checkout"
+    "timing1DayCheckout": "1 día antes checkout",
+    "previews": {
+      "benvinguda": "✨ ¡Bienvenido, David! Qué ilusión tenerte…",
+      "checkin": "El check-in es autónomo a partir de las 15:00…",
+      "dades": "¡Hola, David! 👋 Necesitamos que nos envíes…",
+      "checkout": "Recuerda que el check-out debe hacerse antes…",
+      "netejaNova": "Hola Eva, hay una nueva reserva en Luminoso…",
+      "netejaCancel": "Hola Eva, la reserva prevista ha sido cancelada…"
+    },
+    "diaConfirmar": "22 abr. · Al confirmar la reserva",
+    "diaAbans": "25 abr. · 1 día antes del check-in",
+    "missatgeBenvinguda": "✨ **¡Bienvenido, David!**\n\nQué ilusión tenerte en tu casa para estos días 😊\n\n· Check-in autónomo a las **15:00**\n· Check-out antes de las **11:00**\n· Caja fuerte: **432126**\n\n¡Disfruta mucho! 😊",
+    "missatgeAcces": "📋 **Instrucciones de acceso**\n\nPortal del edificio: **#2847**\nPiso 3.º izquierda · ascensor disponible\n\nCualquier duda, escríbeme 🙌"
   },
   "limpiezas": {
     "coordinatedByAI": "COORDINADO POR IA",
@@ -199,6 +211,7 @@
       "Do"
     ],
     "sistemaTreballant": "Sistema trabajando",
-    "tuJaNo": "Tú ya no"
+    "tuJaNo": "Tú ya no",
+    "demoEnViu": "DEMO EN VIVO"
   }
 }

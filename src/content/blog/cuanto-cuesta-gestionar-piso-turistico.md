@@ -1,6 +1,6 @@
 ---
 title: "Cuánto cuesta gestionar un piso turístico"
-description: "Descubre el coste real anual de gestionar un apartamento turístico: suscripciones, horas y gestoría. Compara opciones y ahorra desde el primer mes."
+description: "Descubre el coste real anual de gestionar un apartamento turístico: suscripciones, horas y gestoría. Compara opciones y haz tus números."
 publishedAt: "2026-04-21"
 keywords:
   - "cuánto cuesta gestionar piso turístico"
@@ -91,16 +91,16 @@ Hostly no es otra herramienta que añadir a la lista. Es la app que junta en una
 **Plan Gratis, para siempre:**
 
 - **Check-in online**: el huésped rellena sus datos desde el móvil y Hostly valida cada campo
-- **Registro de viajeros**: Hostly lo envía a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta
+- **Registro de viajeros**: Hostly lo envía a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. En el resto de España, activamos contigo la conexión con la policía que te toque
 - **Tasa turística de Cataluña** calculada por estancia, lista para declarar cada semestre
 
 **Hostly Completo, a 40 € al mes por piso** (35 € desde 5): lo del plan Gratis, más channel manager con Airbnb y Booking, mensajes con IA en el idioma del huésped, limpiezas, precios con PriceLabs integrado y finanzas, en una sola pantalla.
 
-El resultado: en lugar de pagar entre unos 40 y 120 € al mes en herramientas sueltas, más lo que le pagas a la gestoría por el registro de viajeros, pagas 40 € al mes por piso y lo tienes en un solo sitio.
+El resultado: una sola app en lugar de varias herramientas sueltas, y el registro de viajeros, que quizá ahora pagas a la gestoría, gratis.
 
-Con los rangos de la tabla, las herramientas sueltas cuestan entre 468 y 1.416 € al año por piso, y Hostly Completo, 480 €. En el rango bajo pagas más o menos lo mismo, pero con una sola app; en el alto, bastante menos. Y eso sin contar el tiempo que recuperas al no tener que hacer malabarismos entre apps.
+Con los rangos de la tabla, las herramientas sueltas cuestan entre 468 y 1.416 € al año por piso, y Hostly Completo, 480 €. Si te sale más caro o más barato que ahora depende de lo que pagues hoy: haz los números con la [calculadora](/calcula). Lo que sí cambia seguro es el tiempo que recuperas al no tener que hacer malabarismos entre apps.
 
-El check-in online, el registro a la policía y la tasa turística son **gratis para siempre** en Hostly, con el plan Gratis o con Hostly Completo.
+El check-in online, el registro a la policía y la tasa turística de Cataluña son **gratis para siempre** en Hostly, con el plan Gratis o con Hostly Completo.
 
 ---
 

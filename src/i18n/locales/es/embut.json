@@ -17,7 +17,7 @@
       "correo": "Correo",
       "correo_placeholder": "ana@gmail.com",
       "continuar": "Continuar",
-      "privacidad_antes": "Al continuar aceptas la",
+      "privacidad_antes": "Al enviar tus datos, aceptas que te llamemos o te escribamos sobre Hostly. Más información en la",
       "privacidad_link": "política de privacidad"
     },
     "error": {
@@ -50,7 +50,7 @@
     },
     "gratis": {
       "titulo": "Todo listo, {{nombre}}.",
-      "subtitulo": "Crea tu cuenta y en un minuto tendrás tu enlace de check-in.",
+      "subtitulo": "Crea tu cuenta y en unos minutos tendrás tu enlace de check-in.",
       "boton": "Crear mi cuenta gratis",
       "nota": "Te llevamos a app.hostlylabs.com. Si te atascas, te llamamos."
     },
@@ -136,6 +136,7 @@
       "detalle_excel_hostly": "Finanzas y liquidaciones, dentro de Hostly",
       "detalle_gestoria": "Gestoría",
       "detalle_gestoria_hostly": "La tasa turística, calculada y lista para tu gestoría",
+      "detalle_gestoria_otra": "Lo fiscal, con tu gestoría como hasta ahora",
       "detalle_por_piso": "{{euros}} €/mes por piso",
       "detalle_horas": "Mensajes, limpiezas y registros",
       "detalle_horas_hostly": "La IA contesta, las limpiezas se avisan y los registros salen solos",
