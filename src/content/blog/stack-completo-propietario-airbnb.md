@@ -93,7 +93,7 @@ Hostly está diseñado para ser la app del día a día de un propietario o gesto
 
 La diferencia no está en el precio, sino en tenerlo todo en un solo lugar: no tienes que mantener la coherencia entre sistemas. Una reserva entra, el calendario se actualiza, el huésped recibe el enlace del check-in y el registro llega a la policía. Sin copiar datos de una app a otra.
 
-Para un propietario que ahora mismo gestiona su stack con 5 herramientas distintas, consolidarlo en una sola app es recuperar tiempo y cabeza para otras cosas. En precio, haz los números con la [calculadora](/calcula).
+Para un propietario que ahora mismo gestiona su stack con 5 herramientas distintas, consolidarlo en una sola app es recuperar tiempo y cabeza para otras cosas. En precio, haz números con la [calculadora](/calcula).
 
 ---
 

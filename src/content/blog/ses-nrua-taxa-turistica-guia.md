@@ -103,7 +103,7 @@ Hostly incluye el check-in online, el registro de viajeros a la policía y la ta
 
 No es un módulo premium ni una prueba. Es el plan Gratis de Hostly, desde el primer piso.
 
-Lo que ocurre en la práctica: el huésped recibe un enlace antes de llegar y rellena sus datos desde el móvil. Hostly valida cada campo, envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. En el resto de España, activamos contigo la conexión con la policía que te toque: SES.Hospedajes o, en Euskadi, la Ertzaintza. La tasa turística de Cataluña se calcula sola por estancia y, cada semestre, queda lista para declarar en la ATC. El NRUA lo tramitas tú una vez y lo pones en tus anuncios.
+Lo que ocurre en la práctica: el huésped recibe un enlace antes de llegar y rellena sus datos desde el móvil. Hostly valida cada campo, envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. En el resto de España, activamos contigo la conexión con la policía que te toque. La tasa turística de Cataluña se calcula sola por estancia y, cada semestre, queda lista para declarar en la ATC. El NRUA lo tramitas tú una vez y lo pones en tus anuncios.
 
 Para un propietario que ahora mismo paga a una gestoría por estos trámites o que los lleva manualmente, esto supone ahorrarse ese pago o esas horas y, sobre todo, no tener que acordarse de enviar el registro cada día.
 

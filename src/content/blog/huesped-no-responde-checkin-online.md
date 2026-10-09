@@ -91,7 +91,7 @@ Si estás presente y rechaza el check-in online:
 
 1. Captura sus datos **allí mismo** con su DNI/pasaporte.
 2. Regístralo tú en la plataforma de la policía que te toque, desde el móvil.
-3. Anota los datos del documento; no hace falta guardar una foto. Esos datos sí debes conservarlos, por si hay inspección.
+3. Conserva esos datos por si hay inspección; no hace falta guardar una foto del documento.
 
 Es peor para ti (más trabajo) pero cumples la obligación.
 
@@ -118,7 +118,7 @@ Decisión estratégica: ¿envías el código aunque el check-in no esté complet
 - Pro: mejor experiencia.
 - Contra: tienes que registrar tú si no lo han hecho.
 
-**Recomendación práctica**: en Hostly, el código solo aparece cuando el check-in está hecho. Con otras herramientas, lo habitual es no bloquear por defecto y sí bloquear en perfiles de riesgo (reservas de última hora, huéspedes sin reseñas, estancias largas), si la herramienta permite reglas por perfil.
+**Recomendación práctica**: no bloquear por defecto y sí en perfiles de riesgo (reservas de última hora, huéspedes sin reseñas, estancias largas), si tu herramienta permite reglas por perfil. En Hostly no hace falta decidirlo: el código solo aparece cuando el check-in está hecho.
 
 ## Cuándo insistir y cuándo dejarlo
 

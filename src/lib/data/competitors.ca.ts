@@ -6,7 +6,7 @@ import type { Competitor } from './competitors';
 
 // El que fa Hostly amb el registre de viatgers, dit igual a totes les comparatives.
 const registreGratis =
-  "Check-in online, registre de viatgers i taxa turística de Catalunya, gratis per sempre. A Catalunya, Hostly envia el registre als Mossos cada dia, sense que hagis de fer res. A la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui.";
+  "Check-in online, registre de viatgers i taxa turística de Catalunya, gratis per sempre. Allà, Hostly envia el registre als Mossos cada dia, sense que hagis de fer res. A la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui.";
 
 // Quan no tenim una dada pública fiable d'una funció del competidor, no marquem ✗.
 const consultar = 'Consultar';
@@ -35,7 +35,7 @@ export const competitorsCa: Competitor[] = [
     ],
     faqs: [
       { q: "Quant triga la migració des d'Icnea?", a: 'Depèn de quants pisos tinguis. A Hostly Complet, el canvi el fem amb tu durant el primer mes, en una configuració 1 a 1: pisos, canals i reserves.' },
-      { q: 'Hostly és més car que Icnea?', a: "Depèn de quants pisos tinguis i del que necessitis. Hostly costa 40 €/mes per pis, 35 € a partir de 5, amb la IA a WhatsApp i els preus amb PriceLabs integrat; el check-in i el registre a la policia són gratis. Icnea publica una quota des de 150 €/mes per a fins a 10 propietats (preu de l'octubre del 2026). Fes els números amb els teus pisos i compara què inclou cadascun." },
+      { q: 'Hostly és més car que Icnea?', a: "Depèn de quants pisos tinguis i del que necessitis. Hostly costa 40 €/mes per pis, 35 € a partir de 5, amb la IA a WhatsApp i els preus amb PriceLabs integrat; el check-in i el registre a la policia són gratis. Icnea publica una quota des de 150 €/mes per a fins a 10 propietats (preu de l'octubre del 2026). Fes números amb els teus pisos i compara què inclou cadascun." },
     ],
   },
   {
@@ -48,7 +48,7 @@ export const competitorsCa: Competitor[] = [
       { title: 'IA a WhatsApp', body: "La IA de Hostly contesta la majoria de missatges a l'instant, en l'idioma de l'hoste i les 24 hores, amb la informació de cada pis. Ve amb Hostly Complet." },
       { title: 'Des del primer pis', body: 'Els trams de preu de Hostify comencen a 5 allotjaments. Hostly cobra per pis des del primer: 40 €/mes, 35 € a partir de 5. I el check-in i el registre a la policia són gratis.' },
       { title: 'Check-in i registre gratis', body: registreGratis },
-      { title: 'En català i castellà', body: "L'app de Hostly és en català i castellà, i a Hostly Complet el suport te'l dona una persona, en tots dos idiomes." },
+      { title: 'En català i castellà', body: "L'app de Hostly és en català i castellà, i el suport te'l dona una persona, en tots dos idiomes." },
       { title: 'Preu en euros', body: 'Hostify publica els preus en dòlars, així que el que pagues en euros pot variar amb el canvi. Hostly costa 40 €/mes per pis, 35 € a partir de 5.' },
     ],
     comparison: [
@@ -74,7 +74,7 @@ export const competitorsCa: Competitor[] = [
       { title: 'El dia a dia del pis', body: 'Lodgify se centra en les reserves directes i el seu creador de webs. Hostly se centra en el dia a dia del pis: neteges, missatges, registre de viatgers i finances.' },
       { title: 'IA que contesta per tu', body: "La IA de Hostly contesta la majoria de missatges dels hostes a l'instant, les 24 hores i en el seu idioma. Quan cal una persona, t'avisa." },
       { title: 'Check-in i registre gratis', body: registreGratis },
-      { title: 'A Hostly Complet, ho configurem amb tu', body: "El primer mes, en una videotrucada 1 a 1: pisos, canals i missatges. Després t'atén una persona, en català o castellà." },
+      { title: 'A Hostly Complet, ho configurem amb tu', body: "El primer mes, en una videotrucada 1 a 1, deixem a punt els teus pisos, els teus canals i els teus missatges. Després t'atén una persona, en català o castellà." },
       { title: 'Preu previsible', body: '40 €/mes per pis, 35 € a partir de 5, sense comissions per reserva ni percentatges sobre els teus ingressos. El primer mes, gratis.' },
     ],
     comparison: [
@@ -123,7 +123,7 @@ export const competitorsCa: Competitor[] = [
     target: 'Amfitrions particulars exigents (1-30 propietats); molt fort als EUA i al Regne Unit',
     priceNote: "Hospitable: pla Essentials gratis; de pagament, des de 29 €/mes + IVA per a 1 propietat (preu publicat l'octubre del 2026) · Hostly: check-in gratis i 40 €/mes per pis amb Hostly Complet",
     advantages: [
-      { title: 'Registre de viatgers a Espanya', body: "Hospitable és fort als EUA i al Regne Unit. A Hostly, el check-in online, el registre de viatgers i la taxa turística de Catalunya són gratis per sempre. A Catalunya, el registre va als Mossos cada dia; a la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui." },
+      { title: 'Registre de viatgers a Espanya', body: "Hospitable és fort als EUA i al Regne Unit. A Hostly, el check-in online, el registre de viatgers i la taxa turística de Catalunya són gratis per sempre. Allà, el registre va als Mossos cada dia; a la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui." },
       { title: 'WhatsApp com a canal principal', body: 'Hostly està pensat per a WhatsApp: API oficial de Meta, un número gestionat per Hostly i la IA que hi contesta.' },
       { title: 'Suport en català i castellà', body: "Amb Hostly Complet, t'atén una persona en català o castellà, no un xatbot. Amb el pla Gratis, ens escrius a hola@hostlylabs.com." },
       { title: 'Configuració amb tu', body: 'A Hostly Complet, el primer mes ho configurem tot amb tu en una videotrucada 1 a 1: pisos, canals i missatges.' },

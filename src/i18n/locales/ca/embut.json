@@ -17,7 +17,7 @@
       "correo": "Correu",
       "correo_placeholder": "anna@gmail.com",
       "continuar": "Continuar",
-      "privacidad_antes": "En enviar les teves dades, acceptes que et truquem o t'escrivim sobre Hostly. Més informació a la",
+      "privacidad_antes": "En enviar les teves dades, acceptes que et truquem o t'escriguem sobre Hostly. Més informació a la",
       "privacidad_link": "política de privacitat"
     },
     "error": {
@@ -122,7 +122,7 @@
       "hostly_medida": "Amb Hostly: 35 € al mes per pis, tot en una app, i bona part d'aquesta feina, feta sola.",
       "horas_ano": "Això són {{ano}} del teu temps.",
       "registro_cat": "I el registre als Mossos d'Esquadra el fa Hostly, gratis.",
-      "registro_otra": "I el registre a la policia (SES) l'activem amb tu, gratis.",
+      "registro_otra": "I el registre a la policia l'activem amb tu, gratis.",
       "gate_titulo": "Veure el detall",
       "gate_texto": "Deixa'ns el teu telèfon i t'ensenyem el detall, eina per eina. Si vols, et truquem per ajudar-te a decidir.",
       "gate_boton": "Veure el detall",

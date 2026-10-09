@@ -600,7 +600,7 @@ export const FEATURES: Feature[] = [
       'Tres papeles claros: gestor, limpieza y propietario',
       'Permisos por piso: cada gestor lleva los pisos que le das',
       'Propietarios en solo lectura: calendario y finanzas',
-      'En la app, cada uno ve lo suyo: la limpieza, sus limpiezas; el gestor, sus reservas',
+      'En la app, cada uno ve lo suyo: quien limpia, sus limpiezas; el gestor, sus reservas',
       'Sin límite de usuarios',
       'El huésped no necesita cuenta: recibe un enlace de su estancia',
     ],

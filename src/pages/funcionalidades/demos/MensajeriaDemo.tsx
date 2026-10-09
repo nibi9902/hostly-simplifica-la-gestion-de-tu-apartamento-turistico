@@ -198,7 +198,7 @@ function PlantillasView({ frame, fps }: { frame: number; fps: number }) {
   const NETEJA_TEMPLATES = [
     { label: t('mensajeria.templateNewCleaning'),      preview:t('mensajeria.previews.netejaNova'),    timing: t('mensajeria.timingOnConfirm'),      timingColor:colors.primary, timingBg:colors.primarySoft },
     { label: t('mensajeria.templateCancelledCleaning'),preview:t('mensajeria.previews.netejaCancel'), timing: t('mensajeria.timingOnCancel'),       timingColor:'#DC2626',      timingBg:'#FEF2F2'           },
-    { label: t('mensajeria.templateCleaningReminder'), preview:'Recuerda que mañana hay limpieza a las 11:00…',   timing: t('mensajeria.timing1DayCheckout'),   timingColor:'#D97706',      timingBg:'#FFFBEB'           },
+    { label: t('mensajeria.templateCleaningReminder'), preview:t('mensajeria.previews.netejaRecordatori'),   timing: t('mensajeria.timing1DayCheckout'),   timingColor:'#D97706',      timingBg:'#FFFBEB'           },
   ];
 
   return (

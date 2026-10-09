@@ -155,7 +155,11 @@
 4. Adreces en català (`/ca/precios` → `/ca/preus`…), amb redireccions.
 5. Revisar la informació legal general del blog (dates del RD 933/2021, sancions, trams de la
    taxa).
-6. **Pes de la primera càrrega**: totes les traduccions (castellà i català, 22 fitxers, 200 KB)
+6. **El vídeo de /demo** (`public/assets/demos/hostly-demo.mp4`, 60 s, fet amb Remotion) mostra
+   l'app d'abans i diu «Taxa turística · 1r trimestre 2026», quan la taxa de Catalunya es
+   presenta per semestres; i atribueix l'ajust de preus a «Hostly Automàtic» (el fa PriceLabs).
+   Cal tornar-lo a renderitzar amb l'app d'ara.
+7. **Pes de la primera càrrega**: totes les traduccions (castellà i català, 22 fitxers, 200 KB)
    van dins de `index-*.js` (410 KB, 129 KB comprimit). Carregar només l'idioma i els espais
    de noms de cada pàgina (`i18next-resources-to-backend` + `import()`) en trauria uns 50 KB
    comprimits. Cal una vora de Suspense i provar que no parpelleja.

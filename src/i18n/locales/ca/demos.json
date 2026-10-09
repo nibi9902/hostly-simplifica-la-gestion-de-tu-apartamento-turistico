@@ -44,17 +44,18 @@
     "templateCleaningReminder": "Recordatori neteja",
     "timingOnConfirm": "En confirmar reserva",
     "timing1DayCheckin": "1 dia abans del check-in",
-    "timing3DaysCheckin": "3 dies abans check-in",
+    "timing3DaysCheckin": "3 dies abans del check-in",
     "timingCheckoutDay": "Dia del check-out",
     "timingOnCancel": "En cancel·lar reserva",
-    "timing1DayCheckout": "1 dia abans checkout",
+    "timing1DayCheckout": "1 dia abans del check-out",
     "previews": {
       "benvinguda": "✨ Benvingut, David! Quina il·lusió tenir-te…",
       "checkin": "El check-in és autònom a partir de les 15:00…",
       "dades": "Hola, David! 👋 Necessitem que ens enviïs…",
       "checkout": "Recorda que el check-out s'ha de fer abans…",
-      "netejaNova": "Hola Eva, hi ha una reserva nova a Luminoso…",
-      "netejaCancel": "Hola Eva, la reserva prevista s'ha cancel·lat…"
+      "netejaNova": "Hola, Eva, hi ha una reserva nova a Luminoso…",
+      "netejaCancel": "Hola, Eva, la reserva prevista s'ha cancel·lat…",
+      "netejaRecordatori": "Recorda que demà hi ha neteja a les 11:00…"
     },
     "diaConfirmar": "22 abr. · En confirmar la reserva",
     "diaAbans": "25 abr. · 1 dia abans del check-in",

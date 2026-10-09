@@ -1,6 +1,6 @@
 ---
 title: "Cuánto cuesta gestionar un piso turístico"
-description: "Descubre el coste real anual de gestionar un apartamento turístico: suscripciones, horas y gestoría. Compara opciones y haz tus números."
+description: "Descubre el coste real anual de gestionar un apartamento turístico: suscripciones, horas y gestoría. Compara opciones y haz números."
 publishedAt: "2026-04-21"
 keywords:
   - "cuánto cuesta gestionar piso turístico"
@@ -98,7 +98,7 @@ Hostly no es otra herramienta que añadir a la lista. Es la app que junta en una
 
 El resultado: una sola app en lugar de varias herramientas sueltas, y el registro de viajeros, que quizá ahora pagas a la gestoría, gratis.
 
-Con los rangos de la tabla, las herramientas sueltas cuestan entre 468 y 1.416 € al año por piso, y Hostly Completo, 480 €. Si te sale más caro o más barato que ahora depende de lo que pagues hoy: haz los números con la [calculadora](/calcula). Lo que sí cambia seguro es el tiempo que recuperas al no tener que hacer malabarismos entre apps.
+Con los rangos de la tabla, las herramientas sueltas cuestan entre 468 y 1.416 € al año por piso, y Hostly Completo, 480 €. Si te sale más caro o más barato que ahora depende de lo que pagues hoy: haz números con la [calculadora](/calcula). Lo que sí cambia seguro es el tiempo que recuperas al no tener que hacer malabarismos entre apps.
 
 El check-in online, el registro a la policía y la tasa turística de Cataluña son **gratis para siempre** en Hostly, con el plan Gratis o con Hostly Completo.
 

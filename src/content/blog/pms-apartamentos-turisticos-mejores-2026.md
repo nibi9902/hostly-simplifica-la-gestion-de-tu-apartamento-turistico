@@ -88,7 +88,7 @@ Análisis honesto de las opciones más relevantes para un propietario o gestor e
 
 **Origen**: Cataluña. **Para quién**: de 1 a 15 pisos en España. **Precio**: gratis para el check-in y el registro a la policía; Hostly Completo, 40 €/mes por piso (35 € desde 5).
 
-Combina IA en WhatsApp, check-in con registro automático en los Mossos d'Esquadra, channel manager para Airbnb y Booking, limpiezas con app propia, precios al día con PriceLabs integrado y atención en castellano y catalán. En el resto de España, activamos contigo la conexión con la policía que te toque: SES.Hospedajes o, en Euskadi, la Ertzaintza. Pensado específicamente para el mercado español y la operativa del día a día.
+Combina IA en WhatsApp, check-in con registro automático en los Mossos d'Esquadra, channel manager para Airbnb y Booking, limpiezas con app propia, precios al día con PriceLabs integrado y atención en castellano y catalán. En el resto de España, activamos contigo la conexión con la policía que te toque. Pensado específicamente para el mercado español y la operativa del día a día.
 
 **Pros**: check-in, registro, mensajes, limpiezas y precios en una sola app. La IA contesta a los huéspedes por WhatsApp. Registro a los Mossos automático. Plan Gratis para el check-in y el registro.
 **Contras**: marca joven. Solo Airbnb y Booking.com (una web propia con reservas directas se hace a medida, como automatización aparte), muchos menos canales que Hostify.

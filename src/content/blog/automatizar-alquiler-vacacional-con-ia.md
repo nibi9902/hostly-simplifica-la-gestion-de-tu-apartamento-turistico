@@ -65,7 +65,7 @@ Dos claves para que esto funcione sin parecer un bot:
 
 ### 2. Check-in online + registro a la policía
 
-El huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; en el resto de España, a SES.Hospedajes o, en Euskadi, a la Ertzaintza, una vez lo activamos contigo). Tú no mueves un dedo.
+El huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; en el resto de España, a la policía que te toque, cuando lo activemos contigo). Tú no mueves un dedo.
 
 Ventaja adicional: el huésped ya ha llegado **antes de llegar**. Cuando se presenta, tiene el código, las instrucciones y ya te ha dejado los datos legales. Reduce tensión al check-in real y elimina totalmente la necesidad de quedar en persona.
 

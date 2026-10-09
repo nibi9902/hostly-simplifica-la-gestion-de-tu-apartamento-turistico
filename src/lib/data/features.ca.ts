@@ -560,7 +560,7 @@ export const FEATURES_CA: Feature[] = [
       'Tres papers clars: gestor, neteja i propietari',
       'Permisos per pis: cada gestor porta els pisos que li dones',
       'Propietaris només de lectura: calendari i finances',
-      'A l\'app, cadascú veu el seu: la neteja, les seves neteges; el gestor, les seves reserves',
+      'A l\'app, cadascú veu el seu: qui neteja, les seves neteges; el gestor, les seves reserves',
       'Sense límit d\'usuaris',
       'L\'hoste no necessita compte: rep un enllaç de la seva estada',
     ],
@@ -657,7 +657,7 @@ export const FEATURES_CA: Feature[] = [
       },
       {
         title: 'El teu web, connectat',
-        body: 'Si ja tens web, la connectem amb Hostly perquè les reserves directes entrin al mateix calendari.',
+        body: 'Si ja tens web, el connectem amb Hostly perquè les reserves directes entrin al mateix calendari.',
       },
       {
         title: 'Avisos a la teva manera',

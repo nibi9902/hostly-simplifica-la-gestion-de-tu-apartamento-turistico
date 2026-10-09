@@ -77,7 +77,7 @@ El mayor consumidor. Automatizando la mayoría de mensajes rutinarios con una IA
 
 Sin check-in online: el huésped llega, tú le abres, pides el DNI, haces foto, entras manualmente al portal y rellenas los 14 datos. Por reserva, son 15-20 minutos.
 
-Con check-in online: el huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; en el resto de España, a SES.Hospedajes o, en Euskadi, a la Ertzaintza, una vez lo activamos contigo). Tú solo intervienes si falta algún check-in: Hostly te avisa.
+Con check-in online: el huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; en el resto de España, a la policía que te toque, cuando lo activemos contigo). Tú solo intervienes si falta algún check-in: Hostly te avisa.
 
 **Inversión**: 0 € con el plan Gratis de Hostly. Las herramientas dedicadas, como Chekin, empiezan en 3,95 €/mes por propiedad.
 **Ahorro**: 1 h/semana para 6-8 reservas.

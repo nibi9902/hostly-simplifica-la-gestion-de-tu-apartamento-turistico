@@ -82,7 +82,7 @@ Si gestionas apartamentos en Cataluña y fuera (Baleares, Madrid, Valencia, Anda
 - **Enviar a SES** los del resto del Estado.
 - **Enviar a Ertzaintza** si tienes en Euskadi.
 
-Hacer esto manualmente es un error esperando a pasar. Lo práctico es dejar configurado desde el alta a qué sistema envía cada piso. En Hostly, los pisos de Cataluña envían a los Mossos de forma automática; para los del resto de España, activamos contigo la conexión con la policía que toque (SES.Hospedajes o, en Euskadi, la Ertzaintza).
+Hacer esto manualmente es un error esperando a pasar. Lo práctico es dejar configurado desde el alta a qué sistema envía cada piso. En Hostly, los pisos de Cataluña envían a los Mossos de forma automática; para los del resto de España, activamos contigo la conexión con la policía que toque.
 
 ## Cómo automatizarlo completamente
 
@@ -106,4 +106,4 @@ Si tus apartamentos están en Cataluña:
 - **Datos**: los mismos 14 que SES.
 - **Automatización**: imprescindible si gestionas más de un apartamento.
 
-La decisión práctica es elegir un PMS que cubra Mossos nativamente, no como plugin de terceros. Así no tienes que acordarte de enviarlo.
+La decisión práctica es elegir un PMS que cubra Mossos nativamente, no como plugin de terceros. Así no tienes que acordarte de enviar el registro.
