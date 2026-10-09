@@ -149,50 +149,48 @@
   }
 }
 
-/* ── Glass Cards — mobile overrides ── */
+/* ── «Lo que reemplaza» — la tira de targetes ── */
+/* Al mòbil, el primer i l'últim també queden centrats (espai a cada punta) */
+.glass-tira::before,
+.glass-tira::after {
+  content: '';
+  flex: 0 0 0;
+}
+
 @media (max-width: 767px) {
-  /* Mantenim l'sticky + animació, però posem fons opac al container
-     per tapar el "color sobrant" de les cards anteriors quan s'apilen.
-     Reduïm height de 100vh → 75vh perquè el scroll total no sigui
-     7×100vh (massa) — així el flux entre seccions és més natural. */
-  .glass-sticky-container {
-    background: #f8fafc !important;
-    height: 75vh !important;
+  /* Una targeta per pantalla amb la vora de les veïnes a la vista */
+  .glass-tira::before,
+  .glass-tira::after {
+    flex-basis: 7%;
+  }
+  .glass-slide {
+    width: 86% !important;
+    padding-inline: 5px;
   }
   .glass-card-wrapper {
+    width: 100% !important;
     height: auto !important;
-    min-height: 540px !important;
-    max-height: 80vh !important;
-    width: 94% !important;
-    top: 0 !important;
+    min-height: 0 !important;
   }
   .glass-card-body {
     display: flex !important;
     flex-direction: column !important;
   }
-  .glass-card-right {
-    display: none !important;
-  }
   .glass-card-left {
-    padding: 1.5rem 1.5rem 1.5rem !important;
+    padding: 1.25rem 1.25rem 1rem !important;
     justify-content: flex-start !important;
     gap: 0.5rem !important;
-    flex: 1 !important;
   }
   .glass-card-title {
     font-size: 1.45rem !important;
     line-height: 1.2 !important;
     margin-bottom: 0.5rem !important;
   }
-  /* Descripció — la mantenim però més compacta i truncada */
+  /* Sencera, sense «…»: totes les targetes fan l'alçada de la més llarga */
   .glass-card-desc {
-    font-size: 0.85rem !important;
-    line-height: 1.4 !important;
-    margin-bottom: 0.75rem !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 3 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
+    font-size: 0.875rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.5rem !important;
   }
   /* Frase caligràfica + línia de preu — més compactes */
   .glass-card-replaces {
@@ -203,11 +201,31 @@
     font-size: 1.35rem !important;
     margin-bottom: 0.4rem !important;
   }
-  /* CTA a mòbil — una mica més compacte */
+  /* «Te ahorras 20 €/mes» i «incluido en Hostly» no hi caben en una línia: sense el punt volat */
+  .glass-card-sep {
+    display: none;
+  }
+  .glass-card-incl {
+    flex-basis: 100%;
+  }
   .glass-card-cta {
     margin-top: 0.875rem !important;
     padding: 0.5rem 0.95rem !important;
     font-size: 12px !important;
+  }
+  /* La demo, a sota del text: una finestra baixa que en mostra la part de dalt */
+  .glass-card-right {
+    flex: none;
+    height: 230px;
+    padding: 0 0.75rem !important;
+    align-items: flex-start !important;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent);
+    mask-image: linear-gradient(to bottom, #000 72%, transparent);
+  }
+  .glass-card-demo {
+    transform: scale(0.86) !important;
+    transform-origin: top center !important;
   }
 }
 

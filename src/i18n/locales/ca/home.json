@@ -283,12 +283,10 @@
   "glass_cards": {
     "te_ahorras": "T'estalvies",
     "incluido_en_hostly": "inclòs a Hostly",
-    "en_linea": "en línia",
-    "hola": "Hola",
-    "captura_pendent": "Captura pendent",
     "see_more": "Veure com funciona",
     "cards": [
       {
+        "tab": "Check-in i policia",
         "badge": "✓ Check-in i Policia",
         "title": "Registre de viatgers i taxa turística. Sense gestoria.",
         "description": "Les dades de l'hoste surten cap a la policia cada dia, soles. Compleixes la normativa sense pensar-hi, i sense pagar ningú per fer-ho.",
@@ -297,12 +295,14 @@
         "replaces_inclusion": "gratis amb Hostly"
       },
       {
+        "tab": "Neteges",
         "badge": "Neteges i coordinació",
         "title": "El teu equip rep l'avís automàticament.",
         "description": "Quan l'hoste fa la reserva, el sistema assigna el torn i avisa l'equip. Sense trucades, sense grups de WhatsApp, sense tu al mig. Automàticament.",
         "replaces_phrase": "Adeu al WhatsApp"
       },
       {
+        "tab": "Calendari",
         "badge": "Reserves i calendaris",
         "title": "Airbnb i Booking, sempre sincronitzats.",
         "description": "Una reserva entra per un canal, l'altre es bloqueja sol. Sense overbookings. Sense refrescar pestanyes. Tot en un sol lloc.",
@@ -310,18 +310,21 @@
         "replaces_suffix": ""
       },
       {
+        "tab": "Preus",
         "badge": "Preus dinàmics",
         "title": "Preus al dia, amb PriceLabs a dins.",
         "description": "PriceLabs recomana el preu de cada nit. Hostly hi aplica els teus mínims i temporades i el publica a Airbnb i Booking cada dia.",
         "replaces_phrase": "Sense obrir cap altra app"
       },
       {
+        "tab": "Missatges",
         "badge": "Missatges amb hostes",
         "title": "Respon en segons. Sense tocar el mòbil.",
         "description": "Hostly contesta la majoria a l'instant, en l'idioma de l'hoste, i t'avisa quan cal una persona.",
         "replaces_phrase": "Respon Hostly, no tu"
       },
       {
+        "tab": "Pagaments",
         "badge": "Pagaments i factures",
         "title": "Tot el que cobres, dins de Hostly.",
         "description": "Tanca el mes sense obrir Excel. Ingressos per plataforma, comissions, liquidacions i repartiment propietari–gestor. En un sol lloc.",

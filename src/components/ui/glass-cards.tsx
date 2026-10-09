@@ -1,12 +1,11 @@
-import React, { useEffect, useRef, useState, lazy, Suspense } from 'react';
-import { AnimatePresence, motion, useInView } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useCallback, useEffect, useRef, useState, lazy, Suspense } from 'react';
+import { AnimatePresence, motion, useInView, useMotionValue, useReducedMotion, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar, MessageSquare, ShieldCheck, Sparkles, TrendingUp, Wallet, type LucideIcon } from 'lucide-react';
 import { LangLink } from '@/i18n/LangLink';
+import { cn } from '@/lib/utils';
 
-/* Demos React lazy-loaded — només es carreguen quan la card és a viewport */
+/* Demos React lazy-loaded — només es carreguen quan la targeta és la de davant o una veïna */
 const CheckinDemo = lazy(() => import('@/pages/funcionalidades/demos/CheckinDemo'));
 const LimpiezasDemo = lazy(() => import('@/pages/funcionalidades/demos/LimpiezasDemo'));
 const ChannelManagerDemo = lazy(() => import('@/pages/funcionalidades/demos/ChannelManagerDemo'));
@@ -57,21 +56,6 @@ const HighlightedWord: React.FC<{ word: string }> = ({ word }) => {
   );
 };
 
-/* Real app screenshots — WebP amb PNG fallback */
-const appCheckinAutonomo = '/assets/app-screenshots/checkin-autonomo.png';
-const appDetallReserva   = '/assets/app-screenshots/detall-reserva.png';
-const appXats            = '/assets/app-screenshots/xats.png';
-const appNetejaLlista    = '/assets/app-screenshots/neteja-llista.png';
-const appCalendari       = '/assets/app-screenshots/calendari.png';
-const appFinances        = '/assets/app-screenshots/finances.png';
-const appCodiAcces       = '/assets/app-screenshots/codi-acces.png';
-
-function toWebp(src: string): string {
-  return src.replace(/\.(png|jpe?g)$/i, '.webp');
-}
-
-gsap.registerPlugin(ScrollTrigger);
-
 /* ─────────────────────────────────────────────────────────
    CARD DATA
 ───────────────────────────────────────────────────────── */
@@ -80,43 +64,31 @@ type ReplacePhrase =
   | { phrase: string; price: string; inclusionLabel?: string }
   | { prefix: string; brands: string[]; suffix: string; price: string; inclusionLabel?: string };
 
-interface Person {
-  name: string;
-  photo: string;
-  role: string;
-  message: string;
-}
-
 interface CardData {
   id: number;
+  /** Nom curt de la pestanya */
+  tab: string;
+  icon: LucideIcon;
   badge: string;
   title: string;
   description: string;
   replaces: ReplacePhrase;
-  freeBadge: string | null;
   color: string;
   bg: string;
   textColor: string;
   mutedColor: string;
-  imageSrc: string | null;
-  screen: React.ReactNode | null;
-  /** Demo React animat — té prioritat sobre imageSrc. Es carrega lazy.
-   *  Tots els demos accepten `loop` (cicle infinit) i `staticMode` (sense animacions internes). */
-  demoComponent?: React.LazyExoticComponent<React.FC<{ loop?: boolean; staticMode?: boolean }>>;
-  /** URL mostrada a la chrome del mockup de browser */
-  mockupUrl: string;
+  /** Demo React animat. Es carrega lazy. Tots accepten `loop` (cicle infinit). */
+  demoComponent: React.LazyExoticComponent<React.FC<{ loop?: boolean; staticMode?: boolean }>>;
   /** Slug de la pàgina de funcionalitat (/funcionalidades/{slug}). Si null, no es mostra CTA. */
   featureSlug: string | null;
-  /** Variant: 'app' (browser mockup) | 'photo' (retrat humà amb chat overlay) */
-  variant?: 'app' | 'photo';
-  /** Per variant 'photo': cicle de persones (cada una amb foto + nom + rol + missatge propi) */
-  photoBubble?: { people: Person[] };
 }
 
 const cardData: CardData[] = [
   // 1. Check-in — compliance legal (badge amb ✓ + fons verd menta)
   {
     id: 1,
+    tab: 'Check-in y policía',
+    icon: ShieldCheck,
     badge: '✓ Check-in y Policía',
     title: 'Registro de viajeros y taxa turística. Sin gestoría.',
     description: 'Los datos del huésped salen a la policía cada día, solos. Cumples con la normativa sin pensar en ello, y sin pagar a nadie por hacerlo.',
@@ -128,110 +100,97 @@ const cardData: CardData[] = [
       price: '15 €/mes',
       inclusionLabel: 'gratis con Hostly',
     },
-    freeBadge: null,
     color: 'rgba(34, 197, 94, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
     textColor: '#0f172a',
     mutedColor: 'rgba(15, 23, 42, 0.55)',
-    imageSrc: appCheckinAutonomo,
-    screen: null,
     demoComponent: CheckinDemo,
-    mockupUrl: 'app.hostlylabs.com/check-in',
     featureSlug: 'check-in-online',
   },
   // 2. Limpieza — sense xifra (estalvi qualitatiu)
   {
     id: 2,
+    tab: 'Limpiezas',
+    icon: Sparkles,
     badge: 'Limpiezas y coordinación',
     title: 'Tu equipo recibe el aviso automáticamente.',
     description: 'Cuando el huésped hace la reserva, el sistema asigna el turno y avisa al equipo. Sin llamadas, sin grupos de WhatsApp, sin ti en medio. Automáticamente.',
     replaces: { phrase: 'Dile adiós al WhatsApp', price: '' },
-    freeBadge: null,
     color: 'rgba(59, 130, 246, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%)',
     textColor: '#0f172a',
     mutedColor: 'rgba(15, 23, 42, 0.55)',
-    imageSrc: appNetejaLlista,
-    screen: null,
     demoComponent: LimpiezasDemo,
-    mockupUrl: 'app.hostlylabs.com/limpiezas',
     featureSlug: 'gestion-de-limpiezas',
   },
   // 3. Reservas (Smoobu / Hostify / ...)
   {
     id: 3,
+    tab: 'Calendario',
+    icon: Calendar,
     badge: 'Reservas y calendarios',
     title: 'Airbnb y Booking, siempre sincronizados.',
     description: 'Una reserva entra por un canal, el otro se bloquea solo. Sin overbookings. Sin refrescar pestañas. Todo en un mismo lugar.',
     replaces: { prefix: 'Adiós a ', brands: ['Smoobu', 'Hostify', 'Lodgify', 'Hostaway'], suffix: '', price: '20 €/mes' },
-    freeBadge: null,
     color: 'rgba(96, 165, 250, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #eff6ff 100%)',
     textColor: '#0f172a',
     mutedColor: 'rgba(15, 23, 42, 0.55)',
-    imageSrc: appCalendari,
-    screen: null,
     demoComponent: ChannelManagerDemo,
-    mockupUrl: 'app.hostlylabs.com/calendario',
     featureSlug: 'channel-manager',
   },
   // 4. Precios dinámicos — el motor és PriceLabs (no es pot dir «desconecta PriceLabs»)
   {
     id: 4,
+    tab: 'Precios',
+    icon: TrendingUp,
     badge: 'Precios dinámicos',
     title: 'Precios al día, con PriceLabs dentro.',
     description: 'PriceLabs recomienda el precio de cada noche. Hostly aplica tus mínimos y temporadas y lo publica en Airbnb y Booking cada día.',
     replaces: { phrase: 'Sin abrir otra app', price: '' },
-    freeBadge: null,
     color: 'rgba(251, 146, 60, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #fff7ed 100%)',
     textColor: '#0f172a',
     mutedColor: 'rgba(15, 23, 42, 0.55)',
-    imageSrc: appDetallReserva,
-    screen: null,
     demoComponent: PreciosDinamicosDemo,
-    mockupUrl: 'app.hostlylabs.com/precios',
     featureSlug: 'precios-dinamicos',
   },
   // 5. Mensajes — ningú paga 22 €/mes de ChatGPT per contestar hostes: fora la comparació
   {
     id: 5,
+    tab: 'Mensajes',
+    icon: MessageSquare,
     badge: 'Mensajes con huéspedes',
     title: 'Responde en segundos. Sin tocar el móvil.',
     description: 'Hostly contesta la mayoría al instante, en el idioma del huésped, y te avisa cuando hace falta una persona.',
     replaces: { phrase: 'Responde Hostly, no tú', price: '' },
-    freeBadge: null,
     color: 'rgba(168, 85, 247, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #faf5ff 100%)',
     textColor: '#0f172a',
     mutedColor: 'rgba(15, 23, 42, 0.55)',
-    imageSrc: appXats,
-    screen: null,
     demoComponent: IAWhatsAppDemo,
-    mockupUrl: 'app.hostlylabs.com/mensajes',
     featureSlug: 'ia-whatsapp',
   },
   // 6. Pagos — "Nunca más un Excel" enlloc de "gestoria"
   {
     id: 6,
+    tab: 'Pagos',
+    icon: Wallet,
     badge: 'Pagos y facturas',
     title: 'Todo lo que cobras, dentro de Hostly.',
     description: 'Cierra el mes sin abrir Excel. Ingresos por plataforma, comisiones, liquidaciones y reparto propietario–gestor. En un solo lugar.',
     replaces: { phrase: 'Nunca más un Excel', price: '' },
-    freeBadge: null,
     color: 'rgba(99, 102, 241, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #eef2ff 100%)',
     textColor: '#0f172a',
     mutedColor: 'rgba(15, 23, 42, 0.55)',
-    imageSrc: appFinances,
-    screen: null,
     demoComponent: FinanzasDemo,
-    mockupUrl: 'app.hostlylabs.com/finanzas',
     featureSlug: 'finanzas',
   },
 ];
 
 interface GlassCardText {
+  tab?: string;
   badge: string;
   title: string;
   description: string;
@@ -239,7 +198,6 @@ interface GlassCardText {
   replaces_suffix?: string;
   replaces_phrase?: string;
   replaces_inclusion?: string;
-  coach_messages?: Array<{ name: string; role: string; message: string }>;
 }
 
 /* Merges i18n text over the static cardData (non-text fields stay from cardData) */
@@ -254,6 +212,7 @@ function useMergedCards(): typeof cardData {
 
     const merged: typeof card = {
       ...card,
+      tab: tx.tab ?? card.tab,
       badge: tx.badge ?? card.badge,
       title: tx.title ?? card.title,
       description: tx.description ?? card.description,
@@ -271,16 +230,6 @@ function useMergedCards(): typeof cardData {
         ...card.replaces,
         phrase: tx.replaces_phrase ?? (card.replaces as { phrase: string }).phrase,
         ...(tx.replaces_inclusion !== undefined ? { inclusionLabel: tx.replaces_inclusion } : {}),
-      };
-    }
-
-    if (card.photoBubble && tx.coach_messages) {
-      merged.photoBubble = {
-        people: card.photoBubble.people.map((person, pi) => ({
-          ...person,
-          role: tx.coach_messages![pi]?.role ?? person.role,
-          message: tx.coach_messages![pi]?.message ?? person.message,
-        })),
       };
     }
 
@@ -302,604 +251,423 @@ function useCyclingItem<T>(items: T[] | undefined, intervalMs = 2600): T | null 
   return items[idx];
 }
 
-/** Retro-compatibility: l'ús existent per brands segueix funcionant */
-const useCyclingBrand = (brands: string[] | undefined) => useCyclingItem(brands, 2600);
-
 /* ─────────────────────────────────────────────────────────
-   CARD ITEM
+   TARGETA — text a l'esquerra, demo animada a la dreta
 ───────────────────────────────────────────────────────── */
 
-interface CardItemProps {
+interface TargetaProps {
   card: typeof cardData[number];
-  index: number;
-  totalCards: number;
+  /** La demo només es munta a la targeta de davant i a les veïnes (són animacions contínues) */
+  ambDemo: boolean;
 }
 
-const CardItem: React.FC<CardItemProps> = ({ card, index, totalCards }) => {
+const Targeta: React.FC<TargetaProps> = ({ card, ambDemo }) => {
   const { t } = useTranslation('home');
-  const cardRef      = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Si la card té brands cíclics, els rota cada 0.7s
-  const cyclingBrand = useCyclingBrand(
-    'brands' in card.replaces ? card.replaces.brands : undefined
-  );
-
-  // Si la card és variant 'photo', cicla entre les persones (foto + nom + rol)
-  const cyclingPerson = useCyclingItem(
-    card.variant === 'photo' ? card.photoBubble?.people : undefined,
-    3500, // una mica més lent que brands perquè la foto té més pes visual
-  );
-
-  useEffect(() => {
-    const cardEl    = cardRef.current;
-    const container = containerRef.current;
-    if (!cardEl || !container) return;
-
-    const isMobile = typeof window !== 'undefined'
-      && window.matchMedia('(max-width: 767px)').matches;
-
-    const targetScale = 1 - (totalCards - index) * 0.04;
-    gsap.set(cardEl, { scale: 1, transformOrigin: 'center top', autoAlpha: 1 });
-
-    const trigger = ScrollTrigger.create({
-      trigger: container,
-      start: 'top center',
-      end: 'bottom center',
-      scrub: 1,
-      onUpdate: (self) => {
-        // A mòbil: card visible normal mentre el seu scrub està en curs.
-        // Quan acaba (progress > 0.85) fa fade-out → no queda apilada darrere de les següents.
-        // A desktop: comportament original (stack visible).
-        const fadeStart = 0.85;
-        const alpha = isMobile && self.progress > fadeStart
-          ? Math.max(0, 1 - (self.progress - fadeStart) / (1 - fadeStart))
-          : 1;
-        gsap.set(cardEl, {
-          scale: Math.max(gsap.utils.interpolate(1, targetScale, self.progress), targetScale),
-          transformOrigin: 'center top',
-          autoAlpha: alpha,
-        });
-      },
-    });
-
-    return () => { trigger.kill(); };
-  }, [index, totalCards]);
+  // Si la targeta té marques cícliques, les va rotant
+  const cyclingBrand = useCyclingItem('brands' in card.replaces ? card.replaces.brands : undefined, 2600);
 
   const solid = card.color.replace('rgba', 'rgb').replace(/,\s*[\d.]+\)$/, ')');
 
   return (
     <div
-      ref={containerRef}
-      className="glass-sticky-container"
-      style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'sticky', top: 0 }}
+      className="glass-card-wrapper"
+      style={{ position: 'relative', width: '92%', maxWidth: '1200px', height: 'min(76vh, 680px)', minHeight: '600px', borderRadius: '28px', isolation: 'isolate' }}
     >
-      <div
-        ref={cardRef}
-        className="glass-card-wrapper"
-        style={{ position: 'relative', width: '92%', maxWidth: '1200px', height: '78vh', maxHeight: '720px', minHeight: '620px', borderRadius: '28px', isolation: 'isolate', top: `calc(-4vh + ${index * 20}px)`, transformOrigin: 'top' }}
-      >
-        {/* Conic border glow */}
-        <div style={{
-          position: 'absolute', inset: '-1px', borderRadius: '30px',
-          background: `conic-gradient(from 0deg, transparent 0deg, ${card.color} 60deg, ${card.color.replace('0.9', '0.35')} 120deg, transparent 180deg, ${card.color.replace('0.9', '0.15')} 240deg, transparent 360deg)`,
-          zIndex: -1, opacity: 0.45,
-        }} />
+      {/* Conic border glow */}
+      <div style={{
+        position: 'absolute', inset: '-1px', borderRadius: '30px',
+        background: `conic-gradient(from 0deg, transparent 0deg, ${card.color} 60deg, ${card.color.replace('0.9', '0.35')} 120deg, transparent 180deg, ${card.color.replace('0.9', '0.15')} 240deg, transparent 360deg)`,
+        zIndex: -1, opacity: 0.45,
+      }} />
 
-        {/* Card body */}
-        <div className="glass-card-body" style={{
-          position: 'relative', width: '100%', height: '100%',
-          display: 'grid', gridTemplateColumns: '2fr 3fr',
-          borderRadius: '28px', background: card.bg,
-          border: `1px solid ${card.color.replace('0.9', '0.12')}`,
-          boxShadow: '0 20px 60px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.9)',
-          overflow: 'hidden',
-        }}>
+      {/* Card body */}
+      <div className="glass-card-body" style={{
+        position: 'relative', width: '100%', height: '100%',
+        display: 'grid', gridTemplateColumns: '2fr 3fr',
+        borderRadius: '28px', background: card.bg,
+        border: `1px solid ${card.color.replace('0.9', '0.12')}`,
+        boxShadow: '0 20px 60px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.9)',
+        overflow: 'hidden',
+      }}>
 
-          {/* Shine */}
-          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '50%', background: 'linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 50%, transparent 100%)', pointerEvents: 'none', borderRadius: '28px 28px 0 0' }} />
+        {/* Shine */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '50%', background: 'linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 50%, transparent 100%)', pointerEvents: 'none', borderRadius: '28px 28px 0 0' }} />
 
-          {/* Left: text */}
-          <div className="glass-card-left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '3rem 3rem 3rem 3.5rem', position: 'relative', zIndex: 1 }}>
-            {/* Row amb el badge + freeBadge */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
-              <span style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '4px 12px', borderRadius: '6px', width: 'fit-content', background: card.color.replace('0.9', '0.1'), color: solid, border: `1px solid ${card.color.replace('0.9', '0.2')}` }}>
-                {card.badge}
-              </span>
-              {card.freeBadge && (
-                <span style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '4px 10px', borderRadius: '999px', background: '#dcfce7', color: '#16a34a' }}>
-                  {card.freeBadge}
-                </span>
-              )}
-            </div>
-            <h3 className="glass-card-title" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.1rem)', fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.03em', color: card.textColor, marginBottom: '1rem' }}>
-              {card.title}
-            </h3>
-            <p className="glass-card-desc" style={{ fontSize: '0.95rem', lineHeight: 1.65, color: card.mutedColor, maxWidth: '380px', marginBottom: '1.5rem' }}>
-              {card.description}
-            </p>
+        {/* Left: text */}
+        <div className="glass-card-left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '3rem 3rem 3rem 3.5rem', position: 'relative', zIndex: 1 }}>
+          <span style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '4px 12px', borderRadius: '6px', width: 'fit-content', marginBottom: '1.25rem', background: card.color.replace('0.9', '0.1'), color: solid, border: `1px solid ${card.color.replace('0.9', '0.2')}` }}>
+            {card.badge}
+          </span>
+          <h3 className="glass-card-title" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.1rem)', fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.03em', color: card.textColor, marginBottom: '1rem' }}>
+            {card.title}
+          </h3>
+          <p className="glass-card-desc" style={{ fontSize: '0.95rem', lineHeight: 1.65, color: card.mutedColor, maxWidth: '380px', marginBottom: '1.5rem' }}>
+            {card.description}
+          </p>
 
-            {/* Replaces — frase caligràfica amb personalitat per card */}
-            {card.replaces && (
-              <div className="glass-card-replaces" style={{
-                paddingTop: '1.25rem',
-                borderTop: '1px solid rgba(15,23,42,0.08)',
-                maxWidth: '380px',
-              }}>
-                <p
-                  className="font-accent glass-card-replaces-phrase"
-                  style={{
-                    fontSize: 'clamp(1.35rem, 2.1vw, 1.85rem)',
-                    color: solid,
-                    letterSpacing: '-0.015em',
-                    lineHeight: 1.1,
-                    marginBottom: '0.6rem',
-                  }}
-                >
-                  {'brands' in card.replaces ? (
-                    <>
-                      {card.replaces.prefix}
-                      <AnimatePresence mode="wait">
-                        <motion.span
-                          key={cyclingBrand}
-                          initial={{ opacity: 0, y: -10, filter: 'blur(8px)' }}
-                          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                          exit={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
-                          transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
-                          style={{ display: 'inline-block', willChange: 'transform, opacity, filter' }}
-                        >
-                          {cyclingBrand}
-                        </motion.span>
-                      </AnimatePresence>
-                      {card.replaces.suffix}
-                    </>
-                  ) : card.variant === 'photo' && cyclingPerson ? (
-                    <>
-                      {t('glass_cards.hola')},{' '}
-                      <AnimatePresence mode="wait">
-                        <motion.span
-                          key={cyclingPerson.name}
-                          initial={{ opacity: 0, y: -10, filter: 'blur(8px)' }}
-                          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                          exit={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
-                          transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
-                          style={{ display: 'inline-block', willChange: 'transform, opacity, filter' }}
-                        >
-                          {cyclingPerson.name}
-                        </motion.span>
-                      </AnimatePresence>
-                    </>
-                  ) : (
-                    card.replaces.phrase
-                  )}
-                  .
-                </p>
-                <p style={{
-                  fontSize: '13px',
-                  color: 'rgba(15,23,42,0.5)',
-                  letterSpacing: '0.01em',
-                  display: 'flex',
-                  alignItems: 'baseline',
-                  gap: '0.5rem',
-                  flexWrap: 'wrap',
-                }}>
-                  {/* Si hi ha price, mostra "Te ahorras X · ". Altrament, només inclusionLabel */}
-                  {card.replaces.price && (
-                    <>
-                      <span>{t('glass_cards.te_ahorras')}</span>
-                      {(() => {
-                        const isMonetary = card.replaces.price.includes('€');
-                        return (
-                          <span style={{
-                            fontSize: '18px',
-                            fontWeight: 700,
-                            color: 'rgba(15,23,42,0.72)',
-                            textDecoration: isMonetary ? 'line-through' : 'none',
-                            textDecorationThickness: isMonetary ? '2px' : undefined,
-                            textDecorationColor: isMonetary ? 'rgba(15,23,42,0.6)' : undefined,
-                            fontVariantNumeric: isMonetary ? 'tabular-nums' : 'normal',
-                          }}>
-                            {card.replaces.price}
-                          </span>
-                        );
-                      })()}
-                      <span style={{ color: 'rgba(15,23,42,0.3)' }}>·</span>
-                    </>
-                  )}
-                  {(() => {
-                    const label = card.replaces.inclusionLabel ?? t('glass_cards.incluido_en_hostly');
-                    // Si la label comença amb "gratis", la destaquem amb marker florescent
-                    if (label.toLowerCase().startsWith('gratis')) {
-                      const rest = label.replace(/^gratis\s*/i, '');
-                      return (
-                        <span>
-                          <HighlightedWord word="gratis" />{' '}{rest}
-                        </span>
-                      );
-                    }
-                    return <span>{label}</span>;
-                  })()}
-                </p>
-              </div>
-            )}
-
-            {/* CTA — enllaç a la pàgina de funcionalitat (només si la card en té) */}
-            {card.featureSlug && (
-              <LangLink
-                to={`/funcionalidades/${card.featureSlug}`}
-                className="glass-card-cta"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  marginTop: '1.25rem',
-                  padding: '0.625rem 1.1rem',
-                  borderRadius: '999px',
-                  background: solid,
-                  color: '#fff',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  letterSpacing: '-0.005em',
-                  width: 'fit-content',
-                  textDecoration: 'none',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                  boxShadow: `0 6px 20px -8px ${card.color.replace('0.9', '0.5')}`,
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-1px)';
-                  e.currentTarget.style.boxShadow = `0 10px 24px -8px ${card.color.replace('0.9', '0.6')}`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = `0 6px 20px -8px ${card.color.replace('0.9', '0.5')}`;
-                }}
-              >
-                {t('glass_cards.see_more')}
-                <ArrowRight style={{ width: 14, height: 14 }} />
-              </LangLink>
-            )}
-          </div>
-
-          {/* Right: screenshot integrat amb browser mockup (O portrait + chat bubble si variant='photo') */}
-          <div className="glass-card-right" style={{
-            position: 'relative',
-            zIndex: 1,
-            padding: '2rem 2.5rem 2rem 0.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            perspective: '2200px',
+          {/* Replaces — frase caligràfica amb personalitat per targeta */}
+          <div className="glass-card-replaces" style={{
+            paddingTop: '1.25rem',
+            borderTop: '1px solid rgba(15,23,42,0.08)',
+            maxWidth: '380px',
           }}>
-            {card.variant === 'photo' && cyclingPerson ? (
-              /* ─── PHOTO VARIANT — portrait + chat bubble overlay, amb cicle de persones ─── */
-              <>
-                {/* Glow càlid darrere */}
-                <div style={{
-                  position: 'absolute',
-                  left: '8%', right: '4%', bottom: '8%', height: '55%',
-                  background: `radial-gradient(ellipse at center, ${card.color.replace('0.9', '0.4')} 0%, transparent 70%)`,
-                  filter: 'blur(45px)', zIndex: 0, pointerEvents: 'none',
-                }} />
-
-                <div style={{
-                  position: 'relative',
-                  width: '100%', maxWidth: '460px',
-                  aspectRatio: '4 / 5',
-                  borderRadius: '24px',
-                  overflow: 'hidden',
-                  transformStyle: 'preserve-3d',
-                  transform: 'rotateY(-3deg) rotateX(0.5deg)',
-                  boxShadow: `
-                    0 60px 120px -20px ${card.color.replace('0.9', '0.35')},
-                    0 30px 60px -30px rgba(15, 23, 42, 0.3),
-                    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
-                    0 1px 2px rgba(15, 23, 42, 0.08)
-                  `,
-                  zIndex: 1,
-                }}>
-                  {/* Foto — crossfade entre persones */}
+            <p
+              className="font-accent glass-card-replaces-phrase"
+              style={{
+                fontSize: 'clamp(1.35rem, 2.1vw, 1.85rem)',
+                color: solid,
+                letterSpacing: '-0.015em',
+                lineHeight: 1.1,
+                marginBottom: '0.6rem',
+              }}
+            >
+              {'brands' in card.replaces ? (
+                <>
+                  {card.replaces.prefix}
                   <AnimatePresence mode="wait">
-                    <motion.img
-                      key={cyclingPerson.photo}
-                      src={cyclingPerson.photo}
-                      alt={cyclingPerson.name}
-                      initial={{ opacity: 0, scale: 1.04, filter: 'blur(8px)' }}
-                      animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-                      exit={{ opacity: 0, scale: 1.02, filter: 'blur(8px)' }}
-                      transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-                      style={{
-                        position: 'absolute', inset: 0,
-                        width: '100%', height: '100%',
-                        objectFit: 'cover', objectPosition: 'center top',
-                        display: 'block',
-                      }}
-                    />
+                    <motion.span
+                      key={cyclingBrand}
+                      initial={{ opacity: 0, y: -10, filter: 'blur(8px)' }}
+                      animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                      exit={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
+                      transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
+                      style={{ display: 'inline-block', willChange: 'transform, opacity, filter' }}
+                    >
+                      {cyclingBrand}
+                    </motion.span>
                   </AnimatePresence>
-
-                  {/* Gradient inferior per legibilitat de la bubble */}
-                  <div style={{
-                    position: 'absolute',
-                    left: 0, right: 0, bottom: 0,
-                    height: '55%',
-                    background: 'linear-gradient(180deg, transparent 0%, rgba(15,23,42,0.15) 40%, rgba(15,23,42,0.55) 100%)',
-                    pointerEvents: 'none',
-                    zIndex: 1,
-                  }} />
-
-                  {/* Chat bubble — missatge + autor (tots dos ciclan sincronitzats) */}
-                  {card.photoBubble && (
-                    <div style={{
-                      position: 'absolute',
-                      left: '6%', right: '6%', bottom: '14%',
-                      padding: '16px 18px',
-                      borderRadius: '18px 18px 18px 4px',
-                      background: 'rgba(255, 255, 255, 0.96)',
-                      backdropFilter: 'blur(12px)',
-                      WebkitBackdropFilter: 'blur(12px)',
-                      boxShadow: '0 20px 50px -10px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(255,255,255,0.5) inset',
-                      zIndex: 2,
-                      minHeight: '130px',
-                    }}>
-                      <AnimatePresence mode="wait">
-                        <motion.p
-                          key={cyclingPerson.name + '-msg'}
-                          initial={{ opacity: 0, y: 6 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -6 }}
-                          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                          style={{
-                            fontSize: '14px',
-                            lineHeight: 1.5,
-                            color: '#0f172a',
-                            margin: 0,
-                            fontWeight: 500,
-                          }}
-                        >
-                          {cyclingPerson.message}
-                        </motion.p>
-                      </AnimatePresence>
-                      <div style={{
-                        display: 'flex', alignItems: 'center', gap: '8px',
-                        marginTop: '10px', paddingTop: '10px',
-                        borderTop: '1px solid rgba(15, 23, 42, 0.06)',
+                  {card.replaces.suffix}
+                </>
+              ) : (
+                card.replaces.phrase
+              )}
+              .
+            </p>
+            <p style={{
+              fontSize: '13px',
+              color: 'rgba(15,23,42,0.5)',
+              letterSpacing: '0.01em',
+              display: 'flex',
+              alignItems: 'baseline',
+              gap: '0.5rem',
+              flexWrap: 'wrap',
+            }}>
+              {/* Si hi ha price, mostra "Te ahorras X · ". Altrament, només inclusionLabel */}
+              {card.replaces.price && (
+                <>
+                  <span>{t('glass_cards.te_ahorras')}</span>
+                  {(() => {
+                    const isMonetary = card.replaces.price.includes('€');
+                    return (
+                      <span style={{
+                        fontSize: '18px',
+                        fontWeight: 700,
+                        color: 'rgba(15,23,42,0.72)',
+                        textDecoration: isMonetary ? 'line-through' : 'none',
+                        textDecorationThickness: isMonetary ? '2px' : undefined,
+                        textDecorationColor: isMonetary ? 'rgba(15,23,42,0.6)' : undefined,
+                        fontVariantNumeric: isMonetary ? 'tabular-nums' : 'normal',
                       }}>
-                        {/* Avatar amb inicial de la persona actual */}
-                        <AnimatePresence mode="wait">
-                          <motion.div
-                            key={cyclingPerson.name + '-avatar'}
-                            initial={{ opacity: 0, scale: 0.6 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.6 }}
-                            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                            style={{
-                              width: '24px', height: '24px', borderRadius: '50%',
-                              background: `linear-gradient(135deg, ${solid}, ${solid.replace('rgb', 'rgba').replace(')', ', 0.7)')})`,
-                              display: 'flex', alignItems: 'center', justifyContent: 'center',
-                              color: '#fff', fontSize: '10px', fontWeight: 800,
-                              flexShrink: 0,
-                            }}
-                          >
-                            {cyclingPerson.name[0]}
-                          </motion.div>
-                        </AnimatePresence>
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                          <AnimatePresence mode="wait">
-                            <motion.div
-                              key={cyclingPerson.name + '-name'}
-                              initial={{ opacity: 0, y: -4 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, y: 4 }}
-                              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                            >
-                              <div style={{ fontSize: '12px', fontWeight: 700, color: '#0f172a', lineHeight: 1.1 }}>
-                                {cyclingPerson.name}
-                              </div>
-                              <div style={{ fontSize: '10px', color: 'rgba(15,23,42,0.5)', marginTop: '2px' }}>
-                                {cyclingPerson.role}
-                              </div>
-                            </motion.div>
-                          </AnimatePresence>
-                        </div>
-                        <div style={{
-                          display: 'flex', alignItems: 'center', gap: '3px',
-                          fontSize: '10px', color: '#16a34a', fontWeight: 600,
-                        }}>
-                          <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#16a34a' }} />
-                          {t('glass_cards.en_linea')}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Reflex fi superior */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '1px', left: '8%', right: '8%',
-                    height: '1px',
-                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.7) 50%, transparent 100%)',
-                    pointerEvents: 'none',
-                    zIndex: 3,
-                  }} />
-                </div>
-              </>
-            ) : card.demoComponent ? (
-              /* ─── DEMO REACT ANIMAT — té el seu propi browser chrome i 3D ─── */
-              <>
-                {/* Glow ambient tintat del color de la card */}
-                <div style={{
-                  position: 'absolute',
-                  left: '8%', right: '4%', bottom: '8%', height: '45%',
-                  background: `radial-gradient(ellipse at center, ${card.color.replace('0.9', '0.35')} 0%, transparent 70%)`,
-                  filter: 'blur(40px)', zIndex: 0, pointerEvents: 'none',
-                }} />
-                <Suspense fallback={
-                  <div style={{
-                    width: '100%', maxWidth: '520px', aspectRatio: '5/4',
-                    borderRadius: '14px',
-                    background: `linear-gradient(135deg, rgba(255,255,255,0.6), ${card.color.replace('0.9', '0.06')})`,
-                    border: '1px solid rgba(15,23,42,0.05)',
-                    zIndex: 1,
-                  }} />
-                }>
-                  <div style={{
-                    position: 'relative', zIndex: 1,
-                    width: '100%',
-                    transform: 'scale(0.85)',
-                    transformOrigin: 'center center',
-                    /* Scale visualment redueix el demo perquè càpiga + deixi
-                       espai pels tabs flotants sense que la card els talli. */
-                  }}>
-                    <card.demoComponent loop />
-                  </div>
-                </Suspense>
-              </>
-            ) : card.imageSrc ? (
-              <>
-                {/* Glow ambient tintat del color de la card — darrere */}
-                <div style={{
-                  position: 'absolute',
-                  left: '8%',
-                  right: '4%',
-                  bottom: '8%',
-                  height: '45%',
-                  background: `radial-gradient(ellipse at center, ${card.color.replace('0.9', '0.35')} 0%, transparent 70%)`,
-                  filter: 'blur(40px)',
-                  zIndex: 0,
-                  pointerEvents: 'none',
-                }} />
-
-                {/* Mockup wrapper amb perspectiva subtil */}
-                <div style={{
-                  position: 'relative',
-                  width: '100%',
-                  maxWidth: '560px',
-                  borderRadius: '14px',
-                  background: '#fff',
-                  transformStyle: 'preserve-3d',
-                  transform: 'rotateY(-3.5deg) rotateX(1deg)',
-                  transformOrigin: 'center center',
-                  boxShadow: `
-                    0 50px 100px -20px ${card.color.replace('0.9', '0.32')},
-                    0 30px 60px -30px rgba(15, 23, 42, 0.3),
-                    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
-                    0 1px 2px rgba(15, 23, 42, 0.08)
-                  `,
-                  overflow: 'hidden',
-                  zIndex: 1,
-                }}>
-                  {/* Browser chrome */}
-                  <div style={{
-                    background: 'linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%)',
-                    borderBottom: '1px solid rgba(15, 23, 42, 0.06)',
-                    padding: '9px 12px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                  }}>
-                    {/* Traffic lights */}
-                    <div style={{ display: 'flex', gap: '5px', flexShrink: 0 }}>
-                      <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#ff5f57', boxShadow: 'inset 0 0 0 0.5px rgba(0,0,0,0.12)' }} />
-                      <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#febc2e', boxShadow: 'inset 0 0 0 0.5px rgba(0,0,0,0.12)' }} />
-                      <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#28c840', boxShadow: 'inset 0 0 0 0.5px rgba(0,0,0,0.12)' }} />
-                    </div>
-                    {/* URL pill */}
-                    <div style={{
-                      flex: 1,
-                      margin: '0 10px',
-                      height: 22,
-                      borderRadius: 6,
-                      background: 'rgba(15, 23, 42, 0.05)',
-                      border: '1px solid rgba(15, 23, 42, 0.04)',
-                      fontSize: 11,
-                      color: 'rgba(15, 23, 42, 0.55)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontFamily: '"SF Mono", ui-monospace, Menlo, monospace',
-                      letterSpacing: '0.01em',
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      padding: '0 10px',
-                    }}>
-                      <span style={{ fontSize: 10, marginRight: 5, opacity: 0.5 }}>🔒</span>
-                      {card.mockupUrl}
-                    </div>
-                  </div>
-
-                  {/* Screenshot — WebP amb PNG fallback */}
-                  <picture>
-                    <source srcSet={toWebp(card.imageSrc)} type="image/webp" />
-                    <img
-                      src={card.imageSrc}
-                      alt={card.title}
-                      loading="lazy"
-                      decoding="async"
-                      style={{
-                        display: 'block',
-                        width: '100%',
-                        height: 'auto',
-                        maxHeight: '420px',
-                        objectFit: 'cover',
-                        objectPosition: 'top left',
-                      }}
-                    />
-                  </picture>
-
-                  {/* Reflex superior fi */}
-                  <div style={{
-                    position: 'absolute',
-                    top: 40,
-                    left: 0,
-                    right: 0,
-                    height: '1px',
-                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%)',
-                    pointerEvents: 'none',
-                  }} />
-                </div>
-              </>
-            ) : card.screen ? (
-              <div style={{ width: '100%', height: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
-                {card.screen}
-              </div>
-            ) : (
-              <div style={{
-                width: '100%', height: '100%', borderRadius: '16px',
-                background: `radial-gradient(ellipse 70% 70% at 50% 50%, ${card.color.replace('0.9', '0.05')} 0%, transparent 70%)`,
-                border: '1px dashed rgba(0,0,0,0.1)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '13px', color: '#94a3b8', fontWeight: 500,
-              }}>
-                {t('glass_cards.captura_pendent')}
-              </div>
-            )}
+                        {card.replaces.price}
+                      </span>
+                    );
+                  })()}
+                  <span className="glass-card-sep" style={{ color: 'rgba(15,23,42,0.3)' }}>·</span>
+                </>
+              )}
+              {(() => {
+                const label = card.replaces.inclusionLabel ?? t('glass_cards.incluido_en_hostly');
+                // Si la label comença amb "gratis", la destaquem amb marker florescent
+                if (label.toLowerCase().startsWith('gratis')) {
+                  const rest = label.replace(/^gratis\s*/i, '');
+                  return (
+                    <span className="glass-card-incl">
+                      <HighlightedWord word="gratis" />{' '}{rest}
+                    </span>
+                  );
+                }
+                return <span className="glass-card-incl">{label}</span>;
+              })()}
+            </p>
           </div>
 
+          {/* CTA — enllaç a la pàgina de funcionalitat (només si la targeta en té) */}
+          {card.featureSlug && (
+            <LangLink
+              to={`/funcionalidades/${card.featureSlug}`}
+              className="glass-card-cta"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                marginTop: '1.25rem',
+                padding: '0.625rem 1.1rem',
+                borderRadius: '999px',
+                background: solid,
+                color: '#fff',
+                fontSize: '13px',
+                fontWeight: 600,
+                letterSpacing: '-0.005em',
+                width: 'fit-content',
+                textDecoration: 'none',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                boxShadow: `0 6px 20px -8px ${card.color.replace('0.9', '0.5')}`,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-1px)';
+                e.currentTarget.style.boxShadow = `0 10px 24px -8px ${card.color.replace('0.9', '0.6')}`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = `0 6px 20px -8px ${card.color.replace('0.9', '0.5')}`;
+              }}
+            >
+              {t('glass_cards.see_more')}
+              <ArrowRight style={{ width: 14, height: 14 }} />
+            </LangLink>
+          )}
         </div>
+
+        {/* Right: demo animada (té el seu propi marc de navegador i 3D) */}
+        <div className="glass-card-right" style={{
+          position: 'relative',
+          zIndex: 1,
+          padding: '2rem 2.5rem 2rem 0.5rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          perspective: '2200px',
+        }}>
+          {/* Glow ambient tintat del color de la targeta */}
+          <div style={{
+            position: 'absolute',
+            left: '8%', right: '4%', bottom: '8%', height: '45%',
+            background: `radial-gradient(ellipse at center, ${card.color.replace('0.9', '0.35')} 0%, transparent 70%)`,
+            filter: 'blur(40px)', zIndex: 0, pointerEvents: 'none',
+          }} />
+          {ambDemo && (
+            <Suspense fallback={null}>
+              <div className="glass-card-demo" style={{
+                position: 'relative', zIndex: 1,
+                width: '100%',
+                transform: 'scale(0.85)',
+                transformOrigin: 'center center',
+              }}>
+                <card.demoComponent loop />
+              </div>
+            </Suspense>
+          )}
+        </div>
+
       </div>
     </div>
   );
 };
 
 /* ─────────────────────────────────────────────────────────
-   MAIN EXPORT
+   «LO QUE REEMPLAZA» — 6 targetes en una tira amb pestanyes
+
+   Fins a la versió 05 eren 6 targetes apilades a pantalla completa: 5.400 px de
+   scroll només en aquesta secció (la Marta: «la web és un scroll infinit»). Ara és
+   una sola targeta amb 6 pestanyes. Mentre es mira, avança sola (la píndola de
+   davant s'omple); en el moment que la persona tria una pestanya o llisca amb el
+   dit, es queda quieta on ha triat. Al mòbil es passa amb el dit (es veu la vora
+   de la següent).
 ───────────────────────────────────────────────────────── */
 
-export const GlassCards: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cards = useMergedCards();
+const DURADA_MS = 8000;
 
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' });
+export const GlassCards: React.FC = () => {
+  const { t } = useTranslation('home');
+  const cards = useMergedCards();
+  const n = cards.length;
+  const reduir = useReducedMotion();
+
+  const seccioRef = useRef<HTMLDivElement>(null);
+  const filaRef = useRef<HTMLDivElement>(null);
+  const tiraRef = useRef<HTMLDivElement>(null);
+  const visible = useInView(seccioRef, { amount: 0.35 });
+
+  const [actiu, setActiu] = useState(0);
+  const actiuRef = useRef(0);
+  // L'usuari ja ha triat: no avancem mai més sols
+  const [aturat, setAturat] = useState(false);
+  // Ratolí a sobre o focus a dins: esperem
+  const [pausa, setPausa] = useState(false);
+  // Destí d'un desplaçament fet per nosaltres: mentre hi anem, les targetes que passen no compten
+  const destiRef = useRef<number | null>(null);
+  const toc = useRef<{ x: number; y: number } | null>(null);
+
+  const progres = useMotionValue(0);
+  const omplert = useTransform(progres, (p) => `inset(0 ${(1 - p) * 100}% 0 0 round 999px)`);
+
+  const marca = useCallback((i: number) => {
+    actiuRef.current = i;
+    setActiu(i);
   }, []);
 
+  // Porta la tira a la targeta i (només es mou la tira, mai la pàgina)
+  const vesA = useCallback((i: number) => {
+    const tira = tiraRef.current;
+    const slide = tira?.children[i] as HTMLElement | undefined;
+    if (!tira || !slide) return;
+    progres.set(0);
+    marca(i);
+    const left = slide.offsetLeft - (tira.clientWidth - slide.clientWidth) / 2;
+    if (Math.abs(tira.scrollLeft - left) < 2) return;
+    destiRef.current = i;
+    window.setTimeout(() => { if (destiRef.current === i) destiRef.current = null; }, 1500);
+    tira.scrollTo({ left, behavior: reduir ? 'auto' : 'smooth' });
+  }, [marca, progres, reduir]);
+
+  const atura = useCallback(() => {
+    setAturat(true);
+    progres.set(0);
+    destiRef.current = null;
+  }, [progres]);
+
+  // Quina targeta és la de davant (llisca el dit, o la tira arriba on l'hem enviada)
+  useEffect(() => {
+    const tira = tiraRef.current;
+    if (!tira) return;
+    const io = new IntersectionObserver((entrades) => {
+      for (const e of entrades) {
+        if (e.intersectionRatio < 0.6) continue;
+        const i = Number((e.target as HTMLElement).dataset.index);
+        if (destiRef.current !== null) {
+          if (i !== destiRef.current) continue;
+          destiRef.current = null;
+        }
+        if (i !== actiuRef.current) {
+          progres.set(0);
+          marca(i);
+        }
+      }
+    }, { root: tira, threshold: [0.6] });
+    Array.from(tira.children).forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [n, marca, progres]);
+
+  // Avança sola mentre es veu, ningú l'ha tocada i no hi ha el ratolí a sobre
+  const corre = visible && !aturat && !pausa && !reduir;
+  useEffect(() => {
+    if (!corre) return;
+    let raf = 0;
+    let abans = performance.now();
+    const pas = (ara: number) => {
+      const p = progres.get() + (ara - abans) / DURADA_MS;
+      abans = ara;
+      if (p >= 1) vesA((actiuRef.current + 1) % n);
+      else progres.set(p);
+      raf = requestAnimationFrame(pas);
+    };
+    raf = requestAnimationFrame(pas);
+    return () => cancelAnimationFrame(raf);
+  }, [corre, n, progres, vesA]);
+
+  // La píndola de davant sempre a la vista (al mòbil la fila llisca)
+  useEffect(() => {
+    const fila = filaRef.current;
+    const pill = fila?.children[actiu] as HTMLElement | undefined;
+    if (!fila || !pill || fila.scrollWidth <= fila.clientWidth) return;
+    fila.scrollTo({ left: pill.offsetLeft - (fila.clientWidth - pill.clientWidth) / 2, behavior: reduir ? 'auto' : 'smooth' });
+  }, [actiu, reduir]);
+
+  function tria(i: number) {
+    atura();
+    vesA(i);
+  }
+
+  function teclat(e: React.KeyboardEvent) {
+    const desti: Record<string, number> = { ArrowRight: actiu + 1, ArrowLeft: actiu - 1, Home: 0, End: n - 1 };
+    if (!(e.key in desti)) return;
+    e.preventDefault();
+    const i = (desti[e.key] + n) % n;
+    tria(i);
+    (filaRef.current?.children[i] as HTMLElement | undefined)?.focus();
+  }
+
   return (
-    <div id="funciones" ref={containerRef} style={{ background: '#f8fafc' }}>
-      {cards.map((card, index) => (
-        <CardItem key={card.id} card={card} index={index} totalCards={cards.length} />
-      ))}
+    <div
+      id="funciones"
+      ref={seccioRef}
+      className="pt-8 md:pt-10 pb-12 md:pb-16"
+      style={{ background: '#f8fafc' }}
+      onPointerEnter={(e) => { if (e.pointerType === 'mouse') setPausa(true); }}
+      onPointerLeave={(e) => { if (e.pointerType === 'mouse') setPausa(false); }}
+      onFocusCapture={() => setPausa(true)}
+      onBlurCapture={() => setPausa(false)}
+    >
+      {/* Pestanyes */}
+      <div
+        ref={filaRef}
+        role="tablist"
+        aria-label={t('features.eyebrow')}
+        onKeyDown={teclat}
+        className="relative flex gap-2 overflow-x-auto px-4 md:px-6 md:flex-wrap md:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {cards.map((card, i) => {
+          const Icona = card.icon;
+          const sel = i === actiu;
+          return (
+            <button
+              key={card.id}
+              id={`reemplaza-tab-${card.id}`}
+              type="button"
+              role="tab"
+              aria-selected={sel}
+              aria-controls={`reemplaza-${card.id}`}
+              tabIndex={sel ? 0 : -1}
+              onClick={() => tria(i)}
+              className={cn(
+                'relative shrink-0 inline-flex items-center gap-2 h-10 px-4 rounded-full border text-sm font-semibold overflow-hidden transition-colors duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20',
+                sel
+                  ? 'bg-foreground border-foreground text-white'
+                  : 'bg-white border-slate-200 text-foreground/70 hover:bg-slate-50 hover:text-foreground',
+              )}
+            >
+              {sel && corre && (
+                <motion.span aria-hidden="true" className="absolute inset-0 bg-white/20" style={{ clipPath: omplert }} />
+              )}
+              <Icona className="relative w-4 h-4" aria-hidden="true" />
+              <span className="relative whitespace-nowrap">{card.tab}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* La tira: una targeta per pantalla; al mòbil es veu la vora de les veïnes */}
+      <div
+        ref={tiraRef}
+        className="glass-tira relative flex overflow-x-auto snap-x snap-mandatory py-8 md:py-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        onTouchStart={(e) => { const p = e.touches[0]; toc.current = { x: p.clientX, y: p.clientY }; }}
+        onTouchMove={(e) => {
+          const inici = toc.current;
+          if (!inici) return;
+          const p = e.touches[0];
+          const dx = Math.abs(p.clientX - inici.x);
+          if (dx > 10 && dx > Math.abs(p.clientY - inici.y)) { atura(); toc.current = null; }
+        }}
+        onWheel={(e) => { if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) atura(); }}
+      >
+        {cards.map((card, i) => (
+          <div
+            key={card.id}
+            id={`reemplaza-${card.id}`}
+            data-index={i}
+            role="tabpanel"
+            aria-labelledby={`reemplaza-tab-${card.id}`}
+            className="glass-slide snap-center shrink-0 w-full flex justify-center"
+            onClick={i !== actiu ? () => tria(i) : undefined}
+          >
+            {/* Les de darrere no es poden enfocar ni clicar per dins (inert) */}
+            <div className="w-full flex justify-center" {...(i !== actiu ? { inert: '' } : {})}>
+              <Targeta card={card} ambDemo={Math.abs(i - actiu) <= 1} />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

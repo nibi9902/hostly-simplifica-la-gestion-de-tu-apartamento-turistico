@@ -283,12 +283,10 @@
   "glass_cards": {
     "te_ahorras": "Te ahorras",
     "incluido_en_hostly": "incluido en Hostly",
-    "en_linea": "en línea",
-    "hola": "Hola",
-    "captura_pendent": "Captura pendiente",
     "see_more": "Ver cómo funciona",
     "cards": [
       {
+        "tab": "Check-in y policía",
         "badge": "✓ Check-in y Policía",
         "title": "Registro de viajeros y taxa turística. Sin gestoría.",
         "description": "Los datos del huésped salen a la policía cada día, solos. Cumples con la normativa sin pensar en ello, y sin pagar a nadie por hacerlo.",
@@ -297,12 +295,14 @@
         "replaces_inclusion": "gratis con Hostly"
       },
       {
+        "tab": "Limpiezas",
         "badge": "Limpiezas y coordinación",
         "title": "Tu equipo recibe el aviso automáticamente.",
         "description": "Cuando el huésped hace la reserva, el sistema asigna el turno y avisa al equipo. Sin llamadas, sin grupos de WhatsApp, sin ti en medio. Automáticamente.",
         "replaces_phrase": "Dile adiós al WhatsApp"
       },
       {
+        "tab": "Calendario",
         "badge": "Reservas y calendarios",
         "title": "Airbnb y Booking, siempre sincronizados.",
         "description": "Una reserva entra por un canal, el otro se bloquea solo. Sin overbookings. Sin refrescar pestañas. Todo en un mismo lugar.",
@@ -310,18 +310,21 @@
         "replaces_suffix": ""
       },
       {
+        "tab": "Precios",
         "badge": "Precios dinámicos",
         "title": "Precios al día, con PriceLabs dentro.",
         "description": "PriceLabs recomienda el precio de cada noche. Hostly aplica tus mínimos y temporadas y lo publica en Airbnb y Booking cada día.",
         "replaces_phrase": "Sin abrir otra app"
       },
       {
+        "tab": "Mensajes",
         "badge": "Mensajes con huéspedes",
         "title": "Responde en segundos. Sin tocar el móvil.",
         "description": "Hostly contesta la mayoría al instante, en el idioma del huésped, y te avisa cuando hace falta una persona.",
         "replaces_phrase": "Responde Hostly, no tú"
       },
       {
+        "tab": "Pagos",
         "badge": "Pagos y facturas",
         "title": "Todo lo que cobras, dentro de Hostly.",
         "description": "Cierra el mes sin abrir Excel. Ingresos por plataforma, comisiones, liquidaciones y reparto propietario–gestor. En un solo lugar.",
