@@ -89,7 +89,7 @@ export default function Guia() {
             >
               {/* Chapter header */}
               <div className="flex items-start gap-5 mb-8">
-                <span aria-hidden="true" className="text-3xl font-black text-slate-100 font-mono leading-none mt-1 shrink-0">{ch.num}</span>
+                <span aria-hidden="true" className="text-3xl font-black text-slate-300 font-mono leading-none mt-1 shrink-0">{ch.num}</span>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] tracking-tight mb-3">{ch.title}</h2>
                   <p className="text-slate-500 leading-relaxed">{ch.description}</p>
@@ -120,7 +120,7 @@ export default function Guia() {
 
       {/* CTA */}
       <section className="py-24 px-6 text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/40 mb-4">{t("guia.cta_eyebrow")}</p>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70 mb-4">{t("guia.cta_eyebrow")}</p>
         <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 whitespace-pre-line">
           {t("guia.cta_heading")}
         </h2>

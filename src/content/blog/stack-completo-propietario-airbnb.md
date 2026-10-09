@@ -26,10 +26,10 @@ Si hablas con propietarios que gestionan entre 1 y 10 apartamentos, este es el s
 Las plataformas de distribución. No tienen coste directo (cobran comisión por reserva), pero si las gestionas de forma independiente sin sincronización, el riesgo de dobles reservas es constante.
 
 **2. Channel manager**
-Para sincronizar disponibilidad y precios entre plataformas. Las opciones más conocidas en España son Smoobu, Lodgify o Hostaway. Un channel manager suele costar entre **20 y 60 € al mes** por apartamento, según el plan y cuántas plataformas conectes (Smoobu, por ejemplo, desde 29 €/mes por un alojamiento; precio publicado en octubre de 2026).
+Para sincronizar disponibilidad y precios entre plataformas. Las opciones más conocidas en España son Smoobu, Lodgify o Hostaway. Un channel manager suele costar entre **20 y 60 € al mes** por apartamento, según el plan y cuántas plataformas conectes (Smoobu, por ejemplo, desde 29 €/mes por un alojamiento; precio publicado en octubre de 2026).
 
 **3. Chekin (o similar) para el check-in digital y el SES**
-La herramienta más usada para el registro de viajeros y el envío al SES. Precio: desde **3,95 € al mes** por propiedad, según el plan (precio publicado en octubre de 2026).
+La herramienta más usada para el registro de viajeros y el envío al SES. Precio: desde **3,95 € al mes** por propiedad, según el plan (precio publicado en octubre de 2026).
 
 **4. WhatsApp o mensajería manual**
 La gran mayoría de propietarios pequeños coordina con huéspedes, limpiadores y mantenimiento por WhatsApp. Sin coste directo, pero con un coste enorme en tiempo y contexto perdido.
@@ -38,12 +38,12 @@ La gran mayoría de propietarios pequeños coordina con huéspedes, limpiadores 
 Para llevar el control de ingresos, gastos, ocupación y todo lo que no cabe en las otras herramientas. Gratuito, pero hay que actualizarlo a mano.
 
 **6. Dropbox o Google Drive**
-Para guardar contratos firmados, fotos de pisos, certificados de viajeros, inventarios. Entre **0 y 10 € al mes** según el plan.
+Para guardar contratos firmados, fotos de pisos, certificados de viajeros, inventarios. Entre **0 y 10 € al mes** según el plan.
 
 **7. Plantillas de contrato (Word, PDF, Canva...)**
-Algunos propietarios pagan por plantillas legales específicas para alquiler turístico, o tienen contratos que actualizan manualmente. Entre **0 y 30 € al año**.
+Algunos propietarios pagan por plantillas legales específicas para alquiler turístico, o tienen contratos que actualizan manualmente. Entre **0 y 30 € al año**.
 
-**Coste total estimado del stack:** entre **25 y 80 € al mes** por apartamento, sin contar el tiempo ni la gestoría.
+**Coste total estimado del stack:** entre **25 y 80 € al mes** por apartamento, sin contar el tiempo ni la gestoría.
 
 ---
 
@@ -89,7 +89,7 @@ Hostly está diseñado para ser la app del día a día de un propietario o gesto
 | Gestión de la tasa turística | Tasa turística de Cataluña calculada por estancia, lista para declarar cada semestre, gratis para siempre |
 | WhatsApp con la limpiadora | Limpiezas asignadas solas en cada salida, con fotos e incidencias |
 
-**Precio:** Hostly Completo, 40 € al mes por piso (35 € desde 5), con el primer mes gratis. El check-in, el registro a la policía y la tasa turística de Cataluña, gratis para siempre con el plan Gratis.
+**Precio:** Hostly Completo, 40 € al mes por piso (35 € desde 5), con el primer mes gratis. El check-in, el registro a la policía y la tasa turística de Cataluña, gratis para siempre con el plan Gratis.
 
 La diferencia no está en el precio, sino en tenerlo todo en un solo lugar: no tienes que mantener la coherencia entre sistemas. Una reserva entra, el calendario se actualiza, el huésped recibe el enlace del check-in y el registro llega a la policía. Sin copiar datos de una app a otra.
 

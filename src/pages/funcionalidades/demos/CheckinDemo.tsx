@@ -294,7 +294,7 @@ function PropietariView({ frame, fps }: { frame: number; fps: number }) {
             <div style={{ fontSize: 10, color: colors.mutedFg }}>2 {t('checkin.adults')} · 1 {t('checkin.child')} · ref. 5770048427</div>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: 6 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
           {[
             { icon: <Calendar size={10} />, text: t('checkin.checkInShort') },
             { icon: <Calendar size={10} />, text: t('checkin.checkOutShort') },
@@ -304,7 +304,7 @@ function PropietariView({ frame, fps }: { frame: number; fps: number }) {
               display: 'flex', alignItems: 'center', gap: 4,
               fontSize: 10, color: colors.primary,
               background: '#DBEAFE', borderRadius: 999,
-              padding: '3px 8px',
+              padding: '3px 8px', whiteSpace: 'nowrap',
             }}>
               {icon} {text}
             </div>

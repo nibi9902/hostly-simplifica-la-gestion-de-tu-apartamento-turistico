@@ -72,26 +72,26 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-6">{t('page.comparisonEyebrow')}</p>
           <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white">
-            <div className="grid grid-cols-3 bg-[#0f172a] text-white text-sm font-semibold">
-              <div className="p-4">{t('page.colFeature')}</div>
-              <div className="p-4 text-center border-l border-white/10">{t('page.colHostly')}</div>
-              <div className="p-4 text-center border-l border-white/10">{c.name}</div>
+            <div className="grid grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] bg-[#0f172a] text-white text-xs sm:text-sm font-semibold">
+              <div className="p-3 sm:p-4">{t('page.colFeature')}</div>
+              <div className="p-3 sm:p-4 text-center border-l border-white/10 [overflow-wrap:anywhere]">{t('page.colHostly')}</div>
+              <div className="p-3 sm:p-4 text-center border-l border-white/10 [overflow-wrap:anywhere]">{c.name}</div>
             </div>
             {c.comparison.map((row, i) => (
-              <div key={row.feature} className={`grid grid-cols-3 text-sm border-t border-slate-100 ${i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}>
-                <div className="p-4 text-slate-700 font-medium">{row.feature}</div>
-                <div className="p-4 flex justify-center items-center border-l border-slate-100">
+              <div key={row.feature} className={`grid grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] text-xs sm:text-sm border-t border-slate-100 ${i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}>
+                <div className="p-3 sm:p-4 text-slate-700 font-medium [overflow-wrap:anywhere]">{row.feature}</div>
+                <div className="p-3 sm:p-4 flex justify-center items-center text-center border-l border-slate-100">
                   {row.hostly === true
                     ? <CheckCircle className="w-5 h-5 text-[#16a34a]" />
                     : row.hostly === false
-                    ? <XCircle className="w-5 h-5 text-slate-200" />
-                    : <span className="text-xs font-semibold text-primary bg-[#eff6ff] px-2 py-0.5 rounded-full">{row.hostly}</span>}
+                    ? <XCircle className="w-5 h-5 text-rose-500" aria-label="No" />
+                    : <span className="text-xs font-semibold text-primary bg-[#eff6ff] px-2 py-0.5 rounded-full leading-tight">{row.hostly}</span>}
                 </div>
-                <div className="p-4 flex justify-center items-center border-l border-slate-100">
+                <div className="p-3 sm:p-4 flex justify-center items-center text-center border-l border-slate-100">
                   {row.them === true
-                    ? <CheckCircle className="w-5 h-5 text-slate-400" />
+                    ? <CheckCircle className="w-5 h-5 text-slate-500" />
                     : row.them === false
-                    ? <XCircle className="w-5 h-5 text-slate-200" />
+                    ? <XCircle className="w-5 h-5 text-rose-500" aria-label="No" />
                     : <span className="text-xs text-slate-500">{row.them}</span>}
                 </div>
               </div>

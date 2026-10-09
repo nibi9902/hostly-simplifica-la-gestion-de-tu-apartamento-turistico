@@ -21,12 +21,12 @@ const REACT_DEMOS: Record<string, React.LazyExoticComponent<React.FC>> = {
   'mensajeria-programada': lazy(() => import('./demos/MensajeriaDemo')),
   'multi-rol': lazy(() => import('./demos/MultiRolsDemo')),
   'finanzas':  lazy(() => import('./demos/FinanzasDemo')),
+  'conecta-todo': lazy(() => import('./demos/ConectaTodoDemo')),
 };
 
 // Slugs que tenen clip de vídeo pre-renderitzat (fallback)
-const HAS_CLIP = new Set([
-  'conecta-todo',
-]);
+// Avui cap (el de «conecta-todo» no existia i mostrava el registre policial): té demo pròpia
+const HAS_CLIP = new Set<string>([]);
 
 interface Props {
   slug: string;

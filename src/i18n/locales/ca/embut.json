@@ -38,7 +38,7 @@
         "Taxa turística de Catalunya, llesta per declarar"
       ],
       "completo_nombre": "Hostly Complet",
-      "completo_precio": "40 €/mes per apartament · el primer mes, gratis",
+      "completo_precio": "40 €/mes per apartament · el primer mes, gratis",
       "completo_items": [
         "Tot el del pla gratis",
         "Airbnb i Booking en un sol calendari",
@@ -119,7 +119,7 @@
       "hoy": "Avui: {{euros}} al mes en apps i {{horas}} a la setmana.",
       "hoy_sin_apps": "Avui no pagues apps, però se te'n van {{horas}} a la setmana.",
       "hostly": "Amb Hostly: {{euros}} al mes, tot en una app, i bona part d'aquesta feina, feta sola.",
-      "hostly_medida": "Amb Hostly: 35 € al mes per pis, tot en una app, i bona part d'aquesta feina, feta sola.",
+      "hostly_medida": "Amb Hostly: 35 € al mes per pis, tot en una app, i bona part d'aquesta feina, feta sola.",
       "horas_ano": "Això són {{ano}} del teu temps.",
       "registro_cat": "I el registre als Mossos d'Esquadra el fa Hostly, gratis.",
       "registro_otra": "I el registre a la policia l'activem amb tu, gratis.",

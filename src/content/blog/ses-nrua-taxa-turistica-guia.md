@@ -50,7 +50,7 @@ La tasa turística es un impuesto por pernoctación que el huésped paga y el pr
 
 **Quién la aplica:** No todas las comunidades autónomas la tienen. En España, la tienen actualmente Cataluña (Impost sobre les Estades en Establiments Turístics, IEET), las Islas Baleares y las Islas Canarias (en proceso). En Cataluña, además, muchos municipios aplican un recargo adicional (especialmente Barcelona).
 
-**Cuánto es:** En Cataluña, por ejemplo, oscila entre 0,75 € y 3,50 € por persona y noche dependiendo del tipo de alojamiento y temporada. En Baleares, entre 1 € y 4 € según temporada.
+**Cuánto es:** En Cataluña, por ejemplo, oscila entre 0,75 € y 3,50 € por persona y noche dependiendo del tipo de alojamiento y temporada. En Baleares, entre 1 € y 4 € según temporada.
 
 **Qué obligaciones genera:** Cobrarla al huésped al hacer el check-in o incluirla en el precio, y liquidarla periódicamente a la administración tributaria autonómica. En Cataluña la liquidación es semestral: del 1 al 20 de abril y del 1 al 20 de octubre, ante la Agencia Tributaria de Cataluña (ATC).
 
@@ -71,10 +71,10 @@ Si lo llevas tú directamente, la responsabilidad es tuya. No importa si tienes 
 Las sanciones por incumplimiento existen, son reales y se aplican. No hace falta alarmarse, pero sí conviene saber qué riesgos conlleva no estar al día.
 
 **Por no enviar el registro de viajeros (SES):**
-El Real Decreto 933/2021 establece infracciones leves, graves y muy graves. La no comunicación de los datos o su comunicación fuera de plazo puede suponer sanciones que van desde **varios cientos de euros hasta más de 30.000 €** en los casos más graves (infracciones reiteradas, negativa a cooperar con las fuerzas de seguridad, etc.).
+El Real Decreto 933/2021 establece infracciones leves, graves y muy graves. La no comunicación de los datos o su comunicación fuera de plazo puede suponer sanciones que van desde **varios cientos de euros hasta más de 30.000 €** en los casos más graves (infracciones reiteradas, negativa a cooperar con las fuerzas de seguridad, etc.).
 
 **Por operar sin NRUA:**
-Según la normativa de cada comunidad autónoma, publicitar una vivienda turística sin número de registro es una infracción. En Cataluña, por ejemplo, las sanciones pueden llegar a **90.000 €** para los casos más graves. En la práctica, las plataformas como Airbnb ya bloquean los anuncios sin NRUA en las comunidades que lo exigen.
+Según la normativa de cada comunidad autónoma, publicitar una vivienda turística sin número de registro es una infracción. En Cataluña, por ejemplo, las sanciones pueden llegar a **90.000 €** para los casos más graves. En la práctica, las plataformas como Airbnb ya bloquean los anuncios sin NRUA en las comunidades que lo exigen.
 
 **Por no liquidar la tasa turística:**
 La Agencia Tributaria autonómica puede reclamar el importe no ingresado más intereses de demora y recargos. Si hay ocultación deliberada, puede derivar en expediente sancionador.

@@ -53,7 +53,7 @@ No negociable. Con 10 apartamentos y sin PMS, **tendrás overbookings cada mes**
 
 ### 2. Automatización de mensajería
 
-De 100 mensajes/semana, al menos 70 deben responderse automáticamente. El 30 % que requiere tu atención debe llegarte filtrado ya.
+De 100 mensajes/semana, al menos 70 deben responderse automáticamente. El 30 % que requiere tu atención debe llegarte filtrado ya.
 
 **Cómo**: IA de mensajería integrada con tu PMS (Hostly, Hospitable, Prohost).
 
@@ -136,7 +136,7 @@ Pasar de avisar una limpiadora por WhatsApp a 3 limpiadoras con app requiere for
 
 ### 3. Ahorrar en herramientas
 
-"No quiero pagar 200 €/mes de PMS." Un PMS para 10 apartamentos cuesta 250-400 €/mes. A 10 apartamentos facturando ~30.000 €/mes, es un 1 % de los ingresos. Ahorrar aquí es el error más caro.
+"No quiero pagar 200 €/mes de PMS." Un PMS para 10 apartamentos cuesta 250-400 €/mes. A 10 apartamentos facturando ~30.000 €/mes, es un 1 % de los ingresos. Ahorrar aquí es el error más caro.
 
 ### 4. No medir
 

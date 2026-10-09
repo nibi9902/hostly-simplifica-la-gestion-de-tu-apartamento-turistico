@@ -135,7 +135,7 @@
     "tabCalendar": "📅 Calendari",
     "tabFinances": "💰 Finances",
     "netIncome": "Ingressos nets · Abril 2026",
-    "grossAndFees": "Brut: 1.450 € · Comissions: −210 €",
+    "grossAndFees": "Brut: 1.450 € · Comissions: −210 €",
     "statOccupancy": "Ocupació",
     "statAvgNight": "Mitjana per nit",
     "platformLabel": "PER PLATAFORMA",
@@ -152,12 +152,12 @@
     "filterAll": "Tots",
     "summaryLine": "Abril 2026 · 8 reserves · 23 nits",
     "netIncome": "Ingressos nets",
-    "grossAndFees": "Brut: 1.450 €",
-    "fees": "Comissions: −210 €",
+    "grossAndFees": "Brut: 1.450 €",
+    "fees": "Comissions: −210 €",
     "statReservations": "Reserves",
     "statOccupancy": "Ocupació",
     "distribution": "Repartiment · 80/20",
-    "distributionSubtitle": "Sobre 1.240 € nets",
+    "distributionSubtitle": "Sobre 1.240 € nets",
     "ownerShare": "Propietari (75%)",
     "managerShare": "Gestor (19%)",
     "cleaningCost": "Cost neteja (6%)",
@@ -214,5 +214,12 @@
     "sistemaTreballant": "Sistema treballant",
     "tuJaNo": "Tu ja no",
     "demoEnViu": "DEMO EN DIRECTE"
+  },
+  "conecta": {
+    "gestoria": "La teva gestoria",
+    "web": "El teu web",
+    "erp": "El teu ERP",
+    "excel": "Excel o CSV",
+    "drive": "Les teves carpetes"
   }
 }

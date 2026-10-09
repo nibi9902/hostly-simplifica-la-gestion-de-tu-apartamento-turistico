@@ -29,7 +29,7 @@
         "fix": "Tots els ingressos i comissions dins de Hostly, per pis i per canal."
       }
     ],
-    "section3_h2": "40 € al mes per pis. Una sola factura.",
+    "section3_h2": "40 € al mes per pis. Una sola factura.",
     "section3_body": "Reserves, check-in, missatges, neteges i registre a la policia, en una sola app. I el check-in, gratis per sempre.",
     "cta_h2": "Comença avui.",
     "cta_sub2": "El pla Gratis, sense targeta. Sense permanència."
@@ -42,7 +42,7 @@
     "h1": "Portes 8 pisos.\nAmb quantes apps?",
     "intro": "El channel manager per aquí. Chekin per allà. Excel per als cobraments. Un WhatsApp amb els hostes i un altre amb les netejadores. Hostly ho ajunta tot en una sola app.",
     "cta_primary": "Començar",
-    "cta_sub": "Sense permanència. 35 €/apartament des de 5 pisos.",
+    "cta_sub": "Sense permanència. 35 €/apartament des de 5 pisos.",
     "section2_h2": "Les eines del gestor petit, avui.",
     "section2_sub": "Cadascuna amb la seva factura.",
     "tools": [
@@ -52,7 +52,7 @@
       },
       {
         "name": "Chekin (check-in i registre)",
-        "cost": "des de 3,95 € al mes per pis"
+        "cost": "des de 3,95 € al mes per pis"
       },
       {
         "name": "Plantilles de missatges o similar",
@@ -63,9 +63,9 @@
         "cost": "Gratis en diners, caríssim en temps"
       }
     ],
-    "hostly_summary": "✅ Amb Hostly: 35 € per pis al mes des de 5 pisos (280 € al mes amb 8), amb la IA, les neteges i els preus a dins. Una app i una sola factura.",
+    "hostly_summary": "✅ Amb Hostly: 35 € per pis al mes des de 5 pisos (280 € al mes amb 8), amb la IA, les neteges i els preus a dins. Una app i una sola factura.",
     "cta_h2": "Comença avui.",
-    "cta_sub2": "35 €/apartament des de 5 pisos. El primer mes, gratis."
+    "cta_sub2": "35 €/apartament des de 5 pisos. El primer mes, gratis."
   },
   "segunda_residencia": {
     "meta_title": "Hostly per a segona residència a Airbnb",
@@ -100,7 +100,7 @@
       }
     ],
     "cta_h2": "Comença avui.",
-    "cta_sub2": "40 € al mes per pis. El primer mes, gratis. Sense permanència."
+    "cta_sub2": "40 € al mes per pis. El primer mes, gratis. Sense permanència."
   },
   "hereus": {
     "meta_title": "Vas heretar un pis turístic. Hostly ho simplifica.",
@@ -131,6 +131,6 @@
       }
     ],
     "cta_h2": "Comença avui.",
-    "cta_sub2": "40 € al mes per pis. El primer mes, gratis."
+    "cta_sub2": "40 € al mes per pis. El primer mes, gratis."
   }
 }

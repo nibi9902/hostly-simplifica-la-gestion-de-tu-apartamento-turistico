@@ -68,7 +68,7 @@ Lo que ofrece Chekin:
 - Firma electrónica del contrato
 - Gestión de la fianza (con coste adicional según plan)
 
-**Precio:** Chekin cobra una cuota mensual por propiedad: desde **3,95 €** en el plan Basic, **5,95 €** en Premium y **7,95 €** en Enterprise, según las funciones que actives. No tiene un plan gratis para siempre, solo una prueba. (Precios publicados en su web en octubre de 2026; pueden haber cambiado.)
+**Precio:** Chekin cobra una cuota mensual por propiedad: desde **3,95 €** en el plan Basic, **5,95 €** en Premium y **7,95 €** en Enterprise, según las funciones que actives. No tiene un plan gratis para siempre, solo una prueba. (Precios publicados en su web en octubre de 2026; pueden haber cambiado.)
 
 El precio es razonable para lo que hace. El problema no es Chekin en sí, sino que es una herramienta que se suma a las demás: tu channel manager, tu Excel, tu Dropbox... Es otro panel que revisar, otra factura y otro login.
 
@@ -99,7 +99,7 @@ Lo que significa en la práctica:
 - En Cataluña, Hostly envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. En el resto de España, activamos contigo la conexión con la policía que te toque.
 - La tasa turística de Cataluña también está incluida: Hostly la calcula por estancia y la deja lista para declarar en la ATC cada semestre.
 
-**Precio de Hostly:** el plan Gratis (check-in online, registro a la policía, tasa turística de Cataluña y calendario de Airbnb y Booking, leído cada 30 minutos) cuesta 0 €, para siempre. Hostly Completo cuesta 40 € al mes por piso (35 € desde 5), con el primer mes gratis y sin permanencia.
+**Precio de Hostly:** el plan Gratis (check-in online, registro a la policía, tasa turística de Cataluña y calendario de Airbnb y Booking, leído cada 30 minutos) cuesta 0 €, para siempre. Hostly Completo cuesta 40 € al mes por piso (35 € desde 5), con el primer mes gratis y sin permanencia.
 
 Si ahora mismo pagas por una herramienta de check-in separada y además por un channel manager u otras herramientas de gestión, tener todo en un solo sitio te ahorra tiempo y contraseñas; en precio, haz números con la [calculadora](/calcula).
 

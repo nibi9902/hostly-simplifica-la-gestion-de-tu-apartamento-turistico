@@ -11,6 +11,7 @@ es contesten al mateix navegador.
 | `prova-embut.cjs` | El recorregut: «Empezar» → /empezar (telèfon, pla, demo), /calcula, «Llámame», redireccions, alçada dels camps de telèfon. | `node prova-embut.cjs <carpeta-captures>` |
 | `prova-galetes.cjs` | Bàner de galetes: GA4 només amb «Aceptar», «Rechazar» no carrega res, «Cambiar mis preferencias». | `node prova-galetes.cjs <carpeta>` |
 | `prova-reemplaza.cjs` | La tira de «Lo que reemplaza»: 6 pestanyes, avança sola, s'atura en tocar-la, teclat, lliscar al mòbil, l'alçada no salta. | `node prova-reemplaza.cjs <carpeta>` |
+| `captures-visuals.cjs` | Un exemple de cada plantilla de pàgina, sencer i a trossos (1440 i 390), per mirar-ho amb ulls: solapaments, textos tallats, columnes aixafades, coses desquadrades. | `node captures-visuals.cjs <carpeta>` |
 | `textos-web.cjs` + `idioma-scan.py` | Treu tot el text visible de cada pàgina (per revisar-ne la coherència) i hi busca paraules de l'altra llengua. | `node textos-web.cjs textos-es.md es` · `python3 idioma-scan.py textos-es.md textos-ca.md` |
 
 Una altra adreça: `REVISIO_BASE=http://127.0.0.1:8095 node …`.

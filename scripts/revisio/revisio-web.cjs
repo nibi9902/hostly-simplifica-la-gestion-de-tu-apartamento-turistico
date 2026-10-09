@@ -39,11 +39,11 @@ const VALIDES = [
 
 // Textos que no poden sortir enlloc (el que no és cert o ja no existeix)
 const PROHIBITS = {
-  comu: [/14 d[ií]as (gratis|de prueba)|prueba de 14/i, /14 dies (gratis|de prova)|prova de 14/i, /\b37 ?€/, /€ ?37\b/, /Superhog/i, /Akeero/i, /\b5 idiom(as|es)\b/i, /25 idiomas/i, /Evolution API|vía Evolution/i,
+  comu: [/14 d[ií]as (gratis|de prueba)|prueba de 14/i, /14 dies (gratis|de prova)|prova de 14/i, /\b37\s?€/, /€\s?37\b/, /Superhog/i, /Akeero/i, /\b5 idiom(as|es)\b/i, /25 idiomas/i, /Evolution API|vía Evolution/i,
     /asesora|assessora/i, /coach personal/i, /revisión previa|revisió prèvia/i, /firma digital|signatura digital/i, /Probar 14|Provar 14/i,
     /los únicos en España|els únics a Espanya/i, /\{\{|\}\}/, /undefined|NaN €|\[object Object\]/,
     // Auditoria de textos del 09-10-2026: el que no és cert o no es pot defensar
-    /Todo incluido|Tot inclòs|Sin módulos aparte|Sense mòduls a part/i, /(?<![-–\d])180 €|~ ?120 €/, /Sin overbookings|Sense overbookings/i,
+    /Todo incluido|Tot inclòs|Sin módulos aparte|Sense mòduls a part/i, /(?<![-–\d])180\s€|~\s?120\s€/, /Sin overbookings|Sense overbookings/i,
     /·\s*sin errores|·\s*sense errors/i, /De 6 suscripciones|De 6 subscripcions|seis herramientas|sis eines/i,
     /motor de reservas con|motor de reserves amb/i, /Setup guia|Onboarding/i, /ibéric|ibèric/i,
     /Cumples con la normativa sin|Compleixes la normativa sense/i, /te llamo hoy\.|et truco avui\./i],

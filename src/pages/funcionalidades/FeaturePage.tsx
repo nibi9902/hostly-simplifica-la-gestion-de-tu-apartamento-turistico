@@ -50,7 +50,7 @@ export default function FeaturePage({ feature }: Props) {
       {/* ── HERO ── (2 columnes en desktop: text + mini-demo animada) */}
       <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f0f6ff] to-white overflow-hidden">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center [&>*]:min-w-0">
 
             {/* Left — text */}
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
@@ -81,14 +81,14 @@ export default function FeaturePage({ feature }: Props) {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+                <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"
                 >
                   {tEmbut('cta')}
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <LangLink
                   to="/precios"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-slate-200 text-slate-700 font-semibold text-base hover:bg-slate-50 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-slate-200 text-slate-700 font-semibold text-base hover:bg-slate-50 transition-all duration-300"
                 >
                   {t('page.ver_precios')}
                 </LangLink>
@@ -282,7 +282,7 @@ export default function FeaturePage({ feature }: Props) {
                     <h3 className="font-bold text-[#0f172a] text-base leading-snug group-hover:text-primary transition-colors">
                       {rf.name}
                     </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed line-clamp-2">{rf.shortDescription}</p>
+                    <p className="text-sm text-slate-500 leading-relaxed line-clamp-3">{rf.shortDescription}</p>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-auto">
                       {t('page.related_cta')} <ArrowRight className="w-3.5 h-3.5" />
                     </span>

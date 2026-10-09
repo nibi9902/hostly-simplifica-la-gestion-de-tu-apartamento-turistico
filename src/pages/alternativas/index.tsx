@@ -45,7 +45,7 @@ export default function AlternativasIndex() {
 
       {/* El que distingeix Hostly (només afirmacions sobre Hostly) */}
       <section className="py-16 px-6 md:px-12 lg:px-20 bg-[#f8fafc] border-y border-slate-100">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ export default function AlternativasIndex() {
             >
               <div>
                 <p className="font-bold text-[#0f172a] group-hover:text-primary transition-colors mb-1">{t('index.cardTitle', { name: c.name })}</p>
-                <p className="text-sm text-slate-500 line-clamp-1">{c.target}</p>
+                <p className="text-sm text-slate-500">{c.target}</p>
               </div>
               <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-primary shrink-0 transition-colors ml-4" />
             </MotionLangLink>

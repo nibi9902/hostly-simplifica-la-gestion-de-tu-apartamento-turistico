@@ -102,29 +102,29 @@ export default function ComparativaChekin() {
           <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight mb-10 text-center">{t("chekin.table_heading")}</h2>
           <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white">
             {/* Header */}
-            <div className="grid grid-cols-3 bg-[#0f172a] text-white text-sm font-semibold">
-              <div className="p-4">{t("chekin.table_col_feature")}</div>
-              <div className="p-4 text-center border-l border-white/10">{t("chekin.table_col_hostly")}</div>
-              <div className="p-4 text-center border-l border-white/10">{t("chekin.table_col_chekin")}</div>
+            <div className="grid grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] bg-[#0f172a] text-white text-xs sm:text-sm font-semibold">
+              <div className="p-3 sm:p-4">{t("chekin.table_col_feature")}</div>
+              <div className="p-3 sm:p-4 text-center border-l border-white/10 [overflow-wrap:anywhere]">{t("chekin.table_col_hostly")}</div>
+              <div className="p-3 sm:p-4 text-center border-l border-white/10 [overflow-wrap:anywhere]">{t("chekin.table_col_chekin")}</div>
             </div>
             {/* Rows */}
             {comparison.map((row, i) => (
               <div
                 key={row.feature}
-                className={`grid grid-cols-3 text-sm border-t border-slate-100 ${i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}`}
+                className={`grid grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] text-xs sm:text-sm border-t border-slate-100 ${i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}`}
               >
-                <div className="p-4 text-slate-700 font-medium">{row.feature}</div>
-                <div className="p-4 flex justify-center items-center border-l border-slate-100">
+                <div className="p-3 sm:p-4 text-slate-700 font-medium [overflow-wrap:anywhere]">{row.feature}</div>
+                <div className="p-3 sm:p-4 flex justify-center items-center text-center border-l border-slate-100">
                   {row.hostly
                     ? <CheckCircle className="w-5 h-5 text-[#16a34a]" />
-                    : <span className="text-xs font-semibold text-[#16a34a] bg-[#dcfce7] px-2 py-0.5 rounded-full">{t("chekin.table_badge_free")}</span>}
+                    : <span className="text-xs font-semibold text-[#16a34a] bg-[#dcfce7] px-2 py-0.5 rounded-full leading-tight">{t("chekin.table_badge_free")}</span>}
                 </div>
-                <div className="p-4 flex justify-center items-center border-l border-slate-100">
+                <div className="p-3 sm:p-4 flex justify-center items-center text-center border-l border-slate-100">
                   {row.chekin === null
-                    ? <span className="text-slate-300 font-semibold" title={t("chekin.table_unknown")}>—</span>
+                    ? <span className="text-slate-500 font-semibold" title={t("chekin.table_unknown")}>—</span>
                     : row.chekin
-                      ? <CheckCircle className="w-5 h-5 text-slate-400" />
-                      : <XCircle className="w-5 h-5 text-slate-200" />}
+                      ? <CheckCircle className="w-5 h-5 text-slate-500" />
+                      : <XCircle className="w-5 h-5 text-rose-500" aria-label="No" />}
                 </div>
               </div>
             ))}
@@ -141,26 +141,26 @@ export default function ComparativaChekin() {
           <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight mb-4 text-center">{t("chekin.cost_heading")}</h2>
           <p className="text-slate-500 text-center max-w-xl mx-auto mb-10">{t("chekin.cost_subheading")}</p>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl border border-slate-200 p-8">
+            <div className="rounded-2xl border border-slate-200 p-6 sm:p-8">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">{t("chekin.cost_chekin_label")}</p>
               <div className="space-y-3 text-sm text-slate-600">
-                <div className="flex justify-between"><span>{t("chekin.cost_chekin_row1_label")}</span><span className="font-semibold">{t("chekin.cost_chekin_row1_value")}</span></div>
-                <div className="flex justify-between"><span>{t("chekin.cost_chekin_row2_label")}</span><span className="font-semibold">{t("chekin.cost_chekin_row2_value")}</span></div>
-                <div className="flex justify-between"><span>{t("chekin.cost_chekin_row3_label")}</span><span className="font-semibold">{t("chekin.cost_chekin_row3_value")}</span></div>
-                <div className="flex justify-between"><span>{t("chekin.cost_chekin_row4_label")}</span><span className="font-semibold">{t("chekin.cost_chekin_row4_value")}</span></div>
-                <div className="border-t border-slate-200 pt-3 flex justify-between font-bold text-[#0f172a]">
+                <div className="flex justify-between items-baseline gap-4"><span className="min-w-0">{t("chekin.cost_chekin_row1_label")}</span><span className="font-semibold text-right shrink-0 max-w-[45%]">{t("chekin.cost_chekin_row1_value")}</span></div>
+                <div className="flex justify-between items-baseline gap-4"><span className="min-w-0">{t("chekin.cost_chekin_row2_label")}</span><span className="font-semibold text-right shrink-0 max-w-[45%]">{t("chekin.cost_chekin_row2_value")}</span></div>
+                <div className="flex justify-between items-baseline gap-4"><span className="min-w-0">{t("chekin.cost_chekin_row3_label")}</span><span className="font-semibold text-right shrink-0 max-w-[45%]">{t("chekin.cost_chekin_row3_value")}</span></div>
+                <div className="flex justify-between items-baseline gap-4"><span className="min-w-0">{t("chekin.cost_chekin_row4_label")}</span><span className="font-semibold text-right shrink-0 max-w-[45%]">{t("chekin.cost_chekin_row4_value")}</span></div>
+                <div className="border-t border-slate-200 pt-3 flex justify-between items-baseline gap-4 font-bold text-[#0f172a]">
                   <span>{t("chekin.cost_chekin_total_label")}</span><span>{t("chekin.cost_chekin_total_value")}</span>
                 </div>
               </div>
             </div>
-            <div className="rounded-2xl border border-primary/20 bg-[#f0f6ff] p-8">
+            <div className="rounded-2xl border border-primary/20 bg-[#f0f6ff] p-6 sm:p-8">
               <p className="text-xs font-bold uppercase tracking-widest text-primary mb-4">{t("chekin.cost_hostly_label")}</p>
               <div className="space-y-3 text-sm text-slate-600">
-                <div className="flex justify-between"><span>{t("chekin.cost_hostly_row1_label")}</span><span className="font-semibold">{t("chekin.cost_hostly_row1_value")}</span></div>
-                <div className="flex justify-between"><span>{t("chekin.cost_hostly_row2_label")}</span><span className="font-semibold text-[#166534]">{t("chekin.cost_hostly_row2_value")}</span></div>
-                <div className="flex justify-between"><span>{t("chekin.cost_hostly_row3_label")}</span><span className="font-semibold text-[#166534]">{t("chekin.cost_hostly_row3_value")}</span></div>
-                <div className="flex justify-between"><span>{t("chekin.cost_hostly_row4_label")}</span><span className="font-semibold text-[#166534]">{t("chekin.cost_hostly_row4_value")}</span></div>
-                <div className="border-t border-primary/20 pt-3 flex justify-between font-bold text-[#0f172a]">
+                <div className="flex justify-between items-baseline gap-4"><span className="min-w-0">{t("chekin.cost_hostly_row1_label")}</span><span className="font-semibold text-right shrink-0 max-w-[45%]">{t("chekin.cost_hostly_row1_value")}</span></div>
+                <div className="flex justify-between items-baseline gap-4"><span className="min-w-0">{t("chekin.cost_hostly_row2_label")}</span><span className="font-semibold text-[#166534] text-right shrink-0 max-w-[45%]">{t("chekin.cost_hostly_row2_value")}</span></div>
+                <div className="flex justify-between items-baseline gap-4"><span className="min-w-0">{t("chekin.cost_hostly_row3_label")}</span><span className="font-semibold text-[#166534] text-right shrink-0 max-w-[45%]">{t("chekin.cost_hostly_row3_value")}</span></div>
+                <div className="flex justify-between items-baseline gap-4"><span className="min-w-0">{t("chekin.cost_hostly_row4_label")}</span><span className="font-semibold text-[#166534] text-right shrink-0 max-w-[45%]">{t("chekin.cost_hostly_row4_value")}</span></div>
+                <div className="border-t border-primary/20 pt-3 flex justify-between items-baseline gap-4 font-bold text-[#0f172a]">
                   <span>{t("chekin.cost_hostly_total_label")}</span><span>{t("chekin.cost_hostly_total_value")}</span>
                 </div>
               </div>

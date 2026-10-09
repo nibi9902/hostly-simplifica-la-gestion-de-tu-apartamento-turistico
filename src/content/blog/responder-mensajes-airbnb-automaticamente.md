@@ -79,7 +79,7 @@ Escoge uno y sé consistente. Mezclar estilos suena a bot.
 > "Existe disponibilidad de estacionamiento público en las proximidades."
 
 **Bien**:
-> "Sí, en la calle hay zona azul de 9:00 a 14:00. El parking del centro comercial a 3 min está bien para dejar el coche todo el día (unos 8 €/día). Te mando la ubicación exacta con las instrucciones de llegada."
+> "Sí, en la calle hay zona azul de 9:00 a 14:00. El parking del centro comercial a 3 min está bien para dejar el coche todo el día (unos 8 €/día). Te mando la ubicación exacta con las instrucciones de llegada."
 
 ### Pregunta: "¿Cuál es la clave del wifi?"
 

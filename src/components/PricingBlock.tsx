@@ -79,6 +79,8 @@ const PricingBlock = () => {
               {t("pricing.free_cta")}
               <ArrowRight className="w-4 h-4" />
             </button>
+            {/* Com el «primer mes, gratis» del Completo: així els dos botons queden a la mateixa alçada */}
+            <p className="text-center text-xs text-muted-foreground mt-3">{t("pricing.free_fine")}</p>
           </div>
 
           {/* ─── TIER COMPLET ─── (apilats, primer: és el pla principal; el gratis, per a qui no ho veu clar) */}
@@ -136,7 +138,7 @@ const PricingBlock = () => {
                 {t("pricing.paid_cta")}
                 <ArrowRight className="w-4 h-4" />
               </button>
-              <p className="text-xs text-white/60 mt-3 text-center">
+              <p className="text-xs text-white/90 mt-3 text-center">
                 {t("pricing.paid_fine")}
               </p>
             </div>
@@ -159,7 +161,7 @@ const PricingBlock = () => {
         </div>
 
         {/* ── Referral ── */}
-        <div className="rounded-2xl bg-primary/5 border border-primary/12 p-6 md:p-7">
+        <div className="rounded-2xl bg-primary/5 border border-primary/15 p-6 md:p-7">
           <div className="flex items-center gap-2 mb-5">
             <span className="text-base">🎁</span>
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
@@ -186,7 +188,7 @@ const PricingBlock = () => {
             </div>
 
             {/* Explicació */}
-            <div className="flex-1 sm:border-l sm:border-primary/12 sm:pl-7">
+            <div className="flex-1 sm:border-l sm:border-primary/15 sm:pl-7">
               <p className="font-semibold text-foreground text-sm leading-snug mb-1">
                 {t("pricing.referral_title")}
               </p>

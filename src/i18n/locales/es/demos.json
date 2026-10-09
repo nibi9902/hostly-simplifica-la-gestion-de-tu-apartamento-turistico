@@ -135,7 +135,7 @@
     "tabCalendar": "📅 Calendario",
     "tabFinances": "💰 Finanzas",
     "netIncome": "Ingresos netos · Abril 2026",
-    "grossAndFees": "Bruto: 1.450 € · Comisiones: −210 €",
+    "grossAndFees": "Bruto: 1.450 € · Comisiones: −210 €",
     "statOccupancy": "Ocupación",
     "statAvgNight": "Media por noche",
     "platformLabel": "PER PLATAFORMA",
@@ -152,12 +152,12 @@
     "filterAll": "Todos",
     "summaryLine": "Abril 2026 · 8 reservas · 23 noches",
     "netIncome": "Ingresos netos",
-    "grossAndFees": "Bruto: 1.450 €",
-    "fees": "Comisiones: −210 €",
+    "grossAndFees": "Bruto: 1.450 €",
+    "fees": "Comisiones: −210 €",
     "statReservations": "Reservas",
     "statOccupancy": "Ocupación",
     "distribution": "Reparto · 80/20",
-    "distributionSubtitle": "Sobre 1.240 € netos",
+    "distributionSubtitle": "Sobre 1.240 € netos",
     "ownerShare": "Propietario (75%)",
     "managerShare": "Gestor (19%)",
     "cleaningCost": "Coste limpieza (6%)",
@@ -214,5 +214,12 @@
     "sistemaTreballant": "Sistema trabajando",
     "tuJaNo": "Tú ya no",
     "demoEnViu": "DEMO EN VIVO"
+  },
+  "conecta": {
+    "gestoria": "Tu gestoría",
+    "web": "Tu web",
+    "erp": "Tu ERP",
+    "excel": "Excel o CSV",
+    "drive": "Tus carpetas"
   }
 }

@@ -23,7 +23,7 @@ faqs:
   - question: "¿Cuántos canales debo conectar desde el principio?"
     answer: "Empieza con Airbnb + Booking si operas en España. Añade Vrbo si quieres mercado anglosajón o alquileres de estancia larga, y reserva directa web si quieres reducir comisiones. Conectar 50 canales desde el día 1 es sobreingeniería."
   - question: "¿El channel manager me cobra comisión por reserva?"
-    answer: "Los especializados (channel manager puro) suelen cobrar una cuota fija por apartamento, y muchas plataformas con PMS integrado también: Hostly, por ejemplo, cobra 40 €/mes por piso, sin comisiones por reserva. Algunos proveedores cobran además un porcentaje por reserva en ciertos planes. Revisa siempre el precio completo en su web."
+    answer: "Los especializados (channel manager puro) suelen cobrar una cuota fija por apartamento, y muchas plataformas con PMS integrado también: Hostly, por ejemplo, cobra 40 €/mes por piso, sin comisiones por reserva. Algunos proveedores cobran además un porcentaje por reserva en ciertos planes. Revisa siempre el precio completo en su web."
   - question: "¿Puedo usar solo un channel manager sin PMS?"
     answer: "Sí, pero entonces tienes que gestionar todo lo demás (check-in, limpiezas, mensajería) con otras herramientas o manualmente. Si gestionas más de 2 apartamentos, un PMS con channel manager incorporado es mucho más eficiente."
 ---

@@ -22,8 +22,11 @@ const PreciosPage = () => {
       {/* H1 semàntic per SEO — visualment ocult, el header del PricingBlock és l'H2 */}
       <h1 className="sr-only">{t("precios_page.sr_h1")}</h1>
 
-      {/* Pricing block — el PricingBlock ja té el seu propi header, evitem duplicar-lo */}
-      <PricingBlock />
+      {/* Pricing block — el PricingBlock ja té el seu propi header, evitem duplicar-lo.
+          Aquí és la primera secció: sota el capçal fix li cal més aire (al mòbil, 17 px) */}
+      <div className="pt-12 md:pt-6">
+        <PricingBlock />
+      </div>
 
       {/* FAQ de preus */}
       <section className="py-20 md:py-28 px-6 md:px-12 lg:px-20 bg-background border-t border-border">
@@ -66,7 +69,7 @@ const PreciosPage = () => {
       </section>
 
       {/* CTA final */}
-      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-primary text-white text-center">
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 text-white text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

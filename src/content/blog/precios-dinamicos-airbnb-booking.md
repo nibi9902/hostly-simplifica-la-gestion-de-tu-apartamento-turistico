@@ -18,7 +18,7 @@ relatedSlugs:
   - "automatizar-alquiler-vacacional-con-ia"
 faqs:
   - question: "¿Los precios dinámicos aumentan realmente los ingresos?"
-    answer: "En la mayoría de casos sí, entre un 10 % y un 25 % sobre una estrategia de precio fijo. El rango depende del tipo de apartamento, la localización y lo bien configurada que esté la herramienta. No es magia: es detectar demanda que el ojo humano no ve a diario."
+    answer: "En la mayoría de casos sí, entre un 10 % y un 25 % sobre una estrategia de precio fijo. El rango depende del tipo de apartamento, la localización y lo bien configurada que esté la herramienta. No es magia: es detectar demanda que el ojo humano no ve a diario."
   - question: "¿Puede subir demasiado los precios y reducir ocupación?"
     answer: "Puede si lo configuras mal. Toda herramienta seria permite fijar precio mínimo y máximo por noche, y reglas por temporada. Sin esos límites, el algoritmo puede cometer errores. Con ellos, optimiza dentro de tu rango."
   - question: "¿Necesito PriceLabs o Beyond si ya tengo PMS?"
@@ -52,7 +52,7 @@ La lógica es simple: en alta demanda, hay gente dispuesta a pagar más. En baja
 
 En datos reales del sector:
 
-- **Mejora típica**: 10-25 % sobre estrategia de precio fijo.
+- **Mejora típica**: 10-25 % sobre estrategia de precio fijo.
 - **Donde más se nota**: destinos con estacionalidad marcada (costa española, montaña invierno).
 - **Donde menos se nota**: apartamentos en zonas muy estables (ciudades sin picos claros).
 - **Donde puede fallar**: apartamentos muy singulares sin comparables directos.
@@ -73,7 +73,7 @@ El referente mundial. Algoritmo maduro, interfaz potente, configurabilidad alta.
 
 Competidor directo de PriceLabs. Interfaz más simple, algoritmo también sólido.
 
-**Precio**: un porcentaje de las reservas, desde el 1 % (plan Growth).
+**Precio**: un porcentaje de las reservas, desde el 1 % (plan Growth).
 **Pro**: más sencillo de usar; pagas según lo que reservas.
 **Contra**: el modelo variable puede salir más caro a alto volumen.
 
@@ -81,7 +81,7 @@ Competidor directo de PriceLabs. Interfaz más simple, algoritmo también sólid
 
 Tercera alternativa popular, sobre todo en EE. UU.
 
-**Precio**: el 1 % de los ingresos (plan Pro Flex) o 19,99 $ por anuncio al mes (Pro Flat).
+**Precio**: el 1 % de los ingresos (plan Pro Flex) o 19,99 $ por anuncio al mes (Pro Flat).
 **Pro**: integración con muchos PMS, fácil de usar.
 **Contra**: menos tracción en Europa que PriceLabs.
 
@@ -109,7 +109,7 @@ Cinco decisiones que tienes que tomar, independientemente de la herramienta:
 
 ### 1. Precio mínimo y máximo por noche
 
-El suelo y el techo. El suelo evita que el algoritmo baje demasiado; el techo evita precios absurdos en picos. Un buen punto de partida: tu precio medio actual ±40 %.
+El suelo y el techo. El suelo evita que el algoritmo baje demasiado; el techo evita precios absurdos en picos. Un buen punto de partida: tu precio medio actual ±40 %.
 
 ### 2. Estrategia de base: agresiva, equilibrada o conservadora
 
@@ -168,4 +168,4 @@ Los primeros 30-60 días son aprendizaje. Las ganancias reales se ven comparando
 4. Vigila dos semanas y ajusta.
 5. Compara resultados a 60 días contra tu histórico.
 
-Si el ingreso medio por noche no ha subido al menos un 8-10 % a los 60 días, revisa la configuración o cambia de herramienta.
+Si el ingreso medio por noche no ha subido al menos un 8-10 % a los 60 días, revisa la configuración o cambia de herramienta.

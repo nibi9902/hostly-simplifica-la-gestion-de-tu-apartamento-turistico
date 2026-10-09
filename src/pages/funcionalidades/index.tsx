@@ -9,6 +9,13 @@ import { breadcrumbSchema } from '@/lib/seo/schemas';
 import { useEmpezar } from "@/lib/empezar";
 
 const ease = [0.22, 1, 0.36, 1] as const;
+// El pla de cada funcionalitat (la resta, Hostly Completo)
+const PLA_DE_LA_FUNCIO: Record<string, string> = {
+  'check-in-online': 'index.card_plan_gratis',
+  burocracia: 'index.card_plan_gratis',
+  'conecta-todo': 'index.card_plan_aparte',
+};
+
 export default function FuncionalidadesIndex() {
   const empezar = useEmpezar();
   const features = useFeatures();
@@ -51,6 +58,7 @@ export default function FuncionalidadesIndex() {
               return (
                 <motion.div
                   key={f.slug}
+                  className="h-full"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
@@ -58,14 +66,15 @@ export default function FuncionalidadesIndex() {
                 >
                   <LangLink
                     to={`/funcionalidades/${f.slug}`}
-                    className="group flex flex-col gap-4 p-6 rounded-2xl border border-slate-100 bg-white hover:border-primary/25 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)] transition-all duration-250"
+                    className="group h-full flex flex-col gap-4 p-6 rounded-2xl border border-slate-100 bg-white hover:border-primary/25 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)] transition-all duration-250"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-11 h-11 rounded-xl bg-[#eff6ff] flex items-center justify-center">
                         <Icon className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} />
                       </div>
                       <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-primary">
-                        {t('index.card_eyebrow')}
+                        {/* A quin pla és: abans hi deia «Hostly ·» i res més */}
+                        {t(PLA_DE_LA_FUNCIO[f.slug] ?? 'index.card_plan_completo')}
                       </span>
                     </div>
                     <h2 className="text-xl font-bold text-[#0f172a] group-hover:text-primary transition-colors leading-snug">

@@ -29,7 +29,7 @@
         "fix": "Todos los ingresos y comisiones dentro de Hostly, por piso y por canal."
       }
     ],
-    "section3_h2": "40 € al mes por piso. Una sola factura.",
+    "section3_h2": "40 € al mes por piso. Una sola factura.",
     "section3_body": "Reservas, check-in, mensajes, limpiezas y registro a la policía, en una sola app. Y el check-in, gratis para siempre.",
     "cta_h2": "Empieza hoy.",
     "cta_sub2": "El plan Gratis, sin tarjeta. Sin permanencia."
@@ -42,7 +42,7 @@
     "h1": "Llevas 8 pisos.\n¿Con cuántas apps?",
     "intro": "El channel manager por aquí. Chekin por allá. Excel para los cobros. Un WhatsApp con los huéspedes y otro con las limpiadoras. Hostly lo junta todo en una sola app.",
     "cta_primary": "Empezar",
-    "cta_sub": "Sin permanencia. 35 €/apartamento desde 5 pisos.",
+    "cta_sub": "Sin permanencia. 35 €/apartamento desde 5 pisos.",
     "section2_h2": "Las herramientas del gestor pequeño, hoy.",
     "section2_sub": "Cada una con su factura.",
     "tools": [
@@ -52,7 +52,7 @@
       },
       {
         "name": "Chekin (check-in y registro)",
-        "cost": "desde 3,95 € al mes por piso"
+        "cost": "desde 3,95 € al mes por piso"
       },
       {
         "name": "Plantillas de mensajes o similar",
@@ -63,9 +63,9 @@
         "cost": "Gratis en dinero, carísimo en tiempo"
       }
     ],
-    "hostly_summary": "✅ Con Hostly: 35 € por piso al mes desde 5 pisos (280 € al mes con 8), con la IA, las limpiezas y los precios dentro. Una app y una sola factura.",
+    "hostly_summary": "✅ Con Hostly: 35 € por piso al mes desde 5 pisos (280 € al mes con 8), con la IA, las limpiezas y los precios dentro. Una app y una sola factura.",
     "cta_h2": "Empieza hoy.",
-    "cta_sub2": "35 €/apartamento desde 5 pisos. El primer mes, gratis."
+    "cta_sub2": "35 €/apartamento desde 5 pisos. El primer mes, gratis."
   },
   "segunda_residencia": {
     "meta_title": "Hostly para segunda residencia en Airbnb",
@@ -100,7 +100,7 @@
       }
     ],
     "cta_h2": "Empieza hoy.",
-    "cta_sub2": "40 € al mes por piso. El primer mes, gratis. Sin permanencia."
+    "cta_sub2": "40 € al mes por piso. El primer mes, gratis. Sin permanencia."
   },
   "hereus": {
     "meta_title": "Heredaste un piso turístico. Hostly lo simplifica.",
@@ -131,6 +131,6 @@
       }
     ],
     "cta_h2": "Empieza hoy.",
-    "cta_sub2": "40 € al mes por piso. El primer mes, gratis."
+    "cta_sub2": "40 € al mes por piso. El primer mes, gratis."
   }
 }

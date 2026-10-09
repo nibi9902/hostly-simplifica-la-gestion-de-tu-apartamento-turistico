@@ -159,7 +159,11 @@
    l'app d'abans i diu «Taxa turística · 1r trimestre 2026», quan la taxa de Catalunya es
    presenta per semestres; i atribueix l'ajust de preus a «Hostly Automàtic» (el fa PriceLabs).
    Cal tornar-lo a renderitzar amb l'app d'ara.
-7. **Pes de la primera càrrega**: totes les traduccions (castellà i català, 22 fitxers, 200 KB)
+7. **Detalls de disseny** que va trobar la revisió visual i no s'han tocat (són de criteri):
+   a les pàgines de funcionalitats, el títol, «El problema» i la resta comencen a tres marges
+   esquerres diferents; hi ha tres estils de preguntes freqüents (portada, funcionalitats i
+   preus); i la secció del fundador apareix amb un fos lligat a l'scroll.
+8. **Pes de la primera càrrega**: totes les traduccions (castellà i català, 22 fitxers, 200 KB)
    van dins de `index-*.js` (410 KB, 129 KB comprimit). Carregar només l'idioma i els espais
    de noms de cada pàgina (`i18next-resources-to-backend` + `import()`) en trauria uns 50 KB
    comprimits. Cal una vora de Suspense i provar que no parpelleja.

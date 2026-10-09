@@ -35,7 +35,7 @@ Lo que típicamente pasa cuando lo haces manualmente:
 - Una limpiadora no puede y tienes que buscar sustituta → 40 minutos al teléfono.
 - No sabes si la limpieza se hizo hasta que llega el siguiente huésped → reseña mala.
 
-Cada uno de estos errores **cuesta dinero**. Una reseña mala por apartamento sucio cuesta 200-500 € de futura reserva perdida. Una limpiadora que se va por mala coordinación cuesta buscar y entrenar otra.
+Cada uno de estos errores **cuesta dinero**. Una reseña mala por apartamento sucio cuesta 200-500 € de futura reserva perdida. Una limpiadora que se va por mala coordinación cuesta buscar y entrenar otra.
 
 ## Las 3 capacidades de un sistema automatizado de limpiezas
 

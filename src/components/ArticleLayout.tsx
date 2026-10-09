@@ -194,7 +194,7 @@ export default function ArticleLayout({ post }: Props) {
         <div className="max-w-3xl mx-auto px-6 md:px-8 mt-16 mb-4">
           <div className="rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-6" style={{ background: 'linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)' }}>
             <div className="flex-1 text-center md:text-left">
-              <p className="text-xs font-bold uppercase tracking-[0.15em] text-white/50 mb-2">{t('article.cta_eyebrow')}</p>
+              <p className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 mb-2">{t('article.cta_eyebrow')}</p>
               <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
                 {t('article.cta_title')}
               </h2>

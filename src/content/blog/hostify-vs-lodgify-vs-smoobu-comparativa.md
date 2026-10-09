@@ -17,7 +17,7 @@ relatedSlugs:
   - "precios-dinamicos-airbnb-booking"
 faqs:
   - question: "¿Cuál es el más barato de los tres?"
-    answer: "Depende de cuántos pisos tengas. Con los precios publicados en octubre de 2026: Smoobu empieza en 29 €/mes por alojamiento con el plan Profesional Flex, que suma un 0,9 % por reserva, o en 35 €/mes en prepago. Hostify cobra desde 20 $ por alojamiento al mes, con tramos a partir de 5 alojamientos. Lodgify tiene varios planes según funciones y número de alojamientos: consulta su web."
+    answer: "Depende de cuántos pisos tengas. Con los precios publicados en octubre de 2026: Smoobu empieza en 29 €/mes por alojamiento con el plan Profesional Flex, que suma un 0,9 % por reserva, o en 35 €/mes en prepago. Hostify cobra desde 20 $ por alojamiento al mes, con tramos a partir de 5 alojamientos. Lodgify tiene varios planes según funciones y número de alojamientos: consulta su web."
   - question: "¿Cuál tiene mejor SES.Hospedajes?"
     answer: "Hostify tiene integración con SES. Lodgify y Smoobu se complementan con Chekin como partner. Si el registro de viajeros integrado es tu prioridad, Hostify es el que mejor lo cubre de los tres."
   - question: "¿Cuál es mejor para un apartamento con web propia?"
@@ -37,7 +37,7 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 | Criterio | Hostify | Lodgify | Smoobu |
 |---|---|---|---|
 | Origen | Barcelona/Lituania | Barcelona | Berlín (grupo HomeToGo) |
-| Precio | Desde 20 $/alojamiento/mes (a partir de 5) | Según plan: consulta su web | Desde 29 €/mes + 0,9 % por reserva (plan Flex) |
+| Precio | Desde 20 $/alojamiento/mes (a partir de 5) | Según plan: consulta su web | Desde 29 €/mes + 0,9 % por reserva (plan Flex) |
 | Modelo | Cuota fija por alojamiento | Planes según funciones y alojamientos | Cuota mensual, con o sin % por reserva |
 | Channel manager | 400+ canales | Completo | Sólido |
 | Creador de webs | Básico | **Su punto fuerte** | Básico |
@@ -91,7 +91,7 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 ### Smoobu
 
 **Donde gana**:
-- **Precio de entrada bajo**: desde 29 €/mes por alojamiento (plan Flex, más un 0,9 % por reserva).
+- **Precio de entrada bajo**: desde 29 €/mes por alojamiento (plan Flex, más un 0,9 % por reserva).
 - **Interfaz en 8 idiomas** (más que los otros dos).
 - **Simplicidad**: curva de aprendizaje más corta.
 - **Respaldo de HomeToGo**: un grupo grande detrás.
@@ -100,7 +100,7 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 - **La IA no es su foco**.
 - **SES vía Chekin**: dependencia externa.
 - **Operativa muy limitada**: lista de limpieza básica, sin una app móvil completa.
-- **No es tan barato al final** si le sumas Chekin para el registro y, en el plan Flex, el 0,9 % de cada reserva.
+- **No es tan barato al final** si le sumas Chekin para el registro y, en el plan Flex, el 0,9 % de cada reserva.
 
 **Mejor para**: propietario de 1-3 apartamentos, sin necesidades avanzadas, que prioriza precio bajo y simplicidad.
 
@@ -109,9 +109,9 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 ### Caso 1: Propietario de 2 apartamentos en la Costa Brava
 
 - Necesita SES/Mossos + channel manager + algo de automatización.
-- Presupuesto: hasta 60 €/mes en total.
+- Presupuesto: hasta 60 €/mes en total.
 
-**Mejor opción**: **Hostly** (no está en esta comparativa). Con el plan Gratis, el check-in y el registro a los Mossos le cuestan 0 €. Si además quiere channel manager, IA en WhatsApp y limpiezas, Hostly Completo cuesta 80 €/mes por los dos pisos: algo más que ese presupuesto, pero sin sumar otras herramientas. Si solo busca un channel manager, **Smoobu** empieza en 29 €/mes por alojamiento. **Hostify** encaja mejor a partir de 5 pisos, que es donde empiezan sus tramos de precio.
+**Mejor opción**: **Hostly** (no está en esta comparativa). Con el plan Gratis, el check-in y el registro a los Mossos le cuestan 0 €. Si además quiere channel manager, IA en WhatsApp y limpiezas, Hostly Completo cuesta 80 €/mes por los dos pisos: algo más que ese presupuesto, pero sin sumar otras herramientas. Si solo busca un channel manager, **Smoobu** empieza en 29 €/mes por alojamiento. **Hostify** encaja mejor a partir de 5 pisos, que es donde empiezan sus tramos de precio.
 
 ### Caso 2: Villa de lujo en Ibiza con web propia
 
@@ -123,9 +123,9 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 ### Caso 3: Primer apartamento turístico en Madrid
 
 - Persona empezando, sin experiencia con PMS, precio sensible.
-- 1 apartamento, unos 30-35 €/mes.
+- 1 apartamento, unos 30-35 €/mes.
 
-**Mejor opción**: **Smoobu** por precio y simplicidad: desde 29 €/mes con el plan Flex, más un 0,9 % por reserva. Aceptar que tendrás que añadir algo para el registro de viajeros (Chekin, desde 3,95 €/mes, o el plan Gratis de Hostly, por 0 €: la conexión con SES la activamos contigo) y, con el tiempo, migrar si creces.
+**Mejor opción**: **Smoobu** por precio y simplicidad: desde 29 €/mes con el plan Flex, más un 0,9 % por reserva. Aceptar que tendrás que añadir algo para el registro de viajeros (Chekin, desde 3,95 €/mes, o el plan Gratis de Hostly, por 0 €: la conexión con SES la activamos contigo) y, con el tiempo, migrar si creces.
 
 ### Caso 4: Gestor con 15 apartamentos en Mallorca
 

@@ -4,9 +4,11 @@
     "title_1": "Todo lo que hace Hostly,",
     "title_2": "una funcionalidad a la vez.",
     "subtitle_count": "{{count}} funcionalidades en una sola app. Lo que ves es lo que tienes desde el primer día; las automatizaciones a medida, aparte.",
-    "card_eyebrow": "Hostly ·",
+    "card_plan_gratis": "Gratis, para siempre",
+    "card_plan_completo": "Hostly Completo",
+    "card_plan_aparte": "Aparte, a medida",
     "card_cta": "Ver funcionalidad",
-    "final_title": "Hostly Completo, 40 €/apartamento.",
+    "final_title": "Hostly Completo, 40 €/apartamento.",
     "final_subtitle": "El primer mes, gratis. El check-in y el registro a la policía, gratis para siempre.",
     "final_cta": "Empezar"
   },

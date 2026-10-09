@@ -9,7 +9,7 @@
     "hero_body": "Chekin automatiza el check-in legal. Hostly lo incluye gratis dentro de una plataforma completa de gestión. Esta es la diferencia.",
     "who_chekin_eyebrow": "Chekin",
     "who_chekin_heading": "Especialista en check-in y cumplimiento legal",
-    "who_chekin_p1": "Chekin automatiza el check-in online, el registro policial (SES.Hospedajes), el NRUA y la tasa turística. Es muy bueno en lo que hace. Cobra una cuota mensual por propiedad: desde 3,95 € en el plan Basic, 5,95 € en Premium y 7,95 € en Enterprise (precios publicados en octubre de 2026).",
+    "who_chekin_p1": "Chekin automatiza el check-in online, el registro policial (SES.Hospedajes), el NRUA y la tasa turística. Es muy bueno en lo que hace. Cobra una cuota mensual por propiedad: desde 3,95 € en el plan Basic, 5,95 € en Premium y 7,95 € en Enterprise (precios publicados en octubre de 2026).",
     "who_chekin_p2": "Su foco es el check-in y el cumplimiento legal. Para reservas, mensajes, limpiezas y precios, lo normal es combinarlo con otras herramientas.",
     "who_hostly_eyebrow": "Hostly",
     "who_hostly_heading": "La app que lo junta todo en un solo sitio",
@@ -57,21 +57,21 @@
       }
     ],
     "cost_heading": "Lo que pagas por piso al año",
-    "cost_subheading": "Ejemplo: 1 piso, con los precios publicados en octubre de 2026. Si solo necesitas el check-in y el registro, con Hostly pagas 0 €.",
+    "cost_subheading": "Ejemplo: 1 piso, con los precios publicados en octubre de 2026. Si solo necesitas el check-in y el registro, con Hostly pagas 0 €.",
     "cost_chekin_label": "Con Chekin + otras herramientas",
-    "cost_chekin_row1_label": "Chekin Basic (desde 3,95 €/mes)",
-    "cost_chekin_row1_value": "~47 €/año",
-    "cost_chekin_row2_label": "Channel manager (Smoobu, desde 29 €/mes)",
-    "cost_chekin_row2_value": "~350 €/año",
+    "cost_chekin_row1_label": "Chekin Basic (desde 3,95 €/mes)",
+    "cost_chekin_row1_value": "~47 €/año",
+    "cost_chekin_row2_label": "Channel manager (Smoobu, desde 29 €/mes)",
+    "cost_chekin_row2_value": "~350 €/año",
     "cost_chekin_row3_label": "Comisión del plan Flex de Smoobu",
-    "cost_chekin_row3_value": "0,9 % por reserva",
+    "cost_chekin_row3_value": "0,9 % por reserva",
     "cost_chekin_row4_label": "Excel + Dropbox (tu tiempo)",
     "cost_chekin_row4_value": "— €",
     "cost_chekin_total_label": "Total estimado",
-    "cost_chekin_total_value": "~400 €/año + 0,9 %",
+    "cost_chekin_total_value": "~400 €/año + 0,9 %",
     "cost_hostly_label": "Con Hostly",
-    "cost_hostly_row1_label": "Hostly Completo (40 € × 12 meses)",
-    "cost_hostly_row1_value": "480 €/año",
+    "cost_hostly_row1_label": "Hostly Completo (40 € × 12 meses)",
+    "cost_hostly_row1_value": "480 €/año",
     "cost_hostly_row2_label": "Check-in + registro policial + tasa (Cataluña)",
     "cost_hostly_row2_value": "Gratis",
     "cost_hostly_row3_label": "Channel manager (Airbnb y Booking)",
@@ -79,7 +79,7 @@
     "cost_hostly_row4_label": "Mensajes con IA, limpiezas, finanzas",
     "cost_hostly_row4_value": "Incluido",
     "cost_hostly_total_label": "Total",
-    "cost_hostly_total_value": "480 €/año",
+    "cost_hostly_total_value": "480 €/año",
     "faq_heading": "Preguntas frecuentes",
     "faqs": [
       {
@@ -88,7 +88,7 @@
       },
       {
         "q": "¿Cuánto me ahorro si paso de Chekin a Hostly?",
-        "a": "Si solo usas Chekin para el check-in y el registro, te ahorras toda su cuota: Chekin cuesta desde 3,95 €/mes por propiedad (unos 47 €/año) y en Hostly es gratis. Si además quieres channel manager, mensajes con IA, limpiezas y precios con PriceLabs integrado, Hostly Completo cuesta 40 €/mes por piso (480 €/año), 35 € desde 5."
+        "a": "Si solo usas Chekin para el check-in y el registro, te ahorras toda su cuota: Chekin cuesta desde 3,95 €/mes por propiedad (unos 47 €/año) y en Hostly es gratis. Si además quieres channel manager, mensajes con IA, limpiezas y precios con PriceLabs integrado, Hostly Completo cuesta 40 €/mes por piso (480 €/año), 35 € desde 5."
       },
       {
         "q": "¿Pierdo datos o reservas si migro desde Chekin?",

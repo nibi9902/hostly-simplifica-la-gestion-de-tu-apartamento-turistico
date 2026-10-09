@@ -183,10 +183,11 @@ export default function BlogIndex() {
                         <h3 className="text-sm font-bold text-[#0f172a] group-hover:text-primary transition-colors leading-snug">
                           {post!.title}
                         </h3>
-                        <p className="text-xs text-slate-500 leading-relaxed line-clamp-3 flex-1">
+                        {/* Sense flex-1 al text retallat: si s'estira, es veu la 4a línia sota els «…» */}
+                        <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">
                           {post!.description}
                         </p>
-                        <div className="flex items-center justify-between pt-2 border-t border-slate-50">
+                        <div className="mt-auto flex items-center justify-between pt-2 border-t border-slate-50">
                           <span className="flex items-center gap-1 text-[11px] text-slate-500">
                             <Clock className="w-3 h-3" /> {t('index.min_read', { count: post!.readingTime })}
                           </span>

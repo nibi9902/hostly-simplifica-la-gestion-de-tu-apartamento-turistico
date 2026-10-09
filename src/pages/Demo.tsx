@@ -43,7 +43,7 @@ export default function Demo() {
           className="relative z-10 w-full max-w-5xl mx-auto text-center"
         >
           {/* Eyebrow */}
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-white/40 mb-5">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-white/70 mb-5">
             {t("demo.eyebrow")}
           </p>
 
@@ -51,7 +51,7 @@ export default function Demo() {
           <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-[1.05] mb-4">
             {t("demo.heading")}
           </h1>
-          <p className="text-white/55 text-base md:text-lg max-w-xl mx-auto mb-10">
+          <p className="text-white/80 text-base md:text-lg max-w-xl mx-auto mb-10">
             {t("demo.subheading")}
           </p>
 
@@ -106,7 +106,7 @@ export default function Demo() {
               {t("demo.cta_pricing")}
             </LangLink>
           </div>
-          <p className="text-white/25 text-xs mt-4">
+          <p className="text-white/70 text-xs mt-4">
             {t("demo.disclaimer")}
           </p>
         </motion.div>

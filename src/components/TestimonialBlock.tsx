@@ -117,7 +117,7 @@ const TestimonialBlock = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
             <div className="rounded-2xl bg-background border border-border p-8 md:p-10 shadow-[var(--shadow-card)]">
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/8 text-primary text-xs font-semibold tracking-wider uppercase mb-6">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase mb-6">
                 {t("support.founder_badge")}
               </span>
               <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-4">
@@ -150,7 +150,7 @@ const TestimonialBlock = () => {
                   const Icon = supportIcons[i];
                   return (
                     <li key={p.title} className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                         <Icon className="w-5 h-5 text-primary" />
                       </div>
                       <div>

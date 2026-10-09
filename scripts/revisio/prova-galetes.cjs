@@ -33,7 +33,9 @@ const { chromium } = (() => { try { return require('playwright-core'); } catch {
   ok(`avís legal amb titular i NIF`, txt.includes('Biel Alsina') && txt.includes('40456798M'));
   await p.goto((process.env.REVISIO_BASE || 'http://127.0.0.1:8094') + '/es/terminos', { waitUntil: 'networkidle' });
   const tt = await p.locator('main').innerText();
-  ok(`termes: 35 € i referits, sense 37 €`, tt.includes('35 €/mes') && tt.includes('Programa de referidos') && !tt.includes('37 €'));
+  // Les xifres porten un espai que no parteix línia («35\u00a0€»): es compara amb espais normals
+  const ttn = tt.replace(/\u00a0/g, ' ');
+  ok(`termes: 35 € i referits, sense 37 €`, ttn.includes('35 €/mes') && ttn.includes('Programa de referidos') && !ttn.includes('37 €'));
   await b.close();
   console.log(r.join('\n'));
 })().catch((e) => { console.error(e); process.exit(1); });

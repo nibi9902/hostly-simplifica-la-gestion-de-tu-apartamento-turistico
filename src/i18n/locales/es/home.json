@@ -6,7 +6,7 @@
     "partner_label": "Conectado con",
     "cta_tagline": "Check-in + registro a la policía",
     "cta_compare_rest": "Otras apps te lo cobran cada mes.",
-    "cta_main_price": "0 €",
+    "cta_main_price": "0 €",
     "cta_main_text": "en",
     "cta_main_brand": "Hostly",
     "cta_forever": "Para siempre.",
@@ -27,7 +27,7 @@
       {
         "label": "Hostly · Fiscal",
         "title": "Tasa turística · semestre listo",
-        "detail": "1.284 € a ingresar · fichero listo para presentar"
+        "detail": "1.284 € a ingresar · fichero listo para presentar"
       },
       {
         "label": "Hostly · Check-in",
@@ -47,18 +47,18 @@
       {
         "label": "Hostly · Precios",
         "title": "Festival local detectado en tu zona",
-        "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
+        "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
       },
       {
         "label": "Hostly · Reservas",
         "title": "Nueva reserva · Booking",
-        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
+        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
       }
     ],
     "bubbles": [
       {
         "title": "Tasa turística · semestre listo",
-        "detail": "1.284 € a ingresar · fichero listo para presentar"
+        "detail": "1.284 € a ingresar · fichero listo para presentar"
       },
       {
         "title": "Check-in de Miguel completado",
@@ -74,11 +74,11 @@
       },
       {
         "title": "Festival local detectado en tu zona",
-        "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
+        "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
       },
       {
         "title": "Nueva reserva · Booking",
-        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
+        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
       }
     ]
   },
@@ -112,7 +112,7 @@
       {
         "before_title": "Chekin + Smoobu + PriceLabs…",
         "before_sub": "Tres facturas distintas cada mes",
-        "after_title": "40 €/mes por piso. Una sola factura.",
+        "after_title": "40 €/mes por piso. Una sola factura.",
         "after_sub": "Un pago · una app"
       },
       {
@@ -134,7 +134,7 @@
     "title_1": "Listo en minutos.",
     "title_2": "Funcionando para siempre.",
     "subtitle": "Tres pasos. No hace falta saber nada de tecnología.",
-    "footer_tagline": "Configuración guiada · Acompañamiento 1 a 1 el primer mes · Soporte en castellano y catalán",
+    "footer_tagline": "Configuración guiada · Acompañamiento 1 a 1 el primer mes · Soporte en castellano y catalán",
     "list": [
       {
         "tag": "Primero",
@@ -172,7 +172,7 @@
       },
       {
         "q": "¿Cuánto tarda en configurarse?",
-        "a": "El primer piso, en unos minutos. En Hostly Completo, las conexiones con Airbnb y Booking las hacemos contigo en la configuración 1 a 1 del primer mes."
+        "a": "El primer piso, en unos minutos. En Hostly Completo, las conexiones con Airbnb y Booking las hacemos contigo en la configuración 1 a 1 del primer mes."
       },
       {
         "q": "¿Tengo que firmar permanencia?",
@@ -192,6 +192,7 @@
     "free_price_note": "Sin tarjeta. Sin caducidad.",
     "free_desc": "Para cumplir con la policía sin pagar nada al mes.",
     "free_cta": "Empezar",
+    "free_fine": "Sin tarjeta · Si te atascas, te llamamos",
     "free_features": [
       "Check-in online del huésped, desde su móvil",
       "Registro a la policía: automático con los Mossos; SES, lo activamos contigo",
@@ -202,7 +203,7 @@
     "paid_badge": "Hostly Completo",
     "paid_badge_recommended": "Recomendado",
     "paid_price_per": "/mes por apt.",
-    "paid_price_bulk_prefix": "35 €/mes",
+    "paid_price_bulk_prefix": "35 €/mes",
     "paid_price_bulk_suffix": "por apartamento desde 5 apt.",
     "paid_desc": "Hostly gestiona. Tú, menos. Reemplaza Chekin, Smoobu y el Excel; PriceLabs, integrado.",
     "paid_cta": "Empezar",
@@ -214,7 +215,7 @@
       "Limpiezas asignadas y avisadas solas",
       "Precios al día con PriceLabs",
       "Finanzas y liquidaciones al propietario",
-      "Configuración 1 a 1 el primer mes",
+      "Configuración 1 a 1 el primer mes",
       "Soporte humano. No un chatbot."
     ],
     "calcula_link": "¿Te sale a cuenta? Haz números en un minuto",
@@ -271,7 +272,7 @@
     "promises_subtitle": "En Hostly Completo, configuramos contigo tus pisos y tus canales. Después, seguimos a un mensaje de distancia.",
     "promises": [
       {
-        "title": "Configuración 1 a 1",
+        "title": "Configuración 1 a 1",
         "desc": "Conectamos contigo tus pisos y tus canales, en una videollamada."
       },
       {
@@ -385,7 +386,7 @@
       "events": [
         {
           "title": "Reserva entrante",
-          "detail": "Carlos · Booking · 4 noches · 620 €"
+          "detail": "Carlos · Booking · 4 noches · 620 €"
         },
         {
           "title": "Bienvenida enviada",
@@ -397,7 +398,7 @@
         },
         {
           "title": "Tasa turística cobrada",
-          "detail": "4 € · 2 huéspedes · 4 noches"
+          "detail": "4 € · 2 huéspedes · 4 noches"
         },
         {
           "title": "Limpieza asignada",
@@ -437,8 +438,8 @@
   },
   "precios_page": {
     "meta_title": "Precios — Hostly",
-    "meta_description": "Un plan gratis para siempre con el check-in y el registro a la policía. Un plan completo de 40 €/mes por apartamento, el primer mes gratis.",
-    "sr_h1": "Precios de Hostly — Un plan gratis y un plan completo de 40 €/mes por apartamento",
+    "meta_description": "Un plan gratis para siempre con el check-in y el registro a la policía. Un plan completo de 40 €/mes por apartamento, el primer mes gratis.",
+    "sr_h1": "Precios de Hostly — Un plan gratis y un plan completo de 40 €/mes por apartamento",
     "faq_heading": "Preguntas sobre el precio",
     "faq_subheading": "Lo que nos preguntan casi todos antes de empezar.",
     "cta_heading": "Empieza por lo que es gratis.",
@@ -455,8 +456,8 @@
         "a": "Sí, así está pensado. Cuando quieras el resto de Hostly, nos lo dices (desde «Empezar» o escribiéndonos), hacemos una demo de 20 minutos y lo activamos ese mismo día, con el primer mes gratis."
       },
       {
-        "q": "¿Qué incluye exactamente el plan de 40 €/mes?",
-        "a": "Todo lo de la lista: Airbnb y Booking sincronizados, mensajes con huéspedes contestados por IA, limpiezas avisadas solas, precios al día con PriceLabs, finanzas y liquidaciones, y la configuración 1 a 1 el primer mes. Lo único aparte son las automatizaciones a medida, si algún día las quieres."
+        "q": "¿Qué incluye exactamente el plan de 40 €/mes?",
+        "a": "Todo lo de la lista: Airbnb y Booking sincronizados, mensajes con huéspedes contestados por IA, limpiezas avisadas solas, precios al día con PriceLabs, finanzas y liquidaciones, y la configuración 1 a 1 el primer mes. Lo único aparte son las automatizaciones a medida, si algún día las quieres."
       },
       {
         "q": "¿Hay permanencia?",
@@ -464,7 +465,7 @@
       },
       {
         "q": "¿Qué pasa si tengo 5 apartamentos o más?",
-        "a": "Desde 5 apartamentos, cada uno pasa a 35 €/mes en lugar de 40 €. Con 20 pisos, 700 €/mes."
+        "a": "Desde 5 apartamentos, cada uno pasa a 35 €/mes en lugar de 40 €. Con 20 pisos, 700 €/mes."
       },
       {
         "q": "¿Cómo funciona el programa de referidos?",
@@ -472,7 +473,7 @@
       },
       {
         "q": "¿Cuánto tarda en configurarse?",
-        "a": "El primer piso, en unos minutos. En Hostly Completo, las conexiones con Airbnb y Booking las hacemos contigo en la configuración 1 a 1 del primer mes."
+        "a": "El primer piso, en unos minutos. En Hostly Completo, las conexiones con Airbnb y Booking las hacemos contigo en la configuración 1 a 1 del primer mes."
       }
     ]
   }

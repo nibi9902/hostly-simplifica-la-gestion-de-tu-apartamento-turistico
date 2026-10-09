@@ -24,7 +24,7 @@ No hace falta inventar nada. Así suele ser el lunes de un gestor con 8 apartame
 
 **7:30.** Miras el teléfono antes de levantarte. Hay un mensaje de un huésped que pregunta si puede salir más tarde. Hay otro mensaje de la limpiadora diciendo que el piso de la Calle Mayor tiene una mancha en el sofá. Hay una notificación de Airbnb de una nueva reserva para el próximo fin de semana.
 
-**8:15.** Antes del desayuno, abres el channel manager para ver si la nueva reserva ya está sincronizada con Booking. La disponibilidad parece correcta, pero no estás 100 % seguro porque la última vez hubo un retraso.
+**8:15.** Antes del desayuno, abres el channel manager para ver si la nueva reserva ya está sincronizada con Booking. La disponibilidad parece correcta, pero no estás 100 % seguro porque la última vez hubo un retraso.
 
 **9:00.** Te acuerdas de que hay dos entradas hoy. Vas a Chekin a ver si los huéspedes han completado el check-in. Uno sí, el otro no. Le mandas un recordatorio manual.
 
@@ -50,20 +50,20 @@ Hay un coste en dinero y un coste en tiempo. Ambos son reales.
 
 | Herramienta | Coste mensual estimado |
 |---|---|
-| Channel manager (plan para 8 pisos) | 80-150 € |
-| Chekin (check-in + SES, 8 pisos) | 32-64 € |
-| Almacenamiento (Dropbox o similar) | 10-15 € |
-| Plantillas / contratos | 0-20 € |
-| Excel (o herramienta básica) | 0-15 € |
-| **Total aproximado** | **120-265 €/mes** |
+| Channel manager (plan para 8 pisos) | 80-150 € |
+| Chekin (check-in + SES, 8 pisos) | 32-64 € |
+| Almacenamiento (Dropbox o similar) | 10-15 € |
+| Plantillas / contratos | 0-20 € |
+| Excel (o herramienta básica) | 0-15 € |
+| **Total aproximado** | **120-265 €/mes** |
 
-A esto hay que añadir lo que le pagas a la gestoría si le delegas el SES o la tasa turística, que puede ser entre 50 y 150 € al mes más.
+A esto hay que añadir lo que le pagas a la gestoría si le delegas el SES o la tasa turística, que puede ser entre 50 y 150 € al mes más.
 
 ### Coste en tiempo:
 
 Si eres honesto con el tiempo, llevar 8 pisos con este stack implica fácilmente entre **15 y 25 horas semanales** de gestión. Muchas de esas horas son trabajo repetitivo: copiar datos de un sitio a otro, comprobar que algo se ha sincronizado bien, responder el mismo tipo de mensaje por décima vez.
 
-Si valoras tu hora en 20 €, 20 horas semanales son 400 € a la semana, 1.600 € al mes. Al año, más de 19.000 € en tiempo.
+Si valoras tu hora en 20 €, 20 horas semanales son 400 € a la semana, 1.600 € al mes. Al año, más de 19.000 € en tiempo.
 
 Nadie tiene ese número en una hoja de cálculo porque no es un pago que haces a nadie. Pero es el coste más real que tienes.
 
@@ -89,13 +89,13 @@ No es que el trabajo desaparezca. Es que el trabajo repetitivo y el trabajo de "
 
 ---
 
-## Hostly para gestores pequeños: 35 €/mes por piso desde 5
+## Hostly para gestores pequeños: 35 €/mes por piso desde 5
 
 Hostly está diseñado exactamente para el perfil del gestor pequeño: alguien que lleva varios pisos (Hostly está pensado para 1 a 15), que hace demasiadas cosas a mano o con herramientas que no se comunican entre sí, y que no necesita la complejidad de un PMS para grandes operadores.
 
-Con Hostly Completo, el precio para 8 apartamentos es de **35 € por apartamento al mes** (baja de 40 € a 35 € a partir de 5 apartamentos). Para 8 pisos, eso son 280 € al mes.
+Con Hostly Completo, el precio para 8 apartamentos es de **35 € por apartamento al mes** (baja de 40 € a 35 € a partir de 5 apartamentos). Para 8 pisos, eso son 280 € al mes.
 
-Comparado con el stack fragmentado habitual (unos 120-265 € al mes, más gestoría y más tiempo), el precio queda en la misma franja o algo por encima, pero incluye también los mensajes con IA, las limpiezas y los precios, que en ese stack no están. Y el cambio más importante no es el dinero: es dejar de tener cinco apps abiertas y empezar a tener una.
+Comparado con el stack fragmentado habitual (unos 120-265 € al mes, más gestoría y más tiempo), el precio queda en la misma franja o algo por encima, pero incluye también los mensajes con IA, las limpiezas y los precios, que en ese stack no están. Y el cambio más importante no es el dinero: es dejar de tener cinco apps abiertas y empezar a tener una.
 
 Lo que incluye Hostly Completo:
 

@@ -39,7 +39,7 @@ const FinalCTA = ({ onEmpezar }: FinalCTAProps) => {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="max-w-3xl mx-auto text-center relative z-10"
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-5">
           {t("final_cta.eyebrow")}
         </p>
 
@@ -47,7 +47,7 @@ const FinalCTA = ({ onEmpezar }: FinalCTAProps) => {
           {t("final_cta.title")}
         </h2>
 
-        <p className="text-lg md:text-xl text-white/60 mb-10 max-w-lg mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl text-white/80 mb-10 max-w-lg mx-auto leading-relaxed">
           {t("final_cta.subtitle")}
         </p>
 
@@ -70,23 +70,19 @@ const FinalCTA = ({ onEmpezar }: FinalCTAProps) => {
           </LangLink>
         </div>
 
-        {/* Stats */}
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-white/35 text-sm mb-10">
-          <span>💬 {t("final_cta.stat_messages")}</span>
-          <span>·</span>
-          <span>🛡️ {t("final_cta.stat_police")}</span>
-          <span>·</span>
-          <span>🧹 {t("final_cta.stat_cleanings")}</span>
-        </div>
+        {/* Stats — sense «·» de text: en saltar de línia quedaven penjant; contrast AA sobre el blau marí */}
+        <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-white/80 text-sm mb-10">
+          <li>💬 {t("final_cta.stat_messages")}</li>
+          <li>🛡️ {t("final_cta.stat_police")}</li>
+          <li>🧹 {t("final_cta.stat_cleanings")}</li>
+        </ul>
 
-        {/* Partner logos */}
-        <div className="flex items-center justify-center gap-2 text-white/30 text-xs font-medium uppercase tracking-widest">
-          <span>{t("final_cta.partners")}</span>
-          <span className="text-white/50 font-semibold ml-1">Airbnb</span>
-          <span>·</span>
-          <span className="text-white/50 font-semibold">Booking.com</span>
-          <span>·</span>
-          <span className="text-white/50 font-semibold">Google</span>
+        {/* Amb qui es connecta */}
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-white/75 text-xs font-medium uppercase tracking-widest">
+          <span className="whitespace-nowrap">{t("final_cta.partners")}</span>
+          <span className="text-white font-semibold">Airbnb</span>
+          <span className="text-white font-semibold">Booking.com</span>
+          <span className="text-white font-semibold">Google</span>
         </div>
       </motion.div>
     </section>

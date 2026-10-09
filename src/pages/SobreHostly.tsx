@@ -134,12 +134,12 @@ export default function SobreHostly() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="mailto:hola@hostlylabs.com"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"
             >
               <Mail className="w-4 h-4" />
               hola@hostlylabs.com
             </a>
-            <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 text-[#0f172a] font-medium text-base hover:bg-[#f8fafc] hover:-translate-y-0.5 transition-all duration-300"
+            <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-slate-200 text-[#0f172a] font-medium text-base hover:bg-[#f8fafc] hover:-translate-y-0.5 transition-all duration-300"
             >
               {t("sobre.contact_cta_start")}
               <ArrowRight className="w-4 h-4" />

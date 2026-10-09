@@ -107,7 +107,7 @@ Si quieres que tu apartamento tenga una experiencia singular (una nota escrita a
 
 ### Decisiones estratégicas
 
-¿Subir el precio medio un 15 % arriesgando ocupación? ¿Aceptar reservas de última hora con descuento? ¿Entrar en Vrbo además de Airbnb y Booking? Decisiones de negocio. La IA te da datos; tú decides.
+¿Subir el precio medio un 15 % arriesgando ocupación? ¿Aceptar reservas de última hora con descuento? ¿Entrar en Vrbo además de Airbnb y Booking? Decisiones de negocio. La IA te da datos; tú decides.
 
 ## Cómo empezar: tres opciones realistas
 
@@ -119,7 +119,7 @@ Si tu operativa actual funciona y solo te ahoga la mensajería, hay herramientas
 
 Sustituyes tu sistema actual (Excel, calendario de Airbnb, grupos de WhatsApp) por una app de gestión completa que incluye mensajería con IA + check-in + registro de viajeros + limpiezas + precios. Ejemplos: **Hostly** (hecho en Cataluña, con WhatsApp y registro de viajeros a la policía), **Hospitable** (anglosajón), **Prohost AI** (joven, con plan gratis).
 
-Inversión: en Hostly, el check-in y el registro son gratis, y Hostly Completo cuesta 40 €/mes por piso (35 € desde 5); en las demás, según el plan. Pro: lo tienes integrado en un solo sitio y el ahorro de tiempo es real. Contra: supone una migración inicial de 1-2 semanas.
+Inversión: en Hostly, el check-in y el registro son gratis, y Hostly Completo cuesta 40 €/mes por piso (35 € desde 5); en las demás, según el plan. Pro: lo tienes integrado en un solo sitio y el ahorro de tiempo es real. Contra: supone una migración inicial de 1-2 semanas.
 
 ### Opción 3: stack de herramientas conectadas (avanzado)
 
@@ -147,11 +147,11 @@ Si tu gestión manual era caótica, la automatización la hace caótica más rá
 
 ### Cero intervención humana
 
-Un apartamento 100 % automatizado pierde el toque que genera reseñas de 5 estrellas. El objetivo no es "ninguna interacción", es "solo interacciones que aporten". Una nota escrita a mano de bienvenida sigue funcionando.
+Un apartamento 100 % automatizado pierde el toque que genera reseñas de 5 estrellas. El objetivo no es "ninguna interacción", es "solo interacciones que aporten". Una nota escrita a mano de bienvenida sigue funcionando.
 
 ### Elegir la herramienta por el precio más bajo
 
-19 €/mes por una IA que responde mal cuesta más que 49 €/mes por una que responde bien: la mala requiere tu corrección constante. Mide el ahorro de tiempo, no el coste de licencia.
+19 €/mes por una IA que responde mal cuesta más que 49 €/mes por una que responde bien: la mala requiere tu corrección constante. Mide el ahorro de tiempo, no el coste de licencia.
 
 ## Próximos pasos
 

@@ -6,7 +6,7 @@
     "partner_label": "Connectat amb",
     "cta_tagline": "Check-in + registre a la policia",
     "cta_compare_rest": "Altres apps te'l cobren cada mes.",
-    "cta_main_price": "0 €",
+    "cta_main_price": "0 €",
     "cta_main_text": "a",
     "cta_main_brand": "Hostly",
     "cta_forever": "Per sempre.",
@@ -27,7 +27,7 @@
       {
         "label": "Hostly · Fiscal",
         "title": "Taxa turística · semestre llest",
-        "detail": "1.284 € a ingressar · fitxer llest per presentar"
+        "detail": "1.284 € a ingressar · fitxer llest per presentar"
       },
       {
         "label": "Hostly · Check-in",
@@ -47,18 +47,18 @@
       {
         "label": "Hostly · Preus",
         "title": "Festival local detectat a la teva zona",
-        "detail": "Preu del 15–19 juny ajustat a 235 €/nit"
+        "detail": "Preu del 15–19 juny ajustat a 235 €/nit"
       },
       {
         "label": "Hostly · Reserves",
         "title": "Nova reserva · Booking",
-        "detail": "4 nits · 620 € · dates bloquejades a Airbnb"
+        "detail": "4 nits · 620 € · dates bloquejades a Airbnb"
       }
     ],
     "bubbles": [
       {
         "title": "Taxa turística · semestre llest",
-        "detail": "1.284 € a ingressar · fitxer llest per presentar"
+        "detail": "1.284 € a ingressar · fitxer llest per presentar"
       },
       {
         "title": "Check-in del Miguel completat",
@@ -74,11 +74,11 @@
       },
       {
         "title": "Festival local detectat a la teva zona",
-        "detail": "Preu del 15–19 juny ajustat a 235 €/nit"
+        "detail": "Preu del 15–19 juny ajustat a 235 €/nit"
       },
       {
         "title": "Nova reserva · Booking",
-        "detail": "4 nits · 620 € · dates bloquejades a Airbnb"
+        "detail": "4 nits · 620 € · dates bloquejades a Airbnb"
       }
     ]
   },
@@ -112,7 +112,7 @@
       {
         "before_title": "Chekin + Smoobu + PriceLabs…",
         "before_sub": "Tres factures diferents cada mes",
-        "after_title": "40 €/mes per pis. Una sola factura.",
+        "after_title": "40 €/mes per pis. Una sola factura.",
         "after_sub": "Un pagament · una app"
       },
       {
@@ -134,7 +134,7 @@
     "title_1": "Llest en minuts.",
     "title_2": "Funcionant per sempre.",
     "subtitle": "Tres passos. No cal saber res de tecnologia.",
-    "footer_tagline": "Configuració guiada · Acompanyament 1 a 1 el primer mes · Suport en castellà i català",
+    "footer_tagline": "Configuració guiada · Acompanyament 1 a 1 el primer mes · Suport en castellà i català",
     "list": [
       {
         "tag": "Primer",
@@ -172,7 +172,7 @@
       },
       {
         "q": "Quant triga a configurar-se?",
-        "a": "El primer pis, en uns minuts. A Hostly Complet, les connexions amb Airbnb i Booking les fem amb tu a la configuració 1 a 1 del primer mes."
+        "a": "El primer pis, en uns minuts. A Hostly Complet, les connexions amb Airbnb i Booking les fem amb tu a la configuració 1 a 1 del primer mes."
       },
       {
         "q": "He de signar permanència?",
@@ -192,6 +192,7 @@
     "free_price_note": "Sense targeta. Sense caducitat.",
     "free_desc": "Per complir amb la policia sense pagar res al mes.",
     "free_cta": "Començar",
+    "free_fine": "Sense targeta · Si t'encalles, et truquem",
     "free_features": [
       "Check-in online de l'hoste, des del seu mòbil",
       "Registre a la policia: automàtic amb els Mossos; SES, l'activem amb tu",
@@ -202,7 +203,7 @@
     "paid_badge": "Hostly Complet",
     "paid_badge_recommended": "Recomanat",
     "paid_price_per": "/mes per apt.",
-    "paid_price_bulk_prefix": "35 €/mes",
+    "paid_price_bulk_prefix": "35 €/mes",
     "paid_price_bulk_suffix": "per apartament des de 5 apt.",
     "paid_desc": "Hostly gestiona. Tu, menys. Reemplaça Chekin, Smoobu i l'Excel; PriceLabs, integrat.",
     "paid_cta": "Començar",
@@ -214,14 +215,14 @@
       "Neteges assignades i avisades soles",
       "Preus al dia amb PriceLabs",
       "Finances i liquidacions al propietari",
-      "Configuració 1 a 1 el primer mes",
+      "Configuració 1 a 1 el primer mes",
       "Suport humà. No un xatbot."
     ],
     "calcula_link": "Et surt a compte? Fes números en un minut",
     "referral_badge": "Programa de referits",
     "referral_num_label": "Propietaris que portes",
     "referral_reward_label": "Apartament gratis",
-    "referral_title": "Per cada 5 propietaris que portis a Hostly Complet, 1 apartament teu deixa de costar-te.",
+    "referral_title": "Per cada 5 propietaris que portis a Hostly Complet, 1 apartament teu deixa de costar‑te.",
     "referral_desc": "Mentre segueixin a Hostly Complet, no pagues per aquell apartament. Sense límit: porta 10 propietaris i en seran 2."
   },
   "final_cta": {
@@ -271,7 +272,7 @@
     "promises_subtitle": "A Hostly Complet, configurem amb tu els teus pisos i els teus canals. Després, seguim a un missatge de distància.",
     "promises": [
       {
-        "title": "Configuració 1 a 1",
+        "title": "Configuració 1 a 1",
         "desc": "Connectem amb tu els teus pisos i els teus canals, en una videotrucada."
       },
       {
@@ -385,7 +386,7 @@
       "events": [
         {
           "title": "Reserva entrant",
-          "detail": "Carlos · Booking · 4 nits · 620 €"
+          "detail": "Carlos · Booking · 4 nits · 620 €"
         },
         {
           "title": "Benvinguda enviada",
@@ -397,7 +398,7 @@
         },
         {
           "title": "Taxa turística cobrada",
-          "detail": "4 € · 2 hostes · 4 nits"
+          "detail": "4 € · 2 hostes · 4 nits"
         },
         {
           "title": "Neteja assignada",
@@ -437,8 +438,8 @@
   },
   "precios_page": {
     "meta_title": "Preus — Hostly",
-    "meta_description": "Un pla gratis per sempre amb el check-in i el registre a la policia. Un pla complet de 40 €/mes per apartament, el primer mes gratis.",
-    "sr_h1": "Preus de Hostly — Un pla gratis i un pla complet de 40 €/mes per apartament",
+    "meta_description": "Un pla gratis per sempre amb el check-in i el registre a la policia. Un pla complet de 40 €/mes per apartament, el primer mes gratis.",
+    "sr_h1": "Preus de Hostly — Un pla gratis i un pla complet de 40 €/mes per apartament",
     "faq_heading": "Preguntes sobre el preu",
     "faq_subheading": "El que ens pregunten gairebé tots abans de començar.",
     "cta_heading": "Comença pel que és gratis.",
@@ -455,8 +456,8 @@
         "a": "Sí, així està pensat. Quan vulguis la resta de Hostly, ens ho dius (des de «Començar» o escrivint-nos), fem una demo de 20 minuts i l'activem aquell mateix dia, amb el primer mes gratis."
       },
       {
-        "q": "Què inclou exactament el pla de 40 €/mes?",
-        "a": "Tot el de la llista: Airbnb i Booking sincronitzats, missatges amb hostes contestats per IA, neteges avisades soles, preus al dia amb PriceLabs, finances i liquidacions, i la configuració 1 a 1 el primer mes. L'única cosa a part són les automatitzacions a mida, si algun dia les vols."
+        "q": "Què inclou exactament el pla de 40 €/mes?",
+        "a": "Tot el de la llista: Airbnb i Booking sincronitzats, missatges amb hostes contestats per IA, neteges avisades soles, preus al dia amb PriceLabs, finances i liquidacions, i la configuració 1 a 1 el primer mes. L'única cosa a part són les automatitzacions a mida, si algun dia les vols."
       },
       {
         "q": "Hi ha permanència?",
@@ -464,7 +465,7 @@
       },
       {
         "q": "Què passa si tinc 5 apartaments o més?",
-        "a": "Des de 5 apartaments, cadascun passa a 35 €/mes en lloc de 40 €. Amb 20 pisos, 700 €/mes."
+        "a": "Des de 5 apartaments, cadascun passa a 35 €/mes en lloc de 40 €. Amb 20 pisos, 700 €/mes."
       },
       {
         "q": "Com funciona el programa de referits?",
@@ -472,7 +473,7 @@
       },
       {
         "q": "Quant triga a configurar-se?",
-        "a": "El primer pis, en uns minuts. A Hostly Complet, les connexions amb Airbnb i Booking les fem amb tu a la configuració 1 a 1 del primer mes."
+        "a": "El primer pis, en uns minuts. A Hostly Complet, les connexions amb Airbnb i Booking les fem amb tu a la configuració 1 a 1 del primer mes."
       }
     ]
   }

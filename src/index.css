@@ -94,6 +94,12 @@
 }
 
 @layer base {
+  /* Títols sense paraules soles a l'última línia («hace.», «hoy.»), i paràgrafs més ben repartits */
+  h1, h2, h3 { text-wrap: balance; }
+  p, li { text-wrap: pretty; }
+}
+
+@layer base {
   * {
     @apply border-border;
   }

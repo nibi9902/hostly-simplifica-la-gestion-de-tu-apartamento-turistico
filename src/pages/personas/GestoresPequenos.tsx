@@ -49,9 +49,10 @@ export default function GestoresPequenos() {
           <p className="text-slate-500 text-lg mb-10">{t("gestores.section2_sub")}</p>
           <div className="space-y-3 mb-8">
             {tools.map((item) => (
-              <div key={item.name} className="flex items-center justify-between p-4 rounded-xl bg-[#fff7f7] border border-red-100 text-sm">
+              // Al mòbil, el cost a sota del nom (al costat, els textos llargs aixafaven el nom en una columna)
+              <div key={item.name} className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between p-4 rounded-xl bg-[#fff7f7] border border-red-100 text-sm">
                 <span className="text-slate-700">❌ {item.name}</span>
-                <span className="font-semibold text-red-700 flex-shrink-0 ml-4">{item.cost}</span>
+                <span className="font-semibold text-red-700 pl-6 sm:pl-0 sm:flex-shrink-0 sm:ml-4 sm:text-right">{item.cost}</span>
               </div>
             ))}
           </div>

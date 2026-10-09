@@ -29,7 +29,7 @@ faqs:
   - question: "¿Qué pasa si tengo apartamentos en Cataluña o País Vasco?"
     answer: "En Cataluña, debes registrar a los viajeros en Mossos d'Esquadra a través de su propio sistema. En Euskadi, la Ertzaintza gestiona el registro. En el resto del Estado, se hace vía SES.Hospedajes. Si operas en varias comunidades, necesitas cubrir los tres canales."
   - question: "¿Cuánto es la multa por no registrar a un huésped?"
-    answer: "Las sanciones van de 100 € hasta 30.000 € según la gravedad. En la práctica, la mayoría de expedientes se abren por no registrar de forma sistemática, no por fallos puntuales. Lo relevante es demostrar un proceso consistente."
+    answer: "Las sanciones van de 100 € hasta 30.000 € según la gravedad. En la práctica, la mayoría de expedientes se abren por no registrar de forma sistemática, no por fallos puntuales. Lo relevante es demostrar un proceso consistente."
   - question: "¿Puedo delegar el registro en una plataforma automática?"
     answer: "Sí, y es lo recomendable. Hostly, por ejemplo, envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, con los datos que el huésped introduce en el check-in online, y guarda el comprobante. En el resto de España, activamos contigo la conexión con la policía que te toque."
   - question: "¿Qué datos exactos hay que recoger del huésped?"
@@ -125,10 +125,10 @@ Si operas en múltiples comunidades, tu sistema de gestión tiene que saber a qu
 
 ## Sanciones: del susto al expediente
 
-El Real Decreto 933/2021 recoge sanciones de entre **100 € y 30.000 €** según la gravedad y la reincidencia. En la práctica, lo que vemos en el mercado es:
+El Real Decreto 933/2021 recoge sanciones de entre **100 € y 30.000 €** según la gravedad y la reincidencia. En la práctica, lo que vemos en el mercado es:
 
-- **Leves** (hasta 600 €): fallos puntuales, errores en datos concretos, envíos con retraso.
-- **Graves** (600-30.000 €): no registrar de forma sistemática, ocultar huéspedes, negarse a colaborar.
+- **Leves** (hasta 600 €): fallos puntuales, errores en datos concretos, envíos con retraso.
+- **Graves** (600-30.000 €): no registrar de forma sistemática, ocultar huéspedes, negarse a colaborar.
 - **Muy graves**: dolo manifiesto, reincidencia, combinación con otras infracciones (licencia, tasas, etc.).
 
 Lo importante para un propietario o pequeño gestor: **no es probable que te multen por un fallo puntual**, pero sí por un patrón de incumplimiento. Si el Ministerio cruza datos de Airbnb/Booking con SES y no apareces, eres candidato a inspección.
