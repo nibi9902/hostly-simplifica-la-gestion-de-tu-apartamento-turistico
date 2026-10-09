@@ -153,7 +153,7 @@ export const FEATURES: Feature[] = [
       {
         step: 1,
         title: 'El huésped recibe su enlace',
-        body: 'En el plan completo, le llega con los mensajes automáticos, en su idioma. En el plan gratis, cada piso tiene su enlace fijo para compartirlo con tus huéspedes.',
+        body: 'En Hostly Completo, le llega con los mensajes automáticos, en su idioma. En el plan Gratis, cada piso tiene su enlace fijo para compartirlo con tus huéspedes.',
       },
       {
         step: 2,
@@ -299,7 +299,7 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Puedo usar Hostly sin conectar Airbnb ni Booking?',
         answer:
-          'Sí. En el plan gratis, Hostly lee tu calendario de Airbnb y Booking con el enlace iCal cada 30 minutos, para el check-in y el registro a la policía.',
+          'Sí. En el plan Gratis, Hostly lee tu calendario de Airbnb y Booking con el enlace iCal cada 30 minutos, para el check-in y el registro a la policía.',
       },
     ],
   },
@@ -760,7 +760,7 @@ export const FEATURES: Feature[] = [
       {
         step: 3,
         title: 'Liquidación al propietario en cuatro pasos',
-        body: 'Si gestionas pisos de terceros, un asistente te guía con tus honorarios y la limpieza ya calculados. El propietario la ve en su app.',
+        body: 'Si gestionas pisos de terceros, un asistente te guía con tus honorarios y la limpieza ya calculados. Cada propietario ve la suya en su app.',
       },
       {
         step: 4,
@@ -771,7 +771,7 @@ export const FEATURES: Feature[] = [
     advantages: [
       'Ingresos por piso, por canal y por periodo',
       'Comisiones de Airbnb y Booking calculadas solas',
-      'Tasa turística calculada en cada reserva',
+      'Tasa turística de Cataluña calculada en cada reserva',
       'Liquidación al propietario con un asistente de cuatro pasos',
       'El propietario ve su liquidación en su app',
       'Liquidaciones en CSV o PDF, y tasa turística en Excel o CSV',
@@ -800,7 +800,7 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Puedo hacer liquidaciones para los propietarios de los pisos que gestiono?',
         answer:
-          'Sí. Un asistente de cuatro pasos te ayuda a prepararlas, con tus honorarios y la limpieza. El propietario la ve en su app; Hostly no la envía por correo.',
+          'Sí. Un asistente de cuatro pasos te ayuda a prepararlas, con tus honorarios y la limpieza. Cada propietario ve la suya en su app; Hostly no la envía por correo.',
       },
       {
         question: '¿Qué puedo exportar para mi gestoría?',
@@ -854,7 +854,7 @@ export const FEATURES: Feature[] = [
       'Importe de cada reserva y total por piso, cada semestre',
       'Aviso en la app mientras el plazo está abierto',
       'Excel o CSV listo para presentar en la ATC',
-      'Incluida en el plan gratis, para siempre',
+      'Incluida en el plan Gratis, para siempre',
       'Si quieres, el huésped la paga con tarjeta al hacer el check-in',
     ],
     usage: [

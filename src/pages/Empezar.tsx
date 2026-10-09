@@ -143,7 +143,7 @@ export default function Empezar() {
         <div className="max-w-3xl mx-auto h-16 px-5 sm:px-6 flex items-center justify-between gap-4">
           <LangLink to="/" className="flex items-center gap-1 shrink-0" aria-label={t("empezar.inicio")}>
             <img src={hostlyLogo} alt="" width={28} height={28} className="h-7 w-auto" />
-            <span className="font-semibold text-base tracking-tight text-foreground">Hostly</span>
+            <span className="font-semibold text-base tracking-tight text-foreground">Hostly™</span>
           </LangLink>
           <div className="flex items-center gap-3">
             <span className="text-xs font-medium text-muted-foreground tabular-nums">

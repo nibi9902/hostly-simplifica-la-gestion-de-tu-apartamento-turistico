@@ -25,60 +25,60 @@
     "phone_now": "ara",
     "phone_notifs": [
       {
-        "label": "Hostly · Fiscal",
-        "title": "Taxa turística · semestre llest",
-        "detail": "1.284 € a ingressar · fitxer llest per presentar"
+        "label": "Hostly · Fiscal",
+        "title": "Taxa turística · semestre llest",
+        "detail": "1.284 € per ingressar · fitxer llest per presentar"
       },
       {
-        "label": "Hostly · Check-in",
+        "label": "Hostly · Check-in",
         "title": "Check-in del Miguel completat",
-        "detail": "Registre enviat als Mossos · taxa cobrada"
+        "detail": "Registre enviat als Mossos · taxa cobrada"
       },
       {
-        "label": "Hostly · Neteges",
-        "title": "Neteja confirmada · Anna",
-        "detail": "Coordinada automàticament · demà 11h"
+        "label": "Hostly · Neteges",
+        "title": "Neteja confirmada · Anna",
+        "detail": "Coordinada automàticament · demà 11h"
       },
       {
-        "label": "Hostly · IA",
+        "label": "Hostly · IA",
         "title": "En Pol ha obtingut resposta de la IA",
-        "detail": "Wifi + 3 restaurants recomanats · sense la teva intervenció"
+        "detail": "Wifi + 3 restaurants recomanats · sense la teva intervenció"
       },
       {
-        "label": "Hostly · Preus",
+        "label": "Hostly · Preus",
         "title": "Festival local detectat a la teva zona",
         "detail": "Preu del 15–19 juny ajustat a 235 €/nit"
       },
       {
-        "label": "Hostly · Reserves",
-        "title": "Nova reserva · Booking",
-        "detail": "4 nits · 620 € · dates bloquejades a Airbnb"
+        "label": "Hostly · Reserves",
+        "title": "Nova reserva · Booking",
+        "detail": "4 nits · 620 € · dates bloquejades a Airbnb"
       }
     ],
     "bubbles": [
       {
-        "title": "Taxa turística · semestre llest",
-        "detail": "1.284 € a ingressar · fitxer llest per presentar"
+        "title": "Taxa turística · semestre llest",
+        "detail": "1.284 € per ingressar · fitxer llest per presentar"
       },
       {
         "title": "Check-in del Miguel completat",
-        "detail": "Registre enviat als Mossos · taxa cobrada"
+        "detail": "Registre enviat als Mossos · taxa cobrada"
       },
       {
-        "title": "Neteja confirmada · Anna",
-        "detail": "Coordinada automàticament · demà 11h"
+        "title": "Neteja confirmada · Anna",
+        "detail": "Coordinada automàticament · demà 11h"
       },
       {
         "title": "En Pol ha obtingut resposta de la IA",
-        "detail": "Wifi + 3 restaurants recomanats · sense la teva intervenció"
+        "detail": "Wifi + 3 restaurants recomanats · sense la teva intervenció"
       },
       {
         "title": "Festival local detectat a la teva zona",
         "detail": "Preu del 15–19 juny ajustat a 235 €/nit"
       },
       {
-        "title": "Nova reserva · Booking",
-        "detail": "4 nits · 620 € · dates bloquejades a Airbnb"
+        "title": "Nova reserva · Booking",
+        "detail": "4 nits · 620 € · dates bloquejades a Airbnb"
       }
     ]
   },
@@ -99,33 +99,33 @@
     "pairs": [
       {
         "before_title": "Vas enviar el registre d'aquesta reserva a la policia?",
-        "before_sub": "Tu mateix · pendent des de divendres",
+        "before_sub": "Tu mateix · pendent des de divendres",
         "after_title": "Registre enviat a la policia",
-        "after_sub": "Automàtic · sense tocar res"
+        "after_sub": "Automàtic · sense tocar res"
       },
       {
         "before_title": "Neteja demà. Vas avisar l'Anna?",
-        "before_sub": "Sense resposta · 3 h per al check-in",
+        "before_sub": "Sense resposta · 3 h per al check-in",
         "after_title": "Anna avisada: demà a les 11",
-        "after_sub": "Automàtic · confirmat"
+        "after_sub": "Automàtic · confirmat"
       },
       {
         "before_title": "Chekin + Smoobu + PriceLabs…",
         "before_sub": "Tres factures diferents cada mes",
         "after_title": "40 €/mes per pis. Una sola factura.",
-        "after_sub": "Un pagament · una app"
+        "after_sub": "Un pagament · una app"
       },
       {
         "before_title": "Vas declarar la taxa turística?",
         "before_sub": "Un altre semestre que s'escola entre tota la resta",
         "after_title": "Import calculat. Llest per presentar.",
-        "after_sub": "5 minuts · amb la tarifa del teu municipi"
+        "after_sub": "5 minuts · amb la tarifa del teu municipi"
       },
       {
         "before_title": "30 missatges d'hostes sense llegir",
         "before_sub": "Wifi, pàrquing, check-out… sempre el mateix",
         "after_title": "La majoria, contestats en segons.",
-        "after_sub": "IA · en el seu idioma · sense obrir el mòbil"
+        "after_sub": "IA · en el seu idioma · sense obrir el mòbil"
       }
     ]
   },
@@ -134,12 +134,12 @@
     "title_1": "Llest en minuts.",
     "title_2": "Funcionant per sempre.",
     "subtitle": "Tres passos. No cal saber res de tecnologia.",
-    "footer_tagline": "Configuració guiada · Acompanyament 1 a 1 el primer mes · Suport en castellà i català",
+    "footer_tagline": "Configuració guiada · A Hostly Complet, acompanyament 1 a 1 el primer mes · Suport en castellà i català",
     "list": [
       {
         "tag": "Primer",
         "title": "Afegeix el teu pis en uns minuts.",
-        "description": "Un qüestionari curt. Respon una sola vegada les normes, horaris, accessos i wifi. Hostly ho recorda per tu — l'hoste ho rebrà només quan faci falta."
+        "description": "Un qüestionari curt. Respon una sola vegada les normes, horaris, accessos i wifi. Hostly ho recorda per tu — l'hoste ho rebrà només quan faci falta."
       },
       {
         "tag": "Segon",
@@ -188,11 +188,11 @@
     "title": "Un pla gratis. Un pla complet.",
     "title_sub": "Res més.",
     "subtitle": "El check-in i la policia, gratis per sempre. La resta, en un sol preu per pis.",
-    "free_badge": "Gratis · Per sempre",
+    "free_badge": "Gratis · Per sempre",
     "free_price_note": "Sense targeta. Sense caducitat.",
-    "free_desc": "Per complir amb la policia sense pagar res al mes.",
+    "free_desc": "Per registrar els teus hostes a la policia sense pagar res al mes.",
     "free_cta": "Començar",
-    "free_fine": "Sense targeta · Si t'encalles, et truquem",
+    "free_fine": "Sense targeta · Si t'encalles, et truquem",
     "free_features": [
       "Check-in online de l'hoste, des del seu mòbil",
       "Registre a la policia: automàtic amb els Mossos; SES, l'activem amb tu",
@@ -207,9 +207,9 @@
     "paid_price_bulk_suffix": "per apartament des de 5 apt.",
     "paid_desc": "Hostly gestiona. Tu, menys. Reemplaça Chekin, Smoobu i l'Excel; PriceLabs, integrat.",
     "paid_cta": "Començar",
-    "paid_fine": "El primer mes, gratis · Sense permanència",
+    "paid_fine": "El primer mes, gratis · Sense permanència",
     "paid_features": [
-      "Tot el del pla gratis",
+      "Tot el del pla Gratis",
       "Airbnb i Booking sincronitzats en temps real",
       "Missatges amb hostes contestats per IA, en el seu idioma",
       "Neteges assignades i avisades soles",
@@ -228,7 +228,7 @@
   "final_cta": {
     "eyebrow": "Per a propietaris que volen sistema, no caos",
     "title": "Gestiona menys. Comença avui.",
-    "subtitle": "El primer mes, gratis · Sense permanència",
+    "subtitle": "El primer mes, gratis · Sense permanència",
     "btn_start": "Començar",
     "btn_demo": "Veure com funciona",
     "stat_messages": "Missatges amb IA, en l'idioma de l'hoste",
@@ -247,7 +247,7 @@
       "sobre": "Sobre Hostly",
       "contacto": "Contacte"
     },
-    "copyright": "© 2026 Hostly™ · Ordre operatiu per a propietaris d'apartaments turístics."
+    "copyright": "© 2026 Hostly™ · Ordre operatiu per a propietaris d'apartaments turístics."
   },
   "testimonials": {
     "eyebrow": "En les seves paraules",
@@ -264,7 +264,7 @@
   "support": {
     "founder_badge": "Va néixer de viure-ho",
     "founder_title": "De propietari a propietari.",
-    "founder_quote": "\"Hostly no va néixer en una oficina. Va néixer de la frustració de gestionar els meus propis apartaments i no poder desconnectar mai. Ho vaig construir per a mi — i funciona.\"",
+    "founder_quote": "\"Hostly no va néixer en una oficina. Va néixer de la frustració de gestionar els meus propis apartaments i no poder desconnectar mai. Ho vaig construir per a mi — i funciona.\"",
     "founder_name": "Biel",
     "founder_role": "Fundador i propietari",
     "promises_title_start": "El primer mes",
@@ -360,7 +360,7 @@
           "done": false
         }
       ],
-      "cta": "Continuar · 1 pas més",
+      "cta": "Continuar · 1 pas més",
       "card_labels": [
         "Preu base",
         "Codi caixa",
@@ -370,39 +370,39 @@
     },
     "integrations": {
       "title": "Integracions",
-      "subtitle": "4 connectades · llest per rebre",
+      "subtitle": "4 connectades · llest per rebre",
       "statuses": [
         "Sincronitzat",
         "Sincronitzat",
-        "Connectat · 4821",
+        "Connectat · 4821",
         "Autoconfigutat"
       ],
       "ready": "Llest per a la propera reserva"
     },
     "live": {
       "title": "Activitat",
-      "subtitle": "Darreres accions · automàtiques",
+      "subtitle": "Darreres accions · automàtiques",
       "live_label": "EN DIRECTE",
       "events": [
         {
           "title": "Reserva entrant",
-          "detail": "Carlos · Booking · 4 nits · 620 €"
+          "detail": "Carlos · Booking · 4 nits · 620 €"
         },
         {
           "title": "Benvinguda enviada",
-          "detail": "Anglès · plantilla personal"
+          "detail": "Anglès · plantilla personal"
         },
         {
           "title": "SES enviat als Mossos",
-          "detail": "DNI verificat · hoste dins"
+          "detail": "DNI verificat · hoste dins"
         },
         {
           "title": "Taxa turística cobrada",
-          "detail": "4 € · 2 hostes · 4 nits"
+          "detail": "4 € · 2 hostes · 4 nits"
         },
         {
           "title": "Neteja assignada",
-          "detail": "Anna · dissabte 11:00"
+          "detail": "Anna · dissabte 11:00"
         }
       ]
     },
@@ -432,27 +432,27 @@
         }
       ],
       "next_checkin_label": "Proper check-in",
-      "next_checkin_detail": "Demà · 15:00 · Sarah D.",
+      "next_checkin_detail": "Demà · 15:00 · Sarah D.",
       "status_ok": "Tot al dia. Relaxa."
     }
   },
   "precios_page": {
-    "meta_title": "Preus — Hostly",
+    "meta_title": "Preus — Hostly",
     "meta_description": "Un pla gratis per sempre amb el check-in i el registre a la policia. Un pla complet de 40 €/mes per apartament, el primer mes gratis.",
-    "sr_h1": "Preus de Hostly — Un pla gratis i un pla complet de 40 €/mes per apartament",
+    "sr_h1": "Preus de Hostly — Un pla gratis i un pla complet de 40 €/mes per apartament",
     "faq_heading": "Preguntes sobre el preu",
     "faq_subheading": "El que ens pregunten gairebé tots abans de començar.",
     "cta_heading": "Comença pel que és gratis.",
     "cta_body": "Crea el teu compte, afegeix el teu pis i Hostly envia el registre a la policia per tu. Gratis per sempre.",
     "cta_button": "Començar",
-    "cta_disclaimer": "Sense targeta · Sense caducitat · Sense compromís",
+    "cta_disclaimer": "Sense targeta · Sense caducitat · Sense compromís",
     "faqs": [
       {
-        "q": "El pla gratis és realment gratis per sempre?",
+        "q": "El pla Gratis és realment gratis per sempre?",
         "a": "Sí. El check-in online, el registre a la policia (amb els Mossos, automàtic; SES, l'activem amb tu) i la taxa turística de Catalunya són gratis per sempre, sense targeta i sense límit d'apartaments."
       },
       {
-        "q": "Puc començar gratis i passar-me al pla complet més endavant?",
+        "q": "Puc començar gratis i passar-me a Hostly Complet més endavant?",
         "a": "Sí, així està pensat. Quan vulguis la resta de Hostly, ens ho dius (des de «Començar» o escrivint-nos), fem una demo de 20 minuts i l'activem aquell mateix dia, amb el primer mes gratis."
       },
       {
@@ -465,7 +465,7 @@
       },
       {
         "q": "Què passa si tinc 5 apartaments o més?",
-        "a": "Des de 5 apartaments, cadascun passa a 35 €/mes en lloc de 40 €. Amb 20 pisos, 700 €/mes."
+        "a": "Des de 5 apartaments, cadascun passa a 35 €/mes en lloc de 40 €. Amb 10 pisos, 350 €/mes."
       },
       {
         "q": "Com funciona el programa de referits?",

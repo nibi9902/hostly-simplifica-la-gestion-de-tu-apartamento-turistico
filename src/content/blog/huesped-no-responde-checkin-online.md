@@ -16,7 +16,7 @@ relatedSlugs:
   - "responder-mensajes-airbnb-automaticamente"
 faqs:
   - question: "¿Cuándo debo enviar el primer recordatorio de check-in?"
-    answer: "3 días antes de la llegada, con un mensaje claro explicando qué es el check-in online y por qué es obligatorio. Si a 24 horas del check-in sigue sin completarse, segundo recordatorio. Si a 12 horas sigue pendiente, intervención personal."
+    answer: "3 días antes de la llegada, con un mensaje claro que explique qué es el check-in online y que registrar sus datos es obligatorio. Si a 24 horas del check-in sigue sin completarse, segundo recordatorio. Si a 12 horas sigue pendiente, intervención personal."
   - question: "¿Puedo negar la entrada si el huésped no ha hecho el check-in?"
     answer: "Puedes, pero es mejor evitarlo. El check-in online existe para facilitar el registro legal, no como obstáculo. Si al llegar no lo ha hecho, puede completarlo en persona con tu asistencia."
   - question: "¿Qué pasa con SES si el huésped llega sin completar el check-in online?"
@@ -43,7 +43,7 @@ Cada uno requiere una respuesta diferente.
 
 Mensaje inmediato tras la reserva:
 
-> "¡Hola Marta! Reserva confirmada para el 15-19 de mayo. En los próximos días recibirás un enlace para el check-in online. Es obligatorio por normativa española y te permitirá entrar directamente el día de llegada."
+> "¡Hola Marta! Reserva confirmada para el 15‑19 de mayo. En los próximos días recibirás un enlace para el check-in online. Registrar tus datos es obligatorio por normativa española; con el check-in online lo haces en 3 minutos, y el día de llegada podrás entrar directamente."
 
 Establece expectativa clara y posiciona el check-in como parte normal del proceso.
 
@@ -57,7 +57,7 @@ El enlace personalizado evita confusión.
 
 Si no lo ha hecho a 24 h de llegar:
 
-> "Marta, mañana llegas :) Aún no has completado el check-in online. Es importante porque: 1) es obligatorio por ley 2) te permite entrar directamente sin que nos veamos. Enlace: [enlace]. Tarda 3 minutos."
+> "Marta, mañana llegas :) Aún no has completado el check-in online. Es importante por dos motivos: 1) registrar tus datos es obligatorio por normativa española, y con el check-in online lo haces en 3 minutos; 2) te permite entrar directamente sin que nos veamos. Enlace: [enlace]."
 
 Explicar **el beneficio para el huésped** (no quedar, entrada directa) funciona mejor que solo el requisito legal.
 
@@ -71,7 +71,7 @@ Tono firme pero no agresivo. Añades contacto directo por si hay problema técni
 
 Tres escenarios según el caso:
 
-### Escenario A: llegó pero está en el apartamento
+### Escenario A: ya ha llegado y está en el apartamento
 
 Si ya está dentro y ha entrado con el código (porque lo enviaste de todos modos), envíale un mensaje:
 
@@ -118,7 +118,7 @@ Decisión estratégica: ¿envías el código aunque el check-in no esté complet
 - Pro: mejor experiencia.
 - Contra: tienes que registrar tú si no lo han hecho.
 
-**Recomendación práctica**: no bloquear por defecto y sí en perfiles de riesgo (reservas de última hora, huéspedes sin reseñas, estancias largas), si tu herramienta permite reglas por perfil. En Hostly no hace falta decidirlo: el código solo aparece cuando el check-in está hecho.
+**Recomendación práctica**: no bloquear por defecto y sí en perfiles de riesgo (reservas de última hora, huéspedes sin reseñas, estancias largas), si tu herramienta permite reglas por perfil. En Hostly, el código siempre espera al check-in: es la opción que más protege, a cambio de algo más de fricción.
 
 ## Cuándo insistir y cuándo dejarlo
 

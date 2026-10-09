@@ -128,7 +128,7 @@ Si operas en múltiples comunidades, tu sistema de gestión tiene que saber a qu
 El Real Decreto 933/2021 recoge sanciones de entre **100 € y 30.000 €** según la gravedad y la reincidencia. En la práctica, lo que vemos en el mercado es:
 
 - **Leves** (hasta 600 €): fallos puntuales, errores en datos concretos, envíos con retraso.
-- **Graves** (600-30.000 €): no registrar de forma sistemática, ocultar huéspedes, negarse a colaborar.
+- **Graves** (600‑30.000 €): no registrar de forma sistemática, ocultar huéspedes, negarse a colaborar.
 - **Muy graves**: dolo manifiesto, reincidencia, combinación con otras infracciones (licencia, tasas, etc.).
 
 Lo importante para un propietario o pequeño gestor: **no es probable que te multen por un fallo puntual**, pero sí por un patrón de incumplimiento. Si el Ministerio cruza datos de Airbnb/Booking con SES y no apareces, eres candidato a inspección.
@@ -141,11 +141,11 @@ Hay dos caminos realistas para un propietario o gestor que no quiere dedicar tie
 
 ### Opción A: herramienta vertical de check-in + SES (tipo Chekin)
 
-Son plataformas que hacen **solo** check-in online + envío a la policía. El huésped recibe un enlace, introduce sus datos, escanea el documento de identidad y los datos se envían. Funcionan bien, pero son una herramienta más que mantener y pagar, desconectada de tu calendario, tus limpiezas, tus precios y tus mensajes.
+Son plataformas centradas en el check-in online y el envío a la policía. El huésped recibe un enlace, introduce sus datos, escanea el documento de identidad y los datos se envían. Funcionan bien, pero son una herramienta más que mantener y pagar, aparte de la que usas para el calendario, las limpiezas, los precios y los mensajes.
 
 ### Opción B: PMS con el registro de viajeros integrado (tipo Hostly)
 
-Un PMS (Property Management System) moderno incluye el check-in online y el registro de viajeros como una función más dentro del sistema. En Hostly funciona así: cuando entra una reserva de Airbnb o Booking, el huésped recibe su enlace de check-in por WhatsApp o por el chat de la plataforma. Rellena sus datos desde el móvil antes de llegar y Hostly valida cada campo. Después, Hostly envía el registro a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. En el resto de España, activamos contigo la conexión con la policía que te toque. Tú ves el estado del registro en el mismo panel donde ves el calendario, la limpieza y los mensajes.
+Un PMS (Property Management System) moderno incluye el check-in online y el registro de viajeros como una función más dentro del sistema. En Hostly Completo, cuando entra una reserva de Airbnb o Booking, el huésped recibe su enlace de check-in por WhatsApp o por el chat de la plataforma. Rellena sus datos desde el móvil antes de llegar y Hostly valida cada campo. Después, Hostly envía el registro a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. En el resto de España, activamos contigo la conexión con la policía que te toque. Tú ves el estado del registro en el mismo panel donde ves el calendario, la limpieza y los mensajes.
 
 **La ventaja de la opción B**: no duplicas herramientas. Si el huésped no ha hecho el check-in, recibe un recordatorio automático. Si un registro falla, Hostly te avisa. No pagas dos suscripciones para lo mismo.
 
@@ -177,11 +177,11 @@ El plazo de 24 horas es estricto. Si hay check-in a las 23:00 del viernes y no r
 
 "Solo es una noche, no pasará nada." Sí pasa: no hay mínimo de duración. Una noche de estancia genera la misma obligación que una de catorce.
 
-### 5. Olvidar que un mismo establecimiento puede tener dos obligaciones
+### 5. Olvidar que, con pisos en varias comunidades, cada uno va a su sistema
 
 Si tienes un apartamento en Barcelona, el registro va a Mossos. Si tienes uno en Madrid, va a SES. Un sistema que lo decide por ti según la dirección evita el error.
 
-## Qué cambia en 2026 respecto a 2024-2025
+## Qué cambia en 2026 respecto a 2024‑2025
 
 Tres novedades prácticas:
 

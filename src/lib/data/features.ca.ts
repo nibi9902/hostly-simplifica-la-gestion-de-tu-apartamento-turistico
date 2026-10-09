@@ -113,7 +113,7 @@ export const FEATURES_CA: Feature[] = [
       {
         step: 1,
         title: 'L\'hoste rep el seu enllaç',
-        body: 'Al pla complet, li arriba amb els missatges automàtics, en el seu idioma. Al pla gratuït, cada pis té el seu enllaç fix per compartir-lo amb els teus hostes.',
+        body: 'A Hostly Complet, li arriba amb els missatges automàtics, en el seu idioma. Al pla Gratis, cada pis té el seu enllaç fix per compartir-lo amb els teus hostes.',
       },
       {
         step: 2,
@@ -259,7 +259,7 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Puc fer servir Hostly sense connectar Airbnb ni Booking?',
         answer:
-          'Sí. Al pla gratuït, Hostly llegeix el teu calendari d\'Airbnb i Booking amb l\'enllaç iCal cada 30 minuts, per al check-in i el registre a la policia.',
+          'Sí. Al pla Gratis, Hostly llegeix el teu calendari d\'Airbnb i Booking amb l\'enllaç iCal cada 30 minuts, per al check-in i el registre a la policia.',
       },
     ],
   },
@@ -720,7 +720,7 @@ export const FEATURES_CA: Feature[] = [
       {
         step: 3,
         title: 'Liquidació al propietari en quatre passos',
-        body: 'Si gestiones pisos de tercers, un assistent et guia amb els teus honoraris i la neteja ja calculats. El propietari la veu a la seva app.',
+        body: 'Si gestiones pisos de tercers, un assistent et guia amb els teus honoraris i la neteja ja calculats. Cada propietari veu la seva a la seva app.',
       },
       {
         step: 4,
@@ -731,7 +731,7 @@ export const FEATURES_CA: Feature[] = [
     advantages: [
       'Ingressos per pis, per canal i per període',
       'Comissions d\'Airbnb i Booking calculades soles',
-      'Taxa turística calculada a cada reserva',
+      'Taxa turística de Catalunya calculada a cada reserva',
       'Liquidació al propietari amb un assistent de quatre passos',
       'El propietari veu la seva liquidació a la seva app',
       'Liquidacions en CSV o PDF, i taxa turística en Excel o CSV',
@@ -760,7 +760,7 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Puc fer liquidacions per als propietaris dels pisos que gestiono?',
         answer:
-          'Sí. Un assistent de quatre passos t\'ajuda a preparar-les, amb els teus honoraris i la neteja. El propietari la veu a la seva app; Hostly no l\'envia per correu.',
+          'Sí. Un assistent de quatre passos t\'ajuda a preparar-les, amb els teus honoraris i la neteja. Cada propietari veu la seva a la seva app; Hostly no l\'envia per correu.',
       },
       {
         question: 'Què puc exportar per a la meva gestoria?',
@@ -814,7 +814,7 @@ export const FEATURES_CA: Feature[] = [
       'Import de cada reserva i total per pis, cada semestre',
       'Avís a l\'app mentre el termini és obert',
       'Excel o CSV a punt per presentar a l\'ATC',
-      'Inclosa al pla gratuït, per sempre',
+      'Inclosa al pla Gratis, per sempre',
       'Si vols, l\'hoste la paga amb targeta en fer el check-in',
     ],
     usage: [

@@ -22,25 +22,25 @@ Este artículo es para poner sobre la mesa lo que tiene realmente el propietario
 
 Si hablas con propietarios que gestionan entre 1 y 10 apartamentos, este es el stack que más se repite:
 
-**1. Airbnb + Booking (+ Vrbo, en algunos casos)**
+### 1. Airbnb + Booking (+ Vrbo, en algunos casos)
 Las plataformas de distribución. No tienen coste directo (cobran comisión por reserva), pero si las gestionas de forma independiente sin sincronización, el riesgo de dobles reservas es constante.
 
-**2. Channel manager**
+### 2. Channel manager
 Para sincronizar disponibilidad y precios entre plataformas. Las opciones más conocidas en España son Smoobu, Lodgify o Hostaway. Un channel manager suele costar entre **20 y 60 € al mes** por apartamento, según el plan y cuántas plataformas conectes (Smoobu, por ejemplo, desde 29 €/mes por un alojamiento; precio publicado en octubre de 2026).
 
-**3. Chekin (o similar) para el check-in digital y el SES**
+### 3. Chekin (o similar) para el check-in digital y el SES
 La herramienta más usada para el registro de viajeros y el envío al SES. Precio: desde **3,95 € al mes** por propiedad, según el plan (precio publicado en octubre de 2026).
 
-**4. WhatsApp o mensajería manual**
+### 4. WhatsApp o mensajería manual
 La gran mayoría de propietarios pequeños coordina con huéspedes, limpiadores y mantenimiento por WhatsApp. Sin coste directo, pero con un coste enorme en tiempo y contexto perdido.
 
-**5. Excel o Google Sheets**
+### 5. Excel o Google Sheets
 Para llevar el control de ingresos, gastos, ocupación y todo lo que no cabe en las otras herramientas. Gratuito, pero hay que actualizarlo a mano.
 
-**6. Dropbox o Google Drive**
+### 6. Dropbox o Google Drive
 Para guardar contratos firmados, fotos de pisos, certificados de viajeros, inventarios. Entre **0 y 10 € al mes** según el plan.
 
-**7. Plantillas de contrato (Word, PDF, Canva...)**
+### 7. Plantillas de contrato (Word, PDF, Canva...)
 Algunos propietarios pagan por plantillas legales específicas para alquiler turístico, o tienen contratos que actualizan manualmente. Entre **0 y 30 € al año**.
 
 **Coste total estimado del stack:** entre **25 y 80 € al mes** por apartamento, sin contar el tiempo ni la gestoría.
@@ -51,7 +51,7 @@ Algunos propietarios pagan por plantillas legales específicas para alquiler tur
 
 El coste económico es solo una parte del problema. El verdadero coste es operativo.
 
-**Los datos no se sincronizan.** Chekin no sabe lo que ha reservado en Booking. El Excel no sabe lo que ha cobrado Airbnb. El channel manager sabe la disponibilidad, pero no sabe si has enviado el contrato al huésped. Cada app vive en su isla.
+**Los datos no se sincronizan.** Si Chekin no está conectado a tu channel manager, no sabe lo que se ha reservado en Booking. El Excel no sabe lo que ha cobrado Airbnb. El channel manager sabe la disponibilidad, pero no sabe si has enviado el contrato al huésped. Cada app vive en su isla.
 
 **Cada actualización hay que hacerla en varios sitios.** Si cambias el precio de una semana, tienes que asegurarte de que el channel manager lo ha propagado bien a todas las plataformas. Si cambia el proceso de check-in, tienes que actualizar el mensaje que envías manualmente. Si cambia la normativa del SES, tienes que ver si Chekin ya lo ha actualizado.
 

@@ -282,7 +282,7 @@ export default function FeaturePage({ feature }: Props) {
                     <h3 className="font-bold text-[#0f172a] text-base leading-snug group-hover:text-primary transition-colors">
                       {rf.name}
                     </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed line-clamp-3">{rf.shortDescription}</p>
+                    <p className="text-sm text-slate-500 leading-relaxed">{rf.shortDescription}</p>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-auto">
                       {t('page.related_cta')} <ArrowRight className="w-3.5 h-3.5" />
                     </span>

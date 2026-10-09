@@ -50,12 +50,12 @@ Hay un coste en dinero y un coste en tiempo. Ambos son reales.
 
 | Herramienta | Coste mensual estimado |
 |---|---|
-| Channel manager (plan para 8 pisos) | 80-150 € |
-| Chekin (check-in + SES, 8 pisos) | 32-64 € |
-| Almacenamiento (Dropbox o similar) | 10-15 € |
-| Plantillas / contratos | 0-20 € |
-| Excel (o herramienta básica) | 0-15 € |
-| **Total aproximado** | **120-265 €/mes** |
+| Channel manager (plan para 8 pisos) | 80‑150 € |
+| Chekin (check-in + SES, 8 pisos) | 32‑64 € |
+| Almacenamiento (Dropbox o similar) | 10‑15 € |
+| Plantillas / contratos | 0‑20 € |
+| Excel (o herramienta básica) | 0‑15 € |
+| **Total aproximado** | **120‑265 €/mes** |
 
 A esto hay que añadir lo que le pagas a la gestoría si le delegas el SES o la tasa turística, que puede ser entre 50 y 150 € al mes más.
 
@@ -95,7 +95,7 @@ Hostly está diseñado exactamente para el perfil del gestor pequeño: alguien q
 
 Con Hostly Completo, el precio para 8 apartamentos es de **35 € por apartamento al mes** (baja de 40 € a 35 € a partir de 5 apartamentos). Para 8 pisos, eso son 280 € al mes.
 
-Comparado con el stack fragmentado habitual (unos 120-265 € al mes, más gestoría y más tiempo), el precio queda en la misma franja o algo por encima, pero incluye también los mensajes con IA, las limpiezas y los precios, que en ese stack no están. Y el cambio más importante no es el dinero: es dejar de tener cinco apps abiertas y empezar a tener una.
+Comparado con el stack fragmentado habitual (unos 120‑265 € al mes, más gestoría y más tiempo), el precio queda en la misma franja o algo por encima, pero incluye también los mensajes con IA, las limpiezas y los precios, que en ese stack no están. Y el cambio más importante no es el dinero: es dejar de tener cinco apps abiertas y empezar a tener una.
 
 Lo que incluye Hostly Completo:
 

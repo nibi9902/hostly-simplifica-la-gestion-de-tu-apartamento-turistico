@@ -1,6 +1,6 @@
 {
   "chekin": {
-    "meta_title": "Chekin vs Hostly — Check-in turístic a Espanya | Hostly",
+    "meta_title": "Chekin vs Hostly — Check-in turístic a Espanya | Hostly",
     "meta_description": "Compara Chekin i Hostly per al check-in i el compliment legal dels pisos turístics. A Hostly, el check-in i el registre a la policia són gratis.",
     "breadcrumb_comparativa": "Comparativa",
     "breadcrumb_chekin": "Chekin vs Hostly",
@@ -8,7 +8,7 @@
     "hero_heading": "Chekin vs Hostly",
     "hero_body": "Chekin automatitza el check-in legal. Hostly l'inclou gratis dins d'una plataforma completa de gestió. Aquesta és la diferència.",
     "who_chekin_eyebrow": "Chekin",
-    "who_chekin_heading": "Especialista en check-in i compliment legal",
+    "who_chekin_heading": "Especialista en check‑in i compliment legal",
     "who_chekin_p1": "Chekin automatitza el check-in online, el registre policial (SES.Hospedajes), el NRUA i la taxa turística. Fa molt bé la seva feina. Cobra una quota mensual per propietat: des de 3,95 € al pla Basic, 5,95 € al Premium i 7,95 € a l'Enterprise (preus publicats l'octubre del 2026).",
     "who_chekin_p2": "El seu focus és el check-in i el compliment legal. Per a reserves, missatges, neteges i preus, el normal és combinar-lo amb altres eines.",
     "who_hostly_eyebrow": "Hostly",
@@ -20,7 +20,7 @@
     "table_col_hostly": "Hostly",
     "table_col_chekin": "Chekin",
     "table_badge_free": "Gratis",
-    "table_footnote": "✓ inclòs · ✗ no ho ofereix · — no ho sabem amb certesa, consulta el seu web. Dades públiques a l'abril del 2026 (preus revisats l'octubre del 2026); poden haver canviat.",
+    "table_footnote": "✓ inclòs · ✗ no ho ofereix · — no ho sabem amb certesa, consulta el seu web. Dades públiques a l'abril del 2026 (preus revisats l'octubre del 2026); poden haver canviat.",
     "features": [
       {
         "feature": "Check-in online"
@@ -65,8 +65,8 @@
     "cost_chekin_row2_value": "~350 €/any",
     "cost_chekin_row3_label": "Comissió del pla Flex de Smoobu",
     "cost_chekin_row3_value": "0,9 % per reserva",
-    "cost_chekin_row4_label": "Excel + Dropbox (el teu temps)",
-    "cost_chekin_row4_value": "— €",
+    "cost_chekin_row4_label": "Excel + Dropbox",
+    "cost_chekin_row4_value": "El teu temps",
     "cost_chekin_total_label": "Total estimat",
     "cost_chekin_total_value": "~400 €/any + 0,9 %",
     "cost_hostly_label": "Amb Hostly",
@@ -84,7 +84,7 @@
     "faqs": [
       {
         "q": "Hostly fa el mateix que Chekin?",
-        "a": "Per al check-in online i el registre de viatgers, sí. Hostly l'inclou gratis per sempre, juntament amb el càlcul de la taxa turística de Catalunya. Allà envia el registre als Mossos cada dia, de manera automàtica; a la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui. Hostly Complet hi afegeix reserves, missatges, neteges i preus."
+        "a": "Per a l'essencial —el check-in online i l'enviament del registre a la policia—, sí. Chekin hi afegeix extres com la verificació d'identitat amb foto o la signatura del contracte. Hostly inclou gratis per sempre el check-in i el registre, juntament amb el càlcul de la taxa turística de Catalunya. Allà envia el registre als Mossos cada dia, de manera automàtica; a la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui. Hostly Complet hi afegeix reserves, missatges, neteges i preus."
       },
       {
         "q": "Quant m'estalvio si passo de Chekin a Hostly?",
@@ -92,11 +92,11 @@
       },
       {
         "q": "Perdo dades o reserves si migro des de Chekin?",
-        "a": "No. Pots mantenir Chekin mentre proves Hostly; quan vegis que el registre ja surt des de Hostly, el dones de baixa."
+        "a": "Les teves reserves continuen a Airbnb i Booking. Abans de donar de baixa Chekin, descarrega'n l'historial de registres i comprovants: te'ls poden demanar en una inspecció. Mentre proves Hostly, deixa l'enviament a la policia actiu només en un dels dos."
       }
     ],
     "cta_heading": "Check-in gratis per sempre.\nI molt més.",
-    "cta_body": "El primer mes, gratis. Si no et simplifica res, no ens deus res.",
+    "cta_body": "El primer mes, gratis: si no et convenç, ho deixes i no pagues res.",
     "cta_button": "Començar",
     "table_unknown": "No ho sabem amb certesa"
   }

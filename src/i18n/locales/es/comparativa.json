@@ -1,6 +1,6 @@
 {
   "chekin": {
-    "meta_title": "Chekin vs Hostly — Check-in turístico en España | Hostly",
+    "meta_title": "Chekin vs Hostly — Check-in turístico en España | Hostly",
     "meta_description": "Compara Chekin y Hostly para el check-in y el cumplimiento legal de los pisos turísticos. En Hostly, el check-in y el registro a la policía son gratis.",
     "breadcrumb_comparativa": "Comparativa",
     "breadcrumb_chekin": "Chekin vs Hostly",
@@ -8,7 +8,7 @@
     "hero_heading": "Chekin vs Hostly",
     "hero_body": "Chekin automatiza el check-in legal. Hostly lo incluye gratis dentro de una plataforma completa de gestión. Esta es la diferencia.",
     "who_chekin_eyebrow": "Chekin",
-    "who_chekin_heading": "Especialista en check-in y cumplimiento legal",
+    "who_chekin_heading": "Especialista en check‑in y cumplimiento legal",
     "who_chekin_p1": "Chekin automatiza el check-in online, el registro policial (SES.Hospedajes), el NRUA y la tasa turística. Es muy bueno en lo que hace. Cobra una cuota mensual por propiedad: desde 3,95 € en el plan Basic, 5,95 € en Premium y 7,95 € en Enterprise (precios publicados en octubre de 2026).",
     "who_chekin_p2": "Su foco es el check-in y el cumplimiento legal. Para reservas, mensajes, limpiezas y precios, lo normal es combinarlo con otras herramientas.",
     "who_hostly_eyebrow": "Hostly",
@@ -20,7 +20,7 @@
     "table_col_hostly": "Hostly",
     "table_col_chekin": "Chekin",
     "table_badge_free": "Gratis",
-    "table_footnote": "✓ incluido · ✗ no lo ofrece · — no lo sabemos con certeza, consulta su web. Datos públicos a abril de 2026 (precios revisados en octubre de 2026); pueden haber cambiado.",
+    "table_footnote": "✓ incluido · ✗ no lo ofrece · — no lo sabemos con certeza, consulta su web. Datos públicos a abril de 2026 (precios revisados en octubre de 2026); pueden haber cambiado.",
     "features": [
       {
         "feature": "Check-in online"
@@ -65,8 +65,8 @@
     "cost_chekin_row2_value": "~350 €/año",
     "cost_chekin_row3_label": "Comisión del plan Flex de Smoobu",
     "cost_chekin_row3_value": "0,9 % por reserva",
-    "cost_chekin_row4_label": "Excel + Dropbox (tu tiempo)",
-    "cost_chekin_row4_value": "— €",
+    "cost_chekin_row4_label": "Excel + Dropbox",
+    "cost_chekin_row4_value": "Tu tiempo",
     "cost_chekin_total_label": "Total estimado",
     "cost_chekin_total_value": "~400 €/año + 0,9 %",
     "cost_hostly_label": "Con Hostly",
@@ -84,7 +84,7 @@
     "faqs": [
       {
         "q": "¿Hostly hace lo mismo que Chekin?",
-        "a": "Para el check-in online y el registro de viajeros, sí. Hostly lo incluye gratis para siempre, junto con el cálculo de la tasa turística de Cataluña. Allí envía el registro a los Mossos cada día, de forma automática; en el resto de España, activamos contigo la conexión con la policía que te toque. Hostly Completo añade reservas, mensajes, limpiezas y precios."
+        "a": "Para lo esencial —el check-in online y el envío del registro a la policía—, sí. Chekin añade extras como la verificación de identidad con foto o la firma del contrato. Hostly incluye gratis para siempre el check-in y el registro, junto con el cálculo de la tasa turística de Cataluña. Allí envía el registro a los Mossos cada día, de forma automática; en el resto de España, activamos contigo la conexión con la policía que te toque. Hostly Completo añade reservas, mensajes, limpiezas y precios."
       },
       {
         "q": "¿Cuánto me ahorro si paso de Chekin a Hostly?",
@@ -92,11 +92,11 @@
       },
       {
         "q": "¿Pierdo datos o reservas si migro desde Chekin?",
-        "a": "No. Puedes mantener Chekin mientras pruebas Hostly; cuando veas que el registro ya sale desde Hostly, lo das de baja."
+        "a": "Tus reservas siguen en Airbnb y Booking. Antes de dar de baja Chekin, descarga su historial de registros y comprobantes: te los pueden pedir en una inspección. Mientras pruebas Hostly, deja el envío a la policía activo solo en uno de los dos."
       }
     ],
     "cta_heading": "Check-in gratis para siempre.\nY mucho más.",
-    "cta_body": "El primer mes, gratis. Si no te simplifica nada, no nos debes nada.",
+    "cta_body": "El primer mes, gratis: si no te convence, lo dejas y no pagas nada.",
     "cta_button": "Empezar",
     "table_unknown": "No lo sabemos con certeza"
   }

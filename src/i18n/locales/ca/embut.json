@@ -38,9 +38,9 @@
         "Taxa turística de Catalunya, llesta per declarar"
       ],
       "completo_nombre": "Hostly Complet",
-      "completo_precio": "40 €/mes per apartament · el primer mes, gratis",
+      "completo_precio": "40 €/mes per apartament · el primer mes, gratis",
       "completo_items": [
-        "Tot el del pla gratis",
+        "Tot el del pla Gratis",
         "Airbnb i Booking en un sol calendari",
         "Missatges amb hostes contestats per IA",
         "Neteges avisades soles",
@@ -120,6 +120,8 @@
       "hoy_sin_apps": "Avui no pagues apps, però se te'n van {{horas}} a la setmana.",
       "hostly": "Amb Hostly: {{euros}} al mes, tot en una app, i bona part d'aquesta feina, feta sola.",
       "hostly_medida": "Amb Hostly: 35 € al mes per pis, tot en una app, i bona part d'aquesta feina, feta sola.",
+      "calculado_para": "Calculat per a {{n}} pisos, el punt mitjà de la teva resposta.",
+      "calculado_para_mes": "Calculat per a {{n}} pisos; amb més, suma-hi el de cada pis.",
       "horas_ano": "Això són {{ano}} del teu temps.",
       "registro_cat": "I el registre als Mossos d'Esquadra el fa Hostly, gratis.",
       "registro_otra": "I el registre a la policia l'activem amb tu, gratis.",
@@ -140,6 +142,7 @@
       "detalle_por_piso": "{{euros}} €/mes per pis",
       "detalle_horas": "Missatges, neteges i registres",
       "detalle_horas_hostly": "La IA contesta, les neteges s'avisen i els registres surten sols",
+      "detalle_horas_hostly_otra": "La IA contesta, les neteges s'avisen i els registres surten sols tan bon punt activem amb tu la connexió amb la policia",
       "nota": "Preus orientatius que publica cada eina (octubre de 2026), per apartament i mes.",
       "otra_vez": "Tornar a calcular",
       "horas_frase": [

@@ -50,7 +50,7 @@ Los menores de 14 años no se registran individualmente.
 
 El plazo es **24 horas desde el check-in**. Mismo criterio que SES.
 
-El envío se hace vía web oficial o por API si tu PMS tiene integración. La mayoría de PMS pensados para España (Hostly, Hostify, Icnea, Avantio) lo hacen automáticamente.
+El envío se hace vía web oficial o por API si tu PMS tiene integración. Hostly lo hace automáticamente; otras herramientas lo resuelven con integraciones propias o de terceros: pregunta antes de contratar.
 
 ## Alta: qué necesitas
 
@@ -82,7 +82,7 @@ Si gestionas apartamentos en Cataluña y fuera (Baleares, Madrid, Valencia, Anda
 - **Enviar a SES** los del resto del Estado.
 - **Enviar a Ertzaintza** si tienes en Euskadi.
 
-Hacer esto manualmente es un error esperando a pasar. Lo práctico es dejar configurado desde el alta a qué sistema envía cada piso. En Hostly, los pisos de Cataluña envían a los Mossos de forma automática; para los del resto de España, activamos contigo la conexión con la policía que toque.
+Hacerlo a mano acaba, tarde o temprano, en un error. Lo práctico es dejar configurado desde el alta a qué sistema envía cada piso. En Hostly, los pisos de Cataluña envían a los Mossos de forma automática; para los del resto de España, activamos contigo la conexión con la policía que toque.
 
 ## Cómo automatizarlo completamente
 

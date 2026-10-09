@@ -231,13 +231,14 @@ const StepsBlock = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{ marginTop: 64, textAlign: "center" }}
         >
+          {/* Al mòbil fa dues o tres línies: cantonades de targeta, no de píndola */}
           <div
+            className="rounded-2xl sm:rounded-full text-left sm:text-center"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 12,
               padding: "10px 18px",
-              borderRadius: 999,
               background: "#F7F8FA",
               border: "1px solid #E6E8EC",
               fontSize: 13,

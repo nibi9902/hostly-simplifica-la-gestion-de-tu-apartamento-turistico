@@ -19,7 +19,7 @@ faqs:
   - question: "¿Cuál es la diferencia entre un channel manager y un PMS?"
     answer: "Un channel manager sincroniza calendarios y reservas entre OTAs (Airbnb, Booking, Vrbo). Un PMS hace eso y además gestiona check-ins, mensajería, limpiezas, precios, facturación y cumplimiento legal. El channel manager es una función; el PMS es el sistema completo. La mayoría de PMS modernos incluyen channel manager."
   - question: "¿Un channel manager elimina los overbookings por completo?"
-    answer: "Casi siempre. Si usa conexión API directa con la OTA (no solo iCal), la sincronización es en segundos. Los overbookings residuales suelen venir de iCal (intervalos de 15-30 minutos) o de canales no conectados. Una conexión API profesional elimina casi todos."
+    answer: "Casi siempre. Si usa conexión API directa con la OTA (no solo iCal), la sincronización es en segundos. Los overbookings residuales suelen venir de iCal (intervalos de 15‑30 minutos) o de canales no conectados. Una conexión API profesional elimina casi todos."
   - question: "¿Cuántos canales debo conectar desde el principio?"
     answer: "Empieza con Airbnb + Booking si operas en España. Añade Vrbo si quieres mercado anglosajón o alquileres de estancia larga, y reserva directa web si quieres reducir comisiones. Conectar 50 canales desde el día 1 es sobreingeniería."
   - question: "¿El channel manager me cobra comisión por reserva?"
@@ -63,7 +63,7 @@ Los **PMS modernos incluyen channel manager**. Por eso la discusión real de 202
 
 Esta distinción técnica importa:
 
-- **iCal**: es un formato de calendario estándar. Cada canal publica un archivo iCal y otros se suscriben a él. La actualización es cada 15-30 minutos (o más). **Barato pero frágil**: en ese intervalo pueden pasar overbookings.
+- **iCal**: es un formato de calendario estándar. Cada canal publica un archivo iCal y otros se suscriben a él. La actualización es cada 15‑30 minutos (o más). **Barato pero frágil**: en ese intervalo pueden pasar overbookings.
 - **API**: conexión directa entre el channel manager y la OTA. Actualización en segundos. Más fiable, más caro de implementar, reservada a herramientas profesionales.
 
 Un channel manager serio usa **conexión API con las OTAs principales** (Airbnb, Booking, Vrbo) y reserva iCal solo para canales menores. Si te ofrecen "sincronización con Booking vía iCal", asume que tendrás overbookings ocasionales.
@@ -75,7 +75,7 @@ Las opciones realistas para un propietario en España:
 ### PMS con channel manager integrado (recomendado)
 
 - **Hostly** → Airbnb y Booking.com (y, si la necesitas, una web propia con reservas directas, a medida, como automatización aparte). Integrado con el check-in, el registro de viajeros, la IA y la operativa.
-- **Hostify** → 400+ canales OTA. El más amplio. Enfoque corporativo.
+- **Hostify** → 400+ canales OTA. El más amplio. Pensado para gestores con volumen.
 - **Lodgify** → Channel manager sólido + creador de webs. Enfoque reserva directa.
 - **Smoobu** → Del grupo HomeToGo desde 2021. Opción de entrada.
 - **Icnea** → 100+ canales sin comisiones. Español y veterano.
@@ -84,7 +84,6 @@ Las opciones realistas para un propietario en España:
 
 - **Beds24** → el más potente como channel manager puro. Muchos PMS lo usan por debajo.
 - **Rentals United** → profesional, con distribución amplia.
-- **Rategenie** (SiteMinder) → económico, dirigido a anfitriones particulares.
 
 ### Channel manager que NO recomendaría
 
@@ -123,12 +122,12 @@ Cuatro señales de alerta que vemos con frecuencia:
 
 Si eliges una opción seria, el proceso debería ser:
 
-1. **Día 1-2**: alta, configuración de cuenta, conexión con Airbnb y Booking.
-2. **Día 3-5**: emparejar los anuncios (tu apartamento en cada OTA con su ficha en el channel manager).
-3. **Día 6-10**: pruebas de sincronización con reservas de prueba y ajuste de reglas (estancia mínima, días bloqueados, precios por temporada).
-4. **Día 11-14**: operación normal, seguimiento de las primeras reservas reales, resolución de inconsistencias.
+1. **Día 1‑2**: alta, configuración de cuenta, conexión con Airbnb y Booking.
+2. **Día 3‑5**: emparejar los anuncios (tu apartamento en cada OTA con su ficha en el channel manager).
+3. **Día 6‑10**: pruebas de sincronización con reservas de prueba y ajuste de reglas (estancia mínima, días bloqueados, precios por temporada).
+4. **Día 11‑14**: operación normal, seguimiento de las primeras reservas reales, resolución de inconsistencias.
 
-A partir de la segunda semana funciona sin atención. Si a las dos semanas sigues con problemas técnicos, plantéate cambiar.
+Pasadas las dos primeras semanas, funciona sin atención. Si a las dos semanas sigues con problemas técnicos, plantéate cambiar.
 
 ## Resumen
 

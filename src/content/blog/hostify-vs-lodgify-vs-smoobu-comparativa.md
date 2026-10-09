@@ -21,7 +21,7 @@ faqs:
   - question: "¿Cuál tiene mejor SES.Hospedajes?"
     answer: "Hostify tiene integración con SES. Lodgify y Smoobu se complementan con Chekin como partner. Si el registro de viajeros integrado es tu prioridad, Hostify es el que mejor lo cubre de los tres."
   - question: "¿Cuál es mejor para un apartamento con web propia?"
-    answer: "Lodgify, sin duda. Su creador de webs es de los mejores del mercado: permite tener una web bonita con reserva directa en horas. Hostify y Smoobu tienen creadores de webs más básicos."
+    answer: "Lodgify, sin duda. Su creador de webs es de los mejores del mercado: permite tener una web bonita con reserva directa en horas. Hostify y Smoobu también tienen creador de webs, pero no es su foco."
 ---
 
 Tres de los PMS más usados por propietarios y pequeños gestores en España. Cada uno con fortalezas claras y debilidades específicas. Esta comparativa **sin marketing disfrazado de objetividad** te ayuda a decidir cuál es el tuyo según tu caso real.
@@ -36,20 +36,19 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 
 | Criterio | Hostify | Lodgify | Smoobu |
 |---|---|---|---|
-| Origen | Barcelona/Lituania | Barcelona | Berlín (grupo HomeToGo) |
 | Precio | Desde 20 $/alojamiento/mes (a partir de 5) | Según plan: consulta su web | Desde 29 €/mes + 0,9 % por reserva (plan Flex) |
 | Modelo | Cuota fija por alojamiento | Planes según funciones y alojamientos | Cuota mensual, con o sin % por reserva |
 | Channel manager | 400+ canales | Completo | Sólido |
-| Creador de webs | Básico | **Su punto fuerte** | Básico |
+| Creador de webs | Disponible | **Su punto fuerte** | Disponible |
 | SES Hospedajes | ✅ Integrado | ⚠️ Parcial | ⚠️ Vía Chekin |
-| IA para mensajes | ⚠️ Vía integraciones | ⚠️ AI Assistant básico | ⚠️ No es su foco |
+| IA para mensajes | ⚠️ Vía integraciones | ⚠️ AI Assistant (borradores) | ⚠️ No es su foco |
 | Precios dinámicos | ⚠️ Vía partners | ✅ Nativos | ✅ Propios |
-| App limpieza | ⚠️ Task App | ⚠️ Básica | ⚠️ Básica |
+| App limpieza | ⚠️ Task App | ⚠️ No es su foco | ⚠️ No es su foco |
 | WhatsApp nativo | ⚠️ Business | No consta | No consta |
 | Catalán | No consta | No consta | No consta |
-| Para quién | 5-70+ alojamientos | 1-15, con web propia | 1-15, uso básico |
+| Para quién | 5‑70+ alojamientos | 1‑15, con web propia | 1‑15, uso básico |
 | Prueba gratis por tu cuenta | ✅ Sí | ✅ 7 días | ✅ Sí |
-| Soporte español | ✅ | ✅ | ⚠️ Limitado |
+| Soporte español | ✅ | ✅ | Consultar |
 
 *Datos públicos a abril de 2026; precios revisados en la web de cada uno en octubre de 2026. Pueden haber cambiado.*
 
@@ -68,7 +67,6 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 - **IA a través de integraciones**: compruébala con tus mensajes reales antes de decidir.
 - **Precios dinámicos vía partners** (no nativos), como PriceLabs o Beyond.
 - **Pensado para España en general**, no específicamente para Cataluña.
-- **Tono corporativo** que no transmite cercanía.
 
 **Mejor para**: gestor profesional con 5+ apartamentos, presencia en muchas OTAs, que quiere una cuota cerrada sin comisiones.
 
@@ -83,7 +81,7 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 
 **Donde pierde**:
 - **SES parcial**: lo menciona en su blog, pero no es su punto fuerte. Para cumplir con el registro de viajeros sin sustos, necesitas Chekin aparte.
-- **IA básica**: funciones como "Improve with AI" / "Suggest with AI" para redactar borradores.
+- **IA centrada en redactar borradores**: funciones como "Improve with AI" / "Suggest with AI".
 - **Operativa limitada**: limpieza y roles no son su foco.
 
 **Mejor para**: propietario que prioriza **web propia y reserva directa** sobre operativa avanzada. Ideal para villas, boutique, apartamentos con marca propia.
@@ -99,10 +97,10 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 **Donde pierde**:
 - **La IA no es su foco**.
 - **SES vía Chekin**: dependencia externa.
-- **Operativa muy limitada**: lista de limpieza básica, sin una app móvil completa.
+- **Operativa limitada**: las limpiezas y los equipos no son su foco.
 - **No es tan barato al final** si le sumas Chekin para el registro y, en el plan Flex, el 0,9 % de cada reserva.
 
-**Mejor para**: propietario de 1-3 apartamentos, sin necesidades avanzadas, que prioriza precio bajo y simplicidad.
+**Mejor para**: propietario de 1‑3 apartamentos, sin necesidades avanzadas, que prioriza precio bajo y simplicidad.
 
 ## Comparativa por escenario real
 
@@ -123,25 +121,24 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 ### Caso 3: Primer apartamento turístico en Madrid
 
 - Persona empezando, sin experiencia con PMS, precio sensible.
-- 1 apartamento, unos 30-35 €/mes.
+- 1 apartamento, unos 30‑35 €/mes.
 
 **Mejor opción**: **Smoobu** por precio y simplicidad: desde 29 €/mes con el plan Flex, más un 0,9 % por reserva. Aceptar que tendrás que añadir algo para el registro de viajeros (Chekin, desde 3,95 €/mes, o el plan Gratis de Hostly, por 0 €: la conexión con SES la activamos contigo) y, con el tiempo, migrar si creces.
 
 ### Caso 4: Gestor con 15 apartamentos en Mallorca
 
-- Volumen alto, 5-6 canales OTA, equipo de limpieza.
+- Volumen alto, 5‑6 canales OTA, equipo de limpieza.
 - Necesita profesionalización.
 
 **Mejor opción**: **Hostify** por sus 400 canales + SES integrado + cuota fija por alojamiento. Evaluar **Icnea** o **Avantio** si valora más el trato personal.
 
-## Lo que ninguno de los tres hace bien
+## Lo que no es el foco de ninguno de los tres
 
-Hay aspectos que, para un gestor en España, no son el foco de ninguno de los tres:
+Tres aspectos importantes para un gestor en España:
 
 - **IA conversacional en WhatsApp**: ninguno la pone en el centro.
-- **Catalán**: ninguno lo trabaja como prioridad, aunque Lodgify y Hostify tengan sede en Barcelona.
+- **Catalán**: ninguno lo trabaja como prioridad, aunque Lodgify tenga sede en Barcelona.
 - **Mossos d'Esquadra**: conviene preguntar cómo resuelven el registro en Cataluña antes de contratar.
-- **Roles por piso** (gestor, limpieza y propietario de solo lectura), cada uno con su vista.
 
 Por eso existen PMS españoles de segunda generación, como Hostly, que suman a lo básico el registro automático en los Mossos, la IA en WhatsApp y la atención en catalán.
 

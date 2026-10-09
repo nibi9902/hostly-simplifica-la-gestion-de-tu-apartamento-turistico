@@ -24,9 +24,9 @@ export const competitors: Competitor[] = [
   {
     slug: 'icnea',
     name: 'Icnea',
-    tagline: 'Hostly vs Icnea — La alternativa moderna al PMS español clásico',
-    target: 'Gestores de 5-200 unidades en España y Portugal',
-    priceNote: 'Icnea: desde 150 €/mes, hasta 10 propiedades (precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, 35 € desde 5',
+    tagline: 'Hostly vs Icnea — La alternativa moderna al PMS español clásico',
+    target: 'Gestores de 5‑200 unidades en España y Portugal',
+    priceNote: 'Icnea: desde 150 €/mes, hasta 10 propiedades (precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, 35 € desde 5',
     advantages: [
       { title: 'IA en WhatsApp', body: 'La IA de Hostly contesta la mayoría de mensajes al momento, en el idioma del huésped y 24/7, por la API oficial de WhatsApp. Cuando hace falta una persona, te avisa.' },
       { title: 'Precios con PriceLabs integrado', body: 'PriceLabs recomienda el precio de cada noche, tú pones mínimos y temporadas, y Hostly lo publica en Airbnb y Booking cada día.' },
@@ -50,9 +50,9 @@ export const competitors: Competitor[] = [
   {
     slug: 'hostify',
     name: 'Hostify',
-    tagline: 'Hostly vs Hostify — Qué cambia para un gestor pequeño en España',
-    target: 'Gestores pequeños y medianos (5-70 alojamientos) en España',
-    priceNote: 'Hostify: desde 20 $ por alojamiento al mes, con tramos a partir de 5 alojamientos (precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, 35 € desde 5',
+    tagline: 'Hostly vs Hostify — Qué cambia para un gestor pequeño en España',
+    target: 'Gestores pequeños y medianos (5‑70 alojamientos) en España',
+    priceNote: 'Hostify: desde 20 $ por alojamiento al mes, con tramos a partir de 5 alojamientos (precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, 35 € desde 5',
     advantages: [
       { title: 'IA en WhatsApp', body: 'La IA de Hostly contesta la mayoría de mensajes al momento, en el idioma del huésped y 24/7, con la información de cada piso. Viene con Hostly Completo.' },
       { title: 'Desde el primer piso', body: 'Los tramos de precio de Hostify empiezan en 5 alojamientos. Hostly cobra por piso desde el primero: 40 €/mes, 35 € desde 5. Y el check-in y el registro a la policía son gratis.' },
@@ -86,9 +86,9 @@ export const competitors: Competitor[] = [
   {
     slug: 'lodgify',
     name: 'Lodgify',
-    tagline: 'Hostly vs Lodgify — Gestión completa vs foco en reservas directas',
-    target: 'Anfitriones con 1-15 alojamientos que quieren web propia y reservas directas',
-    priceNote: 'Lodgify: precio según plan y número de alojamientos; consulta su web · Hostly: 40 €/mes por piso, 35 € desde 5',
+    tagline: 'Hostly vs Lodgify — Gestión completa vs foco en reservas directas',
+    target: 'Anfitriones con 1‑15 alojamientos que quieren web propia y reservas directas',
+    priceNote: 'Lodgify: precio según plan y número de alojamientos; consulta su web · Hostly: 40 €/mes por piso, 35 € desde 5',
     advantages: [
       { title: 'El día a día del piso', body: 'Lodgify está centrado en las reservas directas y su creador de webs. Hostly se centra en el día a día del piso: limpiezas, mensajes, registro de viajeros y finanzas.' },
       { title: 'IA que contesta por ti', body: 'La IA de Hostly contesta la mayoría de mensajes de los huéspedes al momento, 24/7 y en su idioma. Cuando hace falta una persona, te avisa.' },
@@ -105,16 +105,16 @@ export const competitors: Competitor[] = [
       { feature: 'Precios dinámicos', hostly: true, them: true },
     ],
     faqs: [
-      { q: '¿Hostly tiene web de reservas directas?', a: 'No viene de serie. Si la necesitas, te hacemos una web propia con reservas directas, a medida, como automatización aparte. Si lo que buscas es sobre todo una web con diseño y SEO propios, Lodgify está más centrado en eso. Para el día a día del piso (mensajes, limpiezas, registro de viajeros), Hostly cubre más.' },
+      { q: '¿Hostly tiene web de reservas directas?', a: 'No viene de serie. Si la necesitas, te hacemos una web propia con reservas directas, a medida, como automatización aparte. Si lo que buscas es sobre todo una web con diseño y SEO propios, Lodgify está más centrado en eso. Para el día a día del piso (mensajes, limpiezas, registro de viajeros), Hostly está pensado justo para eso.' },
       { q: '¿Qué pagas en cada uno?', a: 'En Hostly, el check-in y el registro a la policía son gratis, y Hostly Completo cuesta 40 €/mes por piso (480 €/año con un piso), 35 € desde 5, sin comisiones por reserva. Lodgify tiene varios planes según las funciones y el número de alojamientos: consulta su web para tu caso y mira si tu plan cobra algo por reserva.' },
     ],
   },
   {
     slug: 'smoobu',
     name: 'Smoobu',
-    tagline: 'Hostly vs Smoobu — Qué incluye cada uno para un piso en España',
-    target: 'Anfitrión particular y pequeño gestor (1-15 alojamientos), fuerte en Alemania, Austria y Suiza',
-    priceNote: 'Smoobu: desde 29 €/mes por un alojamiento, más un 0,9 % por reserva (plan Profesional Flex; precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, sin comisiones',
+    tagline: 'Hostly vs Smoobu — Qué incluye cada uno para un piso en España',
+    target: 'Anfitrión particular y pequeño gestor (1‑15 alojamientos), fuerte en Alemania, Austria y Suiza',
+    priceNote: 'Smoobu: desde 29 €/mes por un alojamiento, más un 0,9 % por reserva (plan Profesional Flex; precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, sin comisiones',
     advantages: [
       { title: 'IA en WhatsApp', body: 'La IA de Hostly contesta la mayoría de mensajes al momento, en el idioma del huésped y 24/7, y te avisa cuando hace falta una persona.' },
       { title: 'Check-in y registro gratis', body: registroGratis },
@@ -138,11 +138,11 @@ export const competitors: Competitor[] = [
   {
     slug: 'hospitable',
     name: 'Hospitable',
-    tagline: 'Hostly vs Hospitable — La alternativa pensada para España, con el registro de viajeros incluido',
-    target: 'Anfitriones particulares exigentes (1-30 propiedades), muy fuerte en EE. UU. y Reino Unido',
-    priceNote: 'Hospitable: plan Essentials gratis; de pago, desde 29 €/mes + IVA para 1 propiedad (precio publicado en octubre de 2026) · Hostly: check-in gratis y 40 €/mes por piso con Hostly Completo',
+    tagline: 'Hostly vs Hospitable — La alternativa pensada para España, con el registro de viajeros incluido',
+    target: 'Anfitriones particulares exigentes (1‑30 propiedades), muy fuerte en EE. UU. y Reino Unido',
+    priceNote: 'Hospitable: plan Essentials gratis; de pago, desde 29 €/mes + IVA para 1 propiedad (precio publicado en octubre de 2026) · Hostly: check-in gratis y 40 €/mes por piso con Hostly Completo',
     advantages: [
-      { title: 'Registro de viajeros en España', body: 'Hospitable es fuerte en EE. UU. y Reino Unido. En Hostly, el check-in online, el registro de viajeros y la tasa turística de Cataluña son gratis para siempre. Allí, el registro va a los Mossos cada día; en el resto de España, activamos contigo la conexión con la policía que te toque.' },
+      { title: 'Registro de viajeros en España', body: 'Hospitable es fuerte en EE. UU. y Reino Unido. En Hostly, el check-in online, el registro de viajeros y la tasa turística de Cataluña son gratis para siempre. Allí, el registro va a los Mossos cada día; en el resto de España, activamos contigo la conexión con la policía que te toque.' },
       { title: 'WhatsApp como canal principal', body: 'Hostly está pensado para WhatsApp: API oficial de Meta, un número gestionado por Hostly y la IA que contesta ahí mismo.' },
       { title: 'Soporte en castellano y catalán', body: 'Con Hostly Completo, te atiende una persona en castellano o catalán, no un chatbot. Con el plan Gratis, nos escribes a hola@hostlylabs.com.' },
       { title: 'Configuración contigo', body: 'En Hostly Completo, el primer mes lo configuramos todo contigo en una videollamada 1 a 1: pisos, canales y mensajes.' },
@@ -164,20 +164,20 @@ export const competitors: Competitor[] = [
   {
     slug: 'guesty',
     name: 'Guesty',
-    tagline: 'Hostly vs Guesty — Pensado para el gestor pequeño',
+    tagline: 'Hostly vs Guesty — Pensado para el gestor pequeño',
     target: 'De 1 anuncio (Lite) a miles de unidades; su fuerte, las gestoras medianas y grandes',
-    priceNote: 'Guesty: plan Lite (1-3 anuncios) desde 9 $ por anuncio al mes; Pro y Enterprise, presupuesto a medida (precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, 35 € desde 5',
+    priceNote: 'Guesty: plan Lite (1‑3 anuncios) desde 9 $ por anuncio al mes; Pro y Enterprise, presupuesto a medida (precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, 35 € desde 5',
     advantages: [
       { title: 'Pensado para 1 a 15 pisos', body: 'Guesty está enfocado sobre todo a gestoras medianas y grandes. Hostly está pensado desde el primer día para el propietario y el gestor pequeño, de 1 a 15 pisos.' },
-      { title: 'Empiezas gratis, sin demo', body: 'El plan Gratis (check-in, registro de viajeros y tasa turística de Cataluña) lo activas tú solo, sin tarjeta. Para Hostly Completo hacemos una demo y lo configuramos contigo.' },
+      { title: 'Empiezas gratis, sin demo', body: 'El plan Gratis (check-in, registro de viajeros y tasa turística de Cataluña) lo activas tú solo, sin tarjeta (fuera de Cataluña, la conexión con la policía la activamos contigo). Para Hostly Completo hacemos una demo y lo configuramos contigo.' },
       { title: 'Precio público, tengas los pisos que tengas', body: 'Hostly publica su precio: 40 €/mes por piso, 35 € desde 5. Guesty publica precio solo para Lite (de 1 a 3 anuncios); a partir de ahí, trabaja con presupuesto a medida.' },
       { title: 'Check-in y registro gratis', body: registroGratis },
       { title: 'Soporte cercano', body: 'En Hostly Completo, el primer mes lo configuramos todo contigo en una videollamada. Después te atiende una persona, en castellano o catalán.' },
     ],
     comparison: [
-      { feature: 'Pensado para 1-15 pisos', hostly: true, them: consultar },
+      { feature: 'Pensado para 1‑15 pisos', hostly: true, them: consultar },
       { feature: 'Plan gratis, sin tarjeta', hostly: true, them: consultar },
-      { feature: 'Precio público', hostly: true, them: 'Solo Lite (1-3)' },
+      { feature: 'Precio público', hostly: true, them: 'Solo Lite (1‑3)' },
       { feature: 'Check-in y registro policial gratis', hostly: true, them: false },
       { feature: 'IA conversacional', hostly: true, them: true },
       { feature: 'Channel manager', hostly: 'Airbnb y Booking', them: true },
@@ -190,9 +190,9 @@ export const competitors: Competitor[] = [
   {
     slug: 'avantio',
     name: 'Avantio',
-    tagline: 'Hostly vs Avantio — Modernidad y IA vs PMS tradicional español',
+    tagline: 'Hostly vs Avantio — Modernidad y IA vs PMS tradicional español',
     target: 'Agencias de gestión profesional (20 o más propiedades) en España',
-    priceNote: 'Avantio: cuota mínima de 295 €/mes + IVA, hasta 20 propiedades (precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, 35 € desde 5',
+    priceNote: 'Avantio: cuota mínima de 295 €/mes + IVA, hasta 20 propiedades (precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, 35 € desde 5',
     advantages: [
       { title: 'IA conversacional incluida', body: 'La IA de Hostly contesta la mayoría de mensajes de los huéspedes al momento, 24/7 y en su idioma, y te avisa cuando hace falta una persona.' },
       { title: 'Configuración incluida', body: 'En Hostly Completo, el primer mes lo configuramos todo contigo en una videollamada 1 a 1.' },

@@ -38,7 +38,7 @@ Si clasificas tus conversaciones de los últimos 3 meses, verás que la gran may
 6. **Checkout**: "a qué hora tengo que salir", "dónde dejo las llaves"
 7. **Post-estancia**: agradecimientos, petición de reseña
 
-Cada una de estas tiene 3-5 variantes. En total, cubres la mayoría de mensajes con unas 25-35 plantillas personalizadas.
+Cada una de estas tiene 3‑5 variantes. En total, cubres la mayoría de mensajes con unas 25‑35 plantillas personalizadas.
 
 ## Cómo entrenar el tono antes de automatizar
 
@@ -60,7 +60,7 @@ Escoge uno y sé consistente. Mezclar estilos suena a bot.
 
 - Usar o no emojis (decídelo una vez).
 - Tratamiento (tú/usted).
-- Longitud media del mensaje (mejor 2-4 líneas que 8).
+- Longitud media del mensaje (mejor 2‑4 líneas que 8).
 - Firma (sí/no).
 
 ## Ejemplos de respuestas automáticas bien hechas
@@ -117,11 +117,11 @@ Las herramientas de IA para huéspedes suelen hacerlo por defecto. En Hostly, la
 
 ## Herramientas por perfil
 
-### 1-3 apartamentos: respuestas guardadas de Airbnb + disciplina
+### 1‑3 apartamentos: respuestas guardadas de Airbnb + disciplina
 
-Las respuestas guardadas de Airbnb son suficientes mientras llegues a contestar a tiempo; si no, te conviene una IA. Crea 20-25 plantillas y úsalas con 2 segundos de personalización ("Hola Marta" al inicio).
+Las respuestas guardadas de Airbnb son suficientes mientras llegues a contestar a tiempo; si no, te conviene una IA. Crea 20‑25 plantillas y úsalas con 2 segundos de personalización ("Hola Marta" al inicio).
 
-### 3-10 apartamentos: IA sobre Airbnb
+### 3‑10 apartamentos: IA sobre Airbnb
 
 Herramientas como **Hospitable** o **Hostly** responden automáticamente. La IA lee el mensaje entrante, entiende el contexto (qué apartamento, qué fechas) y responde en el idioma del huésped.
 
@@ -149,7 +149,7 @@ Escribir "Hola, tu llegada es...". Sin nombre. La personalización mínima (nomb
 
 ### 5. Automatizar todo incluso cuando no sabes
 
-Si el sistema no tiene respuesta clara, **mejor silencio por tu parte y responder tú** que una respuesta genérica mala.
+Si el sistema no tiene respuesta clara, **mejor que no conteste y respondas tú** que una respuesta genérica mala.
 
 ## Resumen
 
@@ -159,6 +159,6 @@ Responder Airbnb automáticamente es compatible con mantener el tono humano, **s
 - Usas plantillas que suenan naturales.
 - Personalizas al menos el nombre.
 - Automatizas lo rutinario (7 categorías).
-- Escalas tú todo lo que requiere criterio.
+- Te encargas tú de todo lo que requiere criterio.
 
 El objetivo no es "eliminar contacto humano", es "que el contacto humano tuyo sea solo el que aporta".

@@ -62,24 +62,6 @@ export default function Demo() {
               boxShadow: "0 0 0 1px rgba(255,255,255,0.08), 0 40px 80px -10px rgba(0,0,0,0.6), 0 8px 32px rgba(0,0,0,0.4)",
             }}
           >
-            {/* Chrome de browser */}
-            <div
-              className="flex items-center gap-2 px-4 py-2.5"
-              style={{ background: "rgba(255,255,255,0.04)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}
-            >
-              <div className="flex gap-1.5 flex-shrink-0">
-                <div className="w-3 h-3 rounded-full" style={{ background: "rgba(255,255,255,0.12)" }} />
-                <div className="w-3 h-3 rounded-full" style={{ background: "rgba(255,255,255,0.12)" }} />
-                <div className="w-3 h-3 rounded-full" style={{ background: "rgba(255,255,255,0.12)" }} />
-              </div>
-              <div
-                className="flex-1 mx-3 h-6 rounded-md flex items-center justify-center"
-                style={{ background: "rgba(255,255,255,0.05)" }}
-              >
-                <span className="text-[11px] text-white/30 font-mono">app.hostlylabs.com</span>
-              </div>
-            </div>
-
             {/* Video */}
             <video
               src="/assets/demos/hostly-demo.mp4"
@@ -115,7 +97,7 @@ export default function Demo() {
       {/* Contextualització — fons blanc, 3 punts clau del que es veu al vídeo */}
       <section className="py-16 md:py-20 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-10 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-10 md:text-center">
             {t("demo.video_section_eyebrow")}
           </p>
           <div className="grid sm:grid-cols-3 gap-8 md:gap-12">

@@ -39,7 +39,7 @@ const FinalCTA = ({ onEmpezar }: FinalCTAProps) => {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="max-w-3xl mx-auto text-center relative z-10"
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-5 text-balance">
           {t("final_cta.eyebrow")}
         </p>
 
@@ -56,14 +56,14 @@ const FinalCTA = ({ onEmpezar }: FinalCTAProps) => {
           <button
             type="button"
             onClick={onEmpezar}
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base transition-all duration-300 hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 active:scale-[0.98]"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base transition-all duration-300 hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 active:scale-[0.98]"
           >
             {t("final_cta.btn_start")}
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </button>
           <LangLink
             to="/demo"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/25 text-white/80 font-medium text-base transition-all duration-300 hover:border-white/50 hover:text-white"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/25 text-white/80 font-medium text-base transition-all duration-300 hover:border-white/50 hover:text-white"
           >
             <Play className="w-4 h-4 fill-current" />
             {t("final_cta.btn_demo")}

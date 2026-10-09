@@ -56,14 +56,14 @@ Si tu apartamento está en **Cataluña**, no envías a SES sino a **Mossos d'Esq
 
 ### Opción 1: Manual, sin herramientas (muy bajo volumen)
 
-Si alquilas 1-3 veces al mes, puedes hacerlo tú desde el portal:
+Si alquilas 1‑3 veces al mes, puedes hacerlo tú desde el portal:
 
 1. **Conseguir certificado digital** o Cl@ve.
 2. **Darte de alta** en la sede electrónica del Interior (o en Mossos/Ertzaintza).
 3. **Rellenar manualmente** los 14 datos por cada huésped.
 4. **Conservar los datos registrados**, por si hay inspección (no hace falta guardar una foto del documento).
 
-Tiempo por reserva: 10-15 minutos. Coste: cero.
+Tiempo por reserva: 10‑15 minutos. Coste: cero.
 
 ### Opción 2: Herramienta solo de check-in + SES
 

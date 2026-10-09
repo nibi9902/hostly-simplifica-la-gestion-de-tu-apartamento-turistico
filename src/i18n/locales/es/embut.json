@@ -38,9 +38,9 @@
         "Tasa turística de Cataluña, lista para declarar"
       ],
       "completo_nombre": "Hostly Completo",
-      "completo_precio": "40 €/mes por apartamento · el primer mes, gratis",
+      "completo_precio": "40 €/mes por apartamento · el primer mes, gratis",
       "completo_items": [
-        "Todo lo del plan gratis",
+        "Todo lo del plan Gratis",
         "Airbnb y Booking en un solo calendario",
         "Mensajes con huéspedes contestados por IA",
         "Limpiezas avisadas solas",
@@ -120,6 +120,8 @@
       "hoy_sin_apps": "Hoy no pagas apps, pero se te van {{horas}} a la semana.",
       "hostly": "Con Hostly: {{euros}} al mes, todo en una app, y buena parte de ese trabajo, hecho solo.",
       "hostly_medida": "Con Hostly: 35 € al mes por piso, todo en una app, y buena parte de ese trabajo, hecho solo.",
+      "calculado_para": "Calculado para {{n}} pisos, el punto medio de tu respuesta.",
+      "calculado_para_mes": "Calculado para {{n}} pisos; con más, súmale lo de cada piso.",
       "horas_ano": "Eso son {{ano}} de tu tiempo.",
       "registro_cat": "Y el registro a los Mossos d'Esquadra lo hace Hostly, gratis.",
       "registro_otra": "Y el registro a la policía lo activamos contigo, gratis.",
@@ -140,6 +142,7 @@
       "detalle_por_piso": "{{euros}} €/mes por piso",
       "detalle_horas": "Mensajes, limpiezas y registros",
       "detalle_horas_hostly": "La IA contesta, las limpiezas se avisan y los registros salen solos",
+      "detalle_horas_hostly_otra": "La IA contesta, las limpiezas se avisan y los registros salen solos en cuanto activamos contigo la conexión con la policía",
       "nota": "Precios orientativos que publica cada herramienta (octubre de 2026), por apartamento y mes.",
       "otra_vez": "Volver a calcular",
       "horas_frase": [

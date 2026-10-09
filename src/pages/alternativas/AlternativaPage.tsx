@@ -49,7 +49,7 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
       <section className="py-16 px-6 md:px-12 lg:px-20">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-8">{t('page.advantagesEyebrow', { name: c.name })}</p>
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 gap-5 md:[&>*:last-child:nth-child(odd)]:col-span-2">
             {c.advantages.map((adv, i) => (
               <motion.div
                 key={adv.title}

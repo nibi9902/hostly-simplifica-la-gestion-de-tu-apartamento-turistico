@@ -18,24 +18,24 @@ faqs:
   - question: "¿Puedo seguir usando WhatsApp con la limpiadora pero con un sistema por encima?"
     answer: "Sí. El sistema asigna y notifica automáticamente, y el WhatsApp queda como canal de comunicación para comentarios puntuales. Lo importante es que no dependas de acordarte de enviar el mensaje cada vez."
   - question: "¿La limpiadora tiene que instalar una app?"
-    answer: "Depende del sistema. Hostly, Icnea y Hostfully tienen app propia para limpiadores. Otras plataformas envían notificación por email o WhatsApp. Para limpiadoras de edad avanzada o poco tecnológicas, la notificación por WhatsApp sigue siendo lo más fiable."
+    answer: "Depende del sistema. Hostly, Icnea y Hostfully tienen app propia para limpiadores. Otras plataformas avisan por email o por WhatsApp. Para limpiadoras de edad avanzada o poco tecnológicas, la notificación por WhatsApp sigue siendo lo más fiable."
   - question: "¿Y si una reserva cambia o se cancela?"
-    answer: "Un sistema automatizado recalcula las limpiezas automáticamente: si se cancela la reserva, cancela la tarea asignada; si se alarga la estancia, mueve la limpieza al nuevo checkout. Sin sistema, esto se te escapa y te encuentras limpiadoras que van cuando no tocaba."
+    answer: "Un sistema automatizado recalcula las limpiezas automáticamente: si se cancela la reserva, cancela la tarea asignada; si se alarga la estancia, mueve la limpieza al nuevo checkout. Sin un sistema, esto se te escapa y te encuentras con limpiadoras que van cuando no tocaba."
 ---
 
-Si gestionas más de un apartamento turístico, la coordinación de limpiezas es probablemente tu segundo mayor consumidor de tiempo (después de mensajería). **WhatsApp + Excel + memoria** funciona hasta que deja de funcionar, y cuando falla genera reseñas malas y limpiadoras enfadadas. Esta guía cubre cómo profesionalizar este proceso.
+Si gestionas más de un apartamento turístico, la coordinación de limpiezas es probablemente tu segundo mayor consumidor de tiempo (después de la mensajería). **WhatsApp + Excel + memoria** funciona hasta que deja de funcionar, y cuando falla genera reseñas malas y limpiadoras enfadadas. Esta guía cubre cómo profesionalizar este proceso.
 
 ## El problema de gestionar limpiezas con WhatsApp y Excel
 
-Lo que típicamente pasa cuando lo haces manualmente:
+Lo que suele pasar cuando lo haces a mano:
 
 - Se cuela una reserva de última hora y no avisas a tiempo → checkout sin limpieza.
-- Cambia una reserva y no actualizas → la limpiadora va cuando no tocaba.
+- Cambia una reserva y no lo actualizas → la limpiadora va cuando no tocaba.
 - Te olvidas de pagar un turno a fin de mes → limpiadora enfadada.
-- Una limpiadora no puede y tienes que buscar sustituta → 40 minutos al teléfono.
+- Una limpiadora no puede y tienes que buscar una sustituta → 40 minutos al teléfono.
 - No sabes si la limpieza se hizo hasta que llega el siguiente huésped → reseña mala.
 
-Cada uno de estos errores **cuesta dinero**. Una reseña mala por apartamento sucio cuesta 200-500 € de futura reserva perdida. Una limpiadora que se va por mala coordinación cuesta buscar y entrenar otra.
+Cada uno de estos errores **cuesta dinero**. Una reseña mala por un apartamento sucio cuesta 200‑500 € en reservas futuras perdidas. Si una limpiadora se va por la mala coordinación, toca buscar y formar a otra.
 
 ## Las 3 capacidades de un sistema automatizado de limpiezas
 
@@ -44,7 +44,7 @@ Cada uno de estos errores **cuesta dinero**. Una reseña mala por apartamento su
 Cuando entra una reserva nueva, el sistema:
 
 - Detecta el día de checkout.
-- Consulta qué limpiadora está asignada a ese apartamento (o disponible).
+- Consulta qué limpiadora está asignada a ese apartamento (o cuál está disponible).
 - Crea una tarea automáticamente para la fecha y hora correspondientes.
 - Notifica a la limpiadora por su canal preferido (app, WhatsApp, email).
 
@@ -54,12 +54,12 @@ Tú no tienes que avisar. El sistema lo hace.
 
 Si una reserva:
 
-- **Se cancela** → la tarea se cancela también, la limpiadora recibe aviso.
+- **Se cancela** → la tarea se cancela también y la limpiadora recibe un aviso.
 - **Se alarga** → la tarea se mueve al nuevo checkout.
 - **Se acorta** → se reprograma para el nuevo día.
-- **Se añade otra reserva justo después** → ajusta los horarios para el cambio de huéspedes.
+- **Tiene otra justo después** → el sistema ajusta los horarios para el cambio de huéspedes.
 
-Sin sistema, esto se te escapa. Con sistema, es transparente.
+Sin un sistema, esto se te escapa. Con uno, ni te enteras.
 
 ### 3. Seguimiento y pagos
 
@@ -67,8 +67,8 @@ La limpiadora marca la tarea como completada al acabar. Puedes:
 
 - Ver en tiempo real el estado de cada limpieza.
 - Recibir fotos del apartamento tras la limpieza (opcional).
-- Acumular turnos para pago mensual automático (sin cuadrar manualmente).
-- Generar informes por limpiadora, por apartamento, por mes.
+- Acumular los turnos y saber cuánto debes a cada una a final de mes, sin cuadrar nada a mano.
+- Generar informes por limpiadora, por apartamento o por mes.
 
 ## Cómo empezar: migración de 30 días
 
@@ -76,28 +76,28 @@ Si vienes de WhatsApp + Excel:
 
 ### Semana 1: preparación
 
-- Lista todos tus apartamentos con la limpiadora asignada a cada uno.
-- Captura tarifa de limpieza por apartamento.
-- Lista personas de tu equipo con contacto y disponibilidad.
+- Anota qué limpiadora tiene asignada cada apartamento.
+- Apunta la tarifa de limpieza de cada apartamento.
+- Haz una lista de tu equipo con el contacto y la disponibilidad de cada persona.
 
 ### Semana 2: configuración
 
 - Da de alta los apartamentos en el sistema elegido.
-- Añade limpiadoras como usuarios (si el sistema tiene app, invítalas).
-- Configura reglas: quién limpia qué, tiempo por apartamento, tarifa.
+- Añade a las limpiadoras como usuarias (si el sistema tiene app, invítalas).
+- Configura las reglas: quién limpia cada apartamento, cuánto se tarda y cuánto se paga.
 
 ### Semana 3: modo paralelo
 
-- Usa el sistema para reservas nuevas, pero sigue con WhatsApp como respaldo.
-- La limpiadora recibe doble notificación hasta que coge la rutina.
+- Usa el sistema para las reservas nuevas, pero mantén el WhatsApp como respaldo.
+- La limpiadora recibe el aviso por los dos canales hasta que coge la rutina.
 
 ### Semana 4: sistema puro
 
-- Ya no envías WhatsApp manual. El sistema lo hace.
+- Ya no envías WhatsApp a mano: lo hace el sistema.
 - Revisas el panel cada día.
-- Anotas los casos raros para ajustar reglas.
+- Anotas los casos raros para ajustar las reglas.
 
-A partir del mes 2 el sistema se mantiene solo.
+A partir del segundo mes, el sistema funciona solo.
 
 ## Qué mirar en un sistema de limpiezas
 
@@ -105,19 +105,19 @@ Criterios prácticos para elegir:
 
 ### App móvil para limpiadoras
 
-Si tu limpiadora es joven o tecnológica, una app propia es lo mejor. Si es mayor o poco digital, la notificación por WhatsApp sigue siendo lo más fiable. Algunos sistemas (Hostly, Icnea) soportan ambos.
+Si tu limpiadora es joven o tecnológica, una app propia es lo mejor. Si es mayor o poco digital, la notificación por WhatsApp sigue siendo lo más fiable. Algunos sistemas (Hostly, Icnea) ofrecen las dos opciones.
 
 ### Asignación automática según disponibilidad
 
-Configurable: qué limpiadora prefiere qué apartamento, qué días tiene libre, qué horario. El sistema respeta estas reglas.
+Lo configuras tú: qué limpiadora prefiere cada apartamento, qué días libra y en qué horario trabaja. El sistema respeta estas reglas.
 
 ### Integración con tu PMS
 
-Si ya usas PMS (Hostly, Hostify, Lodgify...), **la limpieza tiene que estar integrada**. Si tienes que migrar datos de un sistema a otro, algo va mal.
+Si ya usas un PMS (Hostly, Hostify, Lodgify...), **la limpieza tiene que estar integrada**. Si tienes que pasar datos de un sistema a otro, algo va mal.
 
 ### Gestión de pagos
 
-Acumula turnos, calcula importe, genera recibo o factura al final del mes. Sin esto, pagar a 3 limpiadoras cada mes es un trabajo manual pesado.
+El sistema debería acumular los turnos, calcular el importe y generar el recibo o la factura a final de mes. Sin esto, pagar a 3 limpiadoras cada mes es un trabajo manual pesado.
 
 ### Multi-apartamento con prioridades
 
@@ -134,20 +134,20 @@ Si tienes 10 apartamentos y 3 limpiadoras, el sistema tiene que decidir quién v
 
 ### Herramientas solo de limpieza
 
-- **Turno** (antes TurnoverBnB): la referencia global para las limpiezas entre huéspedes. Integración con varios PMS.
-- **Properly**: checklists detallados + fotos.
+- **Turno** (antes TurnoverBnB): la referencia global para las limpiezas entre huéspedes. Se integra con varios PMS.
+- **Properly**: checklists detallados y fotos.
 
 Para un gestor en España con 1 a 15 pisos, **lo más eficiente es un PMS con limpieza integrada**. Usar Turno por separado solo compensa si tu PMS no lo cubre bien.
 
 ## Errores comunes al migrar
 
-### 1. Hacer cambio brusco sin paralelo
+### 1. Cambiar de golpe, sin periodo de transición
 
-Pasar del WhatsApp al sistema sin período de transición genera confusión. Las limpiadoras no están acostumbradas. Período de 1-2 semanas de doble notificación resuelve esto.
+Pasar del WhatsApp al sistema de un día para otro genera confusión: las limpiadoras no están acostumbradas. Un periodo de 1‑2 semanas con doble aviso lo resuelve.
 
 ### 2. No formar a las limpiadoras
 
-Dedica 30 minutos a enseñar cómo marcar una tarea como completada, cómo subir foto, cómo ver próximas tareas. Sin esto, siguen usando WhatsApp.
+Dedica 30 minutos a enseñarles a marcar una tarea como completada, a subir una foto y a ver las próximas tareas. Si no, seguirán usando WhatsApp.
 
 ### 3. Reglas demasiado complejas
 
@@ -155,15 +155,15 @@ Empieza con reglas simples (una limpiadora por apartamento) y añade complejidad
 
 ### 4. No revisar el primer mes
 
-El primer mes hay ajustes: tiempo por apartamento, precios, disponibilidades reales. Revisa cada semana los casos raros para afinar.
+El primer mes toca ajustar cosas: el tiempo por apartamento, los precios, la disponibilidad real de cada persona. Revisa cada semana los casos raros para afinar.
 
 ## Resumen
 
 La coordinación manual de limpiezas cuesta tiempo y genera fricción con tus limpiadoras. Un sistema automatizado:
 
-- Ahorra 1-2 horas/semana por apartamento.
+- Ahorra alrededor de 1 hora por semana y apartamento.
 - Elimina los olvidos.
 - Mantiene a la limpiadora informada sin mensajes redundantes.
-- Profesionaliza tu operación.
+- Profesionaliza tu gestión.
 
 Si tienes más de 3 apartamentos y sigues con WhatsApp + Excel, la inversión en un sistema se paga en menos de 2 meses solo en tiempo recuperado.

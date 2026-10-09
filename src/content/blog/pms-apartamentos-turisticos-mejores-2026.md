@@ -20,7 +20,7 @@ faqs:
   - question: "¿Qué diferencia hay entre un PMS y un channel manager?"
     answer: "Un channel manager sincroniza calendarios y reservas entre Airbnb, Booking y otras OTAs. Un PMS hace eso y además gestiona check-ins, mensajería, limpiezas, precios, facturación y el día a día operativo. El PMS es el sistema completo; el channel manager es una función dentro."
   - question: "¿A partir de cuántos apartamentos compensa tener un PMS?"
-    answer: "Con 1 apartamento ya te ahorra tiempo si valoras tu tiempo. Con 2-3 se nota mucho. Con 5+ es prácticamente imposible gestionar sin. La pregunta no es 'cuántos apartamentos' sino 'cuánto tiempo quieres dedicar a tareas manuales'."
+    answer: "Con 1 apartamento ya te ahorra tiempo si valoras tu tiempo. Con 2‑3 se nota mucho. Con 5+ es prácticamente imposible gestionar sin. La pregunta no es 'cuántos apartamentos' sino 'cuánto tiempo quieres dedicar a tareas manuales'."
   - question: "¿Cuánto cuesta un PMS para alquiler vacacional?"
     answer: "Depende del proveedor, de cuántos pisos tengas y de lo que incluya. Con los precios publicados en octubre de 2026: Hostly es gratis para el check-in y el registro, y Hostly Completo cuesta 40 €/mes por piso (35 € desde 5); Smoobu, desde 29 €/mes por alojamiento (+0,9 % por reserva en el plan Flex); Hospitable tiene un plan gratis y planes de pago desde 29 €/mes + IVA; Hostify, desde 20 $ por alojamiento al mes, a partir de 5; Icnea, desde 150 €/mes hasta 10 propiedades; Avantio, una cuota mínima de 295 €/mes + IVA. Lodgify tiene varios planes (consulta su web) y Guesty publica precio solo para su plan Lite."
   - question: "¿Qué pasa con mis datos si cambio de PMS?"
@@ -67,16 +67,16 @@ Tres preguntas te dan la respuesta:
 
 ### 1. ¿Cuánto tiempo dedicas a tareas repetitivas por semana?
 
-Suma: responder mensajes, enviar códigos de check-in, actualizar calendarios, registrar huéspedes en SES, coordinar limpiezas, revisar precios. Si la cifra es **más de 3-4 horas por apartamento al mes**, un PMS te recupera la mayor parte.
+Suma: responder mensajes, enviar códigos de check-in, actualizar calendarios, registrar huéspedes en SES, coordinar limpiezas, revisar precios. Si la cifra es **más de 3‑4 horas por apartamento al mes**, un PMS te recupera la mayor parte.
 
 ### 2. ¿Has tenido algún overbooking o incidencia de sincronización?
 
-Aunque sea uno. Los overbookings son el síntoma de un sistema manual. Una vez pasa, ya compensa pagar los 20-40 €/mes que cuesta evitarlos.
+Aunque sea uno. Los overbookings son el síntoma de un sistema manual. Una vez pasa, ya compensa pagar los 20‑40 €/mes que cuesta evitarlos.
 
 ### 3. ¿Cuántos apartamentos tienes o planeas tener?
 
 - **1 apartamento**: compensa si valoras tu tiempo y vas a crecer.
-- **2-3**: compensa claramente.
+- **2‑3**: compensa claramente.
 - **5+**: es prácticamente imposible gestionar bien sin un PMS.
 - **10+**: además de un PMS, necesitas roles (propietario, gestor, limpieza) con permisos diferenciados.
 
@@ -95,7 +95,7 @@ Combina IA en WhatsApp, check-in con registro automático en los Mossos d'Esquad
 
 ### 2. Hostify
 
-**Origen**: Barcelona/Lituania. **Para quién**: 5-70+ apartamentos. **Precio**: desde 20 $ por alojamiento al mes, con tramos a partir de 5 alojamientos.
+**Para quién**: 5‑70+ apartamentos. **Precio**: desde 20 $ por alojamiento al mes, con tramos a partir de 5 alojamientos.
 
 Alternativa asequible a Guesty. SES integrado y 400+ canales OTA. Consolidado en España.
 
@@ -104,16 +104,16 @@ Alternativa asequible a Guesty. SES integrado y 400+ canales OTA. Consolidado en
 
 ### 3. Lodgify
 
-**Origen**: Barcelona. **Para quién**: 1-15 apartamentos con web propia. **Precio**: según plan y número de alojamientos; consulta su web.
+**Origen**: Barcelona. **Para quién**: 1‑15 apartamentos con web propia. **Precio**: según plan y número de alojamientos; consulta su web.
 
 De los mejores creadores de webs del sector. Ideal si quieres apostar por la reserva directa con una web propia bonita.
 
 **Pros**: creador de webs muy potente, bueno para el SEO, channel manager maduro.
-**Contras**: SES parcial, IA básica, ops limitadas.
+**Contras**: SES parcial, IA centrada en redactar borradores, operativa limitada.
 
 ### 4. Hospitable
 
-**Origen**: Reino Unido. **Para quién**: anfitrión particular, 1-30 apartamentos. **Precio**: plan gratis (Essentials); de pago, desde 29 €/mes + IVA.
+**Origen**: EE. UU. **Para quién**: anfitrión particular, 1‑30 apartamentos. **Precio**: plan gratis (Essentials); de pago, desde 29 €/mes + IVA.
 
 Referente de IA en el mundo anglosajón. Interfaz cálida, comunidad activa, más de 120.000 anfitriones.
 
@@ -122,34 +122,34 @@ Referente de IA en el mundo anglosajón. Interfaz cálida, comunidad activa, má
 
 ### 5. Smoobu
 
-**Origen**: Berlín (grupo HomeToGo). **Para quién**: 1-15 apartamentos. **Precio**: desde 29 €/mes por alojamiento (+0,9 % por reserva en el plan Flex) o 35 €/mes en prepago.
+**Origen**: Berlín (grupo HomeToGo). **Para quién**: 1‑15 apartamentos. **Precio**: desde 29 €/mes por alojamiento (+0,9 % por reserva en el plan Flex) o 35 €/mes en prepago.
 
 Opción de entrada para quien quiere simplicidad y un precio bajo.
 
 **Pros**: precio, interfaz en 8 idiomas, channel manager sólido.
-**Contras**: SES vía Chekin, ops limitadas.
+**Contras**: SES vía Chekin, operativa limitada.
 
 ### 6. Icnea
 
-**Origen**: Barcelona, 15 años. **Para quién**: empresas gestoras de 5-200 apartamentos. **Precio**: desde 150 €/mes, hasta 10 propiedades.
+**Origen**: Cataluña, desde 2001. **Para quién**: empresas gestoras de 5‑200 apartamentos. **Precio**: desde 150 €/mes, hasta 10 propiedades.
 
 Veterano español con gestor de cuenta dedicado. Muy fiable para grandes gestoras.
 
 **Pros**: maduro, SES integrado, apps nativas por rol, 100+ canales.
-**Contras**: interfaz menos moderna, caro para 1-3 unidades.
+**Contras**: caro para 1‑3 unidades.
 
 ### 7. Hostaway
 
-**Origen**: Toronto. **Para quién**: gestoras profesionales de 5-500 unidades. **Precio**: presupuesto a medida (no publica precio).
+**Origen**: Toronto. **Para quién**: gestoras profesionales de 5‑500 unidades. **Precio**: presupuesto a medida (no publica precio).
 
 Elite Partner de todas las OTAs grandes. Marketplace con 300+ integraciones. Pensado para empresas.
 
 **Pros**: marca consolidada, analítica profunda, marketplace.
-**Contras**: no apunta a 1-3 unidades, tono corporativo.
+**Contras**: no apunta a 1‑3 unidades.
 
 ### 8. Prohost AI
 
-**Origen**: EE. UU. (YC + Pear VC). **Para quién**: anfitriones de 1-300 propiedades. **Precio**: plan gratis; de pago, desde 10 $ por propiedad al mes, con un mínimo de 30 $/mes (precio publicado en octubre de 2026).
+**Origen**: EE. UU. (YC + Pear VC). **Para quién**: anfitriones de 1‑300 propiedades. **Precio**: plan gratis; de pago, desde 10 $ por propiedad al mes, con un mínimo de 30 $/mes (precio publicado en octubre de 2026).
 
 El más centrado en la IA, y de los más jóvenes. Plan gratis muy agresivo.
 
@@ -158,12 +158,12 @@ El más centrado en la IA, y de los más jóvenes. Plan gratis muy agresivo.
 
 ### 9. Guesty
 
-**Origen**: Tel Aviv / Nueva York. **Para quién**: de 1 anuncio (Lite) a miles de unidades; su fuerte, las gestoras medianas y grandes. **Precio**: plan Lite (1-3 anuncios) desde 9 $ por anuncio al mes; Pro y Enterprise, presupuesto a medida.
+**Origen**: Tel Aviv / Nueva York. **Para quién**: de 1 anuncio (Lite) a miles de unidades; su fuerte, las gestoras medianas y grandes. **Precio**: plan Lite (1‑3 anuncios) desde 9 $ por anuncio al mes; Pro y Enterprise, presupuesto a medida.
 
 El "Salesforce" del alquiler vacacional. De los PMS más completos del mercado.
 
 **Pros**: el más completo, IA GuestyAI, Guest App de marca.
-**Contras**: caro en sus planes grandes, se contrata a través de su equipo de ventas y no está pensado para el propietario pequeño.
+**Contras**: Pro y Enterprise se contratan con presupuesto a medida, a través de su equipo de ventas; su fuerte son las gestoras medianas y grandes, no el propietario pequeño.
 
 ### 10. Avantio
 
@@ -178,7 +178,7 @@ PMS español para empresas, con servicios de marketing.
 
 Cuatro criterios que ordenan el resto:
 
-1. **Tamaño actual y previsto**: 1-5 apartamentos → Hostly, Lodgify, Smoobu. 5-20 → Hostly (hasta 15 pisos), Lodgify, Smoobu, Hostify y Prohost AI. 20+ → Hostaway, Icnea, Avantio, Guesty.
+1. **Tamaño actual y previsto**: 1‑5 apartamentos → Hostly, Lodgify, Smoobu. 5‑20 → Hostly (hasta 15 pisos), Lodgify, Smoobu, Hostify y Prohost AI. 20+ → Hostaway, Icnea, Avantio, Guesty.
 
 2. **Prioridad operativa**: legal + IA + WhatsApp → Hostly. OTAs masivas → Hostify. Web propia → Lodgify. Precio bajo → Smoobu. Gestora grande → Hostaway/Guesty.
 
@@ -188,8 +188,8 @@ Cuatro criterios que ordenan el resto:
 
 ## Resumen: recomendación por perfil
 
-- **Propietario familiar 1-3 apartamentos en España**: **Hostly** (por el check-in y el registro gratis + IA + precio razonable).
-- **Pequeño gestor de 5-15 apartamentos en España**: **Hostly** o **Hostify** (según prioridad IA vs. OTAs).
+- **Propietario familiar 1‑3 apartamentos en España**: **Hostly** (por el check-in y el registro gratis + IA + precio razonable).
+- **Pequeño gestor de 5‑15 apartamentos en España**: **Hostly** o **Hostify** (según prioridad IA vs. OTAs).
 - **Agencia con web propia importante**: **Lodgify** + complemento.
 - **Gestora profesional (20+ unidades)**: **Icnea**, **Avantio** o **Hostaway**.
 - **Host tecnológico joven global**: **Prohost AI** o **Hospitable**.

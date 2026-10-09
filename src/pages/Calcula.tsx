@@ -238,6 +238,10 @@ export default function Calcula() {
                         : t("calcula.resultado.por_hora", { euros: euros(res.perHora!, lang) })}
                     </p>
                   )}
+                  {/* Amb «2 a 4» o «5 a 15» es compta amb el punt mig: es diu, perquè no sembli la xifra exacta de la persona */}
+                  {r.pisos !== "1" && (
+                    <p className="text-sm text-muted-foreground mb-3">{t(r.pisos === "15+" ? "calcula.resultado.calculado_para_mes" : "calcula.resultado.calculado_para", { n: res.pisos })}</p>
+                  )}
                   <p className="text-base text-muted-foreground">
                     {t("calcula.resultado.horas_ano", { ano: horasAno[iHoras] })}{" "}
                     {r.donde === "catalunya" ? t("calcula.resultado.registro_cat") : t("calcula.resultado.registro_otra")}
@@ -331,7 +335,7 @@ export default function Calcula() {
                             <span className="font-semibold text-foreground">{t("calcula.resultado.detalle_horas")}</span>
                             <span className="block text-muted-foreground">{horasFrase[iHoras]}</span>
                           </span>
-                          <span className="text-foreground/80 text-right">{t("calcula.resultado.detalle_horas_hostly")}</span>
+                          <span className="text-foreground/80 text-right">{r.donde === "catalunya" ? t("calcula.resultado.detalle_horas_hostly") : t("calcula.resultado.detalle_horas_hostly_otra")}</span>
                         </li>
                       </ul>
                       <p className="mt-4 text-xs text-muted-foreground">{t("calcula.resultado.nota")}</p>

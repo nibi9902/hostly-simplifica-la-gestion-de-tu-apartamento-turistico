@@ -24,8 +24,8 @@ export default function Hereus() {
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">{t("hereus.badge")}</p>
             <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight">
-              {t("hereus.h1").split('\n').map((line, i, arr) => (
-                <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+              {t("hereus.h1").split('\n').map((line, i) => (
+                <span key={i} className="block">{line}</span>
               ))}
             </h1>
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl mb-10 leading-relaxed">

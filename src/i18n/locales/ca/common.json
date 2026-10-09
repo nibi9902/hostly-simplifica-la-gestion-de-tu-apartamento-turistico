@@ -55,15 +55,15 @@
     "ca": "Català"
   },
   "not_found": {
-    "title": "Pàgina no trobada · Hostly",
+    "title": "Pàgina no trobada · Hostly",
     "badge": "404",
     "heading": "Aquesta pàgina no és al sistema.",
-    "body": "Potser s'ha mogut. Potser no va existir mai. La resta sí és on toca — torna a l'inici i continua.",
+    "body": "Potser s'ha mogut. Potser no va existir mai. La resta sí és on toca — torna a l'inici i continua.",
     "go_home": "Tornar a l'inici",
     "go_back": "Pàgina anterior"
   },
   "sobre": {
-    "meta_title": "Sobre Hostly — L'app que simplifica tenir un pis turístic",
+    "meta_title": "Sobre Hostly — L'app que simplifica tenir un pis turístic",
     "meta_description": "Hostly va néixer de la frustració de gestionar apartaments turístics amb cinc eines diferents. Som un equip català obsessionat a simplificar tot el que implica tenir un pis turístic.",
     "eyebrow": "Sobre Hostly",
     "hero_heading": "Va néixer de viure-ho.",
@@ -73,7 +73,7 @@
     "story_p3": "No vaig trobar cap eina que ho fes tot de manera senzilla per al mercat espanyol. Les que existien eren complexes, cares, o no entenien la burocràcia espanyola.",
     "story_p4": "Així que ho vaig construir jo. Primer per a mi. Després, quan va funcionar, per a tots els que estaven en la mateixa situació.",
     "founder_name": "Biel Alsina",
-    "founder_role": "Fundador · Barcelona",
+    "founder_role": "Fundador · Barcelona",
     "founder_quote": "\"Hostly no va néixer en una oficina. Va néixer de la frustració de gestionar els meus propis apartaments i no poder desconnectar mai. Ho vaig construir per a mi. I funciona.\"",
     "values_eyebrow": "Com pensem",
     "values_heading": "Els principis que guien cada decisió.",
@@ -102,12 +102,12 @@
   "demo": {
     "meta_title": "Vídeo: així funciona Hostly",
     "meta_description": "Mira com funciona Hostly en 1 minut. Check-in automàtic, neteges coordinades, missatges amb IA i finances des d'una sola app.",
-    "eyebrow": "Vídeo · 1 minut",
+    "eyebrow": "Vídeo · 1 minut",
     "heading": "Així funciona Hostly.",
     "subheading": "Check-in automàtic, neteges coordinades, missatges amb IA i finances en un sol lloc. Sense cinc apps diferents.",
     "cta_start": "Començar",
     "cta_pricing": "Veure preus",
-    "disclaimer": "Sense permanència · El primer mes, gratis",
+    "disclaimer": "Sense permanència · El primer mes, gratis",
     "video_section_eyebrow": "El que veus al vídeo",
     "features": [
       {
@@ -243,7 +243,7 @@
         "id": "finanzas-pagos",
         "num": "05",
         "title": "Pagaments, finances i fiscalitat",
-        "description": "Com portar la comptabilitat del pis turístic, gestionar cobraments i liquidar a propietaris sense passar hores amb Excel.",
+        "description": "Com portar la comptabilitat del pis turístic, gestionar cobraments i liquidar els propietaris sense passar hores amb Excel.",
         "links": [
           {
             "label": "Quant costa realment gestionar un pis turístic?",

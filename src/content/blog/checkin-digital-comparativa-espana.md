@@ -41,7 +41,7 @@ Entras en la plataforma del SES de la Guardia Civil o la Policía Nacional, intr
 - Requiere recordar hacerlo en las primeras 24 horas de cada entrada.
 - Cada error de introducción es tu responsabilidad.
 - No automatiza nada más (contrato, instrucciones, fianza...).
-- Es inviable si tienes más de 2-3 apartamentos con cierta ocupación.
+- Es inviable si tienes más de 2‑3 apartamentos con cierta ocupación.
 
 ### Opción 2: Herramienta específica de check-in (Chekin y similares)
 
@@ -95,7 +95,7 @@ Es una de las funcionalidades base de Hostly, disponible desde el primer apartam
 Lo que significa en la práctica:
 
 - No pagas por Chekin ni por ninguna herramienta de check-in separada.
-- El check-in está sincronizado con el resto de tu gestión (reservas, calendarios, mensajería).
+- El check-in está sincronizado con el resto de tu gestión (reservas y calendarios; con Hostly Completo, también la mensajería).
 - En Cataluña, Hostly envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. En el resto de España, activamos contigo la conexión con la policía que te toque.
 - La tasa turística de Cataluña también está incluida: Hostly la calcula por estancia y la deja lista para declarar en la ATC cada semestre.
 

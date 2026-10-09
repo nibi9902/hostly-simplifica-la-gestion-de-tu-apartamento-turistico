@@ -108,7 +108,7 @@
     "breadcrumb_label": "Hereus",
     "badge": "Pisos heretats",
     "h1": "El pis heretat\nsense maldecaps.",
-    "intro": "El vas posar a Airbnb perquè no el volies vendre. Però ara tens missatges, check-ins, registres policials i neteges a gestionar. Tu tens una altra vida. Hostly s'encarrega de la resta.",
+    "intro": "El vas posar a Airbnb perquè no el volies vendre. Però ara tens missatges, check-ins, registres policials i neteges per gestionar. Tu tens una altra vida. Hostly s'encarrega de la resta.",
     "cta_primary": "Començar",
     "cta_sub": "El pla Gratis, sense targeta. Sense permanència. Sense aprendre res de nou.",
     "section2_h2": "No has de ser un expert en lloguer turístic.",
@@ -117,12 +117,12 @@
       {
         "icon": "⏱️",
         "title": "Configurat amb tu",
-        "desc": "Afegeixes el pis en uns minuts. Airbnb i Booking els connectem amb tu en una videotrucada. Sense formacions de dues setmanes."
+        "desc": "Afegeixes el pis en uns minuts. A Hostly Complet, Airbnb i Booking els connectem amb tu en una videotrucada. Sense formacions de dues setmanes."
       },
       {
         "icon": "🤖",
         "title": "Tot automàtic per defecte",
-        "desc": "Check-in, registre a la policia, missatges i neteges funcionen sols des del primer dia."
+        "desc": "El check-in i el registre a la policia funcionen sols des del primer dia; a Hostly Complet, també els missatges i les neteges."
       },
       {
         "icon": "👤",

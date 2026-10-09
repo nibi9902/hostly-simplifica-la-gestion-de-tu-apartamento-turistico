@@ -24,7 +24,7 @@ faqs:
   - question: "¿Necesito PriceLabs o Beyond si ya tengo PMS?"
     answer: "Depende del PMS. Hospitable, Lodgify, Hostaway y Smoobu tienen precios dinámicos propios. Hostly lleva PriceLabs integrado en Hostly Completo, sin salir de la app. Hostify, Hostex, Hostfully e Icnea no, y se complementan con PriceLabs o Beyond. Suma lo que pagas en total para ver si te compensa integrado o separado."
   - question: "¿Cuánto tiempo tarda en aprender el algoritmo?"
-    answer: "Las herramientas modernas funcionan desde el día 1 con datos de mercado. Pero afinar los parámetros a tu apartamento específico lleva 2-3 meses de monitorización. El aprendizaje sigue después, sobre todo en temporadas repetidas."
+    answer: "Las herramientas modernas funcionan desde el día 1 con datos de mercado. Pero afinar los parámetros a tu apartamento específico lleva 2‑3 meses de monitorización. El aprendizaje sigue después, sobre todo en temporadas repetidas."
   - question: "¿Y si mi apartamento es muy particular (boutique, de lujo, rural aislado)?"
     answer: "Las herramientas estándar rinden peor en apartamentos muy singulares porque se basan en comparables. Para unidades muy premium o muy aisladas, conviene usar la herramienta como sugerencia y ajustar manualmente, o directamente seguir estrategia manual basada en tu conocimiento local."
 ---
@@ -52,12 +52,12 @@ La lógica es simple: en alta demanda, hay gente dispuesta a pagar más. En baja
 
 En datos reales del sector:
 
-- **Mejora típica**: 10-25 % sobre estrategia de precio fijo.
+- **Mejora típica**: 10‑25 % sobre estrategia de precio fijo.
 - **Donde más se nota**: destinos con estacionalidad marcada (costa española, montaña invierno).
 - **Donde menos se nota**: apartamentos en zonas muy estables (ciudades sin picos claros).
 - **Donde puede fallar**: apartamentos muy singulares sin comparables directos.
 
-Una herramienta de precios dinámicos suele amortizarse en **1-2 meses** si tu volumen es decente.
+Una herramienta de precios dinámicos suele amortizarse en **1‑2 meses** si tu volumen es decente.
 
 ## Las tres herramientas principales del mercado
 
@@ -151,12 +151,12 @@ Si actualizas precios en Airbnb y no en Booking, acabas perdiendo dinero por el 
 
 ### 5. Esperar magia desde el día 1
 
-Los primeros 30-60 días son aprendizaje. Las ganancias reales se ven comparando **la misma época del año antes vs. después**.
+Los primeros 30‑60 días son aprendizaje. Las ganancias reales se ven comparando **la misma época del año antes vs. después**.
 
 ## Recomendación por perfil
 
-- **1-3 apartamentos en España**: PMS con PriceLabs integrado (Hostly) o PriceLabs sobre un PMS básico. Configuración sencilla.
-- **5-20 apartamentos, gestor profesional**: PriceLabs o Beyond por encima del PMS. Vale la pena la inversión en configuración.
+- **1‑3 apartamentos en España**: PMS con PriceLabs integrado (Hostly) o PriceLabs sobre un PMS básico. Configuración sencilla.
+- **5‑20 apartamentos, gestor profesional**: PriceLabs o Beyond por encima del PMS. Vale la pena la inversión en configuración.
 - **Apartamento único muy singular** (boutique, lujo, rural aislado): empezar manual + usar herramienta como sugerencia, no dejarla automática.
 - **Alto volumen (20+)**: PriceLabs para empresas + analista dedicado.
 
@@ -168,4 +168,4 @@ Los primeros 30-60 días son aprendizaje. Las ganancias reales se ven comparando
 4. Vigila dos semanas y ajusta.
 5. Compara resultados a 60 días contra tu histórico.
 
-Si el ingreso medio por noche no ha subido al menos un 8-10 % a los 60 días, revisa la configuración o cambia de herramienta.
+Si el ingreso medio por noche no ha subido al menos un 8‑10 % a los 60 días, revisa la configuración o cambia de herramienta.

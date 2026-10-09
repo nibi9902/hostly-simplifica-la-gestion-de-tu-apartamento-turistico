@@ -1,9 +1,9 @@
 {
   "index": {
-    "title": "Blog Hostly — Guías de gestión de apartamentos turísticos",
+    "title": "Blog Hostly — Guías de gestión de apartamentos turísticos",
     "description": "Guías prácticas, comparativas y análisis sobre la gestión de apartamentos turísticos en España. Cumplimiento legal, herramientas, operativa y más.",
     "breadcrumb": "Blog",
-    "eyebrow": "Blog · Recursos",
+    "eyebrow": "Blog · Recursos",
     "h1_1": "Todo lo que implica",
     "h1_2": "tener un piso turístico.",
     "subtitle": "{{count}} guías escritas para propietarios y gestores reales. Sin lenguaje corporativo. Sin relleno. Solo lo que necesitas saber.",
@@ -39,7 +39,7 @@
   },
   "article": {
     "ca_notice_title": "Este artículo está disponible en castellano",
-    "ca_notice_body": "Estamos traduciendo el blog al catalán. De momento puedes leerlo en castellano — el contenido y los enlaces funcionan exactamente igual.",
+    "ca_notice_body": "Estamos traduciendo el blog al catalán. De momento puedes leerlo en castellano — el contenido y los enlaces funcionan exactamente igual.",
     "updated_2026": "Actualizado 2026",
     "min_read_full": "{{count}} min de lectura",
     "cta_eyebrow": "Hostly",

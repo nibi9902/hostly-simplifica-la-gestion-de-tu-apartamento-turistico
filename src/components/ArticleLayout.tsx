@@ -154,8 +154,9 @@ export default function ArticleLayout({ post }: Props) {
       </header>
 
       {/* Contingut */}
-      <main className="pb-24">
-        <div className="max-w-3xl mx-auto px-6 md:px-8">
+      {/* Mateixos marges que la capçalera de l'article (abans el cos començava 32 px més endins) */}
+      <main className="pb-24 px-6 md:px-12 lg:px-20">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}

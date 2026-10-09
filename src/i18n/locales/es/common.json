@@ -55,15 +55,15 @@
     "ca": "Català"
   },
   "not_found": {
-    "title": "Página no encontrada · Hostly",
+    "title": "Página no encontrada · Hostly",
     "badge": "404",
     "heading": "Esta página no está en el sistema.",
-    "body": "Quizás se ha mudado. Quizás nunca existió. El resto sí está donde toca — vuelve al inicio y sigue.",
+    "body": "Quizás se ha mudado. Quizás nunca existió. El resto sí está donde toca — vuelve al inicio y sigue.",
     "go_home": "Volver al inicio",
     "go_back": "Página anterior"
   },
   "sobre": {
-    "meta_title": "Sobre Hostly — La app que simplifica tener un piso turístico",
+    "meta_title": "Sobre Hostly — La app que simplifica tener un piso turístico",
     "meta_description": "Hostly nació de la frustración de gestionar apartamentos turísticos con cinco herramientas distintas. Somos un equipo de Cataluña obsesionado con simplificar todo lo que implica tener un piso turístico.",
     "eyebrow": "Sobre Hostly",
     "hero_heading": "Nació de vivirlo.",
@@ -73,7 +73,7 @@
     "story_p3": "No encontré ninguna herramienta que lo hiciera todo de forma sencilla para el mercado español. Las que existían eran complejas, caras, o no entendían la burocracia española.",
     "story_p4": "Así que lo construí yo. Primero para mí. Luego, cuando funcionó, para todos los que estaban en la misma situación.",
     "founder_name": "Biel Alsina",
-    "founder_role": "Fundador · Barcelona",
+    "founder_role": "Fundador · Barcelona",
     "founder_quote": "\"Hostly no nació en una oficina. Nació de la frustración de gestionar mis propios apartamentos y no poder desconectar nunca. Lo construí para mí. Y funciona.\"",
     "values_eyebrow": "Cómo pensamos",
     "values_heading": "Los principios que guían cada decisión.",
@@ -102,12 +102,12 @@
   "demo": {
     "meta_title": "Vídeo: así funciona Hostly",
     "meta_description": "Mira cómo funciona Hostly en 1 minuto. Check-in automático, limpiezas coordinadas, mensajes con IA y finanzas desde una sola app.",
-    "eyebrow": "Vídeo · 1 minuto",
+    "eyebrow": "Vídeo · 1 minuto",
     "heading": "Así funciona Hostly.",
     "subheading": "Check-in automático, limpiezas coordinadas, mensajes con IA y finanzas en un solo lugar. Sin cinco apps distintas.",
     "cta_start": "Empezar",
     "cta_pricing": "Ver precios",
-    "disclaimer": "Sin permanencia · El primer mes, gratis",
+    "disclaimer": "Sin permanencia · El primer mes, gratis",
     "video_section_eyebrow": "Lo que ves en el vídeo",
     "features": [
       {

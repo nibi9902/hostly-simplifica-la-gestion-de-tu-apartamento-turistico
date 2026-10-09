@@ -144,6 +144,13 @@
 14. **Netejadores**: el web diu que, a l'app, cadascú veu el seu. Segons l'estudi de seguretat
     (ajornat), una netejadora encara pot llegir per l'API les reserves i els DNI dels seus pisos.
     Convé tancar-ho abans de vendre a gestors nous.
+15. **Telegram rep les dades dels contactes del web** (nom, telèfon, correu, pla, respostes de
+    la calculadora) perquè puguis trucar al moment. Telegram és fora de l'Espai Econòmic Europeu
+    i no signa contracte d'encarregat del tractament; i els missatges no s'esborren als 12 mesos
+    que promet la política. La política ja diu el que rep, però el buit legal hi és. Opcions:
+    (a) que l'avís de Telegram no porti dades personals («contacte nou») i les miris en un lloc
+    amb contracte (la BD, l'app o un correu d'un proveïdor europeu); (b) deixar-ho com està
+    assumint el risc. Recomano (a), amb un enllaç directe al contacte.
 
 ## Pendents
 

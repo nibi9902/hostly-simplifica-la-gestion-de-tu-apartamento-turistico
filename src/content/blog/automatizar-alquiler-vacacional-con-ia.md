@@ -35,12 +35,12 @@ La IA en 2026 ya resuelve buena parte de esto. No como "un chatbot que a veces c
 
 ## El problema real: no son las reservas, es lo que hay entre medias
 
-Un apartamento turístico genera, por reserva, unas **15-25 microtareas** invisibles:
+Un apartamento turístico genera, por reserva, unas **15‑25 microtareas** invisibles:
 
 - Confirmar los detalles al huésped
 - Enviar el enlace de check-in online
 - Registrar al huésped en la policía (SES.Hospedajes o Mossos)
-- Contestar 3-5 preguntas antes de la llegada
+- Contestar 3‑5 preguntas antes de la llegada
 - Enviar código de acceso a tiempo
 - Avisar a la limpiadora del checkout
 - Coordinar posible mantenimiento
@@ -48,7 +48,7 @@ Un apartamento turístico genera, por reserva, unas **15-25 microtareas** invisi
 - Seguir la reseña
 - Cerrar el ciclo facturalmente
 
-Para 1 apartamento, son entre 1 y 2 horas por reserva. Para 5 apartamentos con 6-8 reservas al mes, son **40-60 horas al mes** que desaparecen en microtareas. Es la trampa de creer que un piso turístico se lleva solo: el dinero llega, pero tu tiempo también se va.
+Para 1 apartamento con 6‑8 reservas al mes, son **20‑30 horas al mes**; con 5, se multiplica. Es la trampa de creer que un piso turístico se lleva solo: el dinero llega, pero tu tiempo también se va.
 
 La automatización con IA no elimina el trabajo humano importante (branding, decisiones estratégicas, casos complicados). Elimina el **trabajo repetitivo que no requiere criterio**.
 
@@ -117,9 +117,9 @@ Si tu operativa actual funciona y solo te ahoga la mensajería, hay herramientas
 
 ### Opción 2: PMS completo con IA integrada
 
-Sustituyes tu sistema actual (Excel, calendario de Airbnb, grupos de WhatsApp) por una app de gestión completa que incluye mensajería con IA + check-in + registro de viajeros + limpiezas + precios. Ejemplos: **Hostly** (hecho en Cataluña, con WhatsApp y registro de viajeros a la policía), **Hospitable** (anglosajón), **Prohost AI** (joven, con plan gratis).
+Sustituyes tu sistema actual (Excel, calendario de Airbnb, grupos de WhatsApp) por una app de gestión completa que incluye mensajería con IA + check-in + registro de viajeros + limpiezas + precios. Por ejemplo: **Hostly** (hecho en Cataluña, con WhatsApp y registro de viajeros a la policía). **Hospitable** y **Prohost AI** cubren la IA, pero no el registro de viajeros en España.
 
-Inversión: en Hostly, el check-in y el registro son gratis, y Hostly Completo cuesta 40 €/mes por piso (35 € desde 5); en las demás, según el plan. Pro: lo tienes integrado en un solo sitio y el ahorro de tiempo es real. Contra: supone una migración inicial de 1-2 semanas.
+Inversión: en Hostly, el check-in y el registro son gratis, y Hostly Completo cuesta 40 €/mes por piso (35 € desde 5); en las demás, según el plan. Pro: lo tienes integrado en un solo sitio y el ahorro de tiempo es real. Contra: supone una migración inicial de 1‑2 semanas.
 
 ### Opción 3: stack de herramientas conectadas (avanzado)
 
@@ -158,7 +158,7 @@ Un apartamento 100 % automatizado pierde el toque que genera reseñas de 5 estr
 Si estás convencido de empezar:
 
 1. **Esta semana**: elige qué parte automatizar primero (recomendación: mensajería o check-in, son los que más tiempo te comen).
-2. **Este mes**: haz la migración a la herramienta elegida. Reserva 1-2 días completos para configurar bien.
+2. **Este mes**: haz la migración a la herramienta elegida. Reserva 1‑2 días completos para configurar bien.
 3. **En 60 días**: evalúa. Si la herramienta no te ha liberado al menos 5 horas/semana, revisa la configuración o cambia.
 
 El objetivo no es "tener IA". El objetivo es **recuperar tiempo y dejar de vivir pendiente del negocio**.

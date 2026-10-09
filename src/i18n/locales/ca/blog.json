@@ -1,9 +1,9 @@
 {
   "index": {
-    "title": "Blog Hostly — Guies de gestió d'apartaments turístics",
+    "title": "Blog Hostly — Guies de gestió d'apartaments turístics",
     "description": "Guies pràctiques, comparatives i anàlisis sobre la gestió d'apartaments turístics a Espanya. Compliment legal, eines, operativa i més.",
     "breadcrumb": "Blog",
-    "eyebrow": "Blog · Recursos",
+    "eyebrow": "Blog · Recursos",
     "h1_1": "Tot el que implica",
     "h1_2": "tenir un pis turístic.",
     "subtitle": "{{count}} guies escrites per a propietaris i gestors reals. Sense llenguatge corporatiu. Sense farciment. Només el que necessites saber.",
@@ -39,7 +39,7 @@
   },
   "article": {
     "ca_notice_title": "Aquest article està disponible en castellà",
-    "ca_notice_body": "Estem traduint el blog al català. De moment pots llegir-lo en castellà — el contingut i els enllaços funcionen exactament igual.",
+    "ca_notice_body": "Estem traduint el blog al català. De moment pots llegir-lo en castellà — el contingut i els enllaços funcionen exactament igual.",
     "updated_2026": "Actualitzat 2026",
     "min_read_full": "{{count}} min de lectura",
     "cta_eyebrow": "Hostly",

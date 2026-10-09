@@ -73,7 +73,7 @@ El día del checkout, por la mañana:
 
 ### 5. Petición de reseña
 
-2-3 horas después del checkout (no inmediatamente, el huésped está viajando):
+2‑3 horas después del checkout (no inmediatamente, el huésped está viajando):
 
 > "Marta, espero que todo haya ido bien. Si te apetece, nos harías un gran favor dejando tu opinión en Airbnb: [enlace]. Cualquier comentario directo también es bienvenido."
 
@@ -135,7 +135,7 @@ Las plantillas rígidas que suenan a bot alejan. El tono debe ser **humano y bre
 
 ### 3. No establecer horario
 
-Si respondes a las 2 de la mañana, el huésped asume que siempre respondes. Una vez a la semana está bien; todos los días te convierte en esclavo. Con automatización, el huésped recibe respuesta inmediata sin que tú intervengas.
+Si respondes a las 2 de la mañana, el huésped asume que siempre respondes. Fija un horario y, fuera de él, deja que conteste el sistema. Con automatización, el huésped recibe respuesta inmediata sin que tú intervengas.
 
 ### 4. Ignorar el inbox de Airbnb
 

@@ -43,7 +43,7 @@ const PROHIBITS = {
     /asesora|assessora/i, /coach personal/i, /revisión previa|revisió prèvia/i, /firma digital|signatura digital/i, /Probar 14|Provar 14/i,
     /los únicos en España|els únics a Espanya/i, /\{\{|\}\}/, /undefined|NaN €|\[object Object\]/,
     // Auditoria de textos del 09-10-2026: el que no és cert o no es pot defensar
-    /Todo incluido|Tot inclòs|Sin módulos aparte|Sense mòduls a part/i, /(?<![-–\d])180\s€|~\s?120\s€/, /Sin overbookings|Sense overbookings/i,
+    /Todo incluido|Tot inclòs|Sin módulos aparte|Sense mòduls a part/i, /(?<![-–\u2011\d])180\s€|~\s?120\s€/, /Sin overbookings|Sense overbookings/i,
     /·\s*sin errores|·\s*sense errors/i, /De 6 suscripciones|De 6 subscripcions|seis herramientas|sis eines/i,
     /motor de reservas con|motor de reserves amb/i, /Setup guia|Onboarding/i, /ibéric|ibèric/i,
     /Cumples con la normativa sin|Compleixes la normativa sense/i, /te llamo hoy\.|et truco avui\./i],

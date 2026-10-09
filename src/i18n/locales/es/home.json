@@ -25,60 +25,60 @@
     "phone_now": "ahora",
     "phone_notifs": [
       {
-        "label": "Hostly · Fiscal",
-        "title": "Tasa turística · semestre listo",
-        "detail": "1.284 € a ingresar · fichero listo para presentar"
+        "label": "Hostly · Fiscal",
+        "title": "Tasa turística · semestre listo",
+        "detail": "1.284 € a ingresar · fichero listo para presentar"
       },
       {
-        "label": "Hostly · Check-in",
+        "label": "Hostly · Check-in",
         "title": "Check-in de Miguel completado",
-        "detail": "Registro enviado a los Mossos · tasa cobrada"
+        "detail": "Registro enviado a los Mossos · tasa cobrada"
       },
       {
-        "label": "Hostly · Limpiezas",
-        "title": "Limpieza confirmada · Anna",
-        "detail": "Coordinada automáticamente · mañana 11h"
+        "label": "Hostly · Limpiezas",
+        "title": "Limpieza confirmada · Anna",
+        "detail": "Coordinada automáticamente · mañana 11h"
       },
       {
-        "label": "Hostly · IA",
+        "label": "Hostly · IA",
         "title": "Pol ha obtenido respuesta de la IA",
-        "detail": "Wifi + 3 restaurantes recomendados · sin tu intervención"
+        "detail": "Wifi + 3 restaurantes recomendados · sin tu intervención"
       },
       {
-        "label": "Hostly · Precios",
+        "label": "Hostly · Precios",
         "title": "Festival local detectado en tu zona",
         "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
       },
       {
-        "label": "Hostly · Reservas",
-        "title": "Nueva reserva · Booking",
-        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
+        "label": "Hostly · Reservas",
+        "title": "Nueva reserva · Booking",
+        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
       }
     ],
     "bubbles": [
       {
-        "title": "Tasa turística · semestre listo",
-        "detail": "1.284 € a ingresar · fichero listo para presentar"
+        "title": "Tasa turística · semestre listo",
+        "detail": "1.284 € a ingresar · fichero listo para presentar"
       },
       {
         "title": "Check-in de Miguel completado",
-        "detail": "Registro enviado a los Mossos · tasa cobrada"
+        "detail": "Registro enviado a los Mossos · tasa cobrada"
       },
       {
-        "title": "Limpieza confirmada · Anna",
-        "detail": "Coordinada automáticamente · mañana 11h"
+        "title": "Limpieza confirmada · Anna",
+        "detail": "Coordinada automáticamente · mañana 11h"
       },
       {
         "title": "Pol ha obtenido respuesta de la IA",
-        "detail": "Wifi + 3 restaurantes recomendados · sin tu intervención"
+        "detail": "Wifi + 3 restaurantes recomendados · sin tu intervención"
       },
       {
         "title": "Festival local detectado en tu zona",
         "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
       },
       {
-        "title": "Nueva reserva · Booking",
-        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
+        "title": "Nueva reserva · Booking",
+        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
       }
     ]
   },
@@ -99,33 +99,33 @@
     "pairs": [
       {
         "before_title": "¿Enviaste el registro de esta reserva a la policía?",
-        "before_sub": "Tú mismo · pendiente desde el viernes",
+        "before_sub": "Tú mismo · pendiente desde el viernes",
         "after_title": "Registro enviado a la policía",
-        "after_sub": "Automático · sin tocar nada"
+        "after_sub": "Automático · sin tocar nada"
       },
       {
         "before_title": "Limpieza mañana. ¿Avisaste a Anna?",
-        "before_sub": "Sin responder · 3 h para el check-in",
+        "before_sub": "Sin responder · 3 h para el check-in",
         "after_title": "Anna avisada: mañana a las 11",
-        "after_sub": "Automático · confirmado"
+        "after_sub": "Automático · confirmado"
       },
       {
         "before_title": "Chekin + Smoobu + PriceLabs…",
         "before_sub": "Tres facturas distintas cada mes",
         "after_title": "40 €/mes por piso. Una sola factura.",
-        "after_sub": "Un pago · una app"
+        "after_sub": "Un pago · una app"
       },
       {
         "before_title": "¿Declaraste la tasa turística?",
         "before_sub": "Otro semestre que se cuela entre todo lo demás",
         "after_title": "Importe calculado. Listo para presentar.",
-        "after_sub": "5 minutos · con la tarifa de tu municipio"
+        "after_sub": "5 minutos · con la tarifa de tu municipio"
       },
       {
         "before_title": "30 mensajes de huéspedes sin leer",
         "before_sub": "Wifi, parking, check-out… siempre lo mismo",
         "after_title": "La mayoría, contestados en segundos.",
-        "after_sub": "IA · en su idioma · sin abrir el móvil"
+        "after_sub": "IA · en su idioma · sin abrir el móvil"
       }
     ]
   },
@@ -134,12 +134,12 @@
     "title_1": "Listo en minutos.",
     "title_2": "Funcionando para siempre.",
     "subtitle": "Tres pasos. No hace falta saber nada de tecnología.",
-    "footer_tagline": "Configuración guiada · Acompañamiento 1 a 1 el primer mes · Soporte en castellano y catalán",
+    "footer_tagline": "Configuración guiada · En Hostly Completo, acompañamiento 1 a 1 el primer mes · Soporte en castellano y catalán",
     "list": [
       {
         "tag": "Primero",
         "title": "Añade tu piso en unos minutos.",
-        "description": "Un cuestionario corto. Responde una sola vez las normas, horarios, accesos y wifi. Hostly lo recuerda por ti — el huésped lo recibirá solo cuando haga falta."
+        "description": "Un cuestionario corto. Responde una sola vez las normas, horarios, accesos y wifi. Hostly lo recuerda por ti — el huésped lo recibirá solo cuando haga falta."
       },
       {
         "tag": "Segundo",
@@ -188,11 +188,11 @@
     "title": "Un plan gratis. Un plan completo.",
     "title_sub": "Nada más.",
     "subtitle": "El check-in y la policía, gratis para siempre. El resto, en un solo precio por piso.",
-    "free_badge": "Gratis · Para siempre",
+    "free_badge": "Gratis · Para siempre",
     "free_price_note": "Sin tarjeta. Sin caducidad.",
-    "free_desc": "Para cumplir con la policía sin pagar nada al mes.",
+    "free_desc": "Para registrar a tus huéspedes en la policía sin pagar nada al mes.",
     "free_cta": "Empezar",
-    "free_fine": "Sin tarjeta · Si te atascas, te llamamos",
+    "free_fine": "Sin tarjeta · Si te atascas, te llamamos",
     "free_features": [
       "Check-in online del huésped, desde su móvil",
       "Registro a la policía: automático con los Mossos; SES, lo activamos contigo",
@@ -207,9 +207,9 @@
     "paid_price_bulk_suffix": "por apartamento desde 5 apt.",
     "paid_desc": "Hostly gestiona. Tú, menos. Reemplaza Chekin, Smoobu y el Excel; PriceLabs, integrado.",
     "paid_cta": "Empezar",
-    "paid_fine": "El primer mes, gratis · Sin permanencia",
+    "paid_fine": "El primer mes, gratis · Sin permanencia",
     "paid_features": [
-      "Todo lo del plan gratis",
+      "Todo lo del plan Gratis",
       "Airbnb y Booking sincronizados en tiempo real",
       "Mensajes con huéspedes contestados por IA, en su idioma",
       "Limpiezas asignadas y avisadas solas",
@@ -228,7 +228,7 @@
   "final_cta": {
     "eyebrow": "Para propietarios que quieren sistema, no caos",
     "title": "Gestiona menos. Empieza hoy.",
-    "subtitle": "El primer mes, gratis · Sin permanencia",
+    "subtitle": "El primer mes, gratis · Sin permanencia",
     "btn_start": "Empezar",
     "btn_demo": "Ver cómo funciona",
     "stat_messages": "Mensajes con IA, en el idioma del huésped",
@@ -247,7 +247,7 @@
       "sobre": "Sobre Hostly",
       "contacto": "Contacto"
     },
-    "copyright": "© 2026 Hostly™ · Orden operativo para propietarios de apartamentos turísticos."
+    "copyright": "© 2026 Hostly™ · Orden operativo para propietarios de apartamentos turísticos."
   },
   "testimonials": {
     "eyebrow": "En sus palabras",
@@ -264,7 +264,7 @@
   "support": {
     "founder_badge": "Nació de vivirlo",
     "founder_title": "De propietario a propietario.",
-    "founder_quote": "\"Hostly no nació en una oficina. Nació de la frustración de gestionar mis propios apartamentos y no poder desconectar nunca. Lo construí para mí — y funciona.\"",
+    "founder_quote": "\"Hostly no nació en una oficina. Nació de la frustración de gestionar mis propios apartamentos y no poder desconectar nunca. Lo construí para mí — y funciona.\"",
     "founder_name": "Biel",
     "founder_role": "Fundador y propietario",
     "promises_title_start": "El primer mes",
@@ -360,7 +360,7 @@
           "done": false
         }
       ],
-      "cta": "Continuar · 1 paso más",
+      "cta": "Continuar · 1 paso más",
       "card_labels": [
         "Precio base",
         "Código caja",
@@ -370,39 +370,39 @@
     },
     "integrations": {
       "title": "Integraciones",
-      "subtitle": "4 conectadas · listo para recibir",
+      "subtitle": "4 conectadas · listo para recibir",
       "statuses": [
         "Sincronizado",
         "Sincronizado",
-        "Conectado · 4821",
+        "Conectado · 4821",
         "Auto-configurado"
       ],
       "ready": "Listo para la próxima reserva"
     },
     "live": {
       "title": "Actividad",
-      "subtitle": "Últimas acciones · automáticas",
+      "subtitle": "Últimas acciones · automáticas",
       "live_label": "EN VIVO",
       "events": [
         {
           "title": "Reserva entrante",
-          "detail": "Carlos · Booking · 4 noches · 620 €"
+          "detail": "Carlos · Booking · 4 noches · 620 €"
         },
         {
           "title": "Bienvenida enviada",
-          "detail": "Inglés · plantilla personal"
+          "detail": "Inglés · plantilla personal"
         },
         {
           "title": "SES enviado a Mossos",
-          "detail": "DNI verificado · huésped dentro"
+          "detail": "DNI verificado · huésped dentro"
         },
         {
           "title": "Tasa turística cobrada",
-          "detail": "4 € · 2 huéspedes · 4 noches"
+          "detail": "4 € · 2 huéspedes · 4 noches"
         },
         {
           "title": "Limpieza asignada",
-          "detail": "Anna · sábado 11:00"
+          "detail": "Anna · sábado 11:00"
         }
       ]
     },
@@ -432,27 +432,27 @@
         }
       ],
       "next_checkin_label": "Próximo check-in",
-      "next_checkin_detail": "Mañana · 15:00 · Sarah D.",
+      "next_checkin_detail": "Mañana · 15:00 · Sarah D.",
       "status_ok": "Todo al día. Relaja."
     }
   },
   "precios_page": {
-    "meta_title": "Precios — Hostly",
+    "meta_title": "Precios — Hostly",
     "meta_description": "Un plan gratis para siempre con el check-in y el registro a la policía. Un plan completo de 40 €/mes por apartamento, el primer mes gratis.",
-    "sr_h1": "Precios de Hostly — Un plan gratis y un plan completo de 40 €/mes por apartamento",
+    "sr_h1": "Precios de Hostly — Un plan gratis y un plan completo de 40 €/mes por apartamento",
     "faq_heading": "Preguntas sobre el precio",
     "faq_subheading": "Lo que nos preguntan casi todos antes de empezar.",
     "cta_heading": "Empieza por lo que es gratis.",
     "cta_body": "Crea tu cuenta, añade tu piso y Hostly envía el registro a la policía por ti. Gratis para siempre.",
     "cta_button": "Empezar",
-    "cta_disclaimer": "Sin tarjeta · Sin caducidad · Sin compromiso",
+    "cta_disclaimer": "Sin tarjeta · Sin caducidad · Sin compromiso",
     "faqs": [
       {
-        "q": "¿El plan gratis es realmente gratis para siempre?",
+        "q": "¿El plan Gratis es realmente gratis para siempre?",
         "a": "Sí. El check-in online, el registro a la policía (con los Mossos, automático; SES, lo activamos contigo) y la tasa turística de Cataluña son gratis para siempre, sin tarjeta y sin límite de apartamentos."
       },
       {
-        "q": "¿Puedo empezar gratis y pasarme al plan completo más adelante?",
+        "q": "¿Puedo empezar gratis y pasarme a Hostly Completo más adelante?",
         "a": "Sí, así está pensado. Cuando quieras el resto de Hostly, nos lo dices (desde «Empezar» o escribiéndonos), hacemos una demo de 20 minutos y lo activamos ese mismo día, con el primer mes gratis."
       },
       {
@@ -465,7 +465,7 @@
       },
       {
         "q": "¿Qué pasa si tengo 5 apartamentos o más?",
-        "a": "Desde 5 apartamentos, cada uno pasa a 35 €/mes en lugar de 40 €. Con 20 pisos, 700 €/mes."
+        "a": "Desde 5 apartamentos, cada uno pasa a 35 €/mes en lugar de 40 €. Con 10 pisos, 350 €/mes."
       },
       {
         "q": "¿Cómo funciona el programa de referidos?",

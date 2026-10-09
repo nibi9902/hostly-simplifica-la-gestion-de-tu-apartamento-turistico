@@ -67,7 +67,7 @@ export function calcula(r: Respostes): Resultat {
   const hostly = r.pisos === "15+" ? null : pisos * (pisos >= 5 ? PREU_HOSTLY_VOLUM : PREU_HOSTLY);
   const horesMes = HORES_SETMANA[r.horas] * 4.33;
   const estalvi = hostly != null && avui > hostly ? avui - hostly : null;
-  const perHora = hostly != null && estalvi == null ? Math.round((hostly / horesMes) * 10) / 10 : null;
+  const perHora = hostly != null && estalvi == null ? Math.max(1, Math.round(hostly / horesMes)) : null;
   return { pisos, avui, hostly, eines, estalvi, perHora };
 }
 
