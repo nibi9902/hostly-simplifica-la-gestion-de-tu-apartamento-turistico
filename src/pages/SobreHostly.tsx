@@ -81,7 +81,7 @@ export default function SobreHostly() {
             </div>
             <div>
               <p className="font-bold text-[#0f172a] text-lg mb-0.5">{t("sobre.founder_name")}</p>
-              <p className="text-sm text-slate-400 mb-4">{t("sobre.founder_role")}</p>
+              <p className="text-sm text-slate-500 mb-4">{t("sobre.founder_role")}</p>
               <p className="text-slate-600 text-sm leading-relaxed italic">
                 {t("sobre.founder_quote")}
               </p>

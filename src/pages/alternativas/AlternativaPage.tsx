@@ -15,13 +15,13 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
   return (
     <PageShell
       title={`${c.tagline} | Hostly`}
-      description={`Compara Hostly con ${c.name}. ${c.priceNote}. Alternativa con IA, check-in gratis y compliance español.`}
+      description={t('page.metaDescription', { name: c.name, priceNote: c.priceNote })}
       path={`/alternativas/${c.slug}`}
       schemas={[
         ...(c.faqs.length > 0 ? [faqPageSchema(c.faqs)] : []),
         productComparisonSchema({
           name: `Hostly vs ${c.name}`,
-          description: `Compara Hostly con ${c.name}. ${c.priceNote}.`,
+          description: t('page.metaDescription', { name: c.name, priceNote: c.priceNote }),
           url: `/alternativas/${c.slug}`,
         }),
         breadcrumbSchema([
@@ -35,12 +35,12 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
       <section className="pt-32 pb-16 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f8fafc] to-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400 mb-4">{t('page.heroEyebrow')}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-4">{t('page.heroEyebrow')}</p>
             <h1 className="text-4xl md:text-5xl font-bold text-[#0f172a] tracking-tight mb-5 leading-tight">
               {c.tagline}
             </h1>
             <p className="text-lg text-slate-500 max-w-2xl leading-relaxed mb-4">{c.target}</p>
-            <p className="text-sm font-medium text-slate-400">{c.priceNote}</p>
+            <p className="text-sm font-medium text-slate-500">{c.priceNote}</p>
           </motion.div>
         </div>
       </section>
@@ -70,7 +70,7 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
       {/* Tabla comparativa */}
       <section className="py-16 px-6 md:px-12 lg:px-20 bg-[#f8fafc]">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400 mb-6">{t('page.comparisonEyebrow')}</p>
+          <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-6">{t('page.comparisonEyebrow')}</p>
           <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white">
             <div className="grid grid-cols-3 bg-[#0f172a] text-white text-sm font-semibold">
               <div className="p-4">{t('page.colFeature')}</div>
@@ -97,7 +97,7 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
               </div>
             ))}
           </div>
-          <p className="text-xs text-slate-400 text-center mt-4">{t('page.verifiedNote')}</p>
+          <p className="text-xs text-slate-500 text-center mt-4">{t('page.verifiedNote')}</p>
         </div>
       </section>
 
@@ -105,7 +105,7 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
       {c.faqs.length > 0 && (
         <section className="py-16 px-6 md:px-12 lg:px-20">
           <div className="max-w-3xl mx-auto">
-            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400 mb-6">{t('page.faqsEyebrow')}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-6">{t('page.faqsEyebrow')}</p>
             <div className="space-y-4">
               {c.faqs.map((faq) => (
                 <div key={faq.q} className="bg-[#f8fafc] border border-slate-100 rounded-2xl p-6">

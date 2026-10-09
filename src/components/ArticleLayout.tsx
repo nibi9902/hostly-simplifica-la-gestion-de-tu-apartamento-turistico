@@ -26,8 +26,15 @@ const COMPONENTS_ARTICLE = {
       ? <LangLink to={href}>{children}</LangLink>
       : <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>,
   table: ({ children }: { children?: React.ReactNode }) => (
-    <div className="overflow-x-auto -mx-1 px-1"><table>{children}</table></div>
+    // tabIndex: al mòbil la taula llisca i s'ha de poder moure amb el teclat
+    <div className="overflow-x-auto -mx-1 px-1" tabIndex={0} role="region" aria-label="Tabla"><table>{children}</table></div>
   ),
+  // Les llistes «- [ ]» del markdown són llistes de comprovació per llegir, no formularis:
+  // una casella dibuixada (sense etiqueta, la casella real no s'entenia amb lector de pantalla)
+  input: ({ type, checked }: { type?: string; checked?: boolean }) =>
+    type === 'checkbox'
+      ? <span aria-hidden="true" className="inline-block mr-2 text-slate-500">{checked ? '☑' : '☐'}</span>
+      : null,
 };
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -86,7 +93,7 @@ export default function ArticleLayout({ post }: Props) {
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease }}>
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-sm text-slate-400 mb-8">
+            <div className="flex items-center gap-2 text-sm text-slate-500 mb-8">
               <LangLink to="/" className="hover:text-slate-600 transition-colors">Hostly</LangLink>
               <span>/</span>
               <LangLink to="/blog" className="hover:text-slate-600 transition-colors flex items-center gap-1">
@@ -125,7 +132,7 @@ export default function ArticleLayout({ post }: Props) {
             </p>
 
             {/* Metadata */}
-            <div className="flex flex-wrap items-center gap-5 text-sm text-slate-400 pb-8 border-b border-slate-100">
+            <div className="flex flex-wrap items-center gap-5 text-sm text-slate-500 pb-8 border-b border-slate-100">
               {post.publishedAt && (
                 <span className="flex items-center gap-1.5">
                   <Calendar className="w-4 h-4" />
@@ -227,7 +234,7 @@ export default function ArticleLayout({ post }: Props) {
         {/* Articles relacionats */}
         {related.length > 0 && (
           <div className="max-w-3xl mx-auto px-6 md:px-8 mt-16">
-            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400 mb-6">{t('article.related_label')}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-6">{t('article.related_label')}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {related.map((p, i) => (
                 <MotionLangLink
@@ -242,7 +249,7 @@ export default function ArticleLayout({ post }: Props) {
                   <h3 className="text-sm font-bold text-[#0f172a] group-hover:text-primary transition-colors leading-snug">
                     {p.title}
                   </h3>
-                  <span className="flex items-center gap-1 text-[11px] text-slate-400 mt-auto">
+                  <span className="flex items-center gap-1 text-[11px] text-slate-500 mt-auto">
                     <Clock className="w-3 h-3" /> {p.readingTime} min
                   </span>
                 </MotionLangLink>

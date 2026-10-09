@@ -31,7 +31,7 @@ faqs:
 
 Si gestionas uno o varios apartamentos turísticos, probablemente has notado lo mismo que todos: **la mayor parte de tu tiempo no la roba el huésped, la roban las tareas rutinarias que repites cada semana**. Responder "¿a qué hora es el check-in?" por décima vez. Enviar el código de la puerta. Recordar a la limpiadora que ha entrado una reserva el sábado. Actualizar el precio de agosto.
 
-La IA en 2026 ya resuelve buena parte de esto. No como "un chatbot que a veces contesta", sino como un sistema que entiende contexto, aprende de ti y te avisa cuando necesita tu ayuda. Esta guía cubre qué se puede automatizar de verdad, qué no, cómo empezar sin complicarte y qué herramientas tienen sentido para un propietario o pequeño gestor ibérico.
+La IA en 2026 ya resuelve buena parte de esto. No como "un chatbot que a veces contesta", sino como un sistema que entiende contexto, aprende de ti y te avisa cuando necesita tu ayuda. Esta guía cubre qué se puede automatizar de verdad, qué no, cómo empezar sin complicarte y qué herramientas tienen sentido para un propietario o pequeño gestor en España.
 
 ## El problema real: no son las reservas, es lo que hay entre medias
 
@@ -39,7 +39,7 @@ Un apartamento turístico genera, por reserva, unas **15-25 microtareas** invisi
 
 - Confirmar los detalles al huésped
 - Enviar el enlace de check-in online
-- Registrar al huésped en SES (o Mossos, o Ertzaintza)
+- Registrar al huésped en la policía (SES.Hospedajes o Mossos)
 - Contestar 3-5 preguntas antes de la llegada
 - Enviar código de acceso a tiempo
 - Avisar a la limpiadora del checkout
@@ -56,16 +56,16 @@ La automatización con IA no elimina el trabajo humano importante (branding, dec
 
 ### 1. Respuestas a mensajes rutinarios
 
-La mayoría de los mensajes que recibes caben en unas 20 categorías: hora de check-in, aparcamiento, WiFi, toallas, cerca hay… Una IA entrenada con tus respuestas pasadas (o con plantillas que tú defines) responde al huésped en segundos, en el idioma del huésped, 24/7.
+La mayoría de los mensajes que recibes caben en unas 20 categorías: hora de check-in, aparcamiento, wifi, toallas, cerca hay… Una IA entrenada con tus respuestas pasadas (o con plantillas que tú defines) responde al huésped en segundos, en el idioma del huésped, 24/7.
 
 Dos claves para que esto funcione sin parecer un bot:
 
-- **Que hable como tú.** La IA tiene que aprender tu tono, no usar el suyo. "Hola Maria! El WiFi está en la nevera" no es lo mismo que "Estimada clienta, le informamos de que el código WiFi se encuentra adherido al electrodoméstico refrigerador".
+- **Que hable como tú.** La IA tiene que aprender tu tono, no usar el suyo. "¡Hola, Maria! El wifi está en la nevera" no es lo mismo que "Estimada clienta, le informamos de que el código wifi se encuentra adherido al electrodoméstico refrigerador".
 - **Que sepa escalar.** Si una pregunta se sale del guion, la IA te avisa en lugar de inventarse una respuesta. Esta es la diferencia entre una IA útil y un chatbot frustrante.
 
-### 2. Check-in online + SES automático
+### 2. Check-in online + registro a la policía
 
-El huésped hace check-in desde su móvil: sube su documento de identidad, firma, introduce la hora prevista de llegada. La plataforma envía los datos automáticamente a SES.Hospedajes (o a Mossos en Cataluña, Ertzaintza en Euskadi). Tú no mueves un dedo.
+El huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; fuera de Cataluña, a SES.Hospedajes, que lo activamos contigo). Tú no mueves un dedo.
 
 Ventaja adicional: el huésped ya ha llegado **antes de llegar**. Cuando se presenta, tiene el código, las instrucciones y ya te ha dejado los datos legales. Reduce tensión al check-in real y elimina totalmente la necesidad de quedar en persona.
 
@@ -87,7 +87,7 @@ No confundir con "mandar un mensaje a las 10:00 del día de entrada". Un sistema
 - Recordatorio de checkout a las 10h del día de salida.
 - Petición de reseña 2 horas después del checkout.
 
-Y cada mensaje se adapta al canal del huésped (Airbnb inbox, WhatsApp, email) y al idioma.
+Y cada mensaje se adapta al canal del huésped (WhatsApp o chat de Airbnb y Booking) y a su idioma.
 
 ## Qué NO automatiza bien la IA (al menos todavía)
 
@@ -99,7 +99,7 @@ Siendo honesto: hay cosas en las que la IA, en 2026, aún no llega a donde neces
 
 ### Negociaciones
 
-Huéspedes que piden rebajas, early check-in "especial", cambios de fecha sin penalización. La IA puede responder con tus reglas, pero la negociación real (ceder en algo a cambio de algo) sigue siendo tuya.
+Huéspedes que piden rebajas, entrar antes de hora "por esta vez", cambios de fecha sin penalización. La IA puede responder con tus reglas, pero la negociación real (ceder en algo a cambio de algo) sigue siendo tuya.
 
 ### Branding único
 
@@ -107,29 +107,29 @@ Si quieres que tu apartamento tenga una experiencia singular (una nota escrita a
 
 ### Decisiones estratégicas
 
-¿Subir el precio medio un 15% arriesgando ocupación? ¿Aceptar reservas de última hora con descuento? ¿Entrar en Vrbo además de Airbnb y Booking? Decisiones de negocio. La IA te da datos; tú decides.
+¿Subir el precio medio un 15 % arriesgando ocupación? ¿Aceptar reservas de última hora con descuento? ¿Entrar en Vrbo además de Airbnb y Booking? Decisiones de negocio. La IA te da datos; tú decides.
 
 ## Cómo empezar: tres opciones realistas
 
 ### Opción 1: seguir como estás, pero añadir una capa de IA en WhatsApp
 
-Si tu operativa actual funciona y sólo te ahoga la mensajería, herramientas como **HolaAI** o **Vaucen** se integran sobre tu sistema existente (Airbnb, Booking) y responden por ti. Inversión: €19-79/mes. Pro: entrada barata. Contra: una herramienta más que mantener, que cubre solo la mensajería.
+Si tu operativa actual funciona y solo te ahoga la mensajería, hay herramientas de IA que se conectan a tu sistema actual (Airbnb, Booking) y responden por ti. Inversión: una cuota mensual que depende de la herramienta (consulta su web). Pro: entrada sencilla. Contra: una herramienta más que mantener, que cubre solo la mensajería.
 
 ### Opción 2: PMS completo con IA integrada
 
-Sustituyes tu sistema actual (Excel, calendario de Airbnb, grupos de WhatsApp) por una app de gestión completa que incluye mensajería con IA + check-in + registro de viajeros + limpiezas + precios. Ejemplos: **Hostly** (hecho en Cataluña, con WhatsApp y registro de viajeros a la policía), **Hospitable** (anglosajón), **Prohost AI** (joven, freemium).
+Sustituyes tu sistema actual (Excel, calendario de Airbnb, grupos de WhatsApp) por una app de gestión completa que incluye mensajería con IA + check-in + registro de viajeros + limpiezas + precios. Ejemplos: **Hostly** (hecho en Cataluña, con WhatsApp y registro de viajeros a la policía), **Hospitable** (anglosajón), **Prohost AI** (joven, con plan gratis).
 
-Inversión: €25-60/mes por apartamento. Pro: todo integrado, ahorro real. Contra: supone una migración inicial de 1-2 semanas.
+Inversión: en Hostly, el check-in y el registro son gratis, y Hostly Completo cuesta 40 €/mes por piso (35 € desde 5); en las demás, según el plan. Pro: lo tienes integrado en un solo sitio y el ahorro de tiempo es real. Contra: supone una migración inicial de 1-2 semanas.
 
 ### Opción 3: stack de herramientas conectadas (avanzado)
 
-Para gestores técnicos: PMS base (Icnea, Avantio) + capa IA (Hospitable, Prohost) + pricing (PriceLabs) + check-in (Chekin) + limpieza (TurnoverBnB). Funciona si ya tienes una operativa madura y quieres lo mejor de cada vertical. Contra: 5 suscripciones, 5 onboardings, integraciones que a veces fallan.
+Para gestores técnicos: PMS base (Icnea, Avantio) + capa de IA (Hospitable, Prohost) + precios (PriceLabs) + check-in (Chekin) + limpieza (Turno, antes TurnoverBnB). Funciona si ya tienes una operativa madura y quieres lo mejor de cada vertical. Contra: 5 suscripciones, 5 puestas en marcha, integraciones que a veces fallan.
 
-**Recomendación honesta para un propietario o gestor de 1-20 apartamentos**: la opción 2 es la más eficiente. Una herramienta que hace bien todo es mejor que cinco herramientas excelentes que no se hablan entre sí.
+**Recomendación honesta para un propietario o gestor de 1 a 15 pisos**: la opción 2 es la más eficiente. Una herramienta que hace bien todo es mejor que cinco herramientas excelentes que no se hablan entre sí.
 
 ## El enfoque Hostly: una capa humana encima de la IA
 
-Nosotros creemos que la IA no tiene que "sustituir" al propietario. Tiene que **encargarse de que gestionar el apartamento sólo sea necesario cuando realmente lo es**. El apartamento funciona solo. La IA responde. El check-in se hace. La limpieza se coordina. El registro de viajeros va a la policía. Si se rompe una caldera, si hay una queja o una negociación, ahí entras tú.
+Nosotros creemos que la IA no tiene que "sustituir" al propietario. Tiene que **encargarse de que gestionar el apartamento solo sea necesario cuando realmente lo es**. El apartamento funciona solo. La IA responde. El check-in se hace. La limpieza se coordina. El registro de viajeros va a la policía. Si se rompe una caldera, si hay una queja o una negociación, ahí entras tú.
 
 Esto cambia la relación con el negocio. Dejas de vivir pendiente del móvil y pasas a revisar el panel una vez al día, como quien mira el tiempo. Tu apartamento deja de ser una tarea constante y se convierte en lo que debería haber sido desde el principio: un negocio que solo te necesita cuando de verdad hace falta.
 
@@ -147,11 +147,11 @@ Si tu gestión manual era caótica, la automatización la hace caótica más rá
 
 ### Cero intervención humana
 
-Un apartamento 100% automatizado pierde el toque que genera reseñas de 5 estrellas. El objetivo no es "ninguna interacción", es "sólo interacciones que aporten". Una nota escrita a mano de bienvenida sigue funcionando.
+Un apartamento 100 % automatizado pierde el toque que genera reseñas de 5 estrellas. El objetivo no es "ninguna interacción", es "solo interacciones que aporten". Una nota escrita a mano de bienvenida sigue funcionando.
 
 ### Elegir la herramienta por el precio más bajo
 
-€19/mes por una IA que responde mal cuesta más que €49/mes por una que responde bien: la mala requiere tu corrección constante. Mide el ahorro de tiempo, no el coste de licencia.
+19 €/mes por una IA que responde mal cuesta más que 49 €/mes por una que responde bien: la mala requiere tu corrección constante. Mide el ahorro de tiempo, no el coste de licencia.
 
 ## Próximos pasos
 

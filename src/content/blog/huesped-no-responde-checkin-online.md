@@ -20,7 +20,7 @@ faqs:
   - question: "¿Puedo negar la entrada si el huésped no ha hecho el check-in?"
     answer: "Puedes, pero es mejor evitarlo. El check-in online existe para facilitar el registro legal, no como obstáculo. Si al llegar no lo ha hecho, puede completarlo en persona con tu asistencia."
   - question: "¿Qué pasa con SES si el huésped llega sin completar el check-in online?"
-    answer: "Sigues obligado a registrar en SES/Mossos/Ertzaintza dentro de las 24h. Si no lo ha hecho el huésped, tienes que capturar sus datos en persona y registrarlos tú. Más trabajo para ti, pero la obligación no desaparece."
+    answer: "Sigues obligado a comunicar sus datos a la policía dentro de las 24 h. Si no lo ha hecho el huésped, tienes que capturar sus datos en persona y registrarlos tú. Más trabajo para ti, pero la obligación no desaparece."
 ---
 
 Configuras el check-in online perfecto: enlace automático, recordatorio, instrucciones claras. Y aun así, hay huéspedes que no lo completan hasta el último momento o directamente llegan sin haberlo hecho. Esta guía cubre **el protocolo práctico** para cuando esto pasa.
@@ -49,7 +49,7 @@ Establece expectativa clara y posiciona el check-in como parte normal del proces
 
 ### Momento 2: enlace de check-in (3 días antes)
 
-> "Marta, aquí tienes el enlace del check-in online: [link]. Con esto registras los datos que pide la normativa y recibirás el código de acceso el día 15. Si tienes dudas, dímelo."
+> "Marta, aquí tienes el enlace del check-in online: [enlace]. Con esto registras los datos que pide la normativa y recibirás el código de acceso el día 15. Si tienes dudas, dímelo."
 
 El enlace personalizado evita confusión.
 
@@ -57,13 +57,13 @@ El enlace personalizado evita confusión.
 
 Si no lo ha hecho a 24h de llegar:
 
-> "Marta, mañana llegas :) Aún no has completado el check-in online. Es importante porque: 1) es obligatorio por ley 2) te permite entrar directamente sin que nos veamos. Enlace: [link]. Tarda 3 minutos."
+> "Marta, mañana llegas :) Aún no has completado el check-in online. Es importante porque: 1) es obligatorio por ley 2) te permite entrar directamente sin que nos veamos. Enlace: [enlace]. Tarda 3 minutos."
 
-Explicar **el beneficio para el huésped** (no quedar, entrada directa) funciona mejor que sólo el requisito legal.
+Explicar **el beneficio para el huésped** (no quedar, entrada directa) funciona mejor que solo el requisito legal.
 
 ### Momento 4: último recordatorio (12h antes)
 
-> "Marta, sigue pendiente el check-in online. Si no lo completas antes de llegar, tendremos que hacerlo en persona y te llevará más tiempo. Enlace: [link]. Dudas: 673 XXX XXX."
+> "Marta, sigue pendiente el check-in online. Si no lo completas antes de llegar, tendremos que hacerlo en persona y te llevará más tiempo. Enlace: [enlace]. Dudas: 673 XXX XXX."
 
 Tono firme pero no agresivo. Añades contacto directo por si hay problema técnico.
 
@@ -75,7 +75,7 @@ Tres escenarios según el caso:
 
 Si ya está dentro y ha entrado con el código (porque lo enviaste de todos modos), envíale un mensaje:
 
-> "Hola Marta, veo que ya has llegado. Aún me falta el registro legal. Por favor complétalo aquí: [link]. Es obligatorio y son 3 minutos. Gracias."
+> "Hola Marta, veo que ya has llegado. Aún me falta el registro legal. Por favor complétalo aquí: [enlace]. Es obligatorio y son 3 minutos. Gracias."
 
 La mayoría lo hace en las horas siguientes.
 
@@ -83,14 +83,14 @@ La mayoría lo hace en las horas siguientes.
 
 Si tu protocolo bloquea el código hasta que el check-in esté completo (recomendable para casos difíciles), el huésped te contactará inevitablemente. En ese momento:
 
-> "Hola Marta, ya estás aquí. Para darte acceso necesito que completes el check-in online: [link]. Es cuestión de minutos. Te paso el código en cuanto lo tenga."
+> "Hola Marta, ya estás aquí. Para darte acceso necesito que completes el check-in online: [enlace]. Es cuestión de minutos. Te paso el código en cuanto lo tenga."
 
 ### Escenario C: huésped en persona, insiste en hacerlo al llegar
 
 Si estás presente y rechaza el check-in online:
 
 1. Captura sus datos **allí mismo** con su DNI/pasaporte.
-2. Regístralo tú en SES/Mossos/Ertzaintza desde tu móvil.
+2. Regístralo tú en la plataforma de la policía que te toque, desde el móvil.
 3. Guarda foto del documento por si hay inspección.
 
 Es peor para ti (más trabajo) pero cumples la obligación.
@@ -102,9 +102,9 @@ Un sistema bien configurado te ahorra este seguimiento:
 - **Envío automático** de los 4 mensajes en los momentos exactos.
 - **Generación automática de enlaces** personalizados por reserva.
 - **Bloqueo automático del código** si el check-in no está completo (opcional, configurable).
-- **Notificación a ti** sólo cuando algo requiere intervención (12h antes sin completar).
+- **Notificación a ti** solo cuando algo requiere intervención (12h antes sin completar).
 
-En Hostly, con el plan completo, el enlace de check-in se envía automáticamente con los mensajes programados (por WhatsApp o por el chat de Airbnb o Booking), y el código de acceso solo aparece cuando el huésped ha completado el check-in. Herramientas específicas como Chekin también automatizan esta parte.
+En Hostly Completo, el enlace de check-in se envía automáticamente con los mensajes programados (por WhatsApp o por el chat de Airbnb o Booking), y el código de acceso solo aparece cuando el huésped ha completado el check-in. Herramientas específicas como Chekin también automatizan esta parte.
 
 ## Cuándo bloquear el código y cuándo no
 

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { uniqueCompetitors } from '@/lib/data/competitors';
+import { useCompetitors } from '@/lib/data/useCompetitors';
 import PageShell from '@/components/PageShell';
 import { breadcrumbSchema } from '@/lib/seo/schemas';
 import { useTranslation } from 'react-i18next';
@@ -14,11 +14,13 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function AlternativasIndex() {
   const { t } = useTranslation('alternativas');
+  // Castellà o català segons l'idioma de la URL.
+  const competitors = useCompetitors();
 
   return (
     <PageShell
-      title="Alternativas a los PMS más populares | Hostly"
-      description="Compara Hostly con Icnea, Hostify, Lodgify, Smoobu, Hospitable, Guesty y Avantio. La alternativa ibérica con IA, check-in gratis y compliance español."
+      title={t('index.metaTitle')}
+      description={t('index.metaDescription')}
       path="/alternativas"
       schemas={[
         breadcrumbSchema([
@@ -30,7 +32,7 @@ export default function AlternativasIndex() {
       <section className="pt-32 pb-16 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f8fafc] to-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400 mb-4">{t('index.eyebrow')}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-4">{t('index.eyebrow')}</p>
             <h1 className="text-4xl md:text-5xl font-bold text-[#0f172a] tracking-tight mb-5 leading-tight">
               {t('index.h1')}
             </h1>
@@ -70,7 +72,7 @@ export default function AlternativasIndex() {
 
       <section className="py-16 px-6 md:px-12 lg:px-20">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-5">
-          {uniqueCompetitors.map((c, i) => (
+          {competitors.map((c, i) => (
             <MotionLangLink
               key={c.slug}
               to={`/alternativas/${c.slug}`}

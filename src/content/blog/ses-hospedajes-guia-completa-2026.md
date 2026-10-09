@@ -29,7 +29,7 @@ faqs:
   - question: "¿Qué pasa si tengo apartamentos en Cataluña o País Vasco?"
     answer: "En Cataluña, debes registrar a los viajeros en Mossos d'Esquadra a través de su propio sistema. En Euskadi, la Ertzaintza gestiona el registro. En el resto del Estado, se hace vía SES.Hospedajes. Si operas en varias comunidades, necesitas cubrir los tres canales."
   - question: "¿Cuánto es la multa por no registrar a un huésped?"
-    answer: "Las sanciones van de 100€ hasta 30.000€ según la gravedad. En la práctica, la mayoría de expedientes se abren por no registrar de forma sistemática, no por fallos puntuales. Lo relevante es demostrar un proceso consistente."
+    answer: "Las sanciones van de 100 € hasta 30.000 € según la gravedad. En la práctica, la mayoría de expedientes se abren por no registrar de forma sistemática, no por fallos puntuales. Lo relevante es demostrar un proceso consistente."
   - question: "¿Puedo delegar el registro en una plataforma automática?"
     answer: "Sí, y es lo recomendable. Hostly, por ejemplo, envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, con los datos que el huésped introduce en el check-in online, y guarda el comprobante. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta."
   - question: "¿Qué datos exactos hay que recoger del huésped?"
@@ -125,10 +125,10 @@ Si operas en múltiples comunidades, tu sistema de gestión tiene que saber a qu
 
 ## Sanciones: del susto al expediente
 
-El Real Decreto 933/2021 recoge sanciones de entre **100€ y 30.000€** según la gravedad y la reincidencia. En la práctica, lo que vemos en el mercado es:
+El Real Decreto 933/2021 recoge sanciones de entre **100 € y 30.000 €** según la gravedad y la reincidencia. En la práctica, lo que vemos en el mercado es:
 
-- **Leves** (hasta 600€): fallos puntuales, errores en datos concretos, envíos con retraso.
-- **Graves** (600€ - 30.000€): no registrar de forma sistemática, ocultar huéspedes, negarse a colaborar.
+- **Leves** (hasta 600 €): fallos puntuales, errores en datos concretos, envíos con retraso.
+- **Graves** (600-30.000 €): no registrar de forma sistemática, ocultar huéspedes, negarse a colaborar.
 - **Muy graves**: dolo manifiesto, reincidencia, combinación con otras infracciones (licencia, tasas, etc.).
 
 Lo importante para un propietario o pequeño gestor: **no es probable que te multen por un fallo puntual**, pero sí por un patrón de incumplimiento. Si el Ministerio cruza datos de Airbnb/Booking con SES y no apareces, eres candidato a inspección.
@@ -141,7 +141,7 @@ Hay dos caminos realistas para un propietario o gestor que no quiere dedicar tie
 
 ### Opción A: herramienta vertical de check-in + SES (tipo Chekin)
 
-Son plataformas que hacen **sólo** check-in online + envío a SES/Mossos/Ertzaintza. El huésped recibe un enlace, introduce sus datos, escanea el documento de identidad y los datos se envían. Funcionan bien, pero son una herramienta más que mantener y pagar, desconectada de tu calendario, tus limpiezas, tus precios y tus mensajes.
+Son plataformas que hacen **solo** check-in online + envío a la policía. El huésped recibe un enlace, introduce sus datos, escanea el documento de identidad y los datos se envían. Funcionan bien, pero son una herramienta más que mantener y pagar, desconectada de tu calendario, tus limpiezas, tus precios y tus mensajes.
 
 ### Opción B: PMS con el registro de viajeros integrado (tipo Hostly)
 
@@ -161,7 +161,7 @@ Antes de seguir, tres enlaces que conviene tener a mano:
 
 Estos son los cinco patrones de error más comunes:
 
-### 1. Registrar sólo al titular de la reserva y no a los acompañantes adultos
+### 1. Registrar solo al titular de la reserva y no a los acompañantes adultos
 
 Error clásico. Si una familia de cuatro adultos reserva a nombre de uno, tienes que registrar a los cuatro. Una reserva en Airbnb a nombre de "Maria García, 4 adultos" obliga a recoger datos de los cuatro.
 
@@ -175,7 +175,7 @@ El plazo de 24 horas es estricto. Si hay check-in a las 23:00 del viernes y no r
 
 ### 4. No registrar estancias cortas
 
-"Sólo es una noche, no pasará nada." Sí pasa: no hay mínimo de duración. Una noche de estancia genera la misma obligación que una de catorce.
+"Solo es una noche, no pasará nada." Sí pasa: no hay mínimo de duración. Una noche de estancia genera la misma obligación que una de catorce.
 
 ### 5. Olvidar que un mismo establecimiento puede tener dos obligaciones
 

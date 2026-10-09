@@ -31,13 +31,13 @@ export default function Cookies() {
     >
       <div className="pt-28 pb-24 px-6 md:px-12 lg:px-20">
         <div className="max-w-3xl mx-auto prose prose-slate prose-base">
-          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
             {t("common.eyebrow")}
           </p>
           <h1 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-2 not-prose">
             {t("cookies.h1")}
           </h1>
-          <p className="text-sm text-slate-400 mb-10 not-prose">
+          <p className="text-sm text-slate-500 mb-10 not-prose">
             {t("common.last_updated", { date })}
           </p>
 
@@ -45,7 +45,7 @@ export default function Cookies() {
           <p>{t("cookies.p_que_son")}</p>
 
           <h2>{t("cookies.h2_que_usamos")}</h2>
-          <div className="not-prose overflow-x-auto rounded-2xl border border-slate-100">
+          <div className="not-prose overflow-x-auto rounded-2xl border border-slate-100" tabIndex={0} role="region" aria-label={t("cookies.h2_que_usamos")}>
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-[#f8fafc] text-left">

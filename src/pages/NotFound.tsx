@@ -14,7 +14,7 @@ const NotFound = () => {
 
       <div className="flex min-h-screen items-center justify-center bg-background px-6 py-12">
         <div className="text-center max-w-md mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary/70 mb-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
             {t("not_found.badge")}
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-4">

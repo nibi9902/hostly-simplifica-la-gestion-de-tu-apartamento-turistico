@@ -16,7 +16,7 @@ relatedSlugs:
   - "registro-viajeros-mossos-esquadra-cataluna"
 faqs:
   - question: "¿Cuál es la multa mínima por no registrar a un huésped?"
-    answer: "Las sanciones leves parten de 100€. Las más habituales por fallos puntuales están en el rango 100€-600€. No registrar de forma sistemática escala a sanción grave con mínimo de 601€ y hasta 30.000€."
+    answer: "Las sanciones leves parten de 100 €. Las más habituales por fallos puntuales están en el rango 100-600 €. No registrar de forma sistemática escala a sanción grave con mínimo de 601 € y hasta 30.000 €."
   - question: "¿Cómo se detecta si no estoy registrando?"
     answer: "Las OTAs (Airbnb, Booking) comparten datos estructurales con Hacienda y el Ministerio del Interior. Si tus noches vendidas en plataformas no cuadran con los registros SES/Mossos/Ertzaintza, el sistema detecta la discrepancia y se abre expediente."
   - question: "¿Me pueden multar retroactivamente?"
@@ -29,25 +29,25 @@ El Real Decreto 933/2021 no dejó ambigüedad: registrar a los huéspedes es obl
 
 El régimen sancionador distingue tres niveles según la gravedad:
 
-### Leves: 100€ - 600€
+### Leves: 100-600 €
 
 - Fallos puntuales en algún dato.
 - Retrasos ocasionales en el envío dentro de plazos razonables.
 - Errores formales sin intención de ocultar.
 
-### Graves: 601€ - 30.000€
+### Graves: 601-30.000 €
 
 - No registrar de forma sistemática (aunque sea 1-2 reservas sin registrar regularmente).
 - Ocultar huéspedes intencionalmente.
 - No tener el establecimiento dado de alta en el sistema pese a operar.
 - Negarse a colaborar en inspección.
 
-### Muy graves: más de 30.000€
+### Muy graves: más de 30.000 €
 
 - Dolo manifiesto, reincidencia grave.
 - Combinación con otras infracciones (sin licencia, fraude fiscal, etc.).
 
-**En la práctica**, la mayoría de expedientes a propietarios y pequeños gestores se abren en el rango leve-grave (entre 100€ y varios miles de euros).
+**En la práctica**, la mayoría de expedientes a propietarios y pequeños gestores se abren en el rango leve-grave (entre 100 € y varios miles de euros).
 
 ## Cómo se detecta el incumplimiento
 
@@ -98,29 +98,29 @@ La plataforma no lo permite en muchos casos, y cuando lo permite, genera señale
 
 ### 3. Implementa automatización ya
 
-No arranques con buena intención y vuelvas al patrón de fallo. Si has incumplido hasta ahora es probablemente porque lo hacías manual. Automatiza (PMS con SES o herramienta dedicada).
+No arranques con buena intención y vuelvas al patrón de fallo. Si has incumplido hasta ahora es probablemente porque lo hacías manual. Automatiza (un PMS con el registro integrado o una herramienta dedicada; con Hostly, el check-in y el registro a la policía son gratis).
 
 ### 4. Guarda evidencia de tu nuevo proceso
 
-Screenshots, logs, registros. Si te llega inspección mañana, poder demostrar "desde el X de abril de 2026 lo hago automáticamente con Y herramienta" ayuda.
+Capturas de pantalla, registros, comprobantes. Si te llega una inspección mañana, poder demostrar "desde el X de abril de 2026 lo hago automáticamente con Y herramienta" ayuda.
 
 ## Cómo evitarlas completamente
 
 La fórmula es simple pero no trivial:
 
 - **Automatiza el envío** para no depender de tu memoria o disponibilidad.
-- **Elige una herramienta que cubra tu territorio** (si estás en Cataluña necesitas Mossos, no sólo SES).
+- **Elige una herramienta que cubra tu territorio** (si estás en Cataluña necesitas Mossos, no solo SES).
 - **Revisa mensualmente** que todas las reservas del mes tienen registro enviado. Un repaso rápido de 10 minutos.
 - **Guarda el comprobante** de cada envío por si hay inspección.
 
-Una herramienta decente hace todo esto solo. Tu trabajo es sólo elegirla y confiar en el proceso.
+Una herramienta decente hace todo esto solo. Tu trabajo es solo elegirla y confiar en el proceso.
 
 ## Resumen
 
-- **100€-600€** por fallos leves.
-- **601€-30.000€** por incumplimiento sistemático.
+- **100-600 €** por fallos leves.
+- **601-30.000 €** por incumplimiento sistemático.
 - **Cruce de datos real** entre OTAs, Hacienda y Ministerio del Interior.
 - **Reincidencia multiplica**: pagar una multa y seguir igual es lo peor.
-- **Automatizar cuesta 9-25€/mes**: desproporcionado comparado con cualquier multa.
+- **Automatizar cuesta poco o nada**: con Hostly, el check-in y el registro a la policía son gratis; las herramientas dedicadas, como Chekin, empiezan en 3,95 €/mes por propiedad.
 
 No es una cuestión de "si pagarás alguna multa", es de "cuándo te toca". Automatizar ahora es gratis comparado con la primera sanción grave.

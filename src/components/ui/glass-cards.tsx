@@ -269,6 +269,8 @@ const Targeta: React.FC<TargetaProps> = ({ card, ambDemo }) => {
   const cyclingBrand = useCyclingItem('brands' in card.replaces ? card.replaces.brands : undefined, 2600);
 
   const solid = card.color.replace('rgba', 'rgb').replace(/,\s*[\d.]+\)$/, ')');
+  // Tons foscos del color de la targeta: el pur (verd, taronja…) no passa el contrast AA amb text petit
+  const fosc = (pct: number) => `color-mix(in srgb, ${solid} ${pct}%, #000)`;
 
   return (
     <div
@@ -297,7 +299,7 @@ const Targeta: React.FC<TargetaProps> = ({ card, ambDemo }) => {
 
         {/* Left: text */}
         <div className="glass-card-left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '3rem 3rem 3rem 3.5rem', position: 'relative', zIndex: 1 }}>
-          <span style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '4px 12px', borderRadius: '6px', width: 'fit-content', marginBottom: '1.25rem', background: card.color.replace('0.9', '0.1'), color: solid, border: `1px solid ${card.color.replace('0.9', '0.2')}` }}>
+          <span style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '4px 12px', borderRadius: '6px', width: 'fit-content', marginBottom: '1.25rem', background: card.color.replace('0.9', '0.1'), color: fosc(55), border: `1px solid ${card.color.replace('0.9', '0.2')}` }}>
             {card.badge}
           </span>
           <h3 className="glass-card-title" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.1rem)', fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.03em', color: card.textColor, marginBottom: '1rem' }}>
@@ -317,7 +319,7 @@ const Targeta: React.FC<TargetaProps> = ({ card, ambDemo }) => {
               className="font-accent glass-card-replaces-phrase"
               style={{
                 fontSize: 'clamp(1.35rem, 2.1vw, 1.85rem)',
-                color: solid,
+                color: fosc(60),
                 letterSpacing: '-0.015em',
                 lineHeight: 1.1,
                 marginBottom: '0.6rem',
@@ -405,7 +407,7 @@ const Targeta: React.FC<TargetaProps> = ({ card, ambDemo }) => {
                 marginTop: '1.25rem',
                 padding: '0.625rem 1.1rem',
                 borderRadius: '999px',
-                background: solid,
+                background: fosc(60),
                 color: '#fff',
                 fontSize: '13px',
                 fontWeight: 600,
@@ -449,7 +451,7 @@ const Targeta: React.FC<TargetaProps> = ({ card, ambDemo }) => {
           }} />
           {ambDemo && (
             <Suspense fallback={null}>
-              <div className="glass-card-demo" style={{
+              <div className="glass-card-demo" aria-hidden="true" style={{
                 position: 'relative', zIndex: 1,
                 width: '100%',
                 transform: 'scale(0.85)',

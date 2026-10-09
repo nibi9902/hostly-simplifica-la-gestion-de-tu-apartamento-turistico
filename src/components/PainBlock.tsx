@@ -56,7 +56,7 @@ const Bubble = ({
       <p className={`text-sm font-bold leading-tight md:truncate ${isAfter ? "text-emerald-800" : "text-slate-900"}`}>
         {n.title}
       </p>
-      <p className="text-[11px] text-slate-400 font-medium md:truncate mt-0.5">
+      <p className="text-[11px] text-slate-500 font-medium md:truncate mt-0.5">
         {n.sub}
       </p>
     </div>
@@ -85,7 +85,7 @@ const PainBlock = () => {
           transition={{ duration: 0.6, ease }}
           className="text-center mb-14 md:mb-16"
         >
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary/70 mb-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
             {t("pain.eyebrow")}
           </p>
           <h2 className="text-2xl md:text-5xl font-bold text-foreground tracking-tight leading-[1.05] mb-4">
@@ -108,7 +108,7 @@ const PainBlock = () => {
           >
             <div className="flex items-center gap-2 mb-5">
               <div className="h-px flex-1 bg-rose-200/70" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-rose-400/80 flex-shrink-0">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-rose-700 flex-shrink-0">
                 {t("pain.col_before")}
               </span>
               <div className="h-px flex-1 bg-rose-200/70" />
@@ -137,7 +137,7 @@ const PainBlock = () => {
           >
             <div className="flex items-center gap-2 mb-5">
               <div className="h-px flex-1 bg-emerald-200/70" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-500/80 flex-shrink-0">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-700 flex-shrink-0">
                 {t("pain.col_after")}
               </span>
               <div className="h-px flex-1 bg-emerald-200/70" />
@@ -178,7 +178,7 @@ const PainBlock = () => {
             {t("pain.closer_cta")}
             <ArrowRight className="w-4 h-4" />
           </button>
-          <p className="text-xs text-muted-foreground/70 mt-3">
+          <p className="text-xs text-muted-foreground mt-3">
             {t("pain.closer_fine")}
           </p>
         </motion.div>

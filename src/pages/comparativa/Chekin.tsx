@@ -9,12 +9,15 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 // `null` = no ho sabem amb certesa (Chekin té cobraments i comunicació amb l'hoste;
 // no s'hi pot posar una ✗). Ordre = `chekin.features` del JSON.
+// Fila 5 = «Plan gratis para siempre»: Chekin cobra per propietat i només té prova
+// gratuïta (pàgina de preus, octubre del 2026). Abans era «Precio por check-in», però
+// Chekin ja no cobra per check-in.
 const comparisonData: Array<{ hostly: boolean; chekin: boolean | null }> = [
   { hostly: true,  chekin: true  },
   { hostly: true,  chekin: true  },
   { hostly: true,  chekin: true  },
   { hostly: true,  chekin: true  },
-  { hostly: false, chekin: true  },
+  { hostly: true,  chekin: false },
   { hostly: true,  chekin: false },
   { hostly: true,  chekin: null  },
   { hostly: true,  chekin: false },
@@ -50,7 +53,7 @@ export default function ComparativaChekin() {
       <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f8fafc] to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400 mb-4">{t("chekin.hero_eyebrow")}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">{t("chekin.hero_eyebrow")}</p>
             <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight">
               {t("chekin.hero_heading")}
             </h1>
@@ -68,12 +71,12 @@ export default function ComparativaChekin() {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, ease }}
             className="rounded-2xl border border-slate-200 p-8"
           >
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">{t("chekin.who_chekin_eyebrow")}</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">{t("chekin.who_chekin_eyebrow")}</p>
             <h2 className="text-xl font-bold text-[#0f172a] mb-4">{t("chekin.who_chekin_heading")}</h2>
-            <p className="text-slate-500 text-sm leading-relaxed">
+            <p className="text-slate-600 text-sm leading-relaxed">
               {t("chekin.who_chekin_p1")}
             </p>
-            <p className="text-slate-500 text-sm leading-relaxed mt-3">
+            <p className="text-slate-600 text-sm leading-relaxed mt-3">
               {t("chekin.who_chekin_p2")}
             </p>
           </motion.div>
@@ -83,10 +86,10 @@ export default function ComparativaChekin() {
           >
             <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">{t("chekin.who_hostly_eyebrow")}</p>
             <h2 className="text-xl font-bold text-[#0f172a] mb-4">{t("chekin.who_hostly_heading")}</h2>
-            <p className="text-slate-500 text-sm leading-relaxed">
+            <p className="text-slate-600 text-sm leading-relaxed">
               {t("chekin.who_hostly_p1")}
             </p>
-            <p className="text-slate-500 text-sm leading-relaxed mt-3">
+            <p className="text-slate-600 text-sm leading-relaxed mt-3">
               {t("chekin.who_hostly_p2")}
             </p>
           </motion.div>
@@ -126,7 +129,7 @@ export default function ComparativaChekin() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-slate-400 text-center mt-4">
+          <p className="text-xs text-slate-500 text-center mt-4">
             {t("chekin.table_footnote")}
           </p>
         </div>
@@ -139,7 +142,7 @@ export default function ComparativaChekin() {
           <p className="text-slate-500 text-center max-w-xl mx-auto mb-10">{t("chekin.cost_subheading")}</p>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-2xl border border-slate-200 p-8">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">{t("chekin.cost_chekin_label")}</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">{t("chekin.cost_chekin_label")}</p>
               <div className="space-y-3 text-sm text-slate-600">
                 <div className="flex justify-between"><span>{t("chekin.cost_chekin_row1_label")}</span><span className="font-semibold">{t("chekin.cost_chekin_row1_value")}</span></div>
                 <div className="flex justify-between"><span>{t("chekin.cost_chekin_row2_label")}</span><span className="font-semibold">{t("chekin.cost_chekin_row2_value")}</span></div>
@@ -154,9 +157,9 @@ export default function ComparativaChekin() {
               <p className="text-xs font-bold uppercase tracking-widest text-primary mb-4">{t("chekin.cost_hostly_label")}</p>
               <div className="space-y-3 text-sm text-slate-600">
                 <div className="flex justify-between"><span>{t("chekin.cost_hostly_row1_label")}</span><span className="font-semibold">{t("chekin.cost_hostly_row1_value")}</span></div>
-                <div className="flex justify-between"><span>{t("chekin.cost_hostly_row2_label")}</span><span className="font-semibold text-[#16a34a]">{t("chekin.cost_hostly_row2_value")}</span></div>
-                <div className="flex justify-between"><span>{t("chekin.cost_hostly_row3_label")}</span><span className="font-semibold text-[#16a34a]">{t("chekin.cost_hostly_row3_value")}</span></div>
-                <div className="flex justify-between"><span>{t("chekin.cost_hostly_row4_label")}</span><span className="font-semibold text-[#16a34a]">{t("chekin.cost_hostly_row4_value")}</span></div>
+                <div className="flex justify-between"><span>{t("chekin.cost_hostly_row2_label")}</span><span className="font-semibold text-[#166534]">{t("chekin.cost_hostly_row2_value")}</span></div>
+                <div className="flex justify-between"><span>{t("chekin.cost_hostly_row3_label")}</span><span className="font-semibold text-[#166534]">{t("chekin.cost_hostly_row3_value")}</span></div>
+                <div className="flex justify-between"><span>{t("chekin.cost_hostly_row4_label")}</span><span className="font-semibold text-[#166534]">{t("chekin.cost_hostly_row4_value")}</span></div>
                 <div className="border-t border-primary/20 pt-3 flex justify-between font-bold text-[#0f172a]">
                   <span>{t("chekin.cost_hostly_total_label")}</span><span>{t("chekin.cost_hostly_total_value")}</span>
                 </div>
@@ -174,7 +177,7 @@ export default function ComparativaChekin() {
             {faqs.map((f) => (
               <div key={f.q} className="bg-[#f8fafc] rounded-2xl border border-slate-100 p-6">
                 <p className="font-bold text-[#0f172a] mb-2">{f.q}</p>
-                <p className="text-slate-500 text-sm leading-relaxed">{f.a}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>

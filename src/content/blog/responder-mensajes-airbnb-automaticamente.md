@@ -19,12 +19,12 @@ faqs:
   - question: "¿Puede Airbnb detectar que uso respuestas automáticas y penalizarme?"
     answer: "No. Airbnb tiene sus propias respuestas rápidas integradas y las recomienda. Lo que penaliza es tardar más de 24h en responder, no usar plantillas o IA."
   - question: "¿Cuántos mensajes al día se pueden automatizar?"
-    answer: "La mayoría. Las preguntas rutinarias (hora, WiFi, aparcamiento, normas) se automatizan bien. El resto son consultas que requieren tu criterio."
+    answer: "La mayoría. Las preguntas rutinarias (hora, wifi, aparcamiento, normas) se automatizan bien. El resto son consultas que requieren tu criterio."
   - question: "¿Qué pasa si la IA se equivoca en una respuesta?"
     answer: "Un sistema bien hecho escala a ti antes de responder mal. Si no tiene confianza alta en la respuesta, te notifica y decides tú. La clave es configurar el umbral de escalado correctamente."
 ---
 
-Responder el mismo mensaje por décima vez te consume. Pero responder con un bot robot aleja a los huéspedes. **Hay un punto medio**: respuestas automáticas que suenan humanas. Esta guía cubre cómo hacerlo correctamente.
+Responder el mismo mensaje por décima vez te consume. Pero responder como un robot aleja a los huéspedes. **Hay un punto medio**: respuestas automáticas que suenan humanas. Esta guía cubre cómo hacerlo correctamente.
 
 ## Los 7 tipos de mensaje que recibes cada semana
 
@@ -34,7 +34,7 @@ Si clasificas tus conversaciones de los últimos 3 meses, verás que la gran may
 2. **Confirmación post-reserva**: agradecimientos, dudas iniciales
 3. **Pre-llegada** (3 días antes): cómo llegar, qué preparar, acceso
 4. **Día de llegada**: código, "ya estoy aquí", "no encuentro la caja"
-5. **Durante la estancia**: "dónde hay supermercado", "el WiFi no va", "el TV no se enciende"
+5. **Durante la estancia**: "dónde hay supermercado", "el wifi no va", "la tele no se enciende"
 6. **Checkout**: "a qué hora tengo que salir", "dónde dejo las llaves"
 7. **Post-estancia**: agradecimientos, petición de reseña
 
@@ -71,7 +71,7 @@ Escoge uno y sé consistente. Mezclar estilos suena a bot.
 > "El horario de check-in establecido en la reserva es a partir de las 15:00 horas."
 
 **Bien (humano automático)**:
-> "Hola Marta, el check-in es a partir de las 15:00. Si necesitas llegar antes, dímelo y vemos si podemos hacer early. Un saludo."
+> "Hola Marta, el check-in es a partir de las 15:00. Si necesitas llegar antes, dímelo y vemos si puedes entrar antes. Un saludo."
 
 ### Pregunta: "¿Hay parking cerca?"
 
@@ -79,12 +79,12 @@ Escoge uno y sé consistente. Mezclar estilos suena a bot.
 > "Existe disponibilidad de estacionamiento público en las proximidades."
 
 **Bien**:
-> "Sí, en la calle hay zona azul desde 9 a 14h. El parking del centro comercial a 3 min está bien para dejar el coche todo el día (8€/día aprox). Te mando la ubicación exacta con las instrucciones de llegada."
+> "Sí, en la calle hay zona azul desde 9 a 14h. El parking del centro comercial a 3 min está bien para dejar el coche todo el día (unos 8 €/día). Te mando la ubicación exacta con las instrucciones de llegada."
 
-### Pregunta: "¿Cuál es la clave del WiFi?"
+### Pregunta: "¿Cuál es la clave del wifi?"
 
 **Bien**:
-> "La clave WiFi la tienes junto al router, en la entrada. También te la paso ahora por si tardas en verla: **HOSTLY2026**. Cualquier cosa, avísame."
+> "La clave del wifi la tienes junto al router, en la entrada. También te la paso ahora por si tardas en verla: **HOSTLY2026**. Cualquier cosa, avísame."
 
 ## Qué NUNCA automatizar
 
@@ -111,19 +111,19 @@ Un sistema de mensajería automática debe **escalarte** en estos casos:
 - **Palabras clave de alerta**: "problema", "queja", "no funciona", "roto", "sucio", "urgente".
 - **Detección de sentimiento negativo**: la IA analiza tono y te avisa si detecta frustración.
 - **Pregunta que no entiende**: si no tiene confianza en la respuesta, te la pasa.
-- **Solicitudes especiales**: early check-in, extensión, descuento.
+- **Solicitudes especiales**: entrar antes de hora, alargar la estancia, descuentos.
 
 Las herramientas de IA para huéspedes suelen hacerlo por defecto. En Hostly, la IA te avisa cuando hace falta una persona, y puedes tomar el control de cualquier conversación en un toque.
 
 ## Herramientas por perfil
 
-### 1-3 apartamentos: Airbnb Saved Replies + disciplina
+### 1-3 apartamentos: respuestas guardadas de Airbnb + disciplina
 
-Las respuestas guardadas nativas de Airbnb son suficientes. Crea 20-25 plantillas y úsalas con 2 segundos de personalización ("Hola Marta" al inicio).
+Las respuestas guardadas de Airbnb son suficientes. Crea 20-25 plantillas y úsalas con 2 segundos de personalización ("Hola Marta" al inicio).
 
 ### 3-10 apartamentos: IA sobre Airbnb
 
-Herramientas como **HolaAI**, **Hospitable** o **Hostly** responden automáticamente. La IA lee el mensaje entrante, entiende el contexto (qué apartamento, qué fechas) y responde en el idioma del huésped.
+Herramientas como **Hospitable** o **Hostly** responden automáticamente. La IA lee el mensaje entrante, entiende el contexto (qué apartamento, qué fechas) y responde en el idioma del huésped.
 
 ### 10+ apartamentos: app de gestión completa multicanal
 
@@ -133,7 +133,7 @@ Unifica Airbnb + Booking + WhatsApp en un solo panel con IA que responde en todo
 
 ### 1. Plantillas demasiado formales
 
-Si tu tono natural es "Hola Marta!" y la plantilla dice "Estimada huésped,", suena a bot. Alinea el lenguaje con tu voz real.
+Si tu tono natural es "¡Hola, Marta!" y la plantilla dice "Estimada huésped,", suena a bot. Alinea el lenguaje con tu voz real.
 
 ### 2. No actualizar plantillas
 
@@ -161,4 +161,4 @@ Responder Airbnb automáticamente es compatible con mantener el tono humano, **s
 - Automatizas lo rutinario (7 categorías).
 - Escalas tú todo lo que requiere criterio.
 
-El objetivo no es "eliminar contacto humano", es "que el contacto humano tuyo sea sólo el que aporta".
+El objetivo no es "eliminar contacto humano", es "que el contacto humano tuyo sea solo el que aporta".

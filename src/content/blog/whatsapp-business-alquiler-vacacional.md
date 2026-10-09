@@ -20,10 +20,10 @@ faqs:
   - question: "¿Qué tipo de mensajes se automatizan bien por WhatsApp?"
     answer: "Confirmaciones, instrucciones de llegada, código de acceso, recordatorio de checkout, petición de reseña. Mensajes rutinarios con información clara. Lo que NO se debe automatizar: negociaciones, quejas, incidencias técnicas."
   - question: "¿Necesito WhatsApp Business API para gestionar varios apartamentos?"
-    answer: "Si gestionas más de 10 apartamentos y envías más de 30-40 mensajes al día, sí. WhatsApp Business app es suficiente para 1-5 apartamentos. Para volúmenes mayores, la API te da automatización real y evita bloqueos por spam."
+    answer: "La app de WhatsApp Business te sirve mientras llegues a contestar a tiempo. En cuanto no llegues, o quieras que una IA conteste por ti, necesitas la API: te da automatización real y evita bloqueos por spam. Con un PMS como Hostly no tienes que contratarla tú: tus huéspedes escriben a un número gestionado por Hostly con la API oficial de Meta."
 ---
 
-WhatsApp es el canal preferido por la mayoría de huéspedes ibéricos y también por muchos internacionales. Si lo usas bien, **libera tiempo** y mejora la experiencia del huésped. Si lo usas mal, te convierte en esclavo del móvil. Esta guía cubre **los casos de uso reales**, qué automatizar, qué no y cómo escalar sin volverte loco.
+WhatsApp es el canal preferido por la mayoría de huéspedes españoles y también por muchos internacionales. Si lo usas bien, **libera tiempo** y mejora la experiencia del huésped. Si lo usas mal, te convierte en esclavo del móvil. Esta guía cubre **los casos de uso reales**, qué automatizar, qué no y cómo escalar sin volverte loco.
 
 ## Por qué WhatsApp es el canal ideal para alquiler vacacional
 
@@ -50,8 +50,8 @@ Tres días antes del check-in, mensaje con:
 
 - Dirección exacta con enlace a Google Maps
 - Opciones de aparcamiento
-- Método de acceso (código, keybox, etc.)
-- WiFi y clave
+- Método de acceso (código, caja de llaves, etc.)
+- Wifi y clave
 - Normas básicas de convivencia
 - Tu contacto directo
 
@@ -63,7 +63,7 @@ Cuando el check-in online está completado, envío automático del código:
 
 > "Marta, listo para tu llegada. El código del teclado es **4821**. Se activa a las 15:00. Si necesitas algo, aquí estoy."
 
-Sólo se envía si el check-in online (SES/Mossos/Ertzaintza) está completo. Si falta registro, el sistema te avisa antes.
+Solo se envía si el check-in online está completo. Si falta algún check-in, el sistema te avisa antes.
 
 ### 4. Recordatorio de checkout
 
@@ -75,7 +75,7 @@ El día del checkout, por la mañana:
 
 2-3 horas después del checkout (no inmediatamente, el huésped está viajando):
 
-> "Marta, espero que todo haya ido bien. Si te apetece, nos harías un gran favor dejando tu opinión en Airbnb: [link]. Cualquier feedback directo también es bienvenido."
+> "Marta, espero que todo haya ido bien. Si te apetece, nos harías un gran favor dejando tu opinión en Airbnb: [enlace]. Cualquier comentario directo también es bienvenido."
 
 ### 6. Respuesta a preguntas frecuentes durante la estancia
 
@@ -87,7 +87,7 @@ Tres situaciones en las que la respuesta automática falla:
 
 - **Incidencias técnicas**: "No va el agua caliente". Requiere acción humana, no mensaje plantilla.
 - **Quejas o descontento**: un huésped molesto necesita empatía real, no una respuesta genérica.
-- **Peticiones especiales**: early check-in, extensión de estancia, descuentos. Decisiones de negocio.
+- **Peticiones especiales**: entrar antes de hora, alargar la estancia, descuentos. Decisiones de negocio.
 
 Un buen sistema detecta estos casos y **te escala la conversación** en lugar de intentar resolverla.
 
@@ -95,7 +95,7 @@ Un buen sistema detecta estos casos y **te escala la conversación** en lugar de
 
 ### WhatsApp Business (gratuito)
 
-Perfecto para 1-5 apartamentos. Funciones clave: respuestas rápidas preconfiguradas, etiquetas, mensajes automáticos de bienvenida/ausencia. No tiene API real.
+Perfecto para empezar, mientras llegues a contestar tú a tiempo. Funciones clave: respuestas rápidas preconfiguradas, etiquetas, mensajes automáticos de bienvenida/ausencia. No tiene API real.
 
 **Limitación**: al gestionar 30+ conversaciones simultáneas, se vuelve inmanejable.
 
@@ -106,9 +106,9 @@ Para volúmenes mayores. Se contrata directamente con Meta (Cloud API) o a trav�
 - Automatización real mediante software.
 - Integración con tu PMS.
 - IA respondiendo por ti.
-- Templates pre-aprobados para envíos masivos.
+- Plantillas aprobadas por Meta para envíos masivos.
 
-Coste: ~€30-80/mes según proveedor + fee por mensaje en algunos casos.
+Coste: una cuota que depende del proveedor, más lo que cobra Meta por mensaje en algunos casos.
 
 ### PMS con WhatsApp integrado
 
@@ -121,17 +121,17 @@ Algunos PMS modernos (Hostly, Hostify) integran WhatsApp directamente. El huésp
 
 En Hostly, los huéspedes escriben a un número de WhatsApp gestionado por Hostly a través de la API oficial de Meta: no instalas ni configuras nada.
 
-Es la forma más eficiente para gestores de 5+ apartamentos.
+Es la forma más eficiente en cuanto no llegas a contestar a tiempo, tengas uno o diez pisos.
 
 ## Errores comunes
 
 ### 1. Usar tu número personal para todo
 
-Mezclar mensajes de familia con mensajes de huéspedes es un error. Usa WhatsApp Business con un número separado, aunque sea un SIM secundaria.
+Mezclar mensajes de familia con mensajes de huéspedes es un error. Usa WhatsApp Business con un número separado, aunque sea una SIM secundaria.
 
-### 2. Respuestas demasiado robot
+### 2. Respuestas que suenan a robot
 
-Plantillas rígidas que suenan a bot alejan. El tono debe ser **humano y breve**. "Hola Marta, el WiFi está en la nevera 🙂" > "Estimada cliente, le comunicamos que…".
+Las plantillas rígidas que suenan a bot alejan. El tono debe ser **humano y breve**. "Hola Marta, el wifi está en la nevera 🙂" > "Estimada cliente, le comunicamos que…".
 
 ### 3. No establecer horario
 
@@ -139,7 +139,7 @@ Si respondes a las 2 de la mañana, el huésped asume que siempre respondes. Una
 
 ### 4. Ignorar el inbox de Airbnb
 
-Aunque uses WhatsApp como canal principal, **tienes que responder en Airbnb** aunque sea brevemente, porque Airbnb mide el response rate. Un PMS unifica ambos canales.
+Aunque uses WhatsApp como canal principal, **tienes que responder en Airbnb** aunque sea brevemente, porque Airbnb mide tu tasa de respuesta. Un PMS unifica ambos canales.
 
 ### 5. Enviar multimedia pesada
 
@@ -151,7 +151,7 @@ WhatsApp bien usado es la diferencia entre vivir pendiente del móvil y tener un
 
 - **Automatiza los 6 casos de uso rutinarios**.
 - **No automatices incidencias, quejas ni negociaciones**.
-- **Elige la herramienta según tu volumen**: WhatsApp Business para 1-5 apartamentos, PMS con WhatsApp integrado para 5+.
+- **Elige la herramienta según tu volumen**: WhatsApp Business mientras llegues a contestar a tiempo; un PMS con WhatsApp integrado en cuanto no llegues.
 - **Mantén el tono humano** siempre, aunque sea IA quien escriba.
 
 Si haces esto bien, recuperas varias horas a la semana, más cuanto mayor sea tu volumen.

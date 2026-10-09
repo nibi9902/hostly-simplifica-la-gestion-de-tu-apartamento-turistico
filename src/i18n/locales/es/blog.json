@@ -1,12 +1,13 @@
 {
   "index": {
     "title": "Blog Hostly — Guías de gestión de apartamentos turísticos",
-    "description": "Guías prácticas, comparativas y análisis sobre la gestión de apartamentos turísticos en España. Compliance, herramientas, operativa y más.",
+    "description": "Guías prácticas, comparativas y análisis sobre la gestión de apartamentos turísticos en España. Cumplimiento legal, herramientas, operativa y más.",
     "breadcrumb": "Blog",
     "eyebrow": "Blog · Recursos",
     "h1_1": "Todo lo que implica",
     "h1_2": "tener un piso turístico.",
-    "subtitle": "{{count}} guías escritas para propietarios y gestores reales. Sin lenguaje corporativo. Sin fluff. Solo lo que necesitas saber.",
+    "subtitle": "{{count}} guías escritas para propietarios y gestores reales. Sin lenguaje corporativo. Sin relleno. Solo lo que necesitas saber.",
+    "ca_articles_note": "Por ahora, los artículos están en castellano.",
     "stats_guides": "guías publicadas",
     "stats_categories": "categorías",
     "stats_updated": "actualizado",
@@ -20,8 +21,8 @@
   },
   "categories": {
     "legal": {
-      "label": "Legal y compliance",
-      "description": "SES, NRUA, taxa turística, policía. Todo lo que la ley exige, explicado sin jerga."
+      "label": "Legal y cumplimiento",
+      "description": "SES, NRUA, tasa turística, policía. Todo lo que la ley exige, explicado sin jerga."
     },
     "stack": {
       "label": "Herramientas y stack",

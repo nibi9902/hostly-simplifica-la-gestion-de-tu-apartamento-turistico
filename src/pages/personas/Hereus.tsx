@@ -36,7 +36,7 @@ export default function Hereus() {
               {t("hereus.cta_primary")}
               <ArrowRight className="w-4 h-4" />
             </button>
-            <p className="text-sm text-slate-400 mt-3">{t("hereus.cta_sub")}</p>
+            <p className="text-sm text-slate-500 mt-3">{t("hereus.cta_sub")}</p>
           </motion.div>
         </div>
       </section>

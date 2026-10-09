@@ -36,7 +36,7 @@ export default function GestoresPequenos() {
               {t("gestores.cta_primary")}
               <ArrowRight className="w-4 h-4" />
             </button>
-            <p className="text-sm text-slate-400 mt-3">{t("gestores.cta_sub")}</p>
+            <p className="text-sm text-slate-500 mt-3">{t("gestores.cta_sub")}</p>
           </motion.div>
         </div>
       </section>
@@ -51,12 +51,12 @@ export default function GestoresPequenos() {
             {tools.map((item) => (
               <div key={item.name} className="flex items-center justify-between p-4 rounded-xl bg-[#fff7f7] border border-red-100 text-sm">
                 <span className="text-slate-700">❌ {item.name}</span>
-                <span className="font-semibold text-red-500 flex-shrink-0 ml-4">{item.cost}</span>
+                <span className="font-semibold text-red-700 flex-shrink-0 ml-4">{item.cost}</span>
               </div>
             ))}
           </div>
           <div className="p-5 rounded-2xl bg-[#f0fdf4] border border-[#bbf7d0]">
-            <p className="font-bold text-[#16a34a]">{t("gestores.hostly_summary")}</p>
+            <p className="font-bold text-[#15803d]">{t("gestores.hostly_summary")}</p>
           </div>
         </div>
       </section>

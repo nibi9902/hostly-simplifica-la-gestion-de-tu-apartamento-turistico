@@ -50,7 +50,7 @@ Los menores de 14 años no se registran individualmente.
 
 El plazo es **24 horas desde el check-in**. Mismo criterio que SES.
 
-El envío se hace vía web oficial o por API si tu PMS tiene integración. La mayoría de PMS ibéricos con compliance ES (Hostly, Hostify, Icnea, Avantio) lo hacen automáticamente.
+El envío se hace vía web oficial o por API si tu PMS tiene integración. La mayoría de PMS pensados para España (Hostly, Hostify, Icnea, Avantio) lo hacen automáticamente.
 
 ## Alta: qué necesitas
 

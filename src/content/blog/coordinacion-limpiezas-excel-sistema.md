@@ -35,7 +35,7 @@ Lo que típicamente pasa cuando lo haces manualmente:
 - Una limpiadora no puede y tienes que buscar sustituta → 40 minutos al teléfono.
 - No sabes si la limpieza se hizo hasta que llega el siguiente huésped → reseña mala.
 
-Cada uno de estos errores **cuesta dinero**. Una reseña mala por apartamento sucio cuesta 200-500€ de futura reserva perdida. Una limpiadora que se va por mala coordinación cuesta buscar y entrenar otra.
+Cada uno de estos errores **cuesta dinero**. Una reseña mala por apartamento sucio cuesta 200-500 € de futura reserva perdida. Una limpiadora que se va por mala coordinación cuesta buscar y entrenar otra.
 
 ## Las 3 capacidades de un sistema automatizado de limpiezas
 
@@ -57,7 +57,7 @@ Si una reserva:
 - **Se cancela** → la tarea se cancela también, la limpiadora recibe aviso.
 - **Se alarga** → la tarea se mueve al nuevo checkout.
 - **Se acorta** → se reprograma para el nuevo día.
-- **Se añade otra reserva justo después** → ajusta horarios para el "turnover".
+- **Se añade otra reserva justo después** → ajusta los horarios para el cambio de huéspedes.
 
 Sin sistema, esto se te escapa. Con sistema, es transparente.
 
@@ -94,7 +94,7 @@ Si vienes de WhatsApp + Excel:
 ### Semana 4: sistema puro
 
 - Ya no envías WhatsApp manual. El sistema lo hace.
-- Revisas dashboard diariamente.
+- Revisas el panel cada día.
 - Anotas los casos raros para ajustar reglas.
 
 A partir del mes 2 el sistema se mantiene solo.
@@ -103,7 +103,7 @@ A partir del mes 2 el sistema se mantiene solo.
 
 Criterios prácticos para elegir:
 
-### App mobile para limpiadoras
+### App móvil para limpiadoras
 
 Si tu limpiadora es joven o tecnológica, una app propia es lo mejor. Si es mayor o poco digital, la notificación por WhatsApp sigue siendo lo más fiable. Algunos sistemas (Hostly, Icnea) soportan ambos.
 
@@ -128,16 +128,16 @@ Si tienes 10 apartamentos y 3 limpiadoras, el sistema tiene que decidir quién v
 ### PMS con limpiezas integradas
 
 - **Hostly**: app propia para el equipo de limpieza y asistente por WhatsApp. Crea la tarea en cada salida, si alguien no puede pasa a la siguiente persona, y guarda fotos, incidencias y lo que se debe a cada una cada mes.
-- **Icnea**: app dedicada para limpiadores, maduro, muy usado en el mercado ibérico.
+- **Icnea**: app dedicada para limpiadores, madura, muy usada en el mercado español.
 - **Hostify**: Task App integrada, buena para volúmenes altos.
-- **Hospitable**: task management básico, sin app propia.
+- **Hospitable**: gestión de tareas para el equipo (Hospitable Tasks).
 
-### Herramientas standalone (sólo limpieza)
+### Herramientas solo de limpieza
 
-- **TurnoverBnB**: la referencia global para cleaning turnover. Integración con varios PMS.
+- **Turno** (antes TurnoverBnB): la referencia global para las limpiezas entre huéspedes. Integración con varios PMS.
 - **Properly**: checklists detallados + fotos.
 
-Para un gestor ibérico con 1-20 apartamentos, **lo más eficiente es un PMS con limpieza integrada**. Usar TurnoverBnB por separado sólo compensa si tu PMS no lo cubre bien.
+Para un gestor en España con 1 a 15 pisos, **lo más eficiente es un PMS con limpieza integrada**. Usar Turno por separado solo compensa si tu PMS no lo cubre bien.
 
 ## Errores comunes al migrar
 
@@ -166,4 +166,4 @@ La coordinación manual de limpiezas cuesta tiempo y genera fricción con tus li
 - Mantiene a la limpiadora informada sin mensajes redundantes.
 - Profesionaliza tu operación.
 
-Si tienes más de 3 apartamentos y sigues con WhatsApp + Excel, la inversión en un sistema se paga en menos de 2 meses sólo en tiempo recuperado.
+Si tienes más de 3 apartamentos y sigues con WhatsApp + Excel, la inversión en un sistema se paga en menos de 2 meses solo en tiempo recuperado.

@@ -115,7 +115,7 @@ export default function Demo() {
       {/* Contextualització — fons blanc, 3 punts clau del que es veu al vídeo */}
       <section className="py-16 md:py-20 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary/70 mb-10 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-10 text-center">
             {t("demo.video_section_eyebrow")}
           </p>
           <div className="grid sm:grid-cols-3 gap-8 md:gap-12">

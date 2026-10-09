@@ -36,7 +36,7 @@ export default function SegundaResidencia() {
               {t("segunda_residencia.cta_primary")}
               <ArrowRight className="w-4 h-4" />
             </button>
-            <p className="text-sm text-slate-400 mt-3">{t("segunda_residencia.cta_sub")}</p>
+            <p className="text-sm text-slate-500 mt-3">{t("segunda_residencia.cta_sub")}</p>
           </motion.div>
         </div>
       </section>

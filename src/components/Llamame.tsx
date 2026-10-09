@@ -48,7 +48,7 @@ export default function Llamame({ className }: { className?: string }) {
         <div>
           <p className="text-lg font-bold text-foreground tracking-tight">{t("llamame.titulo")}</p>
           <p className="text-sm text-muted-foreground">{t("llamame.texto")}</p>
-          <p className="text-xs text-muted-foreground/80 mt-1">{t("llamame.firma")}</p>
+          <p className="text-xs text-muted-foreground mt-1">{t("llamame.firma")}</p>
         </div>
       </div>
 

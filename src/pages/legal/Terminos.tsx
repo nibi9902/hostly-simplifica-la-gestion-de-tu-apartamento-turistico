@@ -24,13 +24,13 @@ export default function Terminos() {
     >
       <div className="pt-28 pb-24 px-6 md:px-12 lg:px-20">
         <div className="max-w-3xl mx-auto prose prose-slate prose-base">
-          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
             {t("common.eyebrow")}
           </p>
           <h1 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-2 not-prose">
             {t("terminos.h1")}
           </h1>
-          <p className="text-sm text-slate-400 mb-10 not-prose">
+          <p className="text-sm text-slate-500 mb-10 not-prose">
             {t("common.last_updated", { date })}
           </p>
 

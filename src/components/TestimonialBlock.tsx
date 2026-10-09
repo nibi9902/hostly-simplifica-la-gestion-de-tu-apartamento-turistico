@@ -82,7 +82,7 @@ const TestimonialBlock = () => {
           className="max-w-6xl mx-auto"
         >
           <div className="text-center mb-14">
-            <p className="text-xs font-semibold text-primary/70 uppercase tracking-widest mb-4">
+            <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-4">
               {t("testimonials.eyebrow")}
             </p>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight mb-4">
@@ -95,7 +95,7 @@ const TestimonialBlock = () => {
           </div>
 
           {/* Al mòbil, en fila que llisca amb el dit (es veu la vora del següent); a l'ordinador, 3 columnes */}
-          <div className="-mx-6 px-6 -my-10 py-10 flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:m-0 md:p-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
+          <div tabIndex={0} role="region" aria-label={`${t("testimonials.title_start")} ${t("testimonials.title_accent")}`} className="-mx-6 px-6 -my-10 py-10 flex gap-4 overflow-x-auto focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 md:focus-visible:ring-0 snap-x snap-mandatory scroll-pl-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:m-0 md:p-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
             {VIDEOS_CLIENTS.map((v, i) => (
               <div key={v.poster} className="w-[82%] shrink-0 snap-start md:w-auto">
                 <VideoCard v={v} n={i + 1} />

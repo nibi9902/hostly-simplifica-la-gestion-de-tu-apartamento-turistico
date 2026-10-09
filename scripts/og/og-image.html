@@ -1,0 +1,81 @@
+<!doctype html>
+<!--
+  La imatge que surt en compartir hostlylabs.com (WhatsApp, xarxes): public/og-image.png.
+  Per tornar-la a fer: node scripts/og/fes-og.cjs (la renderitza a 1200×630).
+  Ha de dir només el que és cert (octubre 2026): res de «Todo incluido» ni «14 días».
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+<style>
+  :root { --blau: #2563EB; --nit: #0b1a4a; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    font-family: Inter, -apple-system, "Segoe UI", sans-serif;
+    color: #fff;
+    background:
+      radial-gradient(900px 500px at 85% 20%, rgba(37, 99, 235, 0.45), transparent 60%),
+      radial-gradient(700px 420px at 10% 110%, rgba(37, 99, 235, 0.25), transparent 60%),
+      linear-gradient(135deg, #081232 0%, #0e2366 55%, #16348f 100%);
+    padding: 64px 80px 60px;
+    display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  .graella {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, #000 30%, transparent 95%);
+  }
+  .dalt { display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .marca { display: flex; align-items: center; gap: 20px; }
+  .logo {
+    width: 72px; height: 72px; border-radius: 18px; background: #fff;
+    background-image: url("../../public/hostly-logo.png");
+    background-size: 128% auto; background-position: 50% 62%; background-repeat: no-repeat;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+  .nom { font-size: 34px; font-weight: 800; letter-spacing: -0.02em; }
+  .partner {
+    font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.92);
+    padding: 10px 20px; border-radius: 999px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .partner i { width: 9px; height: 9px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 10px #22c55e; }
+  .mig { margin-top: 52px; position: relative; }
+  .eyebrow { font-size: 17px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  h1 { margin-top: 16px; font-size: 88px; font-weight: 900; letter-spacing: -0.045em; line-height: 0.98; }
+  h1 .contorn { color: rgba(255,255,255,0.42); }
+  .sub { margin-top: 24px; font-size: 24px; line-height: 1.45; color: rgba(255,255,255,0.78); max-width: 1040px; }
+  .baix { margin-top: auto; display: flex; align-items: center; gap: 14px; position: relative; }
+  .pill {
+    font-size: 19px; font-weight: 600; padding: 12px 22px; border-radius: 999px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); white-space: nowrap;
+  }
+  .pill.verd { background: rgba(34,197,94,0.14); border-color: rgba(34,197,94,0.45); color: #86efac; }
+  .web { margin-left: auto; font-size: 19px; font-weight: 600; color: rgba(255,255,255,0.55); }
+</style>
+</head>
+<body>
+  <div class="graella"></div>
+  <div class="dalt">
+    <div class="marca"><div class="logo" role="img" aria-label="Hostly"></div><span class="nom">Hostly</span></div>
+    <div class="partner"><i></i>Partner Airbnb · Booking · Google</div>
+  </div>
+  <div class="mig">
+    <p class="eyebrow">Simplifica la gestión de tu apartamento turístico</p>
+    <h1>Una app.<br /><span class="contorn">Gestiona menos.</span></h1>
+    <p class="sub">Reservas, mensajes con IA, limpiezas, precios y registro a la policía, en un solo sitio.</p>
+  </div>
+  <div class="baix">
+    <span class="pill verd">✓ Check-in y policía, gratis para siempre</span>
+    <span class="pill">40 €/mes por piso</span>
+    <span class="pill">Primer mes gratis</span>
+    <span class="web">hostlylabs.com</span>
+  </div>
+</body>
+</html>

@@ -63,7 +63,7 @@ export default function FAQBlock() {
           transition={{ duration: 0.6, ease }}
           className="text-center mb-12"
         >
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary/70 mb-3">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">
             {t("faq.eyebrow")}
           </p>
           <h2 className="text-2xl md:text-4xl font-bold text-foreground tracking-tight mb-3">

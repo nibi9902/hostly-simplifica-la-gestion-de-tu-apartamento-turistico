@@ -55,7 +55,7 @@ export default function FeaturePage({ feature }: Props) {
             {/* Left — text */}
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
               {/* Breadcrumb */}
-              <nav aria-label="breadcrumb" className="flex items-center gap-2 text-sm text-slate-400 mb-6">
+              <nav aria-label="breadcrumb" className="flex items-center gap-2 text-sm text-slate-500 mb-6">
                 <LangLink to="/" className="hover:text-slate-600 transition-colors">{t('page.breadcrumb_home')}</LangLink>
                 <span>/</span>
                 <LangLink to="/funcionalidades" className="hover:text-slate-600 transition-colors">{t('page.breadcrumb_features')}</LangLink>
@@ -111,7 +111,8 @@ export default function FeaturePage({ feature }: Props) {
                 zIndex: 0,
                 pointerEvents: 'none',
               }} />
-              <div className="relative z-10">
+              {/* La demo és una il·lustració: el text de la pàgina ja ho explica */}
+              <div className="relative z-10" aria-hidden="true">
                 <MiniDemo slug={feature.slug} iconName={feature.iconName} />
               </div>
             </motion.div>

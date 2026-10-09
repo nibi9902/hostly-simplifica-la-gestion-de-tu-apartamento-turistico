@@ -85,11 +85,14 @@
 - **Els vídeos d'exemple no poden anar a producció com si fossin clients.** Abans de publicar:
   vídeos de debò (amb permís) o la secció fora (`NOMES_EXEMPLES` a `videosClients.ts`).
 - La previsualització de Vercel demana iniciar sessió a Vercel.
-- **Preus de la competència: només els publicats i amb data.** Verificats el 09-10-2026:
-  Chekin des de 3,95 €/mes per pis (chekin.com/en/pricing) i Smoobu des de 29 €/mes (pla
-  Flex, +0,9 % per reserva; smoobu.com/es/precios). El web deia «15 €/mes» i «180 € a l'any»
-  per a Chekin i «des de 23 €» per a Smoobu: ja no. Llei de competència deslleial, art. 10:
-  la publicitat comparativa ha de ser objectiva i verificable.
+- **Preus de la competència: només els publicats i amb data** (llei de competència deslleial,
+  art. 10: la publicitat comparativa ha de ser objectiva i verificable). Verificats a les webs
+  oficials el 09-10-2026: Chekin 3,95 / 5,95 / 7,95 € per pis i mes · Smoobu 29 €/mes + 0,9 %
+  (Flex) o 35 €/mes (31,50 € anual) · Hostify 20 $ per allotjament (des de 5) · Hospitable
+  Essentials gratis, Host des de 29 € + IVA · Icnea 150 €/mes fins a 10 pisos · Avantio des de
+  295 €/mes + IVA · Guesty Lite des de 9 $ per anunci · PriceLabs 19,99 $ per anunci. Hostaway
+  i Lodgify: sense xifra (no la publiquen o no s'ha pogut verificar). El web deia «15 €/mes» i
+  «180 € a l'any» per a Chekin i «des de 23 €» per a Smoobu: ja no.
 - **`index.html` porta etiquetes SEO per defecte amb `data-rh="true"`.** Així el component
   `SEO` (react-helmet-async) les substitueix en carregar (abans hi havia dues canòniques, la
   de la portada a totes les pàgines, i dues descripcions). WhatsApp i les xarxes, que no
@@ -119,6 +122,12 @@
 9. **Encàrrec del tratament** (dades dels hostes, art. 28 RGPD): hi ha una clàusula nova als
    termes (apartat 11). Convé que la miri un assessor.
 10. Fotos i vídeos reals de gestors (amb permís) i una foto del Biel (ara surt una «B»).
+11. **El missatge de preu.** Amb els preus reals de la competència, Hostly **no sempre surt més
+    barat**: Chekin + Smoobu per a 1 pis fan uns 400 €/any i Hostly Completo, 480 €; Icnea
+    costa menys a partir de 4 pisos. El web ja no diu el contrari: l'argument és que el
+    check-in i la policia són gratis per sempre i que tot és en una app (IA, neteges,
+    finances), més el temps que estalvia (la calculadora ho compta en hores). ¿Aquest és el
+    missatge que vols, o es revisa el preu?
 
 ## Pendents
 
@@ -130,3 +139,7 @@
 4. Adreces en català (`/ca/precios` → `/ca/preus`…), amb redireccions.
 5. Revisar la informació legal general del blog (dates del RD 933/2021, sancions, trams de la
    taxa).
+6. **Pes de la primera càrrega**: totes les traduccions (castellà i català, 22 fitxers, 200 KB)
+   van dins de `index-*.js` (410 KB, 129 KB comprimit). Carregar només l'idioma i els espais
+   de noms de cada pàgina (`i18next-resources-to-backend` + `import()`) en trauria uns 50 KB
+   comprimits. Cal una vora de Suspense i provar que no parpelleja.

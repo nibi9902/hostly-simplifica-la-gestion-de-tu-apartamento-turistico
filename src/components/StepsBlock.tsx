@@ -79,7 +79,8 @@ const StepCard = ({ step, index, total }: { step: StepData; index: number; total
           fontWeight: 700,
           letterSpacing: "0.14em",
           textTransform: "uppercase",
-          color: circleColor,
+          // El verd del darrer pas, un to més fosc per al text (contrast AA)
+          color: isLast ? "#15803d" : circleColor,
           marginBottom: 14,
           position: "relative",
           zIndex: 1,
@@ -230,7 +231,7 @@ const StepsBlock = () => {
               background: "#F7F8FA",
               border: "1px solid #E6E8EC",
               fontSize: 13,
-              color: "#64748b",
+              color: "#475569",
             }}
           >
             <span style={{ display: "inline-flex", gap: 4 }}>

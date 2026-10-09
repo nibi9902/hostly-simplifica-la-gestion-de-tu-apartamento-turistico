@@ -1,26 +1,26 @@
 {
   "chekin": {
     "meta_title": "Chekin vs Hostly — Check-in turístico en España | Hostly",
-    "meta_description": "Compara Chekin y Hostly para la gestión de check-in y compliance en apartamentos turísticos. Check-in incluido gratis en Hostly.",
+    "meta_description": "Compara Chekin y Hostly para el check-in y el cumplimiento legal de los pisos turísticos. En Hostly, el check-in y el registro a la policía son gratis.",
     "breadcrumb_comparativa": "Comparativa",
     "breadcrumb_chekin": "Chekin vs Hostly",
     "hero_eyebrow": "Comparativa",
     "hero_heading": "Chekin vs Hostly",
     "hero_body": "Chekin automatiza el check-in legal. Hostly lo incluye gratis dentro de una plataforma completa de gestión. Esta es la diferencia.",
     "who_chekin_eyebrow": "Chekin",
-    "who_chekin_heading": "Especialista en check-in y compliance legal",
-    "who_chekin_p1": "Chekin automatiza el check-in online, el registro policial (SES.Hospedajes), el NRUA y la taxa turística. Es muy bueno en lo que hace. Cobra entre 2 y 4 € por check-in o una cuota mensual por propiedad.",
+    "who_chekin_heading": "Especialista en check-in y cumplimiento legal",
+    "who_chekin_p1": "Chekin automatiza el check-in online, el registro policial (SES.Hospedajes), el NRUA y la tasa turística. Es muy bueno en lo que hace. Cobra una cuota mensual por propiedad: desde 3,95 € en el plan Basic, 5,95 € en Premium y 7,95 € en Enterprise (precios publicados en octubre de 2026).",
     "who_chekin_p2": "Su foco es el check-in y el cumplimiento legal. Para reservas, mensajes, limpiezas y precios, lo normal es combinarlo con otras herramientas.",
     "who_hostly_eyebrow": "Hostly",
-    "who_hostly_heading": "La app que reemplaza cinco suscripciones",
-    "who_hostly_p1": "Hostly incluye gratis para siempre el check-in online, el registro de viajeros a la policía y la taxa turística, dentro de una plataforma que también gestiona reservas, mensajes, limpiezas, precios y pagos. En Cataluña, el registro va a los Mossos cada día, sin que hagas nada. Fuera de Cataluña, activamos SES.Hospedajes contigo al darte de alta.",
-    "who_hostly_p2": "Una app. Una factura. Sin suscripciones adicionales.",
+    "who_hostly_heading": "La app que lo junta todo en un solo sitio",
+    "who_hostly_p1": "Hostly incluye gratis para siempre el check-in online, el registro de viajeros a la policía y la tasa turística. En Cataluña, el registro va a los Mossos cada día, sin que hagas nada; fuera de Cataluña, activamos SES.Hospedajes contigo al darte de alta. Con Hostly Completo, la misma app gestiona también reservas, mensajes, limpiezas, precios y finanzas.",
+    "who_hostly_p2": "Una app y una sola factura por piso.",
     "table_heading": "Comparativa directa",
     "table_col_feature": "Funcionalidad",
     "table_col_hostly": "Hostly",
     "table_col_chekin": "Chekin",
     "table_badge_free": "Gratis",
-    "table_footnote": "✓ incluido · ✗ no lo ofrece · — no lo sabemos con certeza, consulta su web. Datos públicos a abril 2026, pueden haber cambiado.",
+    "table_footnote": "✓ incluido · ✗ no lo ofrece · — no lo sabemos con certeza, consulta su web. Datos públicos a abril de 2026 (precios revisados en octubre de 2026); pueden haber cambiado.",
     "features": [
       {
         "feature": "Check-in online"
@@ -32,10 +32,10 @@
         "feature": "Mossos d'Esquadra (Cataluña)"
       },
       {
-        "feature": "Taxa turística"
+        "feature": "Tasa turística"
       },
       {
-        "feature": "Precio por check-in"
+        "feature": "Plan gratis para siempre"
       },
       {
         "feature": "Channel manager incluido"
@@ -50,33 +50,33 @@
         "feature": "Precios dinámicos"
       },
       {
-        "feature": "Gestión de pagos"
+        "feature": "Finanzas y liquidaciones"
       },
       {
-        "feature": "Soporte en español y catalán"
+        "feature": "Soporte en castellano y catalán"
       }
     ],
-    "cost_heading": "El coste real por piso al año",
-    "cost_subheading": "Ejemplo: 1 piso con 60 check-ins al año.",
+    "cost_heading": "Lo que pagas por piso al año",
+    "cost_subheading": "Ejemplo: 1 piso, con los precios publicados en octubre de 2026. Si solo necesitas el check-in y el registro, con Hostly pagas 0 €.",
     "cost_chekin_label": "Con Chekin + otras herramientas",
-    "cost_chekin_row1_label": "Chekin (60 check-ins × 3 €)",
-    "cost_chekin_row1_value": "180 €/año",
-    "cost_chekin_row2_label": "Canal manager (Smoobu básico)",
-    "cost_chekin_row2_value": "280 €/año",
-    "cost_chekin_row3_label": "Plantillas mensajes",
-    "cost_chekin_row3_value": "120 €/año",
-    "cost_chekin_row4_label": "Excel + Dropbox (tiempo real)",
+    "cost_chekin_row1_label": "Chekin Basic (desde 3,95 €/mes)",
+    "cost_chekin_row1_value": "~47 €/año",
+    "cost_chekin_row2_label": "Channel manager (Smoobu, desde 29 €/mes)",
+    "cost_chekin_row2_value": "~350 €/año",
+    "cost_chekin_row3_label": "Comisión del plan Flex de Smoobu",
+    "cost_chekin_row3_value": "0,9 % por reserva",
+    "cost_chekin_row4_label": "Excel + Dropbox (tu tiempo)",
     "cost_chekin_row4_value": "— €",
     "cost_chekin_total_label": "Total estimado",
-    "cost_chekin_total_value": "580 €/año",
+    "cost_chekin_total_value": "~400 €/año + 0,9 %",
     "cost_hostly_label": "Con Hostly",
-    "cost_hostly_row1_label": "Plan Hostly (40 € × 12 meses)",
+    "cost_hostly_row1_label": "Hostly Completo (40 € × 12 meses)",
     "cost_hostly_row1_value": "480 €/año",
-    "cost_hostly_row2_label": "Check-in + registro policial + taxa",
+    "cost_hostly_row2_label": "Check-in + registro policial + tasa",
     "cost_hostly_row2_value": "Gratis",
-    "cost_hostly_row3_label": "Canal manager (Airbnb y Booking)",
+    "cost_hostly_row3_label": "Channel manager (Airbnb y Booking)",
     "cost_hostly_row3_value": "Incluido",
-    "cost_hostly_row4_label": "Mensajes, limpiezas, pagos",
+    "cost_hostly_row4_label": "Mensajes con IA, limpiezas, finanzas",
     "cost_hostly_row4_value": "Incluido",
     "cost_hostly_total_label": "Total",
     "cost_hostly_total_value": "480 €/año",
@@ -84,11 +84,11 @@
     "faqs": [
       {
         "q": "¿Hostly hace lo mismo que Chekin?",
-        "a": "Para el check-in online y el registro de viajeros, sí. Hostly lo incluye gratis para siempre, junto con el cálculo de la taxa turística. En Cataluña envía el registro a los Mossos cada día, de forma automática; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta. El plan completo añade reservas, mensajes, limpiezas y precios."
+        "a": "Para el check-in online y el registro de viajeros, sí. Hostly lo incluye gratis para siempre, junto con el cálculo de la tasa turística. En Cataluña envía el registro a los Mossos cada día, de forma automática; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta. Hostly Completo añade reservas, mensajes, limpiezas y precios."
       },
       {
         "q": "¿Cuánto me ahorro si paso de Chekin a Hostly?",
-        "a": "Con 60 check-ins al año a 3 € cada uno, Chekin te cuesta ~180 €/año. En Hostly, el check-in y el registro son gratis: si solo necesitas eso, te ahorras esos ~180 €. Con el plan completo pagas 40 €/mes por piso (480 €/año) y tienes también canal manager, mensajes, limpiezas y precios dinámicos con PriceLabs."
+        "a": "Si solo usas Chekin para el check-in y el registro, te ahorras toda su cuota: Chekin cuesta desde 3,95 €/mes por propiedad (unos 47 €/año) y en Hostly es gratis. Si además quieres channel manager, mensajes con IA, limpiezas y precios con PriceLabs integrado, Hostly Completo cuesta 40 €/mes por piso (480 €/año), 35 € desde 5."
       },
       {
         "q": "¿Pierdo datos o reservas si migro desde Chekin?",

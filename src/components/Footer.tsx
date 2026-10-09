@@ -16,7 +16,7 @@ const Footer = () => {
             <img src={hostlyLogo} alt="Hostly" className="w-7 h-7 object-contain" loading="lazy" />
             <div>
               <span className="text-sm font-semibold text-foreground block leading-none">Hostly™</span>
-              <span className="text-[11px] text-muted-foreground/70 leading-none">{t("footer.tagline")}</span>
+              <span className="text-[11px] text-muted-foreground leading-none">{t("footer.tagline")}</span>
             </div>
           </div>
 
@@ -54,7 +54,7 @@ const Footer = () => {
 
         {/* Bottom row: copyright */}
         <div className="border-t border-border/40 pt-6">
-          <p className="text-xs text-muted-foreground/50 text-center">
+          <p className="text-xs text-muted-foreground text-center">
             {t("footer.copyright")}
           </p>
         </div>

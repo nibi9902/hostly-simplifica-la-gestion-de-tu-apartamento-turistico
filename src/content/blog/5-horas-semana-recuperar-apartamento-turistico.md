@@ -15,12 +15,12 @@ relatedSlugs:
   - "whatsapp-business-alquiler-vacacional"
   - "coordinacion-limpiezas-excel-sistema"
 faqs:
-  - question: "¿De verdad son sólo 5 horas o puede ser mucho más?"
+  - question: "¿De verdad son solo 5 horas o puede ser mucho más?"
     answer: "Depende. 5 horas es la media de un gestor con 1-2 apartamentos usando Excel + calendario de Airbnb + WhatsApp, sin herramientas de automatización. Con 5+ apartamentos sin sistema, la cifra sube a 15-25 horas. Con herramientas adecuadas, baja a 1-2 horas a la semana por apartamento."
   - question: "¿Qué es lo que más tiempo consume?"
-    answer: "Por orden: mensajería con huéspedes (30-40%), coordinación de limpiezas (15-25%), registro SES y compliance (10-15%), gestión de precios y disponibilidad (10-15%), incidencias puntuales (10%), el resto en tareas administrativas."
-  - question: "¿Puedo recuperar 5 horas con 30 euros al mes?"
-    answer: "Sí. El coste medio de un PMS con automatización para 1 apartamento es de 20-30€/mes. El ahorro de tiempo compensa sobradamente si valoras tu hora a más de 6€. Para casi cualquier adulto empleado o autónomo, es positivo desde el primer mes."
+    answer: "Por orden: mensajería con huéspedes (30-40 %), coordinación de limpiezas (15-25 %), registro SES y cumplimiento legal (10-15 %), gestión de precios y disponibilidad (10-15 %), incidencias puntuales (10 %), el resto en tareas administrativas."
+  - question: "¿Me compensa pagar por recuperar esas 5 horas?"
+    answer: "Sí. Con Hostly, el check-in y el registro a la policía son gratis, y Hostly Completo, con los mensajes con IA y las limpiezas, cuesta 40 €/mes por piso. Cinco horas a la semana son unas 20 al mes: compensa si valoras tu hora a más de 2 €. Para casi cualquier adulto empleado o autónomo, es positivo desde el primer mes."
 ---
 
 Gestionar un apartamento turístico "por tu cuenta" suena a ingreso pasivo. En la práctica, el tiempo que consume se oculta en microtareas que no ves hasta que sumas. **Esta guía desglosa dónde se va exactamente el tiempo y cómo recuperar al menos 5 horas a la semana** con las acciones correctas.
@@ -32,7 +32,7 @@ Airbnb y Booking han vendido durante años la narrativa de que alquilar tu apart
 - Responder 5-8 mensajes pre-reserva
 - Confirmar y dar información detallada
 - Enviar enlace de check-in online
-- Registrar al huésped en SES/Mossos/Ertzaintza
+- Registrar al huésped en la policía (SES.Hospedajes o Mossos)
 - Responder 3-5 preguntas durante la estancia
 - Coordinar con la limpiadora para checkout
 - Verificar que todo quedó bien
@@ -48,12 +48,12 @@ De las conversaciones con gestores y los datos que hemos recogido, el reparto t�
 
 | Actividad | Tiempo semanal medio | % |
 |---|---|---|
-| Mensajería con huéspedes | 1h 30min - 2h | 30-40% |
-| Coordinación de limpiezas | 45min - 1h 15min | 15-25% |
-| Registro SES / compliance | 30min - 45min | 10-15% |
-| Precios y disponibilidad | 30min - 45min | 10-15% |
-| Incidencias puntuales | 30min | 10% |
-| Admin (facturación, bancos, etc.) | 15min - 30min | 5-10% |
+| Mensajería con huéspedes | 1h 30min - 2h | 30-40 % |
+| Coordinación de limpiezas | 45min - 1h 15min | 15-25 % |
+| Registro SES / cumplimiento legal | 30min - 45min | 10-15 % |
+| Precios y disponibilidad | 30min - 45min | 10-15 % |
+| Incidencias puntuales | 30min | 10 % |
+| Admin (facturación, bancos, etc.) | 15min - 30min | 5-10 % |
 
 Con 5 apartamentos, todas estas cifras se multiplican casi linealmente. Con 10, exponencialmente (porque surgen dependencias entre apartamentos que multiplican la complejidad).
 
@@ -70,16 +70,16 @@ El mayor consumidor. Automatizando la mayoría de mensajes rutinarios con una IA
 - Recordatorio de checkout → automático.
 - Petición de reseña → automático tras checkout.
 
-**Inversión**: 20-40€/mes en una app de gestión (Hostly, Hospitable).
+**Inversión**: 40 €/mes por piso con Hostly Completo (35 € desde 5).
 **Ahorro**: 2-3h/semana.
 
-### 2. Check-in online + SES automático (ahorra 1h/semana)
+### 2. Check-in online + registro a la policía (ahorra 1h/semana)
 
 Sin check-in online: el huésped llega, tú le abres, pides el DNI, haces foto, entras manualmente al portal y rellenas los 14 datos. Por reserva, son 15-20 minutos.
 
-Con check-in online: el huésped hace todo desde su móvil. Los datos van automáticos a SES/Mossos/Ertzaintza. Tú sólo recibes una notificación de "check-in completado".
+Con check-in online: el huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; fuera de Cataluña, a SES.Hospedajes, que lo activamos contigo). Tú solo intervienes si falta algún check-in: Hostly te avisa.
 
-**Inversión**: incluido en la mayoría de PMS, o 9-15€/mes en herramientas dedicadas (Chekin).
+**Inversión**: 0 € con el plan Gratis de Hostly. Las herramientas dedicadas, como Chekin, empiezan en 3,95 €/mes por propiedad.
 **Ahorro**: 1h/semana para 6-8 reservas.
 
 ### 3. Coordinación automática de limpiezas (ahorra 1h/semana)
@@ -95,7 +95,7 @@ Con sistema: el checkout dispara automáticamente la tarea a la limpiadora. Ella
 
 Sumando las tres automatizaciones: **4-5 horas recuperadas a la semana** por apartamento. El tiempo que queda (30-60 minutos por semana) es:
 
-- Revisar dashboard una vez al día (5 min/día = 35 min/semana).
+- Revisar el panel una vez al día (5 min/día = 35 min/semana).
 - Atender escalaciones de la IA cuando aparecen (10-20 min/semana).
 - Resolver incidencias ocasionales (variable).
 
@@ -103,7 +103,7 @@ Sumando las tres automatizaciones: **4-5 horas recuperadas a la semana** por apa
 
 Orden de prioridad según el retorno de tiempo:
 
-1. **Check-in online + SES/Mossos/Ertzaintza**. Es lo más rápido de implementar y el que más elimina fricción en la llegada.
+1. **Check-in online + registro a la policía**. Es lo más rápido de poner en marcha y lo que más fricción quita en la llegada.
 2. **Mensajería automática**. Lo que más tiempo te consume. Merece la inversión aunque sea la más costosa de configurar.
 3. **Coordinación de limpiezas**. Menos tiempo ahorrado por semana pero **mucha** menos fricción mental (nada de "¿se habrá acordado Maria?").
 
@@ -129,9 +129,9 @@ Si tu apartamento tiene algo especial (una nota escrita a mano, una botella de v
 
 Si valoras tu hora libre a:
 
-- **5€**: 5h ahorradas = 25€/semana = **100€/mes**. La herramienta cuesta 40€/mes. Positivo.
-- **10€**: 50€/semana = **200€/mes**. Positivo claro.
-- **20€**: 100€/semana = **400€/mes**. Obviamente positivo.
+- **5 €**: 5h ahorradas = 25 €/semana = **100 €/mes**. La herramienta cuesta 40 €/mes. Positivo.
+- **10 €**: 50 €/semana = **200 €/mes**. Positivo claro.
+- **20 €**: 100 €/semana = **400 €/mes**. Obviamente positivo.
 
 Para cualquier adulto con ingresos laborales medios, la respuesta es **sí**.
 
@@ -139,7 +139,7 @@ Para cualquier adulto con ingresos laborales medios, la respuesta es **sí**.
 
 Si quieres recuperar 5h/semana en un mes:
 
-- **Semana 1**: elige un PMS con IA, registro de viajeros y limpiezas: Hostly (ibérico, con el check-in y el registro a la policía gratis) o Hospitable (anglosajón).
+- **Semana 1**: elige un PMS con IA, registro de viajeros y limpiezas: Hostly (hecho en España, con el check-in y el registro a la policía gratis) o Hospitable (anglosajón).
 - **Semana 2**: migra calendarios y configura herramienta.
 - **Semana 3**: entrena la IA con tus mensajes y plantillas.
 - **Semana 4**: opera con supervisión, ajustas lo que falla.

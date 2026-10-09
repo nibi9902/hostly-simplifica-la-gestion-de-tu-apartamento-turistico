@@ -42,7 +42,7 @@ const PricingBlock = () => {
           <div className="relative rounded-3xl bg-card border border-border p-6 md:p-10 flex flex-col">
             {/* Eyebrow */}
             <div className="flex items-center gap-2 mb-6">
-              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#16a34a] bg-[#dcfce7] px-2.5 py-1 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#166534] bg-[#dcfce7] px-2.5 py-1 rounded-full">
                 {t("pricing.free_badge")}
               </span>
             </div>
@@ -99,7 +99,7 @@ const PricingBlock = () => {
                 <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/90 bg-white/15 px-2.5 py-1 rounded-full">
                   {t("pricing.paid_badge")}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-primary bg-[#fde68a] px-2.5 py-1 rounded-full">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#1e40af] bg-[#fde68a] px-2.5 py-1 rounded-full">
                   {t("pricing.paid_badge_recommended")}
                 </span>
               </div>
@@ -172,14 +172,14 @@ const PricingBlock = () => {
             <div className="flex items-center gap-4 flex-shrink-0">
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-black text-foreground tabular-nums leading-none">5</div>
-                <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold mt-1">
+                <div className="text-[10px] uppercase tracking-wider text-slate-600 font-bold mt-1">
                   {t("pricing.referral_num_label")}
                 </div>
               </div>
               <ArrowRight className="w-6 h-6 text-primary/40 flex-shrink-0" strokeWidth={2.5} />
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-black tabular-nums leading-none" style={{ color: "#16a34a" }}>1</div>
-                <div className="text-[10px] uppercase tracking-wider font-bold mt-1" style={{ color: "#16a34a" }}>
+                <div className="text-[10px] uppercase tracking-wider font-bold mt-1" style={{ color: "#166534" }}>
                   {t("pricing.referral_reward_label")}
                 </div>
               </div>
@@ -190,7 +190,7 @@ const PricingBlock = () => {
               <p className="font-semibold text-foreground text-sm leading-snug mb-1">
                 {t("pricing.referral_title")}
               </p>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 {t("pricing.referral_desc")}
               </p>
             </div>

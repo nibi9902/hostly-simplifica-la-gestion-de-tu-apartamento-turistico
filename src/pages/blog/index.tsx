@@ -5,6 +5,7 @@ import PageShell from '@/components/PageShell';
 import { breadcrumbSchema } from '@/lib/seo/schemas';
 import { useTranslation } from 'react-i18next';
 import { LangLink } from '@/i18n/LangLink';
+import { useLang } from '@/i18n/useLang';
 import { useEmpezar } from "@/lib/empezar";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -35,7 +36,7 @@ const CATEGORY_KEYS = [
   },
   {
     key: 'ops' as const,
-    color: 'bg-[#f0fdf4] text-[#16a34a]',
+    color: 'bg-[#f0fdf4] text-[#15803d]',
     slugs: [
       'gestor-pequeno-5-apps-una-app',
       'coordinacion-limpiezas-excel-sistema',
@@ -46,7 +47,7 @@ const CATEGORY_KEYS = [
   },
   {
     key: 'ai' as const,
-    color: 'bg-[#fff7f0] text-[#ea580c]',
+    color: 'bg-[#fff7f0] text-[#c2410c]',
     slugs: [
       'automatizar-alquiler-vacacional-con-ia',
       'responder-mensajes-airbnb-automaticamente',
@@ -61,6 +62,7 @@ const featuredSlug = 'ses-hospedajes-guia-completa-2026';
 export default function BlogIndex() {
   const empezar = useEmpezar();
   const { t } = useTranslation('blog');
+  const { lang } = useLang();
   const featured = blogPosts.find((p) => p.slug === featuredSlug);
 
   return (
@@ -86,6 +88,10 @@ export default function BlogIndex() {
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl leading-relaxed mb-10">
               {t('index.subtitle', { count: blogPosts.length })}
             </p>
+            {/* Els articles encara només són en castellà: a /ca ho diem abans que hi entrin. */}
+            {lang === 'ca' && (
+              <p className="text-sm text-slate-500 max-w-2xl -mt-6 mb-10">{t('index.ca_articles_note')}</p>
+            )}
             <div className="flex flex-wrap gap-6">
               {[
                 { num: `${blogPosts.length}`, label: t('index.stats_guides') },
@@ -94,7 +100,7 @@ export default function BlogIndex() {
               ].map((s) => (
                 <div key={s.label} className="flex items-baseline gap-2">
                   <span className="text-2xl font-bold text-[#0f172a]">{s.num}</span>
-                  <span className="text-sm text-slate-400">{s.label}</span>
+                  <span className="text-sm text-slate-500">{s.label}</span>
                 </div>
               ))}
             </div>
@@ -106,7 +112,7 @@ export default function BlogIndex() {
       {featured && (
         <section className="py-12 px-6 md:px-12 lg:px-20 bg-white border-b border-slate-100">
           <div className="max-w-5xl mx-auto">
-            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400 mb-6">{t('index.featured_eyebrow')}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-6">{t('index.featured_eyebrow')}</p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +135,7 @@ export default function BlogIndex() {
                     {t('index.featured_cta')} <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
-                <div className="flex flex-col items-end justify-center gap-2 text-sm text-slate-400 whitespace-nowrap">
+                <div className="flex flex-col items-end justify-center gap-2 text-sm text-slate-500 whitespace-nowrap">
                   <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" /> {t('index.min_read', { count: featured.readingTime })}</span>
                 </div>
               </LangLink>
@@ -181,7 +187,7 @@ export default function BlogIndex() {
                           {post!.description}
                         </p>
                         <div className="flex items-center justify-between pt-2 border-t border-slate-50">
-                          <span className="flex items-center gap-1 text-[11px] text-slate-400">
+                          <span className="flex items-center gap-1 text-[11px] text-slate-500">
                             <Clock className="w-3 h-3" /> {t('index.min_read', { count: post!.readingTime })}
                           </span>
                           <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-primary transition-colors" />

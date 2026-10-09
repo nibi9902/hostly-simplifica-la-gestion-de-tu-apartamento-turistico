@@ -26,7 +26,7 @@ El check-in digital es el proceso por el que el huésped proporciona sus datos d
 
 Puedes hacerlo manualmente entrando en la plataforma de la Guardia Civil y rellenando los datos a mano para cada huésped. O puedes usar una herramienta que lo haga automáticamente. Si tienes más de dos o tres reservas a la semana, la opción manual se convierte rápidamente en una fuente de errores y olvidos.
 
-Además del SES, el check-in digital permite recoger la firma del contrato, verificar la identidad del huésped con su documento, cobrar la fianza, comunicar la información de entrada (códigos, instrucciones, normas de la casa) y gestionar la taxa turística. Todo en un solo flujo.
+Además del SES, según la herramienta, el check-in digital también puede recoger la firma del contrato, verificar la identidad del huésped con su documento, cobrar la fianza, comunicar la información de entrada (códigos, instrucciones, normas de la casa) y gestionar la tasa turística. Todo en un solo flujo.
 
 ---
 
@@ -68,7 +68,7 @@ Lo que ofrece Chekin:
 - Firma electrónica del contrato
 - Gestión de la fianza (con coste adicional según plan)
 
-**Precio:** Chekin tiene diferentes planes. En 2026, el precio para alojamientos turísticos individuales oscila aproximadamente entre **15 y 30€ al mes** por propiedad, dependiendo de las funcionalidades activadas y el volumen de reservas. Hay un plan gratuito con funciones muy limitadas. (Datos públicos a abril 2026, pueden haber cambiado.)
+**Precio:** Chekin cobra una cuota mensual por propiedad: desde **3,95 €** en el plan Basic, **5,95 €** en Premium y **7,95 €** en Enterprise, según las funciones que actives. No tiene un plan gratis para siempre, solo una prueba. (Precios publicados en su web en octubre de 2026; pueden haber cambiado.)
 
 El precio es razonable para lo que hace. El problema no es Chekin en sí, sino que es una herramienta que se suma a las demás: tu channel manager, tu Excel, tu Dropbox... Es otro panel que revisar, otra factura y otro login.
 
@@ -88,7 +88,7 @@ Para propietarios que llevan varios apartamentos, la diferencia en tiempo y erro
 
 ## Check-in en Hostly: gratis para siempre
 
-Hostly incluye el check-in online y el registro a la policía en su plan gratis. El huésped rellena sus datos desde el móvil, en castellano, inglés o francés, y Hostly valida cada campo antes de enviarlo. Sin coste adicional. Sin plan premium para desbloquearlo.
+Hostly incluye el check-in online y el registro a la policía en su plan Gratis. El huésped rellena sus datos desde el móvil, en castellano, inglés o francés, y Hostly valida cada campo antes de enviarlo. Sin coste adicional. Sin plan premium para desbloquearlo.
 
 Es una de las funcionalidades base de Hostly, disponible desde el primer apartamento y sin tarjeta.
 
@@ -97,9 +97,9 @@ Lo que significa en la práctica:
 - No pagas por Chekin ni por ninguna herramienta de check-in separada.
 - El check-in está sincronizado con el resto de tu gestión (reservas, calendarios, mensajería).
 - En Cataluña, Hostly envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
-- La taxa turística catalana también está incluida: Hostly la calcula por estancia y te prepara el fichero para presentarlo en la ATC cada semestre.
+- La tasa turística de Cataluña también está incluida: Hostly la calcula por estancia y la deja lista para declarar en la ATC cada semestre.
 
-**Precio de Hostly:** el plan gratis (check-in online, registro a la policía, taxa turística y calendario de Airbnb y Booking por iCal) cuesta 0 €, para siempre. El plan completo cuesta 40 € al mes por apartamento (35 € desde 5 apartamentos), con el primer mes gratis y sin permanencia.
+**Precio de Hostly:** el plan Gratis (check-in online, registro a la policía, tasa turística y calendario de Airbnb y Booking, leído cada 30 minutos) cuesta 0 €, para siempre. Hostly Completo cuesta 40 € al mes por piso (35 € desde 5), con el primer mes gratis y sin permanencia.
 
 Si ahora mismo pagas por una herramienta de check-in separada y además por un channel manager u otras herramientas de gestión, la comparativa económica suele salir favorable a tener todo en un solo sitio.
 

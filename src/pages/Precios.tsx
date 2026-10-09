@@ -77,7 +77,7 @@ const PreciosPage = () => {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             {t("precios_page.cta_heading")}
           </h2>
-          <p className="text-white/75 text-lg mb-8">
+          <p className="text-white text-lg mb-8">
             {t("precios_page.cta_body")}
           </p>
           <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold text-base hover:bg-white/90 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
@@ -85,7 +85,7 @@ const PreciosPage = () => {
             {t("precios_page.cta_button")}
             <ArrowRight className="w-5 h-5" />
           </button>
-          <p className="text-white/50 text-sm mt-4">
+          <p className="text-white text-sm mt-4">
             {t("precios_page.cta_disclaimer")}
           </p>
         </motion.div>

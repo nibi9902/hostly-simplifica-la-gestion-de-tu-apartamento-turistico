@@ -35,7 +35,7 @@ export default function Guia() {
               <span className="text-xs font-bold uppercase tracking-[0.15em] text-primary bg-[#eff6ff] px-3 py-1.5 rounded-full">
                 {t("guia.badge_guide")}
               </span>
-              <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#16a34a] bg-[#dcfce7] px-3 py-1.5 rounded-full">
+              <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#166534] bg-[#dcfce7] px-3 py-1.5 rounded-full">
                 {t("guia.badge_updated")}
               </span>
             </div>
@@ -59,7 +59,7 @@ export default function Guia() {
       {/* Índex ràpid */}
       <section className="py-12 px-6 md:px-12 lg:px-20 bg-[#f8fafc] border-y border-slate-100">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400 mb-5">{t("guia.toc_label")}</p>
+          <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-5">{t("guia.toc_label")}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {chapters.map((ch) => (
               <a
@@ -67,7 +67,7 @@ export default function Guia() {
                 href={`#${ch.id}`}
                 className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all duration-200 group"
               >
-                <span className="text-xs font-mono font-bold text-slate-300 w-6 shrink-0">{ch.num}</span>
+                <span className="text-xs font-mono font-bold text-slate-500 w-6 shrink-0">{ch.num}</span>
                 <span className="text-sm font-medium text-slate-700 group-hover:text-primary transition-colors">{ch.title}</span>
               </a>
             ))}
@@ -89,7 +89,7 @@ export default function Guia() {
             >
               {/* Chapter header */}
               <div className="flex items-start gap-5 mb-8">
-                <span className="text-3xl font-black text-slate-100 font-mono leading-none mt-1 shrink-0">{ch.num}</span>
+                <span aria-hidden="true" className="text-3xl font-black text-slate-100 font-mono leading-none mt-1 shrink-0">{ch.num}</span>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] tracking-tight mb-3">{ch.title}</h2>
                   <p className="text-slate-500 leading-relaxed">{ch.description}</p>

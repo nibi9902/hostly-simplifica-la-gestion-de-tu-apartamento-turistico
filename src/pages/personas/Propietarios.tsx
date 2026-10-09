@@ -36,7 +36,7 @@ export default function Propietarios() {
               {t("propietarios.cta_primary")}
               <ArrowRight className="w-4 h-4" />
             </button>
-            <p className="text-sm text-slate-400 mt-3">{t("propietarios.cta_sub")}</p>
+            <p className="text-sm text-slate-500 mt-3">{t("propietarios.cta_sub")}</p>
           </motion.div>
         </div>
       </section>
@@ -57,11 +57,11 @@ export default function Propietarios() {
                 className="grid md:grid-cols-2 gap-4"
               >
                 <div className="rounded-2xl bg-[#fff7f7] border border-red-100 p-5">
-                  <p className="text-xs font-bold uppercase tracking-wider text-red-400 mb-2">{t("propietarios.label_now")}</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-red-700 mb-2">{t("propietarios.label_now")}</p>
                   <p className="text-slate-700 text-sm font-medium">{item.pain}</p>
                 </div>
                 <div className="rounded-2xl bg-[#f0fdf4] border border-[#bbf7d0] p-5">
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#16a34a] mb-2">{t("propietarios.label_with_hostly")}</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#15803d] mb-2">{t("propietarios.label_with_hostly")}</p>
                   <p className="text-slate-700 text-sm">{item.fix}</p>
                 </div>
               </motion.div>

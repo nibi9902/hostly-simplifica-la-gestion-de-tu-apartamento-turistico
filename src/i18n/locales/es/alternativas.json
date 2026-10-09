@@ -1,8 +1,10 @@
 {
   "index": {
     "eyebrow": "Comparativas",
+    "metaTitle": "Alternativas a los PMS más populares | Hostly",
+    "metaDescription": "Compara Hostly con Icnea, Hostify, Lodgify, Smoobu, Hospitable, Guesty y Avantio. La alternativa pensada para España, con IA, check-in gratis y el registro de viajeros resuelto.",
     "h1": "Hostly vs los demás PMS",
-    "subtitle": "Análisis honestos de los principales PMS del mercado para el perfil de propietario pequeño y gestor ibérico.",
+    "subtitle": "Análisis honestos de los principales PMS del mercado para el propietario pequeño y el gestor que trabaja en España.",
     "cardTitle": "Hostly vs {{name}}",
     "distingue": {
       "eyebrow": "Antes de comparar",
@@ -10,11 +12,11 @@
       "items": [
         {
           "titol": "El registro a la policía, gratis",
-          "text": "Check-in online y registro a la policía en el plan gratis, para siempre. Hay herramientas que lo cobran por check-in."
+          "text": "Check-in online y registro a la policía en el plan Gratis, para siempre. Hay herramientas que lo cobran cada mes por piso."
         },
         {
           "titol": "Pensado para España",
-          "text": "Mossos d'Esquadra, taxa turística catalana y soporte en castellano y catalán."
+          "text": "Mossos d'Esquadra, tasa turística de Cataluña y soporte en castellano y catalán."
         },
         {
           "titol": "La IA contesta por WhatsApp",
@@ -22,11 +24,11 @@
         },
         {
           "titol": "Un precio por piso, sin comisiones",
-          "text": "40 €/mes por apartamento, 35 € desde 5. Sin porcentaje por reserva."
+          "text": "40 €/mes por piso, 35 € desde 5. Sin porcentaje por reserva."
         },
         {
-          "titol": "Todo en una app",
-          "text": "Reservas de Airbnb y Booking, limpiezas, precios con PriceLabs y finanzas, sin cinco suscripciones."
+          "titol": "Una sola app",
+          "text": "Reservas de Airbnb y Booking, mensajes, limpiezas, precios con PriceLabs integrado y finanzas, en un solo sitio."
         },
         {
           "titol": "Te lo montamos contigo",
@@ -37,11 +39,12 @@
   },
   "page": {
     "heroEyebrow": "Comparativa",
-    "advantagesEyebrow": "Por qué Hostly sobre {{name}}",
+    "metaDescription": "Compara Hostly con {{name}}. {{priceNote}}. Alternativa pensada para España, con IA y con el check-in y el registro de viajeros gratis.",
+    "advantagesEyebrow": "Por qué Hostly en lugar de {{name}}",
     "comparisonEyebrow": "Comparativa directa",
     "colFeature": "Funcionalidad",
     "colHostly": "Hostly",
-    "verifiedNote": "Datos públicos a abril 2026, pueden haber cambiado.",
+    "verifiedNote": "Datos públicos de cada empresa (precios revisados en octubre de 2026); pueden haber cambiado.",
     "faqsEyebrow": "Preguntas frecuentes",
     "ctaH2": "Empieza hoy con Hostly",
     "ctaSubtitle": "Sin tarjeta. Sin permanencia. Check-in y registro de viajeros gratis para siempre.",
@@ -51,11 +54,11 @@
     "iaWhatsapp": "IA en WhatsApp nativa",
     "checkinSes": "Check-in y registro policial gratis",
     "complianceSes": "Registro de viajeros a la policía",
-    "preciosDinamicos": "Precios dinámicos incluidos (con PriceLabs)",
+    "preciosDinamicos": "Precios con PriceLabs integrado",
     "channelManager": "Channel manager",
     "limpiezas": "Coordinación de limpiezas",
-    "soporteEs": "Soporte en español y catalán",
-    "precio1apt": "Precio desde 1 apartamento",
+    "soporteEs": "Soporte en castellano y catalán",
+    "precio1apt": "Precio desde 1 piso",
     "selfServe": "Empezar gratis sin demo",
     "precioTransparente": "Precio público transparente"
   }
