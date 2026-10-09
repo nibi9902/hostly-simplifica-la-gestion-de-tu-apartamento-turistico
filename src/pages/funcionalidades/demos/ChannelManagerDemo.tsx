@@ -275,7 +275,7 @@ const ChannelManagerDemo: React.FC<ChannelManagerDemoProps> = ({ loop = false, s
       <div style={{
         borderRadius:'14px', overflow:'hidden', background:'#fff',
         boxShadow:`
-          0 50px 100px -20px rgba(26,58,143,0.28),
+          0 50px 100px -20px rgba(37,99,235,0.28),
           0 30px 60px -30px rgba(15,23,42,0.32),
           0 0 0 1px rgba(255,255,255,0.9) inset,
           0 1px 2px rgba(15,23,42,0.08)

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const appleEase = [0.22, 1, 0.36, 1] as const;
 
 /* ─── Brand tokens ─── */
-const BRAND_BLUE = "#1a3a8f";
+const BRAND_BLUE = "#2563EB"; // = --primary (hex: es combina amb alfa més avall)
 
 /* ─── Steps (només els 3 conceptuals — sense mockups) ─── */
 const STEP_NUMS = ["01", "02", "03"] as const;
@@ -179,7 +179,7 @@ const StepsBlock = () => {
             }}
           >
             {t("steps.title_1")}<br />
-            <span className="font-accent" style={{ color: BRAND_BLUE, fontWeight: 300, fontSize: "1.15em" }}>
+            <span style={{ color: BRAND_BLUE }}>
               {t("steps.title_2")}
             </span>
           </h2>

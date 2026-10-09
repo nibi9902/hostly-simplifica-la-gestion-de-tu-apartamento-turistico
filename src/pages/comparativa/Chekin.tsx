@@ -79,9 +79,9 @@ export default function ComparativaChekin() {
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1, ease }}
-            className="rounded-2xl border border-[#1a3a8f]/20 bg-[#f0f6ff] p-8"
+            className="rounded-2xl border border-primary/20 bg-[#f0f6ff] p-8"
           >
-            <p className="text-xs font-bold uppercase tracking-widest text-[#1a3a8f] mb-3">{t("chekin.who_hostly_eyebrow")}</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">{t("chekin.who_hostly_eyebrow")}</p>
             <h2 className="text-xl font-bold text-[#0f172a] mb-4">{t("chekin.who_hostly_heading")}</h2>
             <p className="text-slate-500 text-sm leading-relaxed">
               {t("chekin.who_hostly_p1")}
@@ -150,14 +150,14 @@ export default function ComparativaChekin() {
                 </div>
               </div>
             </div>
-            <div className="rounded-2xl border border-[#1a3a8f]/20 bg-[#f0f6ff] p-8">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#1a3a8f] mb-4">{t("chekin.cost_hostly_label")}</p>
+            <div className="rounded-2xl border border-primary/20 bg-[#f0f6ff] p-8">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary mb-4">{t("chekin.cost_hostly_label")}</p>
               <div className="space-y-3 text-sm text-slate-600">
                 <div className="flex justify-between"><span>{t("chekin.cost_hostly_row1_label")}</span><span className="font-semibold">{t("chekin.cost_hostly_row1_value")}</span></div>
                 <div className="flex justify-between"><span>{t("chekin.cost_hostly_row2_label")}</span><span className="font-semibold text-[#16a34a]">{t("chekin.cost_hostly_row2_value")}</span></div>
                 <div className="flex justify-between"><span>{t("chekin.cost_hostly_row3_label")}</span><span className="font-semibold text-[#16a34a]">{t("chekin.cost_hostly_row3_value")}</span></div>
                 <div className="flex justify-between"><span>{t("chekin.cost_hostly_row4_label")}</span><span className="font-semibold text-[#16a34a]">{t("chekin.cost_hostly_row4_value")}</span></div>
-                <div className="border-t border-[#1a3a8f]/20 pt-3 flex justify-between font-bold text-[#0f172a]">
+                <div className="border-t border-primary/20 pt-3 flex justify-between font-bold text-[#0f172a]">
                   <span>{t("chekin.cost_hostly_total_label")}</span><span>{t("chekin.cost_hostly_total_value")}</span>
                 </div>
               </div>

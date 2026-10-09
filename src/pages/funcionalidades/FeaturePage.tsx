@@ -66,9 +66,9 @@ export default function FeaturePage({ feature }: Props) {
               {/* Icon + eyebrow */}
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-11 h-11 rounded-2xl bg-[#eff6ff] flex items-center justify-center">
-                  <Icon className="w-5 h-5" style={{ color: '#1a3a8f' }} />
+                  <Icon className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#1a3a8f]">
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
                   {feature.name}
                 </span>
               </div>
@@ -81,7 +81,7 @@ export default function FeaturePage({ feature }: Props) {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1a3a8f] text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(26,58,143,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+                <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"
                 >
                   {tEmbut('cta')}
                   <ArrowRight className="w-4 h-4" />
@@ -106,7 +106,7 @@ export default function FeaturePage({ feature }: Props) {
               <div style={{
                 position: 'absolute',
                 inset: '-10%',
-                background: 'radial-gradient(circle at center, rgba(26,58,143,0.15) 0%, transparent 65%)',
+                background: 'radial-gradient(circle at center, rgba(37,99,235,0.15) 0%, transparent 65%)',
                 filter: 'blur(40px)',
                 zIndex: 0,
                 pointerEvents: 'none',
@@ -124,7 +124,7 @@ export default function FeaturePage({ feature }: Props) {
       <section className="py-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }}>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1a3a8f] mb-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
               {t('page.problem_eyebrow')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight">
@@ -147,7 +147,7 @@ export default function FeaturePage({ feature }: Props) {
             transition={{ duration: 0.55, ease }}
             className="mb-12"
           >
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1a3a8f] mb-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
               {t('page.how_eyebrow')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight leading-tight">
@@ -191,7 +191,7 @@ export default function FeaturePage({ feature }: Props) {
             transition={{ duration: 0.55, ease }}
             className="mb-12"
           >
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1a3a8f] mb-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
               {t('page.advantages_eyebrow')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight leading-tight">
@@ -227,7 +227,7 @@ export default function FeaturePage({ feature }: Props) {
             transition={{ duration: 0.55, ease }}
             className="mb-12"
           >
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1a3a8f] mb-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
               {t('page.usage_eyebrow')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight leading-tight">
@@ -258,7 +258,7 @@ export default function FeaturePage({ feature }: Props) {
         <section className="py-20 px-6 md:px-12 lg:px-20">
           <div className="max-w-4xl mx-auto">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }} className="mb-10">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1a3a8f] mb-4">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
                 {t('page.related_eyebrow')}
               </p>
               <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight">
@@ -273,16 +273,16 @@ export default function FeaturePage({ feature }: Props) {
                   <LangLink
                     key={rf.slug}
                     to={`/funcionalidades/${rf.slug}`}
-                    className="group flex flex-col gap-3 p-6 rounded-2xl border border-slate-100 bg-white hover:border-[#1a3a8f]/20 hover:shadow-md transition-all duration-200"
+                    className="group flex flex-col gap-3 p-6 rounded-2xl border border-slate-100 bg-white hover:border-primary/20 hover:shadow-md transition-all duration-200"
                   >
                     <div className="w-10 h-10 rounded-xl bg-[#eff6ff] flex items-center justify-center">
-                      <RIcon className="w-4 h-4" style={{ color: '#1a3a8f' }} />
+                      <RIcon className="w-4 h-4" style={{ color: 'hsl(var(--primary))' }} />
                     </div>
-                    <h3 className="font-bold text-[#0f172a] text-base leading-snug group-hover:text-[#1a3a8f] transition-colors">
+                    <h3 className="font-bold text-[#0f172a] text-base leading-snug group-hover:text-primary transition-colors">
                       {rf.name}
                     </h3>
                     <p className="text-sm text-slate-500 leading-relaxed line-clamp-2">{rf.shortDescription}</p>
-                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#1a3a8f] mt-auto">
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-auto">
                       {t('page.related_cta')} <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </LangLink>
@@ -297,7 +297,7 @@ export default function FeaturePage({ feature }: Props) {
       <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#f8fafc]">
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }} className="mb-10">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1a3a8f] mb-4">{t('page.faqs_eyebrow')}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">{t('page.faqs_eyebrow')}</p>
             <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight">
               {t('page.faqs_title')}
             </h2>

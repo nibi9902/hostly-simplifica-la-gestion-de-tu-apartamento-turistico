@@ -87,7 +87,7 @@ const TestimonialBlock = () => {
             </p>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight mb-4">
               {t("testimonials.title_start")}{" "}
-              <span className="text-primary italic">{t("testimonials.title_accent")}</span>
+              <span className="text-primary">{t("testimonials.title_accent")}</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto">
               {t("testimonials.subtitle")}
@@ -137,7 +137,7 @@ const TestimonialBlock = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-3">
                 {t("support.promises_title_start")}{" "}
-                <span className="text-primary italic">{t("support.promises_title_accent")}</span>
+                <span className="text-primary">{t("support.promises_title_accent")}</span>
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-10">
                 {t("support.promises_subtitle")}

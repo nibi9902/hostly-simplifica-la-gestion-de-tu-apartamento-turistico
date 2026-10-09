@@ -32,7 +32,7 @@ export default function Guia() {
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#1a3a8f] bg-[#eff6ff] px-3 py-1.5 rounded-full">
+              <span className="text-xs font-bold uppercase tracking-[0.15em] text-primary bg-[#eff6ff] px-3 py-1.5 rounded-full">
                 {t("guia.badge_guide")}
               </span>
               <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#16a34a] bg-[#dcfce7] px-3 py-1.5 rounded-full">
@@ -68,7 +68,7 @@ export default function Guia() {
                 className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all duration-200 group"
               >
                 <span className="text-xs font-mono font-bold text-slate-300 w-6 shrink-0">{ch.num}</span>
-                <span className="text-sm font-medium text-slate-700 group-hover:text-[#1a3a8f] transition-colors">{ch.title}</span>
+                <span className="text-sm font-medium text-slate-700 group-hover:text-primary transition-colors">{ch.title}</span>
               </a>
             ))}
           </div>
@@ -102,12 +102,12 @@ export default function Guia() {
                   <LangLink
                     key={link.href}
                     to={link.href}
-                    className="group flex items-center justify-between p-4 rounded-2xl bg-[#f8fafc] border border-slate-100 hover:bg-white hover:border-[#1a3a8f]/20 hover:shadow-sm transition-all duration-200"
+                    className="group flex items-center justify-between p-4 rounded-2xl bg-[#f8fafc] border border-slate-100 hover:bg-white hover:border-primary/20 hover:shadow-sm transition-all duration-200"
                   >
-                    <span className="text-sm font-medium text-slate-700 group-hover:text-[#1a3a8f] transition-colors leading-snug pr-3">
+                    <span className="text-sm font-medium text-slate-700 group-hover:text-primary transition-colors leading-snug pr-3">
                       {link.label}
                     </span>
-                    <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#1a3a8f] shrink-0 transition-colors" />
+                    <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-primary shrink-0 transition-colors" />
                   </LangLink>
                 ))}
               </div>

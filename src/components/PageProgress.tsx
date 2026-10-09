@@ -107,7 +107,7 @@ export default function PageProgress() {
                 height: 8,
                 borderRadius: '50%',
                 background: 'radial-gradient(circle at center, #2563EB 0%, #1a3a8f 70%)',
-                boxShadow: '0 0 0 3px rgba(26,58,143,0.15), 0 0 12px 3px rgba(37,99,235,0.45)',
+                boxShadow: '0 0 0 3px rgba(37,99,235,0.15), 0 0 12px 3px rgba(37,99,235,0.45)',
                 zIndex: 2,
               }}
             />
@@ -148,7 +148,7 @@ export default function PageProgress() {
                       width:  isActive ? 6 : isHovered ? 5 : 3,
                       height: isActive ? 6 : isHovered ? 5 : 3,
                       opacity: isActive ? 0 : isHovered ? 0.6 : 0.25,
-                      background: isHovered ? '#1a3a8f' : 'rgba(15,23,42,1)',
+                      background: isHovered ? 'hsl(var(--primary))' : 'rgba(15,23,42,1)',
                     }}
                     transition={{ duration: 0.2 }}
                     style={{ borderRadius: '50%' }}

@@ -78,13 +78,13 @@ export default function AlternativasIndex() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.06, ease }}
-              className="group flex items-center justify-between p-6 rounded-2xl border border-slate-100 bg-white hover:border-[#1a3a8f]/20 hover:shadow-md transition-all duration-200"
+              className="group flex items-center justify-between p-6 rounded-2xl border border-slate-100 bg-white hover:border-primary/20 hover:shadow-md transition-all duration-200"
             >
               <div>
-                <p className="font-bold text-[#0f172a] group-hover:text-[#1a3a8f] transition-colors mb-1">{t('index.cardTitle', { name: c.name })}</p>
+                <p className="font-bold text-[#0f172a] group-hover:text-primary transition-colors mb-1">{t('index.cardTitle', { name: c.name })}</p>
                 <p className="text-sm text-slate-500 line-clamp-1">{c.target}</p>
               </div>
-              <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#1a3a8f] shrink-0 transition-colors ml-4" />
+              <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-primary shrink-0 transition-colors ml-4" />
             </MotionLangLink>
           ))}
         </div>

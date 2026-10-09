@@ -73,7 +73,7 @@ const PricingBlock = () => {
             </ul>
 
             {/* CTA */}
-            <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-border bg-background text-foreground font-semibold text-sm hover:bg-muted transition-colors"
+            <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-border bg-background text-foreground font-semibold text-sm hover:bg-muted transition-colors"
             >
               {t("pricing.free_cta")}
               <ArrowRight className="w-4 h-4" />
@@ -98,7 +98,7 @@ const PricingBlock = () => {
                 <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/90 bg-white/15 px-2.5 py-1 rounded-full">
                   {t("pricing.paid_badge")}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#1a3a8f] bg-[#fde68a] px-2.5 py-1 rounded-full">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-primary bg-[#fde68a] px-2.5 py-1 rounded-full">
                   {t("pricing.paid_badge_recommended")}
                 </span>
               </div>
@@ -130,7 +130,7 @@ const PricingBlock = () => {
               </ul>
 
               {/* CTA */}
-              <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-[#1a3a8f] font-semibold text-sm hover:bg-white/90 transition-colors shadow-[0_4px_14px_rgba(0,0,0,0.15)]"
+              <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white text-primary font-semibold text-sm hover:bg-white/90 transition-colors shadow-[0_4px_14px_rgba(0,0,0,0.15)]"
               >
                 {t("pricing.paid_cta")}
                 <ArrowRight className="w-4 h-4" />

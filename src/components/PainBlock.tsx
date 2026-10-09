@@ -173,7 +173,7 @@ const PainBlock = () => {
           <p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">
             {t("pain.closer_sub")}
           </p>
-          <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors shadow-[0_4px_14px_rgba(26,58,143,0.25)]"
+          <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors shadow-[0_4px_14px_rgba(37,99,235,0.25)]"
           >
             {t("pain.closer_cta")}
             <ArrowRight className="w-4 h-4" />

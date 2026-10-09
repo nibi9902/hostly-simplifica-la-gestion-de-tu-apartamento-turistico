@@ -33,7 +33,7 @@ export default function SobreHostly() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
           >
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1a3a8f] mb-5">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-5">
               {t("sobre.eyebrow")}
             </p>
             <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight leading-[1.05] mb-6">
@@ -76,7 +76,7 @@ export default function SobreHostly() {
             transition={{ duration: 0.5, ease }}
             className="flex items-start gap-5 p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_4px_24px_rgba(15,23,42,0.05)]"
           >
-            <div className="w-14 h-14 rounded-full bg-[#1a3a8f] flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+            <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
               B
             </div>
             <div>
@@ -93,7 +93,7 @@ export default function SobreHostly() {
       {/* Valores */}
       <section className="py-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1a3a8f] mb-4">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
             {t("sobre.values_eyebrow")}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-12">
@@ -110,7 +110,7 @@ export default function SobreHostly() {
                 className="flex gap-5"
               >
                 <div className="w-8 h-8 rounded-full bg-[#eff6ff] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[#1a3a8f] font-bold text-sm">{i + 1}</span>
+                  <span className="text-primary font-bold text-sm">{i + 1}</span>
                 </div>
                 <div>
                   <p className="font-bold text-[#0f172a] mb-1">{v.title}</p>
@@ -134,7 +134,7 @@ export default function SobreHostly() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="mailto:hola@hostlylabs.com"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1a3a8f] text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(26,58,143,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"
             >
               <Mail className="w-4 h-4" />
               hola@hostlylabs.com

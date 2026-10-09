@@ -686,14 +686,14 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
         <p className="hero-cta-tagline text-xs font-bold tracking-[0.18em] uppercase text-blue-600 mb-5">
           {t("hero.cta_tagline")}
         </p>
-        {/* Disseny 3-línies amb font-heading (General Sans) — més modern/geomètric */}
+        {/* Disseny 3-línies amb font-heading (Inter, la de l'app des d'octubre 2026) */}
         <h2 className="hero-cta-h2 font-heading font-bold mb-7 md:mb-8 tracking-tight text-card-dark text-center">
           {/* Línia 1 — comparació tatxada, una mida més gran */}
           <span className="block text-2xl md:text-3xl lg:text-[2.5rem] text-slate-400 font-medium mb-5 md:mb-6 leading-tight">
             <span className="line-through decoration-slate-300 decoration-[3px] md:decoration-4">{t("hero.cta_compare_price")}</span> {t("hero.cta_compare_rest")}
           </span>
           {/* Línia 2 — l'impacte: "0 €" amb gradient + "Hostly" amb línia animada */}
-          <span className="block text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight">
+          <span className="block text-[2.6rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight">
             <span
               className="text-[1.4em] font-black mr-4 md:mr-5 inline-block align-baseline"
               style={{
@@ -707,6 +707,7 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
               {t("hero.cta_main_price")}
             </span>
             {t("hero.cta_main_text")}{' '}
+            <span className="whitespace-nowrap">
             <span
               className="hero-brand-wrap relative inline-block"
               style={{
@@ -735,9 +736,10 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
               />
             </span>
             .
+            </span>
           </span>
           {/* Línia 3 — el twist */}
-          <span className="block text-3xl md:text-5xl lg:text-[3.5rem] font-light text-[#1a3a8f] mt-3 md:mt-4 tracking-tight">
+          <span className="block text-3xl md:text-5xl lg:text-[3.5rem] font-light text-primary mt-3 md:mt-4 tracking-tight">
             {t("hero.cta_forever")}
           </span>
         </h2>
@@ -765,7 +767,7 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
           <button
             type="button"
             onClick={onEmpezar}
-            className="hero-cta-btn inline-flex items-center justify-center gap-2 px-10 py-4 md:px-12 md:py-[1.1rem] rounded-full bg-[#1a3a8f] text-white text-base md:text-lg font-semibold shadow-[0_10px_30px_-8px_rgba(26,58,143,0.45)] hover:shadow-[0_14px_36px_-6px_rgba(26,58,143,0.55)] hover:-translate-y-1 hover:bg-[#1f4ab0] active:translate-y-0 active:scale-[0.98] transition-all duration-300"
+            className="hero-cta-btn inline-flex items-center justify-center gap-2 px-10 py-4 md:px-12 md:py-[1.1rem] rounded-full bg-primary text-white text-base md:text-lg font-semibold shadow-[0_10px_30px_-8px_rgba(37,99,235,0.45)] hover:shadow-[0_14px_36px_-6px_rgba(37,99,235,0.55)] hover:-translate-y-1 hover:bg-primary/90 active:translate-y-0 active:scale-[0.98] transition-all duration-300"
           >
             {t("hero.btn_start")}
           </button>

@@ -26,7 +26,7 @@ const NotFound = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <LangLink
               to="/"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
             >
               <Home className="w-4 h-4" />
               {t("not_found.go_home")}
@@ -34,7 +34,7 @@ const NotFound = () => {
             <button
               type="button"
               onClick={() => window.history.back()}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-border bg-background text-foreground font-semibold text-sm hover:bg-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border bg-background text-foreground font-semibold text-sm hover:bg-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             >
               <ArrowLeft className="w-4 h-4" />
               {t("not_found.go_back")}

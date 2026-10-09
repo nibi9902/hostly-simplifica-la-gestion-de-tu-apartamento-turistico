@@ -15,7 +15,7 @@ const FeaturesBlock = () => {
           transition={{ duration: 0.55, ease }}
           className="text-center"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1a3a8f] mb-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary mb-3">
             {t("features.eyebrow")}
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-[#0f172a] tracking-tight leading-tight">

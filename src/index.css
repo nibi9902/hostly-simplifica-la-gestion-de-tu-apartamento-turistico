@@ -14,23 +14,26 @@
 
 @layer base {
   :root {
-    --background: 222 33% 98%;
-    --foreground: 222 47% 11%;
+    --background: 210 20% 98%;
+    --foreground: 220 14% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 220 14% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 220 14% 11%;
 
-    --primary: 229 65% 52%;
+    /* Redisseny d'octubre 2026: un sol blau d'acció a tot el web. És el de la família de
+       l'app (217 91% 60%) un to més fosc, perquè amb lletra blanca passi el contrast AA
+       (5,2:1; el de l'app fa 3,7:1). */
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 230 60% 55%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 20% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 220 9% 46%;
 
     --accent: 20 100% 59%;
     --accent-foreground: 0 0% 100%;
@@ -38,9 +41,9 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 229 65% 52%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
 
     --radius: 1.5rem;
 
@@ -54,7 +57,8 @@
 
     --dark-blue: 221 66% 33%;
 
-    --font-heading: 'General Sans', 'Inter', sans-serif;
+    /* Una sola lletra, la de l'app. La cursiva de Playfair només a les frases de «Lo que reemplaza». */
+    --font-heading: 'Inter', sans-serif;
     --font-body: 'Inter', sans-serif;
 
     --shadow-card: 0 10px 30px rgba(47, 79, 215, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
@@ -67,10 +71,10 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 229 65% 52%;
+    --sidebar-ring: 221 83% 53%;
 
     /* ── Hostly Design Tokens ── */
-    --hostly-primary: #1a3a8f;
+    --hostly-primary: #2563EB;
     --hostly-primary-dark: #0f1f5c;
     --hostly-primary-light: #3b5fd9;
     --hostly-success: #22c55e;

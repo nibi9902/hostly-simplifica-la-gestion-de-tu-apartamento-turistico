@@ -94,14 +94,14 @@ export default function Demo() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-            <button type="button" onClick={empezar} className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#0c1a4a] font-semibold text-sm hover:bg-white/90 transition-colors shadow-[0_4px_20px_rgba(255,255,255,0.15)]"
+            <button type="button" onClick={empezar} className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#0c1a4a] font-semibold text-sm hover:bg-white/90 transition-colors shadow-[0_4px_20px_rgba(255,255,255,0.15)]"
             >
               {t("demo.cta_start")}
               <ArrowRight className="w-4 h-4" />
             </button>
             <LangLink
               to="/precios"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 text-white/75 font-medium text-sm hover:border-white/40 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white/75 font-medium text-sm hover:border-white/40 hover:text-white transition-colors"
             >
               {t("demo.cta_pricing")}
             </LangLink>

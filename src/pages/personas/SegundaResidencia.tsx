@@ -22,7 +22,7 @@ export default function SegundaResidencia() {
       <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f0f6ff] to-white">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1a3a8f] mb-4">{t("segunda_residencia.badge")}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">{t("segunda_residencia.badge")}</p>
             <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight">
               {t("segunda_residencia.h1").split('\n').map((line, i, arr) => (
                 <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
@@ -31,7 +31,7 @@ export default function SegundaResidencia() {
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl mb-10 leading-relaxed">
               {t("segunda_residencia.intro")}
             </p>
-            <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1a3a8f] text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(26,58,143,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+            <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"
             >
               {t("segunda_residencia.cta_primary")}
               <ArrowRight className="w-4 h-4" />

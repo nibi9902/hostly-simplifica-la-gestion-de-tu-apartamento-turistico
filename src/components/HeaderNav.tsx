@@ -113,7 +113,7 @@ export function HeaderNav({ nav }: Props) {
           target="_blank"
           rel="noopener noreferrer"
           title="Acceder a la app"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-[11px] font-semibold text-foreground/60 hover:text-foreground hover:border-slate-300 hover:bg-slate-50 transition-all duration-150"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 text-[11px] font-semibold text-foreground/60 hover:text-foreground hover:border-slate-300 hover:bg-slate-50 transition-all duration-150"
         >
           <LogIn className="w-3 h-3" />
           App
@@ -173,7 +173,7 @@ export function HeaderNav({ nav }: Props) {
                             <LangLink key={sub.href} to={sub.href} className="group flex flex-col gap-0.5" onClick={triggerClose}>
                               <div className="flex items-center gap-2">
                                 <span className="text-[14px] font-semibold text-foreground group-hover:text-primary transition-colors duration-150 leading-snug">{sub.label}</span>
-                                {sub.badge && <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#dbeafe] text-[#1a3a8f]">{sub.badge}</span>}
+                                {sub.badge && <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#dbeafe] text-primary">{sub.badge}</span>}
                               </div>
                               {sub.description && <span className="text-xs text-muted-foreground leading-relaxed">{sub.description}</span>}
                             </LangLink>

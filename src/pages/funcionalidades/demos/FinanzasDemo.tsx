@@ -193,7 +193,7 @@ const FinanzasDemo: React.FC<FinanzasDemoProps> = ({ loop = false, staticMode = 
     <div ref={containerRef} style={{ position: 'relative', width: '100%', maxWidth: '520px', margin: '0 auto' }}>
       <div style={{
         borderRadius: '14px', overflow: 'hidden', background: '#fff',
-        boxShadow: `0 50px 100px -20px rgba(26,58,143,0.28), 0 30px 60px -30px rgba(15,23,42,0.32), 0 0 0 1px rgba(255,255,255,0.9) inset, 0 1px 2px rgba(15,23,42,0.08)`,
+        boxShadow: `0 50px 100px -20px rgba(37,99,235,0.28), 0 30px 60px -30px rgba(15,23,42,0.32), 0 0 0 1px rgba(255,255,255,0.9) inset, 0 1px 2px rgba(15,23,42,0.08)`,
         transform: 'rotateY(-2.5deg) rotateX(0.5deg)',
         transformStyle: 'preserve-3d', perspective: '1600px',
       }}>

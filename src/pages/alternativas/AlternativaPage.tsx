@@ -48,7 +48,7 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
       {/* Ventajas Hostly */}
       <section className="py-16 px-6 md:px-12 lg:px-20">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#1a3a8f] mb-8">{t('page.advantagesEyebrow', { name: c.name })}</p>
+          <p className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-8">{t('page.advantagesEyebrow', { name: c.name })}</p>
           <div className="grid md:grid-cols-2 gap-5">
             {c.advantages.map((adv, i) => (
               <motion.div
@@ -85,7 +85,7 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
                     ? <CheckCircle className="w-5 h-5 text-[#16a34a]" />
                     : row.hostly === false
                     ? <XCircle className="w-5 h-5 text-slate-200" />
-                    : <span className="text-xs font-semibold text-[#1a3a8f] bg-[#eff6ff] px-2 py-0.5 rounded-full">{row.hostly}</span>}
+                    : <span className="text-xs font-semibold text-primary bg-[#eff6ff] px-2 py-0.5 rounded-full">{row.hostly}</span>}
                 </div>
                 <div className="p-4 flex justify-center items-center border-l border-slate-100">
                   {row.them === true

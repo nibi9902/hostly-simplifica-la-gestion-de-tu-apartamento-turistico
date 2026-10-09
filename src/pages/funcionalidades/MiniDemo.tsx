@@ -221,8 +221,8 @@ const GenericFallback: React.FC = () => (
         height: 70,
         borderRadius: '50%',
         border: '2px solid transparent',
-        borderTopColor: '#1a3a8f',
-        borderRightColor: '#1a3a8f',
+        borderTopColor: 'hsl(var(--primary))',
+        borderRightColor: 'hsl(var(--primary))',
       }}
     />
     <div style={{ textAlign: 'center' }}>

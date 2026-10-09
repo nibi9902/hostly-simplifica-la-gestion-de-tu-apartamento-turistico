@@ -110,7 +110,7 @@ export default function ArticleLayout({ post }: Props) {
 
             {/* Keyword pill */}
             {post.keywords[0] && (
-              <span className="inline-flex items-center text-xs font-bold uppercase tracking-[0.15em] px-3 py-1.5 rounded-full bg-[#eff6ff] text-[#1a3a8f] mb-5">
+              <span className="inline-flex items-center text-xs font-bold uppercase tracking-[0.15em] px-3 py-1.5 rounded-full bg-[#eff6ff] text-primary mb-5">
                 {post.keywords[0]}
               </span>
             )}
@@ -137,7 +137,7 @@ export default function ArticleLayout({ post }: Props) {
                   {t('article.min_read_full', { count: post.readingTime })}
                 </span>
               )}
-              <span className="ml-auto text-xs font-medium text-[#1a3a8f] bg-[#eff6ff] px-2.5 py-1 rounded-full">
+              <span className="ml-auto text-xs font-medium text-primary bg-[#eff6ff] px-2.5 py-1 rounded-full">
                 {t('article.updated_2026')}
               </span>
             </div>
@@ -157,16 +157,16 @@ export default function ArticleLayout({ post }: Props) {
               prose prose-slate prose-lg max-w-none pt-12
               prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-[#0f172a] prose-headings:scroll-mt-24
               prose-h2:text-2xl prose-h2:mt-14 prose-h2:mb-5 prose-h2:pb-3 prose-h2:border-b prose-h2:border-slate-100
-              prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-[#1a3a8f]
+              prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-primary
               prose-h4:text-lg prose-h4:mt-8 prose-h4:mb-3
               prose-p:text-slate-600 prose-p:leading-[1.85] prose-p:my-5
               prose-strong:text-[#0f172a] prose-strong:font-semibold
-              prose-a:text-[#1a3a8f] prose-a:font-medium prose-a:no-underline prose-a:border-b prose-a:border-[#1a3a8f]/30 hover:prose-a:border-[#1a3a8f]
+              prose-a:text-primary prose-a:font-medium prose-a:no-underline prose-a:border-b prose-a:border-primary/30 hover:prose-a:border-primary
               prose-ul:text-slate-600 prose-ul:my-5 prose-li:my-2 prose-li:leading-relaxed
               prose-ol:text-slate-600 prose-ol:my-5
-              prose-code:text-[#1a3a8f] prose-code:bg-[#eff6ff] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:text-sm prose-code:font-medium prose-code:before:content-none prose-code:after:content-none
+              prose-code:text-primary prose-code:bg-[#eff6ff] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:text-sm prose-code:font-medium prose-code:before:content-none prose-code:after:content-none
               prose-pre:bg-[#0f172a] prose-pre:text-slate-300 prose-pre:rounded-2xl prose-pre:shadow-xl
-              prose-blockquote:border-l-4 prose-blockquote:border-[#1a3a8f] prose-blockquote:bg-[#f0f6ff] prose-blockquote:rounded-r-xl prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:not-italic prose-blockquote:text-slate-700
+              prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-[#f0f6ff] prose-blockquote:rounded-r-xl prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:not-italic prose-blockquote:text-slate-700
               prose-table:text-sm prose-table:border-collapse
               prose-thead:bg-[#f8fafc]
               prose-th:text-[#0f172a] prose-th:font-bold prose-th:px-4 prose-th:py-3 prose-th:border prose-th:border-slate-200
@@ -212,13 +212,13 @@ export default function ArticleLayout({ post }: Props) {
           <div className="max-w-3xl mx-auto px-6 md:px-8 mt-6 mb-4">
             <LangLink
               to={relatedFeature.path}
-              className="flex items-center justify-between gap-4 p-5 rounded-2xl border border-[#1a3a8f]/15 bg-[#eff6ff] hover:border-[#1a3a8f]/30 hover:bg-[#e0eeff] transition-all duration-200 group"
+              className="flex items-center justify-between gap-4 p-5 rounded-2xl border border-primary/15 bg-[#eff6ff] hover:border-primary/30 hover:bg-[#e0eeff] transition-all duration-200 group"
             >
               <div className="flex items-center gap-3">
-                <span className="text-[#1a3a8f] text-lg">⚡</span>
-                <p className="text-sm font-semibold text-[#1a3a8f]">{relatedFeature.label}</p>
+                <span className="text-primary text-lg">⚡</span>
+                <p className="text-sm font-semibold text-primary">{relatedFeature.label}</p>
               </div>
-              <ArrowRight className="w-4 h-4 text-[#1a3a8f] flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
             </LangLink>
           </div>
         )}
@@ -236,9 +236,9 @@ export default function ArticleLayout({ post }: Props) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.07, ease }}
-                  className="group flex flex-col gap-2 p-4 rounded-2xl border border-slate-100 bg-[#f8fafc] hover:bg-white hover:border-[#1a3a8f]/20 hover:shadow-md transition-all duration-200"
+                  className="group flex flex-col gap-2 p-4 rounded-2xl border border-slate-100 bg-[#f8fafc] hover:bg-white hover:border-primary/20 hover:shadow-md transition-all duration-200"
                 >
-                  <h3 className="text-sm font-bold text-[#0f172a] group-hover:text-[#1a3a8f] transition-colors leading-snug">
+                  <h3 className="text-sm font-bold text-[#0f172a] group-hover:text-primary transition-colors leading-snug">
                     {p.title}
                   </h3>
                   <span className="flex items-center gap-1 text-[11px] text-slate-400 mt-auto">

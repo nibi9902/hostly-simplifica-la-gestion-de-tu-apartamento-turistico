@@ -12,7 +12,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const CATEGORY_KEYS = [
   {
     key: 'legal' as const,
-    color: 'bg-[#eff6ff] text-[#1a3a8f]',
+    color: 'bg-[#eff6ff] text-primary',
     slugs: [
       'ses-hospedajes-guia-completa-2026',
       'ses-hospedajes-un-solo-apartamento',
@@ -79,7 +79,7 @@ export default function BlogIndex() {
       <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f0f6ff] to-white">
         <div className="max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-            <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#1a3a8f] mb-5">{t('index.eyebrow')}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-5">{t('index.eyebrow')}</p>
             <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight leading-[1.05] mb-6">
               {t('index.h1_1')}<br className="hidden md:block" /> {t('index.h1_2')}
             </h1>
@@ -115,17 +115,17 @@ export default function BlogIndex() {
             >
               <LangLink
                 to={`/blog/${featured.slug}`}
-                className="group grid md:grid-cols-[1fr_auto] gap-8 p-8 rounded-3xl border border-slate-100 bg-gradient-to-br from-[#f8fafc] to-white hover:border-[#1a3a8f]/20 hover:shadow-lg transition-all duration-300"
+                className="group grid md:grid-cols-[1fr_auto] gap-8 p-8 rounded-3xl border border-slate-100 bg-gradient-to-br from-[#f8fafc] to-white hover:border-primary/20 hover:shadow-lg transition-all duration-300"
               >
                 <div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#eff6ff] text-[#1a3a8f] mb-4">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#eff6ff] text-primary mb-4">
                     {t('categories.legal.label')}
                   </span>
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] group-hover:text-[#1a3a8f] transition-colors tracking-tight leading-snug mb-3">
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] group-hover:text-primary transition-colors tracking-tight leading-snug mb-3">
                     {featured.title}
                   </h2>
                   <p className="text-slate-500 leading-relaxed mb-5 max-w-xl">{featured.description}</p>
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#1a3a8f]">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
                     {t('index.featured_cta')} <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
@@ -172,9 +172,9 @@ export default function BlogIndex() {
                     >
                       <LangLink
                         to={`/blog/${post!.slug}`}
-                        className="group flex flex-col gap-3 p-5 rounded-2xl border border-slate-100 bg-white hover:border-[#1a3a8f]/25 hover:shadow-[0_8px_32px_rgba(26,58,143,0.08)] transition-all duration-250 h-full"
+                        className="group flex flex-col gap-3 p-5 rounded-2xl border border-slate-100 bg-white hover:border-primary/25 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)] transition-all duration-250 h-full"
                       >
-                        <h3 className="text-sm font-bold text-[#0f172a] group-hover:text-[#1a3a8f] transition-colors leading-snug">
+                        <h3 className="text-sm font-bold text-[#0f172a] group-hover:text-primary transition-colors leading-snug">
                           {post!.title}
                         </h3>
                         <p className="text-xs text-slate-500 leading-relaxed line-clamp-3 flex-1">
@@ -184,7 +184,7 @@ export default function BlogIndex() {
                           <span className="flex items-center gap-1 text-[11px] text-slate-400">
                             <Clock className="w-3 h-3" /> {t('index.min_read', { count: post!.readingTime })}
                           </span>
-                          <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#1a3a8f] transition-colors" />
+                          <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-primary transition-colors" />
                         </div>
                       </LangLink>
                     </motion.div>
@@ -199,14 +199,14 @@ export default function BlogIndex() {
       {/* CTA final */}
       <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#f8fafc] border-t border-slate-100">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#1a3a8f] mb-4">{t('index.final_eyebrow')}</p>
+          <p className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-4">{t('index.final_eyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-4">
             {t('index.final_title')}
           </h2>
           <p className="text-slate-500 text-lg mb-8 max-w-xl mx-auto">
             {t('index.final_subtitle')}
           </p>
-          <button type="button" onClick={empezar} className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#1a3a8f] text-white font-semibold hover:shadow-[0_8px_30px_rgba(26,58,143,0.3)] hover:-translate-y-0.5 transition-all duration-300">
+          <button type="button" onClick={empezar} className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-white font-semibold hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300">
             {t('index.final_cta')} <ArrowRight className="w-4 h-4" />
           </button>
         </div>
