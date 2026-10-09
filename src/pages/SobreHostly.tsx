@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import PageShell from "@/components/PageShell";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function SobreHostly() {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation("common");
 
   const values = t("sobre.values", { returnObjects: true }) as Array<{ title: string; body: string }>;
@@ -139,7 +139,7 @@ export default function SobreHostly() {
               <Mail className="w-4 h-4" />
               hola@hostlylabs.com
             </a>
-            <button type="button" onClick={openSignup} className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 text-[#0f172a] font-medium text-base hover:bg-[#f8fafc] hover:-translate-y-0.5 transition-all duration-300"
+            <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-slate-200 text-[#0f172a] font-medium text-base hover:bg-[#f8fafc] hover:-translate-y-0.5 transition-all duration-300"
             >
               {t("sobre.contact_cta_start")}
               <ArrowRight className="w-4 h-4" />

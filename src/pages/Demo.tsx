@@ -4,10 +4,10 @@ import { useTranslation } from "react-i18next";
 import { LangLink } from "@/i18n/LangLink";
 import PageShell from "@/components/PageShell";
 
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 
 export default function Demo() {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation("common");
 
   const features = t("demo.features", { returnObjects: true }) as Array<{ icon: string; title: string; desc: string }>;
@@ -94,7 +94,7 @@ export default function Demo() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-            <button type="button" onClick={openSignup} className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#0c1a4a] font-semibold text-sm hover:bg-white/90 transition-colors shadow-[0_4px_20px_rgba(255,255,255,0.15)]"
+            <button type="button" onClick={empezar} className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#0c1a4a] font-semibold text-sm hover:bg-white/90 transition-colors shadow-[0_4px_20px_rgba(255,255,255,0.15)]"
             >
               {t("demo.cta_start")}
               <ArrowRight className="w-4 h-4" />

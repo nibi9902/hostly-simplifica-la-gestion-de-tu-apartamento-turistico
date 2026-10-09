@@ -5,11 +5,11 @@ import PageShell from '@/components/PageShell';
 import { faqPageSchema, breadcrumbSchema, productComparisonSchema } from '@/lib/seo/schemas';
 import { useTranslation } from 'react-i18next';
 
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function AlternativaPage({ competitor: c }: { competitor: Competitor }) {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation('alternativas');
 
   return (
@@ -126,7 +126,7 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
         <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
           {t('page.ctaSubtitle')}
         </p>
-        <button type="button" onClick={openSignup} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300">
+        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300">
           {t('page.ctaButton')} <ArrowRight className="w-4 h-4" />
         </button>
       </section>

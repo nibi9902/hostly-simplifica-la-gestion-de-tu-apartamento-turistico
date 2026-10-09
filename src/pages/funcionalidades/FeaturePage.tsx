@@ -9,7 +9,7 @@ import MiniDemo from './MiniDemo';
 import { faqPageSchema, breadcrumbSchema, howToSchema } from '@/lib/seo/schemas';
 import { LangLink } from '@/i18n/LangLink';
 
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 // Mapa dinàmic de Lucide icons
@@ -20,8 +20,9 @@ interface Props {
 }
 
 export default function FeaturePage({ feature }: Props) {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation('funcionalidades');
+  const { t: tEmbut } = useTranslation('embut');
   const allFeatures = useFeatures();
   const Icon = IconMap[feature.iconName] ?? icons.Sparkles;
   const related = feature.relatedFeatures
@@ -83,17 +84,17 @@ export default function FeaturePage({ feature }: Props) {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button type="button" onClick={openSignup} className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1a3a8f] text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(26,58,143,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+                <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1a3a8f] text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(26,58,143,0.3)] hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  {feature.hero.primaryCta}
+                  {tEmbut('cta')}
                   <ArrowRight className="w-4 h-4" />
                 </button>
-                <a
-                  href="/#precios"
+                <LangLink
+                  to="/precios"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-slate-200 text-slate-700 font-semibold text-base hover:bg-slate-50 transition-all duration-300"
                 >
-                  {feature.hero.secondaryCta}
-                </a>
+                  {t('page.ver_precios')}
+                </LangLink>
               </div>
             </motion.div>
 
@@ -327,12 +328,12 @@ export default function FeaturePage({ feature }: Props) {
         style={{ background: 'linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)' }}
       >
         <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-          {feature.hero.primaryCta}
+          {t('page.final_title')}
         </h2>
         <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
           {t('page.final_subtitle')}
         </p>
-        <button type="button" onClick={openSignup} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
+        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
         >
           {t('page.final_cta')}
           <ArrowRight className="w-4 h-4" />

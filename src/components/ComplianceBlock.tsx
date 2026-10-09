@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { LangLink } from "@/i18n/LangLink";
 import { useTranslation } from "react-i18next";
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function ComplianceBlock() {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation("home");
 
   const includes = t("compliance.includes", { returnObjects: true }) as string[];
@@ -107,7 +107,7 @@ export default function ComplianceBlock() {
               </p>
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                <button type="button" onClick={openSignup} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#1a3a8f] text-white font-semibold text-sm hover:bg-[#142d6e] transition-colors shadow-[0_4px_14px_rgba(26,58,143,0.25)]"
+                <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#1a3a8f] text-white font-semibold text-sm hover:bg-[#142d6e] transition-colors shadow-[0_4px_14px_rgba(26,58,143,0.25)]"
                 >
                   {t("compliance.cta_button")}
                   <ArrowRight className="w-4 h-4" />

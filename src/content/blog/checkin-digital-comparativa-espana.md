@@ -105,6 +105,6 @@ Si ahora mismo pagas por una herramienta de check-in separada y además por un c
 
 ---
 
-El check-in digital no tiene que ser complicado ni caro. Si quieres ver cómo funciona en la práctica, tienes 14 días de prueba gratuita sin necesidad de tarjeta.
+El check-in digital no tiene que ser complicado ni caro. Si quieres ver cómo funciona en la práctica, el check-in y el registro a la policía de Hostly son gratis para siempre.
 
-**[Empieza gratis 14 días — sin tarjeta](https://app.hostlylabs.com/signup)**
+**[Empieza hoy con Hostly →](/es/empezar)**

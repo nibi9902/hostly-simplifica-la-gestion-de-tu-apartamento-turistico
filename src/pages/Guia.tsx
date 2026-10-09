@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import PageShell from "@/components/PageShell";
 
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 type ChapterLink = { label: string; href: string };
@@ -16,7 +16,7 @@ type Chapter = {
 };
 
 export default function Guia() {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation("common");
 
   const chapters = t("guia.chapters", { returnObjects: true }) as Chapter[];
@@ -126,7 +126,7 @@ export default function Guia() {
         <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
           {t("guia.cta_body")}
         </p>
-        <button type="button" onClick={openSignup} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
+        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
         >
           {t("guia.cta_button")}
           <ArrowRight className="w-4 h-4" />

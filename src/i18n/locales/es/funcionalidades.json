@@ -7,8 +7,8 @@
     "card_eyebrow": "Hostly ·",
     "card_cta": "Ver funcionalidad",
     "final_title": "Todo esto, por 40 €/apartamento.",
-    "final_subtitle": "14 días gratis. Sin tarjeta. Check-in y compliance gratis para siempre.",
-    "final_cta": "Empezar gratis 14 días"
+    "final_subtitle": "El primer mes, gratis. El check-in y el registro a la policía, gratis para siempre.",
+    "final_cta": "Empezar"
   },
   "page": {
     "breadcrumb_home": "Hostly",
@@ -25,7 +25,9 @@
     "related_cta": "Ver más",
     "faqs_eyebrow": "Preguntas frecuentes",
     "faqs_title": "Lo que quizá te estás preguntando.",
-    "final_subtitle": "14 días gratis. Sin tarjeta. Check-in y compliance incluidos para siempre.",
-    "final_cta": "Empezar gratis 14 días"
+    "final_subtitle": "El primer mes, gratis. El check-in y el registro a la policía, gratis para siempre.",
+    "final_cta": "Empezar",
+    "ver_precios": "Ver precios",
+    "final_title": "Gestiona menos. Empieza hoy."
   }
 }

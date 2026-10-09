@@ -5,7 +5,7 @@ import { useLang } from "@/i18n/useLang";
 interface SEOProps {
   title: string;
   description: string;
-  /** Path canonical relatiu sense prefix d'idioma (ex: "/funciones/check-in"). */
+  /** Path canonical relatiu sense prefix d'idioma (ex: "/funcionalidades/check-in-online"). */
   path: string;
   image?: string;
   ogType?: "website" | "article" | "product";

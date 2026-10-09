@@ -4,6 +4,136 @@
       "source": "/i/:slug",
       "destination": "https://checkin.hostlylabs.com/i/:slug",
       "permanent": false
+    },
+    {
+      "source": "/:lang(es|ca)/funciones/check-in",
+      "destination": "/:lang/funcionalidades/check-in-online",
+      "permanent": true
+    },
+    {
+      "source": "/funciones/check-in",
+      "destination": "/es/funcionalidades/check-in-online",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/funciones/mensajes",
+      "destination": "/:lang/funcionalidades/ia-whatsapp",
+      "permanent": true
+    },
+    {
+      "source": "/funciones/mensajes",
+      "destination": "/es/funcionalidades/ia-whatsapp",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/funciones/reservas",
+      "destination": "/:lang/funcionalidades/channel-manager",
+      "permanent": true
+    },
+    {
+      "source": "/funciones/reservas",
+      "destination": "/es/funcionalidades/channel-manager",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/funciones/limpiezas",
+      "destination": "/:lang/funcionalidades/gestion-de-limpiezas",
+      "permanent": true
+    },
+    {
+      "source": "/funciones/limpiezas",
+      "destination": "/es/funcionalidades/gestion-de-limpiezas",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/funciones/pagos",
+      "destination": "/:lang/funcionalidades/finanzas",
+      "permanent": true
+    },
+    {
+      "source": "/funciones/pagos",
+      "destination": "/es/funcionalidades/finanzas",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/funciones/precios",
+      "destination": "/:lang/funcionalidades/precios-dinamicos",
+      "permanent": true
+    },
+    {
+      "source": "/funciones/precios",
+      "destination": "/es/funcionalidades/precios-dinamicos",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/casos-de-uso/:resta*",
+      "destination": "/:lang/blog",
+      "permanent": true
+    },
+    {
+      "source": "/casos-de-uso/:resta*",
+      "destination": "/es/blog",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/integraciones/:resta*",
+      "destination": "/:lang/funcionalidades/conecta-todo",
+      "permanent": true
+    },
+    {
+      "source": "/integraciones/:resta*",
+      "destination": "/es/funcionalidades/conecta-todo",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/para-asesorias-inmobiliarias",
+      "destination": "/:lang/blog",
+      "permanent": true
+    },
+    {
+      "source": "/para-asesorias-inmobiliarias",
+      "destination": "/es/blog",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/para-empresas-de-limpieza",
+      "destination": "/:lang/funcionalidades/gestion-de-limpiezas",
+      "permanent": true
+    },
+    {
+      "source": "/para-empresas-de-limpieza",
+      "destination": "/es/funcionalidades/gestion-de-limpiezas",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/software-apartamentos-turisticos",
+      "destination": "/:lang",
+      "permanent": true
+    },
+    {
+      "source": "/software-apartamentos-turisticos",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/pms-con-ia",
+      "destination": "/:lang/funcionalidades/ia-whatsapp",
+      "permanent": true
+    },
+    {
+      "source": "/pms-con-ia",
+      "destination": "/es/funcionalidades/ia-whatsapp",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|ca)/whatsapp-airbnb",
+      "destination": "/:lang/funcionalidades/ia-whatsapp",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp-airbnb",
+      "destination": "/es/funcionalidades/ia-whatsapp",
+      "permanent": true
     }
   ],
   "rewrites": [

@@ -15,7 +15,7 @@
     "stat_messages": "missatges contestats",
     "stat_police": "registres policials",
     "stat_cleanings": "neteges coordinades",
-    "btn_start": "Començar gratis 14 dies",
+    "btn_start": "Començar",
     "btn_how": "Veure com funciona",
     "card_title_1": "Hostly simplifica",
     "card_title_2": "el teu apartament",
@@ -25,20 +25,56 @@
     "phone_date": "Divendres, 18 d'abril",
     "phone_now": "ara",
     "phone_notifs": [
-      {"title":"Taxa turística · venc en 24h","detail":"Informe de juny llest · pagament en 1 clic"},
-      {"title":"Check-in del Miguel completat","detail":"SES enviat als Mossos · 4 € de taxa cobrats"},
-      {"title":"Neteja confirmada · Anna","detail":"Coordinada automàticament · demà 11h"},
-      {"title":"En Pol ha obtingut resposta de la IA","detail":"Wifi + 3 restaurants recomanats · sense la teva intervenció"},
-      {"title":"Festival local detectat a la teva zona","detail":"Preu del 15–19 juny ajustat a 235 €/nit"},
-      {"title":"La teva assessora Laura · pla d'abril","detail":"3 ajustos per pujar ingressos un 12%"}
+      {
+        "title": "Taxa turística · venc en 24h",
+        "detail": "Informe de juny llest · pagament en 1 clic"
+      },
+      {
+        "title": "Check-in del Miguel completat",
+        "detail": "SES enviat als Mossos · 4 € de taxa cobrats"
+      },
+      {
+        "title": "Neteja confirmada · Anna",
+        "detail": "Coordinada automàticament · demà 11h"
+      },
+      {
+        "title": "En Pol ha obtingut resposta de la IA",
+        "detail": "Wifi + 3 restaurants recomanats · sense la teva intervenció"
+      },
+      {
+        "title": "Festival local detectat a la teva zona",
+        "detail": "Preu del 15–19 juny ajustat a 235 €/nit"
+      },
+      {
+        "title": "La teva assessora Laura · pla d'abril",
+        "detail": "3 ajustos per pujar ingressos un 12%"
+      }
     ],
     "bubbles": [
-      {"title":"Taxa turística · venc en 24h","detail":"Informe de juny llest · pagament en 1 clic"},
-      {"title":"Check-in del Miguel completat","detail":"SES enviat als Mossos · 4 € de taxa cobrats"},
-      {"title":"Neteja confirmada · Anna","detail":"Coordinada automàticament · demà 11h"},
-      {"title":"En Pol ha obtingut resposta de la IA","detail":"Wifi + 3 restaurants recomanats · sense la teva intervenció"},
-      {"title":"Festival local detectat a la teva zona","detail":"Preu del 15–19 juny ajustat a 235 €/nit"},
-      {"title":"La teva assessora Laura · pla d'abril","detail":"3 ajustos per pujar ingressos un 12%"}
+      {
+        "title": "Taxa turística · venc en 24h",
+        "detail": "Informe de juny llest · pagament en 1 clic"
+      },
+      {
+        "title": "Check-in del Miguel completat",
+        "detail": "SES enviat als Mossos · 4 € de taxa cobrats"
+      },
+      {
+        "title": "Neteja confirmada · Anna",
+        "detail": "Coordinada automàticament · demà 11h"
+      },
+      {
+        "title": "En Pol ha obtingut resposta de la IA",
+        "detail": "Wifi + 3 restaurants recomanats · sense la teva intervenció"
+      },
+      {
+        "title": "Festival local detectat a la teva zona",
+        "detail": "Preu del 15–19 juny ajustat a 235 €/nit"
+      },
+      {
+        "title": "La teva assessora Laura · pla d'abril",
+        "detail": "3 ajustos per pujar ingressos un 12%"
+      }
     ]
   },
   "features": {
@@ -53,7 +89,7 @@
     "col_after": "Amb Hostly",
     "closer_title": "De cinc apps disperses a una sola que ho fa tot.",
     "closer_sub": "Comença per la part gratis. La resta, quan la necessitis.",
-    "closer_cta": "Crear compte gratis",
+    "closer_cta": "Començar",
     "closer_fine": "Sense targeta · Per sempre",
     "pairs": [
       {
@@ -154,7 +190,7 @@
     "free_badge": "Gratis · Per sempre",
     "free_price_note": "Sense targeta. Sense caducitat.",
     "free_desc": "Per als que només volen complir amb la policia sense pagar res al mes.",
-    "free_cta": "Crear compte gratis",
+    "free_cta": "Començar",
     "free_features": [
       "Enviament automàtic del part a la policia",
       "Estat de cada check-in (enviat i rebut)",
@@ -167,8 +203,8 @@
     "paid_price_bulk_prefix": "35 €/mes",
     "paid_price_bulk_suffix": "per apartament des de 5 apt.",
     "paid_desc": "Tot el sistema en una app. Reemplaça Chekin, Smoobu, PriceLabs i Excel.",
-    "paid_cta": "Provar 14 dies gratis",
-    "paid_fine": "Sense targeta · Sense permanència · Cancel·la quan vulguis",
+    "paid_cta": "Començar",
+    "paid_fine": "El primer mes, gratis · Sense permanència",
     "paid_features": [
       "Tot el del pla gratis",
       "Sincronització Airbnb + Booking en temps real",
@@ -189,10 +225,10 @@
   },
   "final_cta": {
     "eyebrow": "Per a propietaris que volen sistema, no caos",
-    "title": "Comença gratis. 14 dies.",
-    "subtitle": "Sense targeta · Sense permanència · Cancel·la quan vulguis",
-    "btn_start": "Començar gratis 14 dies",
-    "btn_demo": "Veure demo en viu",
+    "title": "Gestiona menys. Comença avui.",
+    "subtitle": "El primer mes, gratis · Sense permanència",
+    "btn_start": "Començar",
+    "btn_demo": "Veure com funciona",
     "stat_messages": "Missatges amb IA en 5 idiomes",
     "stat_police": "Registre policial automatitzat",
     "stat_cleanings": "Neteges coordinades en un clic",
@@ -219,15 +255,24 @@
     "subtitle": "Hostly envia el part de viatgers a la policia cada cop que entra un hoste. Tu no pagues res — i es queda així.",
     "connected_label": "Connectat amb",
     "bodies": [
-      { "label": "Policía Nacional", "color": "#1a3a8f" },
-      { "label": "Mossos d'Esquadra", "color": "#0891b2" },
-      { "label": "Ertzaintza", "color": "#16a34a" }
+      {
+        "label": "Policía Nacional",
+        "color": "#1a3a8f"
+      },
+      {
+        "label": "Mossos d'Esquadra",
+        "color": "#0891b2"
+      },
+      {
+        "label": "Ertzaintza",
+        "color": "#16a34a"
+      }
     ],
     "hook": "I on és la trampa?",
     "no_catch": "No hi ha trampa.\nÉs gratis i es queda gratis.",
     "body_1": "Crea el compte, connecta un pis, i els parts surten sols cap a la policia cada cop que arriba un hoste. Tu no fas res.",
     "body_2": "I si més endavant vols connectar Airbnb, les neteges o les finances, ja parlarem.",
-    "cta_button": "Crear compte gratis",
+    "cta_button": "Començar",
     "cta_fine": "Sense targeta · Sense caducitat",
     "checklist_eyebrow": "Inclòs gratis",
     "checklist_forever": "Per sempre",
@@ -241,23 +286,16 @@
     "link_text": "Com funciona el check-in"
   },
   "testimonials": {
-    "eyebrow": "Propietaris reals · Espanya",
-    "title_start": "Alguns dels",
-    "title_accent": "nostres clients.",
-    "subtitle": "Petits propietaris i gestors que van deixar de gestionar a mà.",
-    "apt_singular": "apartament",
-    "apt_plural": "apartaments",
-    "quotes": [
-      "La meva parella em deia que vivia al mòbil. Tenia raó. Ara ja ni el miro.",
-      "Jo era el típic que el part a Mossos el feia a les 11 de la nit del diumenge. Ja no.",
-      "Vaig tenir un overbooking al juliol. Una parella que venia amb un bebè. Encara me'n recordo. No m'ha tornat a passar.",
-      "La Soraya em neteja des de fa anys. Abans la lïava amb àudios a les 8 del matí. Ara li surt sol a la seva app.",
-      "Vaig trucar esperant un chatbot. Vaig acabar 20 minuts al telèfon amb el Biel. Encara no havia pagat res.",
-      "A l'estiu eren 30 missatges al dia només del wifi i l'aparcament. Aquest agost gairebé no me n'he adonat.",
-      "No soc bo amb els números. Tancar el mes era un horror. Ho veig tot en una pantalla i respiro.",
-      "Vaig provar tres apps en dos anys. Sempre acabava amb un Excel paral·lel. Aquesta és la primera vegada que no.",
-      "Soc mestre i el pis era dels meus avis. No tinc temps per a apps rares. Això s'entén sol."
-    ]
+    "eyebrow": "En les seves paraules",
+    "title_start": "Gestors que ja",
+    "title_accent": "gestionen menys.",
+    "subtitle": "Gestors com tu expliquen com és la seva setmana amb Hostly.",
+    "example_tag": "Exemple",
+    "placeholder_name": "Gestor {{n}}",
+    "placeholder_meta": "Vídeo aviat",
+    "play_aria": "Veure el vídeo de {{nom}}",
+    "apt_singular": "pis",
+    "apt_plural": "pisos"
   },
   "support": {
     "founder_badge": "Va néixer de viure-ho",
@@ -265,21 +303,21 @@
     "founder_quote": "\"Hostly no va néixer en una oficina. Va néixer de la frustració de gestionar els meus propis apartaments i no poder desconnectar mai. Ho vaig construir per a mi — i funciona.\"",
     "founder_name": "Biel",
     "founder_role": "Fundador i propietari",
-    "promises_title_start": "No estàs sol en",
-    "promises_title_accent": "cap moment.",
-    "promises_subtitle": "El primer mes treballem amb tu, no per a tu. Setup, dubtes, ajustos — som en cada pas.",
+    "promises_title_start": "El primer mes",
+    "promises_title_accent": "ho muntem junts.",
+    "promises_subtitle": "Configurem amb tu els teus pisos i els teus canals. Després, seguim a un missatge de distància.",
     "promises": [
       {
-        "title": "Resposta en menys de 2h",
-        "desc": "Qualsevol dubte, qualsevol dia. Sense bots, sense tickets perduts."
+        "title": "Configuració 1 a 1",
+        "desc": "Connectem amb tu els teus pisos i els teus canals, en una videotrucada."
       },
       {
-        "title": "Onboarding 1 a 1 el primer mes",
-        "desc": "T'ajudem a configurar-ho tot des de zero. Tu no has de saber res de tecnologia."
+        "title": "Una persona, no un xatbot",
+        "desc": "Et respon algú de l'equip, en castellà o en català."
       },
       {
-        "title": "Acompanyament durant tot el primer any",
-        "desc": "No desapareixem després de la venda. Estem amb tu mentre creixes."
+        "title": "Sense permanència",
+        "desc": "Si no et simplifica la vida, ho deixes quan vulguis."
       }
     ]
   },
@@ -352,118 +390,46 @@
       }
     ]
   },
-  "signup_modal": {
-    "eyebrow": "Accés anticipat",
-    "title": "Crea el teu compte.",
-    "subtitle": "Deixa'ns les teves dades i en menys de 24 hores et contactem per fer el setup junts.",
-    "label_name": "Nom complet",
-    "label_email": "Email",
-    "label_phone": "Telèfon",
-    "label_apts": "Quants apartaments tens?",
-    "placeholder_name": "Marc Garcia",
-    "placeholder_phone": "+34 600 000 000",
-    "apts_placeholder": "Selecciona...",
-    "apts_1": "1 apartament",
-    "apts_2": "2 apartaments",
-    "apts_3": "3 apartaments",
-    "apts_5": "4-5 apartaments",
-    "apts_10": "6-10 apartaments",
-    "apts_15": "Més de 10",
-    "error_required": "Completa tots els camps obligatoris.",
-    "error_generic": "Alguna cosa ha fallat. Torna-ho a intentar o escriu-nos a hola@hostlylabs.com",
-    "btn_submit": "Crear compte",
-    "fine_print": "Sense compromís. Parlem abans de qualsevol cosa.",
-    "success_title": "Rebut. Gràcies, {{name}}.",
-    "success_body_1": "En menys de 24 hores et contactem per fer el setup junts i arrencar bé des del primer dia.",
-    "success_body_2": "Si tens qualsevol dubte abans, escriu-nos a",
-    "btn_close": "Tancar",
-    "close_aria": "Tancar"
-  },
-  "quiz": {
-    "questions": [
-      {"text":"Quants apartaments gestiones actualment?","options":[{"label":"1 apartament","points":0},{"label":"2–3 apartaments","points":1},{"label":"4–6 apartaments","points":2},{"label":"7 o més","points":3}]},
-      {"text":"Respons missatges fora d'horari?","options":[{"label":"Sí, sempre","points":2},{"label":"No","points":0}]},
-      {"text":"Si apagues el mòbil en temporada alta, perds el control?","options":[{"label":"Sí, totalment","points":3},{"label":"Probablement sí","points":2},{"label":"No","points":0}]},
-      {"text":"Quan entra una nova reserva, l'equip de neteja s'assabenta automàticament o has d'avisar-los tu?","options":[{"label":"He d'avisar jo","points":3},{"label":"De vegades automàtic, de vegades manual","points":2},{"label":"És totalment automàtic","points":0}]},
-      {"text":"Amb diverses entrades/sortides el mateix dia, tot depèn de tu?","options":[{"label":"Sí","points":2},{"label":"En part","points":1},{"label":"No","points":0}]},
-      {"text":"T'ha passat alguna vegada una neteja mal coordinada?","options":[{"label":"Sí","points":2},{"label":"Gairebé ha passat alguna vegada","points":1},{"label":"No, mai","points":0}]},
-      {"text":"Com envies les dades dels hostes a la policia?","options":[{"label":"No ho estic fent correctament","points":4},{"label":"Manual des de la web","points":3},{"label":"Foto DNI + gestoria","points":2},{"label":"Automatitzat","points":0}]},
-      {"text":"T'estressa pensar que pots oblidar el termini de la policia?","options":[{"label":"Sí","points":2},{"label":"De vegades","points":1},{"label":"No","points":0}]},
-      {"text":"Com decideixes el preu de cada nit?","options":[{"label":"Intuïció","points":2},{"label":"Preu fix gairebé sempre","points":2},{"label":"Miro la competència manualment","points":1},{"label":"Preus dinàmics","points":0}]},
-      {"text":"Podries desconnectar 7 dies sense preocupar-te?","options":[{"label":"No, impossible","points":3},{"label":"Em costaria molt","points":2},{"label":"Sí, sense problema","points":0}]}
-    ],
-    "loading_steps": ["Analitzant la teva gestió actual…","Calculant punts de millora…","Estimant l'estalvi potencial…","Preparant el teu diagnòstic…"],
-    "levels": {
-      "low": "Gestió força optimitzada",
-      "medium": "Dependència moderada",
-      "high": "Dependència alta",
-      "critical": "Dependència crítica"
-    },
-    "ui": {
-      "intro_title": "Calcula el teu temps lliure",
-      "intro_body": "9 preguntes ràpides. Et diem exactament quantes hores a la setmana podries recuperar amb Hostly.",
-      "badge_minutes": "2 minuts",
-      "badge_no_register": "Sense registre",
-      "badge_immediate": "Resultat immediat",
-      "btn_start": "Començar",
-      "question_label": "Pregunta {{current}} de {{total}}",
-      "btn_prev": "Anterior",
-      "btn_next": "Següent",
-      "btn_see_result": "Veure resultat",
-      "loading_title": "Analitzant el teu cas",
-      "lead_ready": "Llest!",
-      "lead_diagnosis_ready": "El teu diagnòstic està preparat",
-      "lead_intro": "Introdueix les teves dades per veure el resultat. Te'l enviem també per si vols consultar-lo més tard.",
-      "lead_name_placeholder": "El teu nom",
-      "lead_phone_label": "Telèfon",
-      "lead_email_placeholder": "tu@email.com",
-      "lead_phone_placeholder": "+34 600 000 000",
-      "lead_sending": "Enviant…",
-      "lead_see_result": "Veure el meu resultat",
-      "lead_no_spam": "Sense spam. Només usem les teves dades per enviar-te el diagnòstic.",
-      "result_header": "El teu resultat",
-      "result_algorithm": "Algorisme Hostly",
-      "result_per_week": "per setmana",
-      "result_per_month": "al mes",
-      "result_per_year": "a l'any",
-      "result_body": "Les teves respostes indiquen que gran part del sistema viu al teu cap i al teu mòbil. Això costa {{horas}} hores cada setmana. Si ho converteixes en processos automàtics, no sols estalvies temps: recuperes tranquil·litat i redueixes el risc d'errors en dies d'estrès i temporada.",
-      "btn_book_call": "Reservar la meva trucada gratuïta",
-      "btn_repeat": "Repetir",
-      "booking_title": "Parlem. Sense compromís, sense pressió.",
-      "booking_body": "Tria el moment que millor et vagi. En 15 minuts veiem junts el teu cas, resolem dubtes i t'acompanyem des del primer pas.",
-      "booking_disclaimer": "És una conversa personal, no una demo comercial.",
-      "booking_calendar_title": "Reservar trucada amb Hostly",
-      "booked_title": "Perfecte! Ja tens la teva trucada reservada.",
-      "booked_body": "T'enviarem un recordatori per email. Mentrestant, si et sorgeix qualsevol dubte, escriu-nos sense problema.",
-      "booked_call_title": "Què passarà a la trucada?",
-      "booked_item_1": "Veiem el teu cas concret junts",
-      "booked_item_2": "Resolem tots els teus dubtes",
-      "booked_item_3": "Si encaixa, t'ajudem a començar",
-      "booked_footer": "Ens veiem aviat. Estem aquí per ajudar-te.",
-      "btn_close": "Tancar",
-      "error_name": "Si us plau, introdueix el teu nom.",
-      "error_contact": "Si us plau, introdueix el teu email o telèfon.",
-      "error_email": "L'email no és vàlid."
-    }
-  },
   "steps_mockup": {
     "setup": {
       "guests": "2 hostes",
       "active": "ACTIU",
       "config_label": "Configuració",
       "steps": [
-        {"label":"Normes de casa","done":true},
-        {"label":"Horaris","done":true},
-        {"label":"Guia de l'hoste","done":true},
-        {"label":"Fotos i descripció","done":false}
+        {
+          "label": "Normes de casa",
+          "done": true
+        },
+        {
+          "label": "Horaris",
+          "done": true
+        },
+        {
+          "label": "Guia de l'hoste",
+          "done": true
+        },
+        {
+          "label": "Fotos i descripció",
+          "done": false
+        }
       ],
       "cta": "Continuar · 1 pas més",
-      "card_labels": ["Preu base", "Codi caixa", "Check-in", "Wifi"]
+      "card_labels": [
+        "Preu base",
+        "Codi caixa",
+        "Check-in",
+        "Wifi"
+      ]
     },
     "integrations": {
       "title": "Integracions",
       "subtitle": "4 connectades · llest per rebre",
-      "statuses": ["Sincronitzat","Sincronitzat","Connectat · 4821","Autoconfigutat"],
+      "statuses": [
+        "Sincronitzat",
+        "Sincronitzat",
+        "Connectat · 4821",
+        "Autoconfigutat"
+      ],
       "ready": "Llest per a la propera reserva"
     },
     "live": {
@@ -471,21 +437,52 @@
       "subtitle": "Darreres accions · automàtiques",
       "live_label": "EN DIRECTE",
       "events": [
-        {"title":"Reserva entrant","detail":"Carlos · Booking · 4 nits · 620 €"},
-        {"title":"Benvinguda enviada","detail":"Anglès · plantilla personal"},
-        {"title":"SES enviat als Mossos","detail":"DNI verificat · hoste dins"},
-        {"title":"Taxa turística cobrada","detail":"4 € · 2 hostes · 4 nits"},
-        {"title":"Neteja assignada","detail":"Anna · dissabte 11:00"}
+        {
+          "title": "Reserva entrant",
+          "detail": "Carlos · Booking · 4 nits · 620 €"
+        },
+        {
+          "title": "Benvinguda enviada",
+          "detail": "Anglès · plantilla personal"
+        },
+        {
+          "title": "SES enviat als Mossos",
+          "detail": "DNI verificat · hoste dins"
+        },
+        {
+          "title": "Taxa turística cobrada",
+          "detail": "4 € · 2 hostes · 4 nits"
+        },
+        {
+          "title": "Neteja assignada",
+          "detail": "Anna · dissabte 11:00"
+        }
       ]
     },
     "dashboard": {
       "period": "Abril 2026",
       "growth": "+15% vs any anterior",
       "kpis": [
-        {"label":"Ocupació","value":"87%","sub":"26 de 30 nits"},
-        {"label":"Check-ins","value":"12","sub":"Tots enviats"},
-        {"label":"Missatges","value":"47","sub":"IA va respondre 42"},
-        {"label":"Incidències","value":"0","sub":"Sense pendents"}
+        {
+          "label": "Ocupació",
+          "value": "87%",
+          "sub": "26 de 30 nits"
+        },
+        {
+          "label": "Check-ins",
+          "value": "12",
+          "sub": "Tots enviats"
+        },
+        {
+          "label": "Missatges",
+          "value": "47",
+          "sub": "IA va respondre 42"
+        },
+        {
+          "label": "Incidències",
+          "value": "0",
+          "sub": "Sense pendents"
+        }
       ],
       "next_checkin_label": "Proper check-in",
       "next_checkin_detail": "Demà · 15:00 · Sarah D.",
@@ -500,7 +497,7 @@
     "faq_subheading": "El que ens pregunten gairebé tots abans de començar.",
     "cta_heading": "Comença pel que és gratis.",
     "cta_body": "Crea el teu compte, connecta un apartament i comença a enviar parts a la policia automàticament. Sense targeta. Per sempre.",
-    "cta_button": "Crear compte gratis",
+    "cta_button": "Començar",
     "cta_disclaimer": "Sense targeta · Sense caducitat · Sense compromís",
     "faqs": [
       {

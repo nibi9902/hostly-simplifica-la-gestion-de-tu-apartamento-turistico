@@ -4,10 +4,11 @@ import { LangLink } from "@/i18n/LangLink";
 import { useTranslation } from "react-i18next";
 
 interface FinalCTAProps {
-  onOpenQuiz?: () => void;
+  /** L'única porta del web: porta a /empezar. */
+  onEmpezar?: () => void;
 }
 
-const FinalCTA = ({ onOpenQuiz }: FinalCTAProps) => {
+const FinalCTA = ({ onEmpezar }: FinalCTAProps) => {
   const { t } = useTranslation("home");
   return (
     <section
@@ -53,7 +54,8 @@ const FinalCTA = ({ onOpenQuiz }: FinalCTAProps) => {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <button
-            onClick={onOpenQuiz}
+            type="button"
+            onClick={onEmpezar}
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base transition-all duration-300 hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 active:scale-[0.98]"
           >
             {t("final_cta.btn_start")}

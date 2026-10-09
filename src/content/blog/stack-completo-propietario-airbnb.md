@@ -97,6 +97,6 @@ Para un propietario que ahora mismo gestiona su stack con 5 herramientas distint
 
 ---
 
-Hay una prueba de 14 días sin necesidad de tarjeta. Suficiente para ver si realmente te simplifica la gestión o no.
+El primer mes del plan completo es gratis. Suficiente para ver si realmente te simplifica la gestión o no.
 
-**[Empieza gratis 14 días — sin tarjeta](https://app.hostlylabs.com/signup)**
+**[Empieza hoy con Hostly →](/es/empezar)**

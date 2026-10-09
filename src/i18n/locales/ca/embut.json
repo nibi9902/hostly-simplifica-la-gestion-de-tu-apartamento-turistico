@@ -1,0 +1,168 @@
+{
+  "cta": "Començar",
+  "empezar": {
+    "meta_title": "Començar amb Hostly",
+    "meta_desc": "Tres dades i ho tens en marxa. Gratis per al check-in i la policia; Hostly complet amb el primer mes gratis.",
+    "paso": "Pas {{n}} de 3",
+    "atras": "Enrere",
+    "inicio": "Tornar a la web",
+    "datos": {
+      "titulo": "Comencem.",
+      "subtitulo": "Tres dades i en un minut ho tens en marxa.",
+      "telefono": "Telèfon",
+      "telefono_placeholder": "612 345 678",
+      "telefono_ayuda": "Et truquem per ajudar-te a posar-ho en marxa.",
+      "nombre": "Nom",
+      "nombre_placeholder": "Marta",
+      "correo": "Correu",
+      "correo_placeholder": "marta@gmail.com",
+      "continuar": "Continuar",
+      "privacidad_antes": "En continuar acceptes la",
+      "privacidad_link": "política de privacitat"
+    },
+    "error": {
+      "telefono": "Revisa el telèfon: sembla que hi falta algun número.",
+      "nombre": "Escriu el teu nom.",
+      "correo": "Revisa el correu.",
+      "guardar": "No s'ha pogut desar. Revisa la connexió i torna-ho a provar."
+    },
+    "plan": {
+      "titulo": "Què vols que faci Hostly per tu?",
+      "subtitulo": "Pots començar pel que és gratis i passar-te al complet quan vulguis.",
+      "recomendado": "Recomanat",
+      "gratis_nombre": "Només el check-in i la policia",
+      "gratis_precio": "Gratis, per sempre",
+      "gratis_items": [
+        "Check-in online de l'hoste, des del seu mòbil",
+        "Registre enviat a la policia, sol",
+        "Taxa turística llesta per declarar"
+      ],
+      "completo_nombre": "Hostly complet",
+      "completo_precio": "40 €/mes per apartament · el primer mes, gratis",
+      "completo_items": [
+        "Tot el del pla gratis",
+        "Airbnb i Booking en un sol calendari",
+        "Missatges amb hostes contestats per IA",
+        "Neteges avisades soles",
+        "Preus i finances al dia"
+      ],
+      "elegir": "Triar"
+    },
+    "gratis": {
+      "titulo": "Tot a punt, {{nombre}}.",
+      "subtitulo": "Crea el teu compte i en un minut tindràs el teu enllaç de check-in.",
+      "boton": "Crear el meu compte gratis",
+      "nota": "Et portem a app.hostlylabs.com. Si t'encalles, et truquem."
+    },
+    "demo": {
+      "titulo": "Abans d'activar-lo, una demo de 20 minuts.",
+      "subtitulo": "T'ensenyem Hostly funcionant i resolem els teus dubtes. Si encaixa, l'activem aquell mateix dia amb el primer mes gratis.",
+      "dia": "Tria el dia",
+      "hora": "Tria l'hora",
+      "zona": "Hora d'Espanya peninsular",
+      "boton": "Reservar la demo",
+      "boton_falta": "Tria dia i hora",
+      "hecho_titulo": "Fet, {{nombre}}. Ens veiem el {{dia}} a les {{hora}}.",
+      "hecho_texto": "Et confirmem l'hora per WhatsApp i t'enviem l'enllaç de la videotrucada.",
+      "mientras": "Mentrestant, si vols, crea el teu compte gratis.",
+      "mientras_boton": "Crear el meu compte gratis",
+      "cambiar": "Canviar l'hora"
+    }
+  },
+  "calcula": {
+    "meta_title": "Et surt a compte Hostly? Calculadora",
+    "meta_desc": "Cinc preguntes: quant pagues avui en apps i quantes hores dediques al teu pis turístic, davant del que costa Hostly.",
+    "eyebrow": "Calculadora",
+    "titulo": "Et surt a compte?",
+    "subtitulo": "Cinc preguntes. Menys d'un minut.",
+    "empezar": "Calcular",
+    "pregunta": "Pregunta {{n}} de 5",
+    "continuar": "Continuar",
+    "atras": "Enrere",
+    "q_pisos": "Quants pisos gestiones?",
+    "o_pisos": [
+      "1",
+      "2 a 4",
+      "5 a 15",
+      "Més de 15"
+    ],
+    "q_donde": "On són?",
+    "o_donde": [
+      "Catalunya",
+      "Una altra comunitat"
+    ],
+    "q_usas": "Què fas servir avui?",
+    "q_usas_ayuda": "Marca tot el que facis servir.",
+    "o_usas": {
+      "checkin": "Una app de check-in (Chekin…)",
+      "canales": "Un channel manager (Smoobu, Hostify…)",
+      "precios": "Una app de preus (PriceLabs…)",
+      "excel": "Excel o llibreta",
+      "gestoria": "Una gestoria",
+      "nada": "Res d'això"
+    },
+    "q_horas": "Quantes hores a la setmana se te'n van en missatges, neteges i registres?",
+    "o_horas": [
+      "Menys de 2",
+      "2 a 5",
+      "5 a 10",
+      "Més de 10"
+    ],
+    "q_quien": "Qui porta el dia a dia?",
+    "o_quien": [
+      "Jo",
+      "La meva parella o família",
+      "Una persona contractada"
+    ],
+    "resultado": {
+      "eyebrow": "El teu resultat",
+      "hoy": "Avui: {{euros}} al mes en apps i {{horas}} a la setmana.",
+      "hoy_sin_apps": "Avui no pagues apps, però se te'n van {{horas}} a la setmana.",
+      "hostly": "Amb Hostly: {{euros}} al mes, tot en una app, i bona part d'aquesta feina, feta sola.",
+      "hostly_medida": "Amb Hostly: un preu a la teva mida, tot en una app, i bona part d'aquesta feina, feta sola.",
+      "horas_ano": "Això són {{ano}} del teu temps.",
+      "registro_cat": "I el registre als Mossos d'Esquadra el fa Hostly, gratis.",
+      "registro_otra": "I el registre a la policia el fa Hostly, gratis.",
+      "gate_titulo": "Veure el detall",
+      "gate_texto": "Deixa'ns el teu telèfon i t'ensenyem el detall, eina per eina. Si vols, et truquem per ajudar-te a decidir.",
+      "gate_boton": "Veure el detall",
+      "detalle_titulo": "Eina per eina",
+      "detalle_checkin": "App de check-in",
+      "detalle_checkin_hostly": "Gratis a Hostly",
+      "detalle_canales": "Channel manager",
+      "detalle_precios": "App de preus",
+      "detalle_incluido": "Inclòs a Hostly",
+      "detalle_excel": "Excel",
+      "detalle_excel_hostly": "Finances i liquidacions, dins de Hostly",
+      "detalle_gestoria": "Gestoria",
+      "detalle_gestoria_hostly": "La taxa turística, calculada i llesta per a la teva gestoria",
+      "detalle_por_piso": "{{euros}} €/mes per pis",
+      "detalle_horas": "Missatges, neteges i registres",
+      "detalle_horas_hostly": "La IA contesta, les neteges s'avisen i els registres surten sols",
+      "nota": "Preus orientatius de cada eina, per apartament i mes.",
+      "otra_vez": "Tornar a calcular",
+      "horas_frase": [
+        "menys de 2 hores",
+        "entre 2 i 5 hores",
+        "entre 5 i 10 hores",
+        "més de 10 hores"
+      ],
+      "horas_ano_frase": [
+        "unes 80 hores l'any",
+        "unes 180 hores l'any",
+        "unes 390 hores l'any",
+        "més de 520 hores l'any"
+      ],
+      "ahorro": "T'estalvies {{euros}} al mes.",
+      "por_hora": "Surt a uns {{euros}} per cada hora que avui hi dediques."
+    }
+  },
+  "llamame": {
+    "titulo": "Prefereixes parlar-ne?",
+    "texto": "Deixa'm el teu número i et truco avui. Sense compromís.",
+    "firma": "Biel, fundador de Hostly",
+    "placeholder": "El teu telèfon",
+    "boton": "Truca'm",
+    "hecho": "Fet. Et truco avui mateix."
+  }
+}

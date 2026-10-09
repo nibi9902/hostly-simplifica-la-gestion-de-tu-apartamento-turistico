@@ -6,19 +6,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, Outlet, useParams, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { SUPPORTED_LANGS, DEFAULT_LANG, type Lang } from "./i18n/config";
-import { SignupModalProvider } from "./contexts/SignupModalContext";
 
 // Crítiques (part del first-paint)
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 // Lazy — només es carreguen quan l'usuari hi navega
-const CheckIn = lazy(() => import("./pages/funciones/CheckIn"));
-const Mensajes = lazy(() => import("./pages/funciones/Mensajes"));
-const Reservas = lazy(() => import("./pages/funciones/Reservas"));
-const Limpiezas = lazy(() => import("./pages/funciones/Limpiezas"));
-const Pagos = lazy(() => import("./pages/funciones/Pagos"));
-const Precios = lazy(() => import("./pages/funciones/Precios"));
+const Empezar = lazy(() => import("./pages/Empezar"));
+const Calcula = lazy(() => import("./pages/Calcula"));
 const Guia = lazy(() => import("./pages/Guia"));
 const ComparativaChekin = lazy(() => import("./pages/comparativa/Chekin"));
 const Propietarios = lazy(() => import("./pages/personas/Propietarios"));
@@ -31,7 +26,6 @@ const AlternativasIndex = lazy(() => import("./pages/alternativas/index"));
 const AlternativaRoute = lazy(() => import("./pages/alternativas/AlternativaRoute"));
 const FuncionalidadesIndex = lazy(() => import("./pages/funcionalidades/index"));
 const FeatureRoute = lazy(() => import("./pages/funcionalidades/FeatureRoute"));
-const BlogBridge = lazy(() => import("./pages/BlogBridge"));
 const PreciosPage = lazy(() => import("./pages/Precios"));
 const Demo = lazy(() => import("./pages/Demo"));
 const SobreHostly = lazy(() => import("./pages/SobreHostly"));
@@ -81,6 +75,16 @@ function LangLayout() {
   return <Outlet />;
 }
 
+/* ─── Pàgines que ja no hi són: el mateix contingut a la pàgina que el substitueix ───
+ * Redisseny d'octubre 2026: `/funciones/*` duplicava `/funcionalidades/*` amb textos
+ * diferents, i les rutes «pont» ensenyaven una pantalla de programador en producció.
+ * Els mateixos salts són a `vercel.json` com a 301 (per als cercadors); aquests
+ * cobreixen la navegació dins de l'app. */
+function Redirigeix({ a }: { a: string }) {
+  const { lang } = useParams<{ lang: string }>();
+  return <Navigate to={`/${lang}${a}`} replace />;
+}
+
 /* ─── Redirect per rutes legacy (sense prefix d'idioma) ─── */
 function LegacyRedirect() {
   const location = useLocation();
@@ -94,7 +98,6 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <SignupModalProvider>
         <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* Arrel → idioma detectat */}
@@ -104,13 +107,17 @@ const App = () => (
             <Route path="/:lang" element={<LangLayout />}>
               <Route index element={<Index />} />
 
-              {/* Funciones */}
-              <Route path="funciones/check-in" element={<CheckIn />} />
-              <Route path="funciones/mensajes" element={<Mensajes />} />
-              <Route path="funciones/reservas" element={<Reservas />} />
-              <Route path="funciones/limpiezas" element={<Limpiezas />} />
-              <Route path="funciones/pagos" element={<Pagos />} />
-              <Route path="funciones/precios" element={<Precios />} />
+              {/* L'única porta del web i la calculadora (octubre 2026) */}
+              <Route path="empezar" element={<Empezar />} />
+              <Route path="calcula" element={<Calcula />} />
+
+              {/* Funciones (velles) → Funcionalidades */}
+              <Route path="funciones/check-in" element={<Redirigeix a="/funcionalidades/check-in-online" />} />
+              <Route path="funciones/mensajes" element={<Redirigeix a="/funcionalidades/ia-whatsapp" />} />
+              <Route path="funciones/reservas" element={<Redirigeix a="/funcionalidades/channel-manager" />} />
+              <Route path="funciones/limpiezas" element={<Redirigeix a="/funcionalidades/gestion-de-limpiezas" />} />
+              <Route path="funciones/pagos" element={<Redirigeix a="/funcionalidades/finanzas" />} />
+              <Route path="funciones/precios" element={<Redirigeix a="/funcionalidades/precios-dinamicos" />} />
 
               {/* Super Guia */}
               <Route path="guia" element={<Guia />} />
@@ -136,11 +143,11 @@ const App = () => (
               <Route path="funcionalidades" element={<FuncionalidadesIndex />} />
               <Route path="funcionalidades/:slug" element={<FeatureRoute />} />
 
-              {/* Rutes encara no migrades */}
-              <Route path="casos-de-uso/*" element={<BlogBridge />} />
-              <Route path="casos-de-uso" element={<BlogBridge />} />
-              <Route path="integraciones/*" element={<BlogBridge />} />
-              <Route path="integraciones" element={<BlogBridge />} />
+              {/* Rutes pont (abans: pantalla de programador) */}
+              <Route path="casos-de-uso/*" element={<Redirigeix a="/blog" />} />
+              <Route path="casos-de-uso" element={<Redirigeix a="/blog" />} />
+              <Route path="integraciones/*" element={<Redirigeix a="/funcionalidades/conecta-todo" />} />
+              <Route path="integraciones" element={<Redirigeix a="/funcionalidades/conecta-todo" />} />
               <Route path="precios" element={<PreciosPage />} />
               <Route path="sobre-hostly" element={<SobreHostly />} />
               <Route path="privacidad" element={<Privacidad />} />
@@ -148,11 +155,11 @@ const App = () => (
               <Route path="terminos" element={<Terminos />} />
               <Route path="aviso-legal" element={<AvisoLegal />} />
               <Route path="demo" element={<Demo />} />
-              <Route path="para-asesorias-inmobiliarias" element={<BlogBridge />} />
-              <Route path="para-empresas-de-limpieza" element={<BlogBridge />} />
-              <Route path="software-apartamentos-turisticos" element={<BlogBridge />} />
-              <Route path="pms-con-ia" element={<BlogBridge />} />
-              <Route path="whatsapp-airbnb" element={<BlogBridge />} />
+              <Route path="para-asesorias-inmobiliarias" element={<Redirigeix a="/blog" />} />
+              <Route path="para-empresas-de-limpieza" element={<Redirigeix a="/funcionalidades/gestion-de-limpiezas" />} />
+              <Route path="software-apartamentos-turisticos" element={<Redirigeix a="" />} />
+              <Route path="pms-con-ia" element={<Redirigeix a="/funcionalidades/ia-whatsapp" />} />
+              <Route path="whatsapp-airbnb" element={<Redirigeix a="/funcionalidades/ia-whatsapp" />} />
 
               {/* Catch-all dins idioma vàlid */}
               <Route path="*" element={<NotFound />} />
@@ -162,7 +169,6 @@ const App = () => (
             <Route path="*" element={<LegacyRedirect />} />
           </Routes>
         </Suspense>
-        </SignupModalProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

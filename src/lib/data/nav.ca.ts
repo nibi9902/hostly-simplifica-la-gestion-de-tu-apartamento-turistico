@@ -75,6 +75,6 @@ export const NAV_CA: NavConfig = {
 
   ctas: {
     secondary: { label: 'Perfil client', href: 'https://app.hostlylabs.com' },
-    primary:   { label: 'Començar gratis' },
+    primary:   { label: 'Començar' },
   },
 };

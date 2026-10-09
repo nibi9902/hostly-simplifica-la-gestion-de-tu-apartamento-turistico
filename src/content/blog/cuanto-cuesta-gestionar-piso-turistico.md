@@ -103,6 +103,6 @@ El check-in, el SES, el NRUA y la taxa turística son **gratis para siempre** en
 
 ---
 
-Si quieres comprobarlo sin comprometerte a nada, puedes empezar con el trial de 14 días sin necesidad de tarjeta.
+Si quieres comprobarlo sin comprometerte a nada, el check-in y el registro a la policía son gratis para siempre, y el plan completo tiene el primer mes gratis.
 
-**[Empieza gratis 14 días — sin tarjeta](https://app.hostlylabs.com/signup)**
+**[Empieza hoy con Hostly →](/es/empezar)**

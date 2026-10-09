@@ -5,7 +5,7 @@ import PageShell from '@/components/PageShell';
 import { breadcrumbSchema } from '@/lib/seo/schemas';
 import { useTranslation } from 'react-i18next';
 import { LangLink } from '@/i18n/LangLink';
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -59,7 +59,7 @@ const CATEGORY_KEYS = [
 const featuredSlug = 'ses-hospedajes-guia-completa-2026';
 
 export default function BlogIndex() {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation('blog');
   const featured = blogPosts.find((p) => p.slug === featuredSlug);
 
@@ -206,7 +206,7 @@ export default function BlogIndex() {
           <p className="text-slate-500 text-lg mb-8 max-w-xl mx-auto">
             {t('index.final_subtitle')}
           </p>
-          <button type="button" onClick={openSignup} className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#1a3a8f] text-white font-semibold hover:shadow-[0_8px_30px_rgba(26,58,143,0.3)] hover:-translate-y-0.5 transition-all duration-300">
+          <button type="button" onClick={empezar} className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#1a3a8f] text-white font-semibold hover:shadow-[0_8px_30px_rgba(26,58,143,0.3)] hover:-translate-y-0.5 transition-all duration-300">
             {t('index.final_cta')} <ArrowRight className="w-4 h-4" />
           </button>
         </div>

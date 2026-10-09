@@ -7,11 +7,7 @@ import { cn } from '@/lib/utils';
 import { LangLink } from '@/i18n/LangLink';
 import { useLang } from '@/i18n/useLang';
 
-interface SiteHeaderProps {
-  onOpenQuiz?: () => void;
-}
-
-export function SiteHeader({ onOpenQuiz }: SiteHeaderProps) {
+export function SiteHeader() {
   const { pathname } = useLocation();
   const { lang, setLang } = useLang();
   const NAV = useNav();
@@ -83,7 +79,7 @@ export function SiteHeader({ onOpenQuiz }: SiteHeaderProps) {
             </span>
           </LangLink>
         </div>
-        <HeaderNav nav={NAV} onOpenQuiz={onOpenQuiz} />
+        <HeaderNav nav={NAV} />
       </div>
     </header>
   );

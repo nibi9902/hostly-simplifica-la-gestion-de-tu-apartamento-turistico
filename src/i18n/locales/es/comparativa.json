@@ -22,17 +22,39 @@
     "table_badge_free": "Gratis",
     "table_footnote": "Datos verificados a abril 2026. Precios y funcionalidades pueden cambiar.",
     "features": [
-      { "feature": "Check-in online" },
-      { "feature": "SES.Hospedajes" },
-      { "feature": "NRUA" },
-      { "feature": "Taxa turística" },
-      { "feature": "Precio por check-in" },
-      { "feature": "Channel manager incluido" },
-      { "feature": "Mensajes con huéspedes" },
-      { "feature": "Coordinación de limpiezas" },
-      { "feature": "Precios dinámicos" },
-      { "feature": "Gestión de pagos" },
-      { "feature": "Soporte en español y catalán" }
+      {
+        "feature": "Check-in online"
+      },
+      {
+        "feature": "SES.Hospedajes"
+      },
+      {
+        "feature": "NRUA"
+      },
+      {
+        "feature": "Taxa turística"
+      },
+      {
+        "feature": "Precio por check-in"
+      },
+      {
+        "feature": "Channel manager incluido"
+      },
+      {
+        "feature": "Mensajes con huéspedes"
+      },
+      {
+        "feature": "Coordinación de limpiezas"
+      },
+      {
+        "feature": "Precios dinámicos"
+      },
+      {
+        "feature": "Gestión de pagos"
+      },
+      {
+        "feature": "Soporte en español y catalán"
+      }
     ],
     "cost_heading": "El coste real por piso al año",
     "cost_subheading": "Ejemplo: 1 piso con 60 check-ins al año.",
@@ -74,7 +96,7 @@
       }
     ],
     "cta_heading": "Check-in gratis para siempre.\nY mucho más.",
-    "cta_body": "14 días gratis. Sin tarjeta. Si no simplifica nada, no nos debes nada.",
-    "cta_button": "Empezar gratis 14 días"
+    "cta_body": "El primer mes, gratis. Si no te simplifica nada, no nos debes nada.",
+    "cta_button": "Empezar"
   }
 }

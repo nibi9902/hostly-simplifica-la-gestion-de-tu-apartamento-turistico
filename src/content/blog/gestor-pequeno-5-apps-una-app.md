@@ -107,10 +107,10 @@ Lo que incluye Hostly, sin coste adicional:
 - Panel de reservas, ingresos y ocupación
 - Gestión de limpieza y mantenimiento
 
-El trial dura 14 días y no requiere tarjeta. Tiempo suficiente para configurar tus apartamentos y ver si realmente simplifica tu semana.
+El primer mes del plan completo es gratis: tiempo de sobra para configurar tus apartamentos y ver si realmente te simplifica la semana.
 
 ---
 
 Si llevas varios pisos y tienes la sensación de que la gestión consume más tiempo del que debería, la pregunta no es si puedes permitirte cambiar. Es si puedes permitirte seguir igual.
 
-**[Empieza gratis 14 días — sin tarjeta](https://app.hostlylabs.com/signup)**
+**[Empieza hoy con Hostly →](/es/empezar)**

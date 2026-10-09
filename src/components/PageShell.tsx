@@ -1,13 +1,11 @@
-import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import Footer from "@/components/Footer";
-import QuizModal from "@/components/QuizModal";
 import SEO from "@/components/SEO";
 
 interface PageShellProps {
   title: string;
   description: string;
-  /** Path canonical relatiu, ex: "/funciones/check-in". Fallback: pathname actual. */
+  /** Path canonical relatiu, ex: "/funcionalidades/check-in-online". Fallback: pathname actual. */
   path?: string;
   /** Imatge OG específica de la pàgina. */
   image?: string;
@@ -24,7 +22,6 @@ export default function PageShell({
   schemas = [],
   children,
 }: PageShellProps) {
-  const [quizOpen, setQuizOpen] = useState(false);
   const canonicalPath = path ?? (typeof window !== "undefined" ? window.location.pathname : "/");
 
   return (
@@ -36,10 +33,9 @@ export default function PageShell({
         image={image}
         schemas={schemas}
       />
-      <SiteHeader onOpenQuiz={() => setQuizOpen(true)} />
+      <SiteHeader />
       <main>{children}</main>
       <Footer />
-      <QuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
     </div>
   );
 }

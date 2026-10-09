@@ -97,7 +97,7 @@
     ],
     "contact_heading": "Parlem?",
     "contact_body": "Si tens pisos a Airbnb o Booking i creus que Hostly pot ajudar-te, escriu-nos. Responem ràpid i en castellà o català.",
-    "contact_cta_start": "Començar gratis 14 dies"
+    "contact_cta_start": "Començar"
   },
   "demo": {
     "meta_title": "Demo — Hostly",
@@ -105,9 +105,9 @@
     "eyebrow": "Demo · 1 minut",
     "heading": "Així funciona Hostly.",
     "subheading": "Check-in automàtic, neteges coordinades, missatges amb IA i finances en un sol lloc. Sense cinc apps diferents.",
-    "cta_start": "Començar gratis",
+    "cta_start": "Començar",
     "cta_pricing": "Veure preus",
-    "disclaimer": "Sense targeta · Sense permanència · 14 dies de prova",
+    "disclaimer": "Sense permanència · El primer mes, gratis",
     "video_section_eyebrow": "El que veus al vídeo",
     "features": [
       {
@@ -139,9 +139,9 @@
     "stats_updated": "Actualitzada abril 2026",
     "toc_label": "Índex de continguts",
     "cta_eyebrow": "Per a propietaris que volen sistema, no caos",
-    "cta_heading": "Deixa de gestionar 5 apps.\nProva Hostly 14 dies gratis.",
+    "cta_heading": "Deixa de gestionar 5 apps.\nComença avui amb Hostly.",
     "cta_body": "Check-in, missatges, neteges, compliance i preus. Tot en una sola app. Sense targeta.",
-    "cta_button": "Començar gratis 14 dies",
+    "cta_button": "Començar",
     "chapters": [
       {
         "id": "obligaciones-legales",
@@ -149,12 +149,30 @@
         "title": "Obligacions legals del propietari turístic",
         "description": "SES.Hospedajes, NRUA, registre policial i taxa turística: què és cada cosa, qui ha de fer-ho i com automatitzar-ho.",
         "links": [
-          { "label": "SES.Hospedajes: guia completa 2026", "href": "/blog/ses-hospedajes-guia-completa-2026" },
-          { "label": "SES + NRUA + taxa turística: què és cada cosa", "href": "/blog/ses-nrua-taxa-turistica-guia" },
-          { "label": "Registre de viatgers als Mossos d'Esquadra", "href": "/blog/registro-viajeros-mossos-esquadra-cataluna" },
-          { "label": "Sancions per no complir el registre", "href": "/blog/sanciones-por-no-cumplir-registro-viajeros" },
-          { "label": "Check-in digital a Espanya: opcions i preus", "href": "/blog/checkin-digital-comparativa-espana" },
-          { "label": "Hostly: check-in + compliance gratis per sempre", "href": "/funciones/check-in" }
+          {
+            "label": "SES.Hospedajes: guia completa 2026",
+            "href": "/blog/ses-hospedajes-guia-completa-2026"
+          },
+          {
+            "label": "SES + NRUA + taxa turística: què és cada cosa",
+            "href": "/blog/ses-nrua-taxa-turistica-guia"
+          },
+          {
+            "label": "Registre de viatgers als Mossos d'Esquadra",
+            "href": "/blog/registro-viajeros-mossos-esquadra-cataluna"
+          },
+          {
+            "label": "Sancions per no complir el registre",
+            "href": "/blog/sanciones-por-no-cumplir-registro-viajeros"
+          },
+          {
+            "label": "Check-in digital a Espanya: opcions i preus",
+            "href": "/blog/checkin-digital-comparativa-espana"
+          },
+          {
+            "label": "Hostly: check-in + compliance gratis per sempre",
+            "href": "/funcionalidades/check-in-online"
+          }
         ]
       },
       {
@@ -163,10 +181,22 @@
         "title": "Gestió de reserves i calendaris",
         "description": "Com sincronitzar Airbnb i Booking sense dobles reserves, gestionar disponibilitat i cobrar automàticament.",
         "links": [
-          { "label": "Canal manager: guia per triar el correcte", "href": "/blog/channel-manager-alquiler-vacacional-guia" },
-          { "label": "Preus dinàmics a Airbnb i Booking", "href": "/blog/precios-dinamicos-airbnb-booking" },
-          { "label": "Reserves i calendaris a Hostly", "href": "/funciones/reservas" },
-          { "label": "Preus dinàmics inclosos a Hostly", "href": "/funciones/precios" }
+          {
+            "label": "Canal manager: guia per triar el correcte",
+            "href": "/blog/channel-manager-alquiler-vacacional-guia"
+          },
+          {
+            "label": "Preus dinàmics a Airbnb i Booking",
+            "href": "/blog/precios-dinamicos-airbnb-booking"
+          },
+          {
+            "label": "Reserves i calendaris a Hostly",
+            "href": "/funcionalidades/channel-manager"
+          },
+          {
+            "label": "Preus dinàmics inclosos a Hostly",
+            "href": "/funcionalidades/precios-dinamicos"
+          }
         ]
       },
       {
@@ -175,10 +205,22 @@
         "title": "Comunicació amb hostes",
         "description": "Com respondre missatges d'Airbnb i Booking automàticament sense perdre el to humà. WhatsApp, email i missatgeria unificada.",
         "links": [
-          { "label": "Com respondre missatges d'Airbnb automàticament", "href": "/blog/responder-mensajes-airbnb-automaticamente" },
-          { "label": "WhatsApp Business per a lloguer vacacional", "href": "/blog/whatsapp-business-alquiler-vacacional" },
-          { "label": "Què fer quan un hoste no respon al check-in", "href": "/blog/huesped-no-responde-checkin-online" },
-          { "label": "Missatges automàtics a Hostly", "href": "/funciones/mensajes" }
+          {
+            "label": "Com respondre missatges d'Airbnb automàticament",
+            "href": "/blog/responder-mensajes-airbnb-automaticamente"
+          },
+          {
+            "label": "WhatsApp Business per a lloguer vacacional",
+            "href": "/blog/whatsapp-business-alquiler-vacacional"
+          },
+          {
+            "label": "Què fer quan un hoste no respon al check-in",
+            "href": "/blog/huesped-no-responde-checkin-online"
+          },
+          {
+            "label": "Missatges automàtics a Hostly",
+            "href": "/funcionalidades/ia-whatsapp"
+          }
         ]
       },
       {
@@ -187,8 +229,14 @@
         "title": "Neteges i operativa diària",
         "description": "Com coordinar l'equip de neteja, gestionar incidències i deixar d'estar pendent de cada entrada i sortida.",
         "links": [
-          { "label": "Coordinació de neteges: d'Excel a sistema", "href": "/blog/coordinacion-limpiezas-excel-sistema" },
-          { "label": "Neteges coordinades a Hostly", "href": "/funciones/limpiezas" }
+          {
+            "label": "Coordinació de neteges: d'Excel a sistema",
+            "href": "/blog/coordinacion-limpiezas-excel-sistema"
+          },
+          {
+            "label": "Neteges coordinades a Hostly",
+            "href": "/funcionalidades/gestion-de-limpiezas"
+          }
         ]
       },
       {
@@ -197,8 +245,14 @@
         "title": "Pagaments, finances i fiscalitat",
         "description": "Com portar la comptabilitat del pis turístic, gestionar cobraments i liquidar a propietaris sense passar hores amb Excel.",
         "links": [
-          { "label": "Quant costa realment gestionar un pis turístic?", "href": "/blog/cuanto-cuesta-gestionar-piso-turistico" },
-          { "label": "Pagaments i factures a Hostly", "href": "/funciones/pagos" }
+          {
+            "label": "Quant costa realment gestionar un pis turístic?",
+            "href": "/blog/cuanto-cuesta-gestionar-piso-turistico"
+          },
+          {
+            "label": "Pagaments i factures a Hostly",
+            "href": "/funcionalidades/finanzas"
+          }
         ]
       },
       {
@@ -207,10 +261,22 @@
         "title": "Eines i stack tecnològic",
         "description": "Quines eines necessites realment, quines pots eliminar i com consolidar-ho tot en una sola app.",
         "links": [
-          { "label": "L'stack real del propietari Airbnb el 2026", "href": "/blog/stack-completo-propietario-airbnb" },
-          { "label": "Com gestionar 8 pisos amb una sola app", "href": "/blog/gestor-pequeno-5-apps-una-app" },
-          { "label": "Com automatitzar el teu lloguer vacacional amb IA", "href": "/blog/automatizar-alquiler-vacacional-con-ia" },
-          { "label": "Hostly vs Chekin: comparativa completa", "href": "/comparativa/chekin" }
+          {
+            "label": "L'stack real del propietari Airbnb el 2026",
+            "href": "/blog/stack-completo-propietario-airbnb"
+          },
+          {
+            "label": "Com gestionar 8 pisos amb una sola app",
+            "href": "/blog/gestor-pequeno-5-apps-una-app"
+          },
+          {
+            "label": "Com automatitzar el teu lloguer vacacional amb IA",
+            "href": "/blog/automatizar-alquiler-vacacional-con-ia"
+          },
+          {
+            "label": "Hostly vs Chekin: comparativa completa",
+            "href": "/comparativa/chekin"
+          }
         ]
       },
       {
@@ -219,9 +285,18 @@
         "title": "Escalar d'1 a 10 apartaments",
         "description": "Què canvia quan creixs, quins sistemes necessites tenir abans d'arribar a 5 pisos i com no col·lapsar en el procés.",
         "links": [
-          { "label": "Com passar de 3 a 10 apartaments sense col·lapsar", "href": "/blog/pasar-3-a-10-apartamentos-sin-colapsar" },
-          { "label": "Les 5 hores setmanals que et menja un pis turístic", "href": "/blog/5-horas-semana-recuperar-apartamento-turistico" },
-          { "label": "Hostly per a gestors petits", "href": "/gestores-pequenos" }
+          {
+            "label": "Com passar de 3 a 10 apartaments sense col·lapsar",
+            "href": "/blog/pasar-3-a-10-apartamentos-sin-colapsar"
+          },
+          {
+            "label": "Les 5 hores setmanals que et menja un pis turístic",
+            "href": "/blog/5-horas-semana-recuperar-apartamento-turistico"
+          },
+          {
+            "label": "Hostly per a gestors petits",
+            "href": "/gestores-pequenos"
+          }
         ]
       },
       {
@@ -230,12 +305,30 @@
         "title": "Alternatives i comparatives de programari",
         "description": "Anàlisi honesta dels principals PMS del mercat per al perfil propietari petit i gestor ibèric.",
         "links": [
-          { "label": "Els millors PMS per a apartaments turístics 2026", "href": "/blog/pms-apartamentos-turisticos-mejores-2026" },
-          { "label": "Hostify vs Lodgify vs Smoobu: comparativa", "href": "/blog/hostify-vs-lodgify-vs-smoobu-comparativa" },
-          { "label": "Hostly vs Icnea", "href": "/alternativas/icnea" },
-          { "label": "Hostly vs Hostify", "href": "/alternativas/hostify" },
-          { "label": "Hostly vs Lodgify", "href": "/alternativas/lodgify" },
-          { "label": "Hostly vs Smoobu", "href": "/alternativas/smoobu" }
+          {
+            "label": "Els millors PMS per a apartaments turístics 2026",
+            "href": "/blog/pms-apartamentos-turisticos-mejores-2026"
+          },
+          {
+            "label": "Hostify vs Lodgify vs Smoobu: comparativa",
+            "href": "/blog/hostify-vs-lodgify-vs-smoobu-comparativa"
+          },
+          {
+            "label": "Hostly vs Icnea",
+            "href": "/alternativas/icnea"
+          },
+          {
+            "label": "Hostly vs Hostify",
+            "href": "/alternativas/hostify"
+          },
+          {
+            "label": "Hostly vs Lodgify",
+            "href": "/alternativas/lodgify"
+          },
+          {
+            "label": "Hostly vs Smoobu",
+            "href": "/alternativas/smoobu"
+          }
         ]
       }
     ]

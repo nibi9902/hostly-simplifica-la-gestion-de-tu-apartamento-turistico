@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import PageShell from "@/components/PageShell";
 import { faqPageSchema, breadcrumbSchema } from "@/lib/seo/schemas";
 
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const comparisonData = [
@@ -22,7 +22,7 @@ const comparisonData = [
 ];
 
 export default function ComparativaChekin() {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation("comparativa");
 
   const features = t("chekin.features", { returnObjects: true }) as Array<{ feature: string }>;
@@ -185,7 +185,7 @@ export default function ComparativaChekin() {
         <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
           {t("chekin.cta_body")}
         </p>
-        <button type="button" onClick={openSignup} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
+        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
         >
           {t("chekin.cta_button")}
           <ArrowRight className="w-4 h-4" />

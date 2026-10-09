@@ -664,7 +664,7 @@ export const FEATURES_CA: Feature[] = [
     hero: {
       h1: 'Tanca el mes en minuts, no en una tarda.',
       sub: 'Ingressos per pis, per plataforma i per període. Comissions d\'Airbnb i Booking calculades soles. Liquidacions a propietaris en un clic. Tot llest per al teu gestor fiscal.',
-      primaryCta: 'Començar gratis 14 dies',
+      primaryCta: 'Començar',
       secondaryCta: 'Veure com funciona',
     },
     problem: {
@@ -745,7 +745,7 @@ export const FEATURES_CA: Feature[] = [
     hero: {
       h1: 'La burocràcia del pis turístic, resolta.',
       sub: 'Els únics a Espanya que cobrim tota la burocràcia del lloguer turístic — no només el registre policial. NRUA, taxa turística, declaració de la renda, impostos municipals. Hostly t\'avisa, et prepara les dades i et guia pas a pas.',
-      primaryCta: 'Començar gratis 14 dies',
+      primaryCta: 'Començar',
       secondaryCta: 'Veure el calendari fiscal',
     },
     problem: {

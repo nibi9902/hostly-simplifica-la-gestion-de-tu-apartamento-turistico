@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import PageShell from "@/components/PageShell";
 import PricingBlock from "@/components/PricingBlock";
 
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const PreciosPage = () => {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation("home");
 
   const faqs = t("precios_page.faqs", { returnObjects: true }) as Array<{ q: string; a: string }>;
@@ -80,7 +80,7 @@ const PreciosPage = () => {
           <p className="text-white/75 text-lg mb-8">
             {t("precios_page.cta_body")}
           </p>
-          <button type="button" onClick={openSignup} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-primary font-semibold text-base hover:bg-white/90 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+          <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-primary font-semibold text-base hover:bg-white/90 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
           >
             {t("precios_page.cta_button")}
             <ArrowRight className="w-5 h-5" />

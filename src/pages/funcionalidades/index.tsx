@@ -6,13 +6,13 @@ import { useTranslation } from 'react-i18next';
 import { LangLink } from '@/i18n/LangLink';
 import PageShell from '@/components/PageShell';
 import { breadcrumbSchema } from '@/lib/seo/schemas';
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const IconMap = icons as unknown as Record<string, React.FC<{ className?: string; style?: React.CSSProperties }>>;
 
 export default function FuncionalidadesIndex() {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const features = useFeatures();
   const { t } = useTranslation('funcionalidades');
   const { t: tSeo } = useTranslation('seo');
@@ -93,7 +93,7 @@ export default function FuncionalidadesIndex() {
         <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
           {t('index.final_subtitle')}
         </p>
-        <button type="button" onClick={openSignup} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
+        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
         >
           {t('index.final_cta')} <ArrowRight className="w-4 h-4" />
         </button>

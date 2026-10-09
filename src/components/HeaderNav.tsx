@@ -8,9 +8,9 @@ import { cn } from '@/lib/utils';
 import { LangLink } from '@/i18n/LangLink';
 
 type MegaState = 'closed' | 'opening' | 'open' | 'closing';
-type Props = { nav: NavConfig; onOpenQuiz?: () => void };
+type Props = { nav: NavConfig };
 
-export function HeaderNav({ nav, onOpenQuiz }: Props) {
+export function HeaderNav({ nav }: Props) {
   const { t } = useTranslation('common');
   const [megaState, setMegaState] = useState<MegaState>('closed');
   const [megaLabel, setMegaLabel] = useState<string | null>(null);
@@ -118,10 +118,10 @@ export function HeaderNav({ nav, onOpenQuiz }: Props) {
           <LogIn className="w-3 h-3" />
           App
         </a>
-        <button type="button" onClick={onOpenQuiz}
-          className="inline-flex items-center px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:shadow-[0_4px_20px_hsl(229_65%_52%/0.3)] hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.98]">
+        <LangLink to="/empezar" state={{ desde: pathname }}
+          className="inline-flex items-center px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:shadow-[0_4px_20px_hsl(var(--primary)/0.3)] hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.98]">
           {nav.ctas.primary.label}
-        </button>
+        </LangLink>
       </div>
 
       {/* Mega menu portal */}
@@ -267,10 +267,10 @@ export function HeaderNav({ nav, onOpenQuiz }: Props) {
                 className="block w-full text-center py-3 rounded-full border border-slate-200 text-foreground font-semibold">
                 {nav.ctas.secondary.label}
               </a>
-              <button type="button" onClick={() => { setMobileOpen(false); onOpenQuiz?.(); }}
+              <LangLink to="/empezar" state={{ desde: pathname }} onClick={() => setMobileOpen(false)}
                 className="block w-full text-center py-3 rounded-full bg-primary text-primary-foreground font-semibold">
                 {nav.ctas.primary.label}
-              </button>
+              </LangLink>
             </div>
           </nav>
         </div>,

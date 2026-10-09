@@ -704,7 +704,7 @@ export const FEATURES: Feature[] = [
     hero: {
       h1: 'Cierra el mes en minutos, no en una tarde.',
       sub: 'Ingresos por piso, por plataforma y por periodo. Comisiones de Airbnb y Booking calculadas solas. Liquidaciones a propietarios en un clic. Todo listo para tu gestor fiscal.',
-      primaryCta: 'Empezar gratis 14 días',
+      primaryCta: 'Empezar',
       secondaryCta: 'Ver cómo funciona',
     },
     problem: {
@@ -785,7 +785,7 @@ export const FEATURES: Feature[] = [
     hero: {
       h1: 'La burocracia del piso turístico, resuelta.',
       sub: 'Los únicos en España que cubrimos toda la burocracia del alquiler turístico — no solo el registro policial. NRUA, taxa turística, declaración de la renta, impuestos municipales. Hostly te avisa, te prepara los datos y te guía paso a paso.',
-      primaryCta: 'Empezar gratis 14 días',
+      primaryCta: 'Empezar',
       secondaryCta: 'Ver el calendario fiscal',
     },
     problem: {

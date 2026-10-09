@@ -42,7 +42,6 @@ const funcionalidadesSlugs = [
   'precios-dinamicos',
   'mensajeria-programada',
   'multi-rol',
-  'automatizaciones-n8n',
   'finanzas',
   'burocracia',
   'conecta-todo',
@@ -57,12 +56,10 @@ const basePaths: UrlEntry[] = [
   { loc: '/alternativas', changefreq: 'monthly', priority: 0.8 },
   { loc: '/funcionalidades', changefreq: 'monthly', priority: 0.9 },
 
-  { loc: '/funciones/check-in', changefreq: 'monthly', priority: 0.9 },
-  { loc: '/funciones/mensajes', changefreq: 'monthly', priority: 0.85 },
-  { loc: '/funciones/reservas', changefreq: 'monthly', priority: 0.85 },
-  { loc: '/funciones/limpiezas', changefreq: 'monthly', priority: 0.85 },
-  { loc: '/funciones/pagos', changefreq: 'monthly', priority: 0.85 },
-  { loc: '/funciones/precios', changefreq: 'monthly', priority: 0.85 },
+  // Les antigues /funciones/* redirigeixen (301) a /funcionalidades/* des d'octubre 2026.
+  { loc: '/precios', changefreq: 'monthly', priority: 0.9 },
+  { loc: '/calcula', changefreq: 'monthly', priority: 0.8 },
+  { loc: '/demo', changefreq: 'monthly', priority: 0.6 },
 
   { loc: '/comparativa/chekin', changefreq: 'monthly', priority: 0.9 },
 

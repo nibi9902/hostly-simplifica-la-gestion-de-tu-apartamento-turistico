@@ -488,10 +488,11 @@ const PhoneNotificationFeed_UNUSED: React.FC = () => {
 };
 
 export interface CinematicHeroProps extends React.HTMLAttributes<HTMLDivElement> {
-  onOpenQuiz?: () => void;
+  /** L'única porta del web: porta a /empezar. */
+  onEmpezar?: () => void;
 }
 
-export function CinematicHero({ onOpenQuiz, className, ...props }: CinematicHeroProps) {
+export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroProps) {
   const { t } = useTranslation("home");
   interface BubbleItem { title: string; detail: string }
   const bubbles = t("hero.bubbles", { returnObjects: true }) as BubbleItem[];
@@ -761,7 +762,7 @@ export function CinematicHero({ onOpenQuiz, className, ...props }: CinematicHero
         <div className="hero-cta-buttons flex flex-col sm:flex-row gap-3 md:gap-4">
           <button
             type="button"
-            onClick={onOpenQuiz}
+            onClick={onEmpezar}
             className="hero-cta-btn inline-flex items-center justify-center gap-2 px-10 py-4 md:px-12 md:py-[1.1rem] rounded-full bg-[#1a3a8f] text-white text-base md:text-lg font-semibold shadow-[0_10px_30px_-8px_rgba(26,58,143,0.45)] hover:shadow-[0_14px_36px_-6px_rgba(26,58,143,0.55)] hover:-translate-y-1 hover:bg-[#1f4ab0] active:translate-y-0 active:scale-[0.98] transition-all duration-300"
           >
             {t("hero.btn_start")}

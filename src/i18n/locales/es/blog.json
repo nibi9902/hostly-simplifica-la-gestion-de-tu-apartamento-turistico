@@ -15,8 +15,8 @@
     "min_read": "{{count}} min",
     "final_eyebrow": "Hostly",
     "final_title": "La app que simplifica todo lo que lees aquí.",
-    "final_subtitle": "SES, NRUA, mensajes, limpiezas y precios. Todo dentro de una sola app. 14 días gratis, sin tarjeta.",
-    "final_cta": "Empezar gratis 14 días"
+    "final_subtitle": "Registro a la policía, mensajes, limpiezas y precios, en una sola app. El primer mes, gratis.",
+    "final_cta": "Empezar"
   },
   "categories": {
     "legal": {
@@ -43,8 +43,8 @@
     "min_read_full": "{{count}} min de lectura",
     "cta_eyebrow": "Hostly",
     "cta_title": "Lo que describes aquí, Hostly lo hace solo.",
-    "cta_body": "SES, NRUA, mensajes y limpiezas. 14 días gratis, sin tarjeta.",
-    "cta_button": "Empezar gratis",
+    "cta_body": "Registro a la policía, mensajes y limpiezas, en una sola app. El primer mes, gratis.",
+    "cta_button": "Empezar",
     "related_label": "También te puede interesar"
   }
 }

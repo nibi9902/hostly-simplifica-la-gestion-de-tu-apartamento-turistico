@@ -7,8 +7,8 @@
     "card_eyebrow": "Hostly ·",
     "card_cta": "Veure funcionalitat",
     "final_title": "Tot això, per 40 €/apartament.",
-    "final_subtitle": "14 dies gratis. Sense targeta. Check-in i compliance gratis per sempre.",
-    "final_cta": "Començar gratis 14 dies"
+    "final_subtitle": "El primer mes, gratis. El check-in i el registre a la policia, gratis per sempre.",
+    "final_cta": "Començar"
   },
   "page": {
     "breadcrumb_home": "Hostly",
@@ -25,7 +25,9 @@
     "related_cta": "Veure més",
     "faqs_eyebrow": "Preguntes freqüents",
     "faqs_title": "El que potser t'estàs preguntant.",
-    "final_subtitle": "14 dies gratis. Sense targeta. Check-in i compliance inclosos per sempre.",
-    "final_cta": "Començar gratis 14 dies"
+    "final_subtitle": "El primer mes, gratis. El check-in i el registre a la policia, gratis per sempre.",
+    "final_cta": "Començar",
+    "ver_precios": "Veure preus",
+    "final_title": "Gestiona menys. Comença avui."
   }
 }

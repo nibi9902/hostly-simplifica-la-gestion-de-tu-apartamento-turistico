@@ -15,8 +15,14 @@ type EventName =
   | 'blog_category_click'    // Clic a categoria del blog
   | 'nav_dropdown_open'      // Obre mega-menú
   | 'signup_start'           // Clic final al link signup
-  | 'quiz_open'              // Obre el QuizModal
-  | 'quiz_complete';         // Completa el quiz
+  // L'embut del redisseny d'octubre 2026 (/empezar, /calcula, «Te llamo»)
+  | 'empezar_datos'          // Pas 1 de /empezar desat (telèfon, nom, correu)
+  | 'empezar_plan'           // Pas 2: tria gratis o complet
+  | 'empezar_cuenta'         // Pas 3 gratis: va a crear el compte a l'app
+  | 'demo_solicitada'        // Pas 3 complet: ha triat dia i hora
+  | 'calcula_resultado'      // Ha acabat les preguntes de /calcula
+  | 'calcula_telefono'       // Ha deixat el telèfon per veure el detall
+  | 'llamame_enviado';       // «Te llamo» de preus
 
 interface EventParams {
   location?: string;   // 'hero' | 'pricing' | 'final-cta' | 'navbar' | 'article' ...

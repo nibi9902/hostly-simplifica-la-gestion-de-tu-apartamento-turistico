@@ -22,17 +22,39 @@
     "table_badge_free": "Gratis",
     "table_footnote": "Dades verificades a l'abril de 2026. Preus i funcionalitats poden canviar.",
     "features": [
-      { "feature": "Check-in en línia" },
-      { "feature": "SES.Hospedajes" },
-      { "feature": "NRUA" },
-      { "feature": "Taxa turística" },
-      { "feature": "Preu per check-in" },
-      { "feature": "Canal manager inclòs" },
-      { "feature": "Missatges amb hostes" },
-      { "feature": "Coordinació de neteges" },
-      { "feature": "Preus dinàmics" },
-      { "feature": "Gestió de pagaments" },
-      { "feature": "Suport en espanyol i català" }
+      {
+        "feature": "Check-in en línia"
+      },
+      {
+        "feature": "SES.Hospedajes"
+      },
+      {
+        "feature": "NRUA"
+      },
+      {
+        "feature": "Taxa turística"
+      },
+      {
+        "feature": "Preu per check-in"
+      },
+      {
+        "feature": "Canal manager inclòs"
+      },
+      {
+        "feature": "Missatges amb hostes"
+      },
+      {
+        "feature": "Coordinació de neteges"
+      },
+      {
+        "feature": "Preus dinàmics"
+      },
+      {
+        "feature": "Gestió de pagaments"
+      },
+      {
+        "feature": "Suport en espanyol i català"
+      }
     ],
     "cost_heading": "El cost real per pis a l'any",
     "cost_subheading": "Exemple: 1 pis amb 60 check-ins a l'any.",
@@ -74,7 +96,7 @@
       }
     ],
     "cta_heading": "Check-in gratis per sempre.\nI molt més.",
-    "cta_body": "14 dies gratis. Sense targeta. Si no simplifica res, no ens deus res.",
-    "cta_button": "Començar gratis 14 dies"
+    "cta_body": "El primer mes, gratis. Si no et simplifica res, no ens deus res.",
+    "cta_button": "Començar"
   }
 }

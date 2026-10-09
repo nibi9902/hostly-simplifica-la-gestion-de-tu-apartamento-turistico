@@ -109,6 +109,6 @@ Para un propietario que ahora mismo paga a una gestoría por estos trámites o q
 
 ---
 
-Las obligaciones legales del alquiler turístico no desaparecen, pero sí pueden dejar de ser un dolor de cabeza. Si quieres ver cómo funciona en la práctica, tienes 14 días para probarlo sin necesidad de tarjeta.
+Las obligaciones legales del alquiler turístico no desaparecen, pero sí pueden dejar de ser un dolor de cabeza. Si quieres ver cómo funciona en la práctica, el check-in y el registro a la policía de Hostly son gratis para siempre.
 
-**[Empieza gratis 14 días — sin tarjeta](https://app.hostlylabs.com/signup)**
+**[Empieza hoy con Hostly →](/es/empezar)**

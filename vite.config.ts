@@ -40,8 +40,6 @@ export default defineConfig(({ mode }) => ({
           "gsap-vendor": ["gsap"],
           // i18n
           "i18n-vendor": ["i18next", "react-i18next", "i18next-browser-languagedetector"],
-          // Supabase
-          "supabase-vendor": ["@supabase/supabase-js"],
         },
       },
     },

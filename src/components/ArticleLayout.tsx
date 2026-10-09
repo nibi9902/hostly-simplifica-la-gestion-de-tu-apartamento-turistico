@@ -1,6 +1,6 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { ArrowLeft, Clock, Calendar, ArrowRight, Info } from 'lucide-react';
 import { motion } from 'framer-motion';
 import type { BlogPost } from '@/lib/blog';
@@ -8,7 +8,6 @@ import { blogPosts } from '@/lib/blog';
 import { SiteHeader } from '@/components/SiteHeader';
 import { LangLink } from '@/i18n/LangLink';
 import Footer from '@/components/Footer';
-import QuizModal from '@/components/QuizModal';
 import SEO from '@/components/SEO';
 import { blogPostingSchema, breadcrumbSchema } from '@/lib/seo/schemas';
 import { track, trackArticleScrollDepth } from '@/lib/analytics';
@@ -16,16 +15,15 @@ import { articleToFeature } from '@/lib/data/relatedContent';
 import { useTranslation } from 'react-i18next';
 import { useLang } from '@/i18n/useLang';
 
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 interface Props { post: BlogPost }
 
 export default function ArticleLayout({ post }: Props) {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation('blog');
   const { lang } = useLang();
-  const [quizOpen, setQuizOpen] = useState(false);
 
   // Scroll-depth tracking — manté analytics, sense tocar els meta tags (gestio via SEO component)
   useEffect(() => {
@@ -67,7 +65,7 @@ export default function ArticleLayout({ post }: Props) {
           ]),
         ]}
       />
-      <SiteHeader onOpenQuiz={() => setQuizOpen(true)} />
+      <SiteHeader />
 
       {/* Hero de l'article */}
       <header className="pt-28 pb-16 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f0f6ff] to-white">
@@ -187,7 +185,7 @@ export default function ArticleLayout({ post }: Props) {
               type="button"
               onClick={() => {
                 track('cta_primary_click', { location: 'article', slug: post.slug });
-                openSignup();
+                empezar();
               }}
               className="flex-shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#0f1f5c] font-semibold text-sm hover:shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap"
             >
@@ -241,7 +239,6 @@ export default function ArticleLayout({ post }: Props) {
       </main>
 
       <Footer />
-      <QuizModal isOpen={quizOpen} onClose={() => setQuizOpen(false)} />
     </div>
   );
 }

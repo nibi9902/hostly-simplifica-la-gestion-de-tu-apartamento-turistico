@@ -15,7 +15,7 @@
     "stat_messages": "mensajes respondidos",
     "stat_police": "registros policiales",
     "stat_cleanings": "limpiezas coordinadas",
-    "btn_start": "Empezar gratis 14 días",
+    "btn_start": "Empezar",
     "btn_how": "Ver cómo funciona",
     "card_title_1": "Hostly simplifica",
     "card_title_2": "tu apartamento",
@@ -25,20 +25,56 @@
     "phone_date": "Viernes, 18 de Abril",
     "phone_now": "ahora",
     "phone_notifs": [
-      {"title":"Taxa turística · vence en 24h","detail":"Informe de junio listo · pago en 1 clic"},
-      {"title":"Check-in de Miguel completado","detail":"SES enviado a Mossos · 4 € de taxa cobrados"},
-      {"title":"Limpieza confirmada · Anna","detail":"Coordinada automáticamente · mañana 11h"},
-      {"title":"Pol ha obtenido respuesta de la IA","detail":"Wifi + 3 restaurantes recomendados · sin tu intervención"},
-      {"title":"Festival local detectado en tu zona","detail":"Precio del 15–19 jun ajustado a 235 €/noche"},
-      {"title":"Tu asesora Laura · plan de abril","detail":"3 ajustes para subir ingresos un 12%"}
+      {
+        "title": "Taxa turística · vence en 24h",
+        "detail": "Informe de junio listo · pago en 1 clic"
+      },
+      {
+        "title": "Check-in de Miguel completado",
+        "detail": "SES enviado a Mossos · 4 € de taxa cobrados"
+      },
+      {
+        "title": "Limpieza confirmada · Anna",
+        "detail": "Coordinada automáticamente · mañana 11h"
+      },
+      {
+        "title": "Pol ha obtenido respuesta de la IA",
+        "detail": "Wifi + 3 restaurantes recomendados · sin tu intervención"
+      },
+      {
+        "title": "Festival local detectado en tu zona",
+        "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
+      },
+      {
+        "title": "Tu asesora Laura · plan de abril",
+        "detail": "3 ajustes para subir ingresos un 12%"
+      }
     ],
     "bubbles": [
-      {"title":"Taxa turística · vence en 24h","detail":"Informe de junio listo · pago en 1 clic"},
-      {"title":"Check-in de Miguel completado","detail":"SES enviado a Mossos · 4 € de taxa cobrados"},
-      {"title":"Limpieza confirmada · Anna","detail":"Coordinada automáticamente · mañana 11h"},
-      {"title":"Pol ha obtenido respuesta de la IA","detail":"Wifi + 3 restaurantes recomendados · sin tu intervención"},
-      {"title":"Festival local detectado en tu zona","detail":"Precio del 15–19 jun ajustado a 235 €/noche"},
-      {"title":"Tu asesora Laura · plan de abril","detail":"3 ajustes para subir ingresos un 12%"}
+      {
+        "title": "Taxa turística · vence en 24h",
+        "detail": "Informe de junio listo · pago en 1 clic"
+      },
+      {
+        "title": "Check-in de Miguel completado",
+        "detail": "SES enviado a Mossos · 4 € de taxa cobrados"
+      },
+      {
+        "title": "Limpieza confirmada · Anna",
+        "detail": "Coordinada automáticamente · mañana 11h"
+      },
+      {
+        "title": "Pol ha obtenido respuesta de la IA",
+        "detail": "Wifi + 3 restaurantes recomendados · sin tu intervención"
+      },
+      {
+        "title": "Festival local detectado en tu zona",
+        "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
+      },
+      {
+        "title": "Tu asesora Laura · plan de abril",
+        "detail": "3 ajustes para subir ingresos un 12%"
+      }
     ]
   },
   "features": {
@@ -53,7 +89,7 @@
     "col_after": "Con Hostly",
     "closer_title": "De cinco apps dispersas a una sola que lo hace todo.",
     "closer_sub": "Empieza por la parte gratis. El resto, cuando lo necesites.",
-    "closer_cta": "Crear cuenta gratis",
+    "closer_cta": "Empezar",
     "closer_fine": "Sin tarjeta · Para siempre",
     "pairs": [
       {
@@ -154,7 +190,7 @@
     "free_badge": "Gratis · Para siempre",
     "free_price_note": "Sin tarjeta. Sin caducidad.",
     "free_desc": "Para los que solo quieren cumplir con la policía sin pagar nada al mes.",
-    "free_cta": "Crear cuenta gratis",
+    "free_cta": "Empezar",
     "free_features": [
       "Envío automático del parte a la policía",
       "Estado de cada check-in (enviado y recibido)",
@@ -167,8 +203,8 @@
     "paid_price_bulk_prefix": "35 €/mes",
     "paid_price_bulk_suffix": "por apartamento desde 5 apt.",
     "paid_desc": "Todo el sistema en una app. Reemplaza Chekin, Smoobu, PriceLabs y Excel.",
-    "paid_cta": "Probar 14 días gratis",
-    "paid_fine": "Sin tarjeta · Sin permanencia · Cancela cuando quieras",
+    "paid_cta": "Empezar",
+    "paid_fine": "El primer mes, gratis · Sin permanencia",
     "paid_features": [
       "Todo lo del plan gratis",
       "Sincronización Airbnb + Booking en tiempo real",
@@ -189,10 +225,10 @@
   },
   "final_cta": {
     "eyebrow": "Para propietarios que quieren sistema, no caos",
-    "title": "Empieza gratis. 14 días.",
-    "subtitle": "Sin tarjeta · Sin permanencia · Cancela cuando quieras",
-    "btn_start": "Empezar gratis 14 días",
-    "btn_demo": "Ver demo en vivo",
+    "title": "Gestiona menos. Empieza hoy.",
+    "subtitle": "El primer mes, gratis · Sin permanencia",
+    "btn_start": "Empezar",
+    "btn_demo": "Ver cómo funciona",
     "stat_messages": "Mensajes con IA en 5 idiomas",
     "stat_police": "Registro policial automatizado",
     "stat_cleanings": "Limpiezas coordinadas en un clic",
@@ -219,15 +255,24 @@
     "subtitle": "Hostly manda el parte de viajeros a la policía cada vez que entra un huésped. Tú no pagas nada — y se queda así.",
     "connected_label": "Conectado con",
     "bodies": [
-      { "label": "Policía Nacional", "color": "#1a3a8f" },
-      { "label": "Mossos d'Esquadra", "color": "#0891b2" },
-      { "label": "Ertzaintza", "color": "#16a34a" }
+      {
+        "label": "Policía Nacional",
+        "color": "#1a3a8f"
+      },
+      {
+        "label": "Mossos d'Esquadra",
+        "color": "#0891b2"
+      },
+      {
+        "label": "Ertzaintza",
+        "color": "#16a34a"
+      }
     ],
     "hook": "¿Y dónde está la trampa?",
     "no_catch": "No hay trampa.\nEs gratis y se queda gratis.",
     "body_1": "Crea la cuenta, conecta un piso, y los partes salen solos hacia la policía cada vez que llega un huésped. Tú no haces nada.",
     "body_2": "Y si más adelante quieres conectar Airbnb, las limpiezas o las finanzas, ya hablaremos.",
-    "cta_button": "Crear cuenta gratis",
+    "cta_button": "Empezar",
     "cta_fine": "Sin tarjeta · Sin caducidad",
     "checklist_eyebrow": "Incluido gratis",
     "checklist_forever": "Para siempre",
@@ -241,23 +286,16 @@
     "link_text": "Cómo funciona el check-in"
   },
   "testimonials": {
-    "eyebrow": "Propietarios reales · España",
-    "title_start": "Algunos de",
-    "title_accent": "nuestros clientes.",
-    "subtitle": "Pequeños propietarios y gestores que dejaron de gestionar a mano.",
-    "apt_singular": "apartamento",
-    "apt_plural": "apartamentos",
-    "quotes": [
-      "Mi pareja me decía que vivía en el móvil. Tenía razón. Ahora ya ni lo miro.",
-      "Yo era el típico que el parte a Mossos lo hacía a las 11 de la noche del domingo. Ya no.",
-      "Tuve un overbooking en julio. Una pareja que venía con un bebé. Aún me acuerdo. No me ha vuelto a pasar.",
-      "Soraya me limpia desde hace años. Antes la liaba con audios a las 8 de la mañana. Ahora le sale solo en su app.",
-      "Llamé esperando un chatbot. Acabé 20 minutos al teléfono con Biel. Aún no había pagado nada.",
-      "En verano eran 30 mensajes al día solo del wifi y el aparcamiento. Este agosto casi no me he enterado.",
-      "No soy bueno con números. Cerrar el mes era horror. Lo veo todo en una pantalla y respiro.",
-      "Probé tres apps en dos años. Siempre acababa con un Excel paralelo. Esta es la primera vez que no.",
-      "Soy maestro y el piso era de mis abuelos. No tengo tiempo para apps raras. Esto se entiende solo."
-    ]
+    "eyebrow": "En sus palabras",
+    "title_start": "Gestores que ya",
+    "title_accent": "gestionan menos.",
+    "subtitle": "Gestores como tú cuentan cómo es su semana con Hostly.",
+    "example_tag": "Ejemplo",
+    "placeholder_name": "Gestor {{n}}",
+    "placeholder_meta": "Vídeo próximamente",
+    "play_aria": "Ver el vídeo de {{nom}}",
+    "apt_singular": "piso",
+    "apt_plural": "pisos"
   },
   "support": {
     "founder_badge": "Nació de vivirlo",
@@ -265,21 +303,21 @@
     "founder_quote": "\"Hostly no nació en una oficina. Nació de la frustración de gestionar mis propios apartamentos y no poder desconectar nunca. Lo construí para mí — y funciona.\"",
     "founder_name": "Biel",
     "founder_role": "Fundador y propietario",
-    "promises_title_start": "No estás solo en",
-    "promises_title_accent": "ningún momento.",
-    "promises_subtitle": "El primer mes trabajamos contigo, no para ti. Setup, dudas, ajustes — estamos en cada paso.",
+    "promises_title_start": "El primer mes",
+    "promises_title_accent": "lo montamos juntos.",
+    "promises_subtitle": "Configuramos contigo tus pisos y tus canales. Después, seguimos a un mensaje de distancia.",
     "promises": [
       {
-        "title": "Respuesta en menos de 2h",
-        "desc": "Cualquier duda, cualquier día. Sin bots, sin tickets perdidos."
+        "title": "Configuración 1 a 1",
+        "desc": "Conectamos contigo tus pisos y tus canales, en una videollamada."
       },
       {
-        "title": "Onboarding 1 a 1 el primer mes",
-        "desc": "Te ayudamos a configurar todo desde cero. Tú no tienes que saber nada de tecnología."
+        "title": "Una persona, no un chatbot",
+        "desc": "Te responde alguien del equipo, en castellano o en catalán."
       },
       {
-        "title": "Acompañamiento durante todo el primer año",
-        "desc": "No desaparecemos después de la venta. Estamos contigo mientras creces."
+        "title": "Sin permanencia",
+        "desc": "Si no te simplifica la vida, lo dejas cuando quieras."
       }
     ]
   },
@@ -352,118 +390,46 @@
       }
     ]
   },
-  "signup_modal": {
-    "eyebrow": "Acceso anticipado",
-    "title": "Crea tu cuenta.",
-    "subtitle": "Déjanos tus datos y en menos de 24 horas te contactamos para hacer el setup juntos.",
-    "label_name": "Nombre completo",
-    "label_email": "Email",
-    "label_phone": "Teléfono",
-    "label_apts": "¿Cuántos apartamentos tienes?",
-    "placeholder_name": "Marc García",
-    "placeholder_phone": "+34 600 000 000",
-    "apts_placeholder": "Selecciona...",
-    "apts_1": "1 apartamento",
-    "apts_2": "2 apartamentos",
-    "apts_3": "3 apartamentos",
-    "apts_5": "4-5 apartamentos",
-    "apts_10": "6-10 apartamentos",
-    "apts_15": "Más de 10",
-    "error_required": "Completa todos los campos obligatorios.",
-    "error_generic": "Algo ha fallado. Inténtalo de nuevo o escríbenos a hola@hostlylabs.com",
-    "btn_submit": "Crear cuenta",
-    "fine_print": "Sin compromiso. Hablamos antes de cualquier cosa.",
-    "success_title": "Recibido. Gracias, {{name}}.",
-    "success_body_1": "En menos de 24 horas te contactamos para hacer el setup juntos y arrancar bien desde el primer día.",
-    "success_body_2": "Si tienes cualquier duda antes, escríbenos a",
-    "btn_close": "Cerrar",
-    "close_aria": "Cerrar"
-  },
-  "quiz": {
-    "questions": [
-      { "text": "¿Cuántos apartamentos gestionas actualmente?", "options": [{"label":"1 apartamento","points":0},{"label":"2–3 apartamentos","points":1},{"label":"4–6 apartamentos","points":2},{"label":"7 o más","points":3}] },
-      { "text": "¿Respondes mensajes fuera de horario?", "options": [{"label":"Sí, siempre","points":2},{"label":"No","points":0}] },
-      { "text": "Si apagas el móvil en temporada alta, ¿pierdes el control?", "options": [{"label":"Sí, totalmente","points":3},{"label":"Probablemente sí","points":2},{"label":"No","points":0}] },
-      { "text": "Cuando entra una nueva reserva, ¿el equipo de limpieza se entera automáticamente o tienes que avisarles tú?", "options": [{"label":"Tengo que avisar yo","points":3},{"label":"A veces automático, a veces manual","points":2},{"label":"Es totalmente automático","points":0}] },
-      { "text": "Con varias entradas/salidas el mismo día, ¿depende todo de ti?", "options": [{"label":"Sí","points":2},{"label":"En parte","points":1},{"label":"No","points":0}] },
-      { "text": "¿Te ha pasado alguna vez una limpieza mal coordinada?", "options": [{"label":"Sí","points":2},{"label":"Casi pasa alguna vez","points":1},{"label":"No, nunca","points":0}] },
-      { "text": "¿Cómo envías los datos de huéspedes a la policía?", "options": [{"label":"No lo estoy haciendo correctamente","points":4},{"label":"Manual desde la web","points":3},{"label":"Foto DNI + gestoría","points":2},{"label":"Automatizado","points":0}] },
-      { "text": "¿Te estresa pensar que puedes olvidar el plazo de la policía?", "options": [{"label":"Sí","points":2},{"label":"A veces","points":1},{"label":"No","points":0}] },
-      { "text": "¿Cómo decides el precio de cada noche?", "options": [{"label":"Intuición","points":2},{"label":"Precio fijo casi siempre","points":2},{"label":"Miro la competencia manualmente","points":1},{"label":"Precios dinámicos","points":0}] },
-      { "text": "¿Podrías desconectar 7 días sin preocuparte?", "options": [{"label":"No, imposible","points":3},{"label":"Me costaría mucho","points":2},{"label":"Sí, sin problema","points":0}] }
-    ],
-    "loading_steps": ["Analizando tu gestión actual…","Calculando puntos de mejora…","Estimando el ahorro potencial…","Preparando tu diagnóstico…"],
-    "levels": {
-      "low": "Gestión bastante optimizada",
-      "medium": "Dependencia moderada",
-      "high": "Dependencia alta",
-      "critical": "Dependencia crítica"
-    },
-    "ui": {
-      "intro_title": "Calcula tu tiempo libre",
-      "intro_body": "9 preguntas rápidas. Te decimos exactamente cuántas horas a la semana podrías recuperar con Hostly.",
-      "badge_minutes": "2 minutos",
-      "badge_no_register": "Sin registro",
-      "badge_immediate": "Resultado inmediato",
-      "btn_start": "Empezar",
-      "question_label": "Pregunta {{current}} de {{total}}",
-      "btn_prev": "Anterior",
-      "btn_next": "Siguiente",
-      "btn_see_result": "Ver resultado",
-      "loading_title": "Analizando tu caso",
-      "lead_ready": "¡Listo!",
-      "lead_diagnosis_ready": "Tu diagnóstico está preparado",
-      "lead_intro": "Introduce tus datos para ver el resultado. Te lo enviamos también por si quieres consultarlo más tarde.",
-      "lead_name_placeholder": "Tu nombre",
-      "lead_phone_label": "Teléfono",
-      "lead_email_placeholder": "tu@email.com",
-      "lead_phone_placeholder": "+34 600 000 000",
-      "lead_sending": "Enviando…",
-      "lead_see_result": "Ver mi resultado",
-      "lead_no_spam": "Sin spam. Solo usamos tus datos para enviarte el diagnóstico.",
-      "result_header": "Tu resultado",
-      "result_algorithm": "Algoritmo Hostly",
-      "result_per_week": "por semana",
-      "result_per_month": "al mes",
-      "result_per_year": "al año",
-      "result_body": "Tus respuestas indican que gran parte del sistema vive en tu cabeza y en tu móvil. Eso cuesta {{horas}} horas cada semana. Si lo conviertes en procesos automáticos, no solo ahorras tiempo: recuperas tranquilidad y reduces el riesgo de errores en días de estrés y temporada.",
-      "btn_book_call": "Reservar mi llamada gratuita",
-      "btn_repeat": "Repetir",
-      "booking_title": "Hablemos. Sin compromiso, sin presión.",
-      "booking_body": "Elige el momento que mejor te vaya. En 15 minutos vemos juntos tu caso, resolvemos dudas y te acompañamos desde el primer paso.",
-      "booking_disclaimer": "Es una conversación personal, no una demo comercial.",
-      "booking_calendar_title": "Reservar llamada con Hostly",
-      "booked_title": "¡Perfecto! Ya tienes tu llamada reservada.",
-      "booked_body": "Te enviaremos un recordatorio por email. Mientras tanto, si te surge cualquier duda, escríbenos sin problema.",
-      "booked_call_title": "¿Qué pasará en la llamada?",
-      "booked_item_1": "Vemos tu caso concreto juntos",
-      "booked_item_2": "Resolvemos todas tus dudas",
-      "booked_item_3": "Si encaja, te ayudamos a empezar",
-      "booked_footer": "Nos vemos pronto. Estamos aquí para ayudarte.",
-      "btn_close": "Cerrar",
-      "error_name": "Por favor, introduce tu nombre.",
-      "error_contact": "Por favor, introduce tu email o teléfono.",
-      "error_email": "El email no es válido."
-    }
-  },
   "steps_mockup": {
     "setup": {
       "guests": "2 huéspedes",
       "active": "ACTIVO",
       "config_label": "Configuración",
       "steps": [
-        {"label":"Normas de casa","done":true},
-        {"label":"Horarios","done":true},
-        {"label":"Guía del huésped","done":true},
-        {"label":"Fotos y descripción","done":false}
+        {
+          "label": "Normas de casa",
+          "done": true
+        },
+        {
+          "label": "Horarios",
+          "done": true
+        },
+        {
+          "label": "Guía del huésped",
+          "done": true
+        },
+        {
+          "label": "Fotos y descripción",
+          "done": false
+        }
       ],
       "cta": "Continuar · 1 paso más",
-      "card_labels": ["Precio base", "Código caja", "Check-in", "Wifi"]
+      "card_labels": [
+        "Precio base",
+        "Código caja",
+        "Check-in",
+        "Wifi"
+      ]
     },
     "integrations": {
       "title": "Integraciones",
       "subtitle": "4 conectadas · listo para recibir",
-      "statuses": ["Sincronizado","Sincronizado","Conectado · 4821","Auto-configurado"],
+      "statuses": [
+        "Sincronizado",
+        "Sincronizado",
+        "Conectado · 4821",
+        "Auto-configurado"
+      ],
       "ready": "Listo para la próxima reserva"
     },
     "live": {
@@ -471,21 +437,52 @@
       "subtitle": "Últimas acciones · automáticas",
       "live_label": "EN VIVO",
       "events": [
-        {"title":"Reserva entrante","detail":"Carlos · Booking · 4 noches · 620 €"},
-        {"title":"Bienvenida enviada","detail":"Inglés · plantilla personal"},
-        {"title":"SES enviado a Mossos","detail":"DNI verificado · huésped dentro"},
-        {"title":"Taxa turística cobrada","detail":"4 € · 2 huéspedes · 4 noches"},
-        {"title":"Limpieza asignada","detail":"Anna · sábado 11:00"}
+        {
+          "title": "Reserva entrante",
+          "detail": "Carlos · Booking · 4 noches · 620 €"
+        },
+        {
+          "title": "Bienvenida enviada",
+          "detail": "Inglés · plantilla personal"
+        },
+        {
+          "title": "SES enviado a Mossos",
+          "detail": "DNI verificado · huésped dentro"
+        },
+        {
+          "title": "Taxa turística cobrada",
+          "detail": "4 € · 2 huéspedes · 4 noches"
+        },
+        {
+          "title": "Limpieza asignada",
+          "detail": "Anna · sábado 11:00"
+        }
       ]
     },
     "dashboard": {
       "period": "Abril 2026",
       "growth": "+15% vs año anterior",
       "kpis": [
-        {"label":"Ocupación","value":"87%","sub":"26 de 30 noches"},
-        {"label":"Check-ins","value":"12","sub":"Todos enviados"},
-        {"label":"Mensajes","value":"47","sub":"IA respondió 42"},
-        {"label":"Incidencias","value":"0","sub":"Sin pendientes"}
+        {
+          "label": "Ocupación",
+          "value": "87%",
+          "sub": "26 de 30 noches"
+        },
+        {
+          "label": "Check-ins",
+          "value": "12",
+          "sub": "Todos enviados"
+        },
+        {
+          "label": "Mensajes",
+          "value": "47",
+          "sub": "IA respondió 42"
+        },
+        {
+          "label": "Incidencias",
+          "value": "0",
+          "sub": "Sin pendientes"
+        }
       ],
       "next_checkin_label": "Próximo check-in",
       "next_checkin_detail": "Mañana · 15:00 · Sarah D.",
@@ -500,7 +497,7 @@
     "faq_subheading": "Lo que nos preguntan casi todos antes de empezar.",
     "cta_heading": "Empieza por lo que es gratis.",
     "cta_body": "Crea tu cuenta, conecta un apartamento y empieza a enviar partes a la policía automáticamente. Sin tarjeta. Para siempre.",
-    "cta_button": "Crear cuenta gratis",
+    "cta_button": "Empezar",
     "cta_disclaimer": "Sin tarjeta · Sin caducidad · Sin compromiso",
     "faqs": [
       {

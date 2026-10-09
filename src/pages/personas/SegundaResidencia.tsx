@@ -3,13 +3,13 @@ import { ArrowRight } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { useTranslation } from 'react-i18next';
-import { useSignupModal } from "@/contexts/SignupModalContext";
+import { useEmpezar } from "@/lib/empezar";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 type Feature = { icon: string; title: string; desc: string };
 
 export default function SegundaResidencia() {
-  const { open: openSignup } = useSignupModal();
+  const empezar = useEmpezar();
   const { t } = useTranslation('personas');
   const features = t("segunda_residencia.features", { returnObjects: true }) as Feature[];
   return (
@@ -31,7 +31,7 @@ export default function SegundaResidencia() {
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl mb-10 leading-relaxed">
               {t("segunda_residencia.intro")}
             </p>
-            <button type="button" onClick={openSignup} className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1a3a8f] text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(26,58,143,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+            <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1a3a8f] text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(26,58,143,0.3)] hover:-translate-y-0.5 transition-all duration-300"
             >
               {t("segunda_residencia.cta_primary")}
               <ArrowRight className="w-4 h-4" />
@@ -72,7 +72,7 @@ export default function SegundaResidencia() {
           {t("segunda_residencia.cta_h2")}
         </h2>
         <p className="text-white/60 text-lg mb-10 max-w-lg mx-auto">{t("segunda_residencia.cta_sub2")}</p>
-        <button type="button" onClick={openSignup} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
+        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
         >
           {t("segunda_residencia.cta_primary")}
           <ArrowRight className="w-4 h-4" />
