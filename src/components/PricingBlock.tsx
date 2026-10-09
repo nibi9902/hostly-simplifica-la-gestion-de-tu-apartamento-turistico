@@ -81,9 +81,9 @@ const PricingBlock = () => {
             </button>
           </div>
 
-          {/* ─── TIER COMPLET ─── */}
+          {/* ─── TIER COMPLET ─── (apilats, primer: és el pla principal; el gratis, per a qui no ho veu clar) */}
           <div
-            className="relative rounded-3xl p-6 md:p-10 flex flex-col text-white overflow-hidden"
+            className="relative rounded-3xl p-6 md:p-10 flex flex-col text-white overflow-hidden order-first lg:order-none"
             style={{ background: "linear-gradient(160deg, #1a3a8f 0%, #2563EB 100%)" }}
           >
             {/* Glow accent */}

@@ -26,10 +26,12 @@ const StepCard = ({ step, index, total }: { step: StepData; index: number; total
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, delay: index * 0.12, ease: appleEase }}
-      className="relative flex flex-col items-center text-center px-4"
+      // Fins a lg, una línia de temps (número a l'esquerra): els tres passos centrats i apilats feien 1.459 px al mòbil
+      className="relative flex flex-row items-start gap-5 text-left lg:flex-col lg:items-center lg:gap-0 lg:text-center lg:px-4"
     >
-      {/* Watermark number — subtle bg */}
+      {/* Watermark number — subtle bg (només amb les 3 columnes) */}
       <div
+        className="hidden lg:block"
         style={{
           position: "absolute",
           top: "50%",
@@ -49,22 +51,28 @@ const StepCard = ({ step, index, total }: { step: StepData; index: number; total
         {step.num}
       </div>
 
+      {/* Línia que uneix els números (mòbil) */}
+      {!isLast && (
+        <div
+          className="lg:hidden absolute left-6 top-16 -bottom-8 w-0.5 -translate-x-1/2"
+          style={{ background: `linear-gradient(to bottom, ${circleColor}30, ${circleGradEnd}10)` }}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Number badge */}
       <div
+        className="shrink-0 w-12 h-12 text-lg lg:w-16 lg:h-16 lg:text-[22px] lg:mb-7"
         style={{
-          width: 64,
-          height: 64,
           borderRadius: "50%",
           background: `linear-gradient(135deg, ${circleColor} 0%, ${circleGradEnd} 100%)`,
           color: "#fff",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: 22,
           fontWeight: 800,
           fontVariantNumeric: "tabular-nums",
           boxShadow: `0 0 0 6px #fff, 0 0 0 8px ${circleColor}22, 0 14px 30px -6px ${circleColor}55`,
-          marginBottom: 28,
           position: "relative",
           zIndex: 2,
         }}
@@ -72,53 +80,55 @@ const StepCard = ({ step, index, total }: { step: StepData; index: number; total
         {index + 1}
       </div>
 
-      {/* Tag */}
-      <span
-        style={{
-          fontSize: 11,
-          fontWeight: 700,
-          letterSpacing: "0.14em",
-          textTransform: "uppercase",
-          // El verd del darrer pas, un to més fosc per al text (contrast AA)
-          color: isLast ? "#15803d" : circleColor,
-          marginBottom: 14,
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        {step.tag}
-      </span>
+      <div className="min-w-0 pt-1 lg:pt-0 lg:flex lg:flex-col lg:items-center">
+        {/* Tag */}
+        <span
+          className="block mb-1.5 lg:mb-3.5"
+          style={{
+            fontSize: 11,
+            fontWeight: 700,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            // El verd del darrer pas, un to més fosc per al text (contrast AA)
+            color: isLast ? "#15803d" : circleColor,
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          {step.tag}
+        </span>
 
-      {/* Title */}
-      <h3
-        style={{
-          fontSize: "clamp(1.3rem, 1.9vw, 1.7rem)",
-          fontWeight: 800,
-          letterSpacing: "-0.03em",
-          lineHeight: 1.2,
-          color: "#0B0F1A",
-          marginBottom: 14,
-          maxWidth: "340px",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        {step.title}
-      </h3>
+        {/* Title */}
+        <h3
+          className="mb-2 lg:mb-3.5"
+          style={{
+            fontSize: "clamp(1.2rem, 1.9vw, 1.7rem)",
+            fontWeight: 800,
+            letterSpacing: "-0.03em",
+            lineHeight: 1.2,
+            color: "#0B0F1A",
+            maxWidth: "340px",
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          {step.title}
+        </h3>
 
-      {/* Description */}
-      <p
-        style={{
-          fontSize: "0.98rem",
-          lineHeight: 1.65,
-          color: "#475569",
-          maxWidth: "340px",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        {step.description}
-      </p>
+        {/* Description */}
+        <p
+          style={{
+            fontSize: "0.98rem",
+            lineHeight: 1.65,
+            color: "#475569",
+            maxWidth: "340px",
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          {step.description}
+        </p>
+      </div>
     </motion.div>
   );
 };
@@ -155,7 +165,7 @@ const StepsBlock = () => {
         <motion.div
           ref={headerRef}
           style={{ opacity: headerOpacity, y: headerY }}
-          className="text-center mb-16 md:mb-24"
+          className="text-center mb-12 md:mb-24"
         >
           <p
             style={{
@@ -206,7 +216,7 @@ const StepsBlock = () => {
           />
 
           {/* Grid 3 columns desktop, 1 column mobile */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-8 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8 relative">
             {steps.map((step, i) => (
               <StepCard key={step.num} step={step} index={i} total={steps.length} />
             ))}
