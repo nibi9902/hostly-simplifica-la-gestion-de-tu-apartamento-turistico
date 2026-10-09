@@ -39,7 +39,7 @@ export const NAV: NavConfig = {
         { label: 'Mensajería programada',  href: '/funcionalidades/mensajeria-programada', description: 'Mensajes automáticos en el idioma del huésped.' },
         { label: 'Roles y permisos',       href: '/funcionalidades/multi-rol',             description: 'Gestor, limpieza y propietario, cada uno lo suyo.' },
         { label: 'Finanzas en orden',      href: '/funcionalidades/finanzas',              description: 'Ingresos, comisiones y liquidaciones a propietarios.' },
-        { label: 'Taxa turística',         href: '/funcionalidades/burocracia',            description: 'La de Cataluña, calculada y lista para presentar.' },
+        { label: 'Tasa turística',         href: '/funcionalidades/burocracia',            description: 'La de Cataluña, calculada y lista para presentar.' },
         { label: 'Conéctalo todo',         href: '/funcionalidades/conecta-todo',          description: 'Automatizaciones a medida, con cuota mensual.' },
       ],
     },
@@ -61,7 +61,7 @@ export const NAV: NavConfig = {
           items: [
             { label: 'Super Guía de gestión',        href: '/guia',                                            description: 'La guía completa del propietario turístico.', badge: 'Nuevo' },
             { label: 'SES.Hospedajes: guía 2026',    href: '/blog/ses-hospedajes-guia-completa-2026',          description: 'Todo sobre el registro obligatorio de viajeros.' },
-            { label: 'SES + NRUA + taxa turística',  href: '/blog/ses-nrua-taxa-turistica-guia',               description: 'Las 3 obligaciones legales del propietario.' },
+            { label: 'SES + NRUA + tasa turística',  href: '/blog/ses-nrua-taxa-turistica-guia',               description: 'Las 3 obligaciones legales del propietario.' },
             { label: 'Mossos d\'Esquadra: registro', href: '/blog/registro-viajeros-mossos-esquadra-cataluna',  description: 'Guía práctica para Cataluña.' },
             { label: 'Sanciones por no registrar',   href: '/blog/sanciones-por-no-cumplir-registro-viajeros', description: 'Cuánto te puede costar no cumplir.' },
             { label: 'Guía: piso heredado en Airbnb',href: '/hereus',                                          description: 'Heredaste un piso. Ponlo a trabajar.' },

@@ -85,23 +85,48 @@
 - **Els vídeos d'exemple no poden anar a producció com si fossin clients.** Abans de publicar:
   vídeos de debò (amb permís) o la secció fora (`NOMES_EXEMPLES` a `videosClients.ts`).
 - La previsualització de Vercel demana iniciar sessió a Vercel.
-- `tsc` del projecte ja tenia 14 errors abans d'aquesta feina (blog, SEO, demos, legals); el
-  `build` de Vite no en depèn. Aquesta feina no n'afegeix cap.
-- `useFeatures` pesa 823 kB perquè `FeaturePage` importa totes les icones de lucide
-  (`import * as icons`). Pendent.
+- **Preus de la competència: només els publicats i amb data.** Verificats el 09-10-2026:
+  Chekin des de 3,95 €/mes per pis (chekin.com/en/pricing) i Smoobu des de 29 €/mes (pla
+  Flex, +0,9 % per reserva; smoobu.com/es/precios). El web deia «15 €/mes» i «180 € a l'any»
+  per a Chekin i «des de 23 €» per a Smoobu: ja no. Llei de competència deslleial, art. 10:
+  la publicitat comparativa ha de ser objectiva i verificable.
+- **`index.html` porta etiquetes SEO per defecte amb `data-rh="true"`.** Així el component
+  `SEO` (react-helmet-async) les substitueix en carregar (abans hi havia dues canòniques, la
+  de la portada a totes les pàgines, i dues descripcions). WhatsApp i les xarxes, que no
+  executen JS, veuen les per defecte.
+- **Res al navegador abans del consentiment.** L'origen de la visita (UTM, d'on ve) es queda
+  en memòria (`leads.ts`); l'identificador i el contacte només es desen quan la persona envia
+  un formulari.
+- Les demos animades tenen rètols propis: van a `demos.json` (castellà i català). Una paraula
+  catalana a la versió castellana (o al revés) la detecta la revisió (`textTot`, amb les
+  vistes amagades incloses).
 
-## Pendents i oberts
+## Preguntes obertes per al Biel
 
-1. **Portada**: reordenar-la en 9 seccions (fora «Compliance» duplicat, targetes de 7 a 6 —
-   fora «Cierra el ChatGPT» i la del coach amb la Laura i la Marta—, escurçar el tram buit de
-   l'entrada).
-2. **Unificar l'aspecte amb l'app**: una sola tipografia, tot el que es prem en píndola, els
-   colors de l'app (avui el web té el seu propi blau i un taronja d'accent).
-3. **Les 10 pàgines de funcionalitats**: corregir les afirmacions falses (SES automàtic,
-   Ertzaintza, signatura digital, PriceLabs «integrado», «Sin burocracia»…). I `public/llms.txt`.
-4. **Legals**: bàner de galetes (GA4 s'activa sense consentiment), NIF i adreça a l'avís
-   legal, els contactes del web a la política de privacitat, els referits als termes.
-5. **Cal.com** al servidor (Easypanel) en lloc de l'hora desada a mà.
-6. **A l'app** (web i nativa, al unison): el telèfon com a segon camp de l'alta, i el botó
+1. **Segon cognom i adreça fiscal** per a l'avís legal (LSSI art. 10): `src/lib/titular.ts`.
+2. **IVA**: els termes diuen que els preus l'inclouen; les targetes no ho diuen. ¿40 € IVA
+   inclòs o + IVA?
+3. **PriceLabs**: ¿la subscripció de PriceLabs va inclosa en els 40 €? El web diu «con PriceLabs
+   integrado» i no promet res més.
+4. **Referits**: he posat que compten els propietaris que entren a **Hostly Completo** (amb el
+   pla gratis, 5 altes gratuïtes regalarien un pis per sempre). ¿Correcte?
+5. **Reserves directes amb Stripe**: el web deia que Hostly té motor de reserves propi amb
+   Stripe. Ara diu «web propia con reservas directas, a medida». ¿Es pot vendre ja de sèrie?
+6. **Cobrar la taxa amb targeta**: el web diu «una pequeña comisión, que puede pagar el
+   huésped». ¿Quant és?
+7. **Preu de «Conéctalo todo»** (les automatitzacions a mida).
+8. «Déjame tu número y te llamo, normalmente el mismo día» (abans «te llamo hoy»). ¿D'acord?
+9. **Encàrrec del tratament** (dades dels hostes, art. 28 RGPD): hi ha una clàusula nova als
+   termes (apartat 11). Convé que la miri un assessor.
+10. Fotos i vídeos reals de gestors (amb permís) i una foto del Biel (ara surt una «B»).
+
+## Pendents
+
+1. **Cal.com** al servidor (Easypanel) en lloc de l'hora desada a mà.
+2. **A l'app** (web i nativa, al unison): el telèfon com a segon camp de l'alta, i el botó
    «Quiero Hostly completo» que porta a la demo. Omplir l'alta amb les dades de `/empezar`.
-7. El preu de «Conéctalo todo».
+3. Els articles del blog en català (ara surten en castellà amb un avís; la canònica és la
+   castellana).
+4. Adreces en català (`/ca/precios` → `/ca/preus`…), amb redireccions.
+5. Revisar la informació legal general del blog (dates del RD 933/2021, sancions, trams de la
+   taxa).

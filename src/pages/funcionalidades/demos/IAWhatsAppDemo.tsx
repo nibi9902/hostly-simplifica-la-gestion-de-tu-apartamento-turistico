@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Sparkles, ExternalLink } from 'lucide-react';
 import { usePlaybackFrame, spring } from '@/hooks/usePlaybackFrame';
 
@@ -77,6 +78,7 @@ interface BubbleProps {
 const MessageBubble: React.FC<BubbleProps> = ({
   frame, fps, enterFrame, side, variant = 'guest', text, time, autoSent, typingSpeed,
 }) => {
+  const { t } = useTranslation('demos');
   const progress = spring(frame - enterFrame, fps, { damping: 18, stiffness: 180 });
   if (progress <= 0) return null;
 
@@ -169,7 +171,7 @@ const MessageBubble: React.FC<BubbleProps> = ({
             display: 'flex', alignItems: 'center', gap: 3,
           }}>
             <Sparkles size={8} color={colors.primary} />
-            Enviat automàticament
+            {t('iaWhatsapp.sentAuto')}
           </span>
         )}
       </div>
@@ -183,6 +185,7 @@ const MessageBubble: React.FC<BubbleProps> = ({
 const TypingIndicator: React.FC<{
   frame: number; fps: number; enterFrame: number; exitFrame: number;
 }> = ({ frame, fps, enterFrame, exitFrame }) => {
+  const { t } = useTranslation('demos');
   const enterP = spring(frame - enterFrame, fps, { damping: 18, stiffness: 200 });
   const exitT = Math.max(0, Math.min(1, (frame - exitFrame) / 6));
   const opacity = enterP * (1 - exitT);
@@ -206,7 +209,7 @@ const TypingIndicator: React.FC<{
           <Sparkles size={8} color="#fff" strokeWidth={2.5} />
         </div>
         <span style={{ fontSize: 9, fontWeight: 700, color: '#2563EB', letterSpacing: 0.4 }}>
-          HOSTLY IA · escrivint…
+          {t('iaWhatsapp.typing')}
         </span>
       </div>
       <div style={{
@@ -309,6 +312,7 @@ const CheckinCard: React.FC<{ frame: number; fps: number; enterFrame: number }> 
 const RecommendationsPill: React.FC<{ frame: number; fps: number; enterFrame: number }> = ({
   frame, fps, enterFrame,
 }) => {
+  const { t } = useTranslation('demos');
   const p = spring(frame - enterFrame, fps, { damping: 20, stiffness: 180 });
   if (p <= 0) return null;
   return (
@@ -326,7 +330,7 @@ const RecommendationsPill: React.FC<{ frame: number; fps: number; enterFrame: nu
       fontFamily,
     }}>
       <Sparkles size={9} color={colors.primary} strokeWidth={2.5} />
-      RECOMANACIONS TEVES · 12 LLOCS
+      {t('iaWhatsapp.recommendations')}
     </div>
   );
 };
@@ -342,6 +346,7 @@ interface IAWhatsAppDemoProps {
 }
 
 const IAWhatsAppDemo: React.FC<IAWhatsAppDemoProps> = ({ loop = false, staticMode = false }) => {
+  const { t } = useTranslation('demos');
   const containerRef = useRef<HTMLDivElement>(null);
   const FPS = 30;
   const playbackFrame = usePlaybackFrame(TOTAL_FRAMES_IA, FPS, !staticMode, containerRef, loop, loop ? 0 : 3000);
@@ -414,7 +419,7 @@ const IAWhatsAppDemo: React.FC<IAWhatsAppDemoProps> = ({ loop = false, staticMod
             David Taisne · Luminoso Apartamento
           </div>
           <div style={{ fontSize: 10, color: colors.meta, marginBottom: 12 }}>
-            22 abr. – 26 abr. · 4 nits · reserva Booking
+            {t('iaWhatsapp.header')}
           </div>
 
           {/* Messages — ancorats al fons perquè els nous pushin els vells amunt */}
@@ -456,7 +461,7 @@ const IAWhatsAppDemo: React.FC<IAWhatsAppDemoProps> = ({ loop = false, staticMod
 
             <DaySeparator
               frame={frame} fps={FPS}
-              enterFrame={255} label="Hoy · 19:14"
+              enterFrame={255} label={t('iaWhatsapp.today')}
             />
 
             <MessageBubble

@@ -1,7 +1,7 @@
 {
   "propietarios": {
     "meta_title": "Hostly para propietarios de apartamentos turísticos",
-    "meta_description": "Tienes 1, 2 o 3 pisos en Airbnb o Booking. Hostly simplifica todo lo que implica gestionarlos. Check-in, mensajes, limpiezas y compliance. Una sola app.",
+    "meta_description": "Tienes 1, 2 o 3 pisos en Airbnb o Booking. Hostly simplifica todo lo que implica gestionarlos. Check-in, mensajes, limpiezas y registro a la policía. Una sola app.",
     "breadcrumb_label": "Para propietarios",
     "badge": "Para propietarios",
     "h1": "Tienes 1 o 2 pisos.\nNo deberías vivir pendiente de ellos.",
@@ -22,15 +22,15 @@
       },
       {
         "pain": "Coordinar a la limpiadora por WhatsApp",
-        "fix": "Al hacer checkout, tu equipo recibe el aviso automáticamente. Sin que tú hagas nada."
+        "fix": "Con cada reserva, tu equipo recibe el aviso de la limpieza. Sin que tú hagas nada."
       },
       {
         "pain": "El Excel de cobros que ya no entiendes",
         "fix": "Todos los ingresos y comisiones dentro de Hostly, por piso y por canal."
       }
     ],
-    "section3_h2": "40 € al mes por piso. Todo incluido.",
-    "section3_body": "Reservas, check-in, mensajes, limpiezas y compliance. Una sola factura, una sola app. Y el check-in, gratis para siempre.",
+    "section3_h2": "40 € al mes por piso. Una sola factura.",
+    "section3_body": "Reservas, check-in, mensajes, limpiezas y registro a la policía, en una sola app. Y el check-in, gratis para siempre.",
     "cta_h2": "Empieza hoy.",
     "cta_sub2": "Sin tarjeta. Sin permanencia."
   },
@@ -40,30 +40,30 @@
     "breadcrumb_label": "Para gestores",
     "badge": "Para gestores pequeños",
     "h1": "Llevas 8 pisos.\n¿Con cuántas apps?",
-    "intro": "Canal manager por aquí. Chekin por allá. Excel para los cobros. Un WhatsApp con los huéspedes y otro con las limpiadoras. Hostly lo junta todo en una sola app.",
+    "intro": "El channel manager por aquí. Chekin por allá. Excel para los cobros. Un WhatsApp con los huéspedes y otro con las limpiadoras. Hostly lo junta todo en una sola app.",
     "cta_primary": "Empezar",
     "cta_sub": "Sin permanencia. 35 €/apartamento desde 5 pisos.",
     "section2_h2": "El stack del gestor pequeño hoy.",
-    "section2_sub": "Y lo que cuesta al año.",
+    "section2_sub": "Y lo que cuesta.",
     "tools": [
       {
-        "name": "Canal manager (Smoobu, Hostify, etc.)",
-        "cost": "~280 €/año"
+        "name": "Channel manager (Smoobu, Hostify…)",
+        "cost": "desde 29 €/mes"
       },
       {
-        "name": "Chekin (compliance y check-in)",
-        "cost": "~200 €/año"
+        "name": "Chekin (check-in y registro)",
+        "cost": "desde 3,95 €/mes por piso"
       },
       {
         "name": "Plantillas de mensajes o similar",
-        "cost": "~120 €/año"
+        "cost": "otra suscripción más"
       },
       {
         "name": "Excel para cobros y liquidaciones",
         "cost": "Gratis en dinero, carísimo en tiempo"
       }
     ],
-    "hostly_summary": "✅ Con Hostly: 35 €/apartamento/mes desde 5 pisos. Todo incluido. Una sola factura.",
+    "hostly_summary": "✅ Con Hostly: 35 € por piso al mes desde 5 pisos. Una app y una sola factura.",
     "cta_h2": "Empieza hoy.",
     "cta_sub2": "35 €/apartamento desde 5 pisos. El primer mes, gratis."
   },
@@ -86,7 +86,7 @@
       {
         "icon": "🧹",
         "title": "Limpiezas automáticas",
-        "desc": "Tu equipo de limpieza recibe el aviso al checkout. Tú no tienes que gestionar nada."
+        "desc": "Con cada reserva, tu equipo de limpieza recibe el aviso. Tú no tienes que gestionar nada."
       },
       {
         "icon": "💬",
@@ -95,8 +95,8 @@
       },
       {
         "icon": "🛡️",
-        "title": "Registro y taxa, sin pensarlo",
-        "desc": "Hostly envía el registro de viajeros a la policía y, si el piso está en Cataluña, te deja calculada la taxa turística. Sin acordarte de hacerlo tú."
+        "title": "Registro y tasa, sin pensarlo",
+        "desc": "Hostly envía el registro de viajeros a la policía y, si el piso está en Cataluña, te deja calculada la tasa turística. Sin acordarte de hacerlo tú."
       }
     ],
     "cta_h2": "Empieza hoy.",
@@ -104,7 +104,7 @@
   },
   "hereus": {
     "meta_title": "Heredaste un piso turístico. Hostly lo simplifica.",
-    "meta_description": "Heredaste uno o dos pisos y los pusiste en Airbnb sin saber muy bien cómo. Hostly gestiona check-in, mensajes, limpiezas y compliance sin que tengas que aprender nada.",
+    "meta_description": "Heredaste uno o dos pisos y los pusiste en Airbnb sin saber muy bien cómo. Hostly gestiona check-in, mensajes, limpiezas y registro a la policía sin que tengas que aprender nada.",
     "breadcrumb_label": "Pisos heredados",
     "badge": "Pisos heredados",
     "h1": "El piso heredado\nsin quebraderos de cabeza.",
@@ -122,7 +122,7 @@
       {
         "icon": "🤖",
         "title": "Todo automático por defecto",
-        "desc": "Check-in, compliance, mensajes y limpiezas funcionan solos desde el primer día."
+        "desc": "Check-in, registro a la policía, mensajes y limpiezas funcionan solos desde el primer día."
       },
       {
         "icon": "👤",

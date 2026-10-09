@@ -95,7 +95,11 @@
     "tabCalendar": "Calendario",
     "todayBadge": "HOY",
     "exitTime": "Judit Masip sale a las 11:00",
-    "guestDetails": "Judit sale 11:00 · David entra 15:00 · 2 adultos + 1 niño"
+    "guestDetails": "Judit sale 11:00 · David entra 15:00 · 2 adultos + 1 niño",
+    "typing": "HOSTLY IA · escribiendo…",
+    "iaAEva": "Hola Eva\nNUEVA Reserva – 5770048427\nApartamento: Luminoso Apartamento a 4 min del Museo Dalí\nEntran el día: 2026-04-22 a las 15:00\nSalen el: 2026-04-26 a las 11:00\nSon 2 adultos y 1 niño\n¿Puedes hacer la limpieza este día?",
+    "respostaEva": "Sí la haré, iré sobre las 11",
+    "iaConfirma": "¡Perfecto Eva, gracias! 😊\n\nQueda **confirmada** la limpieza de la reserva **5770048427** para el **26 de abril de 2026** a las **11:00**.\n\nSi hay cualquier cambio, avísame."
   },
   "precios": {
     "dynamicPrices": "Precios dinámicos",
@@ -120,7 +124,7 @@
     "netIncome": "Ingresos netos · Abril 2026",
     "grossAndFees": "Bruto: 1.450 € · Comisiones: −210 €",
     "statOccupancy": "Ocupación",
-    "statAvgNight": "€/noche medio",
+    "statAvgNight": "Media por noche",
     "platformLabel": "PER PLATAFORMA",
     "platformGross": "Bruto:",
     "reservations": "reservas",
@@ -146,7 +150,8 @@
     "cleaningCost": "Coste limpieza (6%)",
     "managerTotal": "Total Gestor",
     "platformLabel": "POR PLATAFORMA",
-    "platformGross": "Bruto:"
+    "platformGross": "Bruto:",
+    "statAvgNight": "Media por noche"
   },
   "demoVideo": {
     "superLabel": "Hostly™ en acción",
@@ -175,5 +180,25 @@
     "step5Event": "Mensaje respondido",
     "step5Detail": "Mensaje huésped · resuelto",
     "step5Badge": "Auto-reply · 3 idiomas"
+  },
+  "iaWhatsapp": {
+    "sentAuto": "Enviado automáticamente",
+    "typing": "HOSTLY IA · escribiendo…",
+    "header": "22 abr. – 26 abr. · 4 noches · reserva Booking",
+    "today": "Hoy · 19:14",
+    "recommendations": "TUS RECOMENDACIONES · 12 SITIOS"
+  },
+  "comu": {
+    "diesSetmana": [
+      "Lu",
+      "Ma",
+      "Mi",
+      "Ju",
+      "Vi",
+      "Sá",
+      "Do"
+    ],
+    "sistemaTreballant": "Sistema trabajando",
+    "tuJaNo": "Tú ya no"
   }
 }

@@ -67,7 +67,6 @@ export function correuValid(input: string): boolean {
 /* ─── El visitant i d'on ha arribat ─── */
 
 const CLAU_ID = "hostly_lead_id";
-const CLAU_ARRIBADA = "hostly_arribada";
 let idEnMemoria: string | null = null;
 
 function nouId(): string {
@@ -96,33 +95,31 @@ export function idVisitant(): string {
 
 type Arribada = { entrada?: string; referrer?: string; [utm: string]: string | undefined };
 
+// Només en memòria: res al navegador abans que la persona ens deixi les dades (sense
+// consentiment no hi pot haver cap identificador ni seguiment desat al dispositiu).
+// Dura tota la visita (el web és d'una sola pàgina); si es recarrega, es torna a mirar.
+let arribadaEnMemoria: Arribada | null = null;
+
 /** Es crida un cop en arrencar: la primera pàgina de la visita i les UTM, si n'hi ha. */
 export function apuntaArribada(): void {
+  if (arribadaEnMemoria) return;
+  const dades: Arribada = { entrada: window.location.pathname };
   try {
-    if (sessionStorage.getItem(CLAU_ARRIBADA)) return;
     const params = new URLSearchParams(window.location.search);
-    const dades: Arribada = { entrada: window.location.pathname };
     for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"]) {
       const v = params.get(k);
       if (v) dades[k] = v.slice(0, 120);
     }
     if (document.referrer) {
-      try {
-        const host = new URL(document.referrer).host;
-        if (host && host !== window.location.host) dades.referrer = host;
-      } catch { /* referrer estrany: s'ignora */ }
+      const host = new URL(document.referrer).host;
+      if (host && host !== window.location.host) dades.referrer = host;
     }
-    sessionStorage.setItem(CLAU_ARRIBADA, JSON.stringify(dades));
-  } catch { /* sense emmagatzematge: no passa res */ }
+  } catch { /* URL o referrer estranys: s'ignoren */ }
+  arribadaEnMemoria = dades;
 }
 
 function arribada(): Arribada {
-  try {
-    const desat = sessionStorage.getItem(CLAU_ARRIBADA);
-    return desat ? (JSON.parse(desat) as Arribada) : {};
-  } catch {
-    return {};
-  }
+  return arribadaEnMemoria ?? {};
 }
 
 /* ─── Desar ─── */

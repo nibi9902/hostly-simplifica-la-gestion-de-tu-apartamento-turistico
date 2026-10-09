@@ -16,20 +16,7 @@ const colors = {
 } as const;
 const fontFamily = 'Inter, -apple-system, sans-serif';
 
-/* ─── Textos ─── */
-const IA_TO_EVA = `Hola Eva
-NUEVA Reserva – 5770048427
-Apartamento: Luminoso Apartamento a 4 min del Museo Dalí
-Entran el día: 2026-04-22 a las 15:00
-Salen el: 2026-04-26 a las 11:00
-Son 2 adultos y 1 niño
-¿Puedes hacer la limpieza este día?`;
-
-const IA_CONFIRM = `¡Perfecto Eva, gracias! 😊
-
-Queda **confirmada** la limpieza de la reserva **5770048427** para el **26 de abril de 2026** a las **11:00**.
-
-Si hay cualquier cambio, avísame.`;
+/* ─── Textos: a demos.json (limpiezas.iaAEva, respostaEva, iaConfirma), en l'idioma de la pàgina ─── */
 
 function renderRich(text: string): React.ReactNode {
   const parts = text.split(/\*\*(.+?)\*\*/g);
@@ -123,6 +110,7 @@ const MessageBubble: React.FC<BubbleProps> = ({
 const TypingIndicator: React.FC<{
   frame: number; fps: number; enterFrame: number; exitFrame: number;
 }> = ({ frame, fps, enterFrame, exitFrame }) => {
+  const { t } = useTranslation('demos');
   const enterP = spring(frame - enterFrame, fps, { damping: 18, stiffness: 200 });
   const exitT = Math.max(0, Math.min(1, (frame - exitFrame) / 6));
   const opacity = enterP * (1 - exitT);
@@ -144,7 +132,7 @@ const TypingIndicator: React.FC<{
           <Sparkles size={8} color="#fff" strokeWidth={2.5} />
         </div>
         <span style={{ fontSize: 9, fontWeight: 700, color: '#2563EB', letterSpacing: 0.4 }}>
-          HOSTLY IA · escrivint…
+          {t('limpiezas.typing')}
         </span>
       </div>
       <div style={{
@@ -201,12 +189,12 @@ function ChatView({ frame, fps }: { frame: number; fps: number }) {
         <MessageBubble
           frame={frame} fps={fps}
           enterFrame={1} side="right" variant="ai"
-          text={IA_TO_EVA} time="22:29"
+          text={t('limpiezas.iaAEva')} time="22:29"
         />
         <MessageBubble
           frame={frame} fps={fps}
           enterFrame={8} side="left"
-          text="Sí la haré, iré sobre las 11" time="23:35"
+          text={t('limpiezas.respostaEva')} time="23:35"
         />
         <TypingIndicator
           frame={frame} fps={fps}
@@ -215,7 +203,7 @@ function ChatView({ frame, fps }: { frame: number; fps: number }) {
         <MessageBubble
           frame={frame} fps={fps}
           enterFrame={48} side="right" variant="ai"
-          text={IA_CONFIRM} time="23:36"
+          text={t('limpiezas.iaConfirma')} time="23:36"
         />
       </div>
     </div>

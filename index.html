@@ -16,36 +16,38 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,300;1,400;1,500&display=swap" />
 
-    <!-- SEO Primary -->
+    <!-- SEO per defecte. Amb data-rh, el component SEO (react-helmet-async) les substitueix per
+         les de cada pàgina en carregar: així no hi ha dues canòniques ni dues descripcions. Les
+         xarxes i WhatsApp, que no executen JS, veuen aquestes. -->
     <title>Simplifica la gestión de tu apartamento turístico | Hostly</title>
-    <meta name="description" content="Hostly simplifica todo lo que implica tener un piso turístico. Reservas, check-in, mensajes, limpiezas y registro a la policía en una sola app. El check-in, gratis para siempre." />
-    <link rel="canonical" href="https://hostlylabs.com" />
-    <meta name="robots" content="index, follow" />
+    <meta data-rh="true" name="description" content="Hostly simplifica todo lo que implica tener un piso turístico. Reservas, check-in, mensajes, limpiezas y registro a la policía en una sola app. El check-in, gratis para siempre." />
+    <link data-rh="true" rel="canonical" href="https://hostlylabs.com/es" />
+    <meta data-rh="true" name="robots" content="index, follow" />
     <meta name="author" content="Hostly" />
 
     <!-- hreflang -->
-    <link rel="alternate" hreflang="es-ES" href="https://hostlylabs.com/" />
-    <link rel="alternate" hreflang="ca-ES" href="https://hostlylabs.com/ca" />
-    <link rel="alternate" hreflang="x-default" href="https://hostlylabs.com/" />
+    <link data-rh="true" rel="alternate" hreflang="es-ES" href="https://hostlylabs.com/es" />
+    <link data-rh="true" rel="alternate" hreflang="ca-ES" href="https://hostlylabs.com/ca" />
+    <link data-rh="true" rel="alternate" hreflang="x-default" href="https://hostlylabs.com/es" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hostlylabs.com" />
-    <meta property="og:title" content="Hostly — Una app para todo tu piso turístico" />
-    <meta property="og:description" content="Deja de pagar Chekin, Excel y 3 suscripciones más. Hostly lo hace todo desde una sola app. El check-in y el registro a la policía, gratis para siempre." />
-    <meta property="og:image" content="https://hostlylabs.com/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="es_ES" />
-    <meta property="og:locale:alternate" content="ca_ES" />
-    <meta property="og:site_name" content="Hostly" />
+    <meta data-rh="true" property="og:type" content="website" />
+    <meta data-rh="true" property="og:url" content="https://hostlylabs.com/es" />
+    <meta data-rh="true" property="og:title" content="Hostly — Una app para todo tu piso turístico" />
+    <meta data-rh="true" property="og:description" content="Reservas, mensajes, limpiezas y registro a la policía en una sola app. El check-in y el registro a la policía, gratis para siempre." />
+    <meta data-rh="true" property="og:image" content="https://hostlylabs.com/og-image.png" />
+    <meta data-rh="true" property="og:image:width" content="1200" />
+    <meta data-rh="true" property="og:image:height" content="630" />
+    <meta data-rh="true" property="og:locale" content="es_ES" />
+    <meta data-rh="true" property="og:locale:alternate" content="ca_ES" />
+    <meta data-rh="true" property="og:site_name" content="Hostly" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@hostlylabs" />
-    <meta name="twitter:title" content="Hostly — Una app para todo tu piso turístico" />
-    <meta name="twitter:description" content="Check-in, registro a la policía, mensajes, limpiezas y precios. Todo en Hostly. El check-in, gratis para siempre." />
-    <meta name="twitter:image" content="https://hostlylabs.com/og-image.png" />
+    <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+    <meta data-rh="true" name="twitter:site" content="@hostlylabs" />
+    <meta data-rh="true" name="twitter:title" content="Hostly — Una app para todo tu piso turístico" />
+    <meta data-rh="true" name="twitter:description" content="Reservas, mensajes, limpiezas y registro a la policía en una sola app. El check-in, gratis para siempre." />
+    <meta data-rh="true" name="twitter:image" content="https://hostlylabs.com/og-image.png" />
 
     <!-- Els schemas JSON-LD (SoftwareApplication, Organization, FAQPage) s'emeten
          per pàgina via react-helmet-async. Veure src/lib/seo/schemas.ts. -->

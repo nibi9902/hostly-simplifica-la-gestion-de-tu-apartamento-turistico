@@ -186,7 +186,7 @@ export const FEATURES_CA: Feature[] = [
     shortDescription:
       'Airbnb i Booking en un sol calendari. Les reserves entren al moment i, dins de Hostly, dues reserves no es poden solapar.',
     hero: {
-      h1: 'Un sol calendari per a Airbnb, Booking i les teves reserves directes',
+      h1: 'Un sol calendari per a Airbnb, Booking i les teves reserves',
       sub: 'Les reserves entren soles, els bloquejos arriben als canals a l\'instant i els preus es publiquen des d\'un sol lloc.',
       primaryCta: 'Començar',
       secondaryCta: 'Veure preus',
@@ -214,7 +214,7 @@ export const FEATURES_CA: Feature[] = [
       {
         step: 4,
         title: 'I les teves reserves directes, també',
-        body: 'Hostly té el seu propi motor de reserves amb pagament per Stripe. Les reserves directes entren al mateix calendari.',
+        body: 'Les que t\'arriben per telèfon les apuntes en un moment. I si vols web pròpia amb reserves directes, la muntem amb tu, a mida.',
       },
     ],
     advantages: [
@@ -223,7 +223,7 @@ export const FEATURES_CA: Feature[] = [
       'Dins de Hostly, dues reserves no es poden solapar',
       'Bloquejos que arriben als canals a l\'instant',
       'El teu històric de reserves, importat',
-      'Reserves directes amb motor propi i pagament per Stripe',
+      'Les teves reserves directes, al mateix calendari',
     ],
     usage: [
       {
@@ -244,7 +244,7 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Quines plataformes connecteu?',
         answer:
-          'Airbnb i Booking.com. Per a les reserves directes, Hostly té el seu propi motor de reserves amb pagament per Stripe.',
+          'Airbnb i Booking.com. Les reserves directes també entren al mateix calendari; si vols web pròpia amb reserves, la muntem a mida.',
       },
       {
         question: 'Necessito un altre channel manager?',
@@ -648,7 +648,7 @@ export const FEATURES_CA: Feature[] = [
       'Quota mensual segons el que automatitzem, pactada abans de començar',
       'Avisos i tasques a la mida de la teva manera de treballar',
       'Tu no toques res: ho muntem nosaltres',
-      'De sèrie, Hostly ja exporta a Excel i CSV i té motor de reserves amb Stripe',
+      'De sèrie, Hostly ja exporta a Excel i CSV',
     ],
     usage: [
       {
@@ -684,7 +684,7 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Què fa Hostly sense aquest servei?',
         answer:
-          'Exporta a Excel i CSV i té el seu propi motor de reserves amb pagament per Stripe. Aquest servei és per a tot el que va més enllà.',
+          'Tot el que veus a les seves funcions, i exporta a Excel i CSV. Aquest servei és per al que va més enllà: la teva gestoria, la teva web, el teu ERP…',
       },
     ],
   },
@@ -828,7 +828,7 @@ export const FEATURES_CA: Feature[] = [
       },
       {
         title: 'Cobrar-la a l\'hoste',
-        body: 'Actives el cobrament i l\'hoste paga la taxa amb targeta en fer el check-in, a través de Stripe. Tu no has de perseguir ningú.',
+        body: 'Actives el cobrament i l\'hoste paga la taxa amb targeta en fer el check-in, a través de Stripe. El cobrament porta una petita comissió, que pots fer pagar a l\'hoste. Tu no has de perseguir ningú.',
       },
     ],
     relatedFeatures: ['check-in-online', 'finanzas', 'conecta-todo'],
@@ -851,7 +851,7 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Puc cobrar-la a l\'hoste?',
         answer:
-          'Sí. Si ho actives, l\'hoste la paga amb targeta en fer el check-in, a través de Stripe.',
+          'Sí. Si ho actives, l\'hoste la paga amb targeta en fer el check-in, a través de Stripe. El cobrament porta una petita comissió; tu decideixes si la paga l\'hoste.',
       },
     ],
   },

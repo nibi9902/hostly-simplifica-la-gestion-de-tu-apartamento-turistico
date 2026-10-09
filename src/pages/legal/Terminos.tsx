@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { useTranslation } from "react-i18next";
+import { TITULAR } from "@/lib/titular";
 
 const EMAIL = "hola@hostlylabs.com";
 const APP_URL = "https://app.hostlylabs.com";
@@ -34,7 +35,7 @@ export default function Terminos() {
           </p>
 
           <h2>{t("terminos.h2_1")}</h2>
-          <p>{t("terminos.p_1", { appUrl: APP_URL })}</p>
+          <p>{t("terminos.p_1", { appUrl: APP_URL, titular: TITULAR.nom, nif: TITULAR.nif })}</p>
 
           <h2>{t("terminos.h2_2")}</h2>
           <p>{t("terminos.p_2")}</p>
@@ -71,7 +72,7 @@ export default function Terminos() {
           </ul>
 
           <h2>{t("terminos.h2_8")}</h2>
-          <p>{t("terminos.p_8")}</p>
+          <p>{t("terminos.p_8", { titular: TITULAR.nom })}</p>
 
           <h2>{t("terminos.h2_9")}</h2>
           <p>{t("terminos.p_9")}</p>
@@ -79,6 +80,13 @@ export default function Terminos() {
           <h2>{t("terminos.h2_10")}</h2>
           <p>{t("terminos.p_10")}</p>
 
+          <h2>{t("terminos.h2_huespedes")}</h2>
+          <p>{t("terminos.p_huespedes")}</p>
+          <ul>
+            {(t("terminos.li_huespedes", { returnObjects: true }) as string[]).map((li) => (
+              <li key={li}>{li}</li>
+            ))}
+          </ul>
           <h2>{t("terminos.h2_11")}</h2>
           <p>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>

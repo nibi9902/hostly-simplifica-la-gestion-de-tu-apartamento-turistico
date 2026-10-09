@@ -25,7 +25,8 @@ export default function PageShell({
   noindex = false,
   children,
 }: PageShellProps) {
-  const canonicalPath = path ?? (typeof window !== "undefined" ? window.location.pathname : "/");
+  // Sense `path`, la ruta actual sense el prefix d'idioma (el SEO ja l'hi posa: si no, /es/es/guia)
+  const canonicalPath = path ?? (typeof window !== "undefined" ? window.location.pathname.replace(/^\/(es|ca)(?=\/|$)/, "") || "/" : "/");
 
   return (
     <div className="min-h-screen bg-white">

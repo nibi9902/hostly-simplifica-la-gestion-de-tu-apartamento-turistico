@@ -72,7 +72,7 @@ export default function Llamame({ className }: { className?: string }) {
               aria-invalid={!!error}
               aria-describedby={error ? "llamame-error" : undefined}
               className={cn(
-                "flex-1 min-w-0 h-12 px-5 rounded-full border bg-white text-base text-foreground placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15 focus-visible:border-primary",
+                "sm:flex-1 min-w-0 h-12 shrink-0 px-5 rounded-full border bg-white text-base text-foreground placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15 focus-visible:border-primary",
                 error ? "border-rose-300" : "border-slate-200",
               )}
             />

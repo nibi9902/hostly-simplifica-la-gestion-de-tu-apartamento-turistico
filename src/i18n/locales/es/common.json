@@ -40,7 +40,7 @@
       "aviso": "Aviso legal"
     },
     "rights": "Todos los derechos reservados.",
-    "madeIn": "Hecho en Cataluña con obsesión ibérica."
+    "madeIn": "Hecho en Cataluña, para toda España."
   },
   "actions": {
     "more": "Saber más",
@@ -64,13 +64,13 @@
   },
   "sobre": {
     "meta_title": "Sobre Hostly — La app que simplifica tener un piso turístico",
-    "meta_description": "Hostly nació de la frustración de gestionar apartamentos turísticos con cinco herramientas distintas. Somos un equipo ibérico obsesionado con simplificar todo lo que implica tener un piso turístico.",
+    "meta_description": "Hostly nació de la frustración de gestionar apartamentos turísticos con cinco herramientas distintas. Somos un equipo de Cataluña obsesionado con simplificar todo lo que implica tener un piso turístico.",
     "eyebrow": "Sobre Hostly",
     "hero_heading": "Nació de vivirlo.",
     "hero_body": "Hostly no surgió en una oficina ni de un estudio de mercado. Surgió de la frustración de gestionar apartamentos turísticos con cinco herramientas distintas y no poder desconectar nunca.",
-    "story_p1": "Tenía mis propios apartamentos en Airbnb y Booking. El canal manager aquí, Chekin allá, las plantillas de mensajes en otro sitio, el Excel de cobros abierto siempre, el grupo de WhatsApp con la limpiadora.",
-    "story_p2": "Cada reserva implicaba tocar seis herramientas distintas. Cada check-in, entrar a mano en el portal de los Mossos. Cada fin de mes, una tarde de Excel. Y la sensación constante de que si me despistaba, algo se rompía.",
-    "story_p3": "No encontré ninguna herramienta que lo hiciera todo de forma sencilla para el mercado español. Las que existían eran complejas, caras, o no entendían la burocracia ibérica.",
+    "story_p1": "Tenía mis propios apartamentos en Airbnb y Booking. El channel manager aquí, Chekin allá, las plantillas de mensajes en otro sitio, el Excel de cobros abierto siempre, el grupo de WhatsApp con la limpiadora.",
+    "story_p2": "Cada reserva implicaba tocar cinco herramientas distintas. Cada check-in, entrar a mano en el portal de los Mossos. Cada fin de mes, una tarde de Excel. Y la sensación constante de que si me despistaba, algo se rompía.",
+    "story_p3": "No encontré ninguna herramienta que lo hiciera todo de forma sencilla para el mercado español. Las que existían eran complejas, caras, o no entendían la burocracia española.",
     "story_p4": "Así que lo construí yo. Primero para mí. Luego, cuando funcionó, para todos los que estaban en la misma situación.",
     "founder_name": "Biel Alsina",
     "founder_role": "Fundador · Barcelona",
@@ -88,11 +88,11 @@
       },
       {
         "title": "Proactivo, no reactivo",
-        "body": "No te avisamos cuando el problema ya ha pasado. Te avisamos antes. El registro de viajeros que ha fallado. El plazo de la taxa turística que se acaba de abrir."
+        "body": "No te avisamos cuando el problema ya ha pasado. Te avisamos antes. El registro de viajeros que ha fallado. El plazo de la tasa turística que se acaba de abrir."
       },
       {
-        "title": "Ibérico de verdad",
-        "body": "El registro en los Mossos, SES.Hospedajes, la taxa turística catalana. No es la traducción de un producto americano. Está construido para el mercado español desde el primer día."
+        "title": "Pensado para España",
+        "body": "El registro en los Mossos, SES.Hospedajes, la tasa turística catalana. No es la traducción de un producto americano. Está construido para el mercado español desde el primer día."
       }
     ],
     "contact_heading": "¿Hablamos?",
@@ -102,7 +102,7 @@
   "demo": {
     "meta_title": "Demo — Hostly",
     "meta_description": "Mira cómo funciona Hostly en 1 minuto. Check-in automático, limpiezas coordinadas, mensajes con IA y finanzas desde una sola app.",
-    "eyebrow": "Demo · 1 minuto",
+    "eyebrow": "Vídeo · 1 minuto",
     "heading": "Así funciona Hostly.",
     "subheading": "Check-in automático, limpiezas coordinadas, mensajes con IA y finanzas en un solo lugar. Sin cinco apps distintas.",
     "cta_start": "Empezar",
@@ -147,14 +147,14 @@
         "id": "obligaciones-legales",
         "num": "01",
         "title": "Obligaciones legales del propietario turístico",
-        "description": "SES.Hospedajes, NRUA, registro policial y taxa turística: qué es cada cosa, quién debe hacerlo y qué se puede automatizar.",
+        "description": "SES.Hospedajes, NRUA, registro policial y tasa turística: qué es cada cosa, quién debe hacerlo y qué se puede automatizar.",
         "links": [
           {
             "label": "SES.Hospedajes: guía completa 2026",
             "href": "/blog/ses-hospedajes-guia-completa-2026"
           },
           {
-            "label": "SES + NRUA + taxa turística: qué es cada cosa",
+            "label": "SES + NRUA + tasa turística: qué es cada cosa",
             "href": "/blog/ses-nrua-taxa-turistica-guia"
           },
           {
@@ -219,7 +219,7 @@
           },
           {
             "label": "Mensajes automáticos en Hostly",
-            "href": "/funcionalidades/ia-whatsapp"
+            "href": "/funcionalidades/mensajeria-programada"
           }
         ]
       },
@@ -303,7 +303,7 @@
         "id": "alternativas-herramientas",
         "num": "08",
         "title": "Alternativas y comparativas de software",
-        "description": "Análisis honesto de los principales PMS del mercado para el perfil propietario pequeño y gestor ibérico.",
+        "description": "Análisis honesto de los principales PMS del mercado para el perfil propietario pequeño y gestor en España.",
         "links": [
           {
             "label": "Los mejores PMS para apartamentos turísticos 2026",

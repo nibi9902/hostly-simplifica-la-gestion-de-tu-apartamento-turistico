@@ -38,7 +38,9 @@ export const HORES_SETMANA: Record<Horas, number> = { "<2": 1.5, "2-5": 3.5, "5-
 
 /** El nombre de pisos amb què es fa el compte, per a cada resposta. */
 const PISOS_COMPTE: Record<Pisos, number> = { "1": 1, "2-4": 3, "5-15": 8, "15+": 16 };
-export const PREU_EINA: Partial<Record<Eina, number>> = { checkin: 15, canales: 20, precios: 20 };
+// Preus per pis i mes, a la baixa: Chekin des de 3,95 € (web de Chekin, octubre 2026), un channel
+// manager ~20 € (Smoobu, 29 € per a 1 pis, baixa amb volum), PriceLabs ~20 €.
+export const PREU_EINA: Partial<Record<Eina, number>> = { checkin: 4, canales: 20, precios: 20 };
 export const PREU_HOSTLY = 40;
 export const PREU_HOSTLY_VOLUM = 35;
 

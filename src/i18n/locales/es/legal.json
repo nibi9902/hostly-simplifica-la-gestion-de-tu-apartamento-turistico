@@ -2,7 +2,7 @@
   "common": {
     "eyebrow": "Legal",
     "last_updated": "Última actualización: {{date}}",
-    "last_updated_value": "Octubre 2026"
+    "last_updated_value": "octubre de 2026"
   },
   "privacidad": {
     "title": "Política de privacidad | Hostly",
@@ -16,7 +16,7 @@
     "datos_li1_label": "Registro en la app:",
     "datos_li1_text": "nombre, dirección de correo electrónico y contraseña.",
     "datos_li2_label": "Uso del servicio:",
-    "datos_li2_text": "datos de propiedades, reservas y comunicaciones con huéspedes que introduces en la plataforma.",
+    "datos_li2_text": "datos de propiedades, reservas y comunicaciones con huéspedes que introduces en la plataforma, y los datos que tus huéspedes rellenan en el check-in. De los datos de tus huéspedes, tú eres el responsable y Hostly, el encargado del tratamiento (Términos, apartado 11).",
     "datos_li3_label": "Comunicaciones:",
     "datos_li3_text": "mensajes que nos envías por correo o formularios de contacto.",
     "datos_li4_label": "Datos técnicos:",
@@ -33,7 +33,7 @@
     "h2_conservacion": "4. Conservación",
     "p_conservacion": "Conservamos tus datos mientras mantengas una cuenta activa y durante el tiempo necesario para cumplir obligaciones legales (máximo 5 años para datos fiscales, según normativa española). Los datos que dejas en los formularios de la web se borran a los 12 meses si no llegas a ser cliente.",
     "h2_destinatarios": "5. Destinatarios",
-    "p_destinatarios": "No vendemos ni cedemos tus datos a terceros. Los compartimos únicamente con proveedores de infraestructura técnica bajo acuerdos de encargado del tratamiento (Supabase, Vercel, servicios de correo y Telegram, que usamos para avisar al equipo cuando alguien deja su teléfono en la web) y cuando lo exija la ley.",
+    "p_destinatarios": "No vendemos ni cedemos tus datos a terceros. Los compartimos solo con los proveedores que necesitamos para prestar el servicio, con contrato de encargado del tratamiento: Supabase (base de datos), Vercel (web), nuestro servidor de automatizaciones (n8n), Tokeet/Sympl (conexión con Airbnb y Booking), PriceLabs (precios), OpenAI (respuestas con IA), Meta (WhatsApp), Stripe (cobros), servicios de correo, Telegram (para avisar al equipo cuando alguien deja su teléfono en la web) y Google Analytics, solo si aceptas las cookies analíticas. Los datos del registro de viajeros se comunican a las fuerzas de seguridad (Mossos d'Esquadra o SES.Hospedajes, del Ministerio del Interior) porque lo exige la ley, y también los comunicaremos cuando una ley lo exija.",
     "h2_transferencias": "6. Transferencias internacionales",
     "p_transferencias": "Algunos proveedores técnicos procesan datos fuera del Espacio Económico Europeo con las garantías adecuadas (cláusulas contractuales tipo de la Comisión Europea).",
     "h2_derechos": "7. Tus derechos",
@@ -86,9 +86,16 @@
         "thirdParty": "No"
       },
       {
-        "name": "Idioma y visita (almacenamiento local)",
+        "name": "Idioma (almacenamiento local)",
         "type": "Técnica",
-        "purpose": "Recordar el idioma y, si nos dejas tu contacto, no volver a pedírtelo.",
+        "purpose": "Recordar el idioma que eliges.",
+        "duration": "Hasta que lo borres",
+        "thirdParty": "No"
+      },
+      {
+        "name": "Tu contacto (almacenamiento local)",
+        "type": "Técnica",
+        "purpose": "Solo si nos dejas tu teléfono: no volver a pedírtelo en otro formulario.",
         "duration": "Hasta que lo borres",
         "thirdParty": "No"
       }
@@ -108,15 +115,15 @@
     "h1": "Términos y condiciones",
     "breadcrumb": "Términos y condiciones",
     "h2_1": "1. Aceptación",
-    "p_1": "Al registrarte en Hostly ({{appUrl}}) aceptas estos Términos y Condiciones. Si no estás de acuerdo, no uses el servicio.",
+    "p_1": "Hostly ({{appUrl}}) es un servicio de {{titular}} (NIF {{nif}}). Al registrarte aceptas estos Términos y Condiciones. Si no estás de acuerdo, no uses el servicio.",
     "h2_2": "2. El servicio",
-    "p_2": "Hostly ofrece una plataforma SaaS para la gestión de apartamentos turísticos que incluye: sincronización de calendarios y reservas, mensajería con huéspedes, check-in online, registro de viajeros a la policía, taxa turística, coordinación de limpiezas y precios dinámicos.",
+    "p_2": "Hostly ofrece una plataforma SaaS para la gestión de apartamentos turísticos que incluye: sincronización de calendarios y reservas, mensajería con huéspedes, check-in online, registro de viajeros a la policía, tasa turística, coordinación de limpiezas y precios dinámicos. Las automatizaciones a medida («Conéctalo todo») se contratan aparte, con un presupuesto que aceptas antes de empezar.",
     "h2_3": "3. Cuenta y acceso",
     "li_3_1": "Debes ser mayor de 18 años y proporcionar información veraz al registrarte.",
     "li_3_2": "Eres responsable de mantener la confidencialidad de tu contraseña.",
     "li_3_3": "Una cuenta puede gestionar múltiples propiedades según el plan contratado.",
     "h2_4": "4. Plan gratis y primer mes",
-    "p_4": "El plan Gratis (check-in online, registro a la policía y taxa turística) no caduca y no requiere tarjeta. El plan Completo se activa tras una demostración con nuestro equipo e incluye el primer mes gratis.",
+    "p_4": "El plan Gratis (check-in online, registro a la policía y tasa turística) no caduca y no requiere tarjeta. El plan Completo se activa tras una demostración con nuestro equipo e incluye el primer mes gratis.",
     "h2_5": "5. Precios y facturación",
     "li_5_1": "El precio del plan Completo es de 40 €/mes por apartamento (35 €/mes por apartamento a partir de 5 apartamentos).",
     "li_5_2": "La facturación es mensual por adelantado.",
@@ -131,13 +138,23 @@
     "li_7_3": "Introducir datos falsos o de terceros sin su consentimiento.",
     "li_7_4": "Realizar ingeniería inversa sobre la plataforma.",
     "h2_8": "8. Propiedad intelectual",
-    "p_8": "Todo el software, diseño y contenido de la plataforma es propiedad de Hostly. Los datos que introduces son tuyos; nos concedes una licencia limitada para procesarlos con el fin de prestar el servicio.",
+    "p_8": "Todo el software, diseño y contenido de la plataforma es propiedad de {{titular}} (Hostly). Los datos que introduces son tuyos; nos concedes una licencia limitada para procesarlos con el fin de prestar el servicio.",
     "h2_9": "9. Limitación de responsabilidad",
-    "p_9": "Hostly no garantiza que el servicio esté disponible de forma ininterrumpida. En ningún caso nuestra responsabilidad superará el importe pagado en los últimos 12 meses. No somos responsables de sanciones derivadas del incumplimiento normativo del usuario (registro de viajeros, taxa turística), aunque proveamos las herramientas.",
+    "p_9": "Hostly no garantiza que el servicio esté disponible de forma ininterrumpida. En ningún caso nuestra responsabilidad superará el importe pagado en los últimos 12 meses. No somos responsables de sanciones derivadas del incumplimiento normativo del usuario (registro de viajeros, tasa turística), aunque proveamos las herramientas.",
     "h2_10": "10. Legislación aplicable",
-    "p_10": "Estos términos se rigen por la ley española. Para cualquier disputa, las partes se someten a los juzgados de Barcelona.",
-    "h2_11": "11. Contacto",
-    "li_5_5": "Programa de referidos: por cada 5 propietarios que traigas y sigan activos en Hostly, uno de tus apartamentos deja de pagar mientras sigan activos. Sin límite."
+    "p_10": "Estos términos se rigen por la ley española. Si eres consumidor, puedes acudir a los juzgados de tu domicilio; en los demás casos, las partes se someten a los juzgados de Barcelona.",
+    "h2_11": "12. Contacto",
+    "li_5_5": "Programa de referidos: por cada 5 propietarios que traigas al plan Completo y sigan activos en él, uno de tus apartamentos deja de pagar mientras sigan activos. Sin límite.",
+    "h2_huespedes": "11. Datos de tus huéspedes (encargo del tratamiento)",
+    "p_huespedes": "Cuando usas Hostly para el check-in, el registro de viajeros o los mensajes, tú eres el responsable de los datos de tus huéspedes y Hostly actúa como encargado del tratamiento (art. 28 RGPD). Hostly:",
+    "li_huespedes": [
+      "trata esos datos solo para prestarte el servicio y siguiendo tus instrucciones (por ejemplo, enviarlos a la policía o contestar a tus huéspedes);",
+      "garantiza que quien los trata está obligado a la confidencialidad y aplica medidas de seguridad adecuadas;",
+      "usa los proveedores que se indican en la política de privacidad, con las mismas obligaciones, y te avisará antes de añadir otros;",
+      "te ayuda a atender los derechos de tus huéspedes y a cumplir tus obligaciones de seguridad y de aviso en caso de brecha;",
+      "al terminar el servicio, borra o te devuelve los datos, salvo los que la ley obligue a conservar;",
+      "te da la información necesaria para demostrar que cumple estas obligaciones."
+    ]
   },
   "aviso": {
     "title": "Aviso legal | Hostly",
@@ -152,11 +169,11 @@
     "h2_objeto": "Objeto y ámbito de aplicación",
     "p_objeto": "El presente aviso legal regula el acceso y uso del sitio web {{domain}}. El acceso al sitio web implica la aceptación de estas condiciones.",
     "h2_propiedad": "Propiedad intelectual e industrial",
-    "p_propiedad": "Los contenidos, diseños, textos, imágenes, logotipos y código fuente del sitio web son propiedad de Hostly o cuenta con las licencias correspondientes. Queda prohibida su reproducción, distribución o comunicación pública sin autorización expresa.",
+    "p_propiedad": "Los contenidos, diseños, textos, imágenes, logotipos y código fuente del sitio web son propiedad de su titular o este cuenta con las licencias correspondientes. Queda prohibida su reproducción, distribución o comunicación pública sin autorización expresa.",
     "h2_responsabilidad": "Responsabilidad",
     "p_responsabilidad": "Hostly no garantiza la disponibilidad continuada del sitio ni la ausencia de errores en su contenido. No nos hacemos responsables de los daños derivados del uso del sitio o de la imposibilidad de acceso al mismo.",
     "h2_legislacion": "Legislación aplicable",
-    "p_legislacion": "El presente aviso legal se rige por la legislación española. Para la resolución de cualquier controversia relacionada con este sitio, las partes se someten a la jurisdicción de los tribunales de Barcelona.",
+    "p_legislacion": "El presente aviso legal se rige por la legislación española. Si eres consumidor, puedes acudir a los tribunales de tu domicilio; en los demás casos, las partes se someten a la jurisdicción de los tribunales de Barcelona.",
     "li_titular": "Titular:",
     "li_nif": "NIF:",
     "li_domicilio": "Domicilio:"

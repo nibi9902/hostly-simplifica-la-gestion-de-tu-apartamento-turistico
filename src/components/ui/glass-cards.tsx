@@ -89,15 +89,16 @@ const cardData: CardData[] = [
     id: 1,
     tab: 'Check-in y policía',
     icon: ShieldCheck,
-    badge: '✓ Check-in y Policía',
-    title: 'Registro de viajeros y taxa turística. Sin gestoría.',
-    description: 'Los datos del huésped salen a la policía cada día, solos. Cumples con la normativa sin pensar en ello, y sin pagar a nadie por hacerlo.',
+    badge: '✓ Check-in y policía',
+    title: 'Registro de viajeros y tasa turística. Sin gestoría.',
+    description: 'Los datos del huésped salen a la policía cada día, solos, sin que tengas que pensar en ello ni pagar a nadie por hacerlo.',
     replaces: {
       prefix: 'Cancela ',
       // Superhog i Akeero són verificació d'hostes i dipòsits: no fan el que fa Hostly.
       brands: ['Chekin', 'Partee'],
       suffix: ' hoy',
-      price: '15 €/mes',
+      // Sense preu: Chekin ara va des de 3,95 €/mes per pis (web de Chekin, octubre 2026)
+      price: '',
       inclusionLabel: 'gratis con Hostly',
     },
     color: 'rgba(34, 197, 94, 0.9)',
@@ -115,7 +116,7 @@ const cardData: CardData[] = [
     badge: 'Limpiezas y coordinación',
     title: 'Tu equipo recibe el aviso automáticamente.',
     description: 'Cuando el huésped hace la reserva, el sistema asigna el turno y avisa al equipo. Sin llamadas, sin grupos de WhatsApp, sin ti en medio. Automáticamente.',
-    replaces: { phrase: 'Dile adiós al WhatsApp', price: '' },
+    replaces: { phrase: 'Dile adiós al grupo de WhatsApp', price: '' },
     color: 'rgba(59, 130, 246, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%)',
     textColor: '#0f172a',
@@ -123,15 +124,15 @@ const cardData: CardData[] = [
     demoComponent: LimpiezasDemo,
     featureSlug: 'gestion-de-limpiezas',
   },
-  // 3. Reservas (Smoobu / Hostify / ...)
+  // 3. Reservas — Smoobu, des de 29 €/mes (pla Flex, web de Smoobu, octubre 2026)
   {
     id: 3,
     tab: 'Calendario',
     icon: Calendar,
     badge: 'Reservas y calendarios',
     title: 'Airbnb y Booking, siempre sincronizados.',
-    description: 'Una reserva entra por un canal, el otro se bloquea solo. Sin overbookings. Sin refrescar pestañas. Todo en un mismo lugar.',
-    replaces: { prefix: 'Adiós a ', brands: ['Smoobu', 'Hostify', 'Lodgify', 'Hostaway'], suffix: '', price: '20 €/mes' },
+    description: 'Una reserva entra por un canal y las fechas se bloquean en el otro. Sin refrescar pestañas. Todo en un mismo lugar.',
+    replaces: { prefix: 'Adiós a ', brands: ['Smoobu'], suffix: '', price: '29 €/mes' },
     color: 'rgba(96, 165, 250, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #eff6ff 100%)',
     textColor: '#0f172a',

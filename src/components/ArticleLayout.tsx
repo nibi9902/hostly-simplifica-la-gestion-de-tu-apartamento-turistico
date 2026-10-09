@@ -61,6 +61,7 @@ export default function ArticleLayout({ post }: Props) {
         description={post.description}
         path={`/blog/${post.slug}`}
         ogType="article"
+        nomesCastella
         schemas={[
           blogPostingSchema({
             title: post.title,

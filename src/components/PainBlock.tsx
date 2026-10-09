@@ -53,10 +53,10 @@ const Bubble = ({
       {n.icon}
     </div>
     <div className="min-w-0 flex-1">
-      <p className={`text-sm font-bold leading-tight truncate ${isAfter ? "text-emerald-800" : "text-slate-900"}`}>
+      <p className={`text-sm font-bold leading-tight md:truncate ${isAfter ? "text-emerald-800" : "text-slate-900"}`}>
         {n.title}
       </p>
-      <p className="text-[11px] text-slate-400 font-medium truncate mt-0.5">
+      <p className="text-[11px] text-slate-400 font-medium md:truncate mt-0.5">
         {n.sub}
       </p>
     </div>

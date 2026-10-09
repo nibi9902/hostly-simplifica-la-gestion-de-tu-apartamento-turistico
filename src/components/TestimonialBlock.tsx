@@ -94,9 +94,12 @@ const TestimonialBlock = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {/* Al mòbil, en fila que llisca amb el dit (es veu la vora del següent); a l'ordinador, 3 columnes */}
+          <div className="-mx-6 px-6 -my-10 py-10 flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:m-0 md:p-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
             {VIDEOS_CLIENTS.map((v, i) => (
-              <VideoCard key={v.poster} v={v} n={i + 1} />
+              <div key={v.poster} className="w-[82%] shrink-0 snap-start md:w-auto">
+                <VideoCard v={v} n={i + 1} />
+              </div>
             ))}
           </div>
         </motion.div>

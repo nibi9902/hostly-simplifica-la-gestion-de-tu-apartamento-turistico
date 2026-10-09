@@ -1,12 +1,12 @@
 # Hostly
 
-> Hostly es la app que simplifica todo lo que implica tener un piso turístico en España: el check-in online del huésped, el registro a la policía, la taxa turística, las reservas de Airbnb y Booking, los mensajes con huéspedes (con IA), las limpiezas, los precios dinámicos con PriceLabs y las finanzas, en un solo sitio.
+> Hostly es la app que simplifica todo lo que implica tener un piso turístico en España: el check-in online del huésped, el registro a la policía, la tasa turística, las reservas de Airbnb y Booking, los mensajes con huéspedes (con IA), las limpiezas, los precios dinámicos con PriceLabs y las finanzas, en un solo sitio.
 
 Hostly no se presenta como un PMS, sino como la app del día a día del piso turístico. Está pensada para propietarios con pocos pisos (1 a 3), gestores pequeños (5 a 15 pisos), segundas residencias y pisos heredados en España: gente que hoy lo lleva todo con varias apps, Excel y grupos de WhatsApp.
 
 ## Planes y precios
 
-- **Gratis, para siempre y sin tarjeta:** check-in online del huésped, registro a la policía, taxa turística (Cataluña), lectura del calendario de Airbnb y Booking por iCal cada 30 minutos y avisos cuando falta un check-in. No incluye IA, limpiezas, mensajes automáticos ni precios dinámicos.
+- **Gratis, para siempre y sin tarjeta:** check-in online del huésped, registro a la policía, tasa turística (Cataluña), lectura del calendario de Airbnb y Booking por iCal cada 30 minutos y avisos cuando falta un check-in. No incluye IA, limpiezas, mensajes automáticos ni precios dinámicos.
 - **Hostly completo:** 40 €/mes por apartamento; con 5 apartamentos o más, 35 €/mes cada uno. El primer mes es gratis. Se activa después de una demo de 20 minutos. Sin permanencia. Durante el primer mes, la configuración se hace 1 a 1 con el equipo de Hostly.
 - **Automatizaciones a medida («Conéctalo todo»):** servicio aparte para conectar Hostly con la gestoría, la web, el ERP u otras herramientas del cliente. Cuota mensual según lo que se automatice.
 - **Programa de referidos:** por cada 5 propietarios que traigas y sigan activos en Hostly, uno de tus apartamentos deja de pagar mientras sigan activos.
@@ -21,8 +21,8 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 - **Limpiezas:** equipo por piso con orden de turno. Cada salida crea su limpieza. Si alguien dice «no puedo», la limpieza pasa a la siguiente persona del turno, que recibe el aviso por WhatsApp. Se marca como hecha con fotos de salida. Incidencias con fecha, piso y persona, historial y lo que se debe a cada persona cada mes (Hostly no hace los pagos). App propia para el equipo, en catalán, castellano e inglés, y asistente opcional por WhatsApp. Si se cancela la reserva, se cancela la limpieza y se avisa; si cambian las fechas, se avisa del cambio.
 - **Mensajes automáticos:** plantillas por momento (bienvenida, check-in, check-out, limpieza, entrada anticipada, salida tardía y cuatro libres), por piso y traducidas solas, con variables (enlace de check-in, códigos, fechas). Salen por WhatsApp si hay número y, si no, por Airbnb o Booking. Historial por reserva; un mensaje en cola se puede cancelar. Funcionan sin la IA.
 - **Roles y permisos:** gestor (por piso), limpieza y propietario en solo lectura (calendario y finanzas). Invitaciones y permisos por piso. Sin límite de usuarios. El huésped no necesita cuenta: recibe un enlace de su estancia.
-- **Finanzas:** ingresos por piso, canal y periodo; comisiones de Airbnb y Booking calculadas; taxa turística por reserva; liquidaciones al propietario con un asistente de cuatro pasos (el propietario la ve en su app); exportación de liquidaciones en CSV y PDF, y de la taxa turística en Excel y CSV.
-- **Taxa turística (Cataluña):** Hostly calcula la tarifa según la ley y el municipio de cada piso y el importe por piso de cada semestre, avisa en la app mientras el plazo está abierto (del 1 al 20 de abril y del 1 al 20 de octubre), exporta el Excel o CSV para presentarlo en la Agència Tributària de Catalunya y permite marcarla como presentada. La presenta el gestor. Si se activa, el huésped la paga con tarjeta (Stripe) al hacer el check-in.
+- **Finanzas:** ingresos por piso, canal y periodo; comisiones de Airbnb y Booking calculadas; tasa turística por reserva; liquidaciones al propietario con un asistente de cuatro pasos (el propietario la ve en su app); exportación de liquidaciones en CSV y PDF, y de la tasa turística en Excel y CSV.
+- **Tasa turística (Cataluña):** Hostly calcula la tarifa según la ley y el municipio de cada piso y el importe por piso de cada semestre, avisa en la app mientras el plazo está abierto (del 1 al 20 de abril y del 1 al 20 de octubre), exporta el Excel o CSV para presentarlo en la Agència Tributària de Catalunya y permite marcarla como presentada. La presenta el gestor. Si se activa, el huésped la paga con tarjeta (Stripe) al hacer el check-in.
 
 ## Páginas principales
 
@@ -46,7 +46,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 - [Mensajería programada](https://hostlylabs.com/es/funcionalidades/mensajeria-programada): plantillas por momento de la reserva, por piso y traducidas, por WhatsApp o por Airbnb y Booking.
 - [Roles y permisos](https://hostlylabs.com/es/funcionalidades/multi-rol): gestores por piso, equipo de limpieza y propietarios en solo lectura. Sin límite de usuarios.
 - [Finanzas en orden](https://hostlylabs.com/es/funcionalidades/finanzas): ingresos por piso, canal y periodo, comisiones calculadas y liquidaciones a propietarios en cuatro pasos.
-- [Taxa turística](https://hostlylabs.com/es/funcionalidades/burocracia): la taxa turística de Cataluña, calculada por piso y semestre, con el Excel listo para presentar en la ATC.
+- [Tasa turística](https://hostlylabs.com/es/funcionalidades/burocracia): la tasa turística de Cataluña, calculada por piso y semestre, con el Excel listo para presentar en la ATC.
 - [Conéctalo todo](https://hostlylabs.com/es/funcionalidades/conecta-todo): automatizaciones a medida; servicio aparte con cuota mensual.
 
 ## Para quién
@@ -59,7 +59,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 ## Guías legales (España)
 
 - [SES.Hospedajes: guía completa 2026 para apartamentos turísticos](https://hostlylabs.com/es/blog/ses-hospedajes-guia-completa-2026): el registro obligatorio de viajeros en España.
-- [SES, NRUA y taxa turística: guía para propietarios](https://hostlylabs.com/es/blog/ses-nrua-taxa-turistica-guia): las tres obligaciones legales del propietario, explicadas.
+- [SES, NRUA y tasa turística: guía para propietarios](https://hostlylabs.com/es/blog/ses-nrua-taxa-turistica-guia): las tres obligaciones legales del propietario, explicadas.
 - [SES.Hospedajes para propietarios de 1 apartamento](https://hostlylabs.com/es/blog/ses-hospedajes-un-solo-apartamento): para propietarios con un solo piso y sin gestoría.
 - [Cómo registrar a los viajeros en Mossos d'Esquadra (Cataluña)](https://hostlylabs.com/es/blog/registro-viajeros-mossos-esquadra-cataluna): guía práctica para Cataluña.
 - [Sanciones por no cumplir con el registro de viajeros](https://hostlylabs.com/es/blog/sanciones-por-no-cumplir-registro-viajeros): cuánto te puede costar.

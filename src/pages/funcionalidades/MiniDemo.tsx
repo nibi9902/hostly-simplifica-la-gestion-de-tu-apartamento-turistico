@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 /**
  * MiniDemo — mostra una demo animada per cada funcionalitat.
@@ -196,7 +197,9 @@ export default function MiniDemo({ slug }: Props) {
 }
 
 /* Fallback per funcionalitats sense clip */
-const GenericFallback: React.FC = () => (
+const GenericFallback: React.FC = () => {
+  const { t } = useTranslation('demos');
+  return (
   <div
     style={{
       width: '100%',
@@ -226,8 +229,9 @@ const GenericFallback: React.FC = () => (
       }}
     />
     <div style={{ textAlign: 'center' }}>
-      <div style={{ fontSize: 13, fontWeight: 700, color: '#0B0F1A' }}>Sistema trabajando</div>
-      <div style={{ fontSize: 11, color: '#64748b', marginTop: 3 }}>Tú ya no</div>
+      <div style={{ fontSize: 13, fontWeight: 700, color: '#0B0F1A' }}>{t('comu.sistemaTreballant')}</div>
+      <div style={{ fontSize: 11, color: '#64748b', marginTop: 3 }}>{t('comu.tuJaNo')}</div>
     </div>
   </div>
-);
+  );
+};

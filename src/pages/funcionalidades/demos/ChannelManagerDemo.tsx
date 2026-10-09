@@ -29,7 +29,6 @@ const WEEKS: Day[][] = [
   [{date:20,inMonth:true},{date:21,inMonth:true},{date:22,inMonth:true,isToday:true},{date:23,inMonth:true},{date:24,inMonth:true},{date:25,inMonth:true},{date:26,inMonth:true}],
   [{date:27,inMonth:true},{date:28,inMonth:true},{date:29,inMonth:true},{date:30,inMonth:true},{date:1,inMonth:false},{date:2,inMonth:false},{date:3,inMonth:false}],
 ];
-const DAYS = ['Lu','Ma','Mi','Ju','Vi','Sá','Do'];
 
 const EXISTING: Stripe[] = [
   { initials:'RC', name:'Rosa Camps',  weekIdx:0, col:2, span:3, platform:'hostly'  },
@@ -119,7 +118,7 @@ function CalendarView({ frame, fps }: { frame: number; fps: number }) {
 
         {/* Weekday labels */}
         <div style={{ display:'grid', gridTemplateColumns:'repeat(7,1fr)', gap:`${GAP}px`, marginBottom:`${GAP}px` }}>
-          {DAYS.map(d => (
+          {(t('comu.diesSetmana', { returnObjects: true }) as string[]).map(d => (
             <div key={d} style={{ textAlign:'center', fontSize:9, fontWeight:500, color:colors.meta, padding:'3px 0' }}>{d}</div>
           ))}
         </div>

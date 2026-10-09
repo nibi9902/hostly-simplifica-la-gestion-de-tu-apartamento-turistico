@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { LangLink } from "@/i18n/LangLink";
 
 import { useEmpezar } from "@/lib/empezar";
 import Llamame from "@/components/Llamame";
@@ -146,12 +147,15 @@ const PricingBlock = () => {
         {/* ── Qui dubta del preu: que el truqui el Biel (el telèfon li arriba al moment) ── */}
         <Llamame className="mb-10" />
 
-        {/* ── Comparativa preu ── */}
+        {/* ── Qui dubta del preu: la calculadora fa els números amb els seus pisos ── */}
         <div className="text-center mb-10">
-          <p className="text-sm text-muted-foreground">
-            <span className="line-through decoration-slate-300 decoration-[2px]">{t("pricing.compare_old")}</span>
-            <span className="text-foreground font-semibold"> {t("pricing.compare_new")}</span>
-          </p>
+          <LangLink
+            to="/calcula"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline underline-offset-4"
+          >
+            {t("pricing.calcula_link")}
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </LangLink>
         </div>
 
         {/* ── Referral ── */}

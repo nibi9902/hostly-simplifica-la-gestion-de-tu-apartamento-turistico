@@ -36,11 +36,11 @@
       "contacto": "Contacte",
       "privacidad": "Política de privacitat",
       "terminos": "Termes i condicions",
-      "cookies": "Cookies",
+      "cookies": "Galetes",
       "aviso": "Avís legal"
     },
     "rights": "Tots els drets reservats.",
-    "madeIn": "Fet a Catalunya amb obsessió ibèrica."
+    "madeIn": "Fet a Catalunya, per a tot Espanya."
   },
   "actions": {
     "more": "Saber-ne més",
@@ -64,13 +64,13 @@
   },
   "sobre": {
     "meta_title": "Sobre Hostly — L'app que simplifica tenir un pis turístic",
-    "meta_description": "Hostly va néixer de la frustració de gestionar apartaments turístics amb cinc eines diferents. Som un equip ibèric obsessionat a simplificar tot el que implica tenir un pis turístic.",
+    "meta_description": "Hostly va néixer de la frustració de gestionar apartaments turístics amb cinc eines diferents. Som un equip català obsessionat a simplificar tot el que implica tenir un pis turístic.",
     "eyebrow": "Sobre Hostly",
     "hero_heading": "Va néixer de viure-ho.",
     "hero_body": "Hostly no va sorgir en una oficina ni d'un estudi de mercat. Va sorgir de la frustració de gestionar apartaments turístics amb cinc eines diferents i no poder desconnectar mai.",
-    "story_p1": "Tenia els meus propis apartaments a Airbnb i Booking. El canal manager aquí, Chekin allà, les plantilles de missatges en un altre lloc, l'Excel de cobraments obert sempre, el grup de WhatsApp amb la netejadora.",
-    "story_p2": "Cada reserva implicava tocar sis eines diferents. Cada check-in, entrar a mà al portal dels Mossos. Cada final de mes, una tarda d'Excel. I la sensació constant que si em despistava, alguna cosa es trencava.",
-    "story_p3": "No vaig trobar cap eina que ho fes tot de manera senzilla per al mercat espanyol. Les que existien eren complexes, cares, o no entenien la burocràcia ibèrica.",
+    "story_p1": "Tenia els meus propis apartaments a Airbnb i Booking. El channel manager aquí, Chekin allà, les plantilles de missatges en un altre lloc, l'Excel de cobraments obert sempre, el grup de WhatsApp amb la netejadora.",
+    "story_p2": "Cada reserva implicava tocar cinc eines diferents. Cada check-in, entrar a mà al portal dels Mossos. Cada final de mes, una tarda d'Excel. I la sensació constant que si em despistava, alguna cosa es trencava.",
+    "story_p3": "No vaig trobar cap eina que ho fes tot de manera senzilla per al mercat espanyol. Les que existien eren complexes, cares, o no entenien la burocràcia espanyola.",
     "story_p4": "Així que ho vaig construir jo. Primer per a mi. Després, quan va funcionar, per a tots els que estaven en la mateixa situació.",
     "founder_name": "Biel Alsina",
     "founder_role": "Fundador · Barcelona",
@@ -80,7 +80,7 @@
     "values": [
       {
         "title": "Una sola app, no cinc",
-        "body": "El propietari no hauria de necessitar saber què és un canal manager. Hauria de tenir una app que ho faci tot."
+        "body": "El propietari no hauria de necessitar saber què és un channel manager. Hauria de tenir una app que ho faci tot."
       },
       {
         "title": "L'opció per defecte és correcta",
@@ -91,7 +91,7 @@
         "body": "No t'avisem quan el problema ja ha passat. T'avisem abans. El registre de viatgers que ha fallat. El termini de la taxa turística que s'acaba d'obrir."
       },
       {
-        "title": "Ibèric de debò",
+        "title": "Pensat per a Espanya",
         "body": "El registre als Mossos, SES.Hospedajes, la taxa turística catalana. No és la traducció d'un producte americà. Està construït per al mercat espanyol des del primer dia."
       }
     ],
@@ -102,7 +102,7 @@
   "demo": {
     "meta_title": "Demo — Hostly",
     "meta_description": "Mira com funciona Hostly en 1 minut. Check-in automàtic, neteges coordinades, missatges amb IA i finances des d'una sola app.",
-    "eyebrow": "Demo · 1 minut",
+    "eyebrow": "Vídeo · 1 minut",
     "heading": "Així funciona Hostly.",
     "subheading": "Check-in automàtic, neteges coordinades, missatges amb IA i finances en un sol lloc. Sense cinc apps diferents.",
     "cta_start": "Començar",
@@ -182,7 +182,7 @@
         "description": "Com sincronitzar Airbnb i Booking sense dobles reserves, gestionar disponibilitat i cobrar automàticament.",
         "links": [
           {
-            "label": "Canal manager: guia per triar el correcte",
+            "label": "Channel manager: guia per triar el correcte",
             "href": "/blog/channel-manager-alquiler-vacacional-guia"
           },
           {
@@ -219,7 +219,7 @@
           },
           {
             "label": "Missatges automàtics a Hostly",
-            "href": "/funcionalidades/ia-whatsapp"
+            "href": "/funcionalidades/mensajeria-programada"
           }
         ]
       },
@@ -303,7 +303,7 @@
         "id": "alternativas-herramientas",
         "num": "08",
         "title": "Alternatives i comparatives de programari",
-        "description": "Anàlisi honesta dels principals PMS del mercat per al perfil propietari petit i gestor ibèric.",
+        "description": "Anàlisi honesta dels principals PMS del mercat per al perfil propietari petit i gestor a Espanya.",
         "links": [
           {
             "label": "Els millors PMS per a apartaments turístics 2026",

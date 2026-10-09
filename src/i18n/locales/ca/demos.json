@@ -95,7 +95,11 @@
     "tabCalendar": "Calendari",
     "todayBadge": "AVUI",
     "exitTime": "La Judit marxa a les 11:00",
-    "guestDetails": "Judit marxa 11:00 · David entra 15:00 · 2 adults + 1 nen"
+    "guestDetails": "Judit marxa 11:00 · David entra 15:00 · 2 adults + 1 nen",
+    "typing": "HOSTLY IA · escrivint…",
+    "iaAEva": "Hola Eva\nNOVA Reserva – 5770048427\nApartament: Luminoso Apartamento a 4 min del Museu Dalí\nEntren el dia: 2026-04-22 a les 15:00\nSurten el: 2026-04-26 a les 11:00\nSón 2 adults i 1 nen\nPots fer la neteja aquest dia?",
+    "respostaEva": "Sí, la faré, hi aniré cap a les 11",
+    "iaConfirma": "Perfecte, Eva, gràcies! 😊\n\nQueda **confirmada** la neteja de la reserva **5770048427** per al **26 d'abril de 2026** a les **11:00**.\n\nSi hi ha cap canvi, avisa'm."
   },
   "precios": {
     "dynamicPrices": "Preus dinàmics",
@@ -120,7 +124,7 @@
     "netIncome": "Ingressos nets · Abril 2026",
     "grossAndFees": "Brut: 1.450 € · Comissions: −210 €",
     "statOccupancy": "Ocupació",
-    "statAvgNight": "€/nit mitjana",
+    "statAvgNight": "Mitjana per nit",
     "platformLabel": "PER PLATAFORMA",
     "platformGross": "Brut:",
     "reservations": "reserves",
@@ -146,7 +150,8 @@
     "cleaningCost": "Cost neteja (6%)",
     "managerTotal": "Total Gestor",
     "platformLabel": "PER PLATAFORMA",
-    "platformGross": "Brut:"
+    "platformGross": "Brut:",
+    "statAvgNight": "Mitjana per nit"
   },
   "demoVideo": {
     "superLabel": "Hostly™ en acció",
@@ -175,5 +180,25 @@
     "step5Event": "Missatge respost",
     "step5Detail": "Missatge hoste · resolt",
     "step5Badge": "Auto-reply · 3 idiomes"
+  },
+  "iaWhatsapp": {
+    "sentAuto": "Enviat automàticament",
+    "typing": "HOSTLY IA · escrivint…",
+    "header": "22 abr. – 26 abr. · 4 nits · reserva Booking",
+    "today": "Avui · 19:14",
+    "recommendations": "LES TEVES RECOMANACIONS · 12 LLOCS"
+  },
+  "comu": {
+    "diesSetmana": [
+      "Dl",
+      "Dt",
+      "Dc",
+      "Dj",
+      "Dv",
+      "Ds",
+      "Dg"
+    ],
+    "sistemaTreballant": "Sistema treballant",
+    "tuJaNo": "Tu ja no"
   }
 }

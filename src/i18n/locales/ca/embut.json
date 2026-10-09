@@ -2,20 +2,20 @@
   "cta": "Començar",
   "empezar": {
     "meta_title": "Començar amb Hostly",
-    "meta_desc": "Tres dades i ho tens en marxa. Gratis per al check-in i la policia; Hostly complet amb el primer mes gratis.",
+    "meta_desc": "Tres dades i tries com començar: gratis amb el check-in i la policia, o Hostly Complet amb el primer mes gratis.",
     "paso": "Pas {{n}} de 3",
     "atras": "Enrere",
     "inicio": "Tornar a la web",
     "datos": {
       "titulo": "Comencem.",
-      "subtitulo": "Tres dades i en un minut ho tens en marxa.",
+      "subtitulo": "Tres dades i tries com començar.",
       "telefono": "Telèfon",
       "telefono_placeholder": "612 345 678",
       "telefono_ayuda": "Et truquem per ajudar-te a posar-ho en marxa.",
       "nombre": "Nom",
-      "nombre_placeholder": "Marta",
+      "nombre_placeholder": "Anna",
       "correo": "Correu",
-      "correo_placeholder": "marta@gmail.com",
+      "correo_placeholder": "anna@gmail.com",
       "continuar": "Continuar",
       "privacidad_antes": "En continuar acceptes la",
       "privacidad_link": "política de privacitat"
@@ -34,10 +34,10 @@
       "gratis_precio": "Gratis, per sempre",
       "gratis_items": [
         "Check-in online de l'hoste, des del seu mòbil",
-        "Registre enviat a la policia, sol",
-        "Taxa turística llesta per declarar"
+        "Registre a la policia: automàtic amb els Mossos; SES, l'activem amb tu",
+        "Taxa turística de Catalunya, llesta per declarar"
       ],
-      "completo_nombre": "Hostly complet",
+      "completo_nombre": "Hostly Complet",
       "completo_precio": "40 €/mes per apartament · el primer mes, gratis",
       "completo_items": [
         "Tot el del pla gratis",
@@ -62,8 +62,8 @@
       "zona": "Hora d'Espanya peninsular",
       "boton": "Reservar la demo",
       "boton_falta": "Tria dia i hora",
-      "hecho_titulo": "Fet, {{nombre}}. Ens veiem el {{dia}} a les {{hora}}.",
-      "hecho_texto": "Et confirmem l'hora per WhatsApp i t'enviem l'enllaç de la videotrucada.",
+      "hecho_titulo": "Apuntat, {{nombre}}: {{dia}} a les {{hora}}.",
+      "hecho_texto": "T'ho confirmem per WhatsApp i t'enviem l'enllaç de la videotrucada.",
       "mientras": "Mentrestant, si vols, crea el teu compte gratis.",
       "mientras_boton": "Crear el meu compte gratis",
       "cambiar": "Canviar l'hora"
@@ -119,10 +119,10 @@
       "hoy": "Avui: {{euros}} al mes en apps i {{horas}} a la setmana.",
       "hoy_sin_apps": "Avui no pagues apps, però se te'n van {{horas}} a la setmana.",
       "hostly": "Amb Hostly: {{euros}} al mes, tot en una app, i bona part d'aquesta feina, feta sola.",
-      "hostly_medida": "Amb Hostly: un preu a la teva mida, tot en una app, i bona part d'aquesta feina, feta sola.",
+      "hostly_medida": "Amb Hostly: 35 € al mes per pis, tot en una app, i bona part d'aquesta feina, feta sola.",
       "horas_ano": "Això són {{ano}} del teu temps.",
       "registro_cat": "I el registre als Mossos d'Esquadra el fa Hostly, gratis.",
-      "registro_otra": "I el registre a la policia el fa Hostly, gratis.",
+      "registro_otra": "I el registre a la policia (SES) l'activem amb tu, gratis.",
       "gate_titulo": "Veure el detall",
       "gate_texto": "Deixa'ns el teu telèfon i t'ensenyem el detall, eina per eina. Si vols, et truquem per ajudar-te a decidir.",
       "gate_boton": "Veure el detall",
@@ -139,7 +139,7 @@
       "detalle_por_piso": "{{euros}} €/mes per pis",
       "detalle_horas": "Missatges, neteges i registres",
       "detalle_horas_hostly": "La IA contesta, les neteges s'avisen i els registres surten sols",
-      "nota": "Preus orientatius de cada eina, per apartament i mes.",
+      "nota": "Preus orientatius que publica cada eina (octubre de 2026), per apartament i mes.",
       "otra_vez": "Tornar a calcular",
       "horas_frase": [
         "menys de 2 hores",
@@ -159,10 +159,10 @@
   },
   "llamame": {
     "titulo": "Prefereixes parlar-ne?",
-    "texto": "Deixa'm el teu número i et truco avui. Sense compromís.",
+    "texto": "Deixa'm el teu número i et truco, normalment el mateix dia. Sense compromís.",
     "firma": "Biel, fundador de Hostly",
     "placeholder": "El teu telèfon",
     "boton": "Truca'm",
-    "hecho": "Fet. Et truco avui mateix."
+    "hecho": "Fet. Et truco tan aviat com pugui, normalment avui mateix."
   }
 }

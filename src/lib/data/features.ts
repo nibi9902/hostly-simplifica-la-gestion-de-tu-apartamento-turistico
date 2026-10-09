@@ -213,7 +213,7 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Cuánto cuesta?',
         answer:
-          'Nada. El check-in online y el registro a la policía son gratis para siempre, sin tarjeta. En Cataluña, también la taxa turística.',
+          'Nada. El check-in online y el registro a la policía son gratis para siempre, sin tarjeta. En Cataluña, también la tasa turística.',
       },
     ],
   },
@@ -226,7 +226,7 @@ export const FEATURES: Feature[] = [
     shortDescription:
       'Airbnb y Booking en un solo calendario. Las reservas entran al momento y, dentro de Hostly, dos reservas no pueden solaparse.',
     hero: {
-      h1: 'Un solo calendario para Airbnb, Booking y tus reservas directas',
+      h1: 'Un solo calendario para Airbnb, Booking y tus reservas',
       sub: 'Las reservas entran solas, los bloqueos llegan a los canales al instante y los precios se publican desde un solo sitio.',
       primaryCta: 'Empezar',
       secondaryCta: 'Ver precios',
@@ -254,7 +254,7 @@ export const FEATURES: Feature[] = [
       {
         step: 4,
         title: 'Y tus reservas directas, también',
-        body: 'Hostly tiene su propio motor de reservas con pago por Stripe. Las reservas directas entran en el mismo calendario.',
+        body: 'Las que te llegan por teléfono las apuntas en un momento. Y si quieres web propia con reservas directas, la montamos contigo, a medida.',
       },
     ],
     advantages: [
@@ -263,7 +263,7 @@ export const FEATURES: Feature[] = [
       'Dentro de Hostly, dos reservas no pueden solaparse',
       'Bloqueos que llegan a los canales al instante',
       'Tu histórico de reservas, importado',
-      'Reservas directas con motor propio y pago por Stripe',
+      'Tus reservas directas, en el mismo calendario',
     ],
     usage: [
       {
@@ -284,7 +284,7 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Qué plataformas conectáis?',
         answer:
-          'Airbnb y Booking.com. Para las reservas directas, Hostly tiene su propio motor de reservas con pago por Stripe.',
+          'Airbnb y Booking.com. Las reservas directas también entran en el mismo calendario; si quieres web propia con reservas, la montamos a medida.',
       },
       {
         question: '¿Necesito otro channel manager?',
@@ -688,7 +688,7 @@ export const FEATURES: Feature[] = [
       'Cuota mensual según lo que automaticemos, acordada antes de empezar',
       'Avisos y tareas a la medida de tu forma de trabajar',
       'Tú no tocas nada: lo montamos nosotros',
-      'De serie, Hostly ya exporta a Excel y CSV y tiene motor de reservas con Stripe',
+      'De serie, Hostly ya exporta a Excel y CSV',
     ],
     usage: [
       {
@@ -724,7 +724,7 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Qué hace Hostly sin este servicio?',
         answer:
-          'Exporta a Excel y CSV y tiene su propio motor de reservas con pago por Stripe. Este servicio es para todo lo que va más allá.',
+          'Todo lo que ves en sus funciones, y exporta a Excel y CSV. Este servicio es para lo que va más allá: tu gestoría, tu web, tu ERP…',
       },
     ],
   },
@@ -744,7 +744,7 @@ export const FEATURES: Feature[] = [
     },
     problem: {
       title: 'El cierre de mes: la parte que nadie quería',
-      body: 'Abrir el Excel. Copiar las reservas de Airbnb. Descontar la comisión. Hacer lo mismo con Booking. Sumar la taxa turística. Repetirlo con cada piso. Y si gestionas pisos de terceros, preparar la liquidación de cada propietario. Son horas de trabajo que no tendrían que existir.',
+      body: 'Abrir el Excel. Copiar las reservas de Airbnb. Descontar la comisión. Hacer lo mismo con Booking. Sumar la tasa turística. Repetirlo con cada piso. Y si gestionas pisos de terceros, preparar la liquidación de cada propietario. Son horas de trabajo que no tendrían que existir.',
     },
     howItWorks: [
       {
@@ -765,16 +765,16 @@ export const FEATURES: Feature[] = [
       {
         step: 4,
         title: 'Exporta lo que necesites',
-        body: 'Las liquidaciones, en CSV o PDF. La taxa turística, en Excel o CSV, lista para presentar.',
+        body: 'Las liquidaciones, en CSV o PDF. La tasa turística, en Excel o CSV, lista para presentar.',
       },
     ],
     advantages: [
       'Ingresos por piso, por canal y por periodo',
       'Comisiones de Airbnb y Booking calculadas solas',
-      'Taxa turística calculada en cada reserva',
+      'Tasa turística calculada en cada reserva',
       'Liquidación al propietario con un asistente de cuatro pasos',
       'El propietario ve su liquidación en su app',
-      'Liquidaciones en CSV o PDF, y taxa turística en Excel o CSV',
+      'Liquidaciones en CSV o PDF, y tasa turística en Excel o CSV',
     ],
     usage: [
       {
@@ -787,7 +787,7 @@ export const FEATURES: Feature[] = [
       },
       {
         title: 'Pasar los datos a tu gestoría',
-        body: 'Exportas las liquidaciones en CSV o PDF y la taxa turística en Excel. Se lo mandas a tu gestoría sin copiar nada a mano.',
+        body: 'Exportas las liquidaciones en CSV o PDF y la tasa turística en Excel. Se lo mandas a tu gestoría sin copiar nada a mano.',
       },
     ],
     relatedFeatures: ['burocracia', 'multi-rol', 'channel-manager'],
@@ -805,27 +805,27 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Qué puedo exportar para mi gestoría?',
         answer:
-          'Las liquidaciones, en CSV o PDF, y la taxa turística, en Excel o CSV. Si necesitas algo a medida, lo vemos con las automatizaciones de «Conéctalo todo».',
+          'Las liquidaciones, en CSV o PDF, y la tasa turística, en Excel o CSV. Si necesitas algo a medida, lo vemos con las automatizaciones de «Conéctalo todo».',
       },
     ],
   },
 
-  // ─────────────────────────── TAXA TURÍSTICA (slug burocracia) ───────────────────────────
+  // ─────────────────────────── TASA TURÍSTICA (slug burocracia) ───────────────────────────
   {
     slug: 'burocracia',
-    name: 'Taxa turística',
+    name: 'Tasa turística',
     iconName: 'Receipt',
     shortDescription:
-      'La taxa turística de Cataluña, calculada sola: tarifa según la ley y tu municipio, importe por piso y el Excel listo para presentar.',
+      'La tasa turística de Cataluña, calculada sola: tarifa según la ley y tu municipio, importe por piso y el Excel listo para presentar.',
     hero: {
-      h1: 'La taxa turística, calculada y lista para presentar.',
+      h1: 'La tasa turística, calculada y lista para presentar.',
       sub: 'Hostly calcula la tarifa con la ley y el municipio de cada piso, suma el importe de cada semestre y te prepara el Excel para la Agència Tributària de Catalunya. Tú la presentas y la marcas como hecha.',
       primaryCta: 'Empezar',
       secondaryCta: 'Ver precios',
     },
     problem: {
       title: 'Cada semestre, la misma tarde de cuentas',
-      body: 'En Cataluña, la taxa turística se presenta dos veces al año: del 1 al 20 de abril y del 1 al 20 de octubre. Toca buscar la tarifa de tu municipio, contar personas y noches de cada estancia y pasarlo todo al formato que pide la ATC. Y el plazo no espera.',
+      body: 'En Cataluña, la tasa turística se presenta dos veces al año: del 1 al 20 de abril y del 1 al 20 de octubre. Toca buscar la tarifa de tu municipio, contar personas y noches de cada estancia y pasarlo todo al formato que pide la ATC. Y el plazo no espera.',
     },
     howItWorks: [
       {
@@ -836,7 +836,7 @@ export const FEATURES: Feature[] = [
       {
         step: 2,
         title: 'Calcula cada estancia',
-        body: 'Con los datos de cada reserva, calcula el importe de la taxa y el total por piso de cada semestre.',
+        body: 'Con los datos de cada reserva, calcula el importe de la tasa y el total por piso de cada semestre.',
       },
       {
         step: 3,
@@ -868,13 +868,13 @@ export const FEATURES: Feature[] = [
       },
       {
         title: 'Cobrarla al huésped',
-        body: 'Activas el cobro y el huésped paga la taxa con tarjeta al hacer el check-in, a través de Stripe. Tú no persigues a nadie.',
+        body: 'Activas el cobro y el huésped paga la tasa con tarjeta al hacer el check-in, a través de Stripe. El cobro lleva una pequeña comisión, que puedes hacer pagar al huésped. Tú no persigues a nadie.',
       },
     ],
     relatedFeatures: ['check-in-online', 'finanzas', 'conecta-todo'],
     faqs: [
       {
-        question: '¿Hostly presenta la taxa por mí?',
+        question: '¿Hostly presenta la tasa por mí?',
         answer:
           'No. La presentas tú en la Agència Tributària de Catalunya, con el Excel que te prepara Hostly. Después la marcas como presentada en la app.',
       },
@@ -886,12 +886,12 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Funciona fuera de Cataluña?',
         answer:
-          'Hoy, la taxa que calcula Hostly es la de Cataluña. Si tus pisos están en otra comunidad, Hostly te sirve igual para todo lo demás.',
+          'Hoy, la tasa que calcula Hostly es la de Cataluña. Si tus pisos están en otra comunidad, Hostly te sirve igual para todo lo demás.',
       },
       {
         question: '¿Puedo cobrársela al huésped?',
         answer:
-          'Sí. Si lo activas, el huésped la paga con tarjeta al hacer el check-in, a través de Stripe.',
+          'Sí. Si lo activas, el huésped la paga con tarjeta al hacer el check-in, a través de Stripe. El cobro lleva una pequeña comisión; tú decides si la paga el huésped.',
       },
     ],
   },

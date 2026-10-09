@@ -204,110 +204,21 @@ const INJECTED_STYLES = `
     stroke-linecap: round;
   }
 
-  /* Notification feed scroll */
-  @keyframes notif-scroll {
-    0%   { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
-  }
-  .notif-track {
-    animation: notif-scroll 14s linear infinite;
-    will-change: transform;
-  }
-  .notif-track:hover { animation-play-state: paused; }
 `;
-
-/* ─────────────────────────────────────────────────────────
-   PHONE NOTIFICATION FEED — animated continuous scroll
-───────────────────────────────────────────────────────── */
-
-const NOTIFS = [
-  {
-    icon: '✅',
-    iconBg: '#1a3a20',
-    iconColor: '#34c759',
-    app: 'Hostly · Check-in',
-    title: 'Check-in completado',
-    detail: 'Laura · Airbnb · Código 4821 enviado',
-    time: 'ahora',
-  },
-  {
-    icon: '🤖',
-    iconBg: '#0f1f3a',
-    iconColor: '#3b7ff5',
-    app: 'Hostly · IA',
-    title: 'Respuesta automática enviada',
-    detail: '"Bienvenida Sarah, tu código es 4821..."',
-    time: 'ahora',
-  },
-  {
-    icon: '📈',
-    iconBg: '#2a1800',
-    iconColor: '#ff9500',
-    app: 'Hostly · Revenue',
-    title: 'Precio actualizado +40%',
-    detail: 'Viernes 18 · Alta demanda · 264€/noche',
-    time: 'hace 1 min',
-  },
-  {
-    icon: '🛡️',
-    iconBg: '#0a2020',
-    iconColor: '#30b0c7',
-    app: 'Hostly · Legal',
-    title: 'Mossos notificados',
-    detail: 'Carlos G. · DNI verificado · 3 noches',
-    time: 'hace 2 min',
-  },
-  {
-    icon: '🧹',
-    iconBg: '#1a1040',
-    iconColor: '#5856d6',
-    app: 'Hostly · Neteja',
-    title: 'Limpieza coordinada',
-    detail: 'Anna López · Mañana 11:00 · Eixample',
-    time: 'hace 3 min',
-  },
-  {
-    icon: '⭐',
-    iconBg: '#2a2000',
-    iconColor: '#ffd60a',
-    app: 'Hostly · Reseñas',
-    title: 'Nueva reseña 5 estrellas',
-    detail: 'Sarah D. · "Perfecte en tot" · Airbnb',
-    time: 'hace 4 min',
-  },
-  {
-    icon: '🔑',
-    iconBg: '#0f1f3a',
-    iconColor: '#60a5fa',
-    app: 'Hostly · Acceso',
-    title: 'Código de acceso enviado',
-    detail: 'YANG TING · Código 8372 · Hoy 14:00',
-    time: 'hace 5 min',
-  },
-  {
-    icon: '💰',
-    iconBg: '#1a3a20',
-    iconColor: '#34c759',
-    app: 'Hostly · Reserva',
-    title: 'Reserva confirmada · 620€',
-    detail: 'Marcos · Booking · 4 noches · Eixample',
-    time: 'hace 6 min',
-  },
-];
 
 /* ── Static phone screen with GSAP-controlled notification cards ── */
 const PHONE_NOTIF_META = [
   { icon: '🗓️', iconBg: '#0d2b18', iconColor: '#34c759', label: 'Hostly · Fiscal' },
   { icon: '🛡️', iconBg: '#0a1a30', iconColor: '#3b7ff5', label: 'Hostly · Check-in' },
-  { icon: '🧹', iconBg: '#1a1040', iconColor: '#5856d6', label: 'Hostly · Neteges' },
+  { icon: '🧹', iconBg: '#1a1040', iconColor: '#5856d6', label: 'Hostly · Limpiezas' },
   { icon: '🤖', iconBg: '#0f1f3a', iconColor: '#3b7ff5', label: 'Hostly · IA' },
-  { icon: '📈', iconBg: '#221200', iconColor: '#ff9500', label: 'Hostly · Precio' },
+  { icon: '📈', iconBg: '#221200', iconColor: '#ff9500', label: 'Hostly · Precios' },
   { icon: '📅', iconBg: '#130d33', iconColor: '#a78bfa', label: 'Hostly · Reservas' },
 ];
 
 const PhoneScreen: React.FC = () => {
   const { t } = useTranslation("home");
-  interface PhoneNotif { title: string; detail: string }
+  interface PhoneNotif { label?: string; title: string; detail: string }
   const notifsData = t("hero.phone_notifs", { returnObjects: true }) as PhoneNotif[];
   const PHONE_NOTIFS = PHONE_NOTIF_META.map((meta, i) => ({ ...meta, ...notifsData[i] }));
 
@@ -363,127 +274,6 @@ const PhoneScreen: React.FC = () => {
     {/* Home indicator */}
     <div style={{ position: 'absolute', bottom: '6px', left: '50%', transform: 'translateX(-50%)', width: '100px', height: '4px', background: 'rgba(255,255,255,0.18)', borderRadius: '2px' }} />
   </div>
-  );
-};
-
-/* Keep NOTIFS array to avoid TS error but no longer used in render */
-const _NOTIFS_UNUSED = NOTIFS;
-void _NOTIFS_UNUSED;
-
-const PhoneNotificationFeed_UNUSED: React.FC = () => {
-  const items = [...NOTIFS, ...NOTIFS];
-  return (
-    <div style={{
-      width: '100%', height: '100%',
-      background: 'linear-gradient(180deg, #04091a 0%, #060d22 100%)',
-      overflow: 'hidden',
-      display: 'flex',
-      flexDirection: 'column',
-    }}>
-
-      {/* Status bar */}
-      <div style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '10px 16px 6px',
-        flexShrink: 0,
-      }}>
-        <span style={{ fontSize: '12px', fontWeight: 700, color: '#fff', letterSpacing: '-0.02em' }}>17:15</span>
-        <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
-          <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
-            <rect x="0" y="4" width="3" height="8" rx="1" fill="rgba(255,255,255,0.4)" />
-            <rect x="4.5" y="2.5" width="3" height="9.5" rx="1" fill="rgba(255,255,255,0.6)" />
-            <rect x="9" y="1" width="3" height="11" rx="1" fill="rgba(255,255,255,0.8)" />
-            <rect x="13" y="0" width="3" height="12" rx="1" fill="#fff" />
-          </svg>
-          <svg width="15" height="12" viewBox="0 0 15 12" fill="white" opacity="0.9">
-            <path d="M7.5 2.5C9.8 2.5 11.9 3.5 13.3 5.1L14.8 3.4C12.9 1.3 10.3 0 7.5 0S2.1 1.3 0.2 3.4L1.7 5.1C3.1 3.5 5.2 2.5 7.5 2.5Z"/>
-            <path d="M7.5 5.5C9 5.5 10.3 6.1 11.2 7.1L12.7 5.4C11.3 3.9 9.5 3 7.5 3S3.7 3.9 2.3 5.4L3.8 7.1C4.7 6.1 6 5.5 7.5 5.5Z"/>
-            <circle cx="7.5" cy="10" r="1.8"/>
-          </svg>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
-            <div style={{ width: '22px', height: '11px', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '3px', padding: '1px', display: 'flex', alignItems: 'center', position: 'relative' }}>
-              <div style={{ width: '75%', height: '100%', background: '#34c759', borderRadius: '1.5px' }} />
-              <div style={{ position: 'absolute', right: '-3px', top: '50%', transform: 'translateY(-50%)', width: '2px', height: '5px', background: 'rgba(255,255,255,0.4)', borderRadius: '0 1px 1px 0' }} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Date */}
-      <div style={{ textAlign: 'center', padding: '4px 0 10px', flexShrink: 0 }}>
-        <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 500 }}>
-          Viernes, 18 de Abril
-        </div>
-      </div>
-
-      {/* Notification feed — continuous scroll */}
-      <div style={{ flex: 1, overflow: 'hidden', padding: '0 8px', position: 'relative' }}>
-        {/* Fade top */}
-        <div style={{
-          position: 'absolute', top: 0, left: 0, right: 0, height: '32px', zIndex: 10,
-          background: 'linear-gradient(180deg, #04091a 0%, transparent 100%)',
-          pointerEvents: 'none',
-        }} />
-        {/* Fade bottom */}
-        <div style={{
-          position: 'absolute', bottom: 0, left: 0, right: 0, height: '48px', zIndex: 10,
-          background: 'linear-gradient(0deg, #060d22 0%, transparent 100%)',
-          pointerEvents: 'none',
-        }} />
-
-        <div className="notif-track">
-          {items.map((n, i) => (
-            <div key={i} style={{
-              background: 'rgba(255,255,255,0.07)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: '16px',
-              padding: '10px 12px',
-              marginBottom: '8px',
-              display: 'flex',
-              gap: '10px',
-              alignItems: 'flex-start',
-            }}>
-              {/* App icon */}
-              <div style={{
-                width: '36px', height: '36px', borderRadius: '10px', flexShrink: 0,
-                background: n.iconBg,
-                border: `1px solid ${n.iconColor}30`,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '18px',
-                boxShadow: `0 0 12px ${n.iconColor}20`,
-              }}>
-                {n.icon}
-              </div>
-
-              {/* Content */}
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2px' }}>
-                  <span style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.02em' }}>
-                    {n.app}
-                  </span>
-                  <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', flexShrink: 0, marginLeft: '6px' }}>
-                    {n.time}
-                  </span>
-                </div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#fff', lineHeight: 1.2, marginBottom: '2px', letterSpacing: '-0.01em' }}>
-                  {n.title}
-                </div>
-                <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                  {n.detail}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Home indicator */}
-      <div style={{ display: 'flex', justifyContent: 'center', padding: '8px 0 6px', flexShrink: 0 }}>
-        <div style={{ width: '100px', height: '4px', background: 'rgba(255,255,255,0.2)', borderRadius: '2px' }} />
-      </div>
-    </div>
   );
 };
 
@@ -688,9 +478,9 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
         </p>
         {/* Disseny 3-línies amb font-heading (Inter, la de l'app des d'octubre 2026) */}
         <h2 className="hero-cta-h2 font-heading font-bold mb-7 md:mb-8 tracking-tight text-card-dark text-center">
-          {/* Línia 1 — comparació tatxada, una mida més gran */}
+          {/* Línia 1 — el que fan els altres (sense xifra: Chekin ja va des de 3,95 €/mes) */}
           <span className="block text-2xl md:text-3xl lg:text-[2.5rem] text-slate-400 font-medium mb-5 md:mb-6 leading-tight">
-            <span className="line-through decoration-slate-300 decoration-[3px] md:decoration-4">{t("hero.cta_compare_price")}</span> {t("hero.cta_compare_rest")}
+            {t("hero.cta_compare_rest")}
           </span>
           {/* Línia 2 — l'impacte: "0 €" amb gradient + "Hostly" amb línia animada */}
           <span className="block text-[2.6rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight">

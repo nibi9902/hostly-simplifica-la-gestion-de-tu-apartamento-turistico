@@ -95,7 +95,7 @@ function FinanzasView({ frame, fps }: { frame: number; fps: number }) {
         {[
           { v: '8',    l: t('finanzas.statReservations'), color: colors.primary },
           { v: '74%',  l: t('finanzas.statOccupancy'),    color: colors.green   },
-          { v: '173€', l: '€/nit mig',                   color: colors.foreground },
+          { v: '173€', l: t('finanzas.statAvgNight'),     color: colors.foreground },
         ].map(({ v, l, color }) => (
           <div key={l} style={{ background: colors.card, border: `1px solid ${colors.border}`, borderRadius: 10, padding: '9px 10px', textAlign: 'center' }}>
             <div style={{ fontSize: 18, fontWeight: 800, color, fontVariantNumeric: 'tabular-nums' }}>{v}</div>
