@@ -302,7 +302,7 @@ const PHONE_NOTIF_META = [
   { icon: '🧹', iconBg: '#1a1040', iconColor: '#5856d6', label: 'Hostly · Neteges' },
   { icon: '🤖', iconBg: '#0f1f3a', iconColor: '#3b7ff5', label: 'Hostly · IA' },
   { icon: '📈', iconBg: '#221200', iconColor: '#ff9500', label: 'Hostly · Precio' },
-  { icon: '💬', iconBg: '#130d33', iconColor: '#a78bfa', label: 'Hostly · Asesor' },
+  { icon: '📅', iconBg: '#130d33', iconColor: '#a78bfa', label: 'Hostly · Reservas' },
 ];
 
 const PhoneScreen: React.FC = () => {
@@ -538,7 +538,7 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
       // Intro
       // En acabar l'entrada s'avisa la capçalera perquè aparegui. Abans només
       // s'avisava quan sortia el CTA, que forma part de la seqüència LLIGADA AL
-      // SCROLL: qui entrava a la home i no baixava els ~3.200 px del hero no
+      // SCROLL: qui entrava a la home i no baixava els ~3.200 px del hero (avui 1.700) no
       // veia MAI el menú. L'entrada, en canvi, acaba sola als ~3 s.
       const introTl = gsap.timeline({
         delay: 0.3,
@@ -549,12 +549,14 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
         .to(".text-days",     { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut" }, "-=1.0")
         .to(".hero-subtitle", { duration: 1.0, autoAlpha: 1, y: 0, ease: "expo.out" }, "-=0.4");
 
-      // Scroll-driven — pin compactat (~50% més curt) per evitar sensació "encallat"
+      // Scroll-driven. Redisseny d'octubre 2026: el tram fixat passa de 3.200 a 1.700 px
+      // (2.000 → 1.200 al mòbil). La Marta: «la web és un scroll infinit»; el Biel:
+      // l'animació es queda, el que sobra és el recorregut buit fins al botó.
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: isMobile ? "+=2000" : "+=3200",
+          end: isMobile ? "+=1200" : "+=1700",
           pin: true,
           scrub: 0.3,
           anticipatePin: 1,
@@ -885,7 +887,7 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
               {/* Bubble 5 — BOTTOM-RIGHT (6a, ~95%) */}
               <div className="bubble-5 absolute bottom-[3%] right-[-10px] lg:right-[-30px] floating-ui-badge rounded-xl lg:rounded-2xl p-3 lg:p-4 hidden lg:flex items-center gap-3 z-30 min-w-[160px] lg:min-w-[210px]">
                 <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-400/30 flex-shrink-0">
-                  <span className="text-base lg:text-lg" aria-hidden="true">💬</span>
+                  <span className="text-base lg:text-lg" aria-hidden="true">📅</span>
                 </div>
                 <div>
                   <p className="text-white text-[11px] lg:text-sm font-bold tracking-tight">{bubbles[5]?.title}</p>

@@ -4,14 +4,14 @@
     "h1_line2": "O et gestionen ells a tu?",
     "subtitle": "Hostly simplifica tot el que implica tenir un apartament turístic.",
     "partner_label": "Partner oficial de",
-    "cta_tagline": "Check-in + part a la policia",
+    "cta_tagline": "Check-in + registre a la policia",
     "cta_compare_price": "180 €",
     "cta_compare_rest": "l'any en altres apps.",
     "cta_main_price": "0 €",
     "cta_main_text": "a",
     "cta_main_brand": "Hostly",
     "cta_forever": "Per sempre.",
-    "cta_sub": "Hostly envia el part de viatgers a la policia cada vegada que entra un hoste. Tu no pagues res — i així es queda.",
+    "cta_sub": "Cada vegada que entra un hoste, Hostly envia el registre a la policia per tu. Gratis avui i gratis sempre: és la nostra manera que ens coneguis.",
     "stat_messages": "missatges contestats",
     "stat_police": "registres policials",
     "stat_cleanings": "neteges coordinades",
@@ -26,12 +26,12 @@
     "phone_now": "ara",
     "phone_notifs": [
       {
-        "title": "Taxa turística · venc en 24h",
-        "detail": "Informe de juny llest · pagament en 1 clic"
+        "title": "Taxa turística · semestre llest",
+        "detail": "1.284 € a ingressar · fitxer llest per presentar"
       },
       {
         "title": "Check-in del Miguel completat",
-        "detail": "SES enviat als Mossos · 4 € de taxa cobrats"
+        "detail": "Registre enviat als Mossos · taxa cobrada"
       },
       {
         "title": "Neteja confirmada · Anna",
@@ -46,18 +46,18 @@
         "detail": "Preu del 15–19 juny ajustat a 235 €/nit"
       },
       {
-        "title": "La teva assessora Laura · pla d'abril",
-        "detail": "3 ajustos per pujar ingressos un 12%"
+        "title": "Nova reserva · Booking",
+        "detail": "4 nits · 620 € · dates bloquejades a Airbnb"
       }
     ],
     "bubbles": [
       {
-        "title": "Taxa turística · venc en 24h",
-        "detail": "Informe de juny llest · pagament en 1 clic"
+        "title": "Taxa turística · semestre llest",
+        "detail": "1.284 € a ingressar · fitxer llest per presentar"
       },
       {
         "title": "Check-in del Miguel completat",
-        "detail": "SES enviat als Mossos · 4 € de taxa cobrats"
+        "detail": "Registre enviat als Mossos · taxa cobrada"
       },
       {
         "title": "Neteja confirmada · Anna",
@@ -72,8 +72,8 @@
         "detail": "Preu del 15–19 juny ajustat a 235 €/nit"
       },
       {
-        "title": "La teva assessora Laura · pla d'abril",
-        "detail": "3 ajustos per pujar ingressos un 12%"
+        "title": "Nova reserva · Booking",
+        "detail": "4 nits · 620 € · dates bloquejades a Airbnb"
       }
     ]
   },
@@ -87,40 +87,40 @@
     "subtitle": "Les mateixes tasques de cada setmana. La diferència és qui les fa.",
     "col_before": "Sense sistema",
     "col_after": "Amb Hostly",
-    "closer_title": "De cinc apps disperses a una sola que ho fa tot.",
-    "closer_sub": "Comença per la part gratis. La resta, quan la necessitis.",
+    "closer_title": "Hostly gestiona. Tu, menys.",
+    "closer_sub": "De cinc apps escampades a una sola que ho fa tot.",
     "closer_cta": "Començar",
-    "closer_fine": "Sense targeta · Per sempre",
+    "closer_fine": "El check-in, gratis per sempre",
     "pairs": [
       {
-        "before_title": "Has fet el SES d'aquesta reserva?",
-        "before_sub": "Tu mateix · Pendent des de divendres",
-        "after_title": "SES enviat a Mossos",
-        "after_sub": "Automàtic · Sense tocar res"
+        "before_title": "Vas enviar el registre d'aquesta reserva a la policia?",
+        "before_sub": "Tu mateix · pendent des de divendres",
+        "after_title": "Registre enviat a la policia",
+        "after_sub": "Sol · sense tocar res"
       },
       {
-        "before_title": "Neteja demà — has avisat l'Anna?",
-        "before_sub": "Sense resposta · 3h per al check-in",
-        "after_title": "Anna notificada: demà 11h",
-        "after_sub": "Automàtic · Confirmat"
+        "before_title": "Neteja demà. Vas avisar l'Anna?",
+        "before_sub": "Sense resposta · 3 h per al check-in",
+        "after_title": "Anna avisada: demà a les 11",
+        "after_sub": "Sol · confirmat"
       },
       {
-        "before_title": "Chekin + Smoobu + PriceLabs...",
-        "before_sub": "~120€ aquest mes · 5 factures diferents",
-        "after_title": "40€/mes · Tot inclòs",
-        "after_sub": "Un pagament · Un login · Res més"
+        "before_title": "Chekin + Smoobu + PriceLabs…",
+        "before_sub": "~120 € aquest mes · 5 factures diferents",
+        "after_title": "40 €/mes. Tot inclòs.",
+        "after_sub": "Un pagament · una app · res més"
       },
       {
-        "before_title": "Has declarat la taxa turística?",
-        "before_sub": "Un altre trimestre que se t'escola entre tot",
-        "after_title": "Informe llest. Et guiem pas a pas.",
-        "after_sub": "5 minuts · Sense gestoria · Sense errors"
+        "before_title": "Vas declarar la taxa turística?",
+        "before_sub": "Un altre semestre que s'escola entre tota la resta",
+        "after_title": "Import calculat. Llest per presentar.",
+        "after_sub": "5 minuts · sense errors"
       },
       {
         "before_title": "30 missatges d'hostes sense llegir",
-        "before_sub": "Wifi, aparcament, check-out... sempre el mateix",
+        "before_sub": "Wifi, pàrquing, check-out… sempre el mateix",
         "after_title": "Tots contestats. En segons.",
-        "after_sub": "IA · 5 idiomes · Sense obrir el mòbil"
+        "after_sub": "IA · en el seu idioma · sense obrir el mòbil"
       }
     ]
   },
@@ -128,7 +128,7 @@
     "eyebrow": "Com funciona",
     "title_1": "Llest en minuts.",
     "title_2": "funcionant per sempre.",
-    "subtitle": "Quatre passos reals, cronometrats. El 95% dels propietaris els completen abans de dinar.",
+    "subtitle": "Tres passos. No cal saber res de tecnologia.",
     "footer_tagline": "Setup guiat · Onboarding 1 a 1 el primer mes · Suport en espanyol i català",
     "list": [
       {
@@ -138,13 +138,13 @@
       },
       {
         "tag": "Segon",
-        "title": "Connecta Airbnb i Booking en un clic.",
-        "description": "El calendari se sincronitza, els preus s'ajusten i les reserves entren soles. Tot des d'un sol panell — sense saltar entre apps."
+        "title": "Connecta Airbnb i Booking.",
+        "description": "T'ajudem a connectar-los a la configuració 1 a 1. El calendari se sincronitza i les reserves entren soles."
       },
       {
         "tag": "Tercer",
         "title": "Hostly s'encarrega de tot el que arriba.",
-        "description": "Reserves, missatges, check-ins, SES, taxa, avisos a neteja. En temps real, sense que tu hagis d'intervenir. Tu tries quan mires."
+        "description": "Reserves, missatges, check-ins, registre a la policia, taxa i avisos a neteja. Tu tries quan ho mires."
       }
     ]
   },
@@ -154,66 +154,63 @@
     "contact_pre": "Si tens més dubtes, escriu-nos a",
     "list": [
       {
-        "q": "Què reemplaça Hostly exactament?",
-        "a": "Hostly reemplaça Chekin (check-in i compliance), el teu channel manager actual, les plantilles de missatges manuals, l'Excel de cobraments i el Dropbox de contractes. Una sola app, una sola factura."
-      },
-      {
         "q": "I si només tinc 1 o 2 apartaments?",
-        "a": "Hostly està pensat especialment per a propietaris amb 1 a 10 pisos. A 40 €/mes per apartament reemplaças diverses subscripcions i surts guanyant — a més del temps que deixes de perdre."
+        "a": "Hostly està pensat per a gestors d'1 a 15 pisos. Amb 1 o 2 pots començar gratis pel check-in i la policia, i passar-te al complet quan vulguis."
       },
       {
-        "q": "El check-in i l'enviament a la policia són realment gratis?",
-        "a": "Sí, gratis de per vida i sense condicions. El check-in online, el registre a SES.Hospedajes, Mossos i Ertzaintza funcionen des del pla gratuït, per a tots els teus apartaments i sense límit d'enviaments."
+        "q": "El check-in i el registre a la policia són realment gratis?",
+        "a": "Sí. El check-in online i el registre a la policia són gratis per sempre, per a tots els teus apartaments i sense límit d'hostes."
       },
       {
         "q": "Funciona amb Airbnb i Booking alhora?",
-        "a": "Sí. Hostly sincronitza calendaris, preus i reserves d'Airbnb, Booking.com i altres canals en temps real. Sense dobles reserves ni feina manual."
+        "a": "Sí. Hostly connecta Airbnb i Booking.com i manté calendaris, preus i reserves sincronitzats, sense dobles reserves."
       },
       {
-        "q": "Quant tarda a configurar-se?",
-        "a": "Menys de 15 minuts per al primer apartament. Respons el qüestionari del pis una sola vegada i el sistema comença a funcionar. L'onboarding 1 a 1 el primer mes t'ajuda si tens dubtes."
+        "q": "Quant triga a configurar-se?",
+        "a": "El primer pis, en uns minuts. Les connexions amb Airbnb i Booking les fem amb tu a la configuració 1 a 1 del primer mes."
       },
       {
         "q": "He de signar permanència?",
-        "a": "No. Cancel·les quan vols, sense penalització ni trucada de retenció. Si decideixes que no és per a tu, prems un botó."
+        "a": "No. Sense permanència: si no et simplifica la vida, ho deixes quan vulguis."
       },
       {
         "q": "Podré parlar amb algú si tinc un problema?",
-        "a": "Sí. El primer mes tens onboarding 1 a 1 amb el nostre equip. Després, suport humà en espanyol i català — no un chatbot."
+        "a": "Sí. El primer mes ho muntem amb tu en una videotrucada. Després, et respon una persona de l'equip, en castellà o en català. No un xatbot."
       }
     ]
   },
   "pricing": {
-    "title": "Un pla gratis. Un altre complet.",
-    "title_sub": "Sense packs.",
-    "subtitle": "Una sola app, un sol preu. I un tier gratis per sempre amb la part legal.",
+    "title": "Un pla gratis. Un pla complet.",
+    "title_sub": "Res més.",
+    "subtitle": "El check-in i la policia, gratis per sempre. Tota la resta, en un sol preu.",
     "free_badge": "Gratis · Per sempre",
     "free_price_note": "Sense targeta. Sense caducitat.",
-    "free_desc": "Per als que només volen complir amb la policia sense pagar res al mes.",
+    "free_desc": "Per complir amb la policia sense pagar res al mes.",
     "free_cta": "Començar",
     "free_features": [
-      "Enviament automàtic del part a la policia",
-      "Estat de cada check-in (enviat i rebut)",
-      "Llista d'hostes registrats per reserva",
-      "Sense caducitat. Sense targeta."
+      "Check-in online de l'hoste, des del seu mòbil",
+      "Registre enviat a la policia, sol",
+      "Taxa turística llesta per declarar",
+      "Calendari d'Airbnb i Booking llegit cada 30 minuts",
+      "Avisos quan falta un check-in"
     ],
     "paid_badge": "Hostly Complet",
     "paid_badge_recommended": "Recomanat",
     "paid_price_per": "/mes per apt.",
     "paid_price_bulk_prefix": "35 €/mes",
     "paid_price_bulk_suffix": "per apartament des de 5 apt.",
-    "paid_desc": "Tot el sistema en una app. Reemplaça Chekin, Smoobu, PriceLabs i Excel.",
+    "paid_desc": "Hostly gestiona. Tu, menys. Reemplaça Chekin, Smoobu i l'Excel; PriceLabs, integrat.",
     "paid_cta": "Començar",
     "paid_fine": "El primer mes, gratis · Sense permanència",
     "paid_features": [
       "Tot el del pla gratis",
-      "Sincronització Airbnb + Booking en temps real",
-      "Missatges amb IA a WhatsApp (5 idiomes)",
-      "Coordinació automàtica de neteges",
-      "Preus dinàmics segons demanda",
-      "Tancament de mes i finances",
-      "Onboarding 1 a 1 el primer mes",
-      "Suport humà. No chatbot."
+      "Airbnb i Booking sincronitzats en temps real",
+      "Missatges amb hostes contestats per IA, en el seu idioma",
+      "Neteges assignades i avisades soles",
+      "Preus al dia amb PriceLabs",
+      "Finances i liquidacions al propietari",
+      "Configuració 1 a 1 el primer mes",
+      "Suport humà. No un xatbot."
     ],
     "compare_old": "~ 120 €/mes pagant 5 apps per separat",
     "compare_new": "· 40 €/mes amb Hostly",
@@ -229,9 +226,9 @@
     "subtitle": "El primer mes, gratis · Sense permanència",
     "btn_start": "Començar",
     "btn_demo": "Veure com funciona",
-    "stat_messages": "Missatges amb IA en 5 idiomes",
-    "stat_police": "Registre policial automatitzat",
-    "stat_cleanings": "Neteges coordinades en un clic",
+    "stat_messages": "Missatges amb IA, en l'idioma de l'hoste",
+    "stat_police": "Registre a la policia automàtic",
+    "stat_cleanings": "Neteges avisades soles",
     "partners": "Partner oficial de"
   },
   "footer": {
@@ -246,44 +243,6 @@
       "contacto": "Contacte"
     },
     "copyright": "© 2026 Hostly™ · Ordre operatiu per a propietaris d'apartaments turístics."
-  },
-  "compliance": {
-    "eyebrow": "El part de viatgers · Gratis per sempre",
-    "title_crossed": "180 € l'any en altres apps.",
-    "title_price": "0 €",
-    "title_rest": "a Hostly. Per sempre.",
-    "subtitle": "Hostly envia el part de viatgers a la policia cada cop que entra un hoste. Tu no pagues res — i es queda així.",
-    "connected_label": "Connectat amb",
-    "bodies": [
-      {
-        "label": "Policía Nacional",
-        "color": "#1a3a8f"
-      },
-      {
-        "label": "Mossos d'Esquadra",
-        "color": "#0891b2"
-      },
-      {
-        "label": "Ertzaintza",
-        "color": "#16a34a"
-      }
-    ],
-    "hook": "I on és la trampa?",
-    "no_catch": "No hi ha trampa.\nÉs gratis i es queda gratis.",
-    "body_1": "Crea el compte, connecta un pis, i els parts surten sols cap a la policia cada cop que arriba un hoste. Tu no fas res.",
-    "body_2": "I si més endavant vols connectar Airbnb, les neteges o les finances, ja parlarem.",
-    "cta_button": "Començar",
-    "cta_fine": "Sense targeta · Sense caducitat",
-    "checklist_eyebrow": "Inclòs gratis",
-    "checklist_forever": "Per sempre",
-    "includes": [
-      "Enviament automàtic a SES.Hospedajes",
-      "Validació de DNI / NIE / Passaport",
-      "Signatura digital de l'hoste",
-      "Justificants arxivats 5 anys",
-      "Sense límit d'apartaments"
-    ],
-    "link_text": "Com funciona el check-in"
   },
   "testimonials": {
     "eyebrow": "En les seves paraules",
@@ -331,8 +290,8 @@
     "cards": [
       {
         "badge": "✓ Check-in i Policia",
-        "title": "Registre de Viatgers, NRUA, policia i taxa turística. Sense gestoria.",
-        "description": "Les dades del viatger surten a les autoritats a l'instant. Compleixes la normativa sense pensar-hi — i sense pagar a ningú per fer-ho.",
+        "title": "Registre de viatgers i taxa turística. Sense gestoria.",
+        "description": "Les dades de l'hoste surten cap a la policia cada dia, soles. Compleixes la normativa sense pensar-hi, i sense pagar ningú per fer-ho.",
         "replaces_prefix": "Cancel·la ",
         "replaces_suffix": " avui",
         "replaces_inclusion": "gratis amb Hostly"
@@ -352,41 +311,21 @@
       },
       {
         "badge": "Preus dinàmics",
-        "title": "El preu correcte cada dia. Automàtic.",
-        "description": "Hostly ajusta les tarifes segons demanda, temporada i ocupació de la teva zona. Més ingressos sense tocar res.",
-        "replaces_prefix": "Desconnecta ",
-        "replaces_suffix": ""
+        "title": "Preus al dia, amb PriceLabs a dins.",
+        "description": "PriceLabs recomana el preu de cada nit. Hostly hi aplica els teus mínims i temporades i el publica a Airbnb i Booking cada dia.",
+        "replaces_phrase": "Sense obrir cap altra app"
       },
       {
         "badge": "Missatges amb hostes",
         "title": "Respon en segons. Sense tocar el mòbil.",
-        "description": "Hostly contesta totes les preguntes a l'instant i en l'idioma de l'hoste. Tu només hi entres quan sigui necessari.",
-        "replaces_prefix": "Tanca el ",
-        "replaces_suffix": ""
+        "description": "Hostly contesta la majoria a l'instant, en l'idioma de l'hoste, i t'avisa quan cal una persona.",
+        "replaces_phrase": "Respon Hostly, no tu"
       },
       {
         "badge": "Pagaments i factures",
         "title": "Tot el que cobres, dins de Hostly.",
         "description": "Tanca el mes sense obrir Excel. Ingressos per plataforma, comissions, liquidacions i repartiment propietari–gestor. En un sol lloc.",
         "replaces_phrase": "Mai més un Excel"
-      },
-      {
-        "badge": "✦ El teu coach personal",
-        "title": "No un chatbot. Una persona.",
-        "description": "Els primers 3 mesos, la teva assessora personal t'ajuda amb el que necessitis: pujar preus per a un event, dubtes fiscals, connectar un canal nou. Com un coach de negoci — sense extra.",
-        "replaces_phrase": "Hola",
-        "coach_messages": [
-          {
-            "name": "Laura",
-            "role": "El teu coach · Hostly",
-            "message": "Abril: 3.100 €, el teu millor mes. Hi ha una millor manera de configurar les teves neteges i finances. Dijous 10h? ☕"
-          },
-          {
-            "name": "Marta",
-            "role": "El teu coach · Hostly",
-            "message": "He vist 4 nits soltes al maig. Amb 2 ajustos ràpids s'omplen en una setmana. T'ho ensenyo el dimarts?"
-          }
-        ]
       }
     ]
   },
@@ -491,42 +430,42 @@
   },
   "precios_page": {
     "meta_title": "Preus — Hostly",
-    "meta_description": "Un pla gratis per sempre amb la part legal. Un pla complet de 40 €/mes per apartament. Sense packs, sense add-ons, sense sorpreses.",
+    "meta_description": "Un pla gratis per sempre amb el check-in i el registre a la policia. Un pla complet de 40 €/mes per apartament, el primer mes gratis.",
     "sr_h1": "Preus de Hostly — Un pla gratis i un pla complet de 40 €/mes per apartament",
     "faq_heading": "Preguntes sobre el preu",
     "faq_subheading": "El que ens pregunten gairebé tots abans de començar.",
     "cta_heading": "Comença pel que és gratis.",
-    "cta_body": "Crea el teu compte, connecta un apartament i comença a enviar parts a la policia automàticament. Sense targeta. Per sempre.",
+    "cta_body": "Crea el teu compte, afegeix el teu pis i Hostly envia el registre a la policia per tu. Gratis per sempre.",
     "cta_button": "Començar",
     "cta_disclaimer": "Sense targeta · Sense caducitat · Sense compromís",
     "faqs": [
       {
         "q": "El pla gratis és realment gratis per sempre?",
-        "a": "Sí. Sense trampa, sense caducitat, sense targeta. L'enviament automàtic del part de viatgers a SES, Mossos i Ertzaintza és gratis de per vida. Per a tots els apartaments, sense límit d'enviaments."
+        "a": "Sí. El check-in online, el registre a la policia i la taxa turística són gratis per sempre, sense targeta i sense límit d'apartaments."
       },
       {
         "q": "Puc començar gratis i passar-me al pla complet més endavant?",
-        "a": "Exactament així està pensat. Crea el compte, configura el teu apartament i usa el pla gratis tot el temps que vulguis. Quan necessitis la resta de Hostly, l'actives en un clic."
+        "a": "Sí, així està pensat. Quan vulguis la resta de Hostly, ens ho demanes des de l'app, fem una demo de 20 minuts i l'activem aquell mateix dia, amb el primer mes gratis."
       },
       {
         "q": "Què inclou exactament el pla de 40 €/mes?",
-        "a": "Tot el que veus a la llista: sincronització Airbnb + Booking, missatges amb IA en 5 idiomes, coordinació de neteges, preus dinàmics, finances i tancament de mes, i l'onboarding 1 a 1 el primer mes. Sense mòduls apart, sense afegits."
+        "a": "Tot el de la llista: Airbnb i Booking sincronitzats, missatges amb hostes contestats per IA, neteges avisades soles, preus al dia amb PriceLabs, finances i liquidacions, i la configuració 1 a 1 el primer mes. Sense mòduls a part."
       },
       {
-        "q": "Hi ha permanència o puc cancel·lar quan vulgui?",
-        "a": "Cancel·les quan vols. Sense penalització, sense trucada de retenció. Si decideixes que no és per a tu, li dones a un botó i prou."
+        "q": "Hi ha permanència?",
+        "a": "No. Si no et simplifica la vida, ho deixes quan vulguis, sense penalització."
       },
       {
-        "q": "Què passa si tinc més de 5 apartaments?",
-        "a": "A partir del cinquè apartament pagues 35 €/mes per cadascun en lloc de 40 €. Sense sostre — si en tens 20, pagues 700 €/mes."
+        "q": "Què passa si tinc 5 apartaments o més?",
+        "a": "Des de 5 apartaments, cadascun passa a 35 €/mes en lloc de 40 €. Amb 20 pisos, 700 €/mes."
       },
       {
         "q": "Com funciona el programa de referits?",
-        "a": "Per cada 5 propietaris actius que portis, deixem de cobrar-te un apartament cada mes. En portes 10 i et regalem 2. Sense límit ni condicions."
+        "a": "Per cada 5 propietaris actius que portis, deixem de cobrar-te un apartament cada mes. En portes 10 i són 2."
       },
       {
-        "q": "Quant tarda a configurar-se?",
-        "a": "Menys de 15 minuts per al primer apartament. Connectes Airbnb o Booking, configures les normes del pis una sola vegada, i el sistema comença a funcionar. L'onboarding 1 a 1 el primer mes t'ajuda si necessites acompanyament."
+        "q": "Quant triga a configurar-se?",
+        "a": "El primer pis, en uns minuts. Les connexions amb Airbnb i Booking les fem amb tu a la configuració 1 a 1 del primer mes."
       }
     ]
   }

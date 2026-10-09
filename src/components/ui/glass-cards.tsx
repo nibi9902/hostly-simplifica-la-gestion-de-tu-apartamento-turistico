@@ -118,11 +118,12 @@ const cardData: CardData[] = [
   {
     id: 1,
     badge: '✓ Check-in y Policía',
-    title: 'Registro Viajeros, NRUA, policía y tasa turística. Sin gestoría.',
-    description: 'Los datos del viajero salen a las autoridades al instante. Cumples con la normativa sin pensar en ello — y sin pagar a nadie por hacerlo.',
+    title: 'Registro de viajeros y taxa turística. Sin gestoría.',
+    description: 'Los datos del huésped salen a la policía cada día, solos. Cumples con la normativa sin pensar en ello, y sin pagar a nadie por hacerlo.',
     replaces: {
       prefix: 'Cancela ',
-      brands: ['Chekin', 'Superhog', 'Akeero'],
+      // Superhog i Akeero són verificació d'hostes i dipòsits: no fan el que fa Hostly.
+      brands: ['Chekin', 'Partee'],
       suffix: ' hoy',
       price: '15 €/mes',
       inclusionLabel: 'gratis con Hostly',
@@ -174,13 +175,13 @@ const cardData: CardData[] = [
     mockupUrl: 'app.hostlylabs.com/calendario',
     featureSlug: 'channel-manager',
   },
-  // 4. Precios dinámicos (PriceLabs / Beyond / ...)
+  // 4. Precios dinámicos — el motor és PriceLabs (no es pot dir «desconecta PriceLabs»)
   {
     id: 4,
     badge: 'Precios dinámicos',
-    title: 'El precio correcto cada día. Automático.',
-    description: 'Hostly ajusta las tarifas según demanda, temporada y ocupación de tu zona. Más ingresos sin tocar nada.',
-    replaces: { prefix: 'Desconecta ', brands: ['PriceLabs', 'Beyond', 'Wheelhouse', 'DPGO'], suffix: '', price: '25 €/mes' },
+    title: 'Precios al día, con PriceLabs dentro.',
+    description: 'PriceLabs recomienda el precio de cada noche. Hostly aplica tus mínimos y temporadas y lo publica en Airbnb y Booking cada día.',
+    replaces: { phrase: 'Sin abrir otra app', price: '' },
     freeBadge: null,
     color: 'rgba(251, 146, 60, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #fff7ed 100%)',
@@ -192,13 +193,13 @@ const cardData: CardData[] = [
     mockupUrl: 'app.hostlylabs.com/precios',
     featureSlug: 'precios-dinamicos',
   },
-  // 5. Mensajes (ChatGPT / Claude / Copilot)
+  // 5. Mensajes — ningú paga 22 €/mes de ChatGPT per contestar hostes: fora la comparació
   {
     id: 5,
     badge: 'Mensajes con huéspedes',
     title: 'Responde en segundos. Sin tocar el móvil.',
-    description: 'Hostly contesta todas las preguntas al instante y en el idioma del huésped. Tú solo entras cuando sea necesario.',
-    replaces: { prefix: 'Cierra el ', brands: ['ChatGPT', 'Claude', 'Copilot', 'Jasper'], suffix: '', price: '22 €/mes' },
+    description: 'Hostly contesta la mayoría al instante, en el idioma del huésped, y te avisa cuando hace falta una persona.',
+    replaces: { phrase: 'Responde Hostly, no tú', price: '' },
     freeBadge: null,
     color: 'rgba(168, 85, 247, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #faf5ff 100%)',
@@ -216,7 +217,7 @@ const cardData: CardData[] = [
     badge: 'Pagos y facturas',
     title: 'Todo lo que cobras, dentro de Hostly.',
     description: 'Cierra el mes sin abrir Excel. Ingresos por plataforma, comisiones, liquidaciones y reparto propietario–gestor. En un solo lugar.',
-    replaces: { phrase: 'Nunca más un Excel', price: '40 €/mes' },
+    replaces: { phrase: 'Nunca más un Excel', price: '' },
     freeBadge: null,
     color: 'rgba(99, 102, 241, 0.9)',
     bg: 'linear-gradient(135deg, #ffffff 0%, #eef2ff 100%)',
@@ -227,46 +228,6 @@ const cardData: CardData[] = [
     demoComponent: FinanzasDemo,
     mockupUrl: 'app.hostlylabs.com/finanzas',
     featureSlug: 'finanzas',
-  },
-  // 7. Acompanyament humà — trenca el patró "reemplaza" amb paleta coral i foto real
-  {
-    id: 7,
-    badge: '✦ Tu coach personal',
-    title: 'No un chatbot. Una persona.',
-    description: 'Los primeros 3 meses, tu asesora personal te ayuda con lo que necesites: subir precios para un evento, dudas fiscales, conectar un canal nuevo. Como un coach de negocio — sin extra.',
-    replaces: {
-      // `phrase` es genera dinàmicament al render ("Hola, [nom]") segons cyclingPerson
-      phrase: 'Hola',
-      price: '',
-      inclusionLabel: 'primeros 3 meses incluidos',
-    },
-    freeBadge: null,
-    color: 'rgba(251, 113, 133, 0.9)',
-    bg: 'linear-gradient(135deg, #ffffff 0%, #fff1f2 100%)',
-    textColor: '#0f172a',
-    mutedColor: 'rgba(15, 23, 42, 0.55)',
-    imageSrc: null,
-    screen: null,
-    mockupUrl: '',
-    featureSlug: null,
-    variant: 'photo',
-    photoBubble: {
-      // Placeholders lifestyle · substituir per fotos reals de l'equip Hostly
-      people: [
-        {
-          name: 'Laura',
-          photo: '/assets/team/laura.jpg',
-          role: 'Tu coach · Hostly',
-          message: 'Abril: 3.100 €, tu mejor mes. Hay una mejor manera de configurar tus limpiezas y finanzas. ¿Jueves 10h? ☕',
-        },
-        {
-          name: 'Marta',
-          photo: '/assets/team/marta.jpg',
-          role: 'Tu coach · Hostly',
-          message: 'He visto 4 noches sueltas en mayo. Con 2 ajustes rápidos se llenan en una semana. ¿Te lo enseño el martes?',
-        },
-      ],
-    },
   },
 ];
 

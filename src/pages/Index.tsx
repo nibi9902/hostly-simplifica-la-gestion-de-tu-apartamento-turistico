@@ -6,7 +6,6 @@ import PainBlock from "@/components/PainBlock";
 import FeaturesBlock from "@/components/FeaturesBlock";
 import { GlassCards } from "@/components/ui/glass-cards";
 import StepsBlock from "@/components/StepsBlock";
-import ComplianceBlock from "@/components/ComplianceBlock";
 import TestimonialBlock from "@/components/TestimonialBlock";
 import PricingBlock from "@/components/PricingBlock";
 import FAQBlock from "@/components/FAQBlock";
@@ -57,7 +56,6 @@ const Index = () => {
         <FeaturesBlock />
         <GlassCards />
         <StepsBlock />
-        <ComplianceBlock />
         <TestimonialBlock />
         <PricingBlock />
         <FAQBlock />

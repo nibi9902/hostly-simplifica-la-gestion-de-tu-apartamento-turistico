@@ -4,14 +4,14 @@
     "h1_line2": "¿O te gestionan ellos a ti?",
     "subtitle": "Hostly simplifica todo lo que implica tener un apartamento turístico.",
     "partner_label": "Partner oficial de",
-    "cta_tagline": "Check-in + parte a la policía",
+    "cta_tagline": "Check-in + registro a la policía",
     "cta_compare_price": "180 €",
     "cta_compare_rest": "al año en otras apps.",
     "cta_main_price": "0 €",
     "cta_main_text": "en",
     "cta_main_brand": "Hostly",
     "cta_forever": "Para siempre.",
-    "cta_sub": "Hostly envía el parte de viajeros a la policía cada vez que entra un huésped. Tú no pagas nada — y se queda así.",
+    "cta_sub": "Cada vez que entra un huésped, Hostly envía el registro a la policía por ti. Gratis hoy y gratis siempre: es nuestra forma de que nos conozcas.",
     "stat_messages": "mensajes respondidos",
     "stat_police": "registros policiales",
     "stat_cleanings": "limpiezas coordinadas",
@@ -26,12 +26,12 @@
     "phone_now": "ahora",
     "phone_notifs": [
       {
-        "title": "Taxa turística · vence en 24h",
-        "detail": "Informe de junio listo · pago en 1 clic"
+        "title": "Taxa turística · semestre listo",
+        "detail": "1.284 € a ingresar · fichero listo para presentar"
       },
       {
         "title": "Check-in de Miguel completado",
-        "detail": "SES enviado a Mossos · 4 € de taxa cobrados"
+        "detail": "Registro enviado a los Mossos · taxa cobrada"
       },
       {
         "title": "Limpieza confirmada · Anna",
@@ -46,18 +46,18 @@
         "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
       },
       {
-        "title": "Tu asesora Laura · plan de abril",
-        "detail": "3 ajustes para subir ingresos un 12%"
+        "title": "Nueva reserva · Booking",
+        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
       }
     ],
     "bubbles": [
       {
-        "title": "Taxa turística · vence en 24h",
-        "detail": "Informe de junio listo · pago en 1 clic"
+        "title": "Taxa turística · semestre listo",
+        "detail": "1.284 € a ingresar · fichero listo para presentar"
       },
       {
         "title": "Check-in de Miguel completado",
-        "detail": "SES enviado a Mossos · 4 € de taxa cobrados"
+        "detail": "Registro enviado a los Mossos · taxa cobrada"
       },
       {
         "title": "Limpieza confirmada · Anna",
@@ -72,8 +72,8 @@
         "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
       },
       {
-        "title": "Tu asesora Laura · plan de abril",
-        "detail": "3 ajustes para subir ingresos un 12%"
+        "title": "Nueva reserva · Booking",
+        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
       }
     ]
   },
@@ -87,40 +87,40 @@
     "subtitle": "Las mismas tareas de cada semana. La diferencia es quién las hace.",
     "col_before": "Sin sistema",
     "col_after": "Con Hostly",
-    "closer_title": "De cinco apps dispersas a una sola que lo hace todo.",
-    "closer_sub": "Empieza por la parte gratis. El resto, cuando lo necesites.",
+    "closer_title": "Hostly gestiona. Tú, menos.",
+    "closer_sub": "De cinco apps dispersas a una sola que lo hace todo.",
     "closer_cta": "Empezar",
-    "closer_fine": "Sin tarjeta · Para siempre",
+    "closer_fine": "El check-in, gratis para siempre",
     "pairs": [
       {
-        "before_title": "¿Hiciste el SES de esta reserva?",
-        "before_sub": "Tú mismo · Pendiente desde el viernes",
-        "after_title": "SES enviado a Mossos",
-        "after_sub": "Automático · Sin tocar nada"
+        "before_title": "¿Enviaste el registro de esta reserva a la policía?",
+        "before_sub": "Tú mismo · pendiente desde el viernes",
+        "after_title": "Registro enviado a la policía",
+        "after_sub": "Solo · sin tocar nada"
       },
       {
-        "before_title": "Limpieza mañana — ¿avisaste a Anna?",
-        "before_sub": "Sin responder · 3h para el check-in",
-        "after_title": "Anna notificada: mañana 11h",
-        "after_sub": "Automático · Confirmado"
+        "before_title": "Limpieza mañana. ¿Avisaste a Anna?",
+        "before_sub": "Sin responder · 3 h para el check-in",
+        "after_title": "Anna avisada: mañana a las 11",
+        "after_sub": "Solo · confirmado"
       },
       {
-        "before_title": "Chekin + Smoobu + PriceLabs...",
-        "before_sub": "~120€ este mes · 5 facturas distintas",
-        "after_title": "40€/mes · Todo incluido",
-        "after_sub": "Un pago · Un login · Nada más"
+        "before_title": "Chekin + Smoobu + PriceLabs…",
+        "before_sub": "~120 € este mes · 5 facturas distintas",
+        "after_title": "40 €/mes. Todo incluido.",
+        "after_sub": "Un pago · una app · nada más"
       },
       {
         "before_title": "¿Declaraste la taxa turística?",
-        "before_sub": "Otro trimestre que se cuela entre todo lo demás",
-        "after_title": "Informe listo. Te guiamos paso a paso.",
-        "after_sub": "5 minutos · Sin gestoria · Sin errores"
+        "before_sub": "Otro semestre que se cuela entre todo lo demás",
+        "after_title": "Importe calculado. Listo para presentar.",
+        "after_sub": "5 minutos · sin errores"
       },
       {
         "before_title": "30 mensajes de huéspedes sin leer",
-        "before_sub": "Wifi, parking, check-out... siempre lo mismo",
+        "before_sub": "Wifi, parking, check-out… siempre lo mismo",
         "after_title": "Todos contestados. En segundos.",
-        "after_sub": "IA · 5 idiomas · Sin abrir el móvil"
+        "after_sub": "IA · en su idioma · sin abrir el móvil"
       }
     ]
   },
@@ -128,7 +128,7 @@
     "eyebrow": "Cómo funciona",
     "title_1": "Listo en minutos.",
     "title_2": "funcionando para siempre.",
-    "subtitle": "Cuatro pasos reales, cronometrados. El 95% de los propietarios los completan antes de comer.",
+    "subtitle": "Tres pasos. No hace falta saber nada de tecnología.",
     "footer_tagline": "Setup guiado · Onboarding 1 a 1 el primer mes · Soporte en español y catalán",
     "list": [
       {
@@ -138,13 +138,13 @@
       },
       {
         "tag": "Segundo",
-        "title": "Conecta Airbnb y Booking en un clic.",
-        "description": "El calendario se sincroniza, los precios se ajustan y las reservas entran solas. Todo desde un solo panel — sin saltar entre apps."
+        "title": "Conecta Airbnb y Booking.",
+        "description": "Te ayudamos a conectarlos en la configuración 1 a 1. El calendario se sincroniza y las reservas entran solas."
       },
       {
         "tag": "Tercero",
         "title": "Hostly se ocupa de todo lo que llega.",
-        "description": "Reservas, mensajes, check-ins, SES, taxa, avisos a limpieza. En tiempo real, sin que tú tengas que intervenir. Tú eliges cuándo miras."
+        "description": "Reservas, mensajes, check-ins, registro a la policía, taxa y avisos a limpieza. Tú eliges cuándo miras."
       }
     ]
   },
@@ -154,66 +154,63 @@
     "contact_pre": "Si tienes más dudas, escríbenos a",
     "list": [
       {
-        "q": "¿Qué reemplaza Hostly exactamente?",
-        "a": "Hostly reemplaza Chekin (check-in y compliance), tu canal manager actual, las plantillas de mensajes manuales, el Excel de cobros y el Dropbox de contratos. Una sola app, una sola factura."
-      },
-      {
         "q": "¿Y si solo tengo 1 o 2 apartamentos?",
-        "a": "Hostly está pensado especialmente para propietarios con 1 a 10 pisos. A 40 €/mes por apartamento reemplazas varias suscripciones y sales ganando — además del tiempo que dejas de perder."
+        "a": "Hostly está pensado para gestores de 1 a 15 pisos. Con 1 o 2 puedes empezar gratis por el check-in y la policía, y pasarte al completo cuando quieras."
       },
       {
-        "q": "¿El check-in y el envío a la policía son realmente gratis?",
-        "a": "Sí, gratis de por vida y sin condiciones. El check-in online, el registro a SES.Hospedajes, Mossos y Ertzaintza funcionan desde el plan gratuito, para todos tus apartamentos y sin límite de envíos."
+        "q": "¿El check-in y el registro a la policía son realmente gratis?",
+        "a": "Sí. El check-in online y el registro a la policía son gratis para siempre, para todos tus apartamentos y sin límite de huéspedes."
       },
       {
         "q": "¿Funciona con Airbnb y Booking a la vez?",
-        "a": "Sí. Hostly sincroniza calendarios, precios y reservas de Airbnb, Booking.com y otros canales en tiempo real. Sin dobles reservas ni trabajo manual."
+        "a": "Sí. Hostly conecta Airbnb y Booking.com y mantiene calendarios, precios y reservas sincronizados, sin dobles reservas."
       },
       {
         "q": "¿Cuánto tarda en configurarse?",
-        "a": "Menos de 15 minutos para el primer apartamento. Respondes el cuestionario del piso una sola vez y el sistema empieza a funcionar. El onboarding 1 a 1 el primer mes te ayuda si tienes dudas."
+        "a": "El primer piso, en unos minutos. Las conexiones con Airbnb y Booking las hacemos contigo en la configuración 1 a 1 del primer mes."
       },
       {
         "q": "¿Tengo que firmar permanencia?",
-        "a": "No. Cancelas cuando quieres, sin penalización ni llamada de retención. Si decides que no es para ti, le das a un botón."
+        "a": "No. Sin permanencia: si no te simplifica la vida, lo dejas cuando quieras."
       },
       {
         "q": "¿Podré hablar con alguien si tengo un problema?",
-        "a": "Sí. El primer mes tienes onboarding 1 a 1 con nuestro equipo. Después, soporte humano en español y catalán — no un chatbot."
+        "a": "Sí. El primer mes lo montamos contigo en una videollamada. Después, te responde una persona del equipo, en castellano o en catalán. No un chatbot."
       }
     ]
   },
   "pricing": {
-    "title": "Un plan gratis. Otro completo.",
-    "title_sub": "Sin packs.",
-    "subtitle": "Una sola app, un solo precio. Y un tier gratis para siempre con la parte legal.",
+    "title": "Un plan gratis. Un plan completo.",
+    "title_sub": "Nada más.",
+    "subtitle": "El check-in y la policía, gratis para siempre. Todo lo demás, en un solo precio.",
     "free_badge": "Gratis · Para siempre",
     "free_price_note": "Sin tarjeta. Sin caducidad.",
-    "free_desc": "Para los que solo quieren cumplir con la policía sin pagar nada al mes.",
+    "free_desc": "Para cumplir con la policía sin pagar nada al mes.",
     "free_cta": "Empezar",
     "free_features": [
-      "Envío automático del parte a la policía",
-      "Estado de cada check-in (enviado y recibido)",
-      "Lista de huéspedes registrados por reserva",
-      "Sin caducidad. Sin tarjeta."
+      "Check-in online del huésped, desde su móvil",
+      "Registro enviado a la policía, solo",
+      "Taxa turística lista para declarar",
+      "Calendario de Airbnb y Booking leído cada 30 minutos",
+      "Avisos cuando falta un check-in"
     ],
     "paid_badge": "Hostly Completo",
     "paid_badge_recommended": "Recomendado",
     "paid_price_per": "/mes por apt.",
     "paid_price_bulk_prefix": "35 €/mes",
     "paid_price_bulk_suffix": "por apartamento desde 5 apt.",
-    "paid_desc": "Todo el sistema en una app. Reemplaza Chekin, Smoobu, PriceLabs y Excel.",
+    "paid_desc": "Hostly gestiona. Tú, menos. Reemplaza Chekin, Smoobu y el Excel; PriceLabs, integrado.",
     "paid_cta": "Empezar",
     "paid_fine": "El primer mes, gratis · Sin permanencia",
     "paid_features": [
       "Todo lo del plan gratis",
-      "Sincronización Airbnb + Booking en tiempo real",
-      "Mensajes con IA en WhatsApp (5 idiomas)",
-      "Coordinación automática de limpiezas",
-      "Precios dinámicos según demanda",
-      "Cierre de mes y finanzas",
-      "Onboarding 1 a 1 el primer mes",
-      "Soporte humano. No chatbot."
+      "Airbnb y Booking sincronizados en tiempo real",
+      "Mensajes con huéspedes contestados por IA, en su idioma",
+      "Limpiezas asignadas y avisadas solas",
+      "Precios al día con PriceLabs",
+      "Finanzas y liquidaciones al propietario",
+      "Configuración 1 a 1 el primer mes",
+      "Soporte humano. No un chatbot."
     ],
     "compare_old": "~ 120 €/mes pagando 5 apps por separado",
     "compare_new": "· 40 €/mes con Hostly",
@@ -229,9 +226,9 @@
     "subtitle": "El primer mes, gratis · Sin permanencia",
     "btn_start": "Empezar",
     "btn_demo": "Ver cómo funciona",
-    "stat_messages": "Mensajes con IA en 5 idiomas",
-    "stat_police": "Registro policial automatizado",
-    "stat_cleanings": "Limpiezas coordinadas en un clic",
+    "stat_messages": "Mensajes con IA, en el idioma del huésped",
+    "stat_police": "Registro a la policía automático",
+    "stat_cleanings": "Limpiezas avisadas solas",
     "partners": "Partner oficial de"
   },
   "footer": {
@@ -246,44 +243,6 @@
       "contacto": "Contacto"
     },
     "copyright": "© 2026 Hostly™ · Orden operativo para propietarios de apartamentos turísticos."
-  },
-  "compliance": {
-    "eyebrow": "El parte de viajeros · Gratis para siempre",
-    "title_crossed": "180 € al año en otras apps.",
-    "title_price": "0 €",
-    "title_rest": "en Hostly. Para siempre.",
-    "subtitle": "Hostly manda el parte de viajeros a la policía cada vez que entra un huésped. Tú no pagas nada — y se queda así.",
-    "connected_label": "Conectado con",
-    "bodies": [
-      {
-        "label": "Policía Nacional",
-        "color": "#1a3a8f"
-      },
-      {
-        "label": "Mossos d'Esquadra",
-        "color": "#0891b2"
-      },
-      {
-        "label": "Ertzaintza",
-        "color": "#16a34a"
-      }
-    ],
-    "hook": "¿Y dónde está la trampa?",
-    "no_catch": "No hay trampa.\nEs gratis y se queda gratis.",
-    "body_1": "Crea la cuenta, conecta un piso, y los partes salen solos hacia la policía cada vez que llega un huésped. Tú no haces nada.",
-    "body_2": "Y si más adelante quieres conectar Airbnb, las limpiezas o las finanzas, ya hablaremos.",
-    "cta_button": "Empezar",
-    "cta_fine": "Sin tarjeta · Sin caducidad",
-    "checklist_eyebrow": "Incluido gratis",
-    "checklist_forever": "Para siempre",
-    "includes": [
-      "Envío automático a SES.Hospedajes",
-      "Validación de DNI / NIE / Pasaporte",
-      "Firma digital del huésped",
-      "Justificantes archivados 5 años",
-      "Sin límite de apartamentos"
-    ],
-    "link_text": "Cómo funciona el check-in"
   },
   "testimonials": {
     "eyebrow": "En sus palabras",
@@ -331,8 +290,8 @@
     "cards": [
       {
         "badge": "✓ Check-in y Policía",
-        "title": "Registro Viajeros, NRUA, policía y tasa turística. Sin gestoría.",
-        "description": "Los datos del viajero salen a las autoridades al instante. Cumples con la normativa sin pensar en ello — y sin pagar a nadie por hacerlo.",
+        "title": "Registro de viajeros y taxa turística. Sin gestoría.",
+        "description": "Los datos del huésped salen a la policía cada día, solos. Cumples con la normativa sin pensar en ello, y sin pagar a nadie por hacerlo.",
         "replaces_prefix": "Cancela ",
         "replaces_suffix": " hoy",
         "replaces_inclusion": "gratis con Hostly"
@@ -352,41 +311,21 @@
       },
       {
         "badge": "Precios dinámicos",
-        "title": "El precio correcto cada día. Automático.",
-        "description": "Hostly ajusta las tarifas según demanda, temporada y ocupación de tu zona. Más ingresos sin tocar nada.",
-        "replaces_prefix": "Desconecta ",
-        "replaces_suffix": ""
+        "title": "Precios al día, con PriceLabs dentro.",
+        "description": "PriceLabs recomienda el precio de cada noche. Hostly aplica tus mínimos y temporadas y lo publica en Airbnb y Booking cada día.",
+        "replaces_phrase": "Sin abrir otra app"
       },
       {
         "badge": "Mensajes con huéspedes",
         "title": "Responde en segundos. Sin tocar el móvil.",
-        "description": "Hostly contesta todas las preguntas al instante y en el idioma del huésped. Tú solo entras cuando sea necesario.",
-        "replaces_prefix": "Cierra el ",
-        "replaces_suffix": ""
+        "description": "Hostly contesta la mayoría al instante, en el idioma del huésped, y te avisa cuando hace falta una persona.",
+        "replaces_phrase": "Responde Hostly, no tú"
       },
       {
         "badge": "Pagos y facturas",
         "title": "Todo lo que cobras, dentro de Hostly.",
         "description": "Cierra el mes sin abrir Excel. Ingresos por plataforma, comisiones, liquidaciones y reparto propietario–gestor. En un solo lugar.",
         "replaces_phrase": "Nunca más un Excel"
-      },
-      {
-        "badge": "✦ Tu coach personal",
-        "title": "No un chatbot. Una persona.",
-        "description": "Los primeros 3 meses, tu asesora personal te ayuda con lo que necesites: subir precios para un evento, dudas fiscales, conectar un canal nuevo. Como un coach de negocio — sin extra.",
-        "replaces_phrase": "Hola",
-        "coach_messages": [
-          {
-            "name": "Laura",
-            "role": "Tu coach · Hostly",
-            "message": "Abril: 3.100 €, tu mejor mes. Hay una mejor manera de configurar tus limpiezas y finanzas. ¿Jueves 10h? ☕"
-          },
-          {
-            "name": "Marta",
-            "role": "Tu coach · Hostly",
-            "message": "He visto 4 noches sueltas en mayo. Con 2 ajustes rápidos se llenan en una semana. ¿Te lo enseño el martes?"
-          }
-        ]
       }
     ]
   },
@@ -491,42 +430,42 @@
   },
   "precios_page": {
     "meta_title": "Precios — Hostly",
-    "meta_description": "Un plan gratis para siempre con la parte legal. Un plan completo de 40 €/mes por apartamento. Sin packs, sin add-ons, sin sorpresas.",
+    "meta_description": "Un plan gratis para siempre con el check-in y el registro a la policía. Un plan completo de 40 €/mes por apartamento, el primer mes gratis.",
     "sr_h1": "Precios de Hostly — Un plan gratis y un plan completo de 40 €/mes por apartamento",
     "faq_heading": "Preguntas sobre el precio",
     "faq_subheading": "Lo que nos preguntan casi todos antes de empezar.",
     "cta_heading": "Empieza por lo que es gratis.",
-    "cta_body": "Crea tu cuenta, conecta un apartamento y empieza a enviar partes a la policía automáticamente. Sin tarjeta. Para siempre.",
+    "cta_body": "Crea tu cuenta, añade tu piso y Hostly envía el registro a la policía por ti. Gratis para siempre.",
     "cta_button": "Empezar",
     "cta_disclaimer": "Sin tarjeta · Sin caducidad · Sin compromiso",
     "faqs": [
       {
         "q": "¿El plan gratis es realmente gratis para siempre?",
-        "a": "Sí. Sin trampa, sin caducidad, sin tarjeta. El envío automático del parte de viajeros a SES, Mossos y Ertzaintza es gratis de por vida. Para todos los apartamentos, sin límite de envíos."
+        "a": "Sí. El check-in online, el registro a la policía y la taxa turística son gratis para siempre, sin tarjeta y sin límite de apartamentos."
       },
       {
         "q": "¿Puedo empezar gratis y pasarme al plan completo más adelante?",
-        "a": "Exactamente así está pensado. Crea la cuenta, configura tu apartamento y usa el plan gratis todo el tiempo que quieras. Cuando necesites el resto de Hostly, lo activas en un clic."
+        "a": "Sí, así está pensado. Cuando quieras el resto de Hostly, nos lo pides desde la app, hacemos una demo de 20 minutos y lo activamos ese mismo día, con el primer mes gratis."
       },
       {
         "q": "¿Qué incluye exactamente el plan de 40 €/mes?",
-        "a": "Todo lo que ves en la lista: sincronización Airbnb + Booking, mensajes con IA en 5 idiomas, coordinación de limpiezas, precios dinámicos, finanzas y cierre de mes, y el onboarding 1 a 1 el primer mes. Sin módulos aparte, sin añadidos."
+        "a": "Todo lo de la lista: Airbnb y Booking sincronizados, mensajes con huéspedes contestados por IA, limpiezas avisadas solas, precios al día con PriceLabs, finanzas y liquidaciones, y la configuración 1 a 1 el primer mes. Sin módulos aparte."
       },
       {
-        "q": "¿Hay permanencia o puedo cancelar cuando quiera?",
-        "a": "Cancelas cuando quieres. Sin penalización, sin llamada de retención. Si decides que no es para ti, le das a un botón y listo."
+        "q": "¿Hay permanencia?",
+        "a": "No. Si no te simplifica la vida, lo dejas cuando quieras, sin penalización."
       },
       {
-        "q": "¿Qué pasa si tengo más de 5 apartamentos?",
-        "a": "A partir del quinto apartamento pagas 35 €/mes por cada uno en lugar de 40 €. Sin techo — si tienes 20, pagas 700 €/mes."
+        "q": "¿Qué pasa si tengo 5 apartamentos o más?",
+        "a": "Desde 5 apartamentos, cada uno pasa a 35 €/mes en lugar de 40 €. Con 20 pisos, 700 €/mes."
       },
       {
         "q": "¿Cómo funciona el programa de referidos?",
-        "a": "Por cada 5 propietarios activos que traigas, dejamos de cobrarte un apartamento cada mes. Traes 10 y te regalamos 2. Sin límite ni condiciones."
+        "a": "Por cada 5 propietarios activos que traigas, dejamos de cobrarte un apartamento cada mes. Traes 10 y son 2."
       },
       {
         "q": "¿Cuánto tarda en configurarse?",
-        "a": "Menos de 15 minutos para el primer apartamento. Conectas Airbnb o Booking, configuras las normas del piso una sola vez, y el sistema empieza a funcionar. El onboarding 1 a 1 el primer mes te ayuda si necesitas acompañamiento."
+        "a": "El primer piso, en unos minutos. Las conexiones con Airbnb y Booking las hacemos contigo en la configuración 1 a 1 del primer mes."
       }
     ]
   }
