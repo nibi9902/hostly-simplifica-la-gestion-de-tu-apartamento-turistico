@@ -51,9 +51,9 @@ export default function SEO({
       <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
 
       {/* hreflang — SEO multiidioma */}
-      <link rel="alternate" hreflang="es-ES" href={hreflangEs} />
-      <link rel="alternate" hreflang="ca-ES" href={hreflangCa} />
-      <link rel="alternate" hreflang="x-default" href={hreflangEs} />
+      <link rel="alternate" hrefLang="es-ES" href={hreflangEs} />
+      <link rel="alternate" hrefLang="ca-ES" href={hreflangCa} />
+      <link rel="alternate" hrefLang="x-default" href={hreflangEs} />
 
       {/* Open Graph */}
       <meta property="og:type" content={ogType} />

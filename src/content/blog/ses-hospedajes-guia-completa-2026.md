@@ -31,7 +31,7 @@ faqs:
   - question: "¿Cuánto es la multa por no registrar a un huésped?"
     answer: "Las sanciones van de 100€ hasta 30.000€ según la gravedad. En la práctica, la mayoría de expedientes se abren por no registrar de forma sistemática, no por fallos puntuales. Lo relevante es demostrar un proceso consistente."
   - question: "¿Puedo delegar el registro en una plataforma automática?"
-    answer: "Sí, y es lo recomendable. Plataformas como Hostly registran cada reserva en SES, Mossos y Ertzaintza automáticamente desde los datos que el huésped introduce en el check-in online. No manipulas nada a mano."
+    answer: "Sí, y es lo recomendable. Hostly, por ejemplo, envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, con los datos que el huésped introduce en el check-in online, y guarda el comprobante. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta."
   - question: "¿Qué datos exactos hay que recoger del huésped?"
     answer: "Los 14 datos incluyen: nombre completo, documento de identidad (tipo y número), fecha de expedición, fecha de nacimiento, nacionalidad, sexo, domicilio, teléfono, email, fecha de check-in y check-out, relación entre adultos, número de habitación y datos del pago. Para menores se añade el parentesco con el adulto responsable."
 ---
@@ -42,7 +42,7 @@ Esta guía cubre todo lo que necesitas saber para cumplir sin volverte loco: **q
 
 ## Qué es SES.Hospedajes y por qué existe
 
-SES.Hospedajes (Sistema de Entrada de Saludos y Registro de Viajeros) es una plataforma centralizada del Ministerio del Interior que recoge datos de los huéspedes de cualquier establecimiento de hospedaje operando en España: hoteles, hostales, viviendas de uso turístico, albergues, campings y apartamentos turísticos.
+SES.Hospedajes es una plataforma centralizada de la Secretaría de Estado de Seguridad (SES), del Ministerio del Interior, que recoge datos de los huéspedes de cualquier establecimiento de hospedaje operando en España: hoteles, hostales, viviendas de uso turístico, albergues, campings y apartamentos turísticos.
 
 Sustituye a los antiguos partes policiales manuales (formulario E-Hotel) y responde al **Real Decreto 933/2021**, que transpuso la directiva europea contra el crimen organizado y el terrorismo. El objetivo declarado es luchar contra la actividad delictiva; el efecto práctico es que cada persona que duerma en un establecimiento registrado debe quedar identificada en una base de datos del Interior dentro de las 24 horas posteriores a su llegada.
 
@@ -101,7 +101,7 @@ El proceso oficial es:
 Después de darte de alta tienes dos vías para enviar los datos:
 
 - **Manual**: entras en la web, rellenas los 14 datos por cada huésped, envías. Funciona para volúmenes muy pequeños. Es lento y propenso a errores.
-- **API / integración automática**: una plataforma de gestión conecta con SES y envía los datos automáticamente cuando se completa el check-in online. Es lo que hacen Hostly y otras herramientas.
+- **API / integración automática**: una plataforma de gestión conecta con SES y envía los datos automáticamente cuando se completa el check-in online. Es lo que hacen las herramientas especializadas en check-in. Hostly lo hace hoy con los Mossos d'Esquadra; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
 
 ## Cataluña y País Vasco: SES no es suficiente
 
@@ -111,7 +111,7 @@ Aquí es donde mucha gente tropieza. **SES.Hospedajes no cubre todas las comunid
 
 Si tienes apartamentos en Cataluña, los datos de los viajeros deben enviarse al sistema de los Mossos d'Esquadra, no a SES. Los Mossos mantienen su propio registro (el "Registre de Viatgers") que convive con SES y no lo sustituye.
 
-En la práctica, si tu apartamento está en Cataluña, **cumples con Mossos y estás exento de enviar a SES**, siempre que el envío a Mossos sea completo. Pero si gestionas apartamentos en Catalunya y en otras comunidades, necesitas cubrir las dos vías.
+En la práctica, si tu apartamento está en Cataluña, **cumples con Mossos y estás exento de enviar a SES**, siempre que el envío a Mossos sea completo. Pero si gestionas apartamentos en Cataluña y en otras comunidades, necesitas cubrir las dos vías.
 
 ### País Vasco → Ertzaintza
 
@@ -143,31 +143,35 @@ Hay dos caminos realistas para un propietario o gestor que no quiere dedicar tie
 
 Son plataformas que hacen **sólo** check-in online + envío a SES/Mossos/Ertzaintza. El huésped recibe un enlace, introduce sus datos, escanea el documento de identidad y los datos se envían. Funcionan bien, pero son una herramienta más que mantener y pagar, desconectada de tu calendario, tus limpiezas, tus precios y tus mensajes.
 
-### Opción B: PMS con SES integrado (tipo Hostly)
+### Opción B: PMS con el registro de viajeros integrado (tipo Hostly)
 
-Un PMS (Property Management System) moderno incluye el check-in online + SES como una función más dentro del sistema. Cuando entra una reserva en Airbnb, se genera automáticamente un enlace de check-in personalizado para el huésped. El huésped lo completa antes de llegar. Los datos pasan directamente a SES (o a Mossos/Ertzaintza según la comunidad). Tú ves el estado del registro en el mismo panel donde ves el calendario, la limpieza y los mensajes.
+Un PMS (Property Management System) moderno incluye el check-in online y el registro de viajeros como una función más dentro del sistema. En Hostly funciona así: cuando entra una reserva de Airbnb o Booking, el huésped recibe su enlace de check-in por WhatsApp o por el chat de la plataforma. Rellena sus datos desde el móvil antes de llegar y Hostly valida cada campo. Después, Hostly envía el registro a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta. Tú ves el estado del registro en el mismo panel donde ves el calendario, la limpieza y los mensajes.
 
-**La ventaja de la opción B**: no duplicas herramientas. Si el huésped no ha hecho el check-in, recibe un recordatorio automático. Si tu registro falla por un dato incorrecto, lo ves en tu dashboard. No pagas dos suscripciones para lo mismo.
+**La ventaja de la opción B**: no duplicas herramientas. Si el huésped no ha hecho el check-in, recibe un recordatorio automático. Si un registro falla, Hostly te avisa. No pagas dos suscripciones para lo mismo.
 
 ## Recursos recomendados
 
-Antes de seguir, si quieres un material de referencia para revisar cada cierto tiempo, al final del artículo tienes un PDF descargable con los 14 datos, los plazos y el flujo de trabajo listo para imprimir o compartir con tu equipo.
+Antes de seguir, tres enlaces que conviene tener a mano:
+
+- La [sede electrónica de SES.Hospedajes](https://sede.mir.gob.es/opencms/pages/sr), para el alta y los envíos manuales.
+- [Cómo registrar a los viajeros en Mossos d'Esquadra](/es/blog/registro-viajeros-mossos-esquadra-cataluna), si tienes pisos en Cataluña.
+- [Sanciones por no cumplir el registro de viajeros](/es/blog/sanciones-por-no-cumplir-registro-viajeros), para saber qué te juegas.
 
 ## Errores típicos que llevan a incumplimiento
 
-De los gestores con los que hemos hablado durante la adopción de SES en 2024-2026, estos son los cinco patrones de error más comunes:
+Estos son los cinco patrones de error más comunes:
 
 ### 1. Registrar sólo al titular de la reserva y no a los acompañantes adultos
 
 Error clásico. Si una familia de cuatro adultos reserva a nombre de uno, tienes que registrar a los cuatro. Una reserva en Airbnb a nombre de "Maria García, 4 adultos" obliga a recoger datos de los cuatro.
 
-### 2. No escanear el documento de identidad
+### 2. Copiar mal los datos del documento
 
-La plataforma acepta introducción manual, pero si hay inspección, tener la imagen del documento es la diferencia entre un apunte aclarado y un expediente. El check-in automático con OCR biométrico te ahorra esto.
+Un número de documento con una letra cambiada o una fecha de expedición equivocada hace que el registro se rechace o quede incompleto. Si el huésped rellena sus datos en un formulario que valida cada campo antes de enviarlo, el error se corrige antes de que llegue a la policía.
 
 ### 3. Dejar el registro para "cuando pueda"
 
-El plazo de 24 horas es estricto. Si hay check-in a las 23:00 del viernes y no registras hasta el lunes, estás fuera de plazo. La automatización resuelve esto: en cuanto el huésped completa el check-in online, los datos se envían sin esperar.
+El plazo de 24 horas es estricto. Si hay check-in a las 23:00 del viernes y no registras hasta el lunes, estás fuera de plazo. La automatización resuelve esto: los datos del check-in online se envían solos, sin depender de que tengas un rato libre.
 
 ### 4. No registrar estancias cortas
 
@@ -182,7 +186,7 @@ Si tienes un apartamento en Barcelona, el registro va a Mossos. Si tienes uno en
 Tres novedades prácticas:
 
 - **Fiscalización cruzada más activa**. Airbnb y Booking comparten datos estructurales con Hacienda y el Ministerio del Interior desde finales de 2025. Ya no hay margen para operar sin registrar.
-- **Mayor exigencia en la identificación del documento**. Se valora el escaneo OCR y la verificación del documento contra listas negras. Las herramientas que sólo piden "pon tu DNI" se quedan cortas.
+- **Más exigencia con los datos**. El Real Decreto 933/2021 pide más campos que el antiguo parte, y un registro con un campo vacío o mal escrito puede ser rechazado. Validar cada campo antes de enviarlo evita muchos de esos rechazos.
 - **Armonización creciente con los sistemas autonómicos**. Se trabaja en que SES, Mossos y Ertzaintza compartan estructuras; pero de momento siguen siendo tres canales separados que hay que alimentar.
 
 ## Resumen: tu checklist mínimo
@@ -191,7 +195,7 @@ Tres novedades prácticas:
 - [ ] Identificar en qué comunidades operas (SES / Mossos / Ertzaintza)
 - [ ] Tener un proceso que recoja los 14 datos **antes** del check-in
 - [ ] Automatizar el envío para no depender de tu memoria
-- [ ] Guardar copia de los documentos escaneados por si hay inspección
+- [ ] Guardar el comprobante de cada envío por si hay inspección
 - [ ] Revisar trimestralmente que no haya registros fallidos
 
 Si el proceso te está costando más de 5 minutos por reserva, algo se puede automatizar.

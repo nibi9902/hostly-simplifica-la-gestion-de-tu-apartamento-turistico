@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
+import { iconaFuncio } from '@/lib/data/iconesFuncions';
 import { ArrowRight } from 'lucide-react';
-import * as icons from 'lucide-react';
 import { useFeatures } from '@/lib/data/useFeatures';
 import { useTranslation } from 'react-i18next';
 import { LangLink } from '@/i18n/LangLink';
@@ -9,8 +9,6 @@ import { breadcrumbSchema } from '@/lib/seo/schemas';
 import { useEmpezar } from "@/lib/empezar";
 
 const ease = [0.22, 1, 0.36, 1] as const;
-const IconMap = icons as unknown as Record<string, React.FC<{ className?: string; style?: React.CSSProperties }>>;
-
 export default function FuncionalidadesIndex() {
   const empezar = useEmpezar();
   const features = useFeatures();
@@ -49,7 +47,7 @@ export default function FuncionalidadesIndex() {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-5">
             {features.map((f, i) => {
-              const Icon = IconMap[f.iconName] ?? icons.Sparkles;
+              const Icon = iconaFuncio(f.iconName);
               return (
                 <motion.div
                   key={f.slug}

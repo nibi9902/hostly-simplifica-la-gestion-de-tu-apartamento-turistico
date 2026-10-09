@@ -20,7 +20,7 @@ El check-in digital ha pasado de ser un extra a ser prácticamente imprescindibl
 
 ## Qué es el check-in digital y por qué es obligatorio en España
 
-El check-in digital es el proceso por el que el huésped proporciona sus datos de identificación antes de llegar al alojamiento, normalmente a través de un enlace o formulario online. El sistema recoge esa información y la envía automáticamente al registro de viajeros (el SES, que gestiona la Guardia Civil o la Policía Nacional según la zona).
+El check-in digital es el proceso por el que el huésped proporciona sus datos de identificación antes de llegar al alojamiento, normalmente a través de un enlace o formulario online. El sistema recoge esa información y la envía automáticamente al registro de viajeros (el SES.Hospedajes, cuyos datos reciben la Guardia Civil o la Policía Nacional según la zona; en Cataluña, el registro de los Mossos d'Esquadra).
 
 **¿Es realmente obligatorio?** Sí, aunque no el check-in digital en sí, sino la comunicación de datos al registro de viajeros. El Real Decreto 933/2021, en vigor desde enero de 2023, obliga a todos los alojamientos turísticos a comunicar los datos de los huéspedes a las fuerzas de seguridad en un plazo máximo de 24 horas desde la entrada.
 
@@ -43,7 +43,7 @@ Entras en la plataforma del SES de la Guardia Civil o la Policía Nacional, intr
 - No automatiza nada más (contrato, instrucciones, fianza...).
 - Es inviable si tienes más de 2-3 apartamentos con cierta ocupación.
 
-### Opción 2: Herramienta específica de check-in (Chekin, Superhog, etc.)
+### Opción 2: Herramienta específica de check-in (Chekin y similares)
 
 Herramientas diseñadas específicamente para el check-in de apartamentos turísticos. El huésped recibe un enlace, completa sus datos, verifica su identidad y firma el contrato. La herramienta envía los datos al SES automáticamente.
 
@@ -68,9 +68,9 @@ Lo que ofrece Chekin:
 - Firma electrónica del contrato
 - Gestión de la fianza (con coste adicional según plan)
 
-**Precio:** Chekin tiene diferentes planes. En 2026, el precio para alojamientos turísticos individuales oscila aproximadamente entre **15 y 30€ al mes** por propiedad, dependiendo de las funcionalidades activadas y el volumen de reservas. Hay un plan gratuito con funciones muy limitadas.
+**Precio:** Chekin tiene diferentes planes. En 2026, el precio para alojamientos turísticos individuales oscila aproximadamente entre **15 y 30€ al mes** por propiedad, dependiendo de las funcionalidades activadas y el volumen de reservas. Hay un plan gratuito con funciones muy limitadas. (Datos públicos a abril 2026, pueden haber cambiado.)
 
-El precio es razonable para lo que hace. El problema no es Chekin en sí, sino que es una herramienta que se suma a las demás: tu channel manager, tu Excel, tu Dropbox... Chekin no sabe nada de lo que pasa en el resto de tu gestión.
+El precio es razonable para lo que hace. El problema no es Chekin en sí, sino que es una herramienta que se suma a las demás: tu channel manager, tu Excel, tu Dropbox... Es otro panel que revisar, otra factura y otro login.
 
 ---
 
@@ -78,7 +78,7 @@ El precio es razonable para lo que hace. El problema no es Chekin en sí, sino q
 
 Cuando el check-in forma parte de tu app de gestión, el flujo es completamente distinto.
 
-La reserva llega. La app sabe automáticamente cuándo es la entrada. Envía el enlace de check-in al huésped en el momento correcto. El huésped completa sus datos. Los datos van al SES sin que tengas que hacer nada. El contrato queda firmado. Las instrucciones de entrada se envían automáticamente. Todo en el mismo sistema, sin copiar nada a ningún sitio.
+La reserva llega. La app sabe automáticamente cuándo es la entrada. Envía el enlace de check-in al huésped en el momento correcto. El huésped completa sus datos. Los datos van al registro de viajeros sin que tengas que hacer nada. Las instrucciones de entrada se envían automáticamente. Todo en el mismo sistema, sin copiar nada a ningún sitio.
 
 Si tienes que cancelar la reserva, modificar fechas o hay algún cambio de último momento, la app ya sabe el estado del check-in. No tienes que ir a Chekin a hacer lo mismo que ya hiciste en otra herramienta.
 
@@ -88,18 +88,18 @@ Para propietarios que llevan varios apartamentos, la diferencia en tiempo y erro
 
 ## Check-in en Hostly: gratis para siempre
 
-Hostly incluye el check-in digital completo —con envío automático al SES, verificación del huésped, firma de contrato y comunicaciones automatizadas— como parte de la app. Sin coste adicional. Sin plan premium para desbloquearlo.
+Hostly incluye el check-in online y el registro a la policía en su plan gratis. El huésped rellena sus datos desde el móvil, en castellano, inglés o francés, y Hostly valida cada campo antes de enviarlo. Sin coste adicional. Sin plan premium para desbloquearlo.
 
-Es una de las funcionalidades base de Hostly, disponible desde el primer apartamento y desde el primer día del trial.
+Es una de las funcionalidades base de Hostly, disponible desde el primer apartamento y sin tarjeta.
 
 Lo que significa en la práctica:
 
 - No pagas por Chekin ni por ninguna herramienta de check-in separada.
 - El check-in está sincronizado con el resto de tu gestión (reservas, calendarios, mensajería).
-- El SES se comunica automáticamente en el momento del check-in.
-- El NRUA y la taxa turística también están integrados, también gratis.
+- En Cataluña, Hostly envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
+- La taxa turística catalana también está incluida: Hostly la calcula por estancia y te prepara el fichero para presentarlo en la ATC cada semestre.
 
-**Precio de Hostly:** 40€ al mes por apartamento (37€ desde 5 apartamentos). El check-in, el SES, el NRUA y la taxa son gratuitos para siempre, independientemente de lo que suba o cambie en el futuro.
+**Precio de Hostly:** el plan gratis (check-in online, registro a la policía, taxa turística y calendario de Airbnb y Booking por iCal) cuesta 0 €, para siempre. El plan completo cuesta 40 € al mes por apartamento (35 € desde 5 apartamentos), con el primer mes gratis y sin permanencia.
 
 Si ahora mismo pagas por una herramienta de check-in separada y además por un channel manager u otras herramientas de gestión, la comparativa económica suele salir favorable a tener todo en un solo sitio.
 

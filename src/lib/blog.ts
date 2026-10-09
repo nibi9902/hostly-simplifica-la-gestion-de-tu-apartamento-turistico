@@ -64,11 +64,11 @@ function parse(slug: string, raw: string): BlogPost {
   const { data, content } = matter(raw);
   return {
     slug,
-    title:       data.title       ?? slug,
-    description: data.description ?? '',
-    publishedAt: data.publishedAt ?? '',
-    keywords:    data.keywords    ?? [],
-    readingTime: data.readingTime ?? 5,
+    title:       String(data.title ?? slug),
+    description: String(data.description ?? ''),
+    publishedAt: String(data.publishedAt ?? ''),
+    keywords:    Array.isArray(data.keywords) ? data.keywords.map(String) : [],
+    readingTime: Number(data.readingTime ?? 5),
     content,
   };
 }

@@ -22,7 +22,7 @@ faqs:
   - question: "¿Puede subir demasiado los precios y reducir ocupación?"
     answer: "Puede si lo configuras mal. Toda herramienta seria permite fijar precio mínimo y máximo por noche, y reglas por temporada. Sin esos límites, el algoritmo puede cometer errores. Con ellos, optimiza dentro de tu rango."
   - question: "¿Necesito PriceLabs o Beyond si ya tengo PMS?"
-    answer: "Depende del PMS. Hostly, Hospitable, Lodgify y Hostaway incluyen pricing dinámico nativo. Hostify, Hostex, Hostfully, Smoobu y Icnea no, y se complementan con PriceLabs/Beyond. El precio final te dirá si compensa integrado o separado."
+    answer: "Depende del PMS. Hospitable, Lodgify y Hostaway incluyen pricing dinámico nativo. Hostly lleva PriceLabs integrado en su plan completo, sin salir de la app. Hostify, Hostex, Hostfully, Smoobu e Icnea no, y se complementan con PriceLabs/Beyond. El precio final te dirá si compensa integrado o separado."
   - question: "¿Cuánto tiempo tarda en aprender el algoritmo?"
     answer: "Las herramientas modernas funcionan desde el día 1 con datos de mercado. Pero afinar los parámetros a tu apartamento específico lleva 2-3 meses de monitorización. El aprendizaje sigue después, sobre todo en temporadas repetidas."
   - question: "¿Y si mi apartamento es muy particular (boutique, de lujo, rural aislado)?"
@@ -42,7 +42,7 @@ Un sistema de precios dinámicos (dynamic pricing) **ajusta automáticamente la 
 - **Competencia cercana**: qué están cobrando apartamentos similares.
 - **Antelación de la reserva**: last-minute puede bajar precio para llenar hueco.
 - **Duración de la estancia**: estancias más largas pueden tener descuento.
-- **Huecos en el calendario**: una noche solta entre dos reservas puede bajarse para no quedar vacía.
+- **Huecos en el calendario**: una noche suelta entre dos reservas puede bajarse para no quedar vacía.
 
 El resultado es un calendario con **un precio distinto cada noche**, actualizado a diario.
 
@@ -87,15 +87,16 @@ Tercera alternativa popular, especialmente en US.
 
 ## PMS con pricing dinámico nativo
 
-Cada vez más PMS incluyen dynamic pricing sin necesidad de contratar PriceLabs a parte:
+Cada vez más PMS incluyen dynamic pricing sin necesidad de contratar PriceLabs aparte:
 
-- **Hostly** → pricing dinámico integrado (white-label), misma interfaz que el resto del sistema.
 - **Hospitable** → pricing nativo básico (sólido pero menos configurable que PriceLabs).
 - **Lodgify** → Dynamic Pricing Nativo (reconstruido en 2024), buena opción.
 - **Hostaway** → Dynamic Pricing nativo con ML propio, Elite Partner OTA.
 - **Guesty** → PriceOptimizer nativo con ML, muy potente pero quote-based.
 
 Los que **NO tienen nativo** y se complementan con PriceLabs/Beyond: Hostify, Hostex, Hostfully, Smoobu, Icnea, Chekin, Prohost AI.
+
+**Hostly** va por otro camino: no tiene algoritmo propio, lleva **PriceLabs integrado** dentro de la app. PriceLabs recomienda el precio de cada noche; tú pones mínimos, máximos y temporadas, y Hostly lo publica en Airbnb y Booking cada mañana y cada vez que cambias algo. Puedes dejar que se aplique solo o aceptar cada precio recomendado con un clic.
 
 Si estás eligiendo herramientas, calcula siempre el **coste total**: PMS + (si aplica) pricing externo.
 
@@ -151,7 +152,7 @@ Los primeros 30-60 días son aprendizaje. Las ganancias reales se ven comparando
 
 ## Recomendación por perfil
 
-- **1-3 apartamentos, ibérico**: PMS con pricing nativo (Hostly) o PriceLabs sobre PMS básico. Configuración sencilla.
+- **1-3 apartamentos, ibérico**: PMS con PriceLabs integrado (Hostly) o PriceLabs sobre un PMS básico. Configuración sencilla.
 - **5-20 apartamentos, gestor profesional**: PriceLabs o Beyond por encima del PMS. Vale la pena la inversión en configuración.
 - **Apartamento único muy singular** (boutique, lujo, rural aislado): empezar manual + usar herramienta como sugerencia, no dejarla automática.
 - **Alto volumen (20+)**: PriceLabs enterprise + analista dedicado.

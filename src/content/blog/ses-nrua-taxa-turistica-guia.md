@@ -22,9 +22,9 @@ Esta guía te explica qué es cada cosa, quién debe gestionarlo y qué ocurre s
 
 Son tres obligaciones legales distintas que a menudo se confunden porque todas afectan a los propietarios turísticos. Aquí las diferencias clave:
 
-### SES (Sistema de Entrada Segura / Registro de Viajeros)
+### SES.Hospedajes (registro de viajeros)
 
-El SES es el sistema de registro de viajeros que obliga a los propietarios y gestores de alojamientos a comunicar los datos de las personas que se alojan a las fuerzas de seguridad del Estado (Policía Nacional o Guardia Civil, según la zona).
+El SES (SES.Hospedajes, de la Secretaría de Estado de Seguridad) es el sistema de registro de viajeros que obliga a los propietarios y gestores de alojamientos a comunicar los datos de las personas que se alojan a las fuerzas de seguridad del Estado (Policía Nacional o Guardia Civil, según la zona).
 
 **Quién lo exige:** Ministerio del Interior (Real Decreto 933/2021, en vigor desde 2 de enero de 2023 en toda España).
 
@@ -34,15 +34,15 @@ El SES es el sistema de registro de viajeros que obliga a los propietarios y ges
 
 **Cómo se hace:** A través del sistema oficial de la web de la Guardia Civil / Policía Nacional, o mediante herramientas homologadas que envían los datos automáticamente.
 
-### NRUA (Número de Registro de Uso de Alojamiento)
+### NRUA (Número de Registro Único de Arrendamientos)
 
-El NRUA es el número de registro de la vivienda turística que exigen las comunidades autónomas. Es, básicamente, el código que acredita que tu apartamento está legalmente registrado como alojamiento turístico.
+El NRUA es el número del Registro Único de Arrendamientos, un registro estatal que acredita que tu vivienda puede anunciarse para alquiler de corta duración. No sustituye a la licencia o registro turístico de tu comunidad autónoma: se pide además de ella.
 
-**Quién lo exige:** Cada comunidad autónoma, con requisitos distintos. En Cataluña lo gestiona la Generalitat; en Baleares, el GOIB; en la Comunidad Valenciana, el registro autonómico correspondiente, etc.
+**Quién lo exige:** El Estado, a través del Registro de la Propiedad (Real Decreto 1312/2024). Antes necesitas el registro turístico de tu comunidad autónoma: en Cataluña lo gestiona la Generalitat; en Baleares, el GOIB; en la Comunidad Valenciana, el registro autonómico correspondiente, etc.
 
-**Para qué sirve:** Desde 2025, Airbnb y Booking exigen el NRUA para publicar anuncios en muchas comunidades. Sin él, tu anuncio puede ser retirado o bloqueado.
+**Para qué sirve:** Desde julio de 2025, Airbnb y Booking exigen el NRUA para publicar anuncios de alquiler turístico en España. Sin él, tu anuncio puede ser retirado o bloqueado.
 
-**Cómo se obtiene:** Presentando la documentación de la vivienda al organismo correspondiente de tu comunidad autónoma. El proceso varía por comunidad.
+**Cómo se obtiene:** Solicitándolo en el Registro de la Propiedad donde está inscrita la vivienda, con el número de registro turístico de tu comunidad. Se puede hacer por vía telemática.
 
 ### Taxa turística
 
@@ -52,7 +52,7 @@ La taxa turística (o tasa turística, según la comunidad) es un impuesto por p
 
 **Cuánto es:** En Cataluña, por ejemplo, oscila entre 0,75€ y 3,50€ por persona y noche dependiendo del tipo de alojamiento y temporada. En Baleares, entre 1€ y 4€ según temporada.
 
-**Qué obligaciones genera:** Cobrarla al huésped al hacer el check-in o incluirla en el precio, y liquidarla trimestralmente a la Agencia Tributaria autonómica.
+**Qué obligaciones genera:** Cobrarla al huésped al hacer el check-in o incluirla en el precio, y liquidarla periódicamente a la administración tributaria autonómica. En Cataluña la liquidación es semestral: del 1 al 20 de abril y del 1 al 20 de octubre, ante la Agencia Tributaria de Cataluña (ATC).
 
 ---
 
@@ -89,21 +89,21 @@ La buena noticia es que ninguna de estas tres obligaciones requiere gestoría si
 
 **Para el SES:** Las herramientas homologadas por las fuerzas de seguridad pueden enviar los datos automáticamente en el momento en que el huésped completa su check-in digital. No tienes que entrar en ninguna plataforma gubernamental ni rellenar nada a mano.
 
-**Para el NRUA:** El alta inicial sí suele requerir trámite presencial o telemático con tu comunidad autónoma. Pero una vez lo tienes, solo necesitas tenerlo correctamente introducido en tu app de gestión para que aparezca en los anuncios y contratos de forma automática.
+**Para el NRUA:** El alta se hace una vez, en el Registro de la Propiedad. Después, el número se pone en cada anuncio: Airbnb y Booking tienen un campo para ello. No hay nada que automatizar, solo comprobar que está bien puesto.
 
-**Para la taxa turística:** Hay apps que la calculan automáticamente por reserva (según número de huéspedes, noches y temporada) y generan el informe para la liquidación trimestral. Así no tienes que calcular nada a mano ni recurrir a una gestoría para presentarlo.
+**Para la taxa turística:** Hay apps que la calculan automáticamente por reserva (según el número de huéspedes y de noches) y generan el fichero para cada liquidación. Así no tienes que calcular nada a mano ni recurrir a una gestoría para presentarlo.
 
 La gestoría sigue siendo útil para cuestiones fiscales complejas (el modelo 179, la declaración de la renta con rendimientos del alquiler, etc.), pero no es necesaria para la operativa diaria del registro de viajeros ni para la taxa turística si tienes la herramienta adecuada.
 
 ---
 
-## SES + NRUA + taxa en Hostly: todo gratis para siempre
+## Registro de viajeros y taxa en Hostly: gratis para siempre
 
-Hostly incluye el check-in digital con envío automático al SES, la gestión del NRUA y la taxa turística como funcionalidades base, sin coste adicional y sin límite de reservas.
+Hostly incluye el check-in online, el registro de viajeros a la policía y la taxa turística en su plan gratis: para siempre, sin tarjeta y sin límite de apartamentos.
 
-No es un módulo premium ni una función de pago. Forma parte del plan desde el primer apartamento.
+No es un módulo premium ni una prueba. Es el plan gratis de Hostly, desde el primer apartamento.
 
-Lo que ocurre en la práctica: el huésped recibe un enlace antes de llegar, completa sus datos, y Hostly envía la comunicación al SES automáticamente. La taxa turística se calcula sola según los parámetros que configures una vez. El NRUA aparece en los contratos y comunicaciones sin que tengas que recordarlo.
+Lo que ocurre en la práctica: el huésped recibe un enlace antes de llegar y rellena sus datos desde el móvil. Hostly valida cada campo, envía el registro de viajeros a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta. La taxa turística catalana se calcula sola por estancia y, cada semestre, Hostly te prepara el fichero para presentarlo en la ATC. El NRUA lo tramitas tú una vez y lo pones en tus anuncios.
 
 Para un propietario que ahora mismo paga a una gestoría por estos trámites o que los lleva manualmente, esto supone un ahorro real y, sobre todo, dejar de preocuparse por si lo has hecho bien.
 

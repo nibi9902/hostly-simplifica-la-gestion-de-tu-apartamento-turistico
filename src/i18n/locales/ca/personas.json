@@ -14,11 +14,11 @@
     "pains": [
       {
         "pain": "Missatges d'hostes a hores impossibles",
-        "fix": "Hostly respon automàticament les preguntes habituals. Tu reps un resum quan vols mirar-lo."
+        "fix": "La IA de Hostly respon al moment les preguntes habituals, 24/7. Només t'avisa quan cal una persona."
       },
       {
         "pain": "El registre policial que sempre deixes per a última hora",
-        "fix": "Les dades van a SES.Hospedajes soles quan entra la reserva. Sense logins, sense formularis."
+        "fix": "L'hoste omple les seves dades des del mòbil i Hostly envia el registre a la policia. Sense logins, sense formularis."
       },
       {
         "pain": "Coordinar la netejadora per WhatsApp",
@@ -26,10 +26,10 @@
       },
       {
         "pain": "L'Excel de cobraments que ja no entens",
-        "fix": "Tots els ingressos i comissions dins de Hostly. Tanca el mes en dos minuts."
+        "fix": "Tots els ingressos i comissions dins de Hostly, per pis i per canal."
       }
     ],
-    "section3_h2": "40€/mes. Tot inclòs.",
+    "section3_h2": "40 € al mes per pis. Tot inclòs.",
     "section3_body": "Reserves, check-in, missatges, neteges i compliance. Una sola factura, una sola app. I el check-in, gratis per sempre.",
     "cta_h2": "Comença avui.",
     "cta_sub2": "Sense targeta. Sense permanència."
@@ -40,7 +40,7 @@
     "breadcrumb_label": "Per a gestors",
     "badge": "Per a gestors petits",
     "h1": "Portes 8 pisos.\nAmb quantes apps?",
-    "intro": "Canal manager per aquí. Chekin per allà. Excel per als cobraments. Dropbox per a contractes. WhatsApp amb hostes i un altre amb les netejadores. Hostly tanca tot això en una sola app.",
+    "intro": "Canal manager per aquí. Chekin per allà. Excel per als cobraments. Un WhatsApp amb els hostes i un altre amb les netejadores. Hostly ho ajunta tot en una sola app.",
     "cta_primary": "Començar",
     "cta_sub": "Sense permanència. 35 €/apartament des de 5 pisos.",
     "section2_h2": "L'stack del gestor petit avui.",
@@ -59,12 +59,8 @@
         "cost": "~120 €/any"
       },
       {
-        "name": "Excel + Dropbox",
+        "name": "Excel per a cobraments i liquidacions",
         "cost": "Gratis en diners, caríssim en temps"
-      },
-      {
-        "name": "Gestoria de taxes i IRPF",
-        "cost": "600–1.200 €/any"
       }
     ],
     "hostly_summary": "✅ Amb Hostly: 35 €/apartament/mes des de 5 pisos. Tot inclòs. Una sola factura.",
@@ -73,11 +69,11 @@
   },
   "segunda_residencia": {
     "meta_title": "Hostly per a segona residència a Airbnb",
-    "meta_description": "Tens un pis a la costa o la muntanya que lloga quan no l'uses. Hostly simplifica la gestió perquè l'estiu torni a ser estiu.",
+    "meta_description": "Tens un pis a la costa o la muntanya que llogues quan no l'uses. Hostly simplifica la gestió perquè l'estiu torni a ser estiu.",
     "breadcrumb_label": "Segona residència",
     "badge": "Segona residència",
     "h1": "Que l'estiu\ntorni a ser estiu.",
-    "intro": "Tens un pis a la costa que lloga quan no l'uses. Cada entrada i sortida, cada pregunta dels hostes, cada neteja coordinada — es converteix en un mal de cap que ocupa tot l'estiu. Hostly ho ordena tot.",
+    "intro": "Tens un pis a la costa que llogues quan no l'uses. Cada entrada i sortida, cada pregunta dels hostes, cada neteja per coordinar es converteix en un mal de cap que ocupa tot l'estiu. Hostly ho ordena tot.",
     "cta_primary": "Començar",
     "cta_sub": "El check-in, gratis per sempre. La resta, el primer mes gratis.",
     "section2_h2": "Configures una vegada al maig. Funciona tot l'estiu.",
@@ -85,7 +81,7 @@
       {
         "icon": "🔑",
         "title": "Check-in sense ser-hi",
-        "desc": "L'hoste rep el seu codi d'accés sol. No has de desplaçar-te ni quedar amb ningú."
+        "desc": "Quan l'hoste completa el check-in des del mòbil, rep el seu codi d'accés. No has de desplaçar-te ni quedar amb ningú."
       },
       {
         "icon": "🧹",
@@ -99,12 +95,12 @@
       },
       {
         "icon": "🛡️",
-        "title": "Compliance automàtic",
-        "desc": "SES, policia i taxa turística enviats sols. Sense recordar-te de fer-ho tu."
+        "title": "Registre i taxa, sense pensar-hi",
+        "desc": "Hostly envia el registre de viatgers a la policia i, si el pis és a Catalunya, et deixa calculada la taxa turística. Sense haver-te'n de recordar."
       }
     ],
     "cta_h2": "Comença avui.",
-    "cta_sub2": "40 €/mes. Sense targeta. Sense permanència."
+    "cta_sub2": "40 € al mes per pis. El primer mes, gratis. Sense permanència."
   },
   "hereus": {
     "meta_title": "Vas heretar un pis turístic. Hostly ho simplifica.",
@@ -116,12 +112,12 @@
     "cta_primary": "Començar",
     "cta_sub": "Sense targeta. Sense permanència. Sense aprendre res nou.",
     "section2_h2": "No has de ser un expert en lloguer turístic.",
-    "section2_body": "Hostly està dissenyat perquè funcioni des del primer dia, sense demos, sense documentació, sense aprendre un software nou. Configures el pis en 15 minuts i el sistema fa la resta.",
+    "section2_body": "Hostly està pensat perquè funcioni des del primer dia, sense aprendre un programari nou. El primer mes el configurem amb tu en una videotrucada i després el sistema fa la resta.",
     "features": [
       {
         "icon": "⏱️",
-        "title": "Llest en 15 minuts",
-        "desc": "Connectes Airbnb, afegeixs el pis i ja està. Sense onboarding de dues setmanes."
+        "title": "Configurat amb tu",
+        "desc": "Afegeixes el pis en uns minuts. Airbnb i Booking els connectem amb tu en una videotrucada. Sense formacions de dues setmanes."
       },
       {
         "icon": "🤖",
@@ -135,6 +131,6 @@
       }
     ],
     "cta_h2": "Comença avui.",
-    "cta_sub2": "40 €/mes. Sense targeta. Sense aprendre res nou."
+    "cta_sub2": "40 € al mes per pis. El primer mes, gratis."
   }
 }

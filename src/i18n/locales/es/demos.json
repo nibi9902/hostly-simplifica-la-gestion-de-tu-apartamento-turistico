@@ -13,16 +13,17 @@
     "checkinCompletedByGuest": "· check-in completado por el huésped",
     "allRegistered": "Todo registrado automáticamente",
     "nothingToDo": "No has tenido que hacer nada. Hostly lo ha gestionado todo.",
-    "sesSubtitle": "Comunicado a la Generalitat de Catalunya",
-    "mossosSubtitle": "Parte de viajeros enviado · 2 huéspedes registrados",
-    "nruaSubtitle": "Número: CAT-2026-004-0312",
-    "taxSubtitle": "3 noches · 3 personas · 4,50€ calculados",
+    "mossosSubtitle": "Registro enviado · 2 huéspedes registrados",
+    "taxSubtitle": "3 noches · 2 adultos · importe calculado",
     "tabOwner": "Propietario",
     "tabGuest": "Huésped",
     "adults": "adultos",
     "child": "niño",
     "checkInShort": "Entrada 7 abr.",
-    "checkOutShort": "Salida 10 abr."
+    "checkOutShort": "Salida 10 abr.",
+    "validatLabel": "Datos del huésped validados",
+    "validatSubtitle": "Documento, nacimiento y nacionalidad revisados",
+    "taxLabel": "Tasa turística"
   },
   "mensajeria": {
     "automaticBadge": "Automático",
@@ -79,7 +80,7 @@
     "legendPending": "Limpieza pendiente",
     "legendDone": "Limpieza hecha",
     "cleaningToday": "🧹 Limpieza hoy · 22 abril",
-    "urgentBadge": "URGENT",
+    "urgentBadge": "URGENTE",
     "markAsDone": "Marcar como hecha",
     "markingDone": "✓  ¡Limpieza marcada como hecha!",
     "photosAttached": "Fotos adjuntadas",
@@ -92,7 +93,7 @@
     "tabToday": "Hoy",
     "tabAll": "Todas",
     "tabCalendar": "Calendario",
-    "todayBadge": "AVUI",
+    "todayBadge": "HOY",
     "exitTime": "Judit Masip sale a las 11:00",
     "guestDetails": "Judit sale 11:00 · David entra 15:00 · 2 adultos + 1 niño"
   },
@@ -109,7 +110,7 @@
     "calendar": "Calendario",
     "automaticBadge": "Automático",
     "newBooking": "Nueva reserva · Booking.com",
-    "badgeNew": "NOU"
+    "badgeNew": "NUEVO"
   },
   "multiRols": {
     "tabOwner": "Propietario",
@@ -121,8 +122,8 @@
     "statOccupancy": "Ocupación",
     "statAvgNight": "€/noche medio",
     "platformLabel": "PER PLATAFORMA",
-    "platformGross": "Brut:",
-    "reservations": "reserves",
+    "platformGross": "Bruto:",
+    "reservations": "reservas",
     "ownerShare": "Propietario (75%)",
     "managerShare": "Gestor (19%)",
     "cleaningCost": "Coste limpieza (6%)",
@@ -132,7 +133,7 @@
     "title": "Finanzas",
     "filterMonth": "Abril 2026",
     "filterAll": "Todos",
-    "summaryLine": "Abril 2026 · 8 reserves · 23 nits",
+    "summaryLine": "Abril 2026 · 8 reservas · 23 noches",
     "netIncome": "Ingresos netos",
     "grossAndFees": "Bruto: 1.450 €",
     "fees": "Comisiones: −210 €",
@@ -150,7 +151,7 @@
   "demoVideo": {
     "superLabel": "Hostly™ en acción",
     "heading": "Así opera Hostly™ por dentro.",
-    "subheading": "Reserva, precio, limpieza, registros y mensajes — ejecutados en segundo plano.",
+    "subheading": "Reserva, precio, limpieza, registro y mensajes, en segundo plano.",
     "bulletPriceAdjusts": "Precio se ajusta solo",
     "bulletBookingEnters": "Reserva entra",
     "bulletCleaningAssigned": "Limpieza asignada",

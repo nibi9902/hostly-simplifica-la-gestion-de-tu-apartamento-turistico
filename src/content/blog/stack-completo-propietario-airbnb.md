@@ -20,7 +20,7 @@ Este artículo es para poner sobre la mesa lo que tiene realmente el propietario
 
 ## El stack del propietario medio en 2026
 
-Después de hablar con decenas de propietarios que gestionan entre 1 y 10 apartamentos, este es el stack más habitual:
+Si hablas con propietarios que gestionan entre 1 y 10 apartamentos, este es el stack que más se repite:
 
 **1. Airbnb + Booking (+ Vrbo, en algunos casos)**
 Las plataformas de distribución. No tienen coste directo (cobran comisión por reserva), pero si las gestionas de forma independiente sin sincronización, el riesgo de dobles reservas es constante.
@@ -81,17 +81,17 @@ Hostly está diseñado para ser la única app que necesita un propietario con 1 
 
 | Herramienta actual | Lo que hace Hostly |
 |---|---|
-| Channel manager (Smoobu, Lodgify...) | Sincronización de disponibilidad y precios entre plataformas incluida |
-| Chekin (check-in digital + SES) | Check-in digital + envío automático al SES, gratis para siempre |
-| Plantillas de contrato | Contratos y comunicaciones con huéspedes integrados |
+| Channel manager (Smoobu, Lodgify...) | Airbnb y Booking.com sincronizados: reservas, disponibilidad y precios en un solo calendario |
+| Chekin (check-in digital + SES) | Check-in online y registro de viajeros, gratis para siempre. Con los Mossos d'Esquadra va solo cada día; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta |
+| WhatsApp con huéspedes | IA que contesta la mayoría de mensajes al momento, en el idioma del huésped, y mensajes automáticos por plantilla |
 | Excel de control | Panel de reservas, ingresos y ocupación en una sola pantalla |
-| Dropbox / almacenamiento | Documentación centralizada dentro de la app |
-| Gestión de la taxa turística | Cálculo y seguimiento de la taxa incluidos, gratis para siempre |
-| NRUA | Gestión del registro incluida, gratis para siempre |
+| Dropbox / almacenamiento | Los comprobantes del registro de viajeros quedan archivados en la app |
+| Gestión de la taxa turística | Taxa catalana calculada por estancia, con el fichero listo cada semestre, gratis para siempre |
+| WhatsApp con la limpiadora | Limpiezas asignadas solas en cada salida, con fotos e incidencias |
 
-**Precio:** 40€ al mes por apartamento (37€ desde 5 apartamentos). Sin coste adicional por el check-in, el SES, el NRUA ni la taxa.
+**Precio:** 40€ al mes por apartamento (35€ desde 5 apartamentos), con el primer mes gratis. El check-in, el registro a la policía y la taxa turística, gratis para siempre.
 
-La diferencia no es solo económica. Es que cuando todo está en un solo lugar, no tienes que mantener la coherencia entre sistemas. Una reserva entra, el channel manager se actualiza, el check-in se envía al huésped, el SES se comunica automáticamente. Sin copiar datos de una app a otra.
+La diferencia no es solo económica. Es que cuando todo está en un solo lugar, no tienes que mantener la coherencia entre sistemas. Una reserva entra, el calendario se actualiza, el huésped recibe el enlace del check-in y el registro llega a la policía. Sin copiar datos de una app a otra.
 
 Para un propietario que ahora mismo gestiona su stack con 5 herramientas distintas, consolidarlo en una sola app no es solo más barato. Es recuperar tiempo y cabeza para otras cosas.
 

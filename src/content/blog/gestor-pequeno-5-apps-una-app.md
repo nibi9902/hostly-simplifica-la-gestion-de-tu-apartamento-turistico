@@ -30,7 +30,7 @@ No hace falta inventar nada. Así suele ser el lunes de un gestor con 8 apartame
 
 **9:30.** El huésped que no había completado el check-in te escribe por WhatsApp para decirte que no le llegó el enlace. Lo buscas en Chekin, compruebas el email que tenías registrado, ves que hay un error tipográfico en la dirección. Lo corriges y reenvías.
 
-**10:00.** Abres el Excel de control para apuntar la nueva reserva que entró por la mañana. Son 3 noches, 2 personas. Calculas la taxa turística a mano, la apuntas en una columna aparte para la liquidación trimestral.
+**10:00.** Abres el Excel de control para apuntar la nueva reserva que entró por la mañana. Son 3 noches, 2 personas. Calculas la taxa turística a mano, la apuntas en una columna aparte para la liquidación semestral.
 
 **11:30.** Llamas a la limpiadora para hablar de la mancha del sofá. Acuerdan que va a pasar hoy por la tarde. Le preguntas si tiene confirmadas las limpiezas del jueves porque entran tres pisos a la vez.
 
@@ -73,11 +73,11 @@ Nadie tiene ese número en una hoja de cálculo porque no es un pago que haces a
 
 Imagina el mismo lunes, pero con todo en un solo sitio.
 
-La nueva reserva entra en la app. El check-in se envía automáticamente al huésped con los datos correctos. Si el huésped no lo completa en las horas previas a la entrada, la app te manda un aviso, no tienes que ir a comprobarlo tú.
+La nueva reserva entra en la app. El enlace del check-in le llega al huésped solo, por WhatsApp o por el chat de la plataforma. Si no lo completa, le llega un recordatorio, y tú ves en cada reserva si el check-in está hecho sin tener que ir a comprobarlo.
 
-Los datos del check-in van automáticamente al SES. No tienes que abrir Chekin. No tienes que comprobar si se envió.
+Los datos del check-in llegan a la policía sin que hagas nada: con los Mossos d'Esquadra, la app los envía cada día y guarda el comprobante. Si algo falla, te avisa. No tienes que abrir Chekin.
 
-La taxa turística se calcula sola. No tienes que apuntarla en el Excel. Al final del trimestre, tienes el informe generado.
+La taxa turística se calcula sola. No tienes que apuntarla en el Excel. Al final del semestre, tienes el fichero listo para presentar.
 
 La limpiadora tiene acceso al calendario de limpiezas en la app. Sabe qué pisos tiene el jueves sin que tengas que llamar a confirmar.
 
@@ -89,25 +89,25 @@ No es que el trabajo desaparezca. Es que el trabajo repetitivo y el trabajo de "
 
 ---
 
-## Hostly para gestores pequeños: 37€/ap desde 5 pisos
+## Hostly para gestores pequeños: 35€/ap desde 5 pisos
 
 Hostly está diseñado exactamente para el perfil del gestor pequeño: alguien que lleva entre 5 y 20 apartamentos, que hace demasiadas cosas a mano o con herramientas que no se comunican entre sí, y que no necesita la complejidad de un PMS para grandes operadores.
 
-El precio para 8 apartamentos es de **37€ por apartamento al mes** (el precio baja de 40€ a 37€ a partir de 5 apartamentos). Para 8 pisos, eso son 296€ al mes.
+El precio para 8 apartamentos es de **35€ por apartamento al mes** (el precio baja de 40€ a 35€ a partir de 5 apartamentos). Para 8 pisos, eso son 280€ al mes.
 
-Comparado con el stack fragmentado habitual (170-350€ más gestoría más tiempo), la diferencia económica es clara. Pero el cambio más importante no es el dinero: es dejar de tener cinco apps abiertas y empezar a tener una.
+Comparado con el stack fragmentado habitual (170-350€ al mes, más gestoría y más tiempo), el precio queda en la misma franja o por debajo. Pero el cambio más importante no es el dinero: es dejar de tener cinco apps abiertas y empezar a tener una.
 
 Lo que incluye Hostly, sin coste adicional:
 
-- Check-in digital completo con envío automático al SES
-- Gestión del NRUA
-- Taxa turística calculada y registrada automáticamente
-- Channel manager integrado
-- Mensajería con huéspedes y plantillas automatizadas
+- Check-in online y registro de viajeros a la policía (con los Mossos d'Esquadra, automático cada día; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta)
+- Precios al día con PriceLabs integrado
+- Taxa turística catalana calculada por estancia, con el fichero listo cada semestre
+- Airbnb y Booking.com conectados en un solo calendario
+- Mensajería con huéspedes, con IA y plantillas automatizadas
 - Panel de reservas, ingresos y ocupación
-- Gestión de limpieza y mantenimiento
+- Limpiezas asignadas solas en cada salida, con fotos e incidencias
 
-El primer mes del plan completo es gratis: tiempo de sobra para configurar tus apartamentos y ver si realmente te simplifica la semana.
+El primer mes del plan completo es gratis, y lo configuramos contigo en una videollamada: tiempo de sobra para ver si realmente te simplifica la semana.
 
 ---
 

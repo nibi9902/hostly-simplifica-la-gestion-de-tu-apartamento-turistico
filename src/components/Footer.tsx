@@ -22,12 +22,12 @@ const Footer = () => {
 
           {/* Links */}
           <nav className="flex items-center gap-5 flex-wrap">
-            <a
-              href="/#faq"
+            <LangLink
+              to="/#faq"
               className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
               {t("footer.links.faq")}
-            </a>
+            </LangLink>
             {[
               { key: "privacidad", href: "/privacidad" },
               { key: "cookies",    href: "/cookies"    },

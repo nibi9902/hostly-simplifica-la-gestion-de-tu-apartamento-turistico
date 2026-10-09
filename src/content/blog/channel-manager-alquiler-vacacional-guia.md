@@ -19,7 +19,7 @@ faqs:
   - question: "¿Cuál es la diferencia entre un channel manager y un PMS?"
     answer: "Un channel manager sincroniza calendarios y reservas entre OTAs (Airbnb, Booking, Vrbo). Un PMS hace eso y además gestiona check-ins, mensajería, limpiezas, precios, facturación y compliance. El channel manager es una función; el PMS es el sistema completo. La mayoría de PMS modernos incluyen channel manager."
   - question: "¿Un channel manager elimina los overbookings por completo?"
-    answer: "Casi siempre. Si usa conexión API directa con la OTA (no sólo iCal), la sincronización es en segundos. Los overbookings residuales suelen venir de iCal (intervalos de 15-30 minutos) o de canales no conectados. Una conexión API profesional elimina el 99%."
+    answer: "Casi siempre. Si usa conexión API directa con la OTA (no sólo iCal), la sincronización es en segundos. Los overbookings residuales suelen venir de iCal (intervalos de 15-30 minutos) o de canales no conectados. Una conexión API profesional elimina casi todos."
   - question: "¿Cuántos canales debo conectar desde el principio?"
     answer: "Empieza con Airbnb + Booking si operas en España. Añade Vrbo si quieres mercado anglosajón o alquileres de estancia larga, y reserva directa web si quieres reducir comisiones. Conectar 50 canales desde el día 1 es sobreingeniería."
   - question: "¿El channel manager me cobra comisión por reserva?"
@@ -74,10 +74,10 @@ Las opciones realistas para un propietario ibérico:
 
 ### PMS con channel manager integrado (recomendado)
 
-- **Hostly** → Airbnb, Booking y canales principales vía Beds24. Integrado con SES, IA y operativa.
+- **Hostly** → Airbnb y Booking.com, más su propio motor de reservas directas con Stripe. Integrado con el check-in, el registro de viajeros, la IA y la operativa.
 - **Hostify** → 400+ canales OTA. El más amplio. Enfoque corporate.
 - **Lodgify** → Channel manager sólido + website builder. Enfoque reserva directa.
-- **Smoobu** → Vinculado a SiteMinder. Entry-level.
+- **Smoobu** → Del grupo HomeToGo desde 2021. Entry-level.
 - **Icnea** → 100+ canales sin comisiones. Ibérico maduro.
 
 ### Channel manager puro (sin PMS)
@@ -128,7 +128,7 @@ Si eliges una opción seria, el proceso debería ser:
 3. **Día 6-10**: testing de sincronización con reservas test y ajuste de reglas (estancia mínima, blocked dates, precios por temporada).
 4. **Día 11-14**: operación normal, monitoreo de primeras reservas reales, resolución de inconsistencias.
 
-A partir de la segunda semana funciona sin atención. Si a los 14 días sigues con problemas técnicos, plantea cambio.
+A partir de la segunda semana funciona sin atención. Si a las dos semanas sigues con problemas técnicos, plantéate cambiar.
 
 ## Resumen
 

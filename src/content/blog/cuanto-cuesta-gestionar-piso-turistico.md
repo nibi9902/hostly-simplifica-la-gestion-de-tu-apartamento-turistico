@@ -61,7 +61,7 @@ Algunos propietarios delegan también la comunicación del SES (registro de viaj
 
 El coste varía mucho según la zona y el volumen de gestiones, pero para un propietario con 1-3 apartamentos, presupuestar entre **300 y 800€ al año en gestoría** es realista. Si la gestoría también gestiona el registro de viajeros de forma continua, el precio puede ser más alto.
 
-La pregunta real es: ¿qué parte de ese trabajo puedes hacer tú directamente con las herramientas adecuadas? La respuesta, cada vez más, es "casi todo".
+La pregunta real es: ¿qué parte de ese trabajo puedes hacer tú directamente con las herramientas adecuadas? El registro de viajeros y el cálculo de la taxa turística, sí. El NRUA y lo que tenga que ver con Hacienda, mejor con tu gestoría.
 
 ---
 
@@ -86,20 +86,20 @@ Y esto sin contar las horas. Si le añades el valor de tu tiempo, el coste real 
 
 ## Cómo Hostly cambia el cálculo
 
-Hostly no es otra herramienta que añadir a la lista. Es la app que reemplaza esas 5 suscripciones con una sola, a **40€ al mes por apartamento** (37€ desde 5 apartamentos).
+Hostly no es otra herramienta que añadir a la lista. Es la app que junta en una sola el check-in, el channel manager, los mensajes y el control de ingresos, a **40€ al mes por apartamento** (35€ desde 5 apartamentos).
 
 Lo que incluye Hostly sin coste adicional:
 
-- **Check-in digital completo**, con recogida de datos del huésped y envío automático al SES
-- **Registro SES y NRUA** integrado — no necesitas gestoría para esto
-- **Gestión de la taxa turística** incluida
-- Channel manager, mensajería con plantillas, y control de reservas en una sola pantalla
+- **Check-in online**: el huésped rellena sus datos desde el móvil y Hostly valida cada campo
+- **Registro de viajeros**: Hostly lo envía a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta
+- **Taxa turística catalana** calculada por estancia, con el fichero listo para presentar cada semestre
+- Channel manager con Airbnb y Booking, mensajería con plantillas y control de reservas en una sola pantalla
 
-El resultado: en lugar de pagar entre 50 y 140€ en herramientas fragmentadas más lo que le pagas a la gestoría por el registro de viajeros, pagas 40€ y tienes todo en un solo sitio.
+El resultado: en lugar de pagar entre 50 y 140€ en herramientas fragmentadas más lo que le pagas a la gestoría por el registro de viajeros, pagas 40€ y lo tienes en un solo sitio.
 
-Para un propietario con 1-3 apartamentos que ahora mismo lleva las cosas con un stack disperso, el ahorro anual está entre **600 y 1.200€**, sin contar el tiempo que recuperas al no tener que hacer malabarismos entre apps.
+Con los rangos de la tabla, cada piso pasa de 600-1.680€ al año en herramientas sueltas a 480€ al año con Hostly. Y eso sin contar el tiempo que recuperas al no tener que hacer malabarismos entre apps.
 
-El check-in, el SES, el NRUA y la taxa turística son **gratis para siempre** en Hostly, independientemente del plan.
+El check-in online, el registro a la policía y la taxa turística son **gratis para siempre** en Hostly, con el plan gratuito o con el completo.
 
 ---
 

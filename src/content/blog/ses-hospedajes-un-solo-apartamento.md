@@ -20,7 +20,7 @@ faqs:
   - question: "¿Puedo hacer el registro yo mismo sin pagar una plataforma?"
     answer: "Sí, desde la sede electrónica del Ministerio del Interior. Entras con certificado digital, das de alta el establecimiento y rellenas los 14 datos por cada huésped. Funciona bien para volúmenes muy bajos (menos de 3 reservas al mes)."
   - question: "¿Cuánto cuesta una plataforma de automatización para 1 apartamento?"
-    answer: "Entre 9€ y 25€ al mes según la herramienta. Chekin sólo SES: desde 9€/mes. PMS completos con SES incluido (Hostly, Hostify): desde 40€/mes."
+    answer: "Las herramientas de solo check-in y registro, como Chekin, parten de unos 9 €/mes. En Hostly, el check-in online y el registro a la policía son gratis para siempre. El plan completo, con reservas, mensajes con IA, limpiezas y precios, cuesta 40 €/mes por apartamento."
 ---
 
 Si tienes un solo apartamento turístico y acabas de enterarte de que desde diciembre de 2024 estás obligado a registrar a todos tus huéspedes en SES.Hospedajes, **no estás solo y no necesitas un equipo de gestoría para cumplir**. Esta guía es directa: qué tienes que hacer, cuánto te costará y qué opciones tienes.
@@ -78,7 +78,7 @@ El huésped hace check-in online, la herramienta envía a SES/Mossos/Ertzaintza.
 
 Si además de SES quieres: sincronizar Airbnb+Booking, automatizar mensajes, coordinar limpieza y controlar precios, un PMS lo incluye todo:
 
-- **Hostly**: desde 40€/mes por apartamento. Nativo SES + Mossos + Ertzaintza. Incluye IA WhatsApp.
+- **Hostly**: check-in y registro a la policía gratis para siempre; plan completo a 40 €/mes por apartamento, con IA en WhatsApp. Envía el registro a los Mossos d'Esquadra de forma automática; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
 - **Hostify**: $20/apt/mes. SES integrado. 400 OTAs.
 - **Lodgify / Smoobu**: más enfocados a otros aspectos, SES parcial o vía Chekin.
 

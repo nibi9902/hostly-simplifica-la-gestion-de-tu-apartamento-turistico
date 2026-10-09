@@ -22,9 +22,9 @@ faqs:
   - question: "¿Qué partes de la gestión se pueden automatizar realmente?"
     answer: "Check-in online, registro SES, respuestas a preguntas frecuentes por WhatsApp, confirmaciones, envío de instrucciones, coordinación de limpieza tras checkout, actualización de precios y reseñas básicas. Lo que NO se automatiza bien hoy: incidencias complejas, negociaciones y decisiones de branding."
   - question: "¿Cuánto tiempo tarda en notarse el ahorro?"
-    answer: "Dos semanas. En el primer mes recuperas el tiempo de responder mensajes rutinarios. En el segundo, el de coordinar limpiezas. A los 3 meses, la operativa funciona sola en el 80-90% de los casos."
+    answer: "Dos semanas. En el primer mes recuperas el tiempo de responder mensajes rutinarios. En el segundo, el de coordinar limpiezas. A los 3 meses, la operativa funciona sola en la mayoría de los casos."
   - question: "¿Necesito saber de IA para usar estas herramientas?"
-    answer: "No. Las plataformas modernas (Hostly, Hospitable, Prohost) hacen todo el trabajo técnico. Tú configuras una vez tu tono, tus normas de casa y tus canales, y el sistema aprende con cada interacción."
+    answer: "No. Las plataformas modernas (Hostly, Hospitable, Prohost) hacen todo el trabajo técnico. Tú configuras una vez la información de cada piso y tus normas de casa, y el sistema aprende de tus correcciones."
   - question: "¿Qué pasa cuando la IA no sabe algo?"
     answer: "Te avisa. Una IA bien configurada escala al humano cuando la pregunta sale del guion: incidencias, peticiones especiales, disputas. Recibes una notificación con contexto y decides tú."
 ---
@@ -48,7 +48,7 @@ Un apartamento turístico genera, por reserva, unas **15-25 microtareas** invisi
 - Seguir la reseña
 - Cerrar el ciclo facturalmente
 
-Para 1 apartamento, es entre 1-2 horas por reserva. Para 5 apartamentos con 6-8 reservas al mes, son **40-60 horas al mes** que desaparecen en microtareas. Es el famoso "falso ingreso pasivo": el dinero llega, pero tu tiempo también se va.
+Para 1 apartamento, es entre 1-2 horas por reserva. Para 5 apartamentos con 6-8 reservas al mes, son **40-60 horas al mes** que desaparecen en microtareas. Es la trampa de creer que un piso turístico se lleva solo: el dinero llega, pero tu tiempo también se va.
 
 La automatización con IA no elimina el trabajo humano importante (branding, decisiones estratégicas, casos complicados). Elimina el **trabajo repetitivo que no requiere criterio**.
 
@@ -56,7 +56,7 @@ La automatización con IA no elimina el trabajo humano importante (branding, dec
 
 ### 1. Respuestas a mensajes rutinarios
 
-Entre el 70% y el 85% de los mensajes que recibes caben en 20 categorías: hora de check-in, aparcamiento, WiFi, toallas, cerca hay… Una IA entrenada con tus respuestas pasadas (o con plantillas que tú defines) responde al huésped en segundos, en el idioma del huésped, 24/7.
+La mayoría de los mensajes que recibes caben en unas 20 categorías: hora de check-in, aparcamiento, WiFi, toallas, cerca hay… Una IA entrenada con tus respuestas pasadas (o con plantillas que tú defines) responde al huésped en segundos, en el idioma del huésped, 24/7.
 
 Dos claves para que esto funcione sin parecer un bot:
 
@@ -113,11 +113,11 @@ Si quieres que tu apartamento tenga una experiencia singular (una nota escrita a
 
 ### Opción 1: seguir como estás, pero añadir una capa de IA en WhatsApp
 
-Si tu operativa actual funciona y sólo te ahoga la mensajería, herramientas como **HolaAI** o **Vaucen** se integran sobre tu sistema existente (Airbnb, Booking) y responden por ti. Inversión: €19-79/mes. Pro: entrada barata. Contra: una herramienta más que mantener, sin integración con SES, limpiezas ni precios.
+Si tu operativa actual funciona y sólo te ahoga la mensajería, herramientas como **HolaAI** o **Vaucen** se integran sobre tu sistema existente (Airbnb, Booking) y responden por ti. Inversión: €19-79/mes. Pro: entrada barata. Contra: una herramienta más que mantener, que cubre solo la mensajería.
 
 ### Opción 2: PMS completo con IA integrada
 
-Sustituyes tu sistema actual (Excel, calendario de Airbnb, grupos de WhatsApp) por una app de gestión completa que incluye mensajería IA de mensajería + check-in + SES + limpiezas + precios. Ejemplos: **Hostly** (ibérico, con WhatsApp y compliance español nativos), **Hospitable** (anglosajón, sin SES), **Prohost AI** (joven, freemium, sin compliance ES).
+Sustituyes tu sistema actual (Excel, calendario de Airbnb, grupos de WhatsApp) por una app de gestión completa que incluye mensajería con IA + check-in + registro de viajeros + limpiezas + precios. Ejemplos: **Hostly** (hecho en Cataluña, con WhatsApp y registro de viajeros a la policía), **Hospitable** (anglosajón), **Prohost AI** (joven, freemium).
 
 Inversión: €25-60/mes por apartamento. Pro: todo integrado, ahorro real. Contra: supone una migración inicial de 1-2 semanas.
 
@@ -129,9 +129,9 @@ Para gestores técnicos: PMS base (Icnea, Avantio) + capa IA (Hospitable, Prohos
 
 ## El enfoque Hostly: una capa humana encima de la IA
 
-Nosotros creemos que la IA no tiene que "sustituir" al propietario. Tiene que **encargarse de que gestionar el apartamento sólo sea necesario cuando realmente lo es**. El apartamento funciona solo. La IA responde. El check-in se hace. La limpieza se coordina. Los datos van a SES. Si se rompe una caldera, si hay una queja, si hay una negociación — ahí entras tú.
+Nosotros creemos que la IA no tiene que "sustituir" al propietario. Tiene que **encargarse de que gestionar el apartamento sólo sea necesario cuando realmente lo es**. El apartamento funciona solo. La IA responde. El check-in se hace. La limpieza se coordina. El registro de viajeros va a la policía. Si se rompe una caldera, si hay una queja o una negociación, ahí entras tú.
 
-Esto cambia la relación con el negocio. Dejas de vivir pendiente del móvil y pasas a revisar el panel una vez al día, como quien mira el tiempo. Tu apartamento deja de ser una tarea constante y se convierte en lo que debería haber sido desde el principio: un activo que genera ingresos sin consumir tu vida.
+Esto cambia la relación con el negocio. Dejas de vivir pendiente del móvil y pasas a revisar el panel una vez al día, como quien mira el tiempo. Tu apartamento deja de ser una tarea constante y se convierte en lo que debería haber sido desde el principio: un negocio que solo te necesita cuando de verdad hace falta.
 
 ## Errores comunes al automatizar
 

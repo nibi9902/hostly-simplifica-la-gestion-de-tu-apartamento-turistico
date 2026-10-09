@@ -19,7 +19,7 @@ faqs:
   - question: "¿Puede Airbnb detectar que uso respuestas automáticas y penalizarme?"
     answer: "No. Airbnb tiene sus propias respuestas rápidas integradas y las recomienda. Lo que penaliza es tardar más de 24h en responder, no usar plantillas o IA."
   - question: "¿Cuántos mensajes al día se pueden automatizar?"
-    answer: "El 70-85% en la mayoría de casos. Las preguntas rutinarias (hora, WiFi, aparcamiento, normas) se automatizan bien. El 15-30% restante son consultas que requieren tu criterio."
+    answer: "La mayoría. Las preguntas rutinarias (hora, WiFi, aparcamiento, normas) se automatizan bien. El resto son consultas que requieren tu criterio."
   - question: "¿Qué pasa si la IA se equivoca en una respuesta?"
     answer: "Un sistema bien hecho escala a ti antes de responder mal. Si no tiene confianza alta en la respuesta, te notifica y decides tú. La clave es configurar el umbral de escalado correctamente."
 ---
@@ -28,7 +28,7 @@ Responder el mismo mensaje por décima vez te consume. Pero responder con un bot
 
 ## Los 7 tipos de mensaje que recibes cada semana
 
-Si clasificas tus conversaciones de los últimos 3 meses, verás que el 80% cae en estas categorías:
+Si clasificas tus conversaciones de los últimos 3 meses, verás que la gran mayoría cae en estas categorías:
 
 1. **Antes de reservar**: "¿acepta mascotas?", "¿hay plaza de parking?", "¿cuál es el check-in?"
 2. **Confirmación post-reserva**: agradecimientos, dudas iniciales
@@ -38,7 +38,7 @@ Si clasificas tus conversaciones de los últimos 3 meses, verás que el 80% cae 
 6. **Checkout**: "a qué hora tengo que salir", "dónde dejo las llaves"
 7. **Post-estancia**: agradecimientos, petición de reseña
 
-Cada una de estas tiene 3-5 variantes. En total, cubres el 70-85% de mensajes con unas 25-35 plantillas personalizadas.
+Cada una de estas tiene 3-5 variantes. En total, cubres la mayoría de mensajes con unas 25-35 plantillas personalizadas.
 
 ## Cómo entrenar el tono antes de automatizar
 
@@ -113,7 +113,7 @@ Un sistema de mensajería automática debe **escalarte** en estos casos:
 - **Pregunta que no entiende**: si no tiene confianza en la respuesta, te la pasa.
 - **Solicitudes especiales**: early check-in, extensión, descuento.
 
-Una herramienta seria (Hospitable, Hostly, Prohost AI) implementa esto por defecto.
+Las herramientas de IA para huéspedes suelen hacerlo por defecto. En Hostly, la IA te avisa cuando hace falta una persona, y puedes tomar el control de cualquier conversación en un toque.
 
 ## Herramientas por perfil
 
@@ -123,7 +123,7 @@ Las respuestas guardadas nativas de Airbnb son suficientes. Crea 20-25 plantilla
 
 ### 3-10 apartamentos: IA sobre Airbnb
 
-Herramientas como **HolaAI**, **Hospitable**, **Hostly** responden automáticamente en tu tono. La IA lee el mensaje entrante, entiende contexto (qué apartamento, qué fechas) y responde.
+Herramientas como **HolaAI**, **Hospitable** o **Hostly** responden automáticamente. La IA lee el mensaje entrante, entiende el contexto (qué apartamento, qué fechas) y responde en el idioma del huésped.
 
 ### 10+ apartamentos: app de gestión completa multicanal
 

@@ -3,14 +3,37 @@
     "eyebrow": "Comparativas",
     "h1": "Hostly vs los demás PMS",
     "subtitle": "Análisis honestos de los principales PMS del mercado para el perfil de propietario pequeño y gestor ibérico.",
-    "benchmark": {
-      "eyebrow": "Comparativa completa",
-      "h2": "Hostly es el único con las 10 casillas. ✓",
-      "colFeature": "Funcionalidad",
-      "footerLabel": "Total ✓",
-      "legend": "✓ completo  ·  ⚠ parcial o via tercers  ·  ✗ no disponible. Dades verificades abril 2026."
-    },
-    "cardTitle": "Hostly vs {{name}}"
+    "cardTitle": "Hostly vs {{name}}",
+    "distingue": {
+      "eyebrow": "Antes de comparar",
+      "h2": "Lo que distingue a Hostly.",
+      "items": [
+        {
+          "titol": "El registro a la policía, gratis",
+          "text": "Check-in online y registro a la policía en el plan gratis, para siempre. Hay herramientas que lo cobran por check-in."
+        },
+        {
+          "titol": "Pensado para España",
+          "text": "Mossos d'Esquadra, taxa turística catalana y soporte en castellano y catalán."
+        },
+        {
+          "titol": "La IA contesta por WhatsApp",
+          "text": "Tus huéspedes escriben a WhatsApp y la IA responde en su idioma con la información de tu piso. Tú entras solo cuando hace falta."
+        },
+        {
+          "titol": "Un precio por piso, sin comisiones",
+          "text": "40 €/mes por apartamento, 35 € desde 5. Sin porcentaje por reserva."
+        },
+        {
+          "titol": "Todo en una app",
+          "text": "Reservas de Airbnb y Booking, limpiezas, precios con PriceLabs y finanzas, sin cinco suscripciones."
+        },
+        {
+          "titol": "Te lo montamos contigo",
+          "text": "El primer mes configuramos tus pisos y tus canales en una videollamada."
+        }
+      ]
+    }
   },
   "page": {
     "heroEyebrow": "Comparativa",
@@ -18,22 +41,22 @@
     "comparisonEyebrow": "Comparativa directa",
     "colFeature": "Funcionalidad",
     "colHostly": "Hostly",
-    "verifiedNote": "Datos verificados a abril 2026.",
+    "verifiedNote": "Datos públicos a abril 2026, pueden haber cambiado.",
     "faqsEyebrow": "Preguntas frecuentes",
     "ctaH2": "Empieza hoy con Hostly",
-    "ctaSubtitle": "Sin tarjeta. Sin permanencia. Check-in y compliance gratis para siempre.",
+    "ctaSubtitle": "Sin tarjeta. Sin permanencia. Check-in y registro de viajeros gratis para siempre.",
     "ctaButton": "Empezar"
   },
   "features": {
     "iaWhatsapp": "IA en WhatsApp nativa",
-    "checkinSes": "Check-in y SES gratis",
-    "complianceSes": "Compliance SES/NRUA nativo",
-    "preciosDinamicos": "Precios dinámicos incluidos",
+    "checkinSes": "Check-in y registro policial gratis",
+    "complianceSes": "Registro de viajeros a la policía",
+    "preciosDinamicos": "Precios dinámicos incluidos (con PriceLabs)",
     "channelManager": "Channel manager",
     "limpiezas": "Coordinación de limpiezas",
     "soporteEs": "Soporte en español y catalán",
     "precio1apt": "Precio desde 1 apartamento",
-    "selfServe": "Self-serve sin demo obligatoria",
+    "selfServe": "Empezar gratis sin demo",
     "precioTransparente": "Precio público transparente"
   }
 }

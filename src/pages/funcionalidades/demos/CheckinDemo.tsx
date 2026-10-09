@@ -194,14 +194,14 @@ function HuespedView({ frame, fps }: { frame: number; fps: number }) {
    Timeline:
      5  → header reserva
     18  → badge "Processant legalment…"
-    30  → item 1 SES (loading → done a frame 55)
-    45  → item 2 Mossos (loading → done a frame 75)
-    60  → item 3 NRUA (loading → done a frame 90)
-    75  → item 4 Taxa turística (loading → done a frame 100)
+    30  → item 1 Dades validades (loading → done a frame 58)
+    45  → item 2 Mossos (loading → done a frame 74)
+    60  → item 3 Taxa turística (loading → done a frame 90)
+    (Fins a l'octubre del 2026 hi sortien «SES» i «NRUA»: Hostly no fa ni l'un ni l'altre.)
    110  → banner verd "Tot registrat automàticament"
 ─────────────────────────────────────────────────────────────── */
 
-type IconComponent = React.FC<{ size?: number; color?: string }>;
+type IconComponent = React.ComponentType<{ size?: number | string; color?: string }>;
 
 interface LegalItemProps {
   frame: number; fps: number;
@@ -332,8 +332,8 @@ function PropietariView({ frame, fps }: { frame: number; fps: number }) {
           frame={frame} fps={fps}
           enterFrame={30} doneFrame={58}
           Icon={FileCheck}
-          label="SES · Sistema de Estadística"
-          sublabel={t('checkin.sesSubtitle')}
+          label={t('checkin.validatLabel')}
+          sublabel={t('checkin.validatSubtitle')}
         />
         <LegalItem
           frame={frame} fps={fps}
@@ -345,15 +345,8 @@ function PropietariView({ frame, fps }: { frame: number; fps: number }) {
         <LegalItem
           frame={frame} fps={fps}
           enterFrame={60} doneFrame={90}
-          Icon={FileCheck}
-          label="NRUA · Registro Único de Alojamientos"
-          sublabel={t('checkin.nruaSubtitle')}
-        />
-        <LegalItem
-          frame={frame} fps={fps}
-          enterFrame={75} doneFrame={104}
           Icon={Building2}
-          label="Tasa turística"
+          label={t('checkin.taxLabel')}
           sublabel={t('checkin.taxSubtitle')}
         />
       </div>

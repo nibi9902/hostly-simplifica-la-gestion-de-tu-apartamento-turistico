@@ -127,8 +127,8 @@ Si tienes 10 apartamentos y 3 limpiadoras, el sistema tiene que decidir quién v
 
 ### PMS con limpiezas integradas
 
-- **Hostly**: app móvil propia para limpiadoras, integración completa con reservas, pagos automáticos.
-- **Icnea**: app dedicada para netejadors, maduro, muy usado en el mercado ibérico.
+- **Hostly**: app propia para el equipo de limpieza y asistente por WhatsApp. Crea la tarea en cada salida, si alguien no puede pasa a la siguiente persona, y guarda fotos, incidencias y lo que se debe a cada una cada mes.
+- **Icnea**: app dedicada para limpiadores, maduro, muy usado en el mercado ibérico.
 - **Hostify**: Task App integrada, buena para volúmenes altos.
 - **Hospitable**: task management básico, sin app propia.
 

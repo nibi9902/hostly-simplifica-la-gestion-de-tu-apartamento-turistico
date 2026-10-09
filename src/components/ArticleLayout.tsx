@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import type { BlogPost } from '@/lib/blog';
 import { blogPosts } from '@/lib/blog';
 import { SiteHeader } from '@/components/SiteHeader';
-import { LangLink } from '@/i18n/LangLink';
+import { LangLink, MotionLangLink } from '@/i18n/LangLink';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import { blogPostingSchema, breadcrumbSchema } from '@/lib/seo/schemas';
@@ -16,6 +16,19 @@ import { useTranslation } from 'react-i18next';
 import { useLang } from '@/i18n/useLang';
 
 import { useEmpezar } from "@/lib/empezar";
+
+/* Dins dels articles: un enllaç intern («/funcionalidades/…») porta l'idioma i no recarrega
+ * la pàgina; un d'extern s'obre a part. Les taules llisquen dins seu al mòbil (abans una
+ * comparativa desbordava 112 px per la dreta). */
+const COMPONENTS_ARTICLE = {
+  a: ({ href, children }: { href?: string; children?: React.ReactNode }) =>
+    href && href.startsWith('/')
+      ? <LangLink to={href}>{children}</LangLink>
+      : <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>,
+  table: ({ children }: { children?: React.ReactNode }) => (
+    <div className="overflow-x-auto -mx-1 px-1"><table>{children}</table></div>
+  ),
+};
 const ease = [0.22, 1, 0.36, 1] as const;
 
 interface Props { post: BlogPost }
@@ -162,7 +175,7 @@ export default function ArticleLayout({ post }: Props) {
               prose-img:rounded-2xl prose-img:shadow-md
               prose-hr:border-slate-100 prose-hr:my-12
             ">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} components={COMPONENTS_ARTICLE}>
                 {post.content}
               </ReactMarkdown>
             </article>
@@ -197,8 +210,8 @@ export default function ArticleLayout({ post }: Props) {
         {/* Funció relacionada — link article → feature */}
         {relatedFeature && (
           <div className="max-w-3xl mx-auto px-6 md:px-8 mt-6 mb-4">
-            <a
-              href={relatedFeature.path}
+            <LangLink
+              to={relatedFeature.path}
               className="flex items-center justify-between gap-4 p-5 rounded-2xl border border-[#1a3a8f]/15 bg-[#eff6ff] hover:border-[#1a3a8f]/30 hover:bg-[#e0eeff] transition-all duration-200 group"
             >
               <div className="flex items-center gap-3">
@@ -206,7 +219,7 @@ export default function ArticleLayout({ post }: Props) {
                 <p className="text-sm font-semibold text-[#1a3a8f]">{relatedFeature.label}</p>
               </div>
               <ArrowRight className="w-4 h-4 text-[#1a3a8f] flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
-            </a>
+            </LangLink>
           </div>
         )}
 
@@ -216,9 +229,9 @@ export default function ArticleLayout({ post }: Props) {
             <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400 mb-6">{t('article.related_label')}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {related.map((p, i) => (
-                <motion.a
+                <MotionLangLink
                   key={p.slug}
-                  href={`/blog/${p.slug}`}
+                  to={`/blog/${p.slug}`}
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -231,7 +244,7 @@ export default function ArticleLayout({ post }: Props) {
                   <span className="flex items-center gap-1 text-[11px] text-slate-400 mt-auto">
                     <Clock className="w-3 h-3" /> {p.readingTime} min
                   </span>
-                </motion.a>
+                </MotionLangLink>
               ))}
             </div>
           </div>

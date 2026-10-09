@@ -7,17 +7,19 @@ import { faqPageSchema, breadcrumbSchema } from "@/lib/seo/schemas";
 import { useEmpezar } from "@/lib/empezar";
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const comparisonData = [
+// `null` = no ho sabem amb certesa (Chekin té cobraments i comunicació amb l'hoste;
+// no s'hi pot posar una ✗). Ordre = `chekin.features` del JSON.
+const comparisonData: Array<{ hostly: boolean; chekin: boolean | null }> = [
   { hostly: true,  chekin: true  },
   { hostly: true,  chekin: true  },
   { hostly: true,  chekin: true  },
   { hostly: true,  chekin: true  },
   { hostly: false, chekin: true  },
   { hostly: true,  chekin: false },
+  { hostly: true,  chekin: null  },
   { hostly: true,  chekin: false },
   { hostly: true,  chekin: false },
-  { hostly: true,  chekin: false },
-  { hostly: true,  chekin: false },
+  { hostly: true,  chekin: null  },
   { hostly: true,  chekin: true  },
 ];
 
@@ -115,9 +117,11 @@ export default function ComparativaChekin() {
                     : <span className="text-xs font-semibold text-[#16a34a] bg-[#dcfce7] px-2 py-0.5 rounded-full">{t("chekin.table_badge_free")}</span>}
                 </div>
                 <div className="p-4 flex justify-center items-center border-l border-slate-100">
-                  {row.chekin
-                    ? <CheckCircle className="w-5 h-5 text-slate-400" />
-                    : <XCircle className="w-5 h-5 text-slate-200" />}
+                  {row.chekin === null
+                    ? <span className="text-slate-300 font-semibold" title={t("chekin.table_unknown")}>—</span>
+                    : row.chekin
+                      ? <CheckCircle className="w-5 h-5 text-slate-400" />
+                      : <XCircle className="w-5 h-5 text-slate-200" />}
                 </div>
               </div>
             ))}

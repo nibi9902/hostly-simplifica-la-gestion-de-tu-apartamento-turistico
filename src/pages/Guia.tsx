@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { LangLink } from "@/i18n/LangLink";
 import PageShell from "@/components/PageShell";
 
 import { useEmpezar } from "@/lib/empezar";
@@ -98,16 +99,16 @@ export default function Guia() {
               {/* Links */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ml-0 md:ml-14">
                 {ch.links.map((link) => (
-                  <a
+                  <LangLink
                     key={link.href}
-                    href={link.href}
+                    to={link.href}
                     className="group flex items-center justify-between p-4 rounded-2xl bg-[#f8fafc] border border-slate-100 hover:bg-white hover:border-[#1a3a8f]/20 hover:shadow-sm transition-all duration-200"
                   >
                     <span className="text-sm font-medium text-slate-700 group-hover:text-[#1a3a8f] transition-colors leading-snug pr-3">
                       {link.label}
                     </span>
                     <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#1a3a8f] shrink-0 transition-colors" />
-                  </a>
+                  </LangLink>
                 ))}
               </div>
 

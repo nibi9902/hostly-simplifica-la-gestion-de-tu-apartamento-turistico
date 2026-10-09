@@ -10,17 +10,17 @@
     "who_chekin_eyebrow": "Chekin",
     "who_chekin_heading": "Especialista en check-in i compliance legal",
     "who_chekin_p1": "Chekin automatitza el check-in en línia, el registre policial (SES.Hospedajes), el NRUA i la taxa turística. Ho fa molt bé en el que fa. Cobra entre 2 i 4 € per check-in o una quota mensual per propietat.",
-    "who_chekin_p2": "No gestiona reserves, missatges, neteges ni preus. Per a això necessites altres eines.",
+    "who_chekin_p2": "El seu focus és el check-in i el compliment legal. Per a reserves, missatges, neteges i preus, el normal és combinar-lo amb altres eines.",
     "who_hostly_eyebrow": "Hostly",
     "who_hostly_heading": "L'app que reemplaça cinc subscripcions",
-    "who_hostly_p1": "Hostly inclou el check-in complet (SES, NRUA, policia, taxa) gratis per sempre dins d'una plataforma que també gestiona reserves, missatges, neteges, preus i pagaments.",
+    "who_hostly_p1": "Hostly inclou gratis per sempre el check-in en línia, el registre de viatgers a la policia i la taxa turística, dins d'una plataforma que també gestiona reserves, missatges, neteges, preus i pagaments. A Catalunya, el registre va als Mossos cada dia, sense que facis res. Fora de Catalunya, activem SES.Hospedajes amb tu en donar-te d'alta.",
     "who_hostly_p2": "Una app. Una factura. Sense subscripcions addicionals.",
     "table_heading": "Comparativa directa",
     "table_col_feature": "Funcionalitat",
     "table_col_hostly": "Hostly",
     "table_col_chekin": "Chekin",
     "table_badge_free": "Gratis",
-    "table_footnote": "Dades verificades a l'abril de 2026. Preus i funcionalitats poden canviar.",
+    "table_footnote": "✓ inclòs · ✗ no ho ofereix · — no ho sabem amb certesa, consulta el seu web. Dades públiques a abril 2026, poden haver canviat.",
     "features": [
       {
         "feature": "Check-in en línia"
@@ -29,7 +29,7 @@
         "feature": "SES.Hospedajes"
       },
       {
-        "feature": "NRUA"
+        "feature": "Mossos d'Esquadra (Catalunya)"
       },
       {
         "feature": "Taxa turística"
@@ -72,31 +72,32 @@
     "cost_hostly_label": "Amb Hostly",
     "cost_hostly_row1_label": "Pla Hostly (40 € × 12 mesos)",
     "cost_hostly_row1_value": "480 €/any",
-    "cost_hostly_row2_label": "Check-in + SES + NRUA + taxa",
+    "cost_hostly_row2_label": "Check-in + registre policial + taxa",
     "cost_hostly_row2_value": "Gratis",
-    "cost_hostly_row3_label": "Canal manager inclòs",
-    "cost_hostly_row3_value": "Gratis",
+    "cost_hostly_row3_label": "Canal manager (Airbnb i Booking)",
+    "cost_hostly_row3_value": "Inclòs",
     "cost_hostly_row4_label": "Missatges, neteges, pagaments",
-    "cost_hostly_row4_value": "Gratis",
+    "cost_hostly_row4_value": "Inclòs",
     "cost_hostly_total_label": "Total",
     "cost_hostly_total_value": "480 €/any",
     "faq_heading": "Preguntes freqüents",
     "faqs": [
       {
         "q": "Hostly fa el mateix que Chekin?",
-        "a": "Sí, i molt més. Hostly inclou check-in en línia, SES.Hospedajes, NRUA, registre policial i taxa turística exactament com Chekin, però gratis per sempre dins d'un pla que també inclou reserves, missatges, neteges i preus."
+        "a": "Per al check-in en línia i el registre de viatgers, sí. Hostly l'inclou gratis per sempre, juntament amb el càlcul de la taxa turística. A Catalunya envia el registre als Mossos cada dia, de manera automàtica; fora de Catalunya, la connexió amb SES.Hospedajes l'activem amb tu en donar-te d'alta. El pla complet hi afegeix reserves, missatges, neteges i preus."
       },
       {
         "q": "Quant m'estalvio si passo de Chekin a Hostly?",
-        "a": "Amb 60 check-ins a l'any a 3 € cadascun, Chekin et costa ~180 €/any només en compliance. Amb Hostly pagues 40 €/mes (480 €/any) però obtens check-in gratis més canal manager, missatges, neteges i preus dinàmics inclosos."
+        "a": "Amb 60 check-ins a l'any a 3 € cadascun, Chekin et costa ~180 €/any. A Hostly, el check-in i el registre són gratis: si només necessites això, t'estalvies aquests ~180 €. Amb el pla complet pagues 40 €/mes per pis (480 €/any) i tens també canal manager, missatges, neteges i preus dinàmics amb PriceLabs."
       },
       {
         "q": "Perdo dades o reserves si migro des de Chekin?",
-        "a": "No. Fem la migració en paral·lel mentre mantens Chekin actiu. Un cop Hostly està configurat, apaguem Chekin sense interrupció."
+        "a": "No. Mentre configurem Hostly amb tu el primer mes, Chekin pot seguir actiu. Quan comproves que el registre ja surt des de Hostly, dones de baixa Chekin."
       }
     ],
     "cta_heading": "Check-in gratis per sempre.\nI molt més.",
     "cta_body": "El primer mes, gratis. Si no et simplifica res, no ens deus res.",
-    "cta_button": "Començar"
+    "cta_button": "Començar",
+    "table_unknown": "No ho sabem amb certesa"
   }
 }

@@ -13,16 +13,17 @@
     "checkinCompletedByGuest": "· check-in completat per l'hoste",
     "allRegistered": "Tot registrat automàticament",
     "nothingToDo": "No has hagut de fer res. Hostly ho ha gestionat tot.",
-    "sesSubtitle": "Comunicat a la Generalitat de Catalunya",
-    "mossosSubtitle": "Part de viatgers enviat · 2 hostes registrats",
-    "nruaSubtitle": "Número: CAT-2026-004-0312",
-    "taxSubtitle": "3 nits · 3 persones · 4,50€ calculats",
+    "mossosSubtitle": "Registre enviat · 2 hostes registrats",
+    "taxSubtitle": "3 nits · 2 adults · import calculat",
     "tabOwner": "Propietari",
     "tabGuest": "Hoste",
     "adults": "adults",
     "child": "nen",
     "checkInShort": "Entrada 7 abr.",
-    "checkOutShort": "Sortida 10 abr."
+    "checkOutShort": "Sortida 10 abr.",
+    "validatLabel": "Dades de l'hoste validades",
+    "validatSubtitle": "Document, naixement i nacionalitat revisats",
+    "taxLabel": "Taxa turística"
   },
   "mensajeria": {
     "automaticBadge": "Automàtic",
@@ -150,7 +151,7 @@
   "demoVideo": {
     "superLabel": "Hostly™ en acció",
     "heading": "Així opera Hostly™ per dins.",
-    "subheading": "Reserva, preu, neteja, registres i missatges — executats en segon pla.",
+    "subheading": "Reserva, preu, neteja, registre i missatges, en segon pla.",
     "bulletPriceAdjusts": "El preu s'ajusta sol",
     "bulletBookingEnters": "Entra una reserva",
     "bulletCleaningAssigned": "Neteja assignada",

@@ -19,7 +19,7 @@ faqs:
   - question: "¿Si envío a Mossos también tengo que enviar a SES.Hospedajes?"
     answer: "No. Los apartamentos en Cataluña cumplen enviando a Mossos d'Esquadra. SES.Hospedajes no aplica si ya has registrado al huésped en el sistema de Mossos."
   - question: "¿Qué pasa si tengo apartamentos en Cataluña y en Madrid?"
-    answer: "Necesitas cubrir ambos canales: los de Cataluña van a Mossos, los de Madrid van a SES.Hospedajes. Un buen PMS decide automáticamente según la ubicación del apartamento."
+    answer: "Necesitas cubrir ambos canales: los de Cataluña van a Mossos y los de Madrid, a SES.Hospedajes. Con Hostly, el envío a los Mossos es automático; la conexión con SES.Hospedajes la activamos contigo al darte de alta."
   - question: "¿El plazo para enviar a Mossos es el mismo que SES?"
     answer: "Sí, 24 horas desde el check-in del huésped. Mossos aplica el mismo criterio temporal que el Real Decreto 933/2021."
 ---
@@ -28,7 +28,7 @@ Si gestionas apartamentos turísticos en Cataluña, el registro de viajeros **no
 
 ## Por qué Cataluña usa Mossos y no SES
 
-España tiene tres cuerpos policiales con competencias propias: Policía Nacional y Guardia Civil a nivel estatal, Mossos d'Esquadra en Cataluña y Ertzaintza en Euskadi. El Real Decreto 933/2021 obliga a registrar huéspedes en España, pero deja que las **comunidades con policía propia mantengan su sistema**.
+España tiene cuerpos policiales estatales y autonómicos con competencias propias: Policía Nacional y Guardia Civil a nivel estatal, Mossos d'Esquadra en Cataluña y Ertzaintza en Euskadi. El Real Decreto 933/2021 obliga a registrar huéspedes en España, pero deja que las **comunidades con policía propia mantengan su sistema**.
 
 En Cataluña, el sistema operativo se llama **"Registre de Viatgers"** y lo gestionan los Mossos. Cumple la misma función que SES.Hospedajes pero es su propio canal.
 
@@ -82,20 +82,20 @@ Si gestionas apartamentos en Cataluña y fuera (Baleares, Madrid, Valencia, Anda
 - **Enviar a SES** los del resto del Estado.
 - **Enviar a Ertzaintza** si tienes en Euskadi.
 
-Hacer esto manualmente es un error esperando a pasar. Un PMS decente decide automáticamente según la ubicación del apartamento y envía al canal correcto. No tienes que recordar nada.
+Hacer esto manualmente es un error esperando a pasar. Lo práctico es dejar configurado desde el alta a qué sistema envía cada piso. En Hostly, los pisos de Cataluña envían a los Mossos de forma automática; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
 
 ## Cómo automatizarlo completamente
 
 El flujo óptimo:
 
 1. El huésped reserva en Airbnb/Booking.
-2. Recibe un enlace para hacer check-in online antes de llegar.
-3. Completa datos y sube documento.
-4. El PMS detecta que el apartamento está en Cataluña.
-5. Envía los datos a Mossos dentro del plazo.
-6. Tú ves en el panel "Registrado ✓" sin haber hecho nada.
+2. Recibe por WhatsApp o por el chat de la plataforma un enlace para hacer check-in online antes de llegar.
+3. Rellena sus datos desde el móvil y cada campo se valida antes de enviarlo.
+4. El PMS prepara el fichero con los datos de cada huésped.
+5. Lo envía a los Mossos cada día y guarda el comprobante.
+6. Tú ves en el panel "Registrado ✓" sin haber hecho nada. Si algo falla, te avisa.
 
-Esto es lo que hacen plataformas como Hostly (nativo), Icnea (integrado) y Hostify (integrado). Las no-ibéricas (Hospitable, Prohost AI, Guesty) no cubren Mossos, sólo SES si acaso.
+Es lo que hace Hostly con los pisos de Cataluña, de forma nativa. Otras herramientas lo resuelven con una integración propia o a través de partners: antes de elegir, comprueba que la tuya cubre Mossos y no solo SES.
 
 ## Resumen
 

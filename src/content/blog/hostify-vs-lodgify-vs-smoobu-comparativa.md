@@ -19,9 +19,9 @@ faqs:
   - question: "¿Cuál es el más barato de los tres?"
     answer: "Smoobu con Professional a 23€/mes es el más barato en cuota fija. Hostify está en $20/apartamento/mes con todo incluido. Lodgify empieza en $20/mes pero cobra 1.9% de fee por reserva en el plan Starter, por lo que a volumen alto suele ser más caro."
   - question: "¿Cuál tiene mejor SES.Hospedajes?"
-    answer: "Ninguno de los tres tiene SES nativo al nivel de plataformas como Hostly o Icnea. Hostify tiene integración oficial con SES. Lodgify y Smoobu complementan con Chekin como partner. Si SES nativo es prioridad, estos tres no son tu mejor opción."
+    answer: "Hostify tiene integración con SES. Lodgify y Smoobu se complementan con Chekin como partner. Si el registro de viajeros integrado es tu prioridad, Hostify es el que mejor lo cubre de los tres."
   - question: "¿Cuál es mejor para un apartamento con web propia?"
-    answer: "Lodgify, sin duda. Su website builder es el mejor del mercado — permite tener web bonita con reserva directa en horas. Hostify y Smoobu tienen builders básicos o inexistentes."
+    answer: "Lodgify, sin duda. Su website builder es el mejor del mercado: permite tener web bonita con reserva directa en horas. Hostify y Smoobu tienen builders más básicos."
 ---
 
 Tres de los PMS más usados por propietarios y pequeños gestores ibéricos. Cada uno con fortalezas claras y debilidades específicas. Esta comparativa **sin marketing disfrazado de objetividad** te ayuda a decidir cuál es el tuyo según tu caso real.
@@ -30,26 +30,28 @@ Tres de los PMS más usados por propietarios y pequeños gestores ibéricos. Cad
 
 - **Hostify** → el "Guesty-lite" asequible, fuerte en OTAs y presencia ibérica.
 - **Lodgify** → el especialista en web propia y reserva directa, desde Barcelona.
-- **Smoobu** → el entry-level barato de Berlín, ahora dentro de SiteMinder.
+- **Smoobu** → el entry-level barato de Berlín, del grupo HomeToGo desde 2021.
 
 ## Comparativa lado a lado
 
 | Criterio | Hostify | Lodgify | Smoobu |
 |---|---|---|---|
-| Origen | Barcelona/Lituania | Barcelona | Berlín (SiteMinder) |
+| Origen | Barcelona/Lituania | Barcelona | Berlín (grupo HomeToGo) |
 | Precio | $20/apt/mes | $20-73/mes + fee | €23-44/mes |
 | Modelo | Flat por apartamento | Starter con fee, Pro sin | Flat mensual |
-| Channel manager | 400+ canales | Completo | Sólido (SiteMinder) |
+| Channel manager | 400+ canales | Completo | Sólido |
 | Website builder | Básico | **El mejor del mercado** | Básico |
 | SES Hospedajes | ✅ Integrado | ⚠️ Parcial | ⚠️ Vía Chekin |
-| IA propia | ⚠️ Via HostBuddy | ⚠️ AI Assistant básico | ❌ No tiene |
+| IA para mensajes | ⚠️ Vía integraciones | ⚠️ AI Assistant básico | ⚠️ No es su foco |
 | Dynamic pricing | ⚠️ Vía partners | ✅ Nativo | ✅ Nativo básico |
 | App limpieza | ⚠️ Task App | ⚠️ Básica | ⚠️ Básica |
-| WhatsApp nativo | ⚠️ Business | ❌ | ❌ |
-| Catalán | ❌ | ❌ | ❌ |
+| WhatsApp nativo | ⚠️ Business | No consta | No consta |
+| Catalán | No consta | No consta | No consta |
 | Target | 5-70+ apts | 1-15 con web | 1-15 básico |
 | Self-serve trial | ✅ Sí | ✅ 7 días | ✅ Sí |
 | Soporte español | ✅ | ✅ | ⚠️ Limitado |
+
+*Datos públicos a abril 2026, pueden haber cambiado.*
 
 ## Análisis detallado
 
@@ -63,9 +65,9 @@ Tres de los PMS más usados por propietarios y pequeños gestores ibéricos. Cad
 - **Presencia fuerte en España** con eventos y testimonios locales.
 
 **Donde pierde**:
-- **IA no es nativa** — depende de partenariato con HostBuddy, lo que limita profundidad.
+- **IA a través de integraciones**: compruébala con tus mensajes reales antes de decidir.
 - **Dynamic pricing vía partners** (no nativo). Si quieres pricing dinámico bien, pagas PriceLabs aparte.
-- **Zero catalán**. UI en español sí, pero nada diseñado para Cataluña.
+- **Pensado para España en general**, no específicamente para Cataluña.
 - **Tono corporate** que no transmite cercanía.
 
 **Mejor para**: gestor profesional con 5+ apartamentos, presencia en muchas OTAs, que quiere precio cerrado sin fees.
@@ -80,9 +82,9 @@ Tres de los PMS más usados por propietarios y pequeños gestores ibéricos. Cad
 - **Comunidad europea fuerte**.
 
 **Donde pierde**:
-- **SES parcial**: menciona SES en blog pero no es feature estrella. Para compliance serio, necesitas Chekin a parte.
-- **IA básica**: sólo "Improve with AI" / "Suggest with AI" para drafts. No es conversacional.
-- **Ops limitadas**: limpieza y rols no son su foco.
+- **SES parcial**: menciona SES en blog pero no es feature estrella. Para compliance serio, necesitas Chekin aparte.
+- **IA básica**: funciones como "Improve with AI" / "Suggest with AI" para redactar borradores.
+- **Ops limitadas**: limpieza y roles no son su foco.
 - **Modelo Starter con 1.9% fee**: a volumen alto, suma.
 
 **Mejor para**: propietario que prioriza **web propia y reserva directa** sobre operativa avanzada. Ideal para villas, boutique, apartamentos con marca propia.
@@ -93,10 +95,10 @@ Tres de los PMS más usados por propietarios y pequeños gestores ibéricos. Cad
 - **Precio más bajo** en cuota fija (€23).
 - **8 idiomas UI** (más que los otros dos).
 - **Simplicidad**: curva de aprendizaje más corta.
-- **Respaldo SiteMinder**: infraestructura seria.
+- **Respaldo de HomeToGo**: un grupo grande detrás.
 
 **Donde pierde**:
-- **Cero IA**. Es su mayor forat.
+- **La IA no es su foco**.
 - **SES vía Chekin**: dependencia externa.
 - **Ops muy limitadas**: checklist de limpieza básico, sin app mobile profunda.
 - **No es el más barato al final** si sumas Chekin + PriceLabs.
@@ -110,7 +112,7 @@ Tres de los PMS más usados por propietarios y pequeños gestores ibéricos. Cad
 - Necesita SES/Mossos + channel manager + algo de automatización.
 - Presupuesto: hasta 60€/mes total.
 
-**Mejor opción**: **Hostify** si prioriza OTAs. **Hostly** (no en esta comparativa pero más apropiado) si prioriza IA + Mossos + catalán.
+**Mejor opción**: **Hostify** si prioriza OTAs. **Hostly** (no está en esta comparativa) si prioriza IA + Mossos + catalán: el plan completo son 80€/mes para dos pisos, y el check-in con el registro a los Mossos es gratis.
 
 ### Caso 2: Villa de lujo en Ibiza con web propia
 
@@ -135,15 +137,15 @@ Tres de los PMS más usados por propietarios y pequeños gestores ibéricos. Cad
 
 ## Lo que ninguno de los tres hace bien
 
-Hay aspectos donde los tres se quedan cortos para un gestor ibérico moderno:
+Hay aspectos que, para un gestor ibérico, no son el foco de ninguno de los tres:
 
-- **IA conversacional WhatsApp nativa** (ninguno la tiene bien).
-- **Catalán nativo** (ninguno, a pesar de Lodgify y Hostify tener HQ en Barcelona).
-- **Mossos d'Esquadra nativo** (ninguno, todos tratan Cataluña como "una región de España").
-- **Multi-rol profundo** (propietario + gestor + netejador + guest) con apps diferentes.
-- **Dynamic pricing inclós sense add-ons** (sólo Lodgify lo tiene, y básico).
+- **IA conversacional en WhatsApp**: ninguno la pone en el centro.
+- **Catalán**: ninguno lo trabaja como prioridad, aunque Lodgify y Hostify tengan sede en Barcelona.
+- **Mossos d'Esquadra**: conviene preguntar cómo resuelven el registro en Cataluña antes de contratar.
+- **Roles por piso** (gestor, limpieza y propietario de solo lectura), cada uno con su vista.
+- **Precios dinámicos incluidos sin add-ons** (Lodgify los tiene nativos; Smoobu, en versión básica).
 
-Por eso muchos gestores están migrando a PMS ibéricos de segunda generación (Hostly) que combinan lo mejor de los tres más compliance + IA + catalán.
+Por eso existen PMS ibéricos de segunda generación, como Hostly, que suman a lo básico el registro automático en los Mossos, la IA en WhatsApp y la atención en catalán.
 
 ## Resumen y recomendación
 
@@ -153,6 +155,6 @@ Si tuviera que elegir hoy entre **sólo** estos tres:
 - **Quiero muchas OTAs y SES integrado al precio más ajustado** → Hostify.
 - **Empiezo con 1 apartamento y quiero simple y barato** → Smoobu.
 
-Pero si el criterio es "el más apropiado para un propietario o gestor ibérico en 2026 con 1-20 apartamentos y foco en IA, compliance local y operativa integrada", ninguno de los tres es óptimo. La opción más completa para este perfil es un PMS de nueva generación ibérico como Hostly, que combina las fortalezas de los tres más lo que ninguno hace: IA nativa + Mossos/Ertzaintza + catalán.
+Pero si el criterio es "el más apropiado para un propietario o gestor ibérico en 2026 con 1-20 apartamentos y foco en IA, compliance local y operativa integrada", ninguno de los tres es óptimo. Para ese perfil encaja mejor un PMS ibérico de nueva generación como Hostly: IA en WhatsApp, registro automático en los Mossos d'Esquadra y atención en castellano y catalán.
 
 Pero esa ya es otra comparativa.

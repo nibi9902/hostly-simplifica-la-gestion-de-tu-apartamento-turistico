@@ -61,7 +61,7 @@ Con 5 apartamentos, todas estas cifras se multiplican casi linealmente. Con 10, 
 
 ### 1. Mensajería automática con IA (ahorra 2-3h/semana)
 
-El mayor consumidor. Automatizando el 70-85% de mensajes rutinarios con una IA entrenada en tu tono, recuperas la mayoría de este tiempo. Los casos:
+El mayor consumidor. Automatizando la mayoría de mensajes rutinarios con una IA que conoce tu apartamento, recuperas buena parte de este tiempo. Los casos:
 
 - Confirmaciones post-reserva → automático.
 - Instrucciones pre-llegada → automático 3 días antes.
@@ -70,7 +70,7 @@ El mayor consumidor. Automatizando el 70-85% de mensajes rutinarios con una IA e
 - Recordatorio de checkout → automático.
 - Petición de reseña → automático tras checkout.
 
-**Inversión**: 20-40€/mes (app de gestión (Hostly, Hospitable)).
+**Inversión**: 20-40€/mes en una app de gestión (Hostly, Hospitable).
 **Ahorro**: 2-3h/semana.
 
 ### 2. Check-in online + SES automático (ahorra 1h/semana)
@@ -139,7 +139,7 @@ Para cualquier adulto con ingresos laborales medios, la respuesta es **sí**.
 
 Si quieres recuperar 5h/semana en un mes:
 
-- **Semana 1**: elige PMS con IA + SES + limpiezas (Hostly (ibérico, check-in y compliance gratis), Hospitable (anglosajón)).
+- **Semana 1**: elige un PMS con IA, registro de viajeros y limpiezas: Hostly (ibérico, con el check-in y el registro a la policía gratis) o Hospitable (anglosajón).
 - **Semana 2**: migra calendarios y configura herramienta.
 - **Semana 3**: entrena la IA con tus mensajes y plantillas.
 - **Semana 4**: opera con supervisión, ajustas lo que falla.

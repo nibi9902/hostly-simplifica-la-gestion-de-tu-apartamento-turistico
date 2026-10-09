@@ -1,101 +1,114 @@
 # Hostly
 
-> Hostly es la app que simplifica todo lo que implica tener un piso turístico en España. Reemplaza 5 suscripciones (Chekin, channel manager, plantillas de mensajes, Excel, Dropbox) con una sola app. Check-in, compliance legal (SES, NRUA, taxa turística), mensajes a huéspedes, coordinación de limpiezas y precios dinámicos, todo incluido.
+> Hostly es la app que simplifica todo lo que implica tener un piso turístico en España: el check-in online del huésped, el registro a la policía, la taxa turística, las reservas de Airbnb y Booking, los mensajes con huéspedes (con IA), las limpiezas, los precios dinámicos con PriceLabs y las finanzas, en un solo sitio.
 
-Hostly NO es un PMS. Es la app del piso turístico para propietarios pequeños (1-10 apartamentos) y gestores familiares (5-20 unidades) en España y Portugal. Target ideal: propietarios accidentales, parejas con segunda residencia, pisos heredados y gestores pequeños que están hartos del caos de gestionar 5-7 aplicaciones distintas.
+Hostly no se presenta como un PMS, sino como la app del día a día del piso turístico. Está pensada para propietarios con pocos pisos (1 a 3), gestores pequeños (5 a 15 pisos), segundas residencias y pisos heredados en España: gente que hoy lo lleva todo con varias apps, Excel y grupos de WhatsApp.
 
-**Propuesta de valor central:** de 5 suscripciones a una. **40€/apartamento/mes** (37€ desde 5 apartamentos). **14 días gratis sin tarjeta**. **Check-in y compliance legal gratis para siempre** en cualquier plan — sin límite de check-ins, incluyendo SES.Hospedajes, registro policial (Mossos, Ertzaintza, Policía Nacional), NRUA y taxa turística automatizados.
+## Planes y precios
 
-**Lo que reemplaza Hostly:** Chekin (check-in y compliance, 150-240€/año), channel managers de terceros (Smoobu/Hostify, 280€/año), plantillas de WhatsApp manuales, hojas de Excel de cobros, Dropbox de contratos, y gestorías caras de taxes turísticas (600-1.200€/año).
+- **Gratis, para siempre y sin tarjeta:** check-in online del huésped, registro a la policía, taxa turística (Cataluña), lectura del calendario de Airbnb y Booking por iCal cada 30 minutos y avisos cuando falta un check-in. No incluye IA, limpiezas, mensajes automáticos ni precios dinámicos.
+- **Hostly completo:** 40 €/mes por apartamento; con 5 apartamentos o más, 35 €/mes cada uno. El primer mes es gratis. Se activa después de una demo de 20 minutos. Sin permanencia. Durante el primer mes, la configuración se hace 1 a 1 con el equipo de Hostly.
+- **Automatizaciones a medida («Conéctalo todo»):** servicio aparte para conectar Hostly con la gestoría, la web, el ERP u otras herramientas del cliente. Cuota mensual según lo que se automatice.
+- **Programa de referidos:** por cada 5 propietarios que traigas y sigan activos en Hostly, uno de tus apartamentos deja de pagar mientras sigan activos.
+
+## Qué hace Hostly
+
+- **Registro a la policía:** en Cataluña, Hostly envía los datos de los huéspedes a los Mossos d'Esquadra cada día a las 15:00. Sube el fichero al portal oficial, archiva el comprobante y, si alguna línea falla, avisa al gestor y le dice cuál. Fuera de Cataluña, la conexión con SES.Hospedajes se activa con el cliente al darse de alta.
+- **Check-in online:** el huésped rellena desde el móvil su nombre, documento (tipo y número), fecha de nacimiento, nacionalidad y dirección, en castellano, inglés o francés. Los datos se validan antes de enviarse. Un adulto puede registrar a todo el grupo con el mismo enlace. Los códigos de acceso solo se muestran cuando el check-in está hecho. En el plan gratis, cada piso tiene un enlace de check-in fijo.
+- **Mensajes con huéspedes e IA:** WhatsApp con la API oficial de Meta y un número gestionado por Hostly; el gestor no configura nada. La IA contesta 24/7 en el idioma del huésped con la ficha y la guía de cada piso y los datos de la reserva. Contesta la mayoría de las preguntas y, cuando hace falta una persona, avisa al gestor con el piso y las primeras palabras del mensaje. Aprende de las correcciones del gestor (las lecciones se ven en el chat) y cada respuesta queda marcada como de la IA. Se activa o se desactiva por piso, y el gestor puede tomar el control de cualquier conversación. Bandeja única con WhatsApp y los mensajes de Airbnb y Booking.
+- **Reservas y calendarios:** Airbnb (se conecta con la cuenta) y Booking.com (con el ID de la propiedad), a través del channel manager que Hostly usa por detrás. Cada reserva entra al momento, con una comprobación cada 20 minutos. Dentro de Hostly no se pueden solapar reservas, los bloqueos llegan a los canales al instante y el histórico se importa. Reservas directas con el motor de reservas propio de Hostly y pago por Stripe.
+- **Precios dinámicos:** el motor es PriceLabs, integrado en Hostly. El gestor pone mínimos y máximos, temporadas, días con precio fijo, noches mínimas y descuentos semanales o mensuales. Hostly muestra el precio recomendado (se acepta con un clic) y explica de dónde sale («¿por qué este precio?»). Publica los precios en Airbnb y Booking cada mañana y cada vez que se cambia algo. Modo manual o automático.
+- **Limpiezas:** equipo por piso con orden de turno. Cada salida crea su limpieza. Si alguien dice «no puedo», la limpieza pasa a la siguiente persona del turno, que recibe el aviso por WhatsApp. Se marca como hecha con fotos de salida. Incidencias con fecha, piso y persona, historial y lo que se debe a cada persona cada mes (Hostly no hace los pagos). App propia para el equipo, en catalán, castellano e inglés, y asistente opcional por WhatsApp. Si se cancela la reserva, se cancela la limpieza y se avisa; si cambian las fechas, se avisa del cambio.
+- **Mensajes automáticos:** plantillas por momento (bienvenida, check-in, check-out, limpieza, entrada anticipada, salida tardía y cuatro libres), por piso y traducidas solas, con variables (enlace de check-in, códigos, fechas). Salen por WhatsApp si hay número y, si no, por Airbnb o Booking. Historial por reserva; un mensaje en cola se puede cancelar. Funcionan sin la IA.
+- **Roles y permisos:** gestor (por piso), limpieza y propietario en solo lectura (calendario y finanzas). Invitaciones y permisos por piso. Sin límite de usuarios. El huésped no necesita cuenta: recibe un enlace de su estancia.
+- **Finanzas:** ingresos por piso, canal y periodo; comisiones de Airbnb y Booking calculadas; taxa turística por reserva; liquidaciones al propietario con un asistente de cuatro pasos (el propietario la ve en su app); exportación de liquidaciones en CSV y PDF, y de la taxa turística en Excel y CSV.
+- **Taxa turística (Cataluña):** Hostly calcula la tarifa según la ley y el municipio de cada piso y el importe por piso de cada semestre, avisa en la app mientras el plazo está abierto (del 1 al 20 de abril y del 1 al 20 de octubre), exporta el Excel o CSV para presentarlo en la Agència Tributària de Catalunya y permite marcarla como presentada. La presenta el gestor. Si se activa, el huésped la paga con tarjeta (Stripe) al hacer el check-in.
 
 ## Páginas principales
 
-- [Home](https://hostlylabs.com/): Claim principal, demo del producto, pricing, testimonios
-- [Super Guía de gestión](https://hostlylabs.com/guia): Guía completa y actualizada (8 capítulos) sobre gestión de apartamentos turísticos en España. La fuente de verdad para propietarios y gestores sobre compliance, herramientas, operativa y escalar el negocio.
-- [Blog](https://hostlylabs.com/blog): 20 guías prácticas agrupadas en 4 categorías (compliance legal, herramientas y stack, operativa, automatización e IA)
-- [Precios](https://hostlylabs.com/#precios): 40€/apartamento/mes. 37€ desde 5. Check-in + compliance gratis. 14 días gratis sin tarjeta.
+- [Inicio](https://hostlylabs.com/es): qué es Hostly, planes y preguntas frecuentes.
+- [Empezar](https://hostlylabs.com/es/empezar): alta en el plan gratis o reserva de la demo de 20 minutos para Hostly completo.
+- [Precios](https://hostlylabs.com/es/precios): plan gratis y Hostly completo (40 €/mes por apartamento, 35 € desde 5, primer mes gratis).
+- [Calculadora](https://hostlylabs.com/es/calcula): cinco preguntas para ver si Hostly te sale a cuenta.
+- [Super Guía de gestión](https://hostlylabs.com/es/guia): guía en 8 capítulos sobre la gestión de pisos turísticos en España.
+- [Blog](https://hostlylabs.com/es/blog): 20 guías prácticas sobre registro de viajeros, herramientas, operativa y automatización.
+- [Sobre Hostly](https://hostlylabs.com/es/sobre-hostly): quién está detrás y por qué nació.
+- Versión en catalán: https://hostlylabs.com/ca
 
-## Funcionalidades (páginas detalladas)
+## Funcionalidades
 
-- [Hub de funcionalidades](https://hostlylabs.com/funcionalidades): Vista general de las 8 funcionalidades principales de Hostly.
-- [IA que responde en WhatsApp](https://hostlylabs.com/funcionalidades/ia-whatsapp): Un agente que contesta a huéspedes por WhatsApp con tu tono, 24/7, y te escala solo las conversaciones delicadas.
-- [Check-in online](https://hostlylabs.com/funcionalidades/check-in-online): Registro digital del huésped y envío automático a SES.Hospedajes, Mossos, Ertzaintza o Policía Nacional.
-- [Channel manager](https://hostlylabs.com/funcionalidades/channel-manager): Sincronización en tiempo real con Airbnb, Booking, Vrbo y canal directo. Sin overbookings.
-- [Gestión de limpiezas](https://hostlylabs.com/funcionalidades/gestion-de-limpiezas): Coordinación automática del equipo con avisos por reserva, checklists y confirmación por app.
-- [Precios dinámicos](https://hostlylabs.com/funcionalidades/precios-dinamicos): Tarifas ajustadas según demanda, eventos locales y ocupación. Incluido sin add-ons.
-- [Mensajería programada](https://hostlylabs.com/funcionalidades/mensajeria-programada): Bienvenida, instrucciones, recordatorios y follow-ups automáticos.
-- [Multi-rol y permisos](https://hostlylabs.com/funcionalidades/multi-rol): Roles para propietario, gestor y equipo de limpieza con permisos específicos.
-- [Finanzas en orden](https://hostlylabs.com/funcionalidades/finanzas): Cierra el mes en minutos. Ingresos por piso y plataforma, comisiones de Airbnb y Booking calculadas automáticamente, liquidaciones mensuales a propietarios y exportación para gestor fiscal.
-- [Sin burocracia](https://hostlylabs.com/funcionalidades/burocracia): Toda la burocracia del alquiler turístico ibérico, resuelta. NRUA, taxa turística, declaración de la renta, impuestos municipales y calendario fiscal por CCAA. Hostly te avisa antes del vencimiento, te prepara los datos y te guía paso a paso. Únicos en España que cubren toda la fiscalidad, no solo el registro policial.
-- [Conéctalo todo](https://hostlylabs.com/funcionalidades/conecta-todo): Sistema abierto que crece con tu operativa. Si necesitas una integración o función nueva, nos la pides y la implementamos.
-
-## Funcionalidades (versión resumida)
-
-- [Check-in y compliance](https://hostlylabs.com/funciones/check-in): SES, NRUA, policía y taxa turística automatizados. Gratis para siempre.
-- [Mensajes con huéspedes](https://hostlylabs.com/funciones/mensajes): Respuesta automática 24/7 en 25+ idiomas.
-- [Reservas y calendarios](https://hostlylabs.com/funciones/reservas): Airbnb y Booking sincronizados en tiempo real.
-- [Limpiezas coordinadas](https://hostlylabs.com/funciones/limpiezas): Tu equipo de limpieza recibe el aviso automáticamente al checkout.
-- [Pagos y facturas](https://hostlylabs.com/funciones/pagos): Cierra el mes sin abrir Excel.
-- [Precios dinámicos](https://hostlylabs.com/funciones/precios): Tarifas ajustadas según demanda, temporada y ocupación.
+- [Todas las funcionalidades](https://hostlylabs.com/es/funcionalidades): las 10 funcionalidades de Hostly, una a una.
+- [IA que responde en WhatsApp](https://hostlylabs.com/es/funcionalidades/ia-whatsapp): contesta a los huéspedes 24/7 en su idioma con la información de cada piso y avisa al gestor cuando hace falta una persona.
+- [Check-in online y registro a la policía](https://hostlylabs.com/es/funcionalidades/check-in-online): el huésped rellena sus datos desde el móvil; en Cataluña, Hostly los envía cada día a los Mossos d'Esquadra. Gratis para siempre.
+- [Reservas y calendarios](https://hostlylabs.com/es/funcionalidades/channel-manager): Airbnb y Booking.com en un solo calendario, más reservas directas con motor propio y pago por Stripe.
+- [Gestión de limpiezas](https://hostlylabs.com/es/funcionalidades/gestion-de-limpiezas): una limpieza por cada salida, turno por piso, fotos de salida, incidencias y lo que se debe a cada persona.
+- [Precios dinámicos con PriceLabs](https://hostlylabs.com/es/funcionalidades/precios-dinamicos): recomendaciones de PriceLabs dentro de Hostly, con los límites del gestor, publicadas en Airbnb y Booking cada día.
+- [Mensajería programada](https://hostlylabs.com/es/funcionalidades/mensajeria-programada): plantillas por momento de la reserva, por piso y traducidas, por WhatsApp o por Airbnb y Booking.
+- [Roles y permisos](https://hostlylabs.com/es/funcionalidades/multi-rol): gestores por piso, equipo de limpieza y propietarios en solo lectura. Sin límite de usuarios.
+- [Finanzas en orden](https://hostlylabs.com/es/funcionalidades/finanzas): ingresos por piso, canal y periodo, comisiones calculadas y liquidaciones a propietarios en cuatro pasos.
+- [Taxa turística](https://hostlylabs.com/es/funcionalidades/burocracia): la taxa turística de Cataluña, calculada por piso y semestre, con el Excel listo para presentar en la ATC.
+- [Conéctalo todo](https://hostlylabs.com/es/funcionalidades/conecta-todo): automatizaciones a medida; servicio aparte con cuota mensual.
 
 ## Para quién
 
-- [Propietarios](https://hostlylabs.com/propietarios): 1-3 pisos sin que te consuman el día.
-- [Gestores pequeños](https://hostlylabs.com/gestores-pequenos): 5-15 pisos. Una app, una factura.
-- [Segunda residencia](https://hostlylabs.com/segunda-residencia): Que el verano vuelva a ser verano.
-- [Pisos heredados](https://hostlylabs.com/hereus): El piso heredado sin quebraderos de cabeza.
+- [Propietarios](https://hostlylabs.com/es/propietarios): 1-3 pisos sin que te consuman el día.
+- [Gestores pequeños](https://hostlylabs.com/es/gestores-pequenos): 5-15 pisos. Una app, una factura.
+- [Segunda residencia](https://hostlylabs.com/es/segunda-residencia): que el verano vuelva a ser verano.
+- [Pisos heredados](https://hostlylabs.com/es/hereus): el piso heredado, sin quebraderos de cabeza.
 
-## Guías legales y compliance (España)
+## Guías legales (España)
 
-- [SES.Hospedajes: guía completa 2026](https://hostlylabs.com/blog/ses-hospedajes-guia-completa-2026): Todo sobre el registro obligatorio de viajeros en España.
-- [SES + NRUA + taxa turística](https://hostlylabs.com/blog/ses-nrua-taxa-turistica-guia): Las 3 obligaciones legales del propietario explicadas.
-- [SES para 1 apartamento](https://hostlylabs.com/blog/ses-hospedajes-un-solo-apartamento): Guía para propietarios únicos sin gestoría.
-- [Registro viajeros Mossos d'Esquadra](https://hostlylabs.com/blog/registro-viajeros-mossos-esquadra-cataluna): Cataluña específico.
-- [Sanciones por no cumplir](https://hostlylabs.com/blog/sanciones-por-no-cumplir-registro-viajeros): Multas y riesgos reales.
-- [Check-in digital en España](https://hostlylabs.com/blog/checkin-digital-comparativa-espana): Opciones, precios y comparativa.
+- [SES.Hospedajes: guía completa 2026 para apartamentos turísticos](https://hostlylabs.com/es/blog/ses-hospedajes-guia-completa-2026): el registro obligatorio de viajeros en España.
+- [SES, NRUA y taxa turística: guía para propietarios](https://hostlylabs.com/es/blog/ses-nrua-taxa-turistica-guia): las tres obligaciones legales del propietario, explicadas.
+- [SES.Hospedajes para propietarios de 1 apartamento](https://hostlylabs.com/es/blog/ses-hospedajes-un-solo-apartamento): para propietarios con un solo piso y sin gestoría.
+- [Cómo registrar a los viajeros en Mossos d'Esquadra (Cataluña)](https://hostlylabs.com/es/blog/registro-viajeros-mossos-esquadra-cataluna): guía práctica para Cataluña.
+- [Sanciones por no cumplir con el registro de viajeros](https://hostlylabs.com/es/blog/sanciones-por-no-cumplir-registro-viajeros): cuánto te puede costar.
+- [Check-in digital en España: opciones y comparativa](https://hostlylabs.com/es/blog/checkin-digital-comparativa-espana)
 
 ## Herramientas y stack
 
-- [¿Cuánto cuesta gestionar?](https://hostlylabs.com/blog/cuanto-cuesta-gestionar-piso-turistico): Desglose del coste real anual de un piso turístico.
-- [Stack completo propietario](https://hostlylabs.com/blog/stack-completo-propietario-airbnb): Qué herramientas necesitas y cuáles puedes eliminar.
-- [Channel manager: guía](https://hostlylabs.com/blog/channel-manager-alquiler-vacacional-guia): Qué es, para qué sirve y cómo elegir.
-- [Los mejores PMS 2026](https://hostlylabs.com/blog/pms-apartamentos-turisticos-mejores-2026): Análisis de los 10 PMS principales.
-- [Hostify vs Lodgify vs Smoobu](https://hostlylabs.com/blog/hostify-vs-lodgify-vs-smoobu-comparativa): Comparativa honesta.
+- [Cuánto cuesta gestionar un piso turístico](https://hostlylabs.com/es/blog/cuanto-cuesta-gestionar-piso-turistico)
+- [El stack real del propietario Airbnb en 2026](https://hostlylabs.com/es/blog/stack-completo-propietario-airbnb): qué herramientas necesitas y cuáles puedes eliminar.
+- [Channel manager para alquiler vacacional](https://hostlylabs.com/es/blog/channel-manager-alquiler-vacacional-guia): qué es, para qué sirve y cómo elegirlo.
+- [PMS para apartamentos turísticos en 2026](https://hostlylabs.com/es/blog/pms-apartamentos-turisticos-mejores-2026): qué es un PMS y cómo elegirlo.
+- [Hostify vs Lodgify vs Smoobu](https://hostlylabs.com/es/blog/hostify-vs-lodgify-vs-smoobu-comparativa): comparativa entre los tres.
 
-## Comparativas directas con competidores
+## Comparativas
 
-- [Hostly vs Chekin](https://hostlylabs.com/comparativa/chekin): Check-in gratis vs pagar por cada entrada.
-- [Hostly vs Icnea](https://hostlylabs.com/alternativas/icnea): La alternativa moderna al PMS ibérico clásico.
-- [Hostly vs Hostify](https://hostlylabs.com/alternativas/hostify): IA nativa vs dependencia de terceros.
-- [Hostly vs Lodgify](https://hostlylabs.com/alternativas/lodgify): Gestión completa vs foco en reservas directas.
-- [Hostly vs Smoobu](https://hostlylabs.com/alternativas/smoobu): Con IA vs PMS básico europeo.
-- [Hostly vs Hospitable](https://hostlylabs.com/alternativas/hospitable): Alternativa ibérica con compliance legal.
-- [Hostly vs Guesty](https://hostlylabs.com/alternativas/guesty): Para 1-20 apartamentos, Hostly sin duda.
-- [Hostly vs Avantio](https://hostlylabs.com/alternativas/avantio): Modernidad e IA vs PMS tradicional ibérico.
+Qué cubre cada herramienta y para quién encaja.
+
+- [Hostly vs Chekin](https://hostlylabs.com/es/comparativa/chekin)
+- [Hostly vs Icnea](https://hostlylabs.com/es/alternativas/icnea)
+- [Hostly vs Hostify](https://hostlylabs.com/es/alternativas/hostify)
+- [Hostly vs Lodgify](https://hostlylabs.com/es/alternativas/lodgify)
+- [Hostly vs Smoobu](https://hostlylabs.com/es/alternativas/smoobu)
+- [Hostly vs Hospitable](https://hostlylabs.com/es/alternativas/hospitable)
+- [Hostly vs Guesty](https://hostlylabs.com/es/alternativas/guesty)
+- [Hostly vs Avantio](https://hostlylabs.com/es/alternativas/avantio)
 
 ## Automatización y operativa
 
-- [Automatizar con IA](https://hostlylabs.com/blog/automatizar-alquiler-vacacional-con-ia): Qué automatiza la IA en 2026.
-- [Responder mensajes Airbnb](https://hostlylabs.com/blog/responder-mensajes-airbnb-automaticamente): Sin perder el tono humano.
-- [WhatsApp Business](https://hostlylabs.com/blog/whatsapp-business-alquiler-vacacional): Casos de uso para alquiler vacacional.
-- [Precios dinámicos](https://hostlylabs.com/blog/precios-dinamicos-airbnb-booking): Cómo optimizar ingresos.
-- [Coordinación de limpiezas](https://hostlylabs.com/blog/coordinacion-limpiezas-excel-sistema): De Excel a sistema.
-- [Escalar de 3 a 10 apartamentos](https://hostlylabs.com/blog/pasar-3-a-10-apartamentos-sin-colapsar): Sin colapsar operativamente.
-- [Gestor pequeño, una app](https://hostlylabs.com/blog/gestor-pequeno-5-apps-una-app): El día típico con 8 pisos.
-- [5 horas semanales que te come un piso](https://hostlylabs.com/blog/5-horas-semana-recuperar-apartamento-turistico): Cómo recuperarlas.
-- [Huésped no responde al check-in](https://hostlylabs.com/blog/huesped-no-responde-checkin-online): Protocolo práctico.
+- [Cómo automatizar tu alquiler vacacional con IA](https://hostlylabs.com/es/blog/automatizar-alquiler-vacacional-con-ia)
+- [Cómo responder mensajes de Airbnb automáticamente](https://hostlylabs.com/es/blog/responder-mensajes-airbnb-automaticamente): sin perder el tono humano.
+- [WhatsApp Business para alquiler vacacional](https://hostlylabs.com/es/blog/whatsapp-business-alquiler-vacacional): casos de uso.
+- [Precios dinámicos en Airbnb y Booking](https://hostlylabs.com/es/blog/precios-dinamicos-airbnb-booking)
+- [Coordinación de limpiezas: de Excel a sistema automatizado](https://hostlylabs.com/es/blog/coordinacion-limpiezas-excel-sistema)
+- [Cómo pasar de 3 a 10 apartamentos sin colapsar](https://hostlylabs.com/es/blog/pasar-3-a-10-apartamentos-sin-colapsar)
+- [Gestionar 8 pisos turísticos con una sola app](https://hostlylabs.com/es/blog/gestor-pequeno-5-apps-una-app)
+- [Las 5 horas a la semana que te come un apartamento turístico](https://hostlylabs.com/es/blog/5-horas-semana-recuperar-apartamento-turistico): dónde se va el tiempo y cómo recuperarlo.
+- [Qué hacer cuando un huésped no responde al check-in online](https://hostlylabs.com/es/blog/huesped-no-responde-checkin-online)
 
-## Datos clave sobre Hostly
+## Datos clave
 
-- **Fundada:** 2024, equipo ibérico
-- **Target geográfico:** España y Portugal (soporte en español y catalán nativo)
-- **Precio:** 40€/apartamento/mes (37€ desde 5 apartamentos) · 14 días gratis sin tarjeta de crédito
-- **Check-in + SES.Hospedajes + NRUA + taxa turística:** incluido gratis para siempre, sin límite
-- **Integraciones OTA:** Airbnb, Booking.com, Vrbo vía Beds24
-- **WhatsApp:** integración nativa con IA propia (25+ idiomas)
-- **Partner oficial de:** Airbnb (Preferred+ Software Partner), Booking.com (Premier Connectivity), Google (Vacation Rentals Partner)
-- **Referral program:** 5 usuarios activos invitados = 1 apartamento gratis
+- **Fundador:** Biel Alsina, desde Barcelona.
+- **Mercado:** España. Atención en castellano y catalán.
+- **Idiomas:** la app está en catalán, castellano e inglés; el check-in del huésped, en castellano, inglés y francés; la IA contesta en el idioma del huésped.
+- **Precio:** plan gratis para siempre; Hostly completo a 40 €/mes por apartamento (35 € desde 5), primer mes gratis, sin permanencia.
+- **Canales:** Airbnb y Booking.com; reservas directas con motor propio y pago por Stripe.
+- **WhatsApp:** API oficial de WhatsApp (Meta), con un número gestionado por Hostly.
+- **Precios dinámicos:** PriceLabs, integrado en Hostly.
+- **Registro a la policía:** automático a los Mossos d'Esquadra en Cataluña; fuera de Cataluña, la conexión con SES.Hospedajes se activa con el cliente al darse de alta.
 
 ## Marco conceptual
 
-Hostly se posiciona contra "las 5 suscripciones" del propietario típico (no contra otros PMS). El enemigo público son Excel + WhatsApp + Dropbox + 3 suscripciones más. La promesa no es "ingresos pasivos" (falsa) sino **ingresos simples**. Hostly NO se autodenomina PMS, sino "la app que simplifica todo lo que implica tener un piso turístico".
+Hostly se posiciona contra el caos de llevar un piso turístico con varias apps, Excel y grupos de WhatsApp, no contra otros PMS. La promesa es simplicidad: una sola app para el día a día del piso, que hace sola lo repetitivo y avisa cuando hace falta una persona.

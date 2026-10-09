@@ -2,15 +2,38 @@
   "index": {
     "eyebrow": "Comparatives",
     "h1": "Hostly vs els altres PMS",
-    "subtitle": "Anàlisis honestos dels principals PMS del mercat per al perfil de propietari petit i gestor ibèric.",
-    "benchmark": {
-      "eyebrow": "Comparativa completa",
-      "h2": "Hostly és l'únic amb les 10 caselles. ✓",
-      "colFeature": "Funcionalitat",
-      "footerLabel": "Total ✓",
-      "legend": "✓ completo  ·  ⚠ parcial o via tercers  ·  ✗ no disponible. Dades verificades abril 2026."
-    },
-    "cardTitle": "Hostly vs {{name}}"
+    "subtitle": "Anàlisis honestes dels principals PMS del mercat per al perfil de propietari petit i gestor ibèric.",
+    "cardTitle": "Hostly vs {{name}}",
+    "distingue": {
+      "eyebrow": "Abans de comparar",
+      "h2": "El que distingeix Hostly.",
+      "items": [
+        {
+          "titol": "El registre a la policia, gratis",
+          "text": "Check-in online i registre a la policia al pla gratis, per sempre. Hi ha eines que el cobren per check-in."
+        },
+        {
+          "titol": "Pensat per a Espanya",
+          "text": "Mossos d'Esquadra, taxa turística catalana i suport en castellà i català."
+        },
+        {
+          "titol": "La IA contesta per WhatsApp",
+          "text": "Els teus hostes escriuen a WhatsApp i la IA respon en el seu idioma amb la informació del teu pis. Tu hi entres només quan cal."
+        },
+        {
+          "titol": "Un preu per pis, sense comissions",
+          "text": "40 €/mes per apartament, 35 € des de 5. Sense percentatge per reserva."
+        },
+        {
+          "titol": "Tot en una app",
+          "text": "Reserves d'Airbnb i Booking, neteges, preus amb PriceLabs i finances, sense cinc subscripcions."
+        },
+        {
+          "titol": "T'ho muntem amb tu",
+          "text": "El primer mes configurem els teus pisos i els teus canals en una videotrucada."
+        }
+      ]
+    }
   },
   "page": {
     "heroEyebrow": "Comparativa",
@@ -18,22 +41,22 @@
     "comparisonEyebrow": "Comparativa directa",
     "colFeature": "Funcionalitat",
     "colHostly": "Hostly",
-    "verifiedNote": "Dades verificades a l'abril 2026.",
+    "verifiedNote": "Dades públiques a l'abril del 2026, poden haver canviat.",
     "faqsEyebrow": "Preguntes freqüents",
     "ctaH2": "Comença avui amb Hostly",
-    "ctaSubtitle": "Sense targeta. Sense permanència. Check-in i compliance gratis per sempre.",
+    "ctaSubtitle": "Sense targeta. Sense permanència. Check-in i registre de viatgers gratis per sempre.",
     "ctaButton": "Començar"
   },
   "features": {
     "iaWhatsapp": "IA en WhatsApp nativa",
-    "checkinSes": "Check-in i SES gratis",
-    "complianceSes": "Compliance SES/NRUA natiu",
-    "preciosDinamicos": "Preus dinàmics inclosos",
+    "checkinSes": "Check-in i registre policial gratis",
+    "complianceSes": "Registre de viatgers a la policia",
+    "preciosDinamicos": "Preus dinàmics inclosos (amb PriceLabs)",
     "channelManager": "Channel manager",
     "limpiezas": "Coordinació de neteges",
     "soporteEs": "Suport en espanyol i català",
     "precio1apt": "Preu des d'1 apartament",
-    "selfServe": "Self-serve sense demo obligatòria",
+    "selfServe": "Començar gratis sense demo",
     "precioTransparente": "Preu públic transparent"
   }
 }

@@ -5,7 +5,7 @@
     "breadcrumb_label": "Para propietarios",
     "badge": "Para propietarios",
     "h1": "Tienes 1 o 2 pisos.\nNo deberías vivir pendiente de ellos.",
-    "intro": "Pusiste el piso en Airbnb para tener ingresos extra. No para responder mensajes a las 11 de la noche, coordinar neteges por WhatsApp y acordarte del registro policial. Hostly lo simplifica todo.",
+    "intro": "Pusiste el piso en Airbnb para tener ingresos extra. No para responder mensajes a las 11 de la noche, coordinar limpiezas por WhatsApp y acordarte del registro policial. Hostly lo simplifica todo.",
     "cta_primary": "Empezar",
     "cta_sub": "El check-in, gratis para siempre. El resto, el primer mes gratis.",
     "section2_h2": "Lo que te quita el sueño. Y cómo Hostly lo resuelve.",
@@ -14,11 +14,11 @@
     "pains": [
       {
         "pain": "Mensajes de huéspedes a horas imposibles",
-        "fix": "Hostly responde automáticamente las preguntas habituales. Tú recibes un resumen cuando quieres mirarlo."
+        "fix": "La IA de Hostly responde al momento las preguntas habituales, 24/7. Solo te avisa cuando hace falta una persona."
       },
       {
         "pain": "El registro policial que siempre dejas para última hora",
-        "fix": "Los datos van a SES.Hospedajes solos cuando entra la reserva. Sin logins, sin formularios."
+        "fix": "El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. Sin logins, sin formularios."
       },
       {
         "pain": "Coordinar a la limpiadora por WhatsApp",
@@ -26,10 +26,10 @@
       },
       {
         "pain": "El Excel de cobros que ya no entiendes",
-        "fix": "Todos los ingresos y comisiones dentro de Hostly. Cierra el mes en dos minutos."
+        "fix": "Todos los ingresos y comisiones dentro de Hostly, por piso y por canal."
       }
     ],
-    "section3_h2": "40€/mes. Todo incluido.",
+    "section3_h2": "40 € al mes por piso. Todo incluido.",
     "section3_body": "Reservas, check-in, mensajes, limpiezas y compliance. Una sola factura, una sola app. Y el check-in, gratis para siempre.",
     "cta_h2": "Empieza hoy.",
     "cta_sub2": "Sin tarjeta. Sin permanencia."
@@ -40,7 +40,7 @@
     "breadcrumb_label": "Para gestores",
     "badge": "Para gestores pequeños",
     "h1": "Llevas 8 pisos.\n¿Con cuántas apps?",
-    "intro": "Canal manager por aquí. Chekin por allá. Excel para los cobros. Dropbox para contratos. WhatsApp con huéspedes y otro con las limpiadoras. Hostly cierra todo eso en una sola app.",
+    "intro": "Canal manager por aquí. Chekin por allá. Excel para los cobros. Un WhatsApp con los huéspedes y otro con las limpiadoras. Hostly lo junta todo en una sola app.",
     "cta_primary": "Empezar",
     "cta_sub": "Sin permanencia. 35 €/apartamento desde 5 pisos.",
     "section2_h2": "El stack del gestor pequeño hoy.",
@@ -59,12 +59,8 @@
         "cost": "~120 €/año"
       },
       {
-        "name": "Excel + Dropbox",
+        "name": "Excel para cobros y liquidaciones",
         "cost": "Gratis en dinero, carísimo en tiempo"
-      },
-      {
-        "name": "Gestoria de taxes y IRPF",
-        "cost": "600–1.200 €/año"
       }
     ],
     "hostly_summary": "✅ Con Hostly: 35 €/apartamento/mes desde 5 pisos. Todo incluido. Una sola factura.",
@@ -77,7 +73,7 @@
     "breadcrumb_label": "Segunda residencia",
     "badge": "Segunda residencia",
     "h1": "Que el verano\nvuelva a ser verano.",
-    "intro": "Tienes un piso en la costa que alquilas cuando no lo usas. Cada entrada y salida, cada pregunta de los huéspedes, cada neteja coordinada — se convierte en un dolor de cabeza que ocupa el verano entero. Hostly lo ordena todo.",
+    "intro": "Tienes un piso en la costa que alquilas cuando no lo usas. Cada entrada y salida, cada pregunta de los huéspedes, cada limpieza por coordinar se convierte en un dolor de cabeza que ocupa el verano entero. Hostly lo ordena todo.",
     "cta_primary": "Empezar",
     "cta_sub": "El check-in, gratis para siempre. El resto, el primer mes gratis.",
     "section2_h2": "Configuras una vez en mayo. Funciona todo el verano.",
@@ -85,7 +81,7 @@
       {
         "icon": "🔑",
         "title": "Check-in sin estar allí",
-        "desc": "El huésped recibe su código de acceso solo. No tienes que desplazarte ni quedar con nadie."
+        "desc": "Cuando el huésped completa el check-in desde el móvil, recibe su código de acceso. No tienes que desplazarte ni quedar con nadie."
       },
       {
         "icon": "🧹",
@@ -99,29 +95,29 @@
       },
       {
         "icon": "🛡️",
-        "title": "Compliance automático",
-        "desc": "SES, policía y taxa turística enviados solos. Sin acordarte de hacerlo tú."
+        "title": "Registro y taxa, sin pensarlo",
+        "desc": "Hostly envía el registro de viajeros a la policía y, si el piso está en Cataluña, te deja calculada la taxa turística. Sin acordarte de hacerlo tú."
       }
     ],
     "cta_h2": "Empieza hoy.",
-    "cta_sub2": "40 €/mes. Sin tarjeta. Sin permanencia."
+    "cta_sub2": "40 € al mes por piso. El primer mes, gratis. Sin permanencia."
   },
   "hereus": {
     "meta_title": "Heredaste un piso turístico. Hostly lo simplifica.",
     "meta_description": "Heredaste uno o dos pisos y los pusiste en Airbnb sin saber muy bien cómo. Hostly gestiona check-in, mensajes, limpiezas y compliance sin que tengas que aprender nada.",
-    "breadcrumb_label": "Hereus",
+    "breadcrumb_label": "Pisos heredados",
     "badge": "Pisos heredados",
     "h1": "El piso heredado\nsin quebraderos de cabeza.",
-    "intro": "Lo pusiste en Airbnb porque no querías venderlo. Pero ahora tienes mensajes, check-ins, registros policiales y neteges que gestionar. Tú tienes otra vida. Hostly se encarga de lo demás.",
+    "intro": "Lo pusiste en Airbnb porque no querías venderlo. Pero ahora tienes mensajes, check-ins, registros policiales y limpiezas que gestionar. Tú tienes otra vida. Hostly se encarga de lo demás.",
     "cta_primary": "Empezar",
     "cta_sub": "Sin tarjeta. Sin permanencia. Sin aprender nada nuevo.",
     "section2_h2": "No tienes que ser un experto en alquiler turístico.",
-    "section2_body": "Hostly está diseñado para que funcione desde el primer día, sin demos, sin documentación, sin aprender un software nuevo. Configuras el piso en 15 minutos y el sistema hace el resto.",
+    "section2_body": "Hostly está pensado para que funcione desde el primer día, sin aprender un software nuevo. El primer mes lo configuramos contigo en una videollamada y después el sistema hace el resto.",
     "features": [
       {
         "icon": "⏱️",
-        "title": "Listo en 15 minutos",
-        "desc": "Conectas Airbnb, añades el piso y ya está. Sin onboarding de dos semanas."
+        "title": "Configurado contigo",
+        "desc": "Añades el piso en unos minutos. Airbnb y Booking los conectamos contigo en una videollamada. Sin formaciones de dos semanas."
       },
       {
         "icon": "🤖",
@@ -135,6 +131,6 @@
       }
     ],
     "cta_h2": "Empieza hoy.",
-    "cta_sub2": "40 €/mes. Sin tarjeta. Sin aprender nada nuevo."
+    "cta_sub2": "40 € al mes por piso. El primer mes, gratis."
   }
 }

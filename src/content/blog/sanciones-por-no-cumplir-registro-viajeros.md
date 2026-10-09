@@ -111,7 +111,7 @@ La fórmula es simple pero no trivial:
 - **Automatiza el envío** para no depender de tu memoria o disponibilidad.
 - **Elige una herramienta que cubra tu territorio** (si estás en Cataluña necesitas Mossos, no sólo SES).
 - **Revisa mensualmente** que todas las reservas del mes tienen registro enviado. Un repaso rápido de 10 minutos.
-- **Guarda documentos de identidad** escaneados por si hay inspección.
+- **Guarda el comprobante** de cada envío por si hay inspección.
 
 Una herramienta decente hace todo esto solo. Tu trabajo es sólo elegirla y confiar en el proceso.
 

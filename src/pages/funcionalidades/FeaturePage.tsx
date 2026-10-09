@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
+import { iconaFuncio } from '@/lib/data/iconesFuncions';
 import { ArrowRight, Check } from 'lucide-react';
-import * as icons from 'lucide-react';
 import type { Feature } from '@/lib/data/features';
 import { useFeatures } from '@/lib/data/useFeatures';
 import { useTranslation } from 'react-i18next';
@@ -12,9 +12,6 @@ import { LangLink } from '@/i18n/LangLink';
 import { useEmpezar } from "@/lib/empezar";
 const ease = [0.22, 1, 0.36, 1] as const;
 
-// Mapa dinàmic de Lucide icons
-const IconMap = icons as unknown as Record<string, React.FC<{ className?: string; style?: React.CSSProperties }>>;
-
 interface Props {
   feature: Feature;
 }
@@ -24,7 +21,7 @@ export default function FeaturePage({ feature }: Props) {
   const { t } = useTranslation('funcionalidades');
   const { t: tEmbut } = useTranslation('embut');
   const allFeatures = useFeatures();
-  const Icon = IconMap[feature.iconName] ?? icons.Sparkles;
+  const Icon = iconaFuncio(feature.iconName);
   const related = feature.relatedFeatures
     .map((s) => allFeatures.find((f) => f.slug === s))
     .filter((f): f is Feature => Boolean(f));
@@ -271,7 +268,7 @@ export default function FeaturePage({ feature }: Props) {
 
             <div className="grid md:grid-cols-3 gap-5">
               {related.map((rf) => {
-                const RIcon = IconMap[rf.iconName] ?? icons.Sparkles;
+                const RIcon = iconaFuncio(rf.iconName);
                 return (
                   <LangLink
                     key={rf.slug}

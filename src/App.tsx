@@ -86,6 +86,31 @@ function Redirigeix({ a }: { a: string }) {
   return <Navigate to={`/${lang}${a}`} replace />;
 }
 
+/* ─── Enllaços amb # (/es#faq, /es/precios#precios): baixar fins a la secció ───
+ * React Router no ho fa sol, i la portada triga a tenir l'alçada final (animació fixada
+ * de l'entrada, pàgines que es carreguen a part): es torna a provar uns segons. */
+function ScrollAHash() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const id = decodeURIComponent(hash.slice(1));
+    let intents = 0;
+    let temps = 0;
+    const prova = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        const reduir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        el.scrollIntoView({ behavior: reduir ? 'auto' : 'smooth', block: 'start' });
+        return;
+      }
+      if (++intents < 20) temps = window.setTimeout(prova, 150);
+    };
+    temps = window.setTimeout(prova, 350);
+    return () => window.clearTimeout(temps);
+  }, [pathname, hash]);
+  return null;
+}
+
 /* ─── Redirect per rutes legacy (sense prefix d'idioma) ─── */
 function LegacyRedirect() {
   const location = useLocation();
@@ -171,6 +196,7 @@ const App = () => (
           </Routes>
         </Suspense>
         <AvisGaletes />
+        <ScrollAHash />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

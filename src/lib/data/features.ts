@@ -52,59 +52,59 @@ export const FEATURES: Feature[] = [
     name: 'IA que responde en WhatsApp',
     iconName: 'MessageCircle',
     shortDescription:
-      'Un agente que contesta a tus huéspedes por WhatsApp con tu tono, 24/7, y te deja solo las conversaciones que de verdad necesitan tu atención.',
+      'Contesta a tus huéspedes por WhatsApp, 24/7 y en su idioma, con la información de cada piso. Te avisa solo cuando hace falta una persona.',
     hero: {
       h1: 'Un agente que responde por WhatsApp mientras tú no miras el móvil',
-      sub: 'Contesta dudas de check-in, normas, Wi-Fi o incidencias con el tono que le marcas. Escala a ti solo cuando hace falta.',
-      primaryCta: 'Probar la IA gratis',
-      secondaryCta: 'Ver cómo responde',
+      sub: 'Contesta dudas de check-in, normas, Wi-Fi o incidencias con la información de cada piso. La mayoría, al instante. El resto te lo pasa a ti.',
+      primaryCta: 'Empezar',
+      secondaryCta: 'Ver precios',
     },
     problem: {
       title: 'Tu móvil no debería sonar a las 2 de la mañana por preguntar dónde está el garaje',
-      body: 'Gestionar apartamentos turísticos acaba siendo responder las mismas 20 preguntas todo el día. Huéspedes que preguntan el Wi-Fi, cómo abrir la puerta, si pueden hacer early check-in. Multiplícalo por 3 apartamentos y un fin de semana: ya no descansas.',
+      body: 'Gestionar pisos turísticos acaba siendo responder las mismas preguntas todo el día. El Wi-Fi, cómo abrir la puerta, si pueden entrar antes. Multiplícalo por tres pisos y un fin de semana lleno: ya no descansas.',
     },
     howItWorks: [
       {
         step: 1,
-        title: 'Conectas tu WhatsApp y tu canal OTA',
-        body: 'Enlazas WhatsApp Business y Airbnb/Booking. El agente lee el contexto de la reserva (apartamento, fechas, huésped) automáticamente.',
+        title: 'Conectas tus reservas, no tu WhatsApp',
+        body: 'Conectas Airbnb y Booking. Tus huéspedes escriben a un número de WhatsApp gestionado por Hostly, con la API oficial de Meta: no instalas ni configuras nada.',
       },
       {
         step: 2,
-        title: 'Le das tus normas y tu tono',
-        body: 'Rellenas una guía por apartamento: Wi-Fi, check-in, normas, mejores restaurantes. Marcas el tono (cercano, formal, en catalán, en castellano).',
+        title: 'Rellenas la ficha de cada piso',
+        body: 'Wi-Fi, cómo entrar, normas, parking, recomendaciones. La IA responde con eso y con los datos de la reserva: piso, fechas y huéspedes.',
       },
       {
         step: 3,
-        title: 'La IA responde y escala cuando toca',
-        body: 'Responde dudas repetitivas al instante. Si detecta queja, petición fuera de norma o algo técnico, te pasa la conversación a ti con un resumen.',
+        title: 'La IA responde y te avisa cuando toca',
+        body: 'Contesta al momento, de día o de noche, en el idioma del huésped. Si algo necesita a una persona, te avisa con el piso y las primeras palabras del mensaje.',
       },
       {
         step: 4,
-        title: 'Tú ves todo en un inbox unificado',
-        body: 'Revisas qué ha respondido, editas tono sobre la marcha y aprendes qué preguntas se repiten por apartamento.',
+        title: 'Tú lo ves todo en una sola bandeja',
+        body: 'WhatsApp, Airbnb y Booking en el mismo sitio. Tomas el control de cualquier conversación cuando quieras. Si corriges una respuesta, la IA guarda la lección y la ves en el chat.',
       },
     ],
     advantages: [
-      'Contesta en castellano, catalán e inglés sin cambiar de configuración',
-      'Lee el contexto de la reserva — no responde genérico, responde por reserva',
-      'Escala a ti con resumen claro cuando detecta algo delicado',
-      'Aprende de tus correcciones para responder cada vez más como tú',
-      'Deja trazabilidad completa: qué respondió, a quién, cuándo',
-      'Inbox unificado: WhatsApp, Airbnb, Booking y email en una sola vista',
+      'Contesta 24/7 en el idioma del huésped, sea cual sea',
+      'Responde con la ficha de cada piso y los datos de la reserva, no en genérico',
+      'Te avisa cuando hace falta una persona, con el piso y las primeras palabras',
+      'Aprende de tus correcciones, y cada lección se ve en el chat',
+      'WhatsApp, Airbnb y Booking en una sola bandeja',
+      'Cada respuesta de la IA queda marcada como suya',
     ],
     usage: [
       {
-        title: 'Check-in del viernes noche',
-        body: 'El huésped pregunta cómo abrir la puerta a las 23:45. La IA le manda el código y las instrucciones del apartamento concreto al instante. Tú duermes.',
+        title: 'Llegada a medianoche',
+        body: 'El huésped pregunta cómo llegar al piso a las 23:45. La IA le contesta con las instrucciones de ese piso, en su idioma. Tú duermes.',
       },
       {
         title: 'Dudas de última hora',
-        body: 'Preguntan si hay parking, si admiten mascotas, si pueden fumar. La IA responde con tus normas. Si insisten, te avisa.',
+        body: 'Preguntan si hay parking, si admiten mascotas, si se puede fumar. La IA responde con lo que pone la ficha del piso. Si no lo sabe, te avisa.',
       },
       {
-        title: 'Incidencia real',
-        body: 'Se queja del aire acondicionado. La IA detecta la queja, responde para calmar, abre incidencia en limpiezas/mantenimiento y te notifica.',
+        title: 'Una queja de verdad',
+        body: 'El aire acondicionado no enfría. La IA te avisa con el piso y las primeras palabras del mensaje, y tú tomas el control de la conversación.',
       },
     ],
     relatedFeatures: ['mensajeria-programada', 'check-in-online', 'conecta-todo'],
@@ -112,22 +112,22 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Puedo revisar lo que responde antes de que se envíe?',
         answer:
-          'Sí. Tienes dos modos: envío automático o revisión previa. Puedes empezar en modo revisión hasta que el tono esté calibrado y después pasar a automático.',
+          'No hay revisión previa: la IA contesta sola. Lo que sí puedes es activarla o apagarla en cada piso y tomar el control de cualquier conversación cuando quieras.',
       },
       {
         question: '¿Qué pasa si un huésped pregunta algo que la IA no sabe?',
         answer:
-          'Te escala la conversación con un resumen de lo hablado. El huésped no ve ningún corte: la IA le dice que consulta un momento y tú apareces.',
+          'Te avisa con el piso y las primeras palabras del mensaje, y contestas tú. Si corriges una respuesta, la IA guarda la lección para la próxima vez.',
       },
       {
         question: '¿Habla catalán de verdad?',
         answer:
-          'Sí. Catalán, castellano, inglés, francés e italiano. Cambia el idioma según el huésped sin que tengas que configurarlo.',
+          'Sí. Contesta en el idioma en que escribe el huésped: catalán, castellano, inglés, francés o el que sea. No tienes que configurar nada.',
       },
       {
         question: '¿Necesito WhatsApp Business?',
         answer:
-          'Sí. Usamos WhatsApp Business API vía Evolution. Si no lo tienes configurado, te guiamos en el onboarding sin coste extra.',
+          'No. Hostly usa la API oficial de WhatsApp (Meta) con un número gestionado por Hostly. Tus huéspedes escriben a ese número y tú no instalas ni configuras nada.',
       },
     ],
   },
@@ -135,161 +135,171 @@ export const FEATURES: Feature[] = [
   // ─────────────────────────────── CHECK-IN ONLINE ───────────────────────────────
   {
     slug: 'check-in-online',
-    name: 'Check-in online con SES automático',
+    name: 'Check-in online y registro a la policía',
     iconName: 'ShieldCheck',
     shortDescription:
-      'El huésped firma, envía documento y datos desde su móvil. Hostly los manda automáticamente a SES.Hospedajes y a Mossos o Ertzaintza.',
+      'El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. En Cataluña, a los Mossos d\'Esquadra. Gratis para siempre.',
     hero: {
-      h1: 'Check-in legal hecho antes de que el huésped llegue al apartamento',
-      sub: 'El viajero sube DNI, firma y datos desde su móvil. Hostly lo envía a SES.Hospedajes y registros autonómicos sin que tú toques nada.',
-      primaryCta: 'Ver flujo completo',
-      secondaryCta: 'Hablar con ventas',
+      h1: 'El registro a la policía, sin copiar ni un dato a mano',
+      sub: 'El huésped rellena sus datos desde el móvil y Hostly los valida. En Cataluña, los envía cada día a los Mossos d\'Esquadra. En el resto de España, la conexión la activamos contigo al darte de alta.',
+      primaryCta: 'Empezar',
+      secondaryCta: 'Ver precios',
     },
     problem: {
-      title: 'El parte de viajeros te ocupa más tiempo del que debería',
-      body: 'Desde el 2 de enero de 2025 el SES.Hospedajes es obligatorio. Muchos propietarios siguen rellenando datos a mano, enviando formularios a cada huésped, pasándolos al portal del Ministerio uno por uno. En alta ocupación es imposible mantenerlo al día sin errores.',
+      title: 'El registro de viajeros te ocupa más tiempo del que debería',
+      body: 'Cada huésped tiene que quedar registrado en la policía. Muchos propietarios siguen pidiendo los datos por WhatsApp, copiándolos a mano y entrando en el portal uno por uno. En temporada alta es imposible llevarlo al día sin errores.',
     },
     howItWorks: [
       {
         step: 1,
-        title: 'El huésped recibe un enlace al confirmar reserva',
-        body: 'Llega automáticamente por WhatsApp o email según tu configuración, con las instrucciones en su idioma.',
+        title: 'El huésped recibe su enlace',
+        body: 'En el plan completo, le llega con los mensajes automáticos, en su idioma. En el plan gratis, cada piso tiene su enlace fijo para compartirlo con tus huéspedes.',
       },
       {
         step: 2,
-        title: 'Hace el check-in desde el móvil en 3 minutos',
-        body: 'Sube foto del documento, rellena datos y firma. El formulario valida que no falten campos obligatorios.',
+        title: 'Rellena sus datos desde el móvil',
+        body: 'Nombre, documento, fecha de nacimiento, nacionalidad y dirección, en castellano, inglés o francés. Un adulto puede registrar a todo el grupo con el mismo enlace.',
       },
       {
         step: 3,
-        title: 'Hostly envía el parte a SES y registros autonómicos',
-        body: 'Genera el XML correcto, lo firma y lo envía a SES.Hospedajes, Mossos d\'Esquadra o Ertzaintza según la comunidad.',
+        title: 'Hostly comprueba cada dato',
+        body: 'Antes de enviar nada, valida cada campo. Si falta algo o no es válido, el huésped lo corrige en el momento. El código de acceso solo aparece cuando el check-in está hecho.',
       },
       {
         step: 4,
-        title: 'Recibes confirmación y guardamos la prueba',
-        body: 'Si hay error de validación en el Ministerio, lo detectamos y te avisamos. Si todo va bien, queda archivado por si te piden justificación.',
+        title: 'Hostly lo envía a la policía',
+        body: 'En Cataluña, cada día a las 15:00 sube el fichero al portal de los Mossos d\'Esquadra y archiva el comprobante. Si alguna línea falla, te avisa y te dice cuál.',
       },
     ],
     advantages: [
-      'Cumple SES.Hospedajes, Mossos y Ertzaintza sin intervención manual',
-      'Firma digital válida con auditoría por reserva',
-      'Formulario móvil en 5 idiomas',
-      'Detecta documentos borrosos antes de que los envíes',
-      'Guarda justificantes durante el plazo legal requerido',
-      'Evita sanciones por partes sin enviar o con datos incompletos',
+      'Formulario en el móvil, en castellano, inglés y francés',
+      'Cada dato se valida antes de enviarlo',
+      'Un adulto registra a todo el grupo con el mismo enlace',
+      'El código de acceso, solo cuando el check-in está hecho',
+      'Envío diario a los Mossos d\'Esquadra, con el comprobante archivado',
+      'Aviso si falta un check-in o si un registro falla',
     ],
     usage: [
       {
-        title: 'Familia con 4 personas',
-        body: 'Un adulto rellena datos de todos, sube los 4 DNIs y firma. En 4 minutos queda todo registrado en SES.',
+        title: 'Familia de cuatro',
+        body: 'Un adulto registra a los cuatro con el mismo enlace. Si un dato no es válido, lo ve antes de enviar, no cuando ya es tarde.',
       },
       {
-        title: 'Apartamentos en Catalunya',
-        body: 'Envío automático al Registre de Viatgers de Mossos d\'Esquadra, además del SES nacional. Sin doble trabajo.',
+        title: 'Pisos en Cataluña',
+        body: 'Cada día a las 15:00, Hostly sube a los Mossos los check-ins pendientes y guarda el comprobante. Tú no entras en ningún portal.',
       },
       {
-        title: 'Llegada nocturna sin presencia',
-        body: 'El huésped hace check-in a las 23:00, accede con código al apartamento y el parte queda enviado antes de que tú te enteres.',
+        title: 'Llegada a medianoche',
+        body: 'El huésped hace el check-in a las 23:00 y solo entonces ve el código de la puerta. El registro sale con el envío del día siguiente, sin que tú te despiertes.',
       },
     ],
-    relatedFeatures: ['ia-whatsapp', 'mensajeria-programada', 'multi-rol'],
+    relatedFeatures: ['burocracia', 'mensajeria-programada', 'ia-whatsapp'],
     faqs: [
       {
         question: '¿Sustituye a Chekin?',
         answer:
-          'Sí. Hostly hace check-in, firma y envío SES sin necesidad de Chekin como intermediario. Si ya usas Chekin, la migración se hace en una sesión.',
+          'Si tus pisos están en Cataluña, sí: el check-in y el envío a los Mossos funcionan solos, sin otra app en medio. En el resto de España, activamos la conexión con la policía contigo al darte de alta.',
       },
       {
-        question: '¿Qué pasa si SES.Hospedajes rechaza el parte?',
+        question: '¿Qué pasa si un registro falla?',
         answer:
-          'Lo detectamos inmediatamente, te avisamos y te mostramos qué campo falló. Puedes corregirlo en un par de clics.',
+          'Hostly lee la respuesta del portal de los Mossos línea a línea. Si alguna falla, te avisa y te dice cuál, para que la corrijas.',
       },
       {
-        question: '¿Y si tengo apartamentos en Catalunya y Andalucía a la vez?',
+        question: '¿El huésped tiene que subir una foto del documento?',
         answer:
-          'Hostly detecta la comunidad autónoma del apartamento y envía al registro correcto (Mossos, Ertzaintza o solo SES).',
+          'No. Solo escribe sus datos: tipo y número de documento, nombre, fecha de nacimiento, nacionalidad y dirección. Hostly comprueba que son válidos antes de enviarlos.',
       },
       {
-        question: '¿Cuánto tiempo guardáis los partes?',
+        question: '¿Cuánto cuesta?',
         answer:
-          'Los mantenemos archivados durante el plazo legal exigido (3 años) para que puedas justificar cualquier registro si hay inspección.',
+          'Nada. El check-in online y el registro a la policía son gratis para siempre, sin tarjeta. En Cataluña, también la taxa turística.',
       },
     ],
   },
 
-  // ─────────────────────────────── CHANNEL MANAGER ───────────────────────────────
+  // ─────────────────────────── RESERVAS Y CALENDARIOS (channel-manager) ───────────────────────────
   {
     slug: 'channel-manager',
-    name: 'Channel manager unificado',
+    name: 'Reservas y calendarios',
     iconName: 'Calendar',
     shortDescription:
-      'Calendario único para Airbnb, Booking y tu web. Se sincroniza en tiempo real y te protege de dobles reservas.',
+      'Airbnb y Booking en un solo calendario. Las reservas entran al momento y, dentro de Hostly, dos reservas no pueden solaparse.',
     hero: {
-      h1: 'Un calendario único para Airbnb, Booking y tu web',
-      sub: 'Sincronización en tiempo real, anti-overbooking y cambios de precio desde un solo sitio.',
-      primaryCta: 'Conectar mis OTAs',
-      secondaryCta: 'Ver integraciones',
+      h1: 'Un solo calendario para Airbnb, Booking y tus reservas directas',
+      sub: 'Las reservas entran solas, los bloqueos llegan a los canales al instante y los precios se publican desde un solo sitio.',
+      primaryCta: 'Empezar',
+      secondaryCta: 'Ver precios',
     },
     problem: {
-      title: 'Gestionar 3 calendarios a mano siempre acaba en overbooking',
-      body: 'Tener Airbnb, Booking y la web con calendarios separados es cuestión de tiempo. Un bloqueo que tardas en mover, un cambio de fechas que no actualizas, y acabas con dos reservas en la misma noche. Se pierde dinero y reputación.',
+      title: 'Llevar varios calendarios a mano acaba en una doble reserva',
+      body: 'Tener Airbnb y Booking con calendarios separados es cuestión de tiempo. Un bloqueo que tardas en poner, un cambio de fechas que no actualizas, y acabas con dos reservas la misma noche. Se pierde dinero y reputación.',
     },
     howItWorks: [
       {
         step: 1,
-        title: 'Conectas tus OTAs desde el panel',
-        body: 'Airbnb, Booking.com y Beds24 se conectan en unos minutos. Tu web se enlaza vía widget de reserva.',
+        title: 'Conectas Airbnb y Booking',
+        body: 'Airbnb, con tu cuenta. Booking.com, con el ID de tu propiedad. Lo hacemos contigo en la configuración del primer mes.',
       },
       {
         step: 2,
         title: 'Importamos tu histórico',
-        body: 'Traemos reservas actuales y futuras. A partir de ese momento todo se sincroniza en tiempo real.',
+        body: 'Traemos tus reservas. A partir de ese momento, cada reserva nueva entra sola, y cada 20 minutos Hostly lo vuelve a comprobar por si alguna se ha quedado por el camino.',
       },
       {
         step: 3,
-        title: 'Editas disponibilidad y precios en un sitio',
-        body: 'Un cambio de precio se propaga a todas las plataformas. Un bloqueo se refleja al instante en todas.',
+        title: 'Lo gestionas todo desde un calendario',
+        body: 'Los bloqueos que pones llegan a Airbnb y Booking al instante. Los precios se publican cada mañana y cada vez que cambias algo.',
+      },
+      {
+        step: 4,
+        title: 'Y tus reservas directas, también',
+        body: 'Hostly tiene su propio motor de reservas con pago por Stripe. Las reservas directas entran en el mismo calendario.',
       },
     ],
     advantages: [
-      'Anti-overbooking real: imposible solapar reservas',
-      'Sincronización bidireccional en tiempo real',
-      'Bloqueos y precios editables desde un único calendario',
-      'Histórico completo por apartamento',
-      'Alertas cuando una OTA falla en sincronización',
-      'Soporte para Airbnb, Booking, Vrbo y web directa',
+      'Airbnb y Booking.com en un solo calendario',
+      'Cada reserva entra al momento, con una comprobación cada 20 minutos',
+      'Dentro de Hostly, dos reservas no pueden solaparse',
+      'Bloqueos que llegan a los canales al instante',
+      'Tu histórico de reservas, importado',
+      'Reservas directas con motor propio y pago por Stripe',
     ],
     usage: [
       {
-        title: 'Subida de precio en Semana Santa',
-        body: 'Cambias precio una vez en Hostly. Airbnb y Booking lo reflejan en minutos.',
-      },
-      {
         title: 'Bloqueo por reforma',
-        body: 'Marcas 5 días de bloqueo. Todas las OTAs lo reciben antes de que nadie pueda reservar.',
+        body: 'Marcas cinco días de bloqueo en Hostly. Airbnb y Booking los reciben al instante.',
       },
       {
-        title: 'Cancelación de huésped',
-        body: 'Cuando una reserva cae, el hueco queda libre automáticamente en todas las plataformas.',
+        title: 'Subida de precio en Semana Santa',
+        body: 'Cambias el precio una vez en Hostly. Se publica en Airbnb y Booking en cuanto lo guardas.',
+      },
+      {
+        title: 'Cancelación de última hora',
+        body: 'Un huésped cancela en Airbnb. La cancelación entra en Hostly, la limpieza de ese día se cancela y tu equipo recibe el aviso.',
       },
     ],
     relatedFeatures: ['precios-dinamicos', 'gestion-de-limpiezas', 'conecta-todo'],
     faqs: [
       {
-        question: '¿Qué OTAs soportáis?',
+        question: '¿Qué plataformas conectáis?',
         answer:
-          'Airbnb, Booking.com, Vrbo y más vía Beds24. Si tienes web directa, conectamos el motor de reservas por widget o iframe.',
+          'Airbnb y Booking.com. Para las reservas directas, Hostly tiene su propio motor de reservas con pago por Stripe.',
       },
       {
-        question: '¿Qué pasa si Airbnb tiene un fallo de API?',
+        question: '¿Necesito otro channel manager?',
         answer:
-          'Te avisamos en tiempo real y protegemos tus calendarios para evitar overbooking. Cuando Airbnb vuelve, resincronizamos solo.',
+          'No. Hostly se conecta con Airbnb y Booking a través de un channel manager que trabaja por detrás. Tú lo ves y lo cambias todo desde Hostly.',
       },
       {
-        question: '¿Puedo usar Hostly sin conectar ninguna OTA?',
+        question: '¿Y si una reserva tarda en llegar?',
         answer:
-          'Sí, pero pierdes el valor principal. Hostly está pensado para unificar, no para ir aislado.',
+          'Cada reserva entra en cuanto la plataforma la envía. Además, cada 20 minutos Hostly vuelve a comprobar los canales por si alguna se ha quedado por el camino.',
+      },
+      {
+        question: '¿Puedo usar Hostly sin conectar Airbnb ni Booking?',
+        answer:
+          'Sí. En el plan gratis, Hostly lee tu calendario de Airbnb y Booking con el enlace iCal cada 30 minutos, para el check-in y el registro a la policía.',
       },
     ],
   },
@@ -300,77 +310,82 @@ export const FEATURES: Feature[] = [
     name: 'Gestión de limpiezas con app para el equipo',
     iconName: 'Sparkles',
     shortDescription:
-      'Asigna limpiezas, recibe fotos de salida y controla incidencias sin grupos de WhatsApp caóticos.',
+      'Cada salida crea su limpieza y avisa a quien le toca. Fotos de salida, incidencias y lo que debes cada mes, sin grupos de WhatsApp caóticos.',
     hero: {
       h1: 'Coordina limpiezas sin vivir en un grupo de WhatsApp',
-      sub: 'Asignación automática, app para el equipo, fotos de salida y historial por apartamento.',
-      primaryCta: 'Ver la app del equipo',
-      secondaryCta: 'Probar gratis',
+      sub: 'Cada salida crea su limpieza. Si alguien no puede, pasa a la siguiente del turno. Y al acabar, fotos de cómo queda el piso.',
+      primaryCta: 'Empezar',
+      secondaryCta: 'Ver precios',
     },
     problem: {
-      title: 'Los grupos de WhatsApp con limpiadoras no escalan',
-      body: 'Cuando pasas de 2 a 5 apartamentos, coordinar limpiezas por WhatsApp se vuelve un caos. Mensajes perdidos, horarios que no cuadran, incidencias sin foto, materiales que faltan y no sabes qué día. Al final eres tú quien coordina todo a mano.',
+      title: 'Los grupos de WhatsApp con el equipo de limpieza no escalan',
+      body: 'Cuando pasas de dos a cinco pisos, coordinar limpiezas por WhatsApp se vuelve un caos. Mensajes perdidos, horarios que no cuadran, incidencias sin foto y nadie sabe quién va el sábado. Al final eres tú quien lo coordina todo a mano.',
     },
     howItWorks: [
       {
         step: 1,
-        title: 'Das de alta a tu equipo',
-        body: 'Añades a tus limpiadoras o empresa externa. Cada una tiene su app con los apartamentos asignados.',
+        title: 'Montas el equipo de cada piso',
+        body: 'Añades a las personas que limpian cada piso y el orden del turno. Cada una usa su app, en catalán, castellano o inglés, o el asistente de WhatsApp.',
       },
       {
         step: 2,
-        title: 'Hostly genera el calendario de limpiezas',
-        body: 'Detecta check-outs y crea turnos automáticamente. Puedes ajustar manualmente antes de asignar.',
+        title: 'Cada salida crea su limpieza',
+        body: 'Por cada salida, Hostly crea la limpieza de ese día y avisa a quien le toca. Si cambian las fechas, avisa del cambio.',
       },
       {
         step: 3,
-        title: 'El equipo confirma y hace fotos',
-        body: 'Confirman turno desde la app, marcan cuando entran y cuando acaban, suben fotos del estado final.',
+        title: 'Si alguien no puede, pasa a la siguiente',
+        body: 'Si la persona dice «no puedo», la limpieza pasa a la siguiente del turno, que recibe el aviso por WhatsApp. Tú no tienes que buscar a nadie.',
       },
       {
         step: 4,
-        title: 'Tú ves todo y registras incidencias',
-        body: 'Revisas fotos, incidencias (algo roto, olvido del huésped) y el histórico por apartamento.',
+        title: 'Al acabar, fotos e incidencias',
+        body: 'La limpieza se marca como hecha con fotos de salida. Si algo está roto o el huésped se ha dejado algo, queda como incidencia con fecha, piso y persona.',
       },
     ],
     advantages: [
-      'App dedicada para limpiadoras, sin necesidad de WhatsApp',
-      'Generación automática de turnos a partir de reservas',
-      'Fotos de salida firmadas por limpiadora',
-      'Registro de incidencias con fecha, apartamento y responsable',
-      'Notificaciones push al equipo',
-      'Pago por turnos: sabes qué cobras y qué debes cada mes',
+      'Una limpieza por cada salida, creada sola',
+      'Equipo por piso, con orden de turno',
+      '«No puedo» la pasa a la siguiente, con aviso por WhatsApp',
+      'Fotos de salida en cada limpieza',
+      'Incidencias con fecha, piso y persona',
+      'Historial por piso y lo que debes a cada persona cada mes',
     ],
     usage: [
       {
-        title: 'Agencia con 3 limpiadoras y 12 apartamentos',
-        body: 'Cada limpiadora ve solo los apartamentos que le tocan. El encargado ve todo desde una vista de calendario.',
+        title: 'Una baja el sábado por la mañana',
+        body: 'La limpiadora dice «no puedo» desde la app o por WhatsApp. La limpieza pasa a la siguiente del turno, que recibe el aviso. Tú no tienes que hacer nada.',
       },
       {
-        title: 'Incidencia: huésped dejó ropa',
-        body: 'La limpiadora sube foto desde la app. Queda registrado. Avisas al huésped por WhatsApp desde el mismo hilo.',
+        title: 'Cancelación de última hora',
+        body: 'Se cancela una reserva a las 10:00. La limpieza se cancela sola y la persona que la tenía recibe el aviso.',
       },
       {
-        title: 'Cambio de última hora',
-        body: 'Reserva cancelada a las 10:00. El turno se reprograma automáticamente y la limpiadora recibe la actualización.',
+        title: 'El huésped se dejó ropa',
+        body: 'Queda como incidencia, con la fecha, el piso y la persona, y se guarda en el historial del piso. Tú avisas al huésped desde Hostly.',
       },
     ],
     relatedFeatures: ['multi-rol', 'conecta-todo', 'channel-manager'],
     faqs: [
       {
-        question: '¿Y si mi limpiadora no quiere instalar otra app?',
+        question: '¿Y si mi equipo no quiere instalar otra app?',
         answer:
-          'La app es ligera, en su idioma y solo ve lo suyo. Solemos recomendarla en el mismo onboarding del equipo para que vean que les simplifica el día.',
+          'Puede recibir los avisos y contestar por WhatsApp, con el asistente. Y si usa la app, la tiene en catalán, castellano o inglés.',
       },
       {
-        question: '¿Puedo pagar a mi equipo desde la plataforma?',
+        question: '¿Puedo pagar a mi equipo desde Hostly?',
         answer:
-          'No. Hostly calcula importes por turno y te da el resumen mensual, pero el pago sigue haciéndose fuera.',
+          'No. Hostly te dice lo que debes a cada persona cada mes, pero el pago lo haces tú, fuera de Hostly.',
       },
       {
-        question: '¿Funciona con empresa de limpieza externa?',
+        question: '¿Qué pasa si cambian las fechas de una reserva?',
         answer:
-          'Sí. Damos un acceso de "equipo externo" para que coordinen turnos sin ver datos sensibles del negocio.',
+          'La persona que tenía la limpieza recibe el aviso del cambio. Si la reserva se cancela, la limpieza se cancela sola y también se le avisa.',
+      },
+      {
+        question: '¿Funciona con una empresa de limpieza externa?',
+        answer:
+          'Sí. Añades a sus personas al equipo de los pisos que limpian. Reciben los avisos y marcan las limpiezas como el resto del equipo.',
       },
     ],
   },
@@ -378,80 +393,85 @@ export const FEATURES: Feature[] = [
   // ─────────────────────────────── PRECIOS DINÁMICOS ───────────────────────────────
   {
     slug: 'precios-dinamicos',
-    name: 'Precios dinámicos integrados',
+    name: 'Precios dinámicos con PriceLabs',
     iconName: 'TrendingUp',
     shortDescription:
-      'Ajusta precio cada día según demanda, competencia y eventos. Sin contratar PriceLabs aparte.',
+      'Las recomendaciones de PriceLabs, dentro de Hostly. Tú pones los límites y Hostly publica el precio en Airbnb y Booking cada día.',
     hero: {
-      h1: 'Precios que se ajustan solos según demanda y competencia',
-      sub: 'Motor de precios dinámicos integrado en Hostly. Sin partners, sin add-ons, sin complicarte.',
-      primaryCta: 'Ver cómo calcula precios',
-      secondaryCta: 'Probar gratis',
+      h1: 'Precios que siguen a la demanda, sin salir de Hostly',
+      sub: 'PriceLabs recomienda un precio para cada día. Tú pones los límites, ves por qué sale cada precio y Hostly lo publica en Airbnb y Booking.',
+      primaryCta: 'Empezar',
+      secondaryCta: 'Ver precios',
     },
     problem: {
       title: 'El precio fijo te deja dinero sobre la mesa',
-      body: 'Poner el mismo precio todo el año pierde ingresos en temporada alta y te deja vacío en baja. Revisar precios manualmente cada semana es un trabajo a tiempo parcial. Y contratar PriceLabs aparte son otros 20 €/mes por apartamento.',
+      body: 'Poner el mismo precio todo el año pierde ingresos en temporada alta y te deja vacío en baja. Revisar precios a mano cada semana es una tarea que nunca se acaba. Y tener los precios en una app y el calendario en otra es una cosa más que vigilar.',
     },
     howItWorks: [
       {
         step: 1,
-        title: 'Defines precio base y límites',
-        body: 'Precio mínimo y máximo por apartamento. Qué temporadas consideras altas. Días mínimos de estancia.',
+        title: 'Pones tus reglas',
+        body: 'Precio mínimo y máximo, temporadas, días con precio fijo, noches mínimas y descuentos por semana o por mes.',
       },
       {
         step: 2,
-        title: 'Hostly analiza demanda y competencia',
-        body: 'Estudia ocupación en tu zona, eventos, festivos y competidores directos.',
+        title: 'PriceLabs recomienda',
+        body: 'Analiza la demanda, la temporada y los eventos de tu zona, y propone un precio para cada día.',
       },
       {
         step: 3,
-        title: 'Propone precios por día',
-        body: 'Te muestra calendario con precios sugeridos. Puedes aceptar todo, ajustar manualmente o fijar reglas.',
+        title: 'Tú decides',
+        body: 'En el calendario de Hostly ves el precio recomendado y por qué. En modo manual, lo aceptas con un clic. En automático, se aplica solo dentro de tus límites.',
       },
       {
         step: 4,
-        title: 'Se publica en todas tus OTAs',
-        body: 'Los precios aprobados se sincronizan a Airbnb, Booking y tu web vía channel manager.',
+        title: 'Se publica en Airbnb y Booking',
+        body: 'Hostly publica los precios cada mañana y cada vez que cambias algo.',
       },
     ],
     advantages: [
-      'Integrado en Hostly, sin contratar PriceLabs ni Beyond',
-      'Considera eventos, festivos y temporadas automáticamente',
-      'Reglas personalizadas (mín/máx, descuentos larga estancia)',
-      'Simulación de ingresos antes de aplicar',
-      'Se publica a OTAs en tiempo real',
-      'Trazabilidad: por qué subió o bajó el precio cada día',
+      'Las recomendaciones de PriceLabs, dentro de Hostly',
+      'Mínimos, máximos, temporadas y días con precio fijo',
+      'Noches mínimas y descuentos por semana o por mes',
+      'Precio recomendado, aceptado con un clic',
+      '«¿Por qué este precio?»: ves de dónde sale cada precio',
+      'Publicado en Airbnb y Booking cada mañana y en cada cambio',
     ],
     usage: [
       {
-        title: 'Concierto grande en la ciudad',
-        body: 'Detecta evento, sube precio en esos días y recupera ingresos que se te escaparían con precio fijo.',
+        title: 'Un concierto grande en la ciudad',
+        body: 'PriceLabs detecta la demanda de esos días y recomienda subir el precio. Lo ves en el calendario de Hostly y lo aceptas con un clic.',
       },
       {
-        title: 'Semana floja en temporada baja',
-        body: 'Baja precio ligeramente 72 horas antes para llenar hueco sin quemar la marca.',
+        title: 'La temporada de verano',
+        body: 'Creas la temporada de julio y agosto. Los precios de esos días salen de tus reglas y Hostly los publica en Airbnb y Booking.',
       },
       {
-        title: 'Hueco entre reservas',
-        body: 'Ofrece descuento solo para estancias de 1-2 noches que rellenen el gap.',
+        title: 'Un precio que no entiendes',
+        body: 'Un martes cualquiera sale más caro de lo normal. Abres «¿por qué este precio?» y ves de dónde sale antes de decidir.',
       },
     ],
     relatedFeatures: ['channel-manager', 'conecta-todo'],
     faqs: [
       {
-        question: '¿Sustituye a PriceLabs?',
+        question: '¿Hostly usa PriceLabs?',
         answer:
-          'Para la mayoría de propietarios de 1-15 apartamentos, sí. Si tienes un caso muy complejo (cientos de unidades, estrategia avanzada), puedes seguir con PriceLabs y Hostly se integra.',
+          'Sí. Las recomendaciones vienen de PriceLabs, que analiza la demanda, la temporada y los eventos de tu zona. Tú lo ves y lo decides todo desde Hostly.',
       },
       {
-        question: '¿Puedo aprobar los precios manualmente?',
+        question: '¿Puedo aprobar los precios a mano?',
         answer:
-          'Sí. Puedes elegir modo automático, modo revisión previa (te propone y tú apruebas) o modo manual con alertas.',
+          'Sí. En modo manual ves el precio recomendado y lo aceptas con un clic. En modo automático se aplica solo, siempre dentro de tus mínimos y máximos.',
       },
       {
-        question: '¿Cómo sabe qué hacen los competidores?',
+        question: '¿Puedo fijar el precio de un día concreto?',
         answer:
-          'Usamos datos públicos de ocupación y rangos de precio en tu zona. No hacemos scraping agresivo ni entramos en áreas privadas de otras plataformas.',
+          'Sí. Un día con precio fijo se respeta tal cual, aunque PriceLabs recomiende otro.',
+      },
+      {
+        question: '¿Cada cuánto se actualizan los precios en Airbnb y Booking?',
+        answer:
+          'Hostly los publica cada mañana y cada vez que cambias algo en el calendario.',
       },
     ],
   },
@@ -462,153 +482,163 @@ export const FEATURES: Feature[] = [
     name: 'Mensajería programada por reserva',
     iconName: 'Send',
     shortDescription:
-      'Plantillas automáticas para confirmación, check-in, media estancia y despedida. Adaptadas por apartamento e idioma.',
+      'Bienvenida, check-in, check-out y más, enviados solos en cada reserva. Una versión por piso, traducida al idioma del huésped.',
     hero: {
       h1: 'Mensajes útiles a cada huésped, sin escribir ninguno a mano',
-      sub: 'Plantillas programadas por momento de reserva, adaptadas a apartamento, idioma y canal (WhatsApp, email u OTA).',
-      primaryCta: 'Ver plantillas',
-      secondaryCta: 'Probar gratis',
+      sub: 'Plantillas por momento de la reserva, adaptadas a cada piso y traducidas solas. Salen por WhatsApp o, si no hay número, por Airbnb o Booking.',
+      primaryCta: 'Empezar',
+      secondaryCta: 'Ver precios',
     },
     problem: {
       title: 'Los mensajes repetitivos se te amontonan',
-      body: 'Cada reserva necesita 4-5 mensajes: confirmación, instrucciones de check-in, recordatorio, despedida, petición de review. Si tienes 3 apartamentos y 20 reservas al mes, son 80 mensajes. Escribir cada uno a mano es una pérdida clara de tiempo.',
+      body: 'Cada reserva necesita varios mensajes: bienvenida, instrucciones de entrada, códigos, despedida. Con tres pisos y veinte reservas al mes, son decenas de mensajes casi iguales. Escribirlos a mano es tiempo perdido.',
     },
     howItWorks: [
       {
         step: 1,
-        title: 'Eliges plantillas o creas las tuyas',
-        body: 'Plantillas por momento (confirmación, 48 h antes de check-in, durante estancia, despedida).',
+        title: 'Escribes cada plantilla una vez',
+        body: 'Bienvenida, check-in, check-out, limpieza, entrada anticipada, salida tardía y cuatro mensajes libres. Si quieres, una versión distinta para cada piso.',
       },
       {
         step: 2,
-        title: 'Programas cuándo se envía cada una',
-        body: 'Al confirmar reserva, 48h antes de llegada, día de salida... Tú decides la cadencia.',
+        title: 'Usas variables',
+        body: 'El enlace de check-in, los códigos, las fechas. Hostly los rellena con los datos de cada reserva.',
       },
       {
         step: 3,
-        title: 'Hostly adapta por huésped',
-        body: 'Detecta idioma del huésped, apartamento concreto y tipo de reserva. Personaliza variables automáticamente.',
+        title: 'Hostly la traduce',
+        body: 'Cada mensaje sale traducido al idioma del huésped. Tú escribes la plantilla una sola vez.',
       },
       {
         step: 4,
-        title: 'Envía por el canal óptimo',
-        body: 'WhatsApp si tienes número, email como fallback, plataforma OTA cuando no hay otra vía.',
+        title: 'Sale por el canal que toca',
+        body: 'Por WhatsApp si tienes el número del huésped. Si no, por Airbnb o Booking. Todo queda en el historial de la reserva.',
       },
     ],
     advantages: [
-      'Plantillas por momento de reserva y apartamento',
-      'Detección automática de idioma',
-      'Variables: nombre, apartamento, código, fechas, instrucciones',
-      'Canal óptimo automático (WhatsApp, email, OTA)',
-      'Historial completo por reserva',
-      'Compatible con el agente IA: si responden, la IA continúa',
+      'Una plantilla por momento: bienvenida, check-in, check-out y limpieza',
+      'Cuatro mensajes libres, y además entrada anticipada y salida tardía',
+      'Una versión para cada piso, traducida al idioma del huésped',
+      'Variables: enlace de check-in, códigos y fechas',
+      'Por WhatsApp o, si no hay número, por Airbnb o Booking',
+      'Historial de mensajes en cada reserva',
     ],
     usage: [
       {
-        title: 'Flujo estándar de una reserva',
-        body: 'Confirmación al reservar, recordatorio 48h antes con instrucciones, mensaje de bienvenida el día de entrada, despedida con petición de review.',
+        title: 'Una reserva cualquiera',
+        body: 'La bienvenida, las instrucciones con el enlace de check-in y el mensaje de salida, cada uno en su momento. Tú no escribes ninguno.',
       },
       {
-        title: 'Plantilla específica por apartamento',
-        body: 'El apartamento con piscina recibe instrucciones extra de uso. El urbano recibe info de parking. Cada uno su mensaje.',
+        title: 'Un mensaje para cada piso',
+        body: 'El piso con piscina recibe las normas de uso. El del centro, dónde aparcar. Cada uno, su mensaje.',
       },
       {
-        title: 'Idioma del huésped',
-        body: 'Reserva desde Francia → plantillas en francés. Reserva local → catalán o castellano según preferencia.',
+        title: 'Huésped de Francia',
+        body: 'Los mensajes le llegan en francés, traducidos solos. Tú escribiste la plantilla una vez, en tu idioma.',
       },
     ],
     relatedFeatures: ['ia-whatsapp', 'check-in-online', 'conecta-todo'],
     faqs: [
       {
-        question: '¿Puedo pausar un mensaje antes de que se envíe?',
+        question: '¿Puedo parar un mensaje antes de que salga?',
         answer:
-          'Sí. Tienes cola visible con lo que va a salir en las próximas horas y puedes editar o cancelar.',
+          'Sí. Ves los mensajes en cola y puedes cancelar cualquiera. Para cambiar el texto, editas la plantilla.',
       },
       {
-        question: '¿Funciona sin el agente IA?',
+        question: '¿Funciona sin la IA?',
         answer:
-          'Sí. La mensajería programada funciona sola. Si además activas la IA, el huésped recibe el mensaje programado y si responde, la IA continúa.',
+          'Sí. Los mensajes automáticos funcionan solos. Si además activas la IA, contesta cuando el huésped responde.',
       },
       {
         question: '¿Cuántas plantillas puedo tener?',
         answer:
-          'Ilimitadas. Puedes crear por apartamento, por idioma o por tipo de reserva.',
+          'Una por momento: bienvenida, check-in, check-out, limpieza, entrada anticipada, salida tardía y cuatro libres. Cada una puede tener su versión por piso y se traduce sola.',
+      },
+      {
+        question: '¿Se pueden enviar por email?',
+        answer:
+          'No. Salen por WhatsApp si tienes el número del huésped y, si no, por Airbnb o Booking.',
       },
     ],
   },
 
-  // ─────────────────────────────── MULTI-ROL ───────────────────────────────
+  // ─────────────────────────────── ROLES Y PERMISOS (multi-rol) ───────────────────────────────
   {
     slug: 'multi-rol',
-    name: 'Multi-rol y permisos por usuario',
+    name: 'Roles y permisos por piso',
     iconName: 'Users',
     shortDescription:
-      'Cada persona de tu equipo ve solo lo suyo: limpiadoras, gestor, propietario. Sin enseñar datos que no tocan.',
+      'Cada persona ve lo suyo: gestores por piso, equipo de limpieza y propietarios en solo lectura. Sin límite de usuarios.',
     hero: {
-      h1: 'Cada persona de tu equipo ve exactamente lo que necesita',
-      sub: 'Roles para limpiadora, gestor, propietario y huésped. Permisos granulares por apartamento.',
-      primaryCta: 'Ver roles',
-      secondaryCta: 'Hablar con ventas',
+      h1: 'Cada persona de tu equipo, con su cuenta y sus pisos',
+      sub: 'Gestor, limpieza y propietario, con permisos por piso. Los propietarios solo miran: el calendario y las finanzas de sus pisos.',
+      primaryCta: 'Empezar',
+      secondaryCta: 'Ver precios',
     },
     problem: {
       title: 'Compartir datos por WhatsApp es mal negocio',
-      body: 'Cuando el equipo crece necesitas dar acceso a limpiadoras, a un gestor de confianza o a propietarios. Pasar datos por WhatsApp o darles tu usuario de Airbnb no es opción. Acabas con información sensible en manos de demasiada gente.',
+      body: 'Cuando el equipo crece, necesitas dar acceso a la limpieza, a un gestor de confianza o a los propietarios. Pasar datos por WhatsApp o dejarles tu usuario de Airbnb no es opción. Y cuando alguien se va, se lleva tu contraseña.',
     },
     howItWorks: [
       {
         step: 1,
-        title: 'Creas roles',
-        body: 'Limpiadora, gestor, propietario externo, mantenimiento. Cada uno con sus permisos.',
+        title: 'Invitas a cada persona',
+        body: 'Le mandas una invitación con su papel: gestor, limpieza o propietario. Si no la acepta, la invitación caduca.',
       },
       {
         step: 2,
-        title: 'Asignas apartamentos por rol',
-        body: 'La limpiadora A ve solo los apartamentos B y C. El propietario externo ve solo los suyos.',
+        title: 'Eliges sus pisos',
+        body: 'Un gestor puede llevar todos tus pisos o solo algunos. La limpieza y los propietarios, solo los suyos.',
       },
       {
         step: 3,
-        title: 'Cada persona entra con su cuenta',
-        body: 'App móvil o web según el rol. Ven solo la información permitida.',
+        title: 'Cada uno entra con su cuenta',
+        body: 'Desde el móvil o el ordenador. La limpieza ve sus limpiezas; el propietario, el calendario y las finanzas de sus pisos, sin poder cambiar nada.',
       },
     ],
     advantages: [
-      'Roles predefinidos: limpiadora, gestor, propietario, huésped',
-      'Permisos granulares por apartamento',
-      'Registro de acciones por usuario (auditoría)',
-      'Bajas y altas rápidas cuando cambia el equipo',
-      'Vistas adaptadas al rol (limpiadora ve turnos, gestor ve reservas)',
-      'Acceso huésped solo a su estancia',
+      'Tres papeles claros: gestor, limpieza y propietario',
+      'Permisos por piso: cada gestor lleva los pisos que le das',
+      'Propietarios en solo lectura: calendario y finanzas',
+      'Cada uno ve lo suyo: la limpieza, limpiezas; el gestor, reservas',
+      'Sin límite de usuarios',
+      'El huésped no necesita cuenta: recibe un enlace de su estancia',
     ],
     usage: [
       {
-        title: 'Agencia con 3 propietarios externos',
-        body: 'Cada propietario ve ingresos y ocupación de los suyos. No ve los del resto.',
+        title: 'Gestor con tres propietarios',
+        body: 'Cada propietario ve el calendario y las finanzas de sus pisos. No ve los del resto ni puede cambiar nada.',
       },
       {
-        title: 'Equipo interno',
-        body: 'Gestor ve todo. Limpiadora ve solo turnos. Mantenimiento ve incidencias abiertas.',
+        title: 'Dos gestores, pisos repartidos',
+        body: 'Uno lleva los pisos de la playa y otro los de la ciudad. Cada uno ve y gestiona solo los suyos.',
       },
       {
         title: 'Cambio de personal',
-        body: 'La limpiadora deja el equipo. Desactivas su cuenta y pierde acceso en el acto.',
+        body: 'Una persona deja el equipo. Le quitas el acceso y deja de ver tus pisos en ese momento.',
       },
     ],
-    relatedFeatures: ['gestion-de-limpiezas', 'conecta-todo'],
+    relatedFeatures: ['gestion-de-limpiezas', 'finanzas'],
     faqs: [
       {
         question: '¿Cuántos usuarios puedo dar de alta?',
         answer:
-          'Depende del plan. Starter incluye un usuario propietario + 3 externos. Pro y Agency son ilimitados.',
+          'Los que necesites. No hay límite de usuarios.',
       },
       {
         question: '¿Puedo dar acceso temporal?',
         answer:
-          'Sí. Puedes crear accesos con caducidad (útil para suplencias o auditorías).',
+          'No hay accesos con fecha de caducidad: lo que caduca es la invitación si no se acepta. Cuando alguien deja de trabajar contigo, le quitas el acceso.',
       },
       {
-        question: '¿Hay auditoría de acciones?',
+        question: '¿El propietario puede cambiar algo?',
         answer:
-          'Sí. Cada acción queda registrada por usuario, apartamento y fecha. Útil si necesitas revisar qué pasó con una reserva.',
+          'No. Solo ve el calendario y las finanzas de sus pisos, incluidas las liquidaciones que le preparas.',
+      },
+      {
+        question: '¿Los huéspedes necesitan una cuenta?',
+        answer:
+          'No. Cada huésped recibe un enlace de su estancia, sin registrarse en nada.',
       },
     ],
   },
@@ -619,77 +649,82 @@ export const FEATURES: Feature[] = [
     name: 'Conéctalo todo',
     iconName: 'Plug',
     shortDescription:
-      'Hostly es un sistema abierto. Si hay algo en tu operativa que falta, nos lo dices y lo implementamos.',
+      'Automatizaciones a medida: conectamos Hostly con tu gestoría, tu web, tu ERP o lo que uses. Es un servicio aparte, con cuota mensual.',
     hero: {
-      h1: 'Si lo necesitas, lo conectamos.',
-      sub: 'No somos un sistema rígido. Cada gestor tiene su propia operativa y Hostly crece con ella. Dinos qué falta — lo implementamos.',
-      primaryCta: 'Cuéntanos qué necesitas',
-      secondaryCta: 'Ver integraciones',
+      h1: 'Automatizaciones a medida: si lo usas, lo conectamos.',
+      sub: 'Conectamos Hostly con tu gestoría, tu web, tu ERP o lo que uses. Es un servicio aparte, con una cuota mensual según lo que automaticemos.',
+      primaryCta: 'Empezar',
+      secondaryCta: 'Ver precios',
     },
     problem: {
-      title: 'Los sistemas cerrados te obligan a adaptarte a ellos',
-      body: 'La mayoría de plataformas de gestión son rígidas. Tienen las funciones que decidieron en su hoja de ruta y punto. Si tu operativa necesita algo que no está, te toca hacerlo a mano para siempre. Hostly funciona al revés: somos nosotros los que nos adaptamos a ti.',
+      title: 'Hay tareas que ninguna app hace por ti',
+      body: 'Cada gestor trabaja a su manera. La gestoría te pide los datos en su formato, tu web va por su lado y hay tareas que repites a mano cada semana. Ninguna app las cubre todas de serie, y acabas haciéndolas tú para siempre.',
     },
     howItWorks: [
       {
         step: 1,
         title: 'Nos cuentas qué necesitas',
-        body: 'Una integración con tu gestor fiscal, un aviso automático específico, algo que haces a mano cada semana. Escríbenos con tu caso.',
+        body: 'Qué haces a mano, con qué herramientas y cada cuánto. Escríbenos con tu caso.',
       },
       {
         step: 2,
-        title: 'Lo valoramos juntos',
-        body: 'En 48h te confirmamos si es viable y cuándo estaría listo. Sin costes ocultos, sin sorpresas.',
+        title: 'Te proponemos cómo y cuánto',
+        body: 'Lo estudiamos y te decimos qué se puede automatizar y cuál sería la cuota mensual. No empezamos hasta que nos digas que sí.',
       },
       {
         step: 3,
-        title: 'Lo implementamos',
-        body: 'Entra en tu Hostly sin que tú toques nada. Te avisamos cuando esté activo.',
+        title: 'Lo construimos',
+        body: 'Lo conectamos con tu Hostly sin que tengas que tocar nada. Te avisamos cuando esté funcionando.',
       },
       {
         step: 4,
-        title: 'Funciona en segundo plano para siempre',
-        body: 'Se ejecuta automáticamente cada vez que toca. Tú no tienes que hacer nada más.',
+        title: 'Funciona solo',
+        body: 'Se ejecuta cada vez que toca. Tú no tienes que hacer nada más.',
       },
     ],
     advantages: [
-      'Sistema abierto — no te limita a lo que decidimos nosotros',
-      'Las peticiones más pedidas se implementan primero',
-      'Integraciones con gestores fiscales, ERPs y herramientas de equipo',
-      'Conecta con tu web de reservas directas o cualquier canal externo',
-      'Avisos personalizados a tu medida',
-      'Te escuchamos — el roadmap lo construís vosotros',
+      'Conectamos Hostly con tu gestoría, tu web, tu ERP o lo que uses',
+      'Lo estudiamos contigo antes de empezar',
+      'Cuota mensual según lo que automaticemos, acordada antes de empezar',
+      'Avisos y tareas a la medida de tu forma de trabajar',
+      'Tú no tocas nada: lo montamos nosotros',
+      'De serie, Hostly ya exporta a Excel y CSV y tiene motor de reservas con Stripe',
     ],
     usage: [
       {
-        title: 'Datos a tu gestor fiscal, automáticos',
-        body: 'Cada reserva confirmada, la información va sola a donde la necesitas. Sin copiar. Sin olvidar.',
+        title: 'Los datos que pide tu gestoría',
+        body: 'Cada mes, la información que necesita tu gestoría, en su formato y sin copiarla a mano.',
       },
       {
-        title: 'Notificaciones a tu equipo como tú las quieres',
-        body: 'Por WhatsApp, email o la herramienta que uses. Con los datos exactos que necesita cada persona.',
+        title: 'Tu web, conectada',
+        body: 'Si ya tienes web, la conectamos con Hostly para que las reservas directas entren en el mismo calendario.',
       },
       {
-        title: 'Tu web de reservas directas conectada',
-        body: 'Si tienes canal propio, lo sincronizamos. Calendario, precios y reservas en tiempo real.',
+        title: 'Avisos a tu manera',
+        body: 'Un aviso a tu equipo cuando pasa algo concreto, con los datos que necesita cada persona.',
       },
     ],
-    relatedFeatures: ['ia-whatsapp', 'gestion-de-limpiezas', 'precios-dinamicos'],
+    relatedFeatures: ['channel-manager', 'finanzas', 'burocracia'],
     faqs: [
       {
-        question: '¿Cómo pido una integración o función nueva?',
+        question: '¿Cuánto cuesta?',
         answer:
-          'Escríbenos a hola@hostlylabs.com con tu caso concreto. Lo valoramos en 48h y te decimos si es viable y cuándo. La mayoría de peticiones no tienen coste adicional.',
+          'Una cuota mensual según lo que automaticemos. Te la decimos antes de empezar, cuando sabemos qué necesitas.',
       },
       {
-        question: '¿Cuánto tarda en implementarse?',
+        question: '¿Cómo lo pido?',
         answer:
-          'Depende de la complejidad. Las integraciones más habituales suelen estar listas en días. Las más específicas, entre 1 y 4 semanas. Siempre te lo confirmamos antes de empezar.',
+          'Escríbenos a hola@hostlylabs.com con tu caso: qué haces a mano y con qué herramientas. Lo estudiamos y te contestamos con una propuesta.',
       },
       {
-        question: '¿Tiene coste adicional?',
+        question: '¿Cuánto tarda?',
         answer:
-          'Las integraciones estándar están incluidas en tu plan. Las personalizadas las valoramos caso a caso, pero el objetivo es que todo esté incluido sin sorpresas.',
+          'Depende de lo que haya que conectar. Te lo decimos en la propuesta, antes de empezar.',
+      },
+      {
+        question: '¿Qué hace Hostly sin este servicio?',
+        answer:
+          'Exporta a Excel y CSV y tiene su propio motor de reservas con pago por Stripe. Este servicio es para todo lo que va más allá.',
       },
     ],
   },
@@ -700,158 +735,163 @@ export const FEATURES: Feature[] = [
     name: 'Finanzas en orden',
     iconName: 'BarChart3',
     shortDescription:
-      'Cierra el mes en minutos, no en una tarde. Ingresos por piso, comisiones automáticas, liquidaciones a propietarios y exportación para tu gestor fiscal.',
+      'Ingresos por piso, canal y periodo, con las comisiones de Airbnb y Booking ya calculadas. Y la liquidación de cada propietario en cuatro pasos.',
     hero: {
       h1: 'Cierra el mes en minutos, no en una tarde.',
-      sub: 'Ingresos por piso, por plataforma y por periodo. Comisiones de Airbnb y Booking calculadas solas. Liquidaciones a propietarios en un clic. Todo listo para tu gestor fiscal.',
+      sub: 'Ingresos por piso, por canal y por periodo. Las comisiones de Airbnb y Booking, calculadas solas. Y la liquidación de cada propietario en cuatro pasos.',
       primaryCta: 'Empezar',
-      secondaryCta: 'Ver cómo funciona',
+      secondaryCta: 'Ver precios',
     },
     problem: {
       title: 'El cierre de mes: la parte que nadie quería',
-      body: 'Abrir el Excel. Copiar las reservas de Airbnb. Descontar la comisión del 3%. Las de Booking al 15%. Sumar la taxa turística cobrada. Calcular el neto. Repetirlo por cada piso. Y si gestionas pisos de terceros, preparar la liquidación para cada propietario. Son horas de trabajo que no tendrían que existir.',
+      body: 'Abrir el Excel. Copiar las reservas de Airbnb. Descontar la comisión. Hacer lo mismo con Booking. Sumar la taxa turística. Repetirlo con cada piso. Y si gestionas pisos de terceros, preparar la liquidación de cada propietario. Son horas de trabajo que no tendrían que existir.',
     },
     howItWorks: [
       {
         step: 1,
         title: 'Tus ingresos, al día',
-        body: 'Cada reserva entra automáticamente con importe bruto, comisión de plataforma descontada y neto real que recibes. Sin copiar nada.',
+        body: 'Cada reserva entra con su importe y la comisión de la plataforma ya calculada. Ves lo que te queda sin copiar nada.',
       },
       {
         step: 2,
-        title: 'Elige periodo, piso o plataforma',
-        body: 'Filtra por apartamento, por Airbnb/Booking/canal directo o por mes. El cuadro financiero aparece en segundos.',
+        title: 'Filtra por piso, canal o periodo',
+        body: 'Los ingresos de un piso, de Airbnb o de Booking, o de un mes concreto, en un momento.',
       },
       {
         step: 3,
-        title: 'Liquidación al propietario en un clic',
-        body: 'Si gestionas pisos de terceros, el informe mensual sale solo con el desglose que cada propietario necesita. El día que marques.',
+        title: 'Liquidación al propietario en cuatro pasos',
+        body: 'Si gestionas pisos de terceros, un asistente te guía con tus honorarios y la limpieza ya calculados. El propietario la ve en su app.',
       },
       {
         step: 4,
-        title: 'Exporta para tu gestor fiscal',
-        body: 'Un archivo con todo el año. Tu asesoría lo abre y ya tiene lo que necesita para la declaración. Sin retocarlo.',
+        title: 'Exporta lo que necesites',
+        body: 'Las liquidaciones, en CSV o PDF. La taxa turística, en Excel o CSV, lista para presentar.',
       },
     ],
     advantages: [
-      'Comisiones de Airbnb y Booking calculadas automáticamente',
-      'Taxa turística recaudada y trazada por reserva',
-      'P&L por apartamento, por plataforma y por periodo',
-      'Liquidaciones mensuales a propietarios automatizadas',
-      'Exportación compatible con tu gestoría (Excel y CSV)',
-      'Comparativa mensual y anual de ingresos',
+      'Ingresos por piso, por canal y por periodo',
+      'Comisiones de Airbnb y Booking calculadas solas',
+      'Taxa turística calculada en cada reserva',
+      'Liquidación al propietario con un asistente de cuatro pasos',
+      'El propietario ve su liquidación en su app',
+      'Liquidaciones en CSV o PDF, y taxa turística en Excel o CSV',
     ],
     usage: [
       {
-        title: 'Saber cuánto ganaste en agosto en 10 segundos',
-        body: 'Sin sumar nada. Filtras agosto, ves el total por piso y por plataforma. Cuánto cobró Airbnb, cuánto Booking, cuánto tú.',
+        title: 'Saber cuánto ganaste en agosto',
+        body: 'Sin sumar nada. Filtras agosto y ves el total por piso y por canal: cuánto se quedó Airbnb, cuánto Booking y cuánto tú.',
       },
       {
-        title: 'Enviar el cierre mensual a tus propietarios',
-        body: 'Cada propietario recibe su liquidación detallada automáticamente. Ingresos, tu comisión de gestión, gastos y neto. Sin que tú lo prepares.',
+        title: 'Cerrar el mes con tus propietarios',
+        body: 'Preparas la liquidación de cada propietario con el asistente. Él la ve en su app, con sus ingresos, tus honorarios y la limpieza.',
       },
       {
-        title: 'Preparar la declaración de la renta',
-        body: 'Todo el año en un archivo. Tu gestor lo abre y ya sabe lo que necesita. Sin emails de "¿me puedes pasar los datos de los pisos?".',
+        title: 'Pasar los datos a tu gestoría',
+        body: 'Exportas las liquidaciones en CSV o PDF y la taxa turística en Excel. Se lo mandas a tu gestoría sin copiar nada a mano.',
       },
     ],
-    relatedFeatures: ['channel-manager', 'check-in-online', 'conecta-todo'],
+    relatedFeatures: ['burocracia', 'multi-rol', 'channel-manager'],
     faqs: [
       {
-        question: '¿Calcula automáticamente las comisiones de Airbnb y Booking?',
+        question: '¿Calcula las comisiones de Airbnb y Booking?',
         answer:
-          'Sí. La comisión de Airbnb (~3%) y la de Booking (~15%) se aplican automáticamente según el canal de cada reserva. El neto que ves es lo que realmente cobras, sin tener que calcularlo tú.',
+          'Sí. Hostly calcula la comisión de cada reserva según su canal. Ves lo que paga el huésped, lo que se queda la plataforma y lo que te queda a ti.',
       },
       {
-        question: '¿Puedo generar liquidaciones para propietarios de pisos que gestiono?',
+        question: '¿Puedo hacer liquidaciones para los propietarios de los pisos que gestiono?',
         answer:
-          'Sí. Configuras el porcentaje de gestión por propiedad y el informe mensual de cada propietario sale automáticamente el día que marcas. Con el desglose de ingresos, tu comisión y el neto que les corresponde.',
+          'Sí. Un asistente de cuatro pasos te ayuda a prepararlas, con tus honorarios y la limpieza. El propietario la ve en su app; Hostly no la envía por correo.',
       },
       {
-        question: '¿El formato de exportación es compatible con asesorías?',
+        question: '¿Qué puedo exportar para mi gestoría?',
         answer:
-          'Sí. Exportamos en Excel y CSV con el desglose estándar que piden la mayoría de gestorías. Si la tuya necesita un formato específico, nos lo dices y lo adaptamos.',
+          'Las liquidaciones, en CSV o PDF, y la taxa turística, en Excel o CSV. Si necesitas algo a medida, lo vemos con las automatizaciones de «Conéctalo todo».',
       },
     ],
   },
 
-  // ─────────────────────────────── SIN BUROCRACIA ───────────────────────────────
+  // ─────────────────────────── TAXA TURÍSTICA (slug burocracia) ───────────────────────────
   {
     slug: 'burocracia',
-    name: 'Sin burocracia',
-    iconName: 'ClipboardCheck',
+    name: 'Taxa turística',
+    iconName: 'Receipt',
     shortDescription:
-      'NRUA, taxa turística, declaración de la renta, impuestos municipales y todo lo que la administración te pide. Hostly te avisa, te prepara los datos y te guía paso a paso.',
+      'La taxa turística de Cataluña, calculada sola: tarifa según la ley y tu municipio, importe por piso y el Excel listo para presentar.',
     hero: {
-      h1: 'La burocracia del piso turístico, resuelta.',
-      sub: 'Los únicos en España que cubrimos toda la burocracia del alquiler turístico — no solo el registro policial. NRUA, taxa turística, declaración de la renta, impuestos municipales. Hostly te avisa, te prepara los datos y te guía paso a paso.',
+      h1: 'La taxa turística, calculada y lista para presentar.',
+      sub: 'Hostly calcula la tarifa con la ley y el municipio de cada piso, suma el importe de cada semestre y te prepara el Excel para la Agència Tributària de Catalunya. Tú la presentas y la marcas como hecha.',
       primaryCta: 'Empezar',
-      secondaryCta: 'Ver el calendario fiscal',
+      secondaryCta: 'Ver precios',
     },
     problem: {
-      title: 'Cada trimestre, una sorpresa nueva',
-      body: 'El registro NRUA que se te había pasado. La taxa turística que venció ayer. El IRPF de los rendimientos del alquiler que no sabes cómo calcular. El número de inscripción que pide la CCAA. Cada administración te pide algo distinto, en formatos distintos, y nadie te lo explica claro. La mayoría de gestores se enteran cuando llega la sanción.',
+      title: 'Cada semestre, la misma tarde de cuentas',
+      body: 'En Cataluña, la taxa turística se presenta dos veces al año: del 1 al 20 de abril y del 1 al 20 de octubre. Toca buscar la tarifa de tu municipio, contar personas y noches de cada estancia y pasarlo todo al formato que pide la ATC. Y el plazo no espera.',
     },
     howItWorks: [
       {
         step: 1,
-        title: 'Calendario fiscal personalizado por CCAA',
-        body: 'Hostly sabe qué impuestos y plazos te aplican según tu comunidad autónoma, el tipo de propiedad y tus ingresos. Ves todos los vencimientos del año en una sola vista.',
+        title: 'Hostly sabe qué tarifa te toca',
+        body: 'La calcula con la ley vigente y el municipio de cada piso. No tienes que buscar nada.',
       },
       {
         step: 2,
-        title: 'Avisos antes del vencimiento — no después',
-        body: '15 días antes del plazo te avisamos para que prepares lo que haga falta. 24h antes, te avisamos otra vez. Nunca llegas tarde a una presentación.',
+        title: 'Calcula cada estancia',
+        body: 'Con los datos de cada reserva, calcula el importe de la taxa y el total por piso de cada semestre.',
       },
       {
         step: 3,
-        title: 'Datos preparados, no en bruto',
-        body: 'Generamos el informe o el archivo en el formato que pide cada administración — con los datos del periodo correspondiente, listos para presentar.',
+        title: 'Te avisa cuando toca presentarla',
+        body: 'Mientras el plazo está abierto, del 1 al 20 de abril y del 1 al 20 de octubre, ves un aviso en la app.',
       },
       {
         step: 4,
-        title: 'Paso a paso o automático',
-        body: 'Lo que se puede presentar automáticamente, lo presentamos. Lo que requiere tu firma o tu gestor, te guiamos paso a paso por el portal correspondiente.',
+        title: 'Exportas, presentas y lo marcas',
+        body: 'Descargas el Excel o el CSV listo para presentar en la ATC. Cuando la has presentado, pulsas «ya la he presentado».',
       },
     ],
     advantages: [
-      'Calendario fiscal específico por CCAA (Cataluña, Baleares, Madrid, Andalucía…)',
-      'Avisos antes del vencimiento — no después',
-      'Datos para tu gestor preparados sin retoques',
-      'Guías paso a paso para portales de ayuntamientos y administraciones',
-      'Rendimientos para IRPF calculados y agrupados por año',
-      'Cobertura única en España: no solo el registro policial, también la fiscalidad',
+      'Tarifa según la ley y el municipio de cada piso',
+      'Importe de cada reserva y total por piso, cada semestre',
+      'Aviso en la app mientras el plazo está abierto',
+      'Excel o CSV listo para presentar en la ATC',
+      'Incluida en el plan gratis, para siempre',
+      'Si quieres, el huésped la paga con tarjeta al hacer el check-in',
     ],
     usage: [
       {
-        title: 'Presentar la taxa turística trimestral',
-        body: 'Hostly genera el informe con todos los pernoctas del trimestre. Te explica qué clicar en el portal del ayuntamiento y en qué campo va cada dato. En 5 minutos, presentada.',
+        title: 'Presentar el semestre de verano',
+        body: 'En octubre, Hostly te avisa. Descargas el Excel con las estancias de abril a septiembre, lo presentas en la ATC y lo marcas como presentado.',
       },
       {
-        title: 'Preparar la declaración de la renta',
-        body: 'Todos los rendimientos del alquiler turístico del año, en un archivo organizado. Tu gestoría lo abre y tiene lo que necesita — sin hacerte preguntas, sin retoques.',
+        title: 'Pisos en municipios distintos',
+        body: 'Cada piso tiene la tarifa de su municipio. Hostly la calcula por separado, sin que tengas que buscar nada.',
       },
       {
-        title: 'Inscripción al NRUA por primera vez',
-        body: 'Si nunca has registrado tu propiedad en el NRUA (Andalucía), te guiamos por el formulario. Te decimos qué documentos preparar y dónde encontrar cada dato.',
+        title: 'Cobrarla al huésped',
+        body: 'Activas el cobro y el huésped paga la taxa con tarjeta al hacer el check-in, a través de Stripe. Tú no persigues a nadie.',
       },
     ],
     relatedFeatures: ['check-in-online', 'finanzas', 'conecta-todo'],
     faqs: [
       {
-        question: '¿Hostly presenta directamente mi declaración de la renta?',
+        question: '¿Hostly presenta la taxa por mí?',
         answer:
-          'No la presentamos directamente porque cada caso fiscal es distinto. Lo que hacemos es prepararte TODOS los datos del año en un archivo claro y ordenado que tu gestoría abre y procesa sin retoques. Solo eso ya ahorra horas de trabajo cada año.',
+          'No. La presentas tú en la Agència Tributària de Catalunya, con el Excel que te prepara Hostly. Después la marcas como presentada en la app.',
       },
       {
-        question: '¿Cubrís la fiscalidad de todas las comunidades autónomas?',
+        question: '¿Cuándo hay que presentarla?',
         answer:
-          'Sí. El calendario fiscal es específico por cada CCAA. Si gestionas pisos en Cataluña, Aragón, Baleares, Madrid, Andalucía o cualquier otra, Hostly conoce los requerimientos y plazos de cada lugar. Si la administración cambia algo, lo actualizamos nosotros.',
+          'Dos veces al año: del 1 al 20 de abril, por las estancias de octubre a marzo, y del 1 al 20 de octubre, por las de abril a septiembre. Hostly te avisa en la app mientras el plazo está abierto.',
       },
       {
-        question: '¿Qué diferencia hay con el check-in y el registro policial?',
+        question: '¿Funciona fuera de Cataluña?',
         answer:
-          'El check-in se ocupa de lo que pasa en cada reserva: registro policial, taxa cobrada al huésped, comunicación a las autoridades. La burocracia se ocupa de lo que pasa cada trimestre o cada año: presentaciones fiscales, inscripciones, declaración de la renta, impuestos municipales. Son dos capas distintas que Hostly cubre por separado.',
+          'Hoy, la taxa que calcula Hostly es la de Cataluña. Si tus pisos están en otra comunidad, Hostly te sirve igual para todo lo demás.',
+      },
+      {
+        question: '¿Puedo cobrársela al huésped?',
+        answer:
+          'Sí. Si lo activas, el huésped la paga con tarjeta al hacer el check-in, a través de Stripe.',
       },
     ],
   },

@@ -77,7 +77,7 @@ Si ya está dentro y ha entrado con el código (porque lo enviaste de todos modo
 
 > "Hola Marta, veo que ya has llegado. Aún me falta el registro legal. Por favor complétalo aquí: [link]. Es obligatorio y son 3 minutos. Gracias."
 
-El 90% lo hace en las horas siguientes.
+La mayoría lo hace en las horas siguientes.
 
 ### Escenario B: llega al apartamento y no tiene código
 
@@ -104,7 +104,7 @@ Un sistema bien configurado te ahorra este seguimiento:
 - **Bloqueo automático del código** si el check-in no está completo (opcional, configurable).
 - **Notificación a ti** sólo cuando algo requiere intervención (12h antes sin completar).
 
-Plataformas que hacen esto: Hostly (nativo), Chekin (sólo check-in), Hospitable (básico, sin SES).
+En Hostly, con el plan completo, el enlace de check-in se envía automáticamente con los mensajes programados (por WhatsApp o por el chat de Airbnb o Booking), y el código de acceso solo aparece cuando el huésped ha completado el check-in. Herramientas específicas como Chekin también automatizan esta parte.
 
 ## Cuándo bloquear el código y cuándo no
 

@@ -29,7 +29,7 @@ WhatsApp es el canal preferido por la mayoría de huéspedes ibéricos y tambié
 
 Cuatro razones prácticas:
 
-1. **El huésped ya lo tiene y lo usa**. En España e internacional, WhatsApp tiene penetración del 95%+. No tiene que instalar nada.
+1. **El huésped ya lo tiene y lo usa**. En España casi todo el mundo lo usa, y en buena parte de Europa y Latinoamérica también. No tiene que instalar nada.
 2. **Notificaciones que llegan**. Los mensajes del inbox de Airbnb se pierden con facilidad. WhatsApp llega al móvil al instante.
 3. **Multimedia**: fotos del apartamento, vídeos de cómo abrir la caja fuerte, PDFs con información local.
 4. **Contexto**: la conversación está en un hilo persistente que el huésped puede revisar en cualquier momento.
@@ -79,7 +79,7 @@ El día del checkout, por la mañana:
 
 ### 6. Respuesta a preguntas frecuentes durante la estancia
 
-Este es el gran consumidor de tiempo. Preguntas como "¿dónde hay un buen restaurante?", "¿cómo se enciende el horno?", "¿dónde hay farmacia?". Una IA bien entrenada responde el 70-85% de estas.
+Este es el gran consumidor de tiempo. Preguntas como "¿dónde hay un buen restaurante?", "¿cómo se enciende el horno?", "¿dónde hay farmacia?". Una IA bien entrenada responde la mayoría de estas.
 
 ## Qué NO automatizar por WhatsApp
 
@@ -101,7 +101,7 @@ Perfecto para 1-5 apartamentos. Funciones clave: respuestas rápidas preconfigur
 
 ### WhatsApp Business API (vía proveedor)
 
-Para volúmenes mayores. Proveedores como **Evolution API**, **Meta Business Partner**, **360dialog**. Permiten:
+Para volúmenes mayores. Se contrata directamente con Meta (Cloud API) o a través de un partner oficial, como **360dialog**. Estas opciones permiten:
 
 - Automatización real mediante software.
 - Integración con tu PMS.
@@ -115,9 +115,11 @@ Coste: ~€30-80/mes según proveedor + fee por mensaje en algunos casos.
 Algunos PMS modernos (Hostly, Hostify) integran WhatsApp directamente. El huésped escribe, el PMS:
 
 1. Identifica de qué reserva es.
-2. Responde con IA entrenada en tu tono.
+2. Responde con IA, con la información de cada apartamento y en el idioma del huésped.
 3. Escala a ti si la pregunta es compleja.
 4. Guarda el historial junto a la reserva.
+
+En Hostly, los huéspedes escriben a un número de WhatsApp gestionado por Hostly a través de la API oficial de Meta: no instalas ni configuras nada.
 
 Es la forma más eficiente para gestores de 5+ apartamentos.
 
@@ -152,4 +154,4 @@ WhatsApp bien usado es la diferencia entre vivir pendiente del móvil y tener un
 - **Elige la herramienta según tu volumen**: WhatsApp Business para 1-5 apartamentos, PMS con WhatsApp integrado para 5+.
 - **Mantén el tono humano** siempre, aunque sea IA quien escriba.
 
-Si haces esto bien, recuperas entre 3 y 8 horas a la semana según volumen.
+Si haces esto bien, recuperas varias horas a la semana, más cuanto mayor sea tu volumen.

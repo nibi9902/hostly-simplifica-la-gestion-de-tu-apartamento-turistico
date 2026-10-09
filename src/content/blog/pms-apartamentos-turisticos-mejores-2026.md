@@ -22,11 +22,11 @@ faqs:
   - question: "¿A partir de cuántos apartamentos compensa tener un PMS?"
     answer: "Con 1 apartamento ya te ahorra tiempo si valoras tu tiempo. Con 2-3 se nota mucho. Con 5+ es prácticamente imposible gestionar sin. La pregunta no es 'cuántos apartamentos' sino 'cuánto tiempo quieres dedicar a tareas manuales'."
   - question: "¿Cuánto cuesta un PMS para alquiler vacacional?"
-    answer: "Entre 20€ y 70€ por apartamento y mes según el proveedor y lo que incluya. Hostify va a 20$, Smoobu desde 23€, Hostly desde 40€, Hospitable desde 29$, Lodgify desde 20$+fee, Icnea desde 140€/mes total. Los más premium (Guesty, Avantio) son quote-based."
+    answer: "Entre 20€ y 70€ por apartamento y mes según el proveedor y lo que incluya. Hostify va a 20$, Smoobu desde 23€, Hostly gratis para el check-in y el registro o 40€ el plan completo (35€ desde 5 pisos), Hospitable desde 29$, Lodgify desde 20$+fee, Icnea desde 140€/mes total. Los más premium (Guesty, Avantio) son quote-based."
   - question: "¿Qué pasa con mis datos si cambio de PMS?"
     answer: "Todos los PMS modernos permiten exportar tus reservas, huéspedes y facturación en formatos estándar (CSV, JSON) o vía API. Migrar a otro sistema es trabajoso pero posible. Pide siempre a un proveedor la política de exportación antes de contratar."
   - question: "¿Un PMS sustituye a Chekin?"
-    answer: "Depende. PMSs como Hostly o Hostify incluyen check-in + SES nativos y no necesitas Chekin. PMSs como Smoobu o Lodgify no tienen SES profundo y complementan con Chekin. Si quieres todo en uno, elige un PMS con SES incorporado."
+    answer: "Depende. Hostly incluye el check-in y el registro a la policía (automático con los Mossos d'Esquadra; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta), así que no necesitas Chekin. Hostify tiene integración con SES. Smoobu o Lodgify se suelen complementar con Chekin. Si quieres todo en uno, elige un PMS que cubra el registro de tu comunidad."
 ---
 
 Si gestionas apartamentos turísticos y ya has pasado el punto de organizarlo todo con Excel y el calendario de Airbnb, es hora de conocer qué es un PMS y cuándo tiene sentido. Esta guía cubre **qué hace un PMS, en qué se diferencia de otras herramientas, cómo saber si te compensa y los 10 sistemas más relevantes del mercado en 2026** para un propietario o gestor ibérico.
@@ -78,7 +78,7 @@ Aunque sea uno. Los overbookings son el síntoma de un sistema manual. Una vez p
 - **1 apartamento**: compensa si valoras tu tiempo y vas a crecer.
 - **2-3**: compensa claramente.
 - **5+**: es prácticamente imposible gestionar bien sin un PMS.
-- **10+**: además de un PMS, necesitas roles (propietario, gestor, netejador) con permisos diferenciados.
+- **10+**: además de un PMS, necesitas roles (propietario, gestor, limpieza) con permisos diferenciados.
 
 ## Los 10 mejores PMS para alquiler vacacional en 2026
 
@@ -86,21 +86,21 @@ Análisis honesto de las opciones más relevantes para un propietario o gestor i
 
 ### 1. Hostly
 
-**Origen**: Cataluña. **Target**: 1-20 apartamentos ibéricos. **Precio**: 40€/apartamento/mes.
+**Origen**: Cataluña. **Target**: 1-20 apartamentos ibéricos. **Precio**: gratis para el check-in y el registro a la policía; plan completo a 40€/apartamento/mes (35€ desde 5).
 
-El único que combina IA WhatsApp nativa + SES.Hospedajes + Mossos d'Esquadra + Ertzaintza + channel manager + limpiezas con app + precios dinámicos + español/catalán nativos. Pensado específicamente para el mercado ibérico. Fuerte en compliance legal ES y operativa integrada.
+Combina IA en WhatsApp, check-in con registro automático en los Mossos d'Esquadra, channel manager para Airbnb y Booking, limpiezas con app propia, precios al día con PriceLabs integrado y atención en castellano y catalán. Fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta. Pensado específicamente para el mercado ibérico y la operativa del día a día.
 
-**Pros**: todo-en-uno sin integraciones externas. IA responde por ti en WhatsApp. SES/Mossos/Ertzaintza nativo.
-**Contras**: marca joven, menos OTAs que Hostify (cubre las principales vía Beds24).
+**Pros**: todo en una sola app. La IA contesta a los huéspedes por WhatsApp. Registro a los Mossos automático. Plan gratis para el check-in y el registro.
+**Contras**: marca joven. Solo Airbnb y Booking.com (más reservas directas con su propio motor de reservas), muchos menos canales que Hostify.
 
 ### 2. Hostify
 
 **Origen**: Barcelona/Lituania. **Target**: 5-70+ apartamentos. **Precio**: $20/apartamento/mes.
 
-Alternativa asequible a Guesty. SES integrado, 400+ canales OTA, IA vía partenariato con HostBuddy. Consolidado en España.
+Alternativa asequible a Guesty. SES integrado y 400+ canales OTA. Consolidado en España.
 
 **Pros**: muchas OTAs, maduro, precio competitivo.
-**Contras**: IA no es nativa (dependiente de partner). Sin dynamic pricing propio. Zero catalán.
+**Contras**: pensado para gestores con volumen; los precios dinámicos van por integraciones (PriceLabs, Beyond).
 
 ### 3. Lodgify
 
@@ -118,16 +118,16 @@ El mejor website builder del sector. Ideal si quieres atacar reserva directa con
 Benchmark de IA anglosajón. UI cálida, comunidad activa, 120K+ hosts.
 
 **Pros**: IA madura, tono humano, 4.9 G2, dynamic pricing nativo.
-**Contras**: cero SES, UI en inglés, zero español/catalán.
+**Contras**: pensado para el mercado anglosajón (interfaz en inglés); el registro de viajeros en España no es su foco.
 
 ### 5. Smoobu
 
-**Origen**: Berlín (SiteMinder). **Target**: 1-15 apartamentos. **Precio**: €23-44/mes.
+**Origen**: Berlín (grupo HomeToGo). **Target**: 1-15 apartamentos. **Precio**: €23-44/mes.
 
-Entry-level para quien quiere simplicidad y precio bajo. Sin IA.
+Entry-level para quien quiere simplicidad y precio bajo.
 
 **Pros**: precio, 8 idiomas UI, channel manager sólido.
-**Contras**: cero IA, SES vía Chekin, ops limitadas.
+**Contras**: SES vía Chekin, ops limitadas.
 
 ### 6. Icnea
 
@@ -136,7 +136,7 @@ Entry-level para quien quiere simplicidad y precio bajo. Sin IA.
 Veterano ibérico con account manager dedicado. Muy fiable para grandes gestoras.
 
 **Pros**: maduro, SES integrado, apps nativas por rol, 100+ canales.
-**Contras**: cero IA (forat crític), UI anticuada, caro para 1-3 unidades.
+**Contras**: interfaz menos moderna, caro para 1-3 unidades.
 
 ### 7. Hostaway
 
@@ -145,16 +145,16 @@ Veterano ibérico con account manager dedicado. Muy fiable para grandes gestoras
 Elite Partner de todas las OTAs grandes. Marketplace con 300+ integraciones. Enterprise.
 
 **Pros**: marca consolidada, analytics profundo, marketplace.
-**Contras**: no apunta a 1-3 unidades, zero catalán, corporate frío.
+**Contras**: no apunta a 1-3 unidades, tono corporativo.
 
 ### 8. Prohost AI
 
-**Origen**: US (YC + Pear VC). **Target**: host 1-300. **Precio**: freemium, Pro $15/propietat.
+**Origen**: US (YC + Pear VC). **Target**: host 1-300. **Precio**: freemium, Pro $15/propiedad.
 
 El más "AI-first" y joven. Freemium agresivo.
 
 **Pros**: freemium, Ask AI natural language, UX moderna.
-**Contras**: zero SES, zero catalán, no es channel manager propio (overlay).
+**Contras**: enfocado al mercado estadounidense, sin foco en el registro de viajeros español; no es channel manager propio (overlay).
 
 ### 9. Guesty
 
@@ -172,7 +172,7 @@ El "Salesforce del vacation rental". PMS más completo del mercado.
 Enterprise ibérico con servicios de marketing incluidos.
 
 **Pros**: Preferred Partner OTAs, servicios de marketing, 6 idiomas.
-**Contras**: target 20+ unidades, caro, zero IA destacada.
+**Contras**: target 20+ unidades, caro para gestores pequeños.
 
 ## Cómo elegir el PMS adecuado para ti
 
@@ -182,16 +182,16 @@ Cuatro criterios que ordenan el resto:
 
 2. **Prioridad operativa**: legal + IA + WhatsApp → Hostly. OTAs masivas → Hostify. Web propia → Lodgify. Precio bajo → Smoobu. Enterprise → Hostaway/Guesty.
 
-3. **Geografía**: España nativa → Hostly, Hostify, Lodgify, Icnea. Global → Hospitable, Hostaway, Guesty. Cataluña (catalán UI) → Hostly único.
+3. **Geografía**: España nativa → Hostly, Hostify, Lodgify, Icnea. Global → Hospitable, Hostaway, Guesty. Cataluña (Mossos y catalán) → Hostly.
 
 4. **Integraciones específicas**: si ya tienes smart locks, tecnología concreta o contabilidad propia, comprueba compatibilidad antes de contratar.
 
 ## Resumen: recomendación por perfil
 
-- **Propietario familiar 1-3 apartamentos en España**: **Hostly** (por compliance ES + IA + precio razonable).
+- **Propietario familiar 1-3 apartamentos en España**: **Hostly** (por el check-in y el registro gratis + IA + precio razonable).
 - **Pequeño gestor 5-15 apartamentos ibéricos**: **Hostly** o **Hostify** (según prioridad IA vs. OTAs).
 - **Agencia con web propia importante**: **Lodgify** + complemento.
 - **Gestoría profesional 20+ unidades**: **Icnea**, **Avantio** o **Hostaway**.
 - **Host tecnológico joven global**: **Prohost AI** o **Hospitable**.
 
-Ninguna herramienta es perfecta para todos. Pero para el **perfil ibérico 1-20 apartamentos** que nos escribe la mayoría, una app de gestión completa con SES nativo es la opción más eficiente para 2026.
+Ninguna herramienta es perfecta para todos. Pero para el **perfil ibérico de 1-20 apartamentos**, una app de gestión completa que también resuelva el registro de viajeros es la opción más eficiente para 2026.

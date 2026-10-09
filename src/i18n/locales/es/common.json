@@ -69,12 +69,12 @@
     "hero_heading": "Nació de vivirlo.",
     "hero_body": "Hostly no surgió en una oficina ni de un estudio de mercado. Surgió de la frustración de gestionar apartamentos turísticos con cinco herramientas distintas y no poder desconectar nunca.",
     "story_p1": "Tenía mis propios apartamentos en Airbnb y Booking. El canal manager aquí, Chekin allá, las plantillas de mensajes en otro sitio, el Excel de cobros abierto siempre, el grupo de WhatsApp con la limpiadora.",
-    "story_p2": "Cada reserva implicaba tocar seis herramientas distintas. Cada check-in, entrar a SES.Hospedajes a mano. Cada fin de mes, una tarde de Excel. Y la sensación constante de que si me despistaba, algo se rompía.",
+    "story_p2": "Cada reserva implicaba tocar seis herramientas distintas. Cada check-in, entrar a mano en el portal de los Mossos. Cada fin de mes, una tarde de Excel. Y la sensación constante de que si me despistaba, algo se rompía.",
     "story_p3": "No encontré ninguna herramienta que lo hiciera todo de forma sencilla para el mercado español. Las que existían eran complejas, caras, o no entendían la burocracia ibérica.",
     "story_p4": "Así que lo construí yo. Primero para mí. Luego, cuando funcionó, para todos los que estaban en la misma situación.",
     "founder_name": "Biel Alsina",
     "founder_role": "Fundador · Barcelona",
-    "founder_quote": "\"Hostly no nació en una oficina. Nació de la frustración de gestionar mis propios apartamentos y no poder desconectar nunca. Lo construí para mí — y funciona.\"",
+    "founder_quote": "\"Hostly no nació en una oficina. Nació de la frustración de gestionar mis propios apartamentos y no poder desconectar nunca. Lo construí para mí. Y funciona.\"",
     "values_eyebrow": "Cómo pensamos",
     "values_heading": "Los principios que guían cada decisión.",
     "values": [
@@ -88,11 +88,11 @@
       },
       {
         "title": "Proactivo, no reactivo",
-        "body": "No te avisamos cuando ya ha pasado el problema. Te avisamos antes. La taxa turística que vence mañana. El precio que conviene subir esta semana."
+        "body": "No te avisamos cuando el problema ya ha pasado. Te avisamos antes. El registro de viajeros que ha fallado. El plazo de la taxa turística que se acaba de abrir."
       },
       {
         "title": "Ibérico de verdad",
-        "body": "SES.Hospedajes, Mossos, Ertzaintza, NRUA, taxa turística. No traducciones de un producto americano. Construido para el mercado español desde el primer día."
+        "body": "El registro en los Mossos, SES.Hospedajes, la taxa turística catalana. No es la traducción de un producto americano. Está construido para el mercado español desde el primer día."
       }
     ],
     "contact_heading": "¿Hablamos?",
@@ -112,13 +112,13 @@
     "features": [
       {
         "icon": "🛡️",
-        "title": "Check-in y SES automático",
-        "desc": "El huésped firma online. El parte llega a Mossos o Policía Nacional sin que toques nada. Gratis para siempre."
+        "title": "Check-in y registro de viajeros",
+        "desc": "El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. Gratis para siempre."
       },
       {
         "icon": "🤖",
         "title": "Mensajes con IA",
-        "desc": "WhatsApp contestado en segundos, en el idioma del huésped. Tú solo entras cuando hace falta."
+        "desc": "La IA contesta al momento la mayoría de mensajes de WhatsApp, en el idioma del huésped. Tú solo entras cuando hace falta."
       },
       {
         "icon": "📊",
@@ -140,14 +140,14 @@
     "toc_label": "Índice de contenidos",
     "cta_eyebrow": "Para propietarios que quieren sistema, no caos",
     "cta_heading": "Deja de gestionar 5 apps.\nEmpieza hoy con Hostly.",
-    "cta_body": "Check-in, mensajes, limpiezas, compliance y precios. Todo en una sola app. Sin tarjeta.",
+    "cta_body": "Check-in, registro de viajeros, mensajes, limpiezas y precios. Todo en una sola app. Empieza gratis, sin tarjeta.",
     "cta_button": "Empezar",
     "chapters": [
       {
         "id": "obligaciones-legales",
         "num": "01",
         "title": "Obligaciones legales del propietario turístico",
-        "description": "SES.Hospedajes, NRUA, registro policial y taxa turística: qué es cada cosa, quién debe hacerlo y cómo automatizarlo.",
+        "description": "SES.Hospedajes, NRUA, registro policial y taxa turística: qué es cada cosa, quién debe hacerlo y qué se puede automatizar.",
         "links": [
           {
             "label": "SES.Hospedajes: guía completa 2026",
@@ -170,7 +170,7 @@
             "href": "/blog/checkin-digital-comparativa-espana"
           },
           {
-            "label": "Hostly: check-in + compliance gratis para siempre",
+            "label": "Hostly: check-in y registro de viajeros gratis para siempre",
             "href": "/funcionalidades/check-in-online"
           }
         ]
@@ -194,7 +194,7 @@
             "href": "/funcionalidades/channel-manager"
           },
           {
-            "label": "Precios dinámicos incluidos en Hostly",
+            "label": "Precios dinámicos con PriceLabs en Hostly",
             "href": "/funcionalidades/precios-dinamicos"
           }
         ]

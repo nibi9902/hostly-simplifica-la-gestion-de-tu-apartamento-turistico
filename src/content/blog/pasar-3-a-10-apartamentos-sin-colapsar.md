@@ -67,7 +67,7 @@ Imprescindible. Con 3 limpiadoras y 10 apartamentos, la asignación manual se ro
 
 Con 40-60 registros al mes, hacerlo manual es inviable y peligroso (errores = sanciones). Debe enviarse desde el check-in online directamente.
 
-**Cómo**: PMS con SES nativo (Hostly), Chekin integrado, o Hostify.
+**Cómo**: un PMS que lo envíe desde el check-in online, Chekin integrado o Hostify. Hostly envía el registro de viajeros a los Mossos d'Esquadra cada día y guarda el comprobante; fuera de Cataluña, la conexión con SES.Hospedajes la activamos contigo al darte de alta.
 
 ### 5. Dynamic pricing
 
@@ -99,7 +99,7 @@ Aunque operes solo, hay tres "roles" que debes diferenciar mentalmente y en tu h
 - Técnico de mantenimiento.
 - Check-in en persona si hace falta.
 
-Un PMS con **multi-rol** (permisos diferenciados) permite que cada uno vea sólo lo que le compete y reduce errores. Icnea y Hostly destacan aquí.
+Un PMS con **multi-rol** (permisos diferenciados) da a cada persona su propia vista y reduce errores. Icnea lo cubre bien; Hostly separa tres roles: gestor (por piso), limpieza y propietario en solo lectura.
 
 ## Roadmap de 90 días para escalar de 3 a 10
 
