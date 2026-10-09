@@ -2,7 +2,7 @@
   "common": {
     "eyebrow": "Legal",
     "last_updated": "Última actualització: {{date}}",
-    "last_updated_value": "Abril 2026"
+    "last_updated_value": "Octubre 2026"
   },
   "privacidad": {
     "title": "Política de privacitat | Hostly",
@@ -31,20 +31,24 @@
     "fin_li4_label": "Compliment legal",
     "fin_li4_text": "— obligació legal (art. 6.1.c RGPD).",
     "h2_conservacion": "4. Conservació",
-    "p_conservacion": "Conservem les teves dades mentre mantinguis un compte actiu i durant el temps necessari per complir obligacions legals (màxim 5 anys per a dades fiscals, segons normativa espanyola).",
+    "p_conservacion": "Conservem les teves dades mentre mantinguis un compte actiu i durant el temps necessari per complir obligacions legals (màxim 5 anys per a dades fiscals, segons normativa espanyola). Les dades que deixes als formularis del web s'esborren als 12 mesos si no arribes a ser client.",
     "h2_destinatarios": "5. Destinataris",
-    "p_destinatarios": "No venem ni cedim les teves dades a tercers. Les compartim únicament amb proveïdors d'infraestructura tècnica sota acords d'encarregat del tractament (Supabase, Vercel, serveis de correu) i quan ho exigeixi la llei.",
+    "p_destinatarios": "No venem ni cedim les teves dades a tercers. Les compartim únicament amb proveïdors d'infraestructura tècnica sota acords d'encarregat del tractament (Supabase, Vercel, serveis de correu i Telegram, que fem servir per avisar l'equip quan algú deixa el seu telèfon al web) i quan ho exigeixi la llei.",
     "h2_transferencias": "6. Transferències internacionals",
     "p_transferencias": "Alguns proveïdors tècnics processen dades fora de l'Espai Econòmic Europeu amb les garanties adequades (clàusules contractuals tipus de la Comissió Europea).",
     "h2_derechos": "7. Els teus drets",
     "p_derechos": "Tens dret a accedir, rectificar, suprimir, oposar-te, limitar el tractament i portar les teves dades. Per exercir-los escriu-nos a {{email}} indicant la teva sol·licitud.",
     "p_derechos_aepd": "També pots reclamar a l'Agència Espanyola de Protecció de Dades (aepd.es).",
     "h2_cookies": "8. Cookies",
-    "p_cookies_pre": "Fem servir cookies tècniques i analítiques. Consulta la nostra",
+    "p_cookies_pre": "Fem servir cookies tècniques i, només si les acceptes, analítiques. Consulta la nostra",
     "p_cookies_link": "Política de cookies",
     "p_cookies_post": "per a més detalls.",
     "h2_cambios": "9. Canvis",
-    "p_cambios": "Notificarem canvis significatius en aquesta política per correu electrònic o mitjançant avís a l'app amb almenys 30 dies d'antelació."
+    "p_cambios": "Notificarem canvis significatius en aquesta política per correu electrònic o mitjançant avís a l'app amb almenys 30 dies d'antelació.",
+    "datos_li5_label": "Formularis del web:",
+    "datos_li5_text": "telèfon, nom i correu quan comences amb Hostly, demanes que et truquem o veus el detall de la calculadora; també les respostes de la calculadora, la pàgina des d'on arribes i l'hora que tries per a la demo.",
+    "fin_li5_label": "Trucar-te o escriure't sobre Hostly quan ens deixes el teu contacte al web",
+    "fin_li5_text": "— consentiment (art. 6.1.a RGPD), que dones en enviar el formulari. El pots retirar quan vulguis."
   },
   "cookies": {
     "title": "Política de cookies | Hostly",
@@ -60,14 +64,39 @@
     "th_duracion": "Durada",
     "th_tercero": "Tercer",
     "table": [
-      { "name": "Sessió / autenticació", "type": "Tècnica", "purpose": "Mantenir la sessió iniciada a l'app.", "duration": "Sessió", "thirdParty": "No" },
-      { "name": "Google Analytics (_ga, _gid)", "type": "Analítica", "purpose": "Mesurar visites, pàgines més vistes i fonts de trànsit.", "duration": "2 anys / 24h", "thirdParty": "Google LLC" },
-      { "name": "Preferències de consentiment", "type": "Tècnica", "purpose": "Recordar si vas acceptar o rebutjar cookies.", "duration": "12 mesos", "thirdParty": "No" }
+      {
+        "name": "Sessió / autenticació",
+        "type": "Tècnica",
+        "purpose": "Mantenir la sessió iniciada a l'app.",
+        "duration": "Sessió",
+        "thirdParty": "No"
+      },
+      {
+        "name": "Google Analytics (_ga, _ga_*)",
+        "type": "Analítica (només si l'acceptes)",
+        "purpose": "Mesurar visites, pàgines més vistes i fonts de trànsit.",
+        "duration": "2 anys",
+        "thirdParty": "Google LLC"
+      },
+      {
+        "name": "Preferències de galetes (emmagatzematge local)",
+        "type": "Tècnica",
+        "purpose": "Recordar si vas acceptar o rebutjar les galetes analítiques.",
+        "duration": "12 mesos",
+        "thirdParty": "No"
+      },
+      {
+        "name": "Idioma i visita (emmagatzematge local)",
+        "type": "Tècnica",
+        "purpose": "Recordar l'idioma i, si ens deixes el teu contacte, no tornar-te'l a demanar.",
+        "duration": "Fins que l'esborris",
+        "thirdParty": "No"
+      }
     ],
     "h2_tecnicas": "Cookies tècniques necessàries",
     "p_tecnicas": "Les cookies tècniques són imprescindibles per al funcionament bàsic del lloc. No requereixen consentiment segons l'art. 22.2 LSSI.",
     "h2_analiticas": "Cookies analítiques",
-    "p_analiticas_pre": "Fem servir Google Analytics per entendre com es fa servir el lloc i millorar el servei. Les dades són anonimitzades i no es fan servir per identificar-te personalment. Pots optar per no participar a",
+    "p_analiticas_pre": "Fem servir Google Analytics per entendre com es fa servir el lloc i millorar-lo. Només s'activa si l'acceptes a l'avís de galetes; si el rebutges, no es carrega res de Google. També pots optar per no participar a",
     "h2_gestionar": "Com gestionar les cookies",
     "p_gestionar": "Pots configurar el teu navegador per rebutjar o eliminar cookies en qualsevol moment. Tingues en compte que desactivar les cookies tècniques pot afectar el funcionament del lloc.",
     "h2_contacto": "Contacte",
@@ -81,20 +110,20 @@
     "h2_1": "1. Acceptació",
     "p_1": "En registrar-te a Hostly ({{appUrl}}) acceptes aquests Termes i Condicions. Si no hi estàs d'acord, no facis servir el servei.",
     "h2_2": "2. El servei",
-    "p_2": "Hostly ofereix una plataforma SaaS per a la gestió d'apartaments turístics que inclou: sincronització de calendaris i reserves (channel manager), missatgeria amb hostes, check-in digital, compliment normatiu (SES, NRUA, taxa turística), coordinació de neteges i preus dinàmics.",
+    "p_2": "Hostly ofereix una plataforma SaaS per a la gestió d'apartaments turístics que inclou: sincronització de calendaris i reserves, missatgeria amb hostes, check-in online, registre de viatgers a la policia, taxa turística, coordinació de neteges i preus dinàmics.",
     "h2_3": "3. Compte i accés",
     "li_3_1": "Has de ser major de 18 anys i proporcionar informació veraç en registrar-te.",
     "li_3_2": "Ets responsable de mantenir la confidencialitat de la teva contrasenya.",
     "li_3_3": "Un compte pot gestionar múltiples propietats segons el pla contractat.",
-    "h2_4": "4. Prova gratuïta",
+    "h2_4": "4. Pla gratis i primer mes",
     "p_4": "El pla Gratis (check-in online, registre a la policia i taxa turística) no caduca i no requereix targeta. El pla Complet s'activa després d'una demostració amb el nostre equip i inclou el primer mes gratis.",
     "h2_5": "5. Preus i facturació",
-    "li_5_1": "El preu és de 40 €/mes per apartament (37 €/mes a partir de 5 apartaments).",
+    "li_5_1": "El preu del pla Complet és de 40 €/mes per apartament (35 €/mes per apartament a partir de 5 apartaments).",
     "li_5_2": "La facturació és mensual per avançat.",
     "li_5_3": "Els preus inclouen IVA tret que s'indiqui el contrari.",
     "li_5_4": "Ens reservem el dret a modificar preus amb 30 dies de preavís.",
     "h2_6": "6. Cancel·lació",
-    "p_6": "Pots cancel·lar en qualsevol moment des de la configuració del teu compte, sense permanència ni penalització. L'accés es manté fins al final del període pagat.",
+    "p_6": "Pots cancel·lar en qualsevol moment escrivint-nos a {{email}}, sense permanència ni penalització. L'accés es manté fins al final del període pagat.",
     "h2_7": "7. Ús acceptable",
     "p_7": "No està permès:",
     "li_7_1": "Fer servir el servei per a activitats il·legals.",
@@ -104,10 +133,11 @@
     "h2_8": "8. Propietat intel·lectual",
     "p_8": "Tot el programari, disseny i contingut de la plataforma és propietat de Hostly. Les dades que introdueixes són teves; ens concedeixes una llicència limitada per processar-les amb la finalitat de prestar el servei.",
     "h2_9": "9. Limitació de responsabilitat",
-    "p_9": "Hostly no garanteix que el servei estigui disponible de manera ininterrompuda. En cap cas la nostra responsabilitat superarà l'import pagat en els últims 12 mesos. No som responsables de sancions derivades de l'incompliment normatiu de l'usuari (SES, NRUA, taxa turística), encara que proveïm les eines.",
+    "p_9": "Hostly no garanteix que el servei estigui disponible de manera ininterrompuda. En cap cas la nostra responsabilitat superarà l'import pagat en els últims 12 mesos. No som responsables de sancions derivades de l'incompliment normatiu de l'usuari (registre de viatgers, taxa turística), encara que proporcionem les eines.",
     "h2_10": "10. Legislació aplicable",
     "p_10": "Aquests termes es regeixen per la llei espanyola. Per a qualsevol disputa, les parts se sotmeten als jutjats de Barcelona.",
-    "h2_11": "11. Contacte"
+    "h2_11": "11. Contacte",
+    "li_5_5": "Programa de referits: per cada 5 propietaris que portis i segueixin actius a Hostly, un dels teus apartaments deixa de pagar mentre segueixin actius. Sense límit."
   },
   "aviso": {
     "title": "Avís legal | Hostly",
@@ -116,16 +146,19 @@
     "breadcrumb": "Avís legal",
     "p_intro": "En compliment de la Llei 34/2002, de Serveis de la Societat de la Informació i del Comerç Electrònic (LSSI), s'informa de les següents dades del titular del lloc web {{domain}}:",
     "h2_titular": "Dades del titular",
-    "li_denominacion": "Denominació: Hostly",
+    "li_denominacion": "Nom comercial: Hostly",
     "li_email": "Correu electrònic:",
     "li_web": "Lloc web:",
     "h2_objeto": "Objecte i àmbit d'aplicació",
-    "p_objeto": "El present avís legal regula l'accés i ús del lloc web {{domain}}, titularitat de Hostly. L'accés al lloc web implica l'acceptació d'aquestes condicions.",
+    "p_objeto": "El present avís legal regula l'accés i ús del lloc web {{domain}}. L'accés al lloc web implica l'acceptació d'aquestes condicions.",
     "h2_propiedad": "Propietat intel·lectual i industrial",
     "p_propiedad": "Els continguts, dissenys, textos, imatges, logotips i codi font del lloc web són propietat de Hostly o compta amb les llicències corresponents. Queda prohibida la seva reproducció, distribució o comunicació pública sense autorització expressa.",
     "h2_responsabilidad": "Responsabilitat",
     "p_responsabilidad": "Hostly no garanteix la disponibilitat continuada del lloc ni l'absència d'errors en el seu contingut. No ens fem responsables dels danys derivats de l'ús del lloc o de la impossibilitat d'accés al mateix.",
     "h2_legislacion": "Legislació aplicable",
-    "p_legislacion": "El present avís legal es regeix per la legislació espanyola. Per a la resolució de qualsevol controvèrsia relacionada amb aquest lloc, les parts se sotmeten a la jurisdicció dels tribunals de Barcelona."
+    "p_legislacion": "El present avís legal es regeix per la legislació espanyola. Per a la resolució de qualsevol controvèrsia relacionada amb aquest lloc, les parts se sotmeten a la jurisdicció dels tribunals de Barcelona.",
+    "li_titular": "Titular:",
+    "li_nif": "NIF:",
+    "li_domicilio": "Domicili:"
   }
 }

@@ -332,5 +332,13 @@
         ]
       }
     ]
+  },
+  "galetes": {
+    "titol": "Cookies",
+    "text": "Usamos cookies analíticas (Google Analytics) para saber qué páginas sirven y cuáles no. Solo si nos dejas.",
+    "acceptar": "Aceptar",
+    "rebutjar": "Rechazar",
+    "mes": "Más información",
+    "canviar": "Cambiar mis preferencias de cookies"
   }
 }

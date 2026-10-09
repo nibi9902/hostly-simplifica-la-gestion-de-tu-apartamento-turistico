@@ -55,10 +55,11 @@ export default function Terminos() {
             <li>{t("terminos.li_5_2")}</li>
             <li>{t("terminos.li_5_3")}</li>
             <li>{t("terminos.li_5_4")}</li>
+            <li>{t("terminos.li_5_5")}</li>
           </ul>
 
           <h2>{t("terminos.h2_6")}</h2>
-          <p>{t("terminos.p_6")}</p>
+          <p>{t("terminos.p_6", { email: EMAIL })}</p>
 
           <h2>{t("terminos.h2_7")}</h2>
           <p>{t("terminos.p_7")}</p>

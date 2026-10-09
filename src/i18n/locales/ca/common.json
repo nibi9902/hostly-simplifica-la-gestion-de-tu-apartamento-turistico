@@ -332,5 +332,13 @@
         ]
       }
     ]
+  },
+  "galetes": {
+    "titol": "Galetes",
+    "text": "Fem servir galetes analítiques (Google Analytics) per saber quines pàgines serveixen i quines no. Només si ens deixes.",
+    "acceptar": "Acceptar",
+    "rebutjar": "Rebutjar",
+    "mes": "Més informació",
+    "canviar": "Canviar les meves preferències de galetes"
   }
 }

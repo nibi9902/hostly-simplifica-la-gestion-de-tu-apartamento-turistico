@@ -1,11 +1,13 @@
 import PageShell from "@/components/PageShell";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { useTranslation } from "react-i18next";
+import { oblidaConsentiment } from "@/lib/galetes";
 
 const EMAIL = "hola@hostlylabs.com";
 
 export default function Cookies() {
   const { t } = useTranslation("legal");
+  const { t: tc } = useTranslation("common");
   const date = t("common.last_updated_value");
   const cookieTable = t("cookies.table", { returnObjects: true }) as Array<{
     name: string;
@@ -80,6 +82,15 @@ export default function Cookies() {
           </p>
 
           <h2>{t("cookies.h2_gestionar")}</h2>
+          <p>
+            <button
+              type="button"
+              onClick={oblidaConsentiment}
+              className="not-prose inline-flex items-center h-11 px-5 rounded-full border border-slate-200 text-sm font-semibold text-foreground hover:bg-slate-50 transition-colors"
+            >
+              {tc("galetes.canviar")}
+            </button>
+          </p>
           <p>{t("cookies.p_gestionar")}</p>
           <ul>
             <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noreferrer">Chrome</a></li>

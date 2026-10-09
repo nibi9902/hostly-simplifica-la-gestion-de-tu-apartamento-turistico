@@ -1,9 +1,10 @@
 import PageShell from "@/components/PageShell";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { useTranslation } from "react-i18next";
+import { TITULAR } from "@/lib/titular";
 
-const EMAIL = "hola@hostlylabs.com";
-const DOMAIN = "hostlylabs.com";
+const EMAIL = TITULAR.email;
+const DOMAIN = TITULAR.web;
 
 export default function AvisoLegal() {
   const { t } = useTranslation("legal");
@@ -37,6 +38,9 @@ export default function AvisoLegal() {
 
           <h2>{t("aviso.h2_titular")}</h2>
           <ul>
+            <li><strong>{t("aviso.li_titular")}</strong> {TITULAR.nom}</li>
+            <li><strong>{t("aviso.li_nif")}</strong> {TITULAR.nif}</li>
+            {TITULAR.domicili && <li><strong>{t("aviso.li_domicilio")}</strong> {TITULAR.domicili}</li>}
             <li><strong>{t("aviso.li_denominacion")}</strong></li>
             <li><strong>{t("aviso.li_email")}</strong> <a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
             <li><strong>{t("aviso.li_web")}</strong> https://{DOMAIN}</li>

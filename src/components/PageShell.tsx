@@ -11,6 +11,8 @@ interface PageShellProps {
   image?: string;
   /** Schemas JSON-LD addicionals per a aquesta pàgina. */
   schemas?: Array<Record<string, unknown>>;
+  /** Pàgines que no han de sortir als cercadors (legals). */
+  noindex?: boolean;
   children: React.ReactNode;
 }
 
@@ -20,6 +22,7 @@ export default function PageShell({
   path,
   image,
   schemas = [],
+  noindex = false,
   children,
 }: PageShellProps) {
   const canonicalPath = path ?? (typeof window !== "undefined" ? window.location.pathname : "/");
@@ -32,6 +35,7 @@ export default function PageShell({
         path={canonicalPath}
         image={image}
         schemas={schemas}
+        noindex={noindex}
       />
       <SiteHeader />
       <main>{children}</main>

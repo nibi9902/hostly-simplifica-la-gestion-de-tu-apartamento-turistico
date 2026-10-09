@@ -10,6 +10,7 @@ import { SUPPORTED_LANGS, DEFAULT_LANG, type Lang } from "./i18n/config";
 // Crítiques (part del first-paint)
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AvisGaletes from "./components/AvisGaletes";
 
 // Lazy — només es carreguen quan l'usuari hi navega
 const Empezar = lazy(() => import("./pages/Empezar"));
@@ -169,6 +170,7 @@ const App = () => (
             <Route path="*" element={<LegacyRedirect />} />
           </Routes>
         </Suspense>
+        <AvisGaletes />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

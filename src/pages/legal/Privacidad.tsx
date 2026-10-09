@@ -2,6 +2,7 @@ import PageShell from "@/components/PageShell";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { LangLink } from "@/i18n/LangLink";
 import { useTranslation } from "react-i18next";
+import { TITULAR } from "@/lib/titular";
 
 const EMAIL = "hola@hostlylabs.com";
 
@@ -36,7 +37,8 @@ export default function Privacidad() {
 
           <h2>{t("privacidad.h2_responsable")}</h2>
           <p>
-            <strong>Hostly</strong><br />
+            <strong>{TITULAR.nom}</strong> (Hostly) · NIF {TITULAR.nif}<br />
+            {TITULAR.domicili && <>{TITULAR.domicili}<br /></>}
             {t("privacidad.p_responsable_contacto")} <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </p>
 
@@ -47,6 +49,7 @@ export default function Privacidad() {
             <li><strong>{t("privacidad.datos_li2_label")}</strong> {t("privacidad.datos_li2_text")}</li>
             <li><strong>{t("privacidad.datos_li3_label")}</strong> {t("privacidad.datos_li3_text")}</li>
             <li><strong>{t("privacidad.datos_li4_label")}</strong> {t("privacidad.datos_li4_text")}</li>
+            <li><strong>{t("privacidad.datos_li5_label")}</strong> {t("privacidad.datos_li5_text")}</li>
           </ul>
 
           <h2>{t("privacidad.h2_finalidad")}</h2>
@@ -55,6 +58,7 @@ export default function Privacidad() {
             <li><strong>{t("privacidad.fin_li2_label")}</strong> {t("privacidad.fin_li2_text")}</li>
             <li><strong>{t("privacidad.fin_li3_label")}</strong> {t("privacidad.fin_li3_text")}</li>
             <li><strong>{t("privacidad.fin_li4_label")}</strong> {t("privacidad.fin_li4_text")}</li>
+            <li><strong>{t("privacidad.fin_li5_label")}</strong> {t("privacidad.fin_li5_text")}</li>
           </ul>
 
           <h2>{t("privacidad.h2_conservacion")}</h2>

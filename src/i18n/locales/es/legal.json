@@ -2,7 +2,7 @@
   "common": {
     "eyebrow": "Legal",
     "last_updated": "Última actualización: {{date}}",
-    "last_updated_value": "Abril 2026"
+    "last_updated_value": "Octubre 2026"
   },
   "privacidad": {
     "title": "Política de privacidad | Hostly",
@@ -31,20 +31,24 @@
     "fin_li4_label": "Cumplimiento legal",
     "fin_li4_text": "— obligación legal (art. 6.1.c RGPD).",
     "h2_conservacion": "4. Conservación",
-    "p_conservacion": "Conservamos tus datos mientras mantengas una cuenta activa y durante el tiempo necesario para cumplir obligaciones legales (máximo 5 años para datos fiscales, según normativa española).",
+    "p_conservacion": "Conservamos tus datos mientras mantengas una cuenta activa y durante el tiempo necesario para cumplir obligaciones legales (máximo 5 años para datos fiscales, según normativa española). Los datos que dejas en los formularios de la web se borran a los 12 meses si no llegas a ser cliente.",
     "h2_destinatarios": "5. Destinatarios",
-    "p_destinatarios": "No vendemos ni cedemos tus datos a terceros. Los compartimos únicamente con proveedores de infraestructura técnica bajo acuerdos de encargado del tratamiento (Supabase, Vercel, servicios de correo) y cuando lo exija la ley.",
+    "p_destinatarios": "No vendemos ni cedemos tus datos a terceros. Los compartimos únicamente con proveedores de infraestructura técnica bajo acuerdos de encargado del tratamiento (Supabase, Vercel, servicios de correo y Telegram, que usamos para avisar al equipo cuando alguien deja su teléfono en la web) y cuando lo exija la ley.",
     "h2_transferencias": "6. Transferencias internacionales",
     "p_transferencias": "Algunos proveedores técnicos procesan datos fuera del Espacio Económico Europeo con las garantías adecuadas (cláusulas contractuales tipo de la Comisión Europea).",
     "h2_derechos": "7. Tus derechos",
     "p_derechos": "Tienes derecho a acceder, rectificar, suprimir, oponerte, limitar el tratamiento y portar tus datos. Para ejercerlos escríbenos a {{email}} indicando tu solicitud.",
     "p_derechos_aepd": "También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).",
     "h2_cookies": "8. Cookies",
-    "p_cookies_pre": "Usamos cookies técnicas y analíticas. Consulta nuestra",
+    "p_cookies_pre": "Usamos cookies técnicas y, solo si las aceptas, analíticas. Consulta nuestra",
     "p_cookies_link": "Política de cookies",
     "p_cookies_post": "para más detalles.",
     "h2_cambios": "9. Cambios",
-    "p_cambios": "Notificaremos cambios significativos en esta política por correo electrónico o mediante aviso en la app con al menos 30 días de antelación."
+    "p_cambios": "Notificaremos cambios significativos en esta política por correo electrónico o mediante aviso en la app con al menos 30 días de antelación.",
+    "datos_li5_label": "Formularios de la web:",
+    "datos_li5_text": "teléfono, nombre y correo cuando empiezas con Hostly, pides que te llamemos o ves el detalle de la calculadora; también las respuestas de la calculadora, la página desde la que llegas y la hora que eliges para la demo.",
+    "fin_li5_label": "Llamarte o escribirte sobre Hostly cuando nos dejas tu contacto en la web",
+    "fin_li5_text": "— consentimiento (art. 6.1.a RGPD), que das al enviar el formulario. Puedes retirarlo cuando quieras."
   },
   "cookies": {
     "title": "Política de cookies | Hostly",
@@ -60,14 +64,39 @@
     "th_duracion": "Duración",
     "th_tercero": "Tercero",
     "table": [
-      { "name": "Sesión / autenticación", "type": "Técnica", "purpose": "Mantener la sesión iniciada en la app.", "duration": "Sesión", "thirdParty": "No" },
-      { "name": "Google Analytics (_ga, _gid)", "type": "Analítica", "purpose": "Medir visitas, páginas más vistas y fuentes de tráfico.", "duration": "2 años / 24h", "thirdParty": "Google LLC" },
-      { "name": "Preferencias de consentimiento", "type": "Técnica", "purpose": "Recordar si aceptaste o rechazaste cookies.", "duration": "12 meses", "thirdParty": "No" }
+      {
+        "name": "Sesión / autenticación",
+        "type": "Técnica",
+        "purpose": "Mantener la sesión iniciada en la app.",
+        "duration": "Sesión",
+        "thirdParty": "No"
+      },
+      {
+        "name": "Google Analytics (_ga, _ga_*)",
+        "type": "Analítica (solo si la aceptas)",
+        "purpose": "Medir visitas, páginas más vistas y fuentes de tráfico.",
+        "duration": "2 años",
+        "thirdParty": "Google LLC"
+      },
+      {
+        "name": "Preferencias de cookies (almacenamiento local)",
+        "type": "Técnica",
+        "purpose": "Recordar si aceptaste o rechazaste las cookies analíticas.",
+        "duration": "12 meses",
+        "thirdParty": "No"
+      },
+      {
+        "name": "Idioma y visita (almacenamiento local)",
+        "type": "Técnica",
+        "purpose": "Recordar el idioma y, si nos dejas tu contacto, no volver a pedírtelo.",
+        "duration": "Hasta que lo borres",
+        "thirdParty": "No"
+      }
     ],
     "h2_tecnicas": "Cookies técnicas necesarias",
     "p_tecnicas": "Las cookies técnicas son imprescindibles para el funcionamiento básico del sitio. No requieren consentimiento según el art. 22.2 LSSI.",
     "h2_analiticas": "Cookies analíticas",
-    "p_analiticas_pre": "Usamos Google Analytics para entender cómo se usa el sitio y mejorar el servicio. Los datos son anonimizados y no se usan para identificarte personalmente. Puedes optar por no participar en",
+    "p_analiticas_pre": "Usamos Google Analytics para entender cómo se usa el sitio y mejorarlo. Solo se activa si lo aceptas en el aviso de cookies; si lo rechazas, no se carga nada de Google. También puedes optar por no participar en",
     "h2_gestionar": "Cómo gestionar las cookies",
     "p_gestionar": "Puedes configurar tu navegador para rechazar o eliminar cookies en cualquier momento. Ten en cuenta que desactivar las cookies técnicas puede afectar al funcionamiento del sitio.",
     "h2_contacto": "Contacto",
@@ -81,20 +110,20 @@
     "h2_1": "1. Aceptación",
     "p_1": "Al registrarte en Hostly ({{appUrl}}) aceptas estos Términos y Condiciones. Si no estás de acuerdo, no uses el servicio.",
     "h2_2": "2. El servicio",
-    "p_2": "Hostly ofrece una plataforma SaaS para la gestión de apartamentos turísticos que incluye: sincronización de calendarios y reservas (channel manager), mensajería con huéspedes, check-in digital, cumplimiento normativo (SES, NRUA, taxa turística), coordinación de limpiezas y precios dinámicos.",
+    "p_2": "Hostly ofrece una plataforma SaaS para la gestión de apartamentos turísticos que incluye: sincronización de calendarios y reservas, mensajería con huéspedes, check-in online, registro de viajeros a la policía, taxa turística, coordinación de limpiezas y precios dinámicos.",
     "h2_3": "3. Cuenta y acceso",
     "li_3_1": "Debes ser mayor de 18 años y proporcionar información veraz al registrarte.",
     "li_3_2": "Eres responsable de mantener la confidencialidad de tu contraseña.",
     "li_3_3": "Una cuenta puede gestionar múltiples propiedades según el plan contratado.",
-    "h2_4": "4. Prueba gratuita",
+    "h2_4": "4. Plan gratis y primer mes",
     "p_4": "El plan Gratis (check-in online, registro a la policía y taxa turística) no caduca y no requiere tarjeta. El plan Completo se activa tras una demostración con nuestro equipo e incluye el primer mes gratis.",
     "h2_5": "5. Precios y facturación",
-    "li_5_1": "El precio es de 40 €/mes por apartamento (37 €/mes a partir de 5 apartamentos).",
+    "li_5_1": "El precio del plan Completo es de 40 €/mes por apartamento (35 €/mes por apartamento a partir de 5 apartamentos).",
     "li_5_2": "La facturación es mensual por adelantado.",
     "li_5_3": "Los precios incluyen IVA salvo que se indique lo contrario.",
     "li_5_4": "Nos reservamos el derecho a modificar precios con 30 días de preaviso.",
     "h2_6": "6. Cancelación",
-    "p_6": "Puedes cancelar en cualquier momento desde la configuración de tu cuenta, sin permanencia ni penalización. El acceso se mantiene hasta el final del periodo pagado.",
+    "p_6": "Puedes cancelar en cualquier momento escribiéndonos a {{email}}, sin permanencia ni penalización. El acceso se mantiene hasta el final del periodo pagado.",
     "h2_7": "7. Uso aceptable",
     "p_7": "No está permitido:",
     "li_7_1": "Usar el servicio para actividades ilegales.",
@@ -104,10 +133,11 @@
     "h2_8": "8. Propiedad intelectual",
     "p_8": "Todo el software, diseño y contenido de la plataforma es propiedad de Hostly. Los datos que introduces son tuyos; nos concedes una licencia limitada para procesarlos con el fin de prestar el servicio.",
     "h2_9": "9. Limitación de responsabilidad",
-    "p_9": "Hostly no garantiza que el servicio esté disponible de forma ininterrumpida. En ningún caso nuestra responsabilidad superará el importe pagado en los últimos 12 meses. No somos responsables de sanciones derivadas del incumplimiento normativo del usuario (SES, NRUA, taxa turística), aunque proveamos las herramientas.",
+    "p_9": "Hostly no garantiza que el servicio esté disponible de forma ininterrumpida. En ningún caso nuestra responsabilidad superará el importe pagado en los últimos 12 meses. No somos responsables de sanciones derivadas del incumplimiento normativo del usuario (registro de viajeros, taxa turística), aunque proveamos las herramientas.",
     "h2_10": "10. Legislación aplicable",
     "p_10": "Estos términos se rigen por la ley española. Para cualquier disputa, las partes se someten a los juzgados de Barcelona.",
-    "h2_11": "11. Contacto"
+    "h2_11": "11. Contacto",
+    "li_5_5": "Programa de referidos: por cada 5 propietarios que traigas y sigan activos en Hostly, uno de tus apartamentos deja de pagar mientras sigan activos. Sin límite."
   },
   "aviso": {
     "title": "Aviso legal | Hostly",
@@ -116,16 +146,19 @@
     "breadcrumb": "Aviso legal",
     "p_intro": "En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI), se informa de los siguientes datos del titular del sitio web {{domain}}:",
     "h2_titular": "Datos del titular",
-    "li_denominacion": "Denominación: Hostly",
+    "li_denominacion": "Nombre comercial: Hostly",
     "li_email": "Correo electrónico:",
     "li_web": "Sitio web:",
     "h2_objeto": "Objeto y ámbito de aplicación",
-    "p_objeto": "El presente aviso legal regula el acceso y uso del sitio web {{domain}}, titularidad de Hostly. El acceso al sitio web implica la aceptación de estas condiciones.",
+    "p_objeto": "El presente aviso legal regula el acceso y uso del sitio web {{domain}}. El acceso al sitio web implica la aceptación de estas condiciones.",
     "h2_propiedad": "Propiedad intelectual e industrial",
     "p_propiedad": "Los contenidos, diseños, textos, imágenes, logotipos y código fuente del sitio web son propiedad de Hostly o cuenta con las licencias correspondientes. Queda prohibida su reproducción, distribución o comunicación pública sin autorización expresa.",
     "h2_responsabilidad": "Responsabilidad",
     "p_responsabilidad": "Hostly no garantiza la disponibilidad continuada del sitio ni la ausencia de errores en su contenido. No nos hacemos responsables de los daños derivados del uso del sitio o de la imposibilidad de acceso al mismo.",
     "h2_legislacion": "Legislación aplicable",
-    "p_legislacion": "El presente aviso legal se rige por la legislación española. Para la resolución de cualquier controversia relacionada con este sitio, las partes se someten a la jurisdicción de los tribunales de Barcelona."
+    "p_legislacion": "El presente aviso legal se rige por la legislación española. Para la resolución de cualquier controversia relacionada con este sitio, las partes se someten a la jurisdicción de los tribunales de Barcelona.",
+    "li_titular": "Titular:",
+    "li_nif": "NIF:",
+    "li_domicilio": "Domicilio:"
   }
 }
