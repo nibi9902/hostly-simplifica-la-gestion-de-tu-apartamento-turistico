@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>B · Al móvil</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+.mb *{box-sizing:border-box}
+.mb p,.mb h1,.mb h2,.mb h3,.mb ul,.mb li{margin:0;padding:0;list-style:none}
+.mb a{text-decoration:none;color:inherit}
+.ic{width:18px;height:18px;flex-shrink:0}
+.columna{display:flex;flex-direction:column;align-items:center;gap:14px}
+.peu-tel{font-size:14px;font-weight:600;color:hsl(220 14% 25%)}
+.peu-tel span{display:block;font-weight:400;font-size:13px;color:hsl(220 9% 46%);text-align:center;margin-top:2px}
+.tel{width:410px;height:864px;padding:10px;border-radius:58px;background:hsl(220 14% 11%);box-shadow:0 30px 60px -20px rgba(15,23,42,.35)}
+.pant{position:relative;width:390px;height:844px;border-radius:48px;overflow:hidden;background:hsl(210 20% 98%);color:hsl(220 14% 11%)}
+.barra{position:absolute;z-index:3;left:0;right:0;top:0;height:76px;padding:22px 20px 0;display:flex;align-items:center;justify-content:space-between;background:hsl(210 20% 98% / .92)}
+.barra img{height:20px;width:auto;display:block}
+.rodo{width:44px;height:44px;border-radius:9999px;display:grid;place-items:center;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 88%);border:0;color:inherit}
+.pill{display:flex;align-items:center;justify-content:center;gap:8px;height:54px;border-radius:9999px;font-size:17px;font-weight:500;border:0;font-family:inherit}
+.pill-pri{background:#2563EB;color:#fff}
+.pill-sec{background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 88%)}
+.cos{position:absolute;inset:96px 20px 0;display:flex;flex-direction:column;gap:14px}
+.aviso{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px;border-radius:9999px;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 91%);font-size:12px;font-weight:500}
+.aviso i{width:6px;height:6px;border-radius:9999px;background:hsl(142 76% 36%)}
+.cos h1{font-size:34px;line-height:1.08;font-weight:700;letter-spacing:-0.03em}
+.cos h1 span{display:block;color:hsl(220 9% 46%)}
+.cos .sub{font-size:16px;line-height:1.5;color:hsl(220 9% 46%)}
+.app{position:absolute;left:20px;right:20px;top:572px;height:340px;border-radius:26px;overflow:hidden;box-shadow:0 16px 40px -12px rgba(15,23,42,.3)}
+.app > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.app-vel{position:absolute;inset:0;background:linear-gradient(180deg,hsl(210 20% 98% / .7),hsl(210 20% 98% / .15) 60%)}
+.resp{position:absolute;left:14px;right:14px;top:14px;border-radius:18px;background:hsl(0 0% 100% / .95);box-shadow:0 8px 24px rgba(0,0,0,.12);padding:16px;display:flex;flex-direction:column;gap:8px}
+.resp .on{font-size:11px;font-weight:600}
+.resp .que{font-size:9px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:hsl(32 95% 44%)}
+.resp b{font-size:22px;line-height:1.1;font-weight:700;letter-spacing:-0.02em}
+.m-pill{align-self:flex-start;height:30px;padding:0 13px;border-radius:9999px;background:#3B82F6;color:#fff;font-size:12px;font-weight:500;display:inline-flex;align-items:center}
+/* 2 */
+.blanc{background:#fff}
+.cos2{position:absolute;inset:96px 0 0;display:flex;flex-direction:column;gap:16px}
+.cos2 h2{font-size:30px;line-height:1.1;font-weight:700;letter-spacing:-0.03em;padding:0 20px}
+.cos2 .sub{font-size:15px;color:hsl(220 9% 46%);padding:0 20px;margin-top:-6px}
+.tabs{display:flex;gap:6px;padding:0 20px;overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent)}
+.tab{height:40px;padding:0 16px;border-radius:9999px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;background:hsl(210 20% 96%);flex-shrink:0}
+.tab.on{background:#2563EB;color:#fff}
+.tab .ic{width:15px;height:15px}
+.vista{margin:0 20px;border-radius:22px;background:hsl(210 20% 98%);box-shadow:inset 0 0 0 1px hsl(220 13% 91%);padding:16px;display:flex;flex-direction:column;gap:10px}
+.vista-cap{display:flex;align-items:baseline;gap:8px;padding-bottom:8px;border-bottom:1px solid hsl(0 0% 92%)}
+.vista-cap b{font-size:15px;font-weight:600}
+.vista-cap span{font-size:12px;color:hsl(220 9% 46%)}
+.bomb{max-width:86%;padding:10px 13px;border-radius:16px;font-size:13px;line-height:1.45}
+.bomb.h{align-self:flex-start;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 90%);border-bottom-left-radius:5px}
+.bomb.h small{display:block;margin-top:5px;padding-top:5px;border-top:1px dashed hsl(220 13% 86%);color:hsl(220 9% 46%);font-size:12px}
+.bomb.ia{align-self:flex-end;background:#3B82F6;color:#fff;border-bottom-right-radius:5px}
+.peu-b{align-self:flex-end;font-size:11px;color:hsl(220 9% 46%)}
+.punts{display:flex;flex-direction:column;gap:10px;padding:4px 20px 0}
+.punts li{display:flex;gap:10px;font-size:15px;line-height:1.45}
+.punts .ic{width:16px;height:16px;color:#2563EB;margin-top:3px}
+/* 3 */
+.pista{align-self:flex-start;display:flex;gap:3px;padding:4px;border-radius:9999px;background:hsl(210 20% 93%)}
+.pista span{height:30px;padding:0 12px;border-radius:9999px;display:inline-flex;align-items:center;font-size:12px;font-weight:500;color:hsl(220 9% 40%)}
+.pista span.on{background:#fff;color:hsl(220 14% 11%);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.targ{border-radius:24px;background:#fff;box-shadow:0 8px 28px rgba(15,23,42,.06),inset 0 0 0 1px hsl(220 13% 91%);padding:22px;display:flex;flex-direction:column;gap:16px}
+.targ h2{font-size:28px;line-height:1.1;font-weight:700;letter-spacing:-0.03em}
+.targ .sub{font-size:15px;line-height:1.5;color:hsl(220 9% 46%);margin-top:-8px}
+.camp{display:flex;flex-direction:column;gap:6px}
+.camp label{font-size:13px;font-weight:500}
+.entrada{display:flex;align-items:center;gap:10px;height:52px;border-radius:14px;background:hsl(210 20% 98%);box-shadow:inset 0 0 0 1px hsl(220 13% 88%);padding:0 14px;font-size:16px;color:hsl(220 9% 55%)}
+.entrada.gran{height:60px;background:#fff;box-shadow:inset 0 0 0 2px #2563EB;font-size:20px;color:hsl(220 9% 60%);font-variant-numeric:tabular-nums}
+.prefix{height:32px;padding:0 10px;border-radius:9999px;background:hsl(210 20% 95%);display:inline-flex;align-items:center;font-size:15px;font-weight:600;color:hsl(220 14% 11%)}
+.confi{display:flex;flex-direction:column;gap:6px;font-size:13px;color:hsl(220 9% 40%);padding:0 4px}
+.confi span{display:flex;align-items:center;gap:8px}
+.confi .ic{width:14px;height:14px;color:hsl(142 76% 36%)}
+</style>
+</helmet>
+<div class="mb" style="width: 1360px; height: 1000px; box-sizing: border-box; padding: 40px 25px 0; background: hsl(210 20% 95%); font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1; display: flex; justify-content: space-between; align-items: flex-start">
+
+  <div class="columna">
+    <div class="tel"><div class="pant">
+      <div class="barra"><img src="/_blob/3fb0ded80b0abc3d5fc42552dbff2318" alt="Hostly"><button class="rodo" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+      <div class="cos">
+        <span class="aviso"><i></i>El check-in y la policía, gratis</span>
+        <h1>¿Gestionas apartamentos en Airbnb?<span>¿O te gestionan ellos a ti?</span></h1>
+        <p class="sub">Hostly simplifica todo lo que implica tener un apartamento turístico.</p>
+        <a class="pill pill-pri" href="B-empezar.dc.html">Empezar</a>
+        <a class="pill pill-sec" href="#">Ver la app por dentro</a>
+      </div>
+      <div class="app">
+        <img src="/_blob/5e3adeea7ecd3d0af9e9c70f445f0a87" alt="">
+        <div class="app-vel"></div>
+        <div class="resp"><p class="on">Casa dels Pins</p><p class="que">● Cuando puedas · Check-in</p><b>Tom Harris llega hoy sin el check-in</b><span class="m-pill">Abrir la reserva →</span></div>
+      </div>
+    </div></div>
+    <p class="peu-tel">Entrada<span>El lema arriba; la app, asomando</span></p>
+  </div>
+
+  <div class="columna">
+    <div class="tel"><div class="pant blanc">
+      <div class="barra" style="background: hsl(0 0% 100% / .92)"><img src="/_blob/3fb0ded80b0abc3d5fc42552dbff2318" alt="Hostly"><button class="rodo" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+      <div class="cos2">
+        <h2>Cinco puertas. Nada más.</h2>
+        <p class="sub">Las mismas que verás en la app.</p>
+        <div class="tabs">
+          <span class="tab">Resumen</span>
+          <span class="tab">Calendario</span>
+          <span class="tab">Limpieza</span>
+          <span class="tab on"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Chat</span>
+          <span class="tab">Gestión</span>
+        </div>
+        <div class="vista">
+          <p class="vista-cap"><b>Sophie Martin</b><span>El Mirador · Airbnb</span></p>
+          <p class="bomb h">Bonsoir ! C'est quoi le code du wifi ?<small>¿Cuál es el código del wifi?</small></p>
+          <p class="bomb ia">Bonsoir Sophie ! Le wifi s'appelle « ElMirador » et le mot de passe est sur la porte du frigo.</p>
+          <p class="peu-b">Contestado por la IA · 23:47</p>
+        </div>
+        <ul class="punts">
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Airbnb, Booking y WhatsApp, en un solo sitio.</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>La IA contesta en su idioma; tú lo lees en el tuyo.</li>
+        </ul>
+      </div>
+    </div></div>
+    <p class="peu-tel">Las cinco puertas<span>Las píldoras se deslizan con el dedo</span></p>
+  </div>
+
+  <div class="columna">
+    <div class="tel"><div class="pant">
+      <div class="barra"><img src="/_blob/3fb0ded80b0abc3d5fc42552dbff2318" alt="Hostly"><span style="font-size: 14px; font-weight: 500">Iniciar sesión</span></div>
+      <div class="cos">
+        <div class="pista"><span class="on">1 · Tus datos</span><span>2 · Tu plan</span><span>3 · Listo</span></div>
+        <div class="targ">
+          <h2>Empecemos por tu teléfono.</h2>
+          <p class="sub">Es lo único que necesitamos para ayudarte.</p>
+          <div class="camp"><label>Teléfono</label><div class="entrada gran"><span class="prefix">+34</span>600 000 000</div></div>
+          <div class="camp"><label>Nombre</label><div class="entrada">Cómo te llamas</div></div>
+          <div class="camp"><label>Correo (opcional)</label><div class="entrada">tu@correo.com</div></div>
+          <a class="pill pill-pri" href="B-empezar.dc.html">Continuar</a>
+        </div>
+        <div class="confi">
+          <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Sin permanencia</span>
+          <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>El primer mes del Completo, gratis</span>
+        </div>
+      </div>
+    </div></div>
+    <p class="peu-tel">Empezar<span>Una tarjeta, el teléfono primero</span></p>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>C · Al móvil</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+.mc *{box-sizing:border-box}
+.mc p,.mc h1,.mc h2,.mc h3,.mc ul,.mc li{margin:0;padding:0;list-style:none}
+.mc a{text-decoration:none;color:inherit}
+.ic{width:18px;height:18px;flex-shrink:0}
+.columna{display:flex;flex-direction:column;align-items:center;gap:14px}
+.peu-tel{font-size:14px;font-weight:600;color:hsl(220 14% 25%)}
+.peu-tel span{display:block;font-weight:400;font-size:13px;color:hsl(220 9% 46%);text-align:center;margin-top:2px}
+.tel{width:410px;height:864px;padding:10px;border-radius:58px;background:hsl(220 14% 11%);box-shadow:0 30px 60px -20px rgba(15,23,42,.35)}
+.pant{position:relative;width:390px;height:844px;border-radius:48px;overflow:hidden;background:#fff;color:hsl(220 14% 11%)}
+.pant > img.fons{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.barra{position:absolute;z-index:3;left:0;right:0;top:0;height:76px;padding:22px 20px 0;display:flex;align-items:center;justify-content:space-between}
+.barra img{height:20px;width:auto;display:block}
+.barra.fosca img{filter:brightness(0) invert(1)}
+.rodo{width:44px;height:44px;border-radius:9999px;display:grid;place-items:center;border:0;color:inherit;background:hsl(210 20% 96%)}
+.barra.fosca .rodo{background:rgba(255,255,255,.14);color:#fff}
+.pill{display:flex;align-items:center;justify-content:center;gap:8px;height:56px;border-radius:9999px;font-size:17px;font-weight:500;border:0;font-family:inherit}
+.pill-pri{background:#2563EB;color:#fff}
+.hora{font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:-0.05em;line-height:.9}
+/* 1 */
+.vel{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,16,.78) 0%,rgba(7,10,16,.55) 50%,rgba(7,10,16,.8) 100%)}
+.cos1{position:absolute;z-index:2;left:22px;right:22px;top:100px;display:flex;flex-direction:column;gap:10px;color:#fff}
+.cos1 .dia{font-size:14px;opacity:.75}
+.cos1 .hora{font-size:104px}
+.cos1 h1{font-size:32px;line-height:1.1;font-weight:600;letter-spacing:-0.02em}
+.cos1 .sub{font-size:16px;line-height:1.5;opacity:.82}
+.notif{margin-top:14px;padding:14px 16px;border-radius:20px;background:rgba(30,34,42,.6);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.notif-cap{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600}
+.notif-cap img{width:18px;height:18px;border-radius:9999px;background:#fff}
+.notif-cap span{margin-left:auto;font-weight:400;opacity:.6}
+.notif p{font-size:15px;margin-top:6px}
+.resposta{padding:14px 16px;border-radius:20px;background:hsl(0 0% 100% / .96);color:hsl(220 14% 11%);margin-left:24px}
+.resposta small{display:block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#2563EB}
+.resposta p{font-size:14px;line-height:1.45;margin-top:6px}
+.fix{position:absolute;z-index:3;left:16px;right:16px;bottom:26px}
+/* 2 */
+.cos2{position:absolute;inset:92px 20px 0;display:flex;flex-direction:column;gap:12px}
+.punts{display:flex;align-items:center;gap:6px}
+.punts i{width:8px;height:8px;border-radius:9999px;background:hsl(220 13% 85%)}
+.punts i.on{width:22px;background:#2563EB}
+.retol{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.cos2 .hora{font-size:80px}
+.cos2 h2{font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-0.02em}
+.cos2 p.txt{font-size:16px;line-height:1.5;color:hsl(220 9% 46%)}
+.foto{position:relative;height:330px;border-radius:24px;overflow:hidden;margin-top:6px}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.peca{position:absolute;left:12px;right:12px;bottom:12px;border-radius:18px;background:hsl(0 0% 100% / .96);padding:14px;box-shadow:0 8px 24px rgba(0,0,0,.16)}
+.peca-cap{display:flex;justify-content:space-between;font-size:12px;font-weight:600}
+.peca-cap span{font-weight:400;color:hsl(220 9% 46%)}
+.celes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.cela{border-radius:12px;padding:9px 11px;display:flex;flex-direction:column;gap:2px}
+.cela.verd{background:hsl(138 76% 96%)}
+.cela.blau{background:hsl(214 100% 97%)}
+.cela small{font-size:10px;color:hsl(220 9% 46%)}
+.cela b{font-size:15px;font-weight:600}
+.cela.verd b{color:hsl(142 76% 32%)}
+.cela.blau b{color:#2563EB}
+/* 3 */
+.clar{background:hsl(210 20% 98%)}
+.cos3{position:absolute;inset:92px 20px 0;display:flex;flex-direction:column;gap:14px}
+.cos3 h2{font-size:36px;line-height:1.05;font-weight:700;letter-spacing:-0.035em}
+.cos3 .sub{font-size:15px;line-height:1.5;color:hsl(220 9% 46%)}
+.llista{border-radius:22px;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 91%);padding:16px 18px;display:flex;flex-direction:column;gap:9px}
+.llista li{display:flex;gap:10px;font-size:15px}
+.llista .ic{width:16px;height:16px;color:hsl(142 76% 36%);margin-top:2px}
+.fosca{border-radius:22px;background:hsl(220 14% 11%);color:#fff;padding:18px;display:flex;align-items:center;gap:16px}
+.fosca b{font-size:44px;line-height:1;font-weight:700;letter-spacing:-0.04em}
+.fosca p{font-size:14px;line-height:1.45;opacity:.85}
+.fix3{position:absolute;z-index:3;left:0;right:0;bottom:0;padding:14px 16px 26px;background:hsl(0 0% 100% / .9);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:0 -1px 0 hsl(220 13% 91%);display:flex;flex-direction:column;gap:8px}
+.fi{font-size:13px;color:hsl(220 9% 40%);text-align:center}
+</style>
+</helmet>
+<div class="mc" style="width: 1360px; height: 1000px; box-sizing: border-box; padding: 40px 25px 0; background: hsl(210 20% 95%); font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1; display: flex; justify-content: space-between; align-items: flex-start">
+
+  <div class="columna">
+    <div class="tel"><div class="pant">
+      <img class="fons" src="/_blob/da1886bc67dca7cbf0f82dc397723665" alt="">
+      <div class="vel" aria-hidden="true"></div>
+      <div class="barra fosca"><img src="/_blob/3fb0ded80b0abc3d5fc42552dbff2318" alt="Hostly"><button class="rodo" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+      <div class="cos1">
+        <p class="dia">Sábado · El Mirador</p>
+        <p class="hora">23:47</p>
+        <h1>Otra vez el wifi.</h1>
+        <p class="sub">Tú ya dormías. Hostly le ha contestado, en francés.</p>
+        <div class="notif"><p class="notif-cap"><img src="/_blob/47cae697997d3f77d31090e0b35c483c" alt="">Sophie Martin<span>23:47</span></p><p>Bonsoir ! C'est quoi le code du wifi ?</p></div>
+        <div class="resposta"><small>Hostly contestó</small><p>Bonsoir Sophie ! Le wifi s'appelle « ElMirador » et le mot de passe est sur la porte du frigo.</p></div>
+      </div>
+      <a class="pill pill-pri fix" href="C-empezar.dc.html">Empezar</a>
+    </div></div>
+    <p class="peu-tel">Entrada<span>La hora, enorme; el botón, abajo</span></p>
+  </div>
+
+  <div class="columna">
+    <div class="tel"><div class="pant">
+      <div class="barra" style="background: hsl(0 0% 100% / .92)"><img src="/_blob/3fb0ded80b0abc3d5fc42552dbff2318" alt="Hostly"><button class="rodo" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+      <div class="cos2">
+        <div class="punts" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i></div>
+        <p class="retol">Tarde</p>
+        <p class="hora">19:40</p>
+        <h2>Llegan los Weber.</h2>
+        <p class="txt">Hicieron el check-in ayer. El registro salió a los Mossos a las 15:00.</p>
+        <div class="foto">
+          <img src="/_blob/6c334a21e95eb66eb09dd8801277d985" alt="">
+          <div class="peca">
+            <p class="peca-cap">Cómo va <span>Familie Weber</span></p>
+            <div class="celes"><div class="cela verd"><small>Check-in</small><b>Hecho</b></div><div class="cela verd"><small>Mossos</small><b>Enviado</b></div></div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+    <p class="peu-tel">Un capítulo del día<span>Se pasa de hora en hora</span></p>
+  </div>
+
+  <div class="columna">
+    <div class="tel"><div class="pant clar">
+      <div class="barra" style="background: hsl(210 20% 98% / .92)"><img src="/_blob/3fb0ded80b0abc3d5fc42552dbff2318" alt="Hostly"><button class="rodo" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+      <div class="cos3">
+        <p class="retol">Lo que cuesta</p>
+        <h2>Todo este día: 40 € al mes por piso.</h2>
+        <p class="sub">35 € desde 5 pisos · el primer mes, gratis · sin permanencia.</p>
+        <ul class="llista">
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Airbnb y Booking al momento</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Mensajes con IA, en su idioma</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Limpiezas avisadas solas</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Precios al día con PriceLabs</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Tasa turística lista para presentar</li>
+        </ul>
+        <div class="fosca"><b>0 €</b><p>El check-in y la policía, gratis para siempre. Sin tarjeta.</p></div>
+      </div>
+      <div class="fix3"><a class="pill pill-pri" href="C-empezar.dc.html">Empezar</a><p class="fi">¿Prefieres hablarlo? Te llamamos</p></div>
+    </div></div>
+    <p class="peu-tel">Precio<span>Una cifra, y el botón siempre abajo</span></p>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

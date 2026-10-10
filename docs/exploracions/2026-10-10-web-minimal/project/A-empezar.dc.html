@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>A · Empezar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#fff}
+a{color:inherit}a:hover{color:inherit}
+.ea{container-type:inline-size;container-name:pagina}
+.ea *{box-sizing:border-box}
+.ea p,.ea h1,.ea h2,.ea h3,.ea ol,.ea ul,.ea li{margin:0;padding:0;list-style:none}
+.ea a{text-decoration:none}
+sc-if,sc-for{display:contents}
+.ic{width:18px;height:18px;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:9999px;font-size:16px;font-weight:500;white-space:nowrap;border:0;cursor:pointer;font-family:inherit}
+.pill-pri{background:#2563EB;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.pill-pri:hover{background:#1D4ED8}
+.pill-pri:disabled{background:hsl(220 13% 88%);color:hsl(220 9% 46%);box-shadow:none;cursor:default}
+.marc{display:grid;grid-template-columns:minmax(0,52fr) minmax(0,48fr);min-height:900px}
+.foto{position:relative;overflow:hidden}
+.foto > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.foto-vel{position:absolute;inset:0;background:linear-gradient(180deg,hsl(210 20% 98% / .55),hsl(210 20% 98% / .1) 40%,hsl(210 20% 98% / .25))}
+.foto-logo{position:absolute;left:56px;top:40px;z-index:1}
+.foto-logo img{height:24px;width:auto;display:block}
+.seguent{position:absolute;z-index:1;left:56px;bottom:56px;width:400px;padding:24px;border-radius:20px;background:hsl(0 0% 100% / .94);-webkit-backdrop-filter:blur(20px) saturate(1.1);backdrop-filter:blur(20px) saturate(1.1);box-shadow:0 8px 32px rgba(0,0,0,.14);display:flex;flex-direction:column;gap:14px}
+.seguent .retol{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.seguent li{display:flex;gap:12px;font-size:15px;line-height:1.45}
+.seguent li b{width:24px;height:24px;border-radius:9999px;background:hsl(214 100% 97%);color:#2563EB;font-size:12px;display:grid;place-items:center;flex-shrink:0}
+.panell{display:flex;flex-direction:column;justify-content:center;padding:56px 80px;gap:28px}
+.passos{display:flex;gap:8px;align-items:center}
+.pas{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 12px 0 4px;border-radius:9999px;font-size:13px;font-weight:500;color:hsl(220 9% 46%);background:hsl(210 20% 96%)}
+.pas i{font-style:normal;width:24px;height:24px;border-radius:9999px;background:#fff;display:grid;place-items:center;font-size:12px;font-weight:600}
+.pas.on{background:#2563EB;color:#fff}
+.pas.on i{color:#2563EB}
+.pas.fet{background:hsl(138 76% 96%);color:hsl(142 76% 30%)}
+.panell h1{font-size:44px;line-height:1.08;font-weight:700;letter-spacing:-0.03em;text-wrap:balance}
+.panell .sub{font-size:17px;line-height:1.55;color:hsl(220 9% 46%);margin-top:-12px}
+.camps{display:flex;flex-direction:column;gap:16px}
+.camp{display:flex;flex-direction:column;gap:6px}
+.camp label{font-size:14px;font-weight:500}
+.camp label small{font-weight:400;color:hsl(220 9% 46%)}
+.entrada{display:flex;align-items:center;height:56px;border-radius:14px;box-shadow:inset 0 0 0 1px hsl(220 13% 86%);background:#fff;padding:0 16px;gap:12px}
+.entrada.gran{height:64px;box-shadow:inset 0 0 0 2px #2563EB}
+.entrada input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:500 18px/1 Inter,ui-sans-serif,system-ui,sans-serif;color:hsl(220 14% 11%)}
+.entrada.gran input{font-size:22px;font-variant-numeric:tabular-nums}
+.prefix{height:34px;padding:0 10px;border-radius:9999px;background:hsl(210 20% 96%);display:inline-flex;align-items:center;font-size:15px;font-weight:600}
+.peu-form{display:flex;align-items:center;gap:20px}
+.fi{font-size:13px;line-height:1.5;color:hsl(220 9% 46%)}
+.plans{display:flex;flex-direction:column;gap:12px}
+.pla{display:flex;align-items:center;gap:18px;padding:20px 22px;border-radius:20px;background:#fff;border:0;text-align:left;cursor:pointer;font-family:inherit;box-shadow:inset 0 0 0 1px hsl(220 13% 88%);color:hsl(220 14% 11%)}
+.pla:hover{box-shadow:inset 0 0 0 2px #2563EB}
+.pla.top{box-shadow:inset 0 0 0 2px #2563EB}
+.pla b{display:block;font-size:18px;font-weight:600;color:hsl(220 14% 11%)}
+.pla > span:first-child{min-width:0}
+.pla span{display:block;font-size:14px;line-height:1.5;color:hsl(220 9% 46%);margin-top:2px}
+.pla .preu{margin-left:auto;text-align:right;flex-shrink:0}
+.pla .preu b{font-size:26px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.xip{display:inline-flex !important;align-items:center;height:22px;padding:0 9px;border-radius:9999px;font-size:11px;font-weight:600;background:hsl(214 100% 97%);color:#1D4ED8;margin:0 0 6px !important}
+.tria{display:flex;flex-direction:column;gap:10px}
+.tria p{font-size:14px;font-weight:500}
+.opcions{display:flex;flex-wrap:wrap;gap:8px}
+.opcio{height:42px;padding:0 16px;border-radius:9999px;border:0;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 86%);font-family:inherit;font-size:14px;font-weight:500;color:hsl(220 14% 11%);cursor:pointer;font-variant-numeric:tabular-nums}
+.opcio.on{background:#2563EB;color:#fff;box-shadow:none}
+.enrere{background:transparent;border:0;padding:0;font-family:inherit;font-size:14px;font-weight:500;color:hsl(220 9% 46%);cursor:pointer;display:inline-flex;align-items:center;gap:6px;align-self:flex-start}
+.fet-cap{width:64px;height:64px;border-radius:9999px;background:hsl(138 76% 96%);color:hsl(142 76% 36%);display:grid;place-items:center}
+.fet-cap .ic{width:30px;height:30px}
+.biel{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;background:hsl(210 20% 98%)}
+.biel b{width:44px;height:44px;border-radius:9999px;background:hsl(220 14% 11%);color:#fff;display:grid;place-items:center;font-size:17px;font-weight:600;flex-shrink:0}
+.biel p{font-size:15px;line-height:1.45}
+.biel small{display:block;font-size:13px;color:hsl(220 9% 46%)}
+
+@container pagina (max-width: 900px){
+  .marc{grid-template-columns:minmax(0,1fr)}
+  .foto{height:260px}
+  .seguent{display:none}
+  .foto-logo{left:20px;top:20px}
+  .panell{padding:32px 20px 48px}
+  .panell h1{font-size:32px}
+  .peu-form{flex-direction:column;align-items:stretch}
+}
+</style>
+</helmet>
+<div class="ea" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: #fff; -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+  <div class="marc">
+    <div class="foto">
+      <img src="/_blob/5e3adeea7ecd3d0af9e9c70f445f0a87" alt="">
+      <div class="foto-vel" aria-hidden="true"></div>
+      <a class="foto-logo" href="A-inici.dc.html" aria-label="Hostly, inicio"><img src="/_blob/3fb0ded80b0abc3d5fc42552dbff2318" alt="Hostly"></a>
+      <div class="seguent">
+        <p class="retol">Así sigue</p>
+        <ol style="display: flex; flex-direction: column; gap: 12px">
+          <li><b>1</b><span>Te llamamos para conocer tus pisos. Sin compromiso.</span></li>
+          <li><b>2</b><span>Conectamos Airbnb y Booking contigo, en una videollamada.</span></li>
+          <li><b>3</b><span>El primer mes de Hostly Completo, gratis.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="panell">
+      <div class="passos" aria-label="Pasos">
+        <span class="{{c1}}"><i>1</i>Tus datos</span>
+        <span class="{{c2}}"><i>2</i>Tu plan</span>
+        <span class="{{c3}}"><i>3</i>Listo</span>
+      </div>
+
+      <sc-if value="{{p1}}" hint-placeholder-val="{{ true }}">
+        <h1>¿A qué teléfono te llamamos?</h1>
+        <p class="sub">Solo para hablar de tus pisos. Nada de publicidad.</p>
+        <div class="camps">
+          <div class="camp"><label for="a-telefon">Teléfono</label><div class="entrada gran"><span class="prefix">+34</span><input id="a-telefon" type="tel" inputmode="tel" placeholder="600 000 000" autocomplete="tel"></div></div>
+          <div class="camp"><label for="a-nom">Nombre</label><div class="entrada"><input id="a-nom" type="text" placeholder="Cómo te llamas" autocomplete="name"></div></div>
+          <div class="camp"><label for="a-correu">Correo <small>(si quieres)</small></label><div class="entrada"><input id="a-correu" type="email" placeholder="tu@correo.com" autocomplete="email"></div></div>
+        </div>
+        <div class="peu-form">
+          <button class="pill pill-pri" type="button" onClick="{{continuar}}">Continuar <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+          <p class="fi">Al continuar aceptas la <a href="#" style="text-decoration: underline">política de privacidad</a>.</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{p2}}" hint-placeholder-val="{{ false }}">
+        <h1>¿Cómo quieres empezar?</h1>
+        <p class="sub">Puedes cambiar de plan cuando quieras.</p>
+        <div class="plans">
+          <button class="pla top" type="button" onClick="{{triaCompleto}}"><span style="margin: 0"><span class="xip">Recomendado</span><b>Hostly Completo</b><span>Reservas, mensajes con IA, limpiezas y precios. Lo activamos contigo en una llamada.</span></span><span class="preu"><b>40 €</b><span>al mes por piso</span></span></button>
+          <button class="pla" type="button" onClick="{{triaGratis}}"><span style="margin: 0"><b>Solo el check-in y la policía</b><span>Tu cuenta, al momento. Sin tarjeta.</span></span><span class="preu"><b>0 €</b><span>para siempre</span></span></button>
+        </div>
+        <p class="fi">35 € al mes por piso desde 5 pisos · el primer mes, gratis · sin permanencia</p>
+        <button class="enrere" type="button" onClick="{{enrere1}}">← Volver</button>
+      </sc-if>
+
+      <sc-if value="{{p3c}}" hint-placeholder-val="{{ false }}">
+        <h1>¿Cuándo te llamamos?</h1>
+        <p class="sub">Veinte minutos con Biel, el fundador, para ver si Hostly es para ti.</p>
+        <div class="tria"><p>Día</p><div class="opcions"><sc-for list="{{dies}}" as="d" hint-placeholder-count="5"><button type="button" class="{{d.cls}}" onClick="{{d.pick}}">{{d.label}}</button></sc-for></div></div>
+        <div class="tria"><p>Hora (de Madrid)</p><div class="opcions"><sc-for list="{{hores}}" as="h" hint-placeholder-count="10"><button type="button" class="{{h.cls}}" onClick="{{h.pick}}">{{h.label}}</button></sc-for></div></div>
+        <div class="peu-form">
+          <button class="pill pill-pri" type="button" disabled="{{noPot}}" onClick="{{confirmar}}">Confirmar la llamada</button>
+          <p class="fi">{{resum}}</p>
+        </div>
+        <button class="enrere" type="button" onClick="{{enrere2}}">← Cambiar de plan</button>
+      </sc-if>
+
+      <sc-if value="{{p3g}}" hint-placeholder-val="{{ false }}">
+        <h1>Tu cuenta gratis, en un minuto.</h1>
+        <p class="sub">Creas la cuenta, pones el nombre de tu piso y ya tienes el enlace del check-in para tus huéspedes.</p>
+        <div class="peu-form">
+          <a class="pill pill-pri" href="#">Crear mi cuenta <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          <p class="fi">Si te atascas, te llamamos al número que nos has dado.</p>
+        </div>
+        <button class="enrere" type="button" onClick="{{enrere2}}">← Cambiar de plan</button>
+      </sc-if>
+
+      <sc-if value="{{p4}}" hint-placeholder-val="{{ false }}">
+        <span class="fet-cap"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+        <h1>Hecho. {{resumCurt}}</h1>
+        <p class="sub">Te confirmamos la hora por WhatsApp. Si te va mejor otro momento, contéstanos allí mismo.</p>
+        <div class="biel"><b>B</b><p>Biel Alsina<small>Fundador de Hostly · te llama él</small></p></div>
+        <button class="enrere" type="button" onClick="{{reinicia}}">Volver a empezar la prueba</button>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const paso = st.paso || 1;
+    const plan = st.plan || null;
+    const dia = st.dia || null;
+    const hora = st.hora || null;
+    const set = (o) => () => this.setState(Object.assign({}, this.state || {}, o));
+    const dies = [['mar 13', '13'], ['mié 14', '14'], ['jue 15', '15'], ['vie 16', '16'], ['lun 19', '19']];
+    const hores = ['10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '16:00', '16:30', '17:00', '17:30'];
+    const diaTxt = dia ? dies.find((d) => d[1] === dia)[0] : '';
+    const pas = (n) => (paso === n || (n === 3 && paso === 4) ? 'pas on' : (paso > n ? 'pas fet' : 'pas'));
+    return {
+      p1: paso === 1, p2: paso === 2, p3c: paso === 3 && plan === 'completo', p3g: paso === 3 && plan === 'gratis', p4: paso === 4,
+      c1: pas(1), c2: pas(2), c3: pas(3),
+      continuar: set({ paso: 2 }),
+      triaCompleto: set({ paso: 3, plan: 'completo' }),
+      triaGratis: set({ paso: 3, plan: 'gratis' }),
+      enrere1: set({ paso: 1 }),
+      enrere2: set({ paso: 2, dia: null, hora: null }),
+      confirmar: set({ paso: 4 }),
+      reinicia: set({ paso: 1, plan: null, dia: null, hora: null }),
+      dies: dies.map((d) => ({ label: d[0], cls: dia === d[1] ? 'opcio on' : 'opcio', pick: set({ dia: d[1] }) })),
+      hores: hores.map((h) => ({ label: h, cls: hora === h ? 'opcio on' : 'opcio', pick: set({ hora: h }) })),
+      noPot: !(dia && hora),
+      resum: dia && hora ? 'Te llamamos el ' + diaTxt + ' a las ' + hora + '.' : 'Elige un día y una hora.',
+      resumCurt: dia && hora ? 'El ' + diaTxt + ' a las ' + hora + '.' : ''
+    };
+  }
+}
+</script>
+</body>
+</html>

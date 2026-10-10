@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>C · Empezar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#fff}
+a{color:inherit}a:hover{color:inherit}
+.ec{container-type:inline-size;container-name:pagina}
+.ec *{box-sizing:border-box}
+.ec p,.ec h1,.ec h2,.ec h3,.ec ol,.ec ul,.ec li{margin:0;padding:0;list-style:none}
+.ec a{text-decoration:none}
+sc-if,sc-for{display:contents}
+.ic{width:18px;height:18px;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:56px;padding:0 28px;border-radius:9999px;font-size:17px;font-weight:500;white-space:nowrap;border:0;cursor:pointer;font-family:inherit}
+.pill-pri{background:#2563EB;color:#fff}
+.pill-pri:hover{background:#1D4ED8}
+.pill-pri:disabled{background:hsl(220 13% 88%);color:hsl(220 9% 46%);cursor:default}
+.marc{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);min-height:900px}
+.esq{display:flex;flex-direction:column;padding:40px 72px 48px}
+.dalt{display:flex;align-items:center;justify-content:space-between;height:48px}
+.logo img{height:24px;width:auto;display:block}
+.progres{display:flex;align-items:center;gap:14px;font-size:14px;color:hsl(220 9% 46%);font-variant-numeric:tabular-nums}
+.barra{width:120px;height:4px;border-radius:9999px;background:hsl(220 13% 91%);overflow:hidden}
+.barra i{display:block;height:100%;background:#2563EB;border-radius:9999px;transition:width .25s}
+.pregunta{flex:1;display:flex;flex-direction:column;justify-content:center;gap:28px;max-width:760px}
+.pregunta h1{font-size:64px;line-height:1.04;font-weight:700;letter-spacing:-0.04em;text-wrap:balance}
+.pregunta .sub{font-size:19px;line-height:1.55;color:hsl(220 9% 46%);margin-top:-12px}
+.gran{display:flex;align-items:center;gap:16px;border-bottom:2px solid #2563EB;padding-bottom:10px}
+.gran span{font-size:40px;font-weight:600;color:hsl(220 9% 46%);font-variant-numeric:tabular-nums}
+.gran input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:600 44px/1.1 Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:-0.02em;color:hsl(220 14% 11%);font-variant-numeric:tabular-nums}
+.petits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.petit{display:flex;flex-direction:column;gap:6px;border-bottom:1px solid hsl(220 13% 85%);padding-bottom:8px}
+.petit label{font-size:13px;color:hsl(220 9% 46%)}
+.petit input{border:0;outline:0;background:transparent;font:500 20px/1.2 Inter,ui-sans-serif,system-ui,sans-serif;color:hsl(220 14% 11%)}
+.accio{display:flex;align-items:center;gap:18px}
+.pista{font-size:14px;color:hsl(220 9% 46%)}
+.opcio-gran{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:20px;align-items:center;width:100%;padding:24px 0;border:0;border-bottom:1px solid hsl(220 13% 90%);background:transparent;text-align:left;cursor:pointer;font-family:inherit;color:hsl(220 14% 11%)}
+.opcio-gran:first-of-type{border-top:1px solid hsl(220 13% 90%)}
+.opcio-gran:hover .lletra{background:#2563EB;color:#fff}
+.lletra{width:44px;height:44px;border-radius:9999px;box-shadow:inset 0 0 0 1px hsl(220 13% 85%);display:grid;place-items:center;font-size:16px;font-weight:600;transition:background-color .15s,color .15s}
+.opcio-gran b{display:block;font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-0.02em}
+.opcio-gran small{display:block;font-size:16px;color:hsl(220 9% 46%);margin-top:6px}
+.opcio-gran .preu{font-size:32px;font-weight:700;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.opcions{display:flex;flex-wrap:wrap;gap:10px}
+.opcio{height:48px;padding:0 20px;border-radius:9999px;border:0;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 85%);font-family:inherit;font-size:16px;font-weight:500;color:hsl(220 14% 11%);cursor:pointer;font-variant-numeric:tabular-nums}
+.opcio.on{background:#2563EB;color:#fff;box-shadow:none}
+.tria{display:flex;flex-direction:column;gap:10px}
+.tria p{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.enrere{background:transparent;border:0;padding:0;font-family:inherit;font-size:15px;font-weight:500;color:hsl(220 9% 46%);cursor:pointer;align-self:flex-start}
+.baix{font-size:14px;color:hsl(220 9% 46%)}
+.dreta{padding:24px 24px 24px 0}
+.foto{position:relative;height:100%;min-height:852px;border-radius:28px;overflow:hidden;color:#fff}
+.foto > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 50%}
+.foto-vel{position:absolute;inset:0;background:linear-gradient(to top,rgba(9,12,18,.72),rgba(9,12,18,.05) 55%)}
+.foto-text{position:absolute;left:36px;right:36px;bottom:40px;display:flex;flex-direction:column;gap:10px}
+.foto-text small{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.foto-text b{font-size:96px;line-height:.9;font-weight:700;letter-spacing:-0.05em;font-variant-numeric:tabular-nums}
+.foto-text p{font-size:18px;line-height:1.5;opacity:.88;max-width:22em}
+
+@container pagina (max-width: 900px){
+  .marc{grid-template-columns:minmax(0,1fr)}
+  .dreta{display:none}
+  .esq{padding:24px 20px 40px}
+  .pregunta h1{font-size:40px}
+  .gran span{font-size:28px}
+  .gran input{font-size:32px}
+  .petits{grid-template-columns:minmax(0,1fr)}
+  .opcio-gran{grid-template-columns:36px minmax(0,1fr)}
+  .opcio-gran .preu{grid-column:2}
+}
+</style>
+</helmet>
+<div class="ec" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: #fff; -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+  <div class="marc">
+    <div class="esq">
+      <div class="dalt">
+        <a class="logo" href="C-inici.dc.html" aria-label="Hostly, inicio"><img src="/_blob/3fb0ded80b0abc3d5fc42552dbff2318" alt="Hostly"></a>
+        <div class="progres"><span>{{textPas}}</span><span class="barra" aria-hidden="true"><i style="width: {{ample}}"></i></span></div>
+      </div>
+
+      <div class="pregunta">
+        <sc-if value="{{p1}}" hint-placeholder-val="{{ true }}">
+          <h1>¿A qué número te llamamos?</h1>
+          <p class="sub">Solo para hablar de tus pisos. Nada de publicidad.</p>
+          <div class="gran"><span>+34</span><input type="tel" inputmode="tel" placeholder="600 000 000" aria-label="Teléfono" autocomplete="tel"></div>
+          <div class="petits">
+            <div class="petit"><label for="c-nom">Tu nombre</label><input id="c-nom" type="text" placeholder="Cómo te llamas" autocomplete="name"></div>
+            <div class="petit"><label for="c-correu">Correo, si quieres</label><input id="c-correu" type="email" placeholder="tu@correo.com" autocomplete="email"></div>
+          </div>
+          <div class="accio"><button class="pill pill-pri" type="button" onClick="{{continuar}}">Continuar</button><span class="pista">Al continuar aceptas la política de privacidad.</span></div>
+        </sc-if>
+
+        <sc-if value="{{p2}}" hint-placeholder-val="{{ false }}">
+          <h1>¿Cómo quieres empezar?</h1>
+          <div>
+            <button class="opcio-gran" type="button" onClick="{{triaCompleto}}"><span class="lletra">A</span><span><b>Con todo: Hostly Completo</b><small>Reservas, mensajes con IA, limpiezas y precios. El primer mes, gratis.</small></span><span class="preu">40 €</span></button>
+            <button class="opcio-gran" type="button" onClick="{{triaGratis}}"><span class="lletra">B</span><span><b>Solo el check-in y la policía</b><small>Tu cuenta, al momento. Sin tarjeta.</small></span><span class="preu">0 €</span></button>
+          </div>
+          <button class="enrere" type="button" onClick="{{enrere1}}">← Volver</button>
+        </sc-if>
+
+        <sc-if value="{{p3c}}" hint-placeholder-val="{{ false }}">
+          <h1>¿Cuándo te va bien hablar veinte minutos?</h1>
+          <p class="sub">Con Biel, el fundador. Lo activamos juntos en esa llamada.</p>
+          <div class="tria"><p>Día</p><div class="opcions"><sc-for list="{{dies}}" as="d" hint-placeholder-count="5"><button type="button" class="{{d.cls}}" onClick="{{d.pick}}">{{d.label}}</button></sc-for></div></div>
+          <div class="tria"><p>Hora (de Madrid)</p><div class="opcions"><sc-for list="{{hores}}" as="h" hint-placeholder-count="10"><button type="button" class="{{h.cls}}" onClick="{{h.pick}}">{{h.label}}</button></sc-for></div></div>
+          <div class="accio"><button class="pill pill-pri" type="button" disabled="{{noPot}}" onClick="{{confirmar}}">Confirmar</button><span class="pista">{{resum}}</span></div>
+          <button class="enrere" type="button" onClick="{{enrere2}}">← Cambiar de plan</button>
+        </sc-if>
+
+        <sc-if value="{{p3g}}" hint-placeholder-val="{{ false }}">
+          <h1>Tu cuenta, en un minuto.</h1>
+          <p class="sub">Pones el nombre de tu piso y ya tienes el enlace del check-in para tus huéspedes.</p>
+          <div class="accio"><a class="pill pill-pri" href="#">Crear mi cuenta</a><span class="pista">Si te atascas, te llamamos.</span></div>
+          <button class="enrere" type="button" onClick="{{enrere2}}">← Cambiar de plan</button>
+        </sc-if>
+
+        <sc-if value="{{p4}}" hint-placeholder-val="{{ false }}">
+          <h1>Hecho. Hablamos el {{resumCurt}}</h1>
+          <p class="sub">Te lo confirmamos por WhatsApp. Hasta entonces, Hostly no te pedirá nada más.</p>
+          <button class="enrere" type="button" onClick="{{reinicia}}">Volver a empezar la prueba</button>
+        </sc-if>
+      </div>
+
+      <p class="baix">Llamadas de lunes a viernes, de 10 a 13 h y de 16 a 18 h.</p>
+    </div>
+
+    <div class="dreta">
+      <div class="foto">
+        <img src="/_blob/866e693d4084c243004f6348c322bfa1" alt="">
+        <div class="foto-vel" aria-hidden="true"></div>
+        <div class="foto-text">
+          <small>Ahora mismo</small>
+          <b>{{rellotge}}</b>
+          <p>{{fraseFoto}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const paso = st.paso || 1;
+    const plan = st.plan || null;
+    const dia = st.dia || null;
+    const hora = st.hora || null;
+    const set = (o) => () => this.setState(Object.assign({}, this.state || {}, o));
+    const dies = [['mar 13', '13'], ['mié 14', '14'], ['jue 15', '15'], ['vie 16', '16'], ['lun 19', '19']];
+    const hores = ['10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '16:00', '16:30', '17:00', '17:30'];
+    const diaTxt = dia ? dies.find((d) => d[1] === dia)[0] : '';
+    const rellotges = ['17:32', '17:33', '17:34', '17:35'];
+    const frases = [
+      'Mientras rellenas esto, alguien pregunta por el parking de tu piso.',
+      'Ya le habrían contestado. En su idioma.',
+      'Y el registro de hoy saldría solo a las 15:00.',
+      'Listo. A partir de aquí, Hostly se encarga.'
+    ];
+    return {
+      p1: paso === 1, p2: paso === 2, p3c: paso === 3 && plan === 'completo', p3g: paso === 3 && plan === 'gratis', p4: paso === 4,
+      textPas: paso >= 4 ? 'Hecho' : 'Paso ' + paso + ' de 3',
+      ample: Math.min(paso, 3) / 3 * 100 + '%',
+      rellotge: rellotges[paso - 1],
+      fraseFoto: frases[paso - 1],
+      continuar: set({ paso: 2 }),
+      triaCompleto: set({ paso: 3, plan: 'completo' }),
+      triaGratis: set({ paso: 3, plan: 'gratis' }),
+      enrere1: set({ paso: 1 }),
+      enrere2: set({ paso: 2, plan: null, dia: null, hora: null }),
+      confirmar: set({ paso: 4 }),
+      reinicia: set({ paso: 1, plan: null, dia: null, hora: null }),
+      dies: dies.map((d) => ({ label: d[0], cls: dia === d[1] ? 'opcio on' : 'opcio', pick: set({ dia: d[1] }) })),
+      hores: hores.map((h) => ({ label: h, cls: hora === h ? 'opcio on' : 'opcio', pick: set({ hora: h }) })),
+      noPot: !(dia && hora),
+      resum: dia && hora ? 'El ' + diaTxt + ' a las ' + hora + '.' : 'Elige un día y una hora.',
+      resumCurt: dia && hora ? diaTxt + ' a las ' + hora + '.' : ''
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<title>Les parts del web</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:hsl(210 20% 98%)}
+a{color:#2563EB}a:hover{color:#1D4ED8}
+.pp *{box-sizing:border-box}
+.pp p,.pp h1,.pp h2,.pp h3,.pp ol,.pp ul,.pp li{margin:0;padding:0;list-style:none}
+.targ{background:#fff;border-radius:20px;box-shadow:0 1px 2px rgba(0,0,0,.04),inset 0 0 0 1px hsl(220 13% 91%);padding:28px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.cap{display:flex;align-items:center;gap:12px}
+.num{width:30px;height:30px;border-radius:9999px;background:hsl(214 100% 97%);color:#2563EB;font-weight:600;font-size:14px;display:grid;place-items:center;flex-shrink:0}
+.cap h2{font-size:21px;line-height:28px;font-weight:600;letter-spacing:-0.01em}
+.sub{font-size:14px;line-height:20px;color:hsl(220 9% 46%)}
+.fila{display:flex;gap:14px;padding:11px 0;border-top:1px solid hsl(0 0% 94%)}
+.fila:first-child{border-top:0;padding-top:0}
+.idx{width:18px;flex-shrink:0;font-size:13px;line-height:22px;color:hsl(220 9% 46%);font-variant-numeric:tabular-nums}
+.nom{font-size:16px;line-height:22px;font-weight:600;display:flex;align-items:center;gap:8px}
+.desc{font-size:14px;line-height:20px;color:hsl(220 9% 46%);margin-top:2px}
+.xip{display:inline-flex;align-items:center;height:20px;padding:0 8px;border-radius:9999px;background:hsl(210 20% 96%);color:hsl(220 9% 46%);font-size:12px;font-weight:500;font-variant-numeric:tabular-nums}
+.retol{font-size:11px;line-height:16px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.pas{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:9999px;background:hsl(210 20% 96%);font-size:14px;font-weight:500;white-space:nowrap}
+.pas.blau{background:#2563EB;color:#fff}
+.pas.verd{background:hsl(138 76% 97%);color:hsl(142 76% 30%);box-shadow:inset 0 0 0 1px hsl(142 60% 85%)}
+.pas.clar{background:hsl(214 100% 97%);color:#1D4ED8;box-shadow:inset 0 0 0 1px hsl(212 96% 88%)}
+.sep{color:hsl(218 11% 65%);flex-shrink:0}
+.pindola{display:inline-flex;align-items:center;height:32px;padding:0 14px;border-radius:9999px;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 91%);font-size:13px;font-weight:500;white-space:nowrap}
+</style>
+</helmet>
+<div class="pp" style="width: 1440px; height: 1240px; box-sizing: border-box; padding: 64px 64px; background: hsl(210 20% 98%); font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; gap: 40px">
+
+  <header style="display: flex; justify-content: space-between; align-items: flex-start; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 900px">
+      <p class="retol">hostlylabs.com · exploració apart · 10 d'octubre de 2026</p>
+      <h1 style="font-size: 56px; line-height: 1.05; font-weight: 700; letter-spacing: -0.03em">Les parts del web</h1>
+      <p style="font-size: 19px; line-height: 1.5; color: hsl(220 9% 46%); max-width: 820px">Abans de dibuixar res: què ha de tenir la web i en quin ordre. Les tres direccions de sota pinten aquestes mateixes parts; només canvia com es veuen.</p>
+    </div>
+    <img src="/_blob/3fb0ded80b0abc3d5fc42552dbff2318" alt="Hostly" style="height: 26px; width: auto; margin-top: 8px">
+  </header>
+
+  <section style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; height: 640px">
+
+    <article class="targ">
+      <div>
+        <div class="cap"><span class="num">1</span><h2>La portada: sis pantalles</h2></div>
+        <p class="sub" style="margin-top: 6px; padding-left: 42px">Abans en feia vint. Cada pantalla, una sola idea.</p>
+      </div>
+      <ol>
+        <li class="fila"><span class="idx">01</span><div><p class="nom">Entrada</p><p class="desc">Què és i per a qui, en cinc segons. Un sol botó: Empezar.</p></div></li>
+        <li class="fila"><span class="idx">02</span><div><p class="nom">Què fa sol</p><p class="desc">Les feines que deixes de fer: policia, hostes, neteja, preus i taxa.</p></div></li>
+        <li class="fila"><span class="idx">03</span><div><p class="nom">El ganxo</p><p class="desc">El check-in i la policia: 0 €, per sempre.</p></div></li>
+        <li class="fila"><span class="idx">04</span><div><p class="nom">Preus</p><p class="desc">Gratis i Complet: 40 € (35 € des de 5 pisos), el primer mes gratis.</p></div></li>
+        <li class="fila"><span class="idx">05</span><div><p class="nom">Confiança</p><p class="desc">Vídeos de gestors, el Biel i «Conectado con».</p></div></li>
+        <li class="fila"><span class="idx">06</span><div><p class="nom">Tancament</p><p class="desc">Empezar, preguntes curtes i el peu.</p></div></li>
+      </ol>
+    </article>
+
+    <article class="targ">
+      <div>
+        <div class="cap"><span class="num">2</span><h2>Les pàgines</h2></div>
+        <p class="sub" style="margin-top: 6px; padding-left: 42px">Les que porten gent de Google i les que tanquen.</p>
+      </div>
+      <ul>
+        <li class="fila"><div><p class="nom">Funcionalidades <span class="xip">×8</span></p><p class="desc">Una per feina: policia, IA, neteja, preus, taxa…</p></div></li>
+        <li class="fila"><div><p class="nom">Cómo funciona</p><p class="desc">L'app per dins: cinc portes i una demo per tocar.</p></div></li>
+        <li class="fila"><div><p class="nom">Precios</p><p class="desc">Dos plans, la calculadora i els referits.</p></div></li>
+        <li class="fila"><div><p class="nom">Empezar</p><p class="desc">Telèfon → pla → compte gratis o hora de la demo.</p></div></li>
+        <li class="fila"><div><p class="nom">Para quién <span class="xip">×4</span></p><p class="desc">Un pis · petit gestor · 2a residència · hereus.</p></div></li>
+        <li class="fila"><div><p class="nom">Recursos</p><p class="desc">Blog · Guía · Comparativas.</p></div></li>
+        <li class="fila"><div><p class="nom">Sobre Hostly</p><p class="desc">El Biel i per què existeix.</p></div></li>
+        <li class="fila"><div><p class="nom">Legal <span class="xip">×4</span></p><p class="desc">Avís legal · privacitat · galetes · termes.</p></div></li>
+      </ul>
+    </article>
+
+    <article class="targ">
+      <div>
+        <div class="cap"><span class="num">3</span><h2>Les peces de tot arreu</h2></div>
+        <p class="sub" style="margin-top: 6px; padding-left: 42px">Les mateixes a totes les pàgines.</p>
+      </div>
+      <ul>
+        <li class="fila"><div><p class="nom">Capçal</p><p class="desc">Funcionalidades · Precios · Recursos · Sobre Hostly · Iniciar sesión · Empezar (el menú d'ara).</p></div></li>
+        <li class="fila"><div><p class="nom">Un sol botó</p><p class="desc">«Empezar». La demo arriba al final, mai de primeres.</p></div></li>
+        <li class="fila"><div><p class="nom">El telèfon, primer</p><p class="desc">A Empezar, a la calculadora i a «Te llamo».</p></div></li>
+        <li class="fila"><div><p class="nom">Peu</p><p class="desc">Enllaços, ES/CA, legals i «Hecho en Cataluña».</p></div></li>
+        <li class="fila"><div><p class="nom">Galetes</p><p class="desc">«Rechazar» tan a mà com «Aceptar».</p></div></li>
+        <li class="fila"><div><p class="nom">Al mòbil</p><p class="desc">Menú a pantalla completa i «Empezar» sempre a mà.</p></div></li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="targ" style="gap: 22px; padding: 28px 32px">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <p class="retol">El recorregut</p>
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+        <span class="pas">Arriba</span>
+        <svg class="sep" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        <span class="pas blau">Empezar: el telèfon</span>
+        <svg class="sep" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        <span class="pas">Tria el pla</span>
+        <svg class="sep" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        <span class="pas clar">Complet → dia i hora de la demo</span>
+        <span style="font-size: 14px; color: hsl(220 9% 46%)">o</span>
+        <span class="pas verd">Gratis → el compte a l'app, a l'instant</span>
+        <svg class="sep" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        <span class="pas">El Biel truca al moment</span>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 20px; border-top: 1px solid hsl(0 0% 94%)">
+      <p class="retol">El que comparteixen les tres direccions</p>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap">
+        <span class="pindola">Inter, com l'app</span>
+        <span class="pindola">Blau només per a l'acció</span>
+        <span class="pindola">Tot el que es prem, en píndola</span>
+        <span class="pindola">Targetes de 20 px</span>
+        <span class="pindola">La foto del menjador, amb la llum de l'hora</span>
+        <span class="pindola">Les paraules de l'app</span>
+        <span class="pindola">Un sol botó: Empezar</span>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

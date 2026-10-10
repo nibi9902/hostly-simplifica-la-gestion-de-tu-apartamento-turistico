@@ -1,0 +1,39 @@
+{
+  "v": 3,
+  "createdOnFiles": { "v": 1, "at": "2026-10-10T21:05:00Z" },
+  "title": "Web minimal de Hostly",
+  "launch": { "view": "canvas" },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": { "x": 1520, "y": 0, "w": 1440, "h": 1240, "title": "Les parts del web" },
+    "A-inici.dc.html": { "x": 0, "y": 1700, "w": 1440, "h": 4700, "title": "A · Inici", "expand": "fill", "is_interactive": true },
+    "B-inici.dc.html": { "x": 1520, "y": 1700, "w": 1440, "h": 5100, "title": "B · Inici", "expand": "fill", "is_interactive": true },
+    "C-inici.dc.html": { "x": 3040, "y": 1700, "w": 1440, "h": 5760, "title": "C · Inici", "expand": "fill" },
+    "A-funcio.dc.html": { "x": 0, "y": 7880, "w": 1440, "h": 2600, "title": "A · Funcionalitat: check-in i policia", "expand": "fill" },
+    "B-funcio.dc.html": { "x": 1520, "y": 7880, "w": 1440, "h": 2600, "title": "B · Funcionalitat: check-in i policia", "expand": "fill", "is_interactive": true },
+    "C-funcio.dc.html": { "x": 3040, "y": 7880, "w": 1440, "h": 2600, "title": "C · Funcionalitat: check-in i policia", "expand": "fill" },
+    "A-empezar.dc.html": { "x": 0, "y": 11100, "w": 1440, "h": 900, "title": "A · Empezar", "expand": "fill", "is_interactive": true },
+    "B-empezar.dc.html": { "x": 1520, "y": 11100, "w": 1440, "h": 900, "title": "B · Empezar", "expand": "fill", "is_interactive": true },
+    "C-empezar.dc.html": { "x": 3040, "y": 11100, "w": 1440, "h": 900, "title": "C · Empezar", "expand": "fill", "is_interactive": true },
+    "A-mobil.dc.html": { "x": 40, "y": 12420, "w": 1360, "h": 1000, "title": "A · Al mòbil" },
+    "B-mobil.dc.html": { "x": 1560, "y": 12420, "w": 1360, "h": 1000, "title": "B · Al mòbil" },
+    "C-mobil.dc.html": { "x": 3080, "y": 12420, "w": 1360, "h": 1000, "title": "C · Al mòbil" }
+  },
+  "order": [
+    "Main.dc.html",
+    "A-inici.dc.html", "B-inici.dc.html", "C-inici.dc.html",
+    "A-funcio.dc.html", "B-funcio.dc.html", "C-funcio.dc.html",
+    "A-empezar.dc.html", "B-empezar.dc.html", "C-empezar.dc.html",
+    "A-mobil.dc.html", "B-mobil.dc.html", "C-mobil.dc.html"
+  ],
+  "notes": {
+    "llegir": { "x": 3040, "y": 40, "w": 560, "fill": "blue", "size": "m", "text": "Com llegir el llenç\n\nColumnes = les tres direccions.\nA · La finestra: la foto de l'app a tota pantalla, amb la llum de l'hora.\nB · L'aparador: l'app de debò com a protagonista.\nC · Un dia amb Hostly: la web explica un dia, hora a hora.\n\nFiles = les parts: inici, una funcionalitat, Empezar i el mòbil.\n\nAmb Play: a A canvia la llum de la foto, a B les cinc portes, i els tres Empezar es poden recórrer." },
+    "colA": { "x": 0, "y": 1420, "text": "A · La finestra", "kind": "title1", "maxW": 1440 },
+    "colB": { "x": 1520, "y": 1420, "text": "B · L'aparador", "kind": "title1", "maxW": 1440 },
+    "colC": { "x": 3040, "y": 1420, "text": "C · Un dia amb Hostly", "kind": "title1", "maxW": 1440 },
+    "fila2": { "x": 0, "y": 7580, "text": "Una funcionalitat: el check-in i la policia", "kind": "title1", "maxW": 4480 },
+    "fila3": { "x": 0, "y": 10800, "text": "Empezar: telèfon, pla i demo", "kind": "title1", "maxW": 4480 },
+    "fila4": { "x": 0, "y": 12120, "text": "Al mòbil", "kind": "title1", "maxW": 4480 }
+  },
+  "designSystems": []
+}

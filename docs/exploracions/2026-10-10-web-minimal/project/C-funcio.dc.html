@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>C · Check-in y policía</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:hsl(210 20% 98%)}
+a{color:inherit}a:hover{color:inherit}
+.fc{container-type:inline-size;container-name:pagina}
+.fc *{box-sizing:border-box}
+.fc p,.fc h1,.fc h2,.fc h3,.fc h4,.fc ol,.fc ul,.fc li{margin:0;padding:0;list-style:none}
+.fc a{text-decoration:none}
+.cont{width:100%;max-width:1440px;margin:0 auto;padding-inline:64px}
+.retol{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.ic{width:18px;height:18px;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:9999px;font-size:15px;font-weight:500;white-space:nowrap;border:0;cursor:pointer;font-family:inherit}
+.pill-pri{background:#2563EB;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.pill-pri:hover{background:#1D4ED8;color:#fff}
+.pill-lg{height:56px;padding:0 28px;font-size:17px}
+.hora{font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:-0.05em;line-height:.9}
+.xip{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 11px;border-radius:9999px;font-size:12px;font-weight:500;white-space:nowrap}
+.xip.verd{background:hsl(138 76% 97%);color:hsl(142 76% 30%);box-shadow:inset 0 0 0 1px hsl(142 60% 86%)}
+
+/* Entrada */
+.hero{position:relative;height:700px;overflow:hidden;color:#fff}
+.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero-vel{position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,10,16,.82) 0%,rgba(7,10,16,.55) 45%,rgba(7,10,16,.15) 80%),linear-gradient(to top,rgba(7,10,16,.55),rgba(7,10,16,0) 40%)}
+.capcal{position:relative;z-index:2;height:88px;display:flex;align-items:center;justify-content:space-between}
+.logo img{height:24px;width:auto;display:block;filter:brightness(0) invert(1)}
+.menu{display:flex;gap:32px;font-size:15px;font-weight:500}
+.menu a{opacity:.8}
+.menu a.on{opacity:1;border-bottom:2px solid #fff;padding-bottom:4px}
+.accions{display:flex;align-items:center;gap:24px;font-size:15px;font-weight:500}
+.burger{display:none}
+.hero-text{position:relative;z-index:1;height:612px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px;max-width:760px;padding-bottom:48px}
+.molla{font-size:14px;opacity:.75}
+.hero .hora{font-size:160px}
+.hero h1{font-size:48px;line-height:1.1;font-weight:600;letter-spacing:-0.03em}
+.hero-sub{font-size:20px;line-height:1.55;opacity:.84;max-width:32em}
+
+/* La línia de temps */
+.linia{height:1200px;background:#fff;padding-top:88px}
+.linia-cap{display:flex;flex-direction:column;gap:14px}
+.linia-cap h2{font-size:48px;line-height:1.05;font-weight:700;letter-spacing:-0.03em}
+.moments{margin-top:40px;position:relative}
+.moments::before{content:"";position:absolute;left:267px;top:20px;bottom:40px;width:2px;background:hsl(220 13% 91%)}
+.moment{display:grid;grid-template-columns:220px 40px minmax(0,1fr) 420px;gap:0 28px;align-items:start;height:196px}
+.quan{display:flex;flex-direction:column;align-items:flex-end;gap:6px;padding-top:6px}
+.quan small{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.quan .hora{font-size:52px;color:hsl(220 14% 11%)}
+.punt{position:relative;z-index:1;width:20px;height:20px;margin:14px auto 0;border-radius:9999px;background:#fff;box-shadow:inset 0 0 0 5px #2563EB}
+.que h3{font-size:26px;line-height:1.2;font-weight:600;letter-spacing:-0.015em;padding-top:8px}
+.que p{font-size:16px;line-height:1.55;color:hsl(220 9% 46%);margin-top:8px;max-width:30em}
+.peca{border-radius:20px;background:hsl(210 20% 98%);box-shadow:inset 0 0 0 1px hsl(220 13% 91%);padding:16px 18px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.peca-cap{display:flex;justify-content:space-between;font-size:13px;font-weight:600}
+.peca-cap span{font-weight:400;color:hsl(220 9% 46%)}
+.barra{display:flex;gap:4px}
+.barra span{flex:1;height:4px;border-radius:9999px;background:hsl(220 13% 88%)}
+.barra span.fet{background:#3B82F6}
+.camp{height:40px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1.5px hsl(142 60% 60%);display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-variant-numeric:tabular-nums}
+.camp .ic{width:15px;height:15px;color:hsl(142 76% 36%)}
+.codis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.codis div{border-radius:12px;background:#fff;padding:10px 12px;display:flex;flex-direction:column;gap:2px}
+.codis small{font-size:11px;color:hsl(220 9% 46%)}
+.codis b{font-size:22px;font-weight:700;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.pagat{display:flex;align-items:center;gap:8px;font-size:13px;color:hsl(142 76% 30%);font-weight:500}
+.pagat .ic{width:15px;height:15px}
+.notif{display:flex;gap:12px;align-items:flex-start}
+.notif img{width:32px;height:32px;border-radius:9px}
+.notif b{display:block;font-size:14px;font-weight:600}
+.notif span{font-size:13px;color:hsl(220 9% 46%)}
+.pdf{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:12px;background:#fff;font-size:13px}
+.pdf .ic{width:17px;height:17px;color:hsl(0 72% 51%)}
+.pdf a{margin-left:auto;color:#2563EB;font-weight:500}
+.celes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.cela{border-radius:12px;padding:10px 12px;background:hsl(138 76% 96%);display:flex;flex-direction:column;gap:2px}
+.cela small{font-size:11px;color:hsl(220 9% 46%)}
+.cela b{font-size:16px;font-weight:600;color:hsl(142 76% 32%)}
+.gran{font-size:36px;line-height:1;font-weight:700;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.fila{display:flex;gap:8px;align-items:center}
+.m-pill{height:32px;padding:0 14px;border-radius:9999px;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 88%);font-size:12px;font-weight:500;display:inline-flex;align-items:center}
+
+/* El preu i els dubtes */
+.preu{height:460px;background:hsl(210 20% 98%);display:flex;align-items:center}
+.preu-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:80px;align-items:center}
+.preu h2{font-size:72px;line-height:1;font-weight:700;letter-spacing:-0.045em}
+.preu h2 span{display:block;color:hsl(220 9% 46%);font-size:40px;letter-spacing:-0.03em;margin-top:12px}
+.preu .fi{font-size:15px;line-height:1.5;color:hsl(220 9% 46%);margin-top:18px;max-width:30em}
+.preg{display:flex;flex-direction:column;gap:6px;padding:16px 0;border-bottom:1px solid hsl(0 0% 90%)}
+.preg:first-child{padding-top:0}
+.preg b{font-size:17px;font-weight:600}
+.preg span{font-size:15px;line-height:1.5;color:hsl(220 9% 46%)}
+
+/* Tancament */
+.final{height:240px;background:hsl(220 16% 9%);color:#fff;display:flex;flex-direction:column;justify-content:center}
+.final-fila{display:flex;align-items:center;justify-content:space-between;gap:32px}
+.final h2{font-size:40px;line-height:1.1;font-weight:700;letter-spacing:-0.03em}
+.final h2 span{opacity:.6}
+.final-peu{display:flex;justify-content:space-between;margin-top:32px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;opacity:.7}
+
+@container pagina (max-width: 900px){
+  .cont{padding-inline:20px}
+  .menu,.accions .entrar{display:none}
+  .burger{display:inline-flex;width:44px;height:44px;border-radius:9999px;align-items:center;justify-content:center;background:rgba(255,255,255,.12);border:0;color:#fff}
+  .hero,.linia,.preu,.final{height:auto}
+  .hero-text{height:auto;padding:40px 0 64px}
+  .hero .hora{font-size:96px}
+  .hero h1{font-size:32px}
+  .linia{padding:64px 0}
+  .linia-cap h2{font-size:32px}
+  .moments::before{left:9px}
+  .moment{grid-template-columns:20px minmax(0,1fr);height:auto;gap:12px 16px;padding-bottom:36px}
+  .quan{grid-column:2;grid-row:1;align-items:flex-start;flex-direction:row;align-items:baseline;gap:10px}
+  .quan .hora{font-size:36px}
+  .punt{grid-column:1;grid-row:1;margin:10px 0 0}
+  .que,.peca{grid-column:2}
+  .preu{padding:64px 0}
+  .preu-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+  .preu h2{font-size:52px}
+  .final{padding:48px 0}
+  .final-fila,.final-peu{flex-direction:column;align-items:flex-start}
+}
+</style>
+</helmet>
+<div class="fc" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: hsl(210 20% 98%); -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+
+  <section class="hero">
+    <img src="/_blob/866e693d4084c243004f6348c322bfa1" alt="">
+    <div class="hero-vel" aria-hidden="true"></div>
+    <div class="cont" style="position: relative">
+      <header class="capcal">
+        <a class="logo" href="C-inici.dc.html" aria-label="Hostly, inicio"><img src="/_blob/3fb0ded80b0abc3d5fc42552dbff2318" alt="Hostly"></a>
+        <nav class="menu" aria-label="Principal"><a class="on" href="#">Funcionalidades</a><a href="C-inici.dc.html#precio-c">Precios</a><a href="#">Recursos</a><a href="#">Sobre Hostly</a></nav>
+        <div class="accions"><a class="entrar" href="#">Iniciar sesión</a><a class="pill pill-pri" href="C-empezar.dc.html">Empezar</a><button class="burger" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+      </header>
+      <div class="hero-text">
+        <p class="molla">Funcionalidades · Check-in y policía</p>
+        <p class="hora">21:10</p>
+        <h1>Los Weber hacen el check-in en el tren.</h1>
+        <p class="hero-sub">Mañana llegan a Àtic del Port. Tú no tienes que pedirles nada: ni el DNI, ni una foto, ni acordarte del registro.</p>
+        <a class="pill pill-pri pill-lg" href="C-empezar.dc.html" style="margin-top: 8px">Empezar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="linia">
+    <div class="cont">
+      <div class="linia-cap">
+        <p class="retol">Una llegada, de principio a fin</p>
+        <h2>Así se registra un huésped con Hostly.</h2>
+      </div>
+      <ol class="moments">
+        <li class="moment">
+          <div class="quan"><small>Jueves</small><p class="hora">21:10</p></div>
+          <span class="punt" aria-hidden="true"></span>
+          <div class="que"><h3>Abren el enlace del check-in.</h3><p>Les llegó solo con la confirmación, en su idioma. Una persona cada vez, desde el móvil.</p></div>
+          <div class="peca">
+            <p class="peca-cap">Tu documento <span>2 de 3</span></p>
+            <div class="barra"><span class="fet"></span><span class="fet"></span><span></span></div>
+            <div class="camp">Pasaporte · C01X 4417 <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>
+          </div>
+        </li>
+        <li class="moment">
+          <div class="quan"><small>Jueves</small><p class="hora">21:16</p></div>
+          <span class="punt" aria-hidden="true"></span>
+          <div class="que"><h3>Los tres, registrados.</h3><p>Pagan la tasa con tarjeta y reciben los códigos de la puerta. Tú no has abierto el móvil.</p></div>
+          <div class="peca">
+            <div class="codis"><div><small>Portal</small><b>4821</b></div><div><small>Caja de llaves</small><b>0716</b></div></div>
+            <p class="pagat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Tasa pagada · 15,75 € · 3 personas, 3 noches</p>
+          </div>
+        </li>
+        <li class="moment">
+          <div class="quan"><small>Viernes</small><p class="hora">15:00</p></div>
+          <span class="punt" aria-hidden="true"></span>
+          <div class="que"><h3>Sale el registro hacia los Mossos.</h3><p>Hostly lo envía al registro de viajeros y guarda el comprobante en la reserva.</p></div>
+          <div class="peca">
+            <div class="notif"><img src="/_blob/e157402ef57cfa1d95ab65daff837d29" alt=""><div><b>Registro de viajeros enviado</b><span>Familie Weber · 3 viajeros · Àtic del Port</span></div></div>
+            <div class="pdf"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg>Comprobante de los Mossos<a href="#">Ver</a></div>
+          </div>
+        </li>
+        <li class="moment">
+          <div class="quan"><small>Viernes</small><p class="hora">19:40</p></div>
+          <span class="punt" aria-hidden="true"></span>
+          <div class="que"><h3>Llegan. Tú ni te has enterado.</h3><p>Si alguien no hubiera hecho el check-in, te habría avisado antes. Hoy no hacía falta.</p></div>
+          <div class="peca">
+            <p class="peca-cap">Cómo va <span>Familie Weber</span></p>
+            <div class="celes"><div class="cela"><small>Check-in</small><b>Hecho</b></div><div class="cela"><small>Mossos</small><b>Enviado</b></div></div>
+          </div>
+        </li>
+        <li class="moment" style="height: 160px">
+          <div class="quan"><small>Octubre</small><p class="hora">1–20</p></div>
+          <span class="punt" aria-hidden="true"></span>
+          <div class="que"><h3>La tasa del semestre, lista.</h3><p>Hostly suma todas las estancias. Tú solo la presentas.</p></div>
+          <div class="peca">
+            <p class="peca-cap">Tasa turística <span>abril a septiembre</span></p>
+            <p class="gran">1.284,50 €</p>
+            <div class="fila"><span class="m-pill">Exportar a Excel</span><span class="m-pill">Ya la he presentado</span></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="preu">
+    <div class="cont preu-grid">
+      <div>
+        <h2>Todo esto: 0 €.<span>Para siempre. Sin tarjeta.</span></h2>
+        <p class="fi">Si cobras la tasa con tarjeta en el plan Gratis, 0,25 € + 5 % de cada pago. En Hostly Completo, nada.</p>
+        <a class="pill pill-pri pill-lg" href="C-empezar.dc.html" style="margin-top: 24px">Empezar</a>
+      </div>
+      <div>
+        <div class="preg"><b>¿Funciona fuera de Cataluña?</b><span>Sí. Con los Mossos es automático; con SES Hospedajes lo activamos contigo.</span></div>
+        <div class="preg"><b>¿Qué necesito?</b><span>Tu usuario del portal de los Mossos. El resto lo prepara Hostly.</span></div>
+        <div class="preg"><b>¿Y si el portal lo rechaza?</b><span>Te avisamos con el motivo y se vuelve a intentar al día siguiente.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="cont">
+      <div class="final-fila">
+        <h2>Mañana llegan otros. <span>Hostly ya está.</span></h2>
+        <a class="pill pill-pri pill-lg" href="C-empezar.dc.html">Empezar</a>
+      </div>
+      <div class="final-peu"><span>© 2026 Hostly Labs · Hecho en Cataluña, para toda España.</span><span>Aviso legal · Privacidad · Cookies · Términos · ES · CA</span></div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
