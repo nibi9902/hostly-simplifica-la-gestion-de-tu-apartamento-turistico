@@ -339,6 +339,13 @@
     "acceptar": "Aceptar",
     "rebutjar": "Rechazar",
     "mes": "Más información",
-    "canviar": "Cambiar mis preferencias de cookies"
+    "canviar": "Cambiar mis preferencias de cookies",
+    "text_publicitat": "Usamos cookies de analítica (Google Analytics) para saber qué páginas sirven y de publicidad ({{empreses}}) para enseñarte Hostly después y saber qué anuncios funcionan. Solo si nos dejas.",
+    "configurar": "Configurar",
+    "desar": "Guardar",
+    "analitica_titol": "Analítica",
+    "analitica_text": "Qué páginas se visitan y cuáles no (Google Analytics).",
+    "publicitat_titol": "Publicidad",
+    "publicitat_text": "Anuncios de Hostly en {{llocs}}, y saber qué anuncios traen contactos."
   }
 }

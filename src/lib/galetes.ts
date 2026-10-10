@@ -1,19 +1,23 @@
 /**
- * Galetes analítiques (Google Analytics 4) només amb consentiment.
+ * Galetes que no són tècniques: només amb consentiment.
  *
  * Fins al 09-10-2026, GA4 es carregava des d'`index.html` a tothom sense preguntar,
  * mentre la política de galetes parlava d'un consentiment que no existia. Ara:
- *   · per defecte no es carrega res de Google;
+ *   · per defecte no es carrega res de Google ni de Meta;
  *   · el bàner (`AvisGaletes`) pregunta un cop; la resposta es recorda 12 mesos;
- *   · «Aceptar» carrega GA4 en aquell moment; «Rechazar» no carrega res.
+ *   · dues finalitats, cadascuna amb el seu sí o no: analítica (Google Analytics) i, des del
+ *     10-10-2026 i només si hi ha cap eina configurada, publicitat (`src/lib/seguiment.ts`);
+ *   · «Rechazar» no carrega res; si algú ho havia acceptat i després ho rebutja, es tanca
+ *     l'aixeta i s'esborren les galetes.
  * Les galetes tècniques (idioma, el contacte del visitant) no en depenen.
  */
+import { carregaPublicitat, carregaScriptGoogle, esborraGaletes, gtagAmbConsentiment, hiHaPublicitat, retiraPublicitat } from "@/lib/seguiment";
 
 const GA_ID = "G-3LKZXNR4F5";
 const CLAU = "hostly_galetes";
 const DURADA_MS = 365 * 24 * 60 * 60 * 1000; // 12 mesos
 
-export type Consentiment = { analitiques: boolean; data: number };
+export type Consentiment = { analitiques: boolean; publicitat?: boolean; data: number };
 
 export function consentiment(): Consentiment | null {
   try {
@@ -21,38 +25,48 @@ export function consentiment(): Consentiment | null {
     if (!desat) return null;
     const c = JSON.parse(desat) as Consentiment;
     if (!c || typeof c.data !== "number" || Date.now() - c.data > DURADA_MS) return null;
+    // Una resposta d'abans que hi hagués publicitat no hi diu res: es torna a preguntar
+    if (hiHaPublicitat() && typeof c.publicitat !== "boolean") return null;
     return c;
   } catch {
     return null;
   }
 }
 
-let carregada = false;
+let analiticaCarregada = false;
 
 /** Carrega GA4 (un sol cop). Només s'ha de cridar amb consentiment. */
 export function carregaAnalitica(): void {
-  if (carregada || typeof document === "undefined") return;
-  carregada = true;
-  const w = window as unknown as { dataLayer: unknown[]; gtag: (...args: unknown[]) => void };
-  w.dataLayer = w.dataLayer || [];
-  w.gtag = function gtag() {
-    // eslint-disable-next-line prefer-rest-params
-    w.dataLayer.push(arguments);
-  };
-  w.gtag("js", new Date());
-  w.gtag("config", GA_ID, { anonymize_ip: true });
-  const s = document.createElement("script");
-  s.async = true;
-  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-  document.head.appendChild(s);
+  if (typeof document === "undefined") return;
+  const gtag = gtagAmbConsentiment();
+  gtag("consent", "update", { analytics_storage: "granted" });
+  if (analiticaCarregada) return;
+  analiticaCarregada = true;
+  gtag("config", GA_ID, { anonymize_ip: true });
+  carregaScriptGoogle(GA_ID);
 }
 
-export function desaConsentiment(analitiques: boolean): void {
+/** Qui ho havia acceptat i ara diu que no: Google deixa de comptar i s'esborren les galetes. */
+function retiraAnalitica(): void {
+  const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+  if (w.gtag) w.gtag("consent", "update", { analytics_storage: "denied" });
+  esborraGaletes(/^(_ga|_ga_.*|_gid)$/);
+}
+
+function aplica(c: Pick<Consentiment, "analitiques" | "publicitat">): void {
+  if (c.analitiques) carregaAnalitica();
+  else retiraAnalitica();
+  if (c.publicitat) carregaPublicitat();
+  else retiraPublicitat();
+}
+
+export function desaConsentiment(analitiques: boolean, publicitat = false): void {
+  const resposta = { analitiques, publicitat: hiHaPublicitat() ? publicitat : false };
   try {
-    localStorage.setItem(CLAU, JSON.stringify({ analitiques, data: Date.now() } satisfies Consentiment));
+    localStorage.setItem(CLAU, JSON.stringify({ ...resposta, data: Date.now() } satisfies Consentiment));
   } catch { /* sense emmagatzematge: es tornarà a preguntar */ }
-  if (analitiques) carregaAnalitica();
-  window.dispatchEvent(new CustomEvent("hostly:galetes", { detail: { analitiques } }));
+  aplica(resposta);
+  window.dispatchEvent(new CustomEvent("hostly:galetes", { detail: resposta }));
 }
 
 /** «Cambiar mis preferencias» (pàgina de galetes): es torna a preguntar. */
@@ -61,7 +75,9 @@ export function oblidaConsentiment(): void {
   window.dispatchEvent(new CustomEvent("hostly:galetes", { detail: null }));
 }
 
-/** En arrencar: si ja va dir que sí, es carrega GA4. */
+/** En arrencar: es carrega el que ja va dir que sí. */
 export function aplicaConsentimentDesat(): void {
-  if (consentiment()?.analitiques) carregaAnalitica();
+  const c = consentiment();
+  if (c?.analitiques) carregaAnalitica();
+  if (c?.publicitat) carregaPublicitat();
 }

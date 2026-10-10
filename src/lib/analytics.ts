@@ -1,9 +1,13 @@
 /**
- * GA4 + events tracking wrapper.
+ * Els esdeveniments del web: una sola porta.
  *
- * - En desenvolupament: events van a console.log amb prefix [analytics]
- * - En producció: events van a gtag() si existeix (l'script es carrega des d'index.html)
+ * - Publicitat (Meta, Google Ads): `conversio()` de `seguiment.ts`, només si la persona ha
+ *   acceptat «Publicidad» i hi ha identificadors; només el nom de l'esdeveniment.
+ * - Google Analytics: `gtag()`, que només existeix si s'han acceptat les galetes (`galetes.ts`).
+ * - En desenvolupament, a més, a la consola amb el prefix [analytics].
  */
+import { conversio } from '@/lib/seguiment';
+
 
 type EventName =
   | 'cta_primary_click'      // Botó "Empezar gratis" a qualsevol lloc
@@ -42,6 +46,7 @@ const isDev = import.meta.env.DEV;
 const isProd = import.meta.env.PROD;
 
 export function track(name: EventName, params: EventParams = {}): void {
+  conversio(name);
   if (isDev) {
     console.log(`[analytics] ${name}`, params);
     return;

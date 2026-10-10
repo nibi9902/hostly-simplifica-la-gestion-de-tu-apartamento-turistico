@@ -50,7 +50,15 @@
     "datos_li5_label": "Formularis del web:",
     "datos_li5_text": "telèfon, nom i correu quan comences amb Hostly, demanes que et truquem o veus el detall de la calculadora; també les respostes de la calculadora, la pàgina des d'on arribes i l'hora que tries per a la demo.",
     "fin_li5_label": "Trucar-te o escriure't sobre Hostly quan ens deixes el teu contacte al web",
-    "fin_li5_text": "— consentiment (art. 6.1.a RGPD), que dones en enviar el formulari. El pots retirar quan vulguis."
+    "fin_li5_text": "— consentiment (art. 6.1.a RGPD), que dones en enviar el formulari. El pots retirar quan vulguis.",
+    "fin_li6_label": "Ensenyar-te anuncis de Hostly en altres webs (retargeting)",
+    "fin_li6_text": "— consentiment (art. 6.1.a RGPD), que dones a l'avís de galetes. El pots retirar quan vulguis des de la Política de galetes.",
+    "p_destinatarios_publicitat": "Si acceptes les galetes de publicitat, {{empreses}} reben les dades de la teva visita al web (les pàgines que veus i, si és el cas, que has deixat el teu telèfon o demanat una demo) per ensenyar-te anuncis de Hostly. En això actuen també com a responsables, amb les seves pròpies polítiques de privacitat.",
+    "p_transferencias_publicitat": "{{empreses}} poden tractar aquestes dades als EUA: estan adherides al Marc de Privacitat de Dades UE-EUA.",
+    "p_cookies_pre_publicitat": "Fem servir galetes tècniques i, només si les acceptes, analítiques i de publicitat. Consulta la nostra",
+    "empresa_meta": "Meta Platforms Ireland Ltd.",
+    "empresa_google": "Google Ireland Ltd.",
+    "i": " i "
   },
   "cookies": {
     "title": "Política de galetes | Hostly",
@@ -83,7 +91,7 @@
       {
         "name": "Preferències de galetes (emmagatzematge local)",
         "type": "Tècnica",
-        "purpose": "Recordar si vas acceptar o rebutjar les galetes analítiques.",
+        "purpose": "Recordar quines galetes vas acceptar o rebutjar.",
         "duration": "12 mesos",
         "thirdParty": "No"
       },
@@ -109,7 +117,29 @@
     "h2_gestionar": "Com gestionar les galetes",
     "p_gestionar": "Pots configurar el teu navegador per rebutjar o eliminar galetes en qualsevol moment. Tingues en compte que desactivar les galetes tècniques pot afectar el funcionament del lloc.",
     "h2_contacto": "Contacte",
-    "p_contacto": "Per a qualsevol pregunta sobre la nostra política de galetes:"
+    "p_contacto": "Per a qualsevol pregunta sobre la nostra política de galetes:",
+    "table_publicitat": {
+      "meta": {
+        "name": "Meta (_fbp, _fbc)",
+        "type": "Publicitat (només si l'acceptes)",
+        "purpose": "Ensenyar-te anuncis de Hostly a Instagram i Facebook i saber quins anuncis porten contactes.",
+        "duration": "3 mesos",
+        "thirdParty": "Meta Platforms Ireland Ltd."
+      },
+      "google": {
+        "name": "Google Ads (_gcl_au, _gcl_aw)",
+        "type": "Publicitat (només si l'acceptes)",
+        "purpose": "Ensenyar-te anuncis de Hostly a Google i YouTube i saber quins anuncis porten contactes.",
+        "duration": "3 mesos",
+        "thirdParty": "Google Ireland Ltd."
+      }
+    },
+    "h2_publicitat": "Galetes de publicitat",
+    "p_publicitat": "Si les acceptes, fem servir {{eines}} per ensenyar anuncis de Hostly en altres webs i apps a qui ja ens ha visitat (retargeting) i per saber quins anuncis porten contactes. A Meta i a Google els arriba que has visitat el web i, si és el cas, que has deixat el teu telèfon o demanat una demo; mai el teu telèfon, el teu correu ni les teves respostes. Si les rebutges, no es carrega res de Meta ni de Google Ads.",
+    "p_publicitat_control": "També pots decidir quins anuncis veus des de les teves preferències d'anuncis de",
+    "eina_meta": "el píxel de Meta",
+    "eina_google": "l'etiqueta de Google Ads",
+    "i": " i "
   },
   "terminos": {
     "title": "Termes i condicions | Hostly",

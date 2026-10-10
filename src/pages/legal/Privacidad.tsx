@@ -4,11 +4,16 @@ import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { LangLink } from "@/i18n/LangLink";
 import { useTranslation } from "react-i18next";
 import { TITULAR } from "@/lib/titular";
+import { EINES_PUBLICITAT, hiHaPublicitat } from "@/lib/seguiment";
 
 const EMAIL = "hola@hostlylabs.com";
 
 export default function Privacidad() {
   const { t } = useTranslation("legal");
+  // Meta i Google només hi surten si la publicitat està activa (`src/lib/seguiment.ts`)
+  const empreses = [EINES_PUBLICITAT.meta && t("privacidad.empresa_meta"), EINES_PUBLICITAT.google && t("privacidad.empresa_google")]
+    .filter(Boolean)
+    .join(t("privacidad.i"));
 
   return (
     <PageShell
@@ -49,6 +54,7 @@ export default function Privacidad() {
             <li><strong>{t("privacidad.fin_li3_label")}</strong> {t("privacidad.fin_li3_text")}</li>
             <li><strong>{t("privacidad.fin_li4_label")}</strong> {t("privacidad.fin_li4_text")}</li>
             <li><strong>{t("privacidad.fin_li5_label")}</strong> {t("privacidad.fin_li5_text")}</li>
+            {hiHaPublicitat() && <li><strong>{t("privacidad.fin_li6_label")}</strong> {t("privacidad.fin_li6_text")}</li>}
           </ul>
 
           <h2>{t("privacidad.h2_conservacion")}</h2>
@@ -56,9 +62,11 @@ export default function Privacidad() {
 
           <h2>{t("privacidad.h2_destinatarios")}</h2>
           <p>{t("privacidad.p_destinatarios")}</p>
+          {hiHaPublicitat() && <p>{t("privacidad.p_destinatarios_publicitat", { empreses })}</p>}
 
           <h2>{t("privacidad.h2_transferencias")}</h2>
           <p>{t("privacidad.p_transferencias")}</p>
+          {hiHaPublicitat() && <p>{t("privacidad.p_transferencias_publicitat", { empreses })}</p>}
 
           <h2>{t("privacidad.h2_derechos")}</h2>
           <p>{t("privacidad.p_derechos", { email: EMAIL })}</p>
@@ -66,7 +74,7 @@ export default function Privacidad() {
 
           <h2>{t("privacidad.h2_cookies")}</h2>
           <p>
-            {t("privacidad.p_cookies_pre")}{" "}
+            {t(hiHaPublicitat() ? "privacidad.p_cookies_pre_publicitat" : "privacidad.p_cookies_pre")}{" "}
             <LangLink to="/cookies">{t("privacidad.p_cookies_link")}</LangLink>{" "}
             {t("privacidad.p_cookies_post")}
           </p>

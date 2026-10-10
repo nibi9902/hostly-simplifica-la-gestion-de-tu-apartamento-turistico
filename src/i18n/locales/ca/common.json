@@ -339,6 +339,13 @@
     "acceptar": "Acceptar",
     "rebutjar": "Rebutjar",
     "mes": "Més informació",
-    "canviar": "Canviar les meves preferències de galetes"
+    "canviar": "Canviar les meves preferències de galetes",
+    "text_publicitat": "Fem servir galetes d'analítica (Google Analytics) per saber quines pàgines serveixen i de publicitat ({{empreses}}) per ensenyar-te Hostly després i saber quins anuncis funcionen. Només si ens deixes.",
+    "configurar": "Configurar",
+    "desar": "Desar",
+    "analitica_titol": "Analítica",
+    "analitica_text": "Quines pàgines es visiten i quines no (Google Analytics).",
+    "publicitat_titol": "Publicitat",
+    "publicitat_text": "Anuncis de Hostly a {{llocs}}, i saber quins anuncis porten contactes."
   }
 }

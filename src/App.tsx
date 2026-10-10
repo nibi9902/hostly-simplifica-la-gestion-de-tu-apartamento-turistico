@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,6 +11,7 @@ import { SUPPORTED_LANGS, DEFAULT_LANG, type Lang } from "./i18n/config";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AvisGaletes from "./components/AvisGaletes";
+import { paginaVista } from "./lib/seguiment";
 
 // Lazy — només es carreguen quan l'usuari hi navega
 const Empezar = lazy(() => import("./pages/Empezar"));
@@ -111,6 +112,18 @@ function ScrollAHash() {
   return null;
 }
 
+/* ─── Publicitat: cada canvi de pàgina dins del web (la primera ja la compta la càrrega).
+ * Només fa res si s'ha acceptat «Publicidad» (`src/lib/seguiment.ts`). */
+function SeguimentPagines() {
+  const { pathname } = useLocation();
+  const primera = useRef(true);
+  useEffect(() => {
+    if (primera.current) { primera.current = false; return; }
+    paginaVista();
+  }, [pathname]);
+  return null;
+}
+
 /* ─── Redirect per rutes legacy (sense prefix d'idioma) ─── */
 function LegacyRedirect() {
   const location = useLocation();
@@ -197,6 +210,7 @@ const App = () => (
         </Suspense>
         <AvisGaletes />
         <ScrollAHash />
+        <SeguimentPagines />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

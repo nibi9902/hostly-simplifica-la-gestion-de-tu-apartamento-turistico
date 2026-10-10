@@ -106,7 +106,8 @@ export function apuntaArribada(): void {
   const dades: Arribada = { entrada: window.location.pathname };
   try {
     const params = new URLSearchParams(window.location.search);
-    for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"]) {
+    // gclid i fbclid: de quin anunci de Google o de Meta ve, si ve d'un anunci
+    for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"]) {
       const v = params.get(k);
       if (v) dades[k] = v.slice(0, 120);
     }

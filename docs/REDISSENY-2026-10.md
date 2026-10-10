@@ -155,6 +155,10 @@
 
 ## Pendents
 
+> **Retargeting (versió 16):** el codi és fet i provat però apagat fins que hi hagi els
+> identificadors de Meta i de Google Ads a Vercel. Què has de fer, pas a pas:
+> `docs/SEGUIMENT-I-RETARGETING.md`.
+
 1. **Cal.com** al servidor (Easypanel) en lloc de l'hora desada a mà.
 2. **A l'app** (web i nativa, al unison): el telèfon com a segon camp de l'alta, i el botó
    «Quiero Hostly completo» que porta a la demo. Omplir l'alta amb les dades de `/empezar`.
@@ -168,9 +172,9 @@
    presenta per semestres; i atribueix l'ajust de preus a «Hostly Automàtic» (el fa PriceLabs).
    Cal tornar-lo a renderitzar amb l'app d'ara.
 7. **Detalls de disseny** que va trobar la revisió visual i no s'han tocat (són de criteri):
-   a les pàgines de funcionalitats, el títol, «El problema» i la resta comencen a tres marges
-   esquerres diferents; hi ha tres estils de preguntes freqüents (portada, funcionalitats i
-   preus); i la secció del fundador apareix amb un fos lligat a l'scroll.
+   hi ha tres estils de preguntes freqüents (portada, funcionalitats i preus) i la secció del
+   fundador apareix amb un fos lligat a l'scroll. (Els marges esquerres diferents de les
+   funcionalitats: resolts a la versió 15, `docs/MAQUETACIO.md`.)
 8. **Pes de la primera càrrega**: totes les traduccions (castellà i català, 22 fitxers, 200 KB)
    van dins de `index-*.js` (410 KB, 129 KB comprimit). Carregar només l'idioma i els espais
    de noms de cada pàgina (`i18next-resources-to-backend` + `import()`) en trauria uns 50 KB

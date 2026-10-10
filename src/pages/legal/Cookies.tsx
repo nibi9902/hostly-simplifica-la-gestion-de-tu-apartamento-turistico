@@ -3,19 +3,24 @@ import PaginaLegal from "./PaginaLegal";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { useTranslation } from "react-i18next";
 import { oblidaConsentiment } from "@/lib/galetes";
+import { EINES_PUBLICITAT, hiHaPublicitat } from "@/lib/seguiment";
 
 const EMAIL = "hola@hostlylabs.com";
 
 export default function Cookies() {
   const { t } = useTranslation("legal");
   const { t: tc } = useTranslation("common");
-  const cookieTable = t("cookies.table", { returnObjects: true }) as Array<{
-    name: string;
-    type: string;
-    purpose: string;
-    duration: string;
-    thirdParty: string;
-  }>;
+  type Fila = { name: string; type: string; purpose: string; duration: string; thirdParty: string };
+  // Les de publicitat només hi surten si estan actives (sense identificadors, el web no en fa servir)
+  const publi = t("cookies.table_publicitat", { returnObjects: true }) as Record<"meta" | "google", Fila>;
+  const cookieTable = [
+    ...(t("cookies.table", { returnObjects: true }) as Fila[]),
+    ...(EINES_PUBLICITAT.meta ? [publi.meta] : []),
+    ...(EINES_PUBLICITAT.google ? [publi.google] : []),
+  ];
+  const eines = [EINES_PUBLICITAT.meta && t("cookies.eina_meta"), EINES_PUBLICITAT.google && t("cookies.eina_google")]
+    .filter(Boolean)
+    .join(t("cookies.i"));
 
   return (
     <PageShell
@@ -70,6 +75,19 @@ export default function Cookies() {
               tools.google.com/dlpage/gaoptout
             </a>.
           </p>
+
+          {hiHaPublicitat() && (
+            <>
+              <h2>{t("cookies.h2_publicitat")}</h2>
+              <p>{t("cookies.p_publicitat", { eines })}</p>
+              <p>
+                {t("cookies.p_publicitat_control")}{" "}
+                {EINES_PUBLICITAT.meta && <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noreferrer">Meta</a>}
+                {EINES_PUBLICITAT.meta && EINES_PUBLICITAT.google && t("cookies.i")}
+                {EINES_PUBLICITAT.google && <a href="https://myadcenter.google.com/" target="_blank" rel="noreferrer">Google</a>}.
+              </p>
+            </>
+          )}
 
           <h2>{t("cookies.h2_gestionar")}</h2>
           <p>

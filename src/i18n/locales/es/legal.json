@@ -50,7 +50,15 @@
     "datos_li5_label": "Formularios de la web:",
     "datos_li5_text": "teléfono, nombre y correo cuando empiezas con Hostly, pides que te llamemos o ves el detalle de la calculadora; también las respuestas de la calculadora, la página desde la que llegas y la hora que eliges para la demo.",
     "fin_li5_label": "Llamarte o escribirte sobre Hostly cuando nos dejas tu contacto en la web",
-    "fin_li5_text": "— consentimiento (art. 6.1.a RGPD), que das al enviar el formulario. Puedes retirarlo cuando quieras."
+    "fin_li5_text": "— consentimiento (art. 6.1.a RGPD), que das al enviar el formulario. Puedes retirarlo cuando quieras.",
+    "fin_li6_label": "Enseñarte anuncios de Hostly en otras webs (retargeting)",
+    "fin_li6_text": "— consentimiento (art. 6.1.a RGPD), que das en el aviso de cookies. Puedes retirarlo cuando quieras desde la Política de cookies.",
+    "p_destinatarios_publicitat": "Si aceptas las cookies de publicidad, {{empreses}} reciben los datos de tu visita a la web (las páginas que ves y, si es el caso, que has dejado tu teléfono o pedido una demo) para enseñarte anuncios de Hostly. En eso actúan también como responsables, con sus propias políticas de privacidad.",
+    "p_transferencias_publicitat": "{{empreses}} pueden tratar esos datos en EE. UU.: están adheridas al Marco de Privacidad de Datos UE-EE. UU.",
+    "p_cookies_pre_publicitat": "Usamos cookies técnicas y, solo si las aceptas, analíticas y de publicidad. Consulta nuestra",
+    "empresa_meta": "Meta Platforms Ireland Ltd.",
+    "empresa_google": "Google Ireland Ltd.",
+    "i": " y "
   },
   "cookies": {
     "title": "Política de cookies | Hostly",
@@ -83,7 +91,7 @@
       {
         "name": "Preferencias de cookies (almacenamiento local)",
         "type": "Técnica",
-        "purpose": "Recordar si aceptaste o rechazaste las cookies analíticas.",
+        "purpose": "Recordar qué cookies aceptaste o rechazaste.",
         "duration": "12 meses",
         "thirdParty": "No"
       },
@@ -109,7 +117,29 @@
     "h2_gestionar": "Cómo gestionar las cookies",
     "p_gestionar": "Puedes configurar tu navegador para rechazar o eliminar cookies en cualquier momento. Ten en cuenta que desactivar las cookies técnicas puede afectar al funcionamiento del sitio.",
     "h2_contacto": "Contacto",
-    "p_contacto": "Para cualquier pregunta sobre nuestra política de cookies:"
+    "p_contacto": "Para cualquier pregunta sobre nuestra política de cookies:",
+    "table_publicitat": {
+      "meta": {
+        "name": "Meta (_fbp, _fbc)",
+        "type": "Publicidad (solo si la aceptas)",
+        "purpose": "Enseñarte anuncios de Hostly en Instagram y Facebook y saber qué anuncios traen contactos.",
+        "duration": "3 meses",
+        "thirdParty": "Meta Platforms Ireland Ltd."
+      },
+      "google": {
+        "name": "Google Ads (_gcl_au, _gcl_aw)",
+        "type": "Publicidad (solo si la aceptas)",
+        "purpose": "Enseñarte anuncios de Hostly en Google y YouTube y saber qué anuncios traen contactos.",
+        "duration": "3 meses",
+        "thirdParty": "Google Ireland Ltd."
+      }
+    },
+    "h2_publicitat": "Cookies de publicidad",
+    "p_publicitat": "Si las aceptas, usamos {{eines}} para enseñar anuncios de Hostly en otras webs y apps a quien ya nos ha visitado (retargeting) y para saber qué anuncios traen contactos. A Meta y a Google les llega que has visitado la web y, si es el caso, que has dejado tu teléfono o pedido una demo; nunca tu teléfono, tu correo ni tus respuestas. Si las rechazas, no se carga nada de Meta ni de Google Ads.",
+    "p_publicitat_control": "También puedes decidir qué anuncios ves desde tus preferencias de anuncios de",
+    "eina_meta": "el píxel de Meta",
+    "eina_google": "la etiqueta de Google Ads",
+    "i": " y "
   },
   "terminos": {
     "title": "Términos y condiciones | Hostly",
