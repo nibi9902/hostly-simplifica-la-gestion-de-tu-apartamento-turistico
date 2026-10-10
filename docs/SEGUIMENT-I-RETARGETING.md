@@ -3,7 +3,7 @@
 > **Encàrrec del Biel (10-10-2026):** «hem de mirar de tenir alguna opció per trackejar la gent
 > que entra i demés per després fer-li retargeting o similar».
 >
-> **Estat (versió 16):** el codi és a punt i provat, però **apagat**. S'encén sol quan hi hagi
+> **Estat (versió 17):** el codi és a punt i provat, però **apagat**. S'encén sol quan hi hagi
 > els identificadors de Meta i/o de Google Ads a Vercel (més avall, pas a pas). Sense
 > identificadors, el web és exactament el de la versió 15.
 
@@ -24,7 +24,7 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
 | LinkedIn Insight, TikTok | Gestors professionals (LinkedIn), públic jove (TikTok) | No ara: s'afegeixen igual quan calgui |
 | Servidor a servidor (API de conversions de Meta, conversions offline de Google) | Més precís (no el bloquegen els bloquejadors) i permet pujar «aquest contacte s'ha fet client» | Més endavant: cal un token i decidir-ho legalment (el contacte del formulari no ha acceptat que les seves dades vagin a Meta) |
 
-## Què fa el web (versió 16)
+## Què fa el web (versió 17)
 
 - **Bàner de galetes amb dues finalitats**: «Rechazar», «Aceptar» i «Configurar» al primer
   nivell; a «Configurar», un interruptor per a **Analítica** i un per a **Publicidad**, tots dos
@@ -45,13 +45,26 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
 
 - El píxel va **sense «configuració automàtica»** (`autoConfig` apagat): no llegeix sol els
   botons ni els formularis.
+- **Les pàgines vistes les compta el web**, una per canvi de pàgina, igual a Meta que a Google Ads.
+  Al píxel s'hi posa `disablePushState` i `allowDuplicatePageViews`; sense, el píxel mirava sol
+  l'historial del navegador i comptava també cada clic a l'índex dels articles (comprovat al
+  `fbevents.js` del 10-10-2026). *(Versió 17.)*
+- **Google Analytics no passa res a Google Ads.** Els esdeveniments del web (`track()`) van amb
+  `send_to` cap a Analytics: sense, quan també hi ha Google Ads, gtag els enviava a tots dos amb
+  els seus paràmetres (el resultat de la calculadora, el dia triat per a la demo). *(Versió 17.)*
+- **El sí o el no val per a les eines d'aquell moment.** La resposta es desa amb les eines que hi
+  havia (`"eines": "meta+google"`): si després se n'hi afegeix una (p. ex. Google Ads quan ja hi
+  havia Meta), es torna a preguntar. I mentre no hi hagi cap identificador, no es desa cap «no» a
+  la publicitat: quan s'hi posin, es preguntarà a tothom, també a qui ja havia respost el bàner
+  d'analítica. *(Versió 17; a la 16, aquestes persones quedaven com si haguessin dit que no.)*
 - Qui arriba d'un anunci: es desa amb el contacte de quin anunci ve (`gclid` de Google, ja hi
   era, i ara `fbclid` de Meta), per saber quins anuncis porten clients.
 - **Les polítiques** de galetes i de privacitat expliquen la publicitat, les galetes i qui rep les
   dades (Meta Platforms Ireland i Google Ireland) **només quan està activa**. Sense
   identificadors, no en diuen res (seria fals).
-- **La prova**: `scripts/revisio/prova-publicitat.cjs` (34 comprovacions, amb un segon servidor
-  amb identificadors de prova; res surt cap a Meta ni Google de debò).
+- **La prova**: `scripts/revisio/prova-publicitat.cjs` (42 comprovacions, amb un segon servidor
+  amb identificadors de prova, millor el web construït; res surt cap a Meta ni Google de debò).
+  Amb el codi de la versió 16 en falla 5: les de les tres esmenes de dalt.
 
 ## El que has de fer tu (Biel)
 

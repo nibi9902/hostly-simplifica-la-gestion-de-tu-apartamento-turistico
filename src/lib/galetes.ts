@@ -11,13 +11,14 @@
  *     l'aixeta i s'esborren les galetes.
  * Les galetes tècniques (idioma, el contacte del visitant) no en depenen.
  */
-import { carregaPublicitat, carregaScriptGoogle, esborraGaletes, gtagAmbConsentiment, hiHaPublicitat, retiraPublicitat } from "@/lib/seguiment";
+import { carregaPublicitat, carregaScriptGoogle, esborraGaletes, FIRMA_PUBLICITAT, gtagAmbConsentiment, hiHaPublicitat, retiraPublicitat } from "@/lib/seguiment";
 
-const GA_ID = "G-3LKZXNR4F5";
+export const GA_ID = "G-3LKZXNR4F5";
 const CLAU = "hostly_galetes";
 const DURADA_MS = 365 * 24 * 60 * 60 * 1000; // 12 mesos
 
-export type Consentiment = { analitiques: boolean; publicitat?: boolean; data: number };
+/** `publicitat` i `eines` només hi són si es va preguntar per la publicitat (`FIRMA_PUBLICITAT`). */
+export type Consentiment = { analitiques: boolean; publicitat?: boolean; eines?: string; data: number };
 
 export function consentiment(): Consentiment | null {
   try {
@@ -25,8 +26,9 @@ export function consentiment(): Consentiment | null {
     if (!desat) return null;
     const c = JSON.parse(desat) as Consentiment;
     if (!c || typeof c.data !== "number" || Date.now() - c.data > DURADA_MS) return null;
-    // Una resposta d'abans que hi hagués publicitat no hi diu res: es torna a preguntar
-    if (hiHaPublicitat() && typeof c.publicitat !== "boolean") return null;
+    // Una resposta d'abans que hi hagués publicitat, o d'abans que hi hagués aquestes eines, no
+    // diu res de les d'ara: es torna a preguntar
+    if (hiHaPublicitat() && (typeof c.publicitat !== "boolean" || c.eines !== FIRMA_PUBLICITAT)) return null;
     return c;
   } catch {
     return null;
@@ -61,7 +63,11 @@ function aplica(c: Pick<Consentiment, "analitiques" | "publicitat">): void {
 }
 
 export function desaConsentiment(analitiques: boolean, publicitat = false): void {
-  const resposta = { analitiques, publicitat: hiHaPublicitat() ? publicitat : false };
+  // Sense eines de publicitat no s'ha preguntat per la publicitat: no es desa cap «no», perquè
+  // quan n'hi hagi es pregunti
+  const resposta: Pick<Consentiment, "analitiques" | "publicitat" | "eines"> = hiHaPublicitat()
+    ? { analitiques, publicitat, eines: FIRMA_PUBLICITAT }
+    : { analitiques };
   try {
     localStorage.setItem(CLAU, JSON.stringify({ ...resposta, data: Date.now() } satisfies Consentiment));
   } catch { /* sense emmagatzematge: es tornarà a preguntar */ }

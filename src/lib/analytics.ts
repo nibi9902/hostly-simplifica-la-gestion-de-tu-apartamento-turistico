@@ -4,8 +4,11 @@
  * - Publicitat (Meta, Google Ads): `conversio()` de `seguiment.ts`, només si la persona ha
  *   acceptat «Publicidad» i hi ha identificadors; només el nom de l'esdeveniment.
  * - Google Analytics: `gtag()`, que només existeix si s'han acceptat les galetes (`galetes.ts`).
+ *   Sempre amb `send_to` cap a Analytics: si no, quan també hi ha Google Ads, gtag els enviaria
+ *   a tots dos amb els seus paràmetres (el resultat de la calculadora, el dia de la demo).
  * - En desenvolupament, a més, a la consola amb el prefix [analytics].
  */
+import { GA_ID } from '@/lib/galetes';
 import { conversio } from '@/lib/seguiment';
 
 
@@ -52,7 +55,7 @@ export function track(name: EventName, params: EventParams = {}): void {
     return;
   }
   if (isProd && typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', name, params);
+    window.gtag('event', name, { ...params, send_to: GA_ID });
   }
 }
 

@@ -35,6 +35,12 @@ export function hiHaPublicitat(): boolean {
   return EINES_PUBLICITAT.meta || EINES_PUBLICITAT.google;
 }
 
+/**
+ * Les eines a què es diu sí o no («meta+google»), per desar-ho amb la resposta: un sí a Meta no
+ * val per a Google. Si canvien (p. ex. s'hi afegeix Google Ads), es torna a preguntar.
+ */
+export const FIRMA_PUBLICITAT = [META_PIXEL && "meta", GOOGLE_ADS && "google"].filter(Boolean).join("+");
+
 type Fbq = {
   (...args: unknown[]): void;
   callMethod?: (...args: unknown[]) => void;
@@ -42,6 +48,8 @@ type Fbq = {
   push: unknown;
   loaded: boolean;
   version: string;
+  disablePushState?: boolean;
+  allowDuplicatePageViews?: boolean;
 };
 type Finestra = Window & { fbq?: Fbq; _fbq?: Fbq; dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void };
 
@@ -109,6 +117,12 @@ export function carregaPublicitat(): void {
       n.loaded = true;
       n.version = "2.0";
       n.queue = [];
+      // Les pàgines vistes les compta el web, una per canvi de pàgina, igual que a Google Ads
+      // (`paginaVista`). Sense això, el píxel mira sol l'historial i compta també cada clic a
+      // l'índex dels articles (canvia l'àncora de l'adreça), i descarta les vistes que li enviem
+      // (comprovat al fbevents.js del 10-10-2026)
+      n.disablePushState = true;
+      n.allowDuplicatePageViews = true;
       w.fbq = n;
       const t = document.createElement("script");
       t.async = true;

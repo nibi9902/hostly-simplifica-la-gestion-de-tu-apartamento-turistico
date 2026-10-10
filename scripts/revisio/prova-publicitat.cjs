@@ -4,9 +4,12 @@
  *
  * Necessita DOS servidors:
  *   · el normal, sense identificadors (REVISIO_BASE, per defecte 8094): el web no ha de parlar de publicitat enlloc;
- *   · un amb identificadors de prova (PUBLI_BASE, per defecte 8096; mai el 8080):
- *       VITE_META_PIXEL_ID=000000000000001 VITE_GOOGLE_ADS_ID=AW-000000001 VITE_GOOGLE_ADS_LEAD_LABEL=prova \
- *         npx vite --port 8096 --strictPort --host 127.0.0.1
+ *   · un amb identificadors de prova (PUBLI_BASE, per defecte 8096; mai el 8080). Millor el web
+ *     construït: en desenvolupament `track()` no envia res a Analytics i una comprovació se salta.
+ *       export VITE_META_PIXEL_ID=000000000000001 VITE_GOOGLE_ADS_ID=AW-000000001 VITE_GOOGLE_ADS_LEAD_LABEL=prova
+ *       npx vite build --outDir /tmp/web-publi --emptyOutDir
+ *       npx vite preview --outDir /tmp/web-publi --port 8096 --strictPort --host 127.0.0.1
+ *     (o, en desenvolupament, el mateix `export` i `npx vite --port 8096 --strictPort --host 127.0.0.1`)
  * Res surt cap a Meta ni Google de debò: els seus fitxers es contesten aquí mateix i es compten.
  */
 const { chromium } = (() => { try { return require('playwright-core'); } catch { return require('/Users/bielalsinailla/Desktop/Hostly - 1.1 Migration/node_modules/playwright-core'); } })();
@@ -15,9 +18,11 @@ const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
 const PUBLI = process.env.PUBLI_BASE || 'http://127.0.0.1:8096';
 const PIXEL = '000000000000001';
 const ADS = 'AW-000000001';
+const GA = 'G-3LKZXNR4F5';
 
-// Un fbevents.js de mentida: apunta cada crida a window.__fb (el de debò enviaria a facebook.com)
-const FB_STUB = `(function(){var q=(window.fbq&&window.fbq.queue)||[];window.__fb=window.__fb||[];var f=function(){window.__fb.push(Array.prototype.slice.call(arguments));};q.forEach(function(a){f.apply(null,a);});window.fbq=f;window._fbq=f;})();`;
+// Un fbevents.js de mentida: apunta cada crida a window.__fb (el de debò enviaria a facebook.com),
+// i a window.__fbOpcions les opcions que el web ha posat al píxel abans de carregar-lo
+const FB_STUB = `(function(){var o=window.fbq;window.__fbOpcions={disablePushState:!!(o&&o.disablePushState),allowDuplicatePageViews:!!(o&&o.allowDuplicatePageViews)};var q=(o&&o.queue)||[];window.__fb=window.__fb||[];var f=function(){window.__fb.push(Array.prototype.slice.call(arguments));};q.forEach(function(a){f.apply(null,a);});window.fbq=f;window._fbq=f;})();`;
 
 let ok = 0, ko = 0;
 const prova = (cond, text) => { if (cond) { ok++; console.log('ok  ' + text); } else { ko++; console.log('KO  ' + text); } };
@@ -36,6 +41,7 @@ const te = (llista, pred) => llista.some(pred);
 
 (async () => {
   const b = await chromium.launch({ channel: 'chrome' });
+  let respostaSenseIds = null;
 
   // ── 1. Sense identificadors (el web d'avui): ni una paraula de publicitat ──
   {
@@ -49,7 +55,10 @@ const te = (llista, pred) => llista.some(pred);
     await p.locator('[role="dialog"]').getByRole('button', { name: 'Aceptar', exact: true }).click();
     await p.waitForTimeout(1200);
     prova(peticions.meta.length === 0, `sense identificadors: «Aceptar» no carrega res de Meta (${peticions.meta.length})`);
-    prova(peticions.google.some((u) => u.includes('G-3LKZXNR4F5')), 'sense identificadors: «Aceptar» carrega Google Analytics');
+    prova(peticions.google.some((u) => u.includes(GA)), 'sense identificadors: «Aceptar» carrega Google Analytics');
+    respostaSenseIds = await p.evaluate(() => localStorage.getItem('hostly_galetes'));
+    const desat = JSON.parse(respostaSenseIds || 'null');
+    prova(desat && desat.analitiques === true && !('publicitat' in desat), `sense identificadors: no es desa cap «no» a la publicitat, perquè no s'ha preguntat (${respostaSenseIds})`);
     await p.goto(BASE + '/es/cookies', { waitUntil: 'load' });
     await p.waitForTimeout(800);
     const cookies = await p.locator('main').innerText();
@@ -93,7 +102,7 @@ const te = (llista, pred) => llista.some(pred);
     await p.locator('[role="dialog"]').getByRole('button', { name: 'Guardar', exact: true }).click();
     await p.waitForTimeout(1500);
     prova(peticions.meta.length === 0, `només analítica: res de Meta (${peticions.meta.length})`);
-    prova(peticions.google.some((u) => u.includes('G-3LKZXNR4F5')), 'només analítica: Google Analytics carregat');
+    prova(peticions.google.some((u) => u.includes(GA)), 'només analítica: Google Analytics carregat');
     const dl = await dataLayer(p);
     prova(te(dl, (a) => a[0] === 'consent' && a[1] === 'update' && a[2] && a[2].analytics_storage === 'granted'), 'mode de consentiment: analytics_storage obert');
     prova(!te(dl, (a) => a[0] === 'consent' && a[1] === 'update' && a[2] && a[2].ad_storage === 'granted'), 'mode de consentiment: ad_storage tancat');
@@ -113,6 +122,8 @@ const te = (llista, pred) => llista.some(pred);
     let crides = await fb(p);
     prova(te(crides, (c) => c[0] === 'init' && c[1] === PIXEL) && te(crides, (c) => c[0] === 'track' && c[1] === 'PageView'), 'el píxel s\'inicia i compta la pàgina');
     prova(te(crides, (c) => c[0] === 'set' && c[1] === 'autoConfig' && c[2] === false), 'el píxel no llegeix sol els formularis (autoConfig apagat)');
+    const opcions = await p.evaluate(() => window.__fbOpcions || {});
+    prova(opcions.disablePushState === true && opcions.allowDuplicatePageViews === true, 'les pàgines vistes les compta el web: el píxel no mira sol l\'historial (ni els clics a l\'índex) ni descarta les repetides');
     let dl = await dataLayer(p);
     prova(te(dl, (a) => a[0] === 'config' && a[1] === ADS), 'Google Ads configurat');
     prova(te(dl, (a) => a[0] === 'consent' && a[1] === 'update' && a[2] && a[2].ad_storage === 'granted' && a[2].ad_personalization === 'granted'), 'mode de consentiment: publicitat oberta');
@@ -140,6 +151,13 @@ const te = (llista, pred) => llista.some(pred);
     prova(te(dl, (a) => a[0] === 'event' && a[1] === 'conversion' && a[2] && a[2].send_to === `${ADS}/prova`), 'i conversió «Contacto» a Google Ads');
     const tot = JSON.stringify(crides) + JSON.stringify(dl);
     prova(!/612345678|prova@example\.com|Prova"/.test(tot), 'cap dada personal cap a Meta ni Google');
+    // Sense `send_to`, gtag envia l'esdeveniment a tots els destinataris: també a Google Ads,
+    // amb els seus paràmetres (el resultat de la calculadora, el dia de la demo)
+    const sense = dl.filter((a) => a[0] === 'event' && !(a[2] && a[2].send_to));
+    prova(sense.length === 0, `cap esdeveniment de Google sense destinatari (${sense.map((a) => a[1]).join(', ') || 'cap'})`);
+    const desenvolupament = await p.evaluate(() => !!document.querySelector('script[src*="/@vite/client"]'));
+    if (desenvolupament) console.log("--  en desenvolupament track() no envia res a Analytics: la comprovació següent necessita el web construït (vegeu la capçalera)");
+    else prova(te(dl, (a) => a[0] === 'event' && a[1] === 'empezar_datos' && a[2] && a[2].send_to === GA), 'els esdeveniments del web van només a Google Analytics');
 
     // Canviar d'opinió: «Cambiar mis preferencias» → «Rechazar»
     await p.evaluate(() => { document.cookie = '_fbp=fb.1.123.456; path=/'; document.cookie = '_gcl_au=1.1.789; path=/'; });
@@ -162,16 +180,30 @@ const te = (llista, pred) => llista.some(pred);
     await ctx.close();
   }
 
-  // ── 5. Una resposta d'abans (sense publicitat) torna a preguntar ──
-  {
-    const { ctx } = await context(b);
-    await ctx.addInitScript(() => { try { localStorage.setItem('hostly_galetes', JSON.stringify({ analitiques: true, data: Date.now() })); } catch (e) {} });
+  // ── 5. Respostes desades d'abans: només val la que va dir sí o no a aquestes mateixes eines ──
+  async function ambResposta(valor) {
+    const { ctx, peticions } = await context(b);
+    await ctx.addInitScript((v) => { try { localStorage.setItem('hostly_galetes', v); } catch (e) {} }, valor);
     const p = await ctx.newPage();
     await p.goto(PUBLI + '/es', { waitUntil: 'load' });
     await p.waitForTimeout(2500);
-    prova(await p.locator('[role="dialog"]').count() === 1, 'una resposta d\'abans de la publicitat torna a preguntar');
+    const r = { banner: await p.locator('[role="dialog"]').count() === 1, meta: peticions.meta.length };
     await ctx.close();
+    return r;
   }
+  const ara = () => Date.now();
+  let r = await ambResposta(JSON.stringify({ analitiques: true, data: ara() }));
+  prova(r.banner && r.meta === 0, 'una resposta d\'abans de la publicitat torna a preguntar');
+  if (respostaSenseIds) {
+    r = await ambResposta(respostaSenseIds);
+    prova(r.banner && r.meta === 0, 'la resposta desada al web sense identificadors torna a preguntar quan n\'hi ha');
+  }
+  r = await ambResposta(JSON.stringify({ analitiques: true, publicitat: false, data: ara() }));
+  prova(r.banner, 'un «no» desat sense dir a quines eines (versió 16) torna a preguntar');
+  r = await ambResposta(JSON.stringify({ analitiques: true, publicitat: true, eines: 'meta', data: ara() }));
+  prova(r.banner && r.meta === 0, 'un sí només a Meta no val per a Meta i Google: torna a preguntar');
+  r = await ambResposta(JSON.stringify({ analitiques: true, publicitat: true, eines: 'meta+google', data: ara() }));
+  prova(!r.banner && r.meta > 0, 'un sí a aquestes mateixes eines no torna a preguntar i carrega el píxel');
 
   await b.close();
   console.log(`\n${ok} ok · ${ko} KO`);
