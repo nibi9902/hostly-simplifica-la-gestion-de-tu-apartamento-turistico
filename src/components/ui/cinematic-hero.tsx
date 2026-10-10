@@ -431,6 +431,8 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
       ref={containerRef}
       className={cn("relative w-screen h-screen overflow-hidden flex items-center justify-center bg-background font-sans antialiased", className)}
       style={{ perspective: "1500px" }}
+      // L'entrada ocupa tota la pantalla a propòsit: la prova de l'amplada no hi busca la línia del contingut
+      data-amplada="vora"
       {...props}
     >
       <style dangerouslySetInnerHTML={{ __html: INJECTED_STYLES }} />
@@ -452,7 +454,7 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
       </div>
 
       {/* ── CTA final — fons blanc, text fosc ── */}
-      <div className="cta-wrapper absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6 md:px-12 lg:px-20 gsap-reveal pointer-events-auto will-change-transform">
+      <div className="cta-wrapper absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-[var(--web-marge)] gsap-reveal pointer-events-auto will-change-transform">
 
         {/* Partner badges */}
         <div className="hero-cta-partners mb-12 md:mb-14 w-full max-w-3xl">
@@ -578,7 +580,7 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
         >
           <div className="card-sheen" aria-hidden="true" />
 
-          <div className="relative w-full h-full max-w-7xl mx-auto px-4 lg:px-12 flex flex-col justify-evenly lg:grid lg:grid-cols-3 items-center lg:gap-8 z-10 py-6 lg:py-0">
+          <div className="contenidor relative h-full flex flex-col justify-evenly lg:grid lg:grid-cols-3 items-center lg:gap-8 z-10 py-6 lg:py-0">
 
             {/* Top (mobile) / Right (desktop): Brand */}
             <div className="card-right-text gsap-reveal order-1 lg:order-3 hidden lg:flex justify-end z-40 w-full">

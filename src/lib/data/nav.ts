@@ -86,8 +86,8 @@ export const NAV: NavConfig = {
           footerLabel: 'Ver todas las alternativas',
           items: [
             { label: 'Hostly vs Chekin',     href: '/comparativa/chekin',      description: 'Check-in gratis vs pagar por cada entrada.' },
-            { label: 'Hostly vs Icnea',      href: '/alternativas/icnea',      description: 'La opción ibérica vs el veterano.' },
-            { label: 'Hostly vs Hostify',    href: '/alternativas/hostify',    description: 'El rival #1 en España.' },
+            { label: 'Hostly vs Icnea',      href: '/alternativas/icnea',      description: 'Precio por piso vs cuota fija por tramos.' },
+            { label: 'Hostly vs Hostify',    href: '/alternativas/hostify',    description: 'Desde 5 unidades vs desde 1 piso.' },
             { label: 'Hostly vs Smoobu',     href: '/alternativas/smoobu',     description: 'App simple vs alternativa con IA.' },
             { label: 'Hostly vs Guesty',     href: '/alternativas/guesty',     description: 'El gigante global vs la app para España.' },
             { label: 'Hostly vs Avantio',    href: '/alternativas/avantio',    description: 'El PMS veterano vs el sistema moderno.' },

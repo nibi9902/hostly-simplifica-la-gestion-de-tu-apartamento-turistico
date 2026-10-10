@@ -2,7 +2,9 @@
   "common": {
     "eyebrow": "Legal",
     "last_updated": "Última actualització: {{date}}",
-    "last_updated_value": "octubre de 2026"
+    "last_updated_value": "octubre de 2026",
+    "index": "Índex",
+    "otras": "Altres pàgines legals"
   },
   "privacidad": {
     "title": "Política de privacitat | Hostly",

@@ -1,4 +1,5 @@
 import PageShell from "@/components/PageShell";
+import PaginaLegal from "./PaginaLegal";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { useTranslation } from "react-i18next";
 import { TITULAR } from "@/lib/titular";
@@ -8,7 +9,6 @@ const APP_URL = "https://app.hostlylabs.com";
 
 export default function Terminos() {
   const { t } = useTranslation("legal");
-  const date = t("common.last_updated_value");
 
   return (
     <PageShell
@@ -22,17 +22,7 @@ export default function Terminos() {
         ]),
       ]}
     >
-      <div className="pt-28 pb-24 px-6 md:px-12 lg:px-20">
-        <div className="max-w-3xl mx-auto prose prose-slate prose-base">
-          <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
-            {t("common.eyebrow")}
-          </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-2 not-prose">
-            {t("terminos.h1")}
-          </h1>
-          <p className="text-sm text-slate-500 mb-10 not-prose">
-            {t("common.last_updated", { date })}
-          </p>
+      <PaginaLegal titol={t("terminos.h1")} actual="terminos">
 
           <h2>{t("terminos.h2_1")}</h2>
           <p>{t("terminos.p_1", { appUrl: APP_URL, titular: TITULAR.nom, nif: TITULAR.nif })}</p>
@@ -91,8 +81,7 @@ export default function Terminos() {
           <p>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </p>
-        </div>
-      </div>
+      </PaginaLegal>
     </PageShell>
   );
 }

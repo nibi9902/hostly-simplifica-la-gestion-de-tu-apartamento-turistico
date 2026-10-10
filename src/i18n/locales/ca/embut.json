@@ -67,6 +67,28 @@
       "mientras": "Mentrestant, si vols, crea el teu compte gratis.",
       "mientras_boton": "Crear el meu compte gratis",
       "cambiar": "Canviar l'hora"
+    },
+    "costat": {
+      "titulo": "Com funciona",
+      "pasos": [
+        {
+          "titulo": "Les teves dades",
+          "texto": "Et truquem si t'encalles i t'ajudem a posar-ho en marxa."
+        },
+        {
+          "titulo": "Tries el pla",
+          "texto": "Gratis: el check-in i la policia, per sempre. Complet: 40 € al mes per apartament, el primer mes gratis."
+        },
+        {
+          "titulo": "Comences",
+          "texto": "Amb el Gratis, et crees el compte al moment. Amb el Complet, una demo de 20 minuts i, si encaixa, l'activem el mateix dia."
+        }
+      ],
+      "garantias": [
+        "Sense targeta",
+        "Sense permanència",
+        "Suport en castellà i català"
+      ]
     }
   },
   "calcula": {
@@ -159,6 +181,23 @@
       ],
       "ahorro": "T'estalvies {{euros}} al mes.",
       "por_hora": "Surt a uns {{euros}} per cada hora que avui hi dediques."
+    },
+    "como": {
+      "titulo": "Com ho calculem",
+      "items": [
+        {
+          "titulo": "El que pagues avui",
+          "texto": "El preu que publica cada eina (octubre de 2026), per apartament i mes."
+        },
+        {
+          "titulo": "El teu temps",
+          "texto": "Les hores que ens dius, a la setmana i a l'any."
+        },
+        {
+          "titulo": "Amb Hostly",
+          "texto": "40 € al mes per pis; 35 € des de 5 pisos. El check-in i la policia, gratis."
+        }
+      ]
     }
   },
   "llamame": {

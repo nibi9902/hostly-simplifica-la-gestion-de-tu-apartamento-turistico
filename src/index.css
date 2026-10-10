@@ -93,6 +93,40 @@
   }
 }
 
+/* ── La caixa del web (10-10-2026) ──
+   Fins al 10-10 cada secció triava la seva amplada (768, 896, 1024, 1152 o 1200 px) i el capçal i el
+   peu en tenien una altra: a l'ordinador el contingut feia salts d'una secció a l'altra i, en una
+   pantalla gran, quedava una franja al mig amb dos marges buits. Ara el contingut de totes les
+   pàgines (capçal, seccions i peu) comença i acaba a la mateixa línia: com a molt 1440 px, i els
+   marges creixen amb la pantalla (20 px al mòbil, 32 a la tauleta, 48 i 64 a l'ordinador).
+   Les regles i les excepcions: docs/MAQUETACIO.md · la prova: scripts/revisio/prova-amplada.cjs */
+@layer base {
+  :root {
+    --web-ample: 1440px;
+    --web-marge: 20px;
+  }
+  @media (min-width: 640px) { :root { --web-marge: 32px; } }
+  @media (min-width: 1024px) { :root { --web-marge: 48px; } }
+  @media (min-width: 1280px) { :root { --web-marge: 64px; } }
+}
+
+@layer components {
+  /* La caixa: el fons de la secció va d'una vora a l'altra; el contingut, aquí dins */
+  .contenidor {
+    width: 100%;
+    max-width: calc(var(--web-ample) + 2 * var(--web-marge));
+    margin-inline: auto;
+    padding-inline: var(--web-marge);
+  }
+  /* Una fila que llisca amb el dit (mòbil): arriba fins a les vores de la pantalla, però la primera
+     targeta comença a la línia del contingut */
+  .fins-a-la-vora {
+    margin-inline: calc(-1 * var(--web-marge));
+    padding-inline: var(--web-marge);
+    scroll-padding-inline: var(--web-marge);
+  }
+}
+
 @layer base {
   /* Títols sense paraules soles a l'última línia («hace.», «hoy.»), i paràgrafs més ben repartits */
   h1, h2, h3 { text-wrap: balance; }
@@ -268,10 +302,11 @@
   .hero-cta-stat-pill > span:first-child {
     font-size: 0.875rem !important;
   }
+  /* Els botons, a l'amplada del contingut com a la resta de la web (abans, 16 px més endins) */
   .hero-cta-buttons {
     gap: 0.75rem !important;
     width: 100% !important;
-    padding: 0 1rem !important;
+    padding: 0 !important;
   }
   .hero-cta-btn {
     padding: 0.875rem 2rem !important;

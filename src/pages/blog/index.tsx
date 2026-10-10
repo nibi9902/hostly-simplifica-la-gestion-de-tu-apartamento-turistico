@@ -78,8 +78,8 @@ export default function BlogIndex() {
       ]}
     >
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f0f6ff] to-white">
-        <div className="max-w-5xl mx-auto">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-[#f0f6ff] to-white">
+        <div className="contenidor">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
             <p className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-5">{t('index.eyebrow')}</p>
             <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight leading-[1.05] mb-6">
@@ -110,8 +110,8 @@ export default function BlogIndex() {
 
       {/* Article destacat */}
       {featured && (
-        <section className="py-12 px-6 md:px-12 lg:px-20 bg-white border-b border-slate-100">
-          <div className="max-w-5xl mx-auto">
+        <section className="py-12 bg-white border-b border-slate-100">
+          <div className="contenidor">
             <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-6">{t('index.featured_eyebrow')}</p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -145,8 +145,8 @@ export default function BlogIndex() {
       )}
 
       {/* Articles per categoria */}
-      <section className="py-16 px-6 md:px-12 lg:px-20">
-        <div className="max-w-5xl mx-auto space-y-20">
+      <section className="py-16">
+        <div className="contenidor space-y-20">
           {CATEGORY_KEYS.map((cat, ci) => {
             const posts = cat.slugs.map((s) => blogPosts.find((p) => p.slug === s)).filter(Boolean);
             if (!posts.length) return null;
@@ -204,8 +204,8 @@ export default function BlogIndex() {
       </section>
 
       {/* CTA final */}
-      <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#f8fafc] border-t border-slate-100">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="py-20 bg-[#f8fafc] border-t border-slate-100">
+        <div className="contenidor text-center">
           <p className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-4">{t('index.final_eyebrow')}</p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-4">
             {t('index.final_title')}

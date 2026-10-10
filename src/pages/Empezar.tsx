@@ -140,7 +140,7 @@ export default function Empezar() {
 
       {/* Capçal mínim: on ets i com tornar. Res més que distregui. */}
       <header className="sticky top-0 z-40 bg-background/90 backdrop-blur-md border-b border-slate-100">
-        <div className="max-w-3xl mx-auto h-16 px-5 sm:px-6 flex items-center justify-between gap-4">
+        <div className="contenidor h-16 flex items-center justify-between gap-4">
           <LangLink to="/" className="flex items-center gap-1 shrink-0" aria-label={t("empezar.inicio")}>
             <img src={hostlyLogo} alt="" width={28} height={28} className="h-7 w-auto" />
             <span className="font-semibold text-base tracking-tight text-foreground">Hostly™</span>
@@ -164,7 +164,9 @@ export default function Empezar() {
         </div>
       </header>
 
-      <main className="flex-1 w-full max-w-xl mx-auto px-5 sm:px-6 pt-10 sm:pt-16 pb-20">
+      {/* A l'ordinador: el pas a l'esquerra (a la línia del logotip) i, al costat, com va tot plegat */}
+      <main className="flex-1 contenidor pt-10 sm:pt-16 pb-20 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-start">
+        <div className="w-full max-w-xl lg:col-span-6 xl:col-span-5">
         {enrere[pas] && (
           <button
             type="button"
@@ -481,6 +483,45 @@ export default function Empezar() {
             </motion.section>
           )}
         </AnimatePresence>
+        </div>
+
+        <aside className="hidden lg:block lg:col-span-6 xl:col-span-6 xl:col-start-7 lg:sticky lg:top-28">
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 xl:p-10">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-6">{t("empezar.costat.titulo")}</p>
+            <ol className="space-y-6">
+              {(t("empezar.costat.pasos", { returnObjects: true }) as Array<{ titulo: string; texto: string }>).map((p, i) => {
+                const n = i + 1;
+                const fet = n < NUM_PAS[pas];
+                const ara = n === NUM_PAS[pas];
+                return (
+                  <li key={p.titulo} className="flex gap-4" aria-current={ara ? "step" : undefined}>
+                    <span
+                      className={cn(
+                        "w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0 transition-colors duration-300",
+                        fet ? "bg-emerald-100 text-emerald-700" : ara ? "bg-primary text-white" : "bg-slate-100 text-slate-500",
+                      )}
+                      aria-hidden="true"
+                    >
+                      {fet ? <Check className="w-4 h-4" strokeWidth={3} /> : n}
+                    </span>
+                    <div>
+                      <p className={cn("font-semibold leading-snug", ara ? "text-foreground" : "text-slate-600")}>{p.titulo}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed mt-1">{p.texto}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+            <ul className="mt-8 pt-6 border-t border-slate-100 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
+              {(t("empezar.costat.garantias", { returnObjects: true }) as string[]).map((g) => (
+                <li key={g} className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-600" strokeWidth={2.5} aria-hidden="true" />
+                  {g}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
       </main>
     </div>
   );

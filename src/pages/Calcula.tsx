@@ -144,11 +144,27 @@ export default function Calcula() {
 
   return (
     <PageShell title={t("calcula.meta_title")} description={t("calcula.meta_desc")} path="/calcula">
-      <section className="pt-32 md:pt-40 pb-24 px-5 sm:px-6">
-        <div className="max-w-xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">{t("calcula.eyebrow")}</p>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-3">{t("calcula.titulo")}</h1>
-          <p className="text-lg text-muted-foreground mb-10">{t("calcula.subtitulo")}</p>
+      {/* A l'ordinador: el títol i com es calcula a l'esquerra, les preguntes a la dreta */}
+      <section className="pt-32 md:pt-40 pb-24">
+        <div className="contenidor lg:grid lg:grid-cols-12 lg:gap-16 lg:items-start">
+          <div className="lg:col-span-5 lg:sticky lg:top-28">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">{t("calcula.eyebrow")}</p>
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-3">{t("calcula.titulo")}</h1>
+            <p className="text-lg text-muted-foreground mb-10">{t("calcula.subtitulo")}</p>
+            <div className="hidden lg:block rounded-3xl border border-slate-200 bg-white p-7">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">{t("calcula.como.titulo")}</p>
+              <ul className="space-y-4">
+                {(t("calcula.como.items", { returnObjects: true }) as Array<{ titulo: string; texto: string }>).map((x) => (
+                  <li key={x.titulo}>
+                    <p className="font-semibold text-foreground text-sm">{x.titulo}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-0.5">{x.texto}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="w-full max-w-xl lg:col-span-7">
 
           {pas < TOTAL && (
             <div className="flex items-center justify-between mb-5">
@@ -354,6 +370,7 @@ export default function Calcula() {
               </motion.div>
             ) : null}
           </AnimatePresence>
+          </div>
         </div>
       </section>
     </PageShell>

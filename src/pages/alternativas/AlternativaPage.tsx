@@ -32,11 +32,11 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
       ]}
     >
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f8fafc] to-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="pt-32 pb-16 bg-gradient-to-b from-[#f8fafc] to-white">
+        <div className="contenidor">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
             <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-4">{t('page.heroEyebrow')}</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#0f172a] tracking-tight mb-5 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#0f172a] tracking-tight mb-5 leading-tight max-w-4xl">
               {c.tagline}
             </h1>
             <p className="text-lg text-slate-500 max-w-2xl leading-relaxed mb-4">{c.target}</p>
@@ -46,10 +46,11 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
       </section>
 
       {/* Ventajas Hostly */}
-      <section className="py-16 px-6 md:px-12 lg:px-20">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16">
+        <div className="contenidor">
           <p className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-8">{t('page.advantagesEyebrow', { name: c.name })}</p>
-          <div className="grid md:grid-cols-2 gap-5 md:[&>*:last-child:nth-child(odd)]:col-span-2">
+          {/* Cinc avantatges: a l'ordinador, tres i dos (l'última fa dues columnes); a la tauleta, dues i dues i una de sencera */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:[&>*:last-child:nth-child(odd)]:col-span-2">
             {c.advantages.map((adv, i) => (
               <motion.div
                 key={adv.title}
@@ -68,8 +69,8 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
       </section>
 
       {/* Tabla comparativa */}
-      <section className="py-16 px-6 md:px-12 lg:px-20 bg-[#f8fafc]">
-        <div className="max-w-3xl mx-auto">
+      <section className="py-16 bg-[#f8fafc]">
+        <div className="contenidor">
           <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-6">{t('page.comparisonEyebrow')}</p>
           <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white">
             <div className="grid grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] bg-[#0f172a] text-white text-xs sm:text-sm font-semibold">
@@ -103,10 +104,10 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
 
       {/* FAQs */}
       {c.faqs.length > 0 && (
-        <section className="py-16 px-6 md:px-12 lg:px-20">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-6">{t('page.faqsEyebrow')}</p>
-            <div className="space-y-4">
+        <section className="py-16">
+          <div className="contenidor grid gap-x-16 lg:grid-cols-12">
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-6 lg:col-span-4">{t('page.faqsEyebrow')}</p>
+            <div className="space-y-4 lg:col-span-8">
               {c.faqs.map((faq) => (
                 <div key={faq.q} className="bg-[#f8fafc] border border-slate-100 rounded-2xl p-6">
                   <p className="font-bold text-[#0f172a] mb-2">{faq.q}</p>
@@ -119,16 +120,18 @@ export default function AlternativaPage({ competitor: c }: { competitor: Competi
       )}
 
       {/* CTA */}
-      <section className="py-24 px-6 text-center" style={{ background: 'linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)' }}>
-        <h2 className="text-4xl font-bold text-white tracking-tight mb-5">
-          {t('page.ctaH2')}
-        </h2>
-        <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-          {t('page.ctaSubtitle')}
-        </p>
-        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300">
-          {t('page.ctaButton')} <ArrowRight className="w-4 h-4" />
-        </button>
+      <section className="py-24 text-center" style={{ background: 'linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)' }}>
+        <div className="contenidor">
+          <h2 className="text-4xl font-bold text-white tracking-tight mb-5">
+            {t('page.ctaH2')}
+          </h2>
+          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
+            {t('page.ctaSubtitle')}
+          </p>
+          <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300">
+            {t('page.ctaButton')} <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </section>
     </PageShell>
   );

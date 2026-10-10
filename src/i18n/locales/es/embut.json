@@ -67,6 +67,28 @@
       "mientras": "Mientras tanto, si quieres, crea tu cuenta gratis.",
       "mientras_boton": "Crear mi cuenta gratis",
       "cambiar": "Cambiar la hora"
+    },
+    "costat": {
+      "titulo": "Cómo funciona",
+      "pasos": [
+        {
+          "titulo": "Tus datos",
+          "texto": "Te llamamos si te atascas y te ayudamos a ponerlo en marcha."
+        },
+        {
+          "titulo": "Eliges plan",
+          "texto": "Gratis: el check-in y la policía, para siempre. Completo: 40 € al mes por apartamento, el primer mes gratis."
+        },
+        {
+          "titulo": "Empiezas",
+          "texto": "Con el Gratis, creas tu cuenta al momento. Con el Completo, una demo de 20 minutos y, si encaja, lo activamos ese mismo día."
+        }
+      ],
+      "garantias": [
+        "Sin tarjeta",
+        "Sin permanencia",
+        "Soporte en castellano y catalán"
+      ]
     }
   },
   "calcula": {
@@ -159,6 +181,23 @@
       ],
       "ahorro": "Te ahorras {{euros}} al mes.",
       "por_hora": "Sale a unos {{euros}} por cada hora que hoy dedicas a esto."
+    },
+    "como": {
+      "titulo": "Cómo lo calculamos",
+      "items": [
+        {
+          "titulo": "Lo que pagas hoy",
+          "texto": "El precio que publica cada herramienta (octubre de 2026), por apartamento y mes."
+        },
+        {
+          "titulo": "Tu tiempo",
+          "texto": "Las horas que nos dices, a la semana y al año."
+        },
+        {
+          "titulo": "Con Hostly",
+          "texto": "40 € al mes por piso; 35 € desde 5 pisos. El check-in y la policía, gratis."
+        }
+      ]
     }
   },
   "llamame": {

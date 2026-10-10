@@ -16,14 +16,14 @@ const PricingBlock = () => {
   return (
     <section
       id="precios"
-      className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-background"
+      className="py-24 md:py-32 bg-background"
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease }}
-        className="max-w-5xl mx-auto"
+        className="contenidor"
       >
         {/* ── Header ── */}
         <div className="text-center mb-14">
@@ -35,8 +35,12 @@ const PricingBlock = () => {
           </p>
         </div>
 
+        {/* A l'ordinador gran: els dos plans a l'esquerra (8 columnes) i, al costat, «Te llamo», la
+            calculadora i els referits. Més estret, tot un sota l'altre, com abans. */}
+        <div className="grid gap-10 xl:grid-cols-12 xl:gap-6">
+
         {/* ── Two-tier grid ── */}
-        <div className="grid lg:grid-cols-2 gap-5 md:gap-6 mb-10">
+        <div className="grid lg:grid-cols-2 gap-5 md:gap-6 xl:col-span-8">
 
           {/* ─── TIER GRATIS ─── */}
           <div className="relative rounded-3xl bg-card border border-border p-6 md:p-10 flex flex-col">
@@ -146,11 +150,12 @@ const PricingBlock = () => {
 
         </div>
 
+        <div className="flex flex-col gap-10 xl:col-span-4 xl:gap-6">
         {/* ── Qui dubta del preu: que el truqui el Biel (el telèfon li arriba al moment) ── */}
-        <Llamame className="mb-10" />
+        <Llamame columnaXl />
 
         {/* ── Qui dubta del preu: la calculadora fa els números amb els seus pisos ── */}
-        <div className="text-center mb-10">
+        <div className="text-center xl:order-last">
           <LangLink
             to="/calcula"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline underline-offset-4"
@@ -169,7 +174,7 @@ const PricingBlock = () => {
             </span>
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7 xl:flex-col xl:items-start xl:gap-5">
             {/* Formula visual */}
             <div className="flex items-center gap-4 flex-shrink-0">
               <div className="text-center">
@@ -188,7 +193,7 @@ const PricingBlock = () => {
             </div>
 
             {/* Explicació */}
-            <div className="flex-1 sm:border-l sm:border-primary/15 sm:pl-7">
+            <div className="flex-1 sm:border-l sm:border-primary/15 sm:pl-7 xl:border-l-0 xl:pl-0">
               <p className="font-semibold text-foreground text-sm leading-snug mb-1">
                 {t("pricing.referral_title")}
               </p>
@@ -197,6 +202,8 @@ const PricingBlock = () => {
               </p>
             </div>
           </div>
+        </div>
+        </div>
         </div>
 
       </motion.div>

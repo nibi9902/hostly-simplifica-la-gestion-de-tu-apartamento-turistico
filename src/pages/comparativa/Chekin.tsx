@@ -50,14 +50,14 @@ export default function ComparativaChekin() {
       ]}
     >
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f8fafc] to-white">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-[#f8fafc] to-white">
+        <div className="contenidor">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">{t("chekin.hero_eyebrow")}</p>
-            <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight max-w-4xl">
               {t("chekin.hero_heading")}
             </h1>
-            <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-500 max-w-2xl leading-relaxed">
               {t("chekin.hero_body")}
             </p>
           </motion.div>
@@ -65,8 +65,8 @@ export default function ComparativaChekin() {
       </section>
 
       {/* Quiénes son */}
-      <section className="py-16 px-6 md:px-12 lg:px-20">
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+      <section className="py-16">
+        <div className="contenidor grid md:grid-cols-2 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, ease }}
             className="rounded-2xl border border-slate-200 p-8"
@@ -97,8 +97,8 @@ export default function ComparativaChekin() {
       </section>
 
       {/* Tabla comparativa */}
-      <section className="py-16 px-6 md:px-12 lg:px-20 bg-[#f8fafc]">
-        <div className="max-w-3xl mx-auto">
+      <section className="py-16 bg-[#f8fafc]">
+        <div className="contenidor">
           <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight mb-10 text-center">{t("chekin.table_heading")}</h2>
           <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white">
             {/* Header */}
@@ -136,8 +136,8 @@ export default function ComparativaChekin() {
       </section>
 
       {/* Coste anual */}
-      <section className="py-16 px-6 md:px-12 lg:px-20">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16">
+        <div className="contenidor">
           <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight mb-4 text-center">{t("chekin.cost_heading")}</h2>
           <p className="text-slate-500 text-center max-w-xl mx-auto mb-10">{t("chekin.cost_subheading")}</p>
           <div className="grid md:grid-cols-2 gap-6">
@@ -170,10 +170,10 @@ export default function ComparativaChekin() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 px-6 md:px-12 lg:px-20">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight mb-10">{t("chekin.faq_heading")}</h2>
-          <div className="space-y-6">
+      <section className="py-16">
+        <div className="contenidor grid gap-x-16 lg:grid-cols-12">
+          <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight mb-10 lg:col-span-4 lg:self-start lg:sticky lg:top-28">{t("chekin.faq_heading")}</h2>
+          <div className="space-y-6 lg:col-span-8">
             {faqs.map((f) => (
               <div key={f.q} className="bg-[#f8fafc] rounded-2xl border border-slate-100 p-6">
                 <p className="font-bold text-[#0f172a] mb-2">{f.q}</p>
@@ -185,18 +185,20 @@ export default function ComparativaChekin() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
-        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 whitespace-pre-line">
-          {t("chekin.cta_heading")}
-        </h2>
-        <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-          {t("chekin.cta_body")}
-        </p>
-        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
-        >
-          {t("chekin.cta_button")}
-          <ArrowRight className="w-4 h-4" />
-        </button>
+      <section className="py-24 text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
+        <div className="contenidor">
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 whitespace-pre-line">
+            {t("chekin.cta_heading")}
+          </h2>
+          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
+            {t("chekin.cta_body")}
+          </p>
+          <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
+          >
+            {t("chekin.cta_button")}
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </section>
     </PageShell>
   );

@@ -245,9 +245,27 @@
       "terminos": "Termes",
       "aviso": "Avís legal",
       "sobre": "Sobre Hostly",
-      "contacto": "Contacte"
+      "contacto": "Contacte",
+      "funcionalidades": "Funcionalitats",
+      "precios": "Preus",
+      "calcula": "Calculadora",
+      "demo": "Veure com funciona",
+      "propietarios": "Propietaris",
+      "gestores": "Gestors petits",
+      "segunda": "Segona residència",
+      "hereus": "Pis heretat",
+      "blog": "Blog",
+      "guia": "Súper Guia de gestió",
+      "alternativas": "Alternatives"
     },
-    "copyright": "© 2026 Hostly™ · Ordre operatiu per a propietaris d'apartaments turístics."
+    "copyright": "© 2026 Hostly™ · Ordre operatiu per a propietaris d'apartaments turístics.",
+    "aria": "Enllaços del peu",
+    "cols": {
+      "producto": "Producte",
+      "para_quien": "Per a qui",
+      "recursos": "Recursos",
+      "hostly": "Hostly"
+    }
   },
   "testimonials": {
     "eyebrow": "En les seves paraules",

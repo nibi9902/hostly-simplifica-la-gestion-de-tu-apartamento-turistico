@@ -15,7 +15,8 @@ import { cn } from "@/lib/utils";
 import { track } from "@/lib/analytics";
 import { dadesRecordades, desaLead, recordaDades, telefonPerBD } from "@/lib/leads";
 
-export default function Llamame({ className }: { className?: string }) {
+/** `columnaXl`: a l'ordinador gran va a la columna estreta del costat dels preus, i allà s'apila. */
+export default function Llamame({ className, columnaXl = false }: { className?: string; columnaXl?: boolean }) {
   const { t } = useTranslation("embut");
   const { lang } = useLang();
   const [telefon, setTelefon] = useState(() => {
@@ -40,8 +41,8 @@ export default function Llamame({ className }: { className?: string }) {
   }
 
   return (
-    <div className={cn("rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 flex flex-col md:flex-row md:items-center gap-6", className)}>
-      <div className="flex items-start gap-4 md:flex-1">
+    <div className={cn("rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 flex flex-col gap-6 md:flex-row md:items-center", columnaXl && "xl:flex-col xl:items-stretch", className)}>
+      <div className={cn("flex items-start gap-4 md:flex-1", columnaXl && "xl:flex-none")}>
         <span className="w-12 h-12 rounded-full bg-foreground text-white flex items-center justify-center font-semibold text-lg shrink-0" aria-hidden="true">
           B
         </span>
@@ -53,13 +54,13 @@ export default function Llamame({ className }: { className?: string }) {
       </div>
 
       {fet ? (
-        <p className="md:flex-1 flex items-center gap-2 text-emerald-700 font-semibold" role="status">
+        <p className={cn("flex items-center gap-2 text-emerald-700 font-semibold md:flex-1", columnaXl && "xl:flex-none")} role="status">
           <Check className="w-5 h-5" strokeWidth={2.5} />
           {t("llamame.hecho")}
         </p>
       ) : (
-        <form onSubmit={envia} noValidate className="md:flex-1">
-          <div className="flex flex-col sm:flex-row gap-2.5">
+        <form onSubmit={envia} noValidate className={cn("md:flex-1", columnaXl && "xl:flex-none")}>
+          <div className={cn("flex flex-col gap-2.5 sm:flex-row", columnaXl && "xl:flex-col")}>
             <label htmlFor="llamame-tel" className="sr-only">{t("empezar.datos.telefono")}</label>
             <input
               id="llamame-tel"
@@ -72,7 +73,8 @@ export default function Llamame({ className }: { className?: string }) {
               aria-invalid={!!error}
               aria-describedby={error ? "llamame-error" : undefined}
               className={cn(
-                "sm:flex-1 min-w-0 h-12 shrink-0 px-5 rounded-full border bg-white text-base text-foreground placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15 focus-visible:border-primary",
+                "sm:flex-1", columnaXl && "xl:flex-none",
+                "min-w-0 h-12 shrink-0 px-5 rounded-full border bg-white text-base text-foreground placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15 focus-visible:border-primary",
                 error ? "border-rose-300" : "border-slate-200",
               )}
             />

@@ -14,6 +14,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function AlternativasIndex() {
   const { t } = useTranslation('alternativas');
+  const { t: tComp } = useTranslation('comparativa');
   // Castellà o català segons l'idioma de la URL.
   const competitors = useCompetitors();
 
@@ -29,8 +30,8 @@ export default function AlternativasIndex() {
         ]),
       ]}
     >
-      <section className="pt-32 pb-16 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f8fafc] to-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="pt-32 pb-16 bg-gradient-to-b from-[#f8fafc] to-white">
+        <div className="contenidor">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
             <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-4">{t('index.eyebrow')}</p>
             <h1 className="text-4xl md:text-5xl font-bold text-[#0f172a] tracking-tight mb-5 leading-tight">
@@ -44,8 +45,8 @@ export default function AlternativasIndex() {
       </section>
 
       {/* El que distingeix Hostly (només afirmacions sobre Hostly) */}
-      <section className="py-16 px-6 md:px-12 lg:px-20 bg-[#f8fafc] border-y border-slate-100">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16 bg-[#f8fafc] border-y border-slate-100">
+        <div className="contenidor">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,12 +71,14 @@ export default function AlternativasIndex() {
         </div>
       </section>
 
-      <section className="py-16 px-6 md:px-12 lg:px-20">
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-5">
-          {competitors.map((c, i) => (
+      {/* Les set alternatives i la comparativa amb Chekin: vuit targetes, dues files plenes de quatre a l'ordinador */}
+      <section className="py-16">
+        <div className="contenidor grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+          {[...competitors.map((c) => ({ slug: c.slug, href: `/alternativas/${c.slug}`, name: c.name, target: c.target })),
+            { slug: 'chekin', href: '/comparativa/chekin', name: 'Chekin', target: tComp('chekin.who_chekin_heading') }].map((c, i) => (
             <MotionLangLink
               key={c.slug}
-              to={`/alternativas/${c.slug}`}
+              to={c.href}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -20,7 +20,7 @@ export default function Demo() {
     >
       {/* Hero fosc — no tot en blanc, fons naval que dona profunditat */}
       <section
-        className="relative flex flex-col items-center justify-center px-6 pt-24 pb-20 md:pt-32 md:pb-24 overflow-hidden"
+        className="relative flex flex-col items-center justify-center pt-24 pb-20 md:pt-32 md:pb-24 overflow-hidden"
         style={{ background: "linear-gradient(160deg, #0c1a4a 0%, #0f172a 60%, #111827 100%)" }}
       >
         {/* Glow blau ambient */}
@@ -40,7 +40,7 @@ export default function Demo() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 w-full max-w-5xl mx-auto text-center"
+          className="contenidor relative z-10 text-center"
         >
           {/* Eyebrow */}
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-white/70 mb-5">
@@ -57,7 +57,7 @@ export default function Demo() {
 
           {/* Video — framing premium amb chrome de browser */}
           <div
-            className="relative w-full rounded-2xl overflow-hidden"
+            className="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden"
             style={{
               boxShadow: "0 0 0 1px rgba(255,255,255,0.08), 0 40px 80px -10px rgba(0,0,0,0.6), 0 8px 32px rgba(0,0,0,0.4)",
             }}
@@ -95,8 +95,8 @@ export default function Demo() {
       </section>
 
       {/* Contextualització — fons blanc, 3 punts clau del que es veu al vídeo */}
-      <section className="py-16 md:py-20 px-6 md:px-12 lg:px-20 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16 md:py-20 bg-white">
+        <div className="contenidor">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-10 md:text-center">
             {t("demo.video_section_eyebrow")}
           </p>

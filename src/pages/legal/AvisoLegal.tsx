@@ -1,4 +1,5 @@
 import PageShell from "@/components/PageShell";
+import PaginaLegal from "./PaginaLegal";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { useTranslation } from "react-i18next";
 import { TITULAR } from "@/lib/titular";
@@ -8,7 +9,6 @@ const DOMAIN = TITULAR.web;
 
 export default function AvisoLegal() {
   const { t } = useTranslation("legal");
-  const date = t("common.last_updated_value");
 
   return (
     <PageShell
@@ -22,17 +22,7 @@ export default function AvisoLegal() {
         ]),
       ]}
     >
-      <div className="pt-28 pb-24 px-6 md:px-12 lg:px-20">
-        <div className="max-w-3xl mx-auto prose prose-slate prose-base">
-          <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
-            {t("common.eyebrow")}
-          </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-2 not-prose">
-            {t("aviso.h1")}
-          </h1>
-          <p className="text-sm text-slate-500 mb-10 not-prose">
-            {t("common.last_updated", { date })}
-          </p>
+      <PaginaLegal titol={t("aviso.h1")} actual="aviso">
 
           <p>{t("aviso.p_intro", { domain: DOMAIN })}</p>
 
@@ -57,8 +47,7 @@ export default function AvisoLegal() {
 
           <h2>{t("aviso.h2_legislacion")}</h2>
           <p>{t("aviso.p_legislacion")}</p>
-        </div>
-      </div>
+      </PaginaLegal>
     </PageShell>
   );
 }

@@ -275,7 +275,7 @@ const Targeta: React.FC<TargetaProps> = ({ card, ambDemo }) => {
   return (
     <div
       className="glass-card-wrapper"
-      style={{ position: 'relative', width: '92%', maxWidth: '1200px', height: 'min(76vh, 680px)', minHeight: '600px', borderRadius: '28px', isolation: 'isolate' }}
+      style={{ position: 'relative', width: 'calc(100% - 2 * var(--web-marge))', maxWidth: 'var(--web-ample)', height: 'min(76vh, 680px)', minHeight: '600px', borderRadius: '28px', isolation: 'isolate' }}
     >
       {/* Conic border glow */}
       <div style={{
@@ -595,6 +595,8 @@ export const GlassCards: React.FC = () => {
     <div
       id="funciones"
       ref={seccioRef}
+      // La tira va d'una vora a l'altra (les targetes veïnes s'hi veuen al mòbil); la targeta, a la línia
+      data-amplada="vora"
       className="pt-8 md:pt-10 pb-12 md:pb-16"
       style={{ background: '#f8fafc' }}
       onPointerEnter={(e) => { if (e.pointerType === 'mouse') setPausa(true); }}

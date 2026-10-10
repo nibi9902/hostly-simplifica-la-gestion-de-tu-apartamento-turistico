@@ -28,8 +28,8 @@ export default function Guia() {
       description={t("guia.meta_description")}
     >
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f0f6ff] to-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="pt-32 pb-16 bg-gradient-to-b from-[#f0f6ff] to-white">
+        <div className="contenidor">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
             <div className="flex items-center gap-3 mb-6">
               <span className="text-xs font-bold uppercase tracking-[0.15em] text-primary bg-[#eff6ff] px-3 py-1.5 rounded-full">
@@ -39,7 +39,7 @@ export default function Guia() {
                 {t("guia.badge_updated")}
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight max-w-4xl">
               {t("guia.heading")}
             </h1>
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl leading-relaxed mb-8">
@@ -57,10 +57,10 @@ export default function Guia() {
       </section>
 
       {/* Índex ràpid */}
-      <section className="py-12 px-6 md:px-12 lg:px-20 bg-[#f8fafc] border-y border-slate-100">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-12 bg-[#f8fafc] border-y border-slate-100">
+        <div className="contenidor">
           <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-5">{t("guia.toc_label")}</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {chapters.map((ch) => (
               <a
                 key={ch.id}
@@ -76,8 +76,8 @@ export default function Guia() {
       </section>
 
       {/* Capítols */}
-      <section className="py-16 px-6 md:px-12 lg:px-20">
-        <div className="max-w-4xl mx-auto space-y-16">
+      <section className="py-16">
+        <div className="contenidor space-y-16">
           {chapters.map((ch, i) => (
             <motion.div
               key={ch.id}
@@ -86,9 +86,10 @@ export default function Guia() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: 0.05, ease }}
+              className="grid gap-8 lg:grid-cols-12 lg:gap-16"
             >
-              {/* Chapter header */}
-              <div className="flex items-start gap-5 mb-8">
+              {/* Chapter header: a l'ordinador, a l'esquerra dels enllaços */}
+              <div className="flex items-start gap-5 lg:col-span-4">
                 <span aria-hidden="true" className="text-3xl font-black text-slate-300 font-mono leading-none mt-1 shrink-0">{ch.num}</span>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] tracking-tight mb-3">{ch.title}</h2>
@@ -97,7 +98,7 @@ export default function Guia() {
               </div>
 
               {/* Links */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ml-0 md:ml-14">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ml-0 md:ml-14 lg:ml-0 lg:col-span-8 lg:self-start">
                 {ch.links.map((link) => (
                   <LangLink
                     key={link.href}
@@ -112,26 +113,28 @@ export default function Guia() {
                 ))}
               </div>
 
-              {i < chapters.length - 1 && <div className="mt-16 border-t border-slate-100" />}
+              {i < chapters.length - 1 && <div className="mt-8 border-t border-slate-100 lg:col-span-12" />}
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70 mb-4">{t("guia.cta_eyebrow")}</p>
-        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 whitespace-pre-line">
-          {t("guia.cta_heading")}
-        </h2>
-        <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-          {t("guia.cta_body")}
-        </p>
-        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
-        >
-          {t("guia.cta_button")}
-          <ArrowRight className="w-4 h-4" />
-        </button>
+      <section className="py-24 text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
+        <div className="contenidor">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70 mb-4">{t("guia.cta_eyebrow")}</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 whitespace-pre-line">
+            {t("guia.cta_heading")}
+          </h2>
+          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
+            {t("guia.cta_body")}
+          </p>
+          <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
+          >
+            {t("guia.cta_button")}
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </section>
     </PageShell>
   );

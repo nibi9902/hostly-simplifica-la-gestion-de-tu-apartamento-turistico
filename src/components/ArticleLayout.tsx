@@ -1,6 +1,6 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { ArrowLeft, Clock, Calendar, ArrowRight, Info } from 'lucide-react';
 import { motion } from 'framer-motion';
 import type { BlogPost } from '@/lib/blog';
@@ -13,6 +13,7 @@ import { blogPostingSchema, breadcrumbSchema } from '@/lib/seo/schemas';
 import { track, trackArticleScrollDepth } from '@/lib/analytics';
 import { articleToFeature } from '@/lib/data/relatedContent';
 import { useTranslation } from 'react-i18next';
+import { IndexLateral, useTitols } from '@/components/IndexLateral';
 import { useLang } from '@/i18n/useLang';
 
 import { useEmpezar } from "@/lib/empezar";
@@ -61,6 +62,51 @@ export default function ArticleLayout({ post }: Props) {
   // Funció relacionada (article → feature link)
   const relatedFeature = articleToFeature[post.slug];
 
+  const cos = useRef<HTMLElement>(null);
+  const { titols, actiu } = useTitols(cos, post.slug);
+
+  // «Empezar»: a la columna del costat (estreta, apilada) o després del text (al mòbil)
+  const cta = (costat: boolean) => (
+    <div
+      className={costat ? 'rounded-3xl p-7 flex flex-col gap-5' : 'rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-6'}
+      style={{ background: 'linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)' }}
+    >
+      <div className={costat ? '' : 'flex-1 text-center md:text-left'}>
+        <p className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 mb-2">{t('article.cta_eyebrow')}</p>
+        <p className={`${costat ? 'text-lg' : 'text-xl md:text-2xl'} font-bold text-white mb-2`}>
+          {t('article.cta_title')}
+        </p>
+        <p className="text-white/60 text-sm leading-relaxed">
+          {t('article.cta_body')}
+        </p>
+      </div>
+      <button
+        type="button"
+        onClick={() => {
+          track('cta_primary_click', { location: costat ? 'article-costat' : 'article', slug: post.slug });
+          empezar();
+        }}
+        className={`${costat ? 'self-start' : 'flex-shrink-0'} inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#0f1f5c] font-semibold text-sm hover:shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap`}
+      >
+        {t('article.cta_button')} <ArrowRight className="w-4 h-4" />
+      </button>
+    </div>
+  );
+
+  // Funció relacionada — link article → feature
+  const funcio = relatedFeature && (
+    <LangLink
+      to={relatedFeature.path}
+      className="flex items-center justify-between gap-4 p-5 rounded-2xl border border-primary/15 bg-[#eff6ff] hover:border-primary/30 hover:bg-[#e0eeff] transition-all duration-200 group"
+    >
+      <div className="flex items-center gap-3">
+        <span className="text-primary text-lg">⚡</span>
+        <p className="text-sm font-semibold text-primary">{lang === 'ca' ? relatedFeature.labelCa : relatedFeature.label}</p>
+      </div>
+      <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+    </LangLink>
+  );
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -88,9 +134,9 @@ export default function ArticleLayout({ post }: Props) {
       />
       <SiteHeader />
 
-      {/* Hero de l'article */}
-      <header className="pt-28 pb-16 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f0f6ff] to-white">
-        <div className="max-w-3xl mx-auto">
+      {/* Hero de l'article: a la línia de tot el web (10-10-2026; abans, una columna de 768 px al mig) */}
+      <header className="pt-28 pb-12 bg-gradient-to-b from-[#f0f6ff] to-white">
+        <div className="contenidor">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease }}>
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-sm text-slate-500 mb-8">
@@ -103,7 +149,7 @@ export default function ArticleLayout({ post }: Props) {
 
             {/* Avís CA — articles encara no traduïts */}
             {lang === 'ca' && (
-              <div className="mb-8 flex items-start gap-3 p-4 rounded-xl border border-amber-200 bg-amber-50/60">
+              <div className="mb-8 max-w-3xl flex items-start gap-3 p-4 rounded-xl border border-amber-200 bg-amber-50/60">
                 <Info className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm font-semibold text-amber-900 leading-snug">
@@ -123,11 +169,11 @@ export default function ArticleLayout({ post }: Props) {
               </span>
             )}
 
-            <h1 className="text-3xl md:text-5xl font-bold text-[#0f172a] tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold text-[#0f172a] tracking-tight leading-[1.1] mb-6 max-w-4xl">
               {post.title}
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-8 max-w-3xl">
               {post.description}
             </p>
 
@@ -153,17 +199,18 @@ export default function ArticleLayout({ post }: Props) {
         </div>
       </header>
 
-      {/* Contingut */}
-      {/* Mateixos marges que la capçalera de l'article (abans el cos començava 32 px més endins) */}
-      <main className="pb-24 px-6 md:px-12 lg:px-20">
-        <div className="max-w-3xl mx-auto">
+      {/* Contingut: a l'ordinador, el text a l'esquerra i, al costat, l'índex i «Empezar» (es queden a la
+          vista mentre es llegeix); al mòbil, tot un sota l'altre com abans */}
+      <main className="pb-24">
+        <div className="contenidor grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease }}
+            className="min-w-0 lg:col-span-8"
           >
-            <article className="
-              prose prose-slate prose-lg max-w-none pt-12
+            <article ref={cos} className="
+              prose prose-slate prose-lg max-w-[70ch] pt-12 break-words
               prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-[#0f172a] prose-headings:scroll-mt-24
               prose-h2:text-2xl prose-h2:mt-14 prose-h2:mb-5 prose-h2:pb-3 prose-h2:border-b prose-h2:border-slate-100
               prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-primary
@@ -189,52 +236,25 @@ export default function ArticleLayout({ post }: Props) {
               </ReactMarkdown>
             </article>
           </motion.div>
-        </div>
 
-        {/* CTA mid-article */}
-        <div className="max-w-3xl mx-auto px-6 md:px-8 mt-16 mb-4">
-          <div className="rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-6" style={{ background: 'linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)' }}>
-            <div className="flex-1 text-center md:text-left">
-              <p className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 mb-2">{t('article.cta_eyebrow')}</p>
-              <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
-                {t('article.cta_title')}
-              </h2>
-              <p className="text-white/60 text-sm leading-relaxed">
-                {t('article.cta_body')}
-              </p>
+          <aside className="hidden lg:block lg:col-span-4">
+            <div className="sticky top-28 pt-12 space-y-8">
+              <IndexLateral titol={t('article.index')} titols={titols} actiu={actiu} />
+              {cta(true)}
+              {funcio}
             </div>
-            <button
-              type="button"
-              onClick={() => {
-                track('cta_primary_click', { location: 'article', slug: post.slug });
-                empezar();
-              }}
-              className="flex-shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#0f1f5c] font-semibold text-sm hover:shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap"
-            >
-              {t('article.cta_button')} <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
+          </aside>
         </div>
 
-        {/* Funció relacionada — link article → feature */}
-        {relatedFeature && (
-          <div className="max-w-3xl mx-auto px-6 md:px-8 mt-6 mb-4">
-            <LangLink
-              to={relatedFeature.path}
-              className="flex items-center justify-between gap-4 p-5 rounded-2xl border border-primary/15 bg-[#eff6ff] hover:border-primary/30 hover:bg-[#e0eeff] transition-all duration-200 group"
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-primary text-lg">⚡</span>
-                <p className="text-sm font-semibold text-primary">{lang === 'ca' ? relatedFeature.labelCa : relatedFeature.label}</p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
-            </LangLink>
-          </div>
-        )}
+        {/* Mòbil i tauleta: «Empezar» i la funció relacionada, després del text */}
+        <div className="contenidor lg:hidden mt-16 space-y-6">
+          {cta(false)}
+          {funcio}
+        </div>
 
         {/* Articles relacionats */}
         {related.length > 0 && (
-          <div className="max-w-3xl mx-auto px-6 md:px-8 mt-16">
+          <div className="contenidor mt-16">
             <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-6">{t('article.related_label')}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {related.map((p, i) => (

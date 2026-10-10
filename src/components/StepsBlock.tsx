@@ -159,8 +159,8 @@ const StepsBlock = () => {
   const headerY = useTransform(headerProgress, [0, 1], [30, 0]);
 
   return (
-    <section id="steps" className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section id="steps" className="py-24 md:py-32 bg-white overflow-hidden">
+      <div className="contenidor">
         {/* Header */}
         <motion.div
           ref={headerRef}

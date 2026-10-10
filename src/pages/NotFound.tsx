@@ -12,7 +12,7 @@ const NotFound = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="flex min-h-screen items-center justify-center bg-background px-6 py-12">
+      <div data-sense-caixa className="flex min-h-screen items-center justify-center bg-background px-6 py-12">
         <div className="text-center max-w-md mx-auto">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
             {t("not_found.badge")}

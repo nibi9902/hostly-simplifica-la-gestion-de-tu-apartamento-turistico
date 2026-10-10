@@ -6,8 +6,8 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const FeaturesBlock = () => {
   const { t } = useTranslation("home");
   return (
-    <section id="features" className="pt-20 md:pt-28 pb-0 px-6 md:px-12 lg:px-20 bg-[#f8fafc]">
-      <div className="max-w-5xl mx-auto">
+    <section id="features" className="pt-20 md:pt-28 pb-0 bg-[#f8fafc]">
+      <div className="contenidor">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import HeroPersona from "./HeroPersona";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { useTranslation } from 'react-i18next';
 import { useEmpezar } from "@/lib/empezar";
@@ -19,34 +20,23 @@ export default function Propietarios() {
       path="/propietarios"
       schemas={[breadcrumbSchema([{ name: 'Hostly', url: '/' }, { name: t("propietarios.breadcrumb_label"), url: '/propietarios' }])]}
     >
-      <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f0f6ff] to-white">
-        <div className="max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">{t("propietarios.badge")}</p>
-            <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight">
-              {t("propietarios.h1").split('\n').map((line, i) => (
-                <span key={i} className="block">{line}</span>
-              ))}
-            </h1>
-            <p className="text-lg md:text-xl text-slate-500 max-w-2xl mb-10 leading-relaxed">
-              {t("propietarios.intro")}
-            </p>
-            <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"
-            >
-              {t("propietarios.cta_primary")}
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <p className="text-sm text-slate-500 mt-3">{t("propietarios.cta_sub")}</p>
-          </motion.div>
-        </div>
-      </section>
+      <HeroPersona
+        badge={t("propietarios.badge")}
+        h1={t("propietarios.h1")}
+        intro={t("propietarios.intro")}
+        cta={t("propietarios.cta_primary")}
+        ctaSub={t("propietarios.cta_sub")}
+        demo="ia-whatsapp"
+        onEmpezar={empezar}
+      />
 
-      <section className="py-20 px-6 md:px-12 lg:px-20">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-10">
+      {/* A l'ordinador: el títol a l'esquerra i, a la dreta, cada maldecap amb la seva solució */}
+      <section className="py-20">
+        <div className="contenidor grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight lg:col-span-4 lg:self-start lg:sticky lg:top-28">
             {t("propietarios.section2_h2")}
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-6 lg:col-span-8">
             {pains.map((item, i) => (
               <motion.div
                 key={item.pain}
@@ -70,8 +60,8 @@ export default function Propietarios() {
         </div>
       </section>
 
-      <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#f8fafc]">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="contenidor text-center">
           <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight mb-4">{t("propietarios.section3_h2")}</h2>
           <p className="text-slate-500 text-lg max-w-xl mx-auto">
             {t("propietarios.section3_body")}
@@ -79,16 +69,18 @@ export default function Propietarios() {
         </div>
       </section>
 
-      <section className="py-24 px-6 text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
-        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-          {t("propietarios.cta_h2")}
-        </h2>
-        <p className="text-white/60 text-lg mb-10 max-w-lg mx-auto">{t("propietarios.cta_sub2")}</p>
-        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
-        >
-          {t("propietarios.cta_primary")}
-          <ArrowRight className="w-4 h-4" />
-        </button>
+      <section className="py-24 text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
+        <div className="contenidor">
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
+            {t("propietarios.cta_h2")}
+          </h2>
+          <p className="text-white/60 text-lg mb-10 max-w-lg mx-auto">{t("propietarios.cta_sub2")}</p>
+          <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
+          >
+            {t("propietarios.cta_primary")}
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </section>
     </PageShell>
   );

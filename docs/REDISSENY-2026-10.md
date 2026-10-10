@@ -53,7 +53,8 @@
 3. **`/calcula`** (`src/pages/Calcula.tsx` + `src/lib/calcula.ts`): pisos, on, què fa servir,
    hores a la setmana, qui ho porta. El resultat es veu sense demanar res; el detall eina per
    eina es desbloqueja amb el telèfon. Només compten com a estalvi les eines que Hostly
-   substitueix (check-in 15 €, channel manager 20 €, preus 20 €, per pis i mes).
+   substitueix (check-in 4 €, channel manager 20 €, preus 20 €, per pis i mes; preus publicats
+   l'octubre de 2026, `PREU_EINA` a `src/lib/calcula.ts`).
 4. **«¿Prefieres hablarlo?»** (`src/components/Llamame.tsx`), sota els plans de preus.
 5. Tots tres desen amb `desaLead()` (`src/lib/leads.ts`) a la BD nova.
 

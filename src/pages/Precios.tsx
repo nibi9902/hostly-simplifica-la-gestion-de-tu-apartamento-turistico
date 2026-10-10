@@ -29,14 +29,15 @@ const PreciosPage = () => {
       </div>
 
       {/* FAQ de preus */}
-      <section className="py-20 md:py-28 px-6 md:px-12 lg:px-20 bg-background border-t border-border">
-        <div className="max-w-3xl mx-auto">
+      {/* A l'ordinador: el títol a l'esquerra i les preguntes a la dreta, com a la portada */}
+      <section className="py-20 md:py-28 bg-background border-t border-border">
+        <div className="contenidor grid gap-x-16 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease }}
-            className="text-center mb-14"
+            className="text-center lg:text-left mb-14 lg:col-span-4 lg:self-start lg:sticky lg:top-28"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-3">
               {t("precios_page.faq_heading")}
@@ -46,7 +47,7 @@ const PreciosPage = () => {
             </p>
           </motion.div>
 
-          <div className="flex flex-col divide-y divide-border">
+          <div className="flex flex-col divide-y divide-border lg:col-span-8 lg:-mt-6">
             {faqs.map((faq, i) => (
               <motion.div
                 key={faq.q}
@@ -69,13 +70,13 @@ const PreciosPage = () => {
       </section>
 
       {/* CTA final */}
-      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 text-white text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
+      <section className="py-20 md:py-24 text-white text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease }}
-          className="max-w-2xl mx-auto"
+          className="contenidor"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             {t("precios_page.cta_heading")}

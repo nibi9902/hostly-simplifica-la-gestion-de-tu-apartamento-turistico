@@ -26,8 +26,8 @@ export default function SobreHostly() {
       ]}
     >
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f0f6ff] to-white">
-        <div className="max-w-3xl mx-auto">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-[#f0f6ff] to-white">
+        <div className="contenidor">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,25 +36,25 @@ export default function SobreHostly() {
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-5">
               {t("sobre.eyebrow")}
             </p>
-            <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight leading-[1.05] mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight leading-[1.05] mb-6 max-w-4xl">
               {t("sobre.hero_heading")}
             </h1>
-            <p className="text-lg md:text-xl text-slate-500 leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-3xl">
               {t("sobre.hero_body")}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Historia */}
-      <section className="py-20 px-6 md:px-12 lg:px-20">
-        <div className="max-w-3xl mx-auto">
+      {/* La història i, al costat (a l'ordinador), la targeta del fundador; al mòbil, una sota l'altra */}
+      <section className="py-20">
+        <div className="contenidor grid gap-12 lg:grid-cols-12 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55, ease }}
-            className="prose prose-slate prose-lg max-w-none"
+            className="prose prose-slate prose-lg max-w-[68ch] lg:col-span-7"
           >
             <p>{t("sobre.story_p1")}</p>
             <p>{t("sobre.story_p2")}</p>
@@ -63,18 +63,13 @@ export default function SobreHostly() {
               {t("sobre.story_p4")}
             </p>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Founder card */}
-      <section className="py-12 px-6 md:px-12 lg:px-20 bg-[#f8fafc]">
-        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease }}
-            className="flex items-start gap-5 p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_4px_24px_rgba(15,23,42,0.05)]"
+            className="lg:col-span-5 lg:self-start lg:sticky lg:top-28 flex items-start gap-5 p-8 rounded-3xl bg-[#f8fafc] border border-slate-100"
           >
             <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
               B
@@ -91,15 +86,17 @@ export default function SobreHostly() {
       </section>
 
       {/* Valores */}
-      <section className="py-20 px-6 md:px-12 lg:px-20">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
-            {t("sobre.values_eyebrow")}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-12">
-            {t("sobre.values_heading")}
-          </h2>
-          <div className="space-y-8">
+      <section className="py-20 bg-[#f8fafc] border-t border-slate-100">
+        <div className="contenidor grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
+              {t("sobre.values_eyebrow")}
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight">
+              {t("sobre.values_heading")}
+            </h2>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:col-span-8">
             {values.map((v, i) => (
               <motion.div
                 key={v.title}
@@ -123,15 +120,17 @@ export default function SobreHostly() {
       </section>
 
       {/* Contacto */}
-      <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#f8fafc] border-t border-slate-100">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight mb-4">
-            {t("sobre.contact_heading")}
-          </h2>
-          <p className="text-slate-500 text-lg leading-relaxed mb-8 max-w-xl">
-            {t("sobre.contact_body")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+      <section className="py-20 border-t border-slate-100">
+        <div className="contenidor grid gap-8 lg:grid-cols-12 lg:gap-16 lg:items-center">
+          <div className="lg:col-span-6">
+            <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight mb-4">
+              {t("sobre.contact_heading")}
+            </h2>
+            <p className="text-slate-500 text-lg leading-relaxed max-w-xl">
+              {t("sobre.contact_body")}
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 lg:col-span-6 lg:justify-end">
             <a
               href="mailto:hola@hostlylabs.com"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"

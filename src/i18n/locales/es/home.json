@@ -245,9 +245,27 @@
       "terminos": "Términos",
       "aviso": "Aviso legal",
       "sobre": "Sobre Hostly",
-      "contacto": "Contacto"
+      "contacto": "Contacto",
+      "funcionalidades": "Funcionalidades",
+      "precios": "Precios",
+      "calcula": "Calculadora",
+      "demo": "Ver cómo funciona",
+      "propietarios": "Propietarios",
+      "gestores": "Gestores pequeños",
+      "segunda": "Segunda residencia",
+      "hereus": "Piso heredado",
+      "blog": "Blog",
+      "guia": "Superguía de gestión",
+      "alternativas": "Alternativas"
     },
-    "copyright": "© 2026 Hostly™ · Orden operativo para propietarios de apartamentos turísticos."
+    "copyright": "© 2026 Hostly™ · Orden operativo para propietarios de apartamentos turísticos.",
+    "aria": "Enlaces del pie",
+    "cols": {
+      "producto": "Producto",
+      "para_quien": "Para quién",
+      "recursos": "Recursos",
+      "hostly": "Hostly"
+    }
   },
   "testimonials": {
     "eyebrow": "En sus palabras",

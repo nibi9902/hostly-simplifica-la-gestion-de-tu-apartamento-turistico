@@ -13,7 +13,7 @@ const FinalCTA = ({ onEmpezar }: FinalCTAProps) => {
   return (
     <section
       id="cta-final"
-      className="py-24 md:py-32 px-6 md:px-12 lg:px-20 relative overflow-hidden"
+      className="py-24 md:py-32 relative overflow-hidden"
       style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}
     >
       {/* Dot texture */}
@@ -37,13 +37,13 @@ const FinalCTA = ({ onEmpezar }: FinalCTAProps) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="max-w-3xl mx-auto text-center relative z-10"
+        className="contenidor text-center relative z-10"
       >
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-5 text-balance">
           {t("final_cta.eyebrow")}
         </p>
 
-        <h2 className="text-4xl md:text-6xl font-bold tracking-[-0.04em] leading-[1.0] mb-6 text-white">
+        <h2 className="text-4xl md:text-6xl font-bold tracking-[-0.04em] leading-[1.0] mb-6 text-white max-w-3xl mx-auto">
           {t("final_cta.title")}
         </h2>
 

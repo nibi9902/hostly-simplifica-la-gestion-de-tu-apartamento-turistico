@@ -48,8 +48,8 @@ export default function FeaturePage({ feature }: Props) {
       ]}
     >
       {/* ── HERO ── (2 columnes en desktop: text + mini-demo animada) */}
-      <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#f0f6ff] to-white overflow-hidden">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-[#f0f6ff] to-white overflow-hidden">
+        <div className="contenidor">
           <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center [&>*]:min-w-0">
 
             {/* Left — text */}
@@ -122,16 +122,18 @@ export default function FeaturePage({ feature }: Props) {
       </section>
 
       {/* ── PROBLEMA ── */}
-      <section className="py-20 px-6 md:px-12 lg:px-20">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }}>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
-              {t('page.problem_eyebrow')}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight">
-              {feature.problem.title}
-            </h2>
-            <p className="text-slate-500 text-lg leading-relaxed">
+      <section className="py-20">
+        <div className="contenidor">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }} className="grid gap-x-16 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
+                {t('page.problem_eyebrow')}
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-6 lg:mb-0 leading-tight">
+                {feature.problem.title}
+              </h2>
+            </div>
+            <p className="text-slate-500 text-lg lg:text-xl leading-relaxed lg:col-span-7 lg:pt-9 max-w-[68ch]">
               {feature.problem.body}
             </p>
           </motion.div>
@@ -139,8 +141,8 @@ export default function FeaturePage({ feature }: Props) {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#f8fafc]">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="contenidor">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +158,8 @@ export default function FeaturePage({ feature }: Props) {
             </h2>
           </motion.div>
 
-          <ol className="space-y-6">
+          {/* A l'ordinador, un pas per columna (es llegeixen d'esquerra a dreta); al mòbil, un sota l'altre */}
+          <ol className={`grid gap-5 sm:grid-cols-2 ${feature.howItWorks.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'}`}>
             {feature.howItWorks.map((step, i) => (
               <motion.li
                 key={step.step}
@@ -164,7 +167,7 @@ export default function FeaturePage({ feature }: Props) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.07, ease }}
-                className="flex gap-5 bg-white rounded-2xl border border-slate-100 p-6 shadow-[0_1px_3px_rgba(15,23,42,0.04)]"
+                className="flex gap-5 lg:flex-col lg:gap-4 bg-white rounded-2xl border border-slate-100 p-6 shadow-[0_1px_3px_rgba(15,23,42,0.04)]"
               >
                 <div
                   className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center font-bold text-sm text-white"
@@ -183,8 +186,8 @@ export default function FeaturePage({ feature }: Props) {
       </section>
 
       {/* ── ADVANTAGES ── */}
-      <section className="py-20 px-6 md:px-12 lg:px-20">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-20">
+        <div className="contenidor">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +203,7 @@ export default function FeaturePage({ feature }: Props) {
             </h2>
           </motion.div>
 
-          <ul className="grid md:grid-cols-2 gap-4">
+          <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {feature.advantages.map((adv, i) => (
               <motion.li
                 key={adv}
@@ -219,8 +222,8 @@ export default function FeaturePage({ feature }: Props) {
       </section>
 
       {/* ── USAGE SCENARIOS ── */}
-      <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#f8fafc]">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="contenidor">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -256,8 +259,8 @@ export default function FeaturePage({ feature }: Props) {
 
       {/* ── RELATED FEATURES ── */}
       {related.length > 0 && (
-        <section className="py-20 px-6 md:px-12 lg:px-20">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-20">
+          <div className="contenidor">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }} className="mb-10">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
                 {t('page.related_eyebrow')}
@@ -267,7 +270,7 @@ export default function FeaturePage({ feature }: Props) {
               </h2>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-5">
+            <div className={`grid gap-5 md:grid-cols-2 ${related.length >= 3 ? 'lg:grid-cols-3' : ''}`}>
               {related.map((rf) => {
                 const RIcon = iconaFuncio(rf.iconName);
                 return (
@@ -295,16 +298,16 @@ export default function FeaturePage({ feature }: Props) {
       )}
 
       {/* ── FAQs ── */}
-      <section className="py-20 px-6 md:px-12 lg:px-20 bg-[#f8fafc]">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }} className="mb-10">
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="contenidor grid gap-x-16 lg:grid-cols-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }} className="mb-10 lg:col-span-4 lg:self-start lg:sticky lg:top-28">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">{t('page.faqs_eyebrow')}</p>
             <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight">
               {t('page.faqs_title')}
             </h2>
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-8">
             {feature.faqs.map((faq) => (
               <details key={faq.question} className="group bg-white rounded-2xl border border-slate-100 p-6">
                 <summary className="cursor-pointer list-none flex items-start justify-between gap-4 font-bold text-[#0f172a]">
@@ -322,9 +325,10 @@ export default function FeaturePage({ feature }: Props) {
 
       {/* ── FINAL CTA ── */}
       <section
-        className="py-24 px-6 text-center"
+        className="py-24 text-center"
         style={{ background: 'linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)' }}
       >
+        <div className="contenidor">
         <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
           {t('page.final_title')}
         </h2>
@@ -336,6 +340,7 @@ export default function FeaturePage({ feature }: Props) {
           {t('page.final_cta')}
           <ArrowRight className="w-4 h-4" />
         </button>
+        </div>
       </section>
     </PageShell>
   );

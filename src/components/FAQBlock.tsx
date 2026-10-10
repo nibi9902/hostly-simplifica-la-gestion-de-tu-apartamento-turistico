@@ -54,19 +54,20 @@ export default function FAQBlock() {
   const faqs = t("faq.list", { returnObjects: true }) as Array<{ q: string; a: string }>;
 
   return (
-    <section id="faq" className="py-20 md:py-28 px-6 md:px-12 lg:px-20 bg-background">
-      <div className="max-w-3xl mx-auto">
+    <section id="faq" className="py-20 md:py-28 bg-background">
+      {/* A l'ordinador: el títol a l'esquerra (es queda a la vista mentre es baixa) i les preguntes a la dreta */}
+      <div className="contenidor grid gap-12 lg:grid-cols-12 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease }}
-          className="text-center mb-12"
+          className="text-center lg:text-left lg:col-span-5 lg:self-start lg:sticky lg:top-28"
         >
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">
             {t("faq.eyebrow")}
           </p>
-          <h2 className="text-2xl md:text-4xl font-bold text-foreground tracking-tight mb-3">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-3 lg:mb-5">
             {t("faq.title")}
           </h2>
           <p className="text-muted-foreground">
@@ -77,7 +78,7 @@ export default function FAQBlock() {
           </p>
         </motion.div>
 
-        <div>
+        <div className="lg:col-span-7 lg:-mt-5">
           {faqs.map((faq, i) => (
             <FAQItem key={faq.q} q={faq.q} a={faq.a} index={i} />
           ))}

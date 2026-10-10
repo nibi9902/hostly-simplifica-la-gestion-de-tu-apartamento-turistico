@@ -12,6 +12,7 @@ es contesten al mateix navegador.
 | `prova-galetes.cjs` | Bàner de galetes: GA4 només amb «Aceptar», «Rechazar» no carrega res, «Cambiar mis preferencias». | `node prova-galetes.cjs <carpeta>` |
 | `prova-reemplaza.cjs` | La tira de «Lo que reemplaza»: 6 pestanyes, avança sola, s'atura en tocar-la, teclat, lliscar al mòbil, l'alçada no salta. | `node prova-reemplaza.cjs <carpeta>` |
 | `captures-visuals.cjs` | Un exemple de cada plantilla de pàgina, sencer i a trossos (1440 i 390), per mirar-ho amb ulls: solapaments, textos tallats, columnes aixafades, coses desquadrades. | `node captures-visuals.cjs <carpeta>` |
+| `prova-amplada.cjs` | La caixa del web (`docs/MAQUETACIO.md`): tot el contingut a la mateixa línia (R1), res fora (R2), cap secció que comenci més endins (R3), cap columna estreta al mig a l'ordinador (R4), 20 px al mòbil i res que surti per la dreta (R5). 31 pàgines × 1280/1440/1920/390/360. | `node prova-amplada.cjs [carpeta]` (captura les que fallen) · `AMPLADES=1440 NOMES_RUTES=/es/blog node …` |
 | `textos-web.cjs` + `idioma-scan.py` | Treu tot el text visible de cada pàgina (per revisar-ne la coherència) i hi busca paraules de l'altra llengua. | `node textos-web.cjs textos-es.md es` · `python3 idioma-scan.py textos-es.md textos-ca.md` |
 
 Una altra adreça: `REVISIO_BASE=http://127.0.0.1:8095 node …`.

@@ -46,7 +46,7 @@ export function SiteHeader() {
         !visible && '-translate-y-full opacity-0 pointer-events-none',
       )}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between gap-6">
+      <div className="contenidor h-20 flex items-center justify-between gap-6">
         {/* Switcher d'idioma + logo a l'esquerra */}
         <div className="flex items-center gap-4 shrink-0">
           <div className="hidden sm:flex items-center gap-0.5 rounded-full border border-slate-200 bg-white p-0.5 text-[11px] font-semibold">

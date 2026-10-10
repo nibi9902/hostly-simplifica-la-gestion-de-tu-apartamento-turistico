@@ -141,7 +141,7 @@ export function HeaderNav({ nav }: Props) {
               onMouseEnter={cancelClose}
               onMouseLeave={triggerClose}
             >
-              <div className="max-w-6xl mx-auto px-6 md:px-8 py-10">
+              <div className="contenidor py-10">
 
                 {/* ── Flat dropdown (Funciones, Para quién) ── */}
                 {activeItem.dropdown && (
@@ -208,14 +208,14 @@ export function HeaderNav({ nav }: Props) {
       {/* Mobile menu */}
       {mobileOpen && createPortal(
         <div style={{ position: 'fixed', inset: 0, zIndex: 9999 }} className="lg:hidden bg-white overflow-y-auto">
-          <div className="flex items-center justify-between h-20 px-6 border-b border-slate-100">
+          <div className="contenidor flex items-center justify-between h-20 border-b border-slate-100">
             <LangLink to="/" onClick={() => setMobileOpen(false)} className="font-semibold text-lg text-foreground">Hostly</LangLink>
             <button type="button" onClick={() => setMobileOpen(false)}
               className="inline-flex items-center justify-center w-10 h-10 rounded-md text-foreground hover:bg-muted transition-colors" aria-label={t('nav.aria_close_menu')}>
               <X className="w-5 h-5" />
             </button>
           </div>
-          <nav className="px-6 py-6" aria-label="Mobile primary">
+          <nav className="contenidor py-6" aria-label="Mobile primary">
             <ul className="space-y-2">
               {nav.main.map((item) => (
                 <li key={item.label}>
