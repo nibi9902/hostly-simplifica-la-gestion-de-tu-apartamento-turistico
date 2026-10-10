@@ -1,5 +1,7 @@
 // playwright-core: el del projecte si hi és; si no, el del monorepo (on ja està instal·lat)
 const { chromium } = (() => { try { return require('playwright-core'); } catch { return require('/Users/bielalsinailla/Desktop/Hostly - 1.1 Migration/node_modules/playwright-core'); } })();
+// Carpeta de les captures: la que es passa o, si no se'n passa cap, una de temporal (no «undefined/» dins del repo)
+const OUT = process.argv[2] || require('fs').mkdtempSync(require('path').join(require('os').tmpdir(), 'hostly-revisio-'));
 (async () => {
   const b = await chromium.launch({ channel: 'chrome' });
   const r = [];
@@ -13,7 +15,7 @@ const { chromium } = (() => { try { return require('playwright-core'); } catch {
     await p.waitForTimeout(1800);
     ok(`[${decisio}] el bàner surt`, await p.locator('[role=dialog]:has-text("cookies analíticas")').count() === 1);
     ok(`[${decisio}] abans de respondre, cap petició a Google (${ga.length})`, ga.length === 0);
-    if (decisio === 'Rechazar') await p.screenshot({ path: process.argv[2] + '/galetes-banner.png' });
+    if (decisio === 'Rechazar') await p.screenshot({ path: OUT + '/galetes-banner.png' });
     await p.click(`[role=dialog] button:has-text("${decisio}")`);
     await p.waitForTimeout(1500);
     ok(`[${decisio}] el bàner marxa`, await p.locator('[role=dialog]:has-text("cookies analíticas")').count() === 0);

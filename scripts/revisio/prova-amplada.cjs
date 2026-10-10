@@ -16,7 +16,8 @@ const { chromium } = (() => { try { return require('playwright-core'); } catch {
 const fs = require('fs');
 const path = require('path');
 
-const OUT = process.argv[2];
+// Carpeta de les captures: la que es passa o, si no se'n passa cap, una de temporal (no «undefined/» dins del repo)
+const OUT = process.argv[2] || require('fs').mkdtempSync(require('path').join(require('os').tmpdir(), 'hostly-revisio-'));
 const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
 if (OUT) fs.mkdirSync(OUT, { recursive: true });
 

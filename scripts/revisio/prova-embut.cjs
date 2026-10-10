@@ -1,6 +1,7 @@
 // playwright-core: el del projecte si hi és; si no, el del monorepo (on ja està instal·lat)
 const { chromium } = (() => { try { return require('playwright-core'); } catch { return require('/Users/bielalsinailla/Desktop/Hostly - 1.1 Migration/node_modules/playwright-core'); } })();
-const OUT = process.argv[2];
+// Carpeta de les captures: la que es passa o, si no se'n passa cap, una de temporal (no «undefined/» dins del repo)
+const OUT = process.argv[2] || require('fs').mkdtempSync(require('path').join(require('os').tmpdir(), 'hostly-revisio-'));
 const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
 (async () => {
   const b = await chromium.launch({ channel: 'chrome' });

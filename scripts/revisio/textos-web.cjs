@@ -8,7 +8,8 @@
 const { chromium } = (() => { try { return require('playwright-core'); } catch { return require('/Users/bielalsinailla/Desktop/Hostly - 1.1 Migration/node_modules/playwright-core'); } })();
 const fs = require('fs');
 
-const OUT = process.argv[2];
+// Carpeta de les captures: la que es passa o, si no se'n passa cap, una de temporal (no «undefined/» dins del repo)
+const OUT = process.argv[2] || require('fs').mkdtempSync(require('path').join(require('os').tmpdir(), 'hostly-revisio-'));
 const LANG = process.argv[3] || 'es';
 const BASE = process.argv[4] || process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
 
