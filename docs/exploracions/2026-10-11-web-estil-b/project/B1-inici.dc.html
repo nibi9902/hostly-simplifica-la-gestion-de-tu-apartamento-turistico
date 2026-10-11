@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>B1 · Las notificaciones</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:hsl(210 20% 98%)}
+a{color:inherit}a:hover{color:inherit}
+.pb{container-type:inline-size;container-name:pagina}
+.pb *{box-sizing:border-box}
+.pb p,.pb h1,.pb h2,.pb h3,.pb h4,.pb ol,.pb ul,.pb li{margin:0;padding:0;list-style:none}
+.pb a{text-decoration:none}
+sc-if,sc-for{display:contents}
+.cont{width:100%;max-width:1440px;margin:0 auto;padding-inline:64px}
+.retol{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.h2{font-size:56px;line-height:1.04;font-weight:700;letter-spacing:-0.03em;text-wrap:balance}
+.lead{font-size:19px;line-height:1.55;color:hsl(220 9% 46%)}
+.ic{width:18px;height:18px;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:9999px;font-size:15px;font-weight:500;white-space:nowrap;border:0;cursor:pointer;font-family:inherit}
+.pill-pri{background:#2563EB;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.pill-pri:hover{background:#1D4ED8;color:#fff}
+.pill-sec{background:#fff;color:hsl(220 14% 11%);box-shadow:inset 0 0 0 1px hsl(220 13% 91%),0 1px 2px rgba(0,0,0,.04)}
+.pill-lg{height:56px;padding:0 28px;font-size:17px}
+.pill-blanc{background:#fff;color:hsl(220 14% 11%)}
+.xip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:500;white-space:nowrap}
+.xip.verd{background:hsl(138 76% 97%);color:hsl(142 76% 30%);box-shadow:inset 0 0 0 1px hsl(142 60% 86%)}
+.xip.blau{background:hsl(214 100% 97%);color:#1D4ED8;box-shadow:inset 0 0 0 1px hsl(212 96% 88%)}
+.xip.gris{background:hsl(210 20% 95%);color:hsl(220 9% 35%)}
+
+/* Capçal */
+.capcal{height:80px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.logo img{height:24px;width:auto;display:block}
+.pista{display:flex;gap:2px;padding:4px;border-radius:9999px;background:hsl(210 20% 94%)}
+.pista a{height:36px;padding:0 16px;border-radius:9999px;display:inline-flex;align-items:center;font-size:14px;font-weight:500;color:hsl(220 14% 20%)}
+.pista a:hover{background:#fff}
+.accions{justify-self:end;display:flex;align-items:center;gap:20px}
+.entrar{font-size:14px;font-weight:500}
+.burger{display:none}
+
+/* Entrada: el lema, sol */
+.hero{position:relative;height:760px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-bottom:40px}
+.hero h1{font-size:74px;line-height:1.08;font-weight:700;letter-spacing:-0.04em}
+.hero h1 span{display:block}
+.hero .l2{color:hsl(220 9% 46%)}
+@keyframes entra{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes bota{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+.l1{animation:entra .8s cubic-bezier(.25,.46,.45,.94) .1s both}
+.l2{animation:entra .8s cubic-bezier(.25,.46,.45,.94) .7s both}
+.cue{position:absolute;left:50%;bottom:40px;margin-left:-22px;width:44px;height:44px;border-radius:9999px;display:grid;place-items:center;color:hsl(220 9% 46%);box-shadow:inset 0 0 0 1px hsl(220 13% 86%);animation:entra .6s ease 1.3s both}
+.cue svg{animation:bota 2.4s ease-in-out 2s infinite}
+@media (prefers-reduced-motion: reduce){.l1,.l2,.cue,.cue svg{animation:none}}
+
+/* El mòbil */
+.tel{width:380px;height:760px;padding:10px;border-radius:56px;background:hsl(220 14% 11%);box-shadow:0 40px 80px -24px rgba(15,23,42,.45)}
+.tel.petit{width:290px;height:580px;padding:9px;border-radius:46px}
+.pant{position:relative;width:100%;height:100%;border-radius:46px;overflow:hidden;color:#fff;display:flex;flex-direction:column;align-items:center}
+.tel.petit .pant{border-radius:37px}
+.pant > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pant .fosc{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,16,.55),rgba(7,10,16,.72))}
+.pant .clar{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,16,.35),rgba(7,10,16,.15) 40%,rgba(7,10,16,.35))}
+.rellotge{position:relative;z-index:1;margin-top:58px;text-align:center}
+.rellotge small{display:block;font-size:14px;font-weight:500;opacity:.85}
+.rellotge b{display:block;font-size:76px;line-height:1;font-weight:600;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.tel.petit .rellotge{margin-top:44px}
+.tel.petit .rellotge b{font-size:58px}
+.avisos{position:relative;z-index:1;width:100%;padding:22px 12px 0;display:flex;flex-direction:column;gap:8px}
+.avis{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border-radius:18px;background:rgba(36,40,48,.62);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.avis .app{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;flex-shrink:0;overflow:hidden}
+.avis .app img{width:100%;height:100%}
+.avis .app svg{width:17px;height:17px;color:#fff}
+.avis div{min-width:0;flex:1}
+.avis b{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600}
+.avis b span{font-weight:400;opacity:.6;flex-shrink:0}
+.avis p{font-size:13px;line-height:1.35;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.avis.esvait{opacity:.55}
+.mes{position:relative;z-index:1;margin-top:10px;font-size:12px;opacity:.7}
+.avis.hostly{background:hsl(0 0% 100% / .94);color:hsl(220 14% 11%)}
+.avis.hostly p{white-space:normal;opacity:1}
+.avis.hostly b span{opacity:.55}
+
+/* 2 · El dolor */
+.dolor{height:820px;background:#fff;display:flex;align-items:center}
+.dolor-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+.dolor-text{display:flex;flex-direction:column;gap:20px}
+
+/* 3 · El canvi */
+.canvi{height:860px;padding-top:88px}
+.canvi-cap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.canvi-cap .h2{font-size:64px}
+.canvi-grid{display:grid;grid-template-columns:minmax(0,1fr) 290px minmax(0,1fr);gap:56px;align-items:center;margin-top:48px}
+.fets{display:flex;flex-direction:column;gap:28px}
+.fets.dreta{align-items:flex-start}
+.fets.esq{align-items:flex-end;text-align:right}
+.fet{display:flex;gap:14px;align-items:flex-start;max-width:340px}
+.fets.esq .fet{flex-direction:row-reverse}
+.fet i{width:40px;height:40px;border-radius:9999px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06),inset 0 0 0 1px hsl(220 13% 91%);display:grid;place-items:center;flex-shrink:0;color:hsl(142 76% 36%)}
+.fet b{display:block;font-size:18px;line-height:1.3;font-weight:600;color:hsl(220 14% 11%)}
+.fet span{display:block;font-size:15px;line-height:1.45;color:hsl(220 9% 46%);margin-top:2px}
+
+/* 4 · El que no es veu */
+.dins{height:720px;background:#fff;padding-top:88px}
+.dins-cap{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
+.peces{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
+.peca{height:200px;border-radius:24px;background:hsl(210 20% 98%);box-shadow:inset 0 0 0 1px hsl(220 13% 92%);padding:24px;display:flex;flex-direction:column;gap:6px}
+.peca h3{font-size:19px;line-height:1.3;font-weight:600}
+.peca p{font-size:15px;line-height:1.45;color:hsl(220 9% 46%)}
+.peca .mostra{margin-top:auto;display:flex;align-items:center;gap:8px}
+.preu-mou{display:inline-flex;align-items:center;gap:10px;height:32px;padding:0 12px;border-radius:9999px;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 88%);font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
+.preu-mou s{color:hsl(220 9% 55%);font-weight:500}
+.bombeta{display:inline-flex;padding:7px 11px;border-radius:14px;border-bottom-left-radius:4px;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 88%);font-size:13px}
+.barres{display:flex;flex-direction:column;gap:5px;width:100%}
+.barres span{height:20px;border-radius:9999px;font-size:11px;font-weight:600;display:flex;align-items:center;padding:0 10px}
+.barres .ab{width:62%;background:hsl(355 100% 95%);color:hsl(347 89% 40%)}
+.barres .bk{width:62%;margin-left:30%;background:hsl(216 60% 93%);color:hsl(216 100% 25%)}
+.enllac-blau{display:inline-flex;align-items:center;gap:6px;font-size:16px;font-weight:500;color:#2563EB}
+
+/* 5 · Gratis */
+.gratis{height:600px;display:flex;align-items:center}
+.gratis-grid{display:grid;grid-template-columns:minmax(0,1.25fr) repeat(2,minmax(0,1fr));gap:20px;height:480px}
+.b-fosca{border-radius:28px;background:hsl(220 14% 11%);color:#fff;padding:36px;display:flex;flex-direction:column;gap:12px}
+.b-fosca .retol{color:rgba(255,255,255,.65)}
+.zero{font-size:104px;line-height:.95;font-weight:700;letter-spacing:-0.05em;margin-top:auto}
+.b-fosca h2{font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-0.02em}
+.b-fosca p{font-size:16px;line-height:1.5;color:rgba(255,255,255,.8)}
+.b-fosca .pill{align-self:flex-start;margin-top:6px}
+.b-foto{position:relative;border-radius:28px;overflow:hidden;color:#fff}
+.b-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.b-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(9,12,18,.55),rgba(9,12,18,0) 50%)}
+.b-foto-peu{position:absolute;z-index:1;left:20px;right:20px;bottom:20px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.temps{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px;border-radius:9999px;background:rgba(16,20,26,.45);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:13px;font-weight:500}
+.temps .ic{width:15px;height:15px}
+.enviat{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:14px;background:hsl(0 0% 100% / .95);color:hsl(220 14% 11%);font-size:14px;font-weight:600}
+.enviat i{width:20px;height:20px;border-radius:9999px;background:hsl(138 76% 96%);color:hsl(142 76% 36%);display:grid;place-items:center}
+.enviat i .ic{width:12px;height:12px}
+
+/* 6 · Precios */
+.preus{height:760px;background:#fff;padding-top:64px}
+.preus-cap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.preus-cap .h2 span{color:hsl(220 9% 46%)}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:1040px;margin:32px auto 0;height:440px}
+.pla{border-radius:24px;padding:24px 28px;display:flex;flex-direction:column;gap:12px;background:hsl(210 20% 98%);box-shadow:inset 0 0 0 1px hsl(220 13% 91%)}
+.pla.top{background:#fff;box-shadow:0 12px 40px rgba(37,99,235,.12),inset 0 0 0 2px #2563EB}
+.pla-cap{display:flex;align-items:center;justify-content:space-between;font-size:16px;font-weight:600}
+.preu{display:flex;align-items:baseline;gap:8px}
+.preu b{font-size:52px;line-height:1;font-weight:700;letter-spacing:-0.04em}
+.preu span{font-size:15px;color:hsl(220 9% 46%)}
+.preu-nota{font-size:14px;color:hsl(220 9% 46%);margin-top:-4px}
+.inclou{display:flex;flex-direction:column;gap:6px;flex:1}
+.inclou li{display:flex;gap:10px;font-size:15px;line-height:20px}
+.inclou .ic{width:16px;height:16px;color:hsl(142 76% 36%);margin-top:2px}
+.pla .pill{width:100%;height:48px}
+.pla-fi{font-size:13px;color:hsl(220 9% 46%);text-align:center}
+.referits{max-width:1040px;height:56px;margin:20px auto 0;border-radius:9999px;background:hsl(210 20% 98%);box-shadow:inset 0 0 0 1px hsl(220 13% 91%);display:flex;align-items:center;gap:14px;padding:0 8px 0 10px;font-size:15px}
+.referits .xip{height:38px;padding:0 14px}
+.referits a{margin-left:auto}
+
+/* 7 · Gestores */
+.gestors{height:560px;padding-top:80px}
+.gestors-cap{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
+.videos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:28px}
+.video{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:20px;overflow:hidden;background:hsl(210 20% 92%)}
+.video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.video::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(9,12,18,.6),rgba(9,12,18,0) 55%)}
+.play{position:absolute;z-index:1;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:9999px;border:0;display:grid;place-items:center;background:hsl(0 0% 100% / .92);color:hsl(220 14% 11%);cursor:pointer}
+.play .ic{width:20px;height:20px;margin-left:3px}
+.video-peu{position:absolute;z-index:1;left:18px;right:18px;bottom:16px;display:flex;align-items:flex-end;justify-content:space-between;color:#fff}
+.video-peu b{display:block;font-size:15px;font-weight:600}
+.video-peu small{font-size:12px;opacity:.85}
+.exemple{height:22px;padding:0 9px;border-radius:9999px;background:rgba(255,255,255,.22);font-size:11px;font-weight:500;display:inline-flex;align-items:center}
+.fundador{margin-top:20px;min-height:80px;display:flex;align-items:center;gap:16px;padding:14px 28px 14px 16px;border-radius:9999px;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 91%)}
+.avatar{width:48px;height:48px;border-radius:9999px;background:hsl(220 14% 11%);color:#fff;display:grid;place-items:center;font-size:19px;font-weight:600;flex-shrink:0}
+.fundador q{font-size:15px;line-height:1.45;quotes:"«" "»"}
+.fundador p{font-size:13px;color:hsl(220 9% 46%);white-space:nowrap;margin-left:auto}
+
+/* 8 · Tancament i peu */
+.final{height:440px;background:#fff;padding-top:40px}
+.banda{position:relative;height:200px;border-radius:28px;overflow:hidden;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 56px}
+.banda img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.banda::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(9,12,18,.72),rgba(9,12,18,.2) 75%)}
+.banda > div,.banda > a{position:relative;z-index:2}
+.banda h2{font-size:34px;line-height:1.12;font-weight:700;letter-spacing:-0.03em}
+.banda p{font-size:17px;opacity:.85;margin-top:8px}
+.peu{margin-top:36px;display:flex;flex-direction:column;gap:18px}
+.peu-dalt{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(4,minmax(0,1fr));gap:32px}
+.peu-marca img{height:20px;width:auto;display:block}
+.peu-marca p{font-size:14px;line-height:20px;color:hsl(220 9% 46%);margin-top:10px;max-width:22em}
+.peu h3{font-size:13px;font-weight:600;margin-bottom:6px}
+.peu li{font-size:14px;line-height:23px;color:hsl(220 9% 46%)}
+.peu-baix{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid hsl(0 0% 92%);font-size:13px;color:hsl(220 9% 46%)}
+
+@container pagina (max-width: 900px){
+  .cont{padding-inline:20px}
+  .capcal{grid-template-columns:1fr auto;height:68px}
+  .pista,.entrar{display:none}
+  .burger{display:inline-flex;width:44px;height:44px;border-radius:9999px;align-items:center;justify-content:center;background:#fff;border:0;box-shadow:inset 0 0 0 1px hsl(220 13% 91%)}
+  .accions{gap:8px}
+  .hero,.dolor,.canvi,.dins,.gratis,.preus,.gestors,.final{height:auto}
+  .hero{min-height:640px;padding:40px 0 96px}
+  .hero h1{font-size:40px}
+  .dolor,.canvi,.dins,.preus,.gestors{padding:64px 0}
+  .dolor-grid,.canvi-grid{grid-template-columns:minmax(0,1fr);gap:32px}
+  .h2,.canvi-cap .h2{font-size:34px}
+  .tel{width:320px;height:640px;margin:0 auto}
+  .fets.esq{align-items:flex-start;text-align:left}
+  .fets.esq .fet{flex-direction:row}
+  .dins-cap,.gestors-cap{flex-direction:column;align-items:flex-start;gap:16px}
+  .peces,.videos{grid-template-columns:minmax(0,1fr)}
+  .peca{height:auto}
+  .gratis{padding:48px 0}
+  .gratis-grid{grid-template-columns:minmax(0,1fr);height:auto}
+  .b-foto{height:260px}
+  .plans{grid-template-columns:minmax(0,1fr);height:auto}
+  .referits{height:auto;border-radius:24px;flex-direction:column;align-items:flex-start;padding:16px}
+  .referits a{margin-left:0}
+  .fundador{border-radius:24px;flex-direction:column;align-items:flex-start}
+  .fundador p{margin-left:0}
+  .final{padding:0 0 32px}
+  .banda{height:auto;flex-direction:column;align-items:flex-start;gap:20px;padding:32px 24px}
+  .peu-dalt{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .peu-marca{grid-column:1 / -1}
+}
+</style>
+</helmet>
+<div class="pb" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: hsl(210 20% 98%); -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+
+  <header class="cont capcal">
+    <a class="logo" href="#" aria-label="Hostly, inicio"><img src="/_blob/c6906de28faf974e45ec97233444ac82" alt="Hostly"></a>
+    <nav class="pista" aria-label="Principal"><a href="#">Funcionalidades</a><a href="#precios-1">Precios</a><a href="#">Recursos</a><a href="#">Sobre Hostly</a></nav>
+    <div class="accions"><a class="entrar" href="#">Iniciar sesión</a><a class="pill pill-pri" href="Empezar.dc.html">Empezar</a><button class="burger" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+  </header>
+
+  <!-- 1 · El lema, sol -->
+  <section class="hero cont">
+    <h1><span class="l1">¿Gestionas apartamentos en Airbnb?</span><span class="l2">¿O te gestionan ellos a ti?</span></h1>
+    <a class="cue" href="#dolor-1" aria-label="Seguir bajando"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+  </section>
+
+  <!-- 2 · El dolor: el mòbil que no para -->
+  <section class="dolor" id="dolor-1">
+    <div class="cont dolor-grid">
+      <div class="dolor-text">
+        <p class="retol">Sin Hostly</p>
+        <h2 class="h2">Así es tener un piso turístico.</h2>
+        <p class="lead">El móvil no para. Huéspedes, limpieza, policía, precios. Y casi siempre, cuando no toca.</p>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <div class="tel" aria-label="Un móvil lleno de avisos">
+          <div class="pant">
+            <img src="/_blob/d34a3f310a74add06faebbb36a59e0e1" alt="">
+            <div class="fosc"></div>
+            <div class="rellotge"><small>sábado, 10 de octubre</small><b>23:48</b></div>
+            <div class="avisos">
+              <div class="avis"><span class="app" style="background: #25D366"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></span><div><b>Sophie Martin<span>23:47</span></b><p>Bonsoir ! C'est quoi le code du wifi ?</p></div></div>
+              <div class="avis"><span class="app"><img src="/_blob/bc432560991384d2eb1fc435843c8d49" alt=""></span><div><b>Airbnb<span>23:31</span></b><p>Pieter: We arrive at 23h, is that ok?</p></div></div>
+              <div class="avis"><span class="app" style="background: #25D366"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></span><div><b>Anna · limpieza<span>22:10</span></b><p>¿Mañana a qué hora entro?</p></div></div>
+              <div class="avis"><span class="app"><img src="/_blob/a3ff985056ee58c6491ce0cf7319cf35" alt=""></span><div><b>Booking.com<span>21:58</span></b><p>Nueva reserva · 3 noches · El Mirador</p></div></div>
+              <div class="avis"><span class="app" style="background: hsl(0 72% 51%)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span><div><b>Recordatorio<span>20:00</span></b><p>Registro de viajeros de hoy</p></div></div>
+              <div class="avis esvait"><span class="app" style="background: hsl(217 91% 60%)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span><div><b>Correo<span>19:12</span></b><p>Tasa turística: plazo de presentación</p></div></div>
+            </div>
+            <p class="mes">y 14 avisos más</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · El canvi: el mateix mòbil, un sol avís -->
+  <section class="canvi">
+    <div class="cont">
+      <div class="canvi-cap">
+        <p class="retol">Con Hostly</p>
+        <h2 class="h2">Hostly está pendiente. Tú, ya no.</h2>
+        <p class="lead">Contesta, avisa, envía y cobra por ti. Solo te escribe cuando de verdad haces falta.</p>
+      </div>
+      <div class="canvi-grid">
+        <div class="fets esq">
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Le contestó a Sophie</b><span>En francés, a las 23:47.</span></span></p>
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Le dijo a Pieter dónde aparcar</b><span>Antes de que llegara.</span></span></p>
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Avisó a Anna</b><span>Mañana limpia a las 11.</span></span></p>
+        </div>
+        <div class="tel petit" aria-label="El mismo móvil, con un solo aviso">
+          <div class="pant">
+            <img src="/_blob/c593400eec5b2a33eb4575e382b10889" alt="">
+            <div class="clar"></div>
+            <div class="rellotge"><small>sábado, 10 de octubre</small><b>23:48</b></div>
+            <div class="avisos">
+              <div class="avis hostly"><span class="app"><img src="/_blob/caf3e6d718902542d92de9848faf41b8" alt=""></span><div><b>Hostly<span>ahora</span></b><p>Todo hecho hoy. Solo una cosa: Pieter pregunta si puede llevar a su perro.</p></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="fets dreta">
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Envió el registro a la policía</b><span>Y te guardó el comprobante.</span></span></p>
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Subió el precio del sábado</b><span>Hay mucha demanda.</span></span></p>
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Cobró la tasa turística</b><span>Con el check-in.</span></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · El que no es veu -->
+  <section class="dins">
+    <div class="cont">
+      <div class="dins-cap">
+        <div style="display: flex; flex-direction: column; gap: 14px"><p class="retol">Por dentro</p><h2 class="h2">Y lo que no se ve.</h2></div>
+        <a class="enllac-blau" href="#">Ver todas las funcionalidades <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      </div>
+      <div class="peces">
+        <article class="peca"><h3>Vende extras</h3><p>Entrar antes o salir más tarde, cobrado con el check-in.</p><div class="mostra"><span class="xip verd">Salida más tarde · 25 €</span></div></article>
+        <article class="peca"><h3>Precios que se mueven solos</h3><p>Cada día, según la demanda.</p><div class="mostra"><span class="preu-mou">Sábado <s>145 €</s> 175 €</span></div></article>
+        <article class="peca"><h3>La tasa turística, hecha</h3><p>Calculada y cobrada. Te avisa cuando toca presentarla.</p><div class="mostra"><span class="xip gris">Lista para presentar</span></div></article>
+        <article class="peca"><h3>Habla su idioma</h3><p>Contesta en el idioma del huésped. Tú lo lees en el tuyo.</p><div class="mostra"><span class="bombeta">¿Cuál es el código del wifi?</span></div></article>
+        <article class="peca"><h3>La limpieza, organizada</h3><p>Avisa al equipo. Si alguien no puede, al siguiente.</p><div class="mostra"><span class="xip blau">Coordinada · Anna · mañana</span></div></article>
+        <article class="peca"><h3>Airbnb y Booking, cuadrados</h3><p>Entra una reserva y el otro canal se cierra.</p><div class="mostra"><div class="barres"><span class="ab">Airbnb · Claire</span><span class="bk">Booking · Mia</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Gratis per sempre -->
+  <section class="gratis">
+    <div class="cont gratis-grid">
+      <div class="b-fosca">
+        <p class="retol">Gratis · para siempre</p>
+        <p class="zero">0 €</p>
+        <h2>Llueva o haga sol, el registro sale cada día.</h2>
+        <p>El huésped hace el check-in desde el móvil. Hostly lo envía a la policía y te guarda el comprobante.</p>
+        <a class="pill pill-blanc" href="Empezar.dc.html">Empezar</a>
+      </div>
+      <div class="b-foto"><img src="/_blob/63c91524fc0d429dbf33b206aa2b916d" alt="El árbol, bajo la lluvia"><div class="b-foto-peu"><span class="temps"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"></path><path d="M16 14v6"></path><path d="M8 14v6"></path><path d="M12 16v6"></path></svg>Llueve</span><span class="enviat"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i>Registro enviado</span></div></div>
+      <div class="b-foto"><img src="/_blob/3274af04ebe84a57fde92dae00a9b670" alt="El árbol, con sol"><div class="b-foto-peu"><span class="temps"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="M2 12h2"></path><path d="M20 12h2"></path></svg>Hace sol</span><span class="enviat"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i>Registro enviado</span></div></div>
+    </div>
+  </section>
+
+  <!-- 6 · Precios -->
+  <section class="preus" id="precios-1">
+    <div class="cont">
+      <div class="preus-cap"><p class="retol">Precios</p><h2 class="h2">Un plan gratis. Un plan completo. <span>Nada más.</span></h2></div>
+      <div class="plans">
+        <article class="pla">
+          <p class="pla-cap">Gratis</p>
+          <p class="preu"><b>0 €</b><span>al mes, para siempre</span></p>
+          <p class="preu-nota">Para el check-in y la policía.</p>
+          <ul class="inclou">
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>El check-in del huésped, desde su móvil</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Hostly lo envía a la policía</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>La tasa turística, calculada</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Te avisa si falta un check-in</li>
+          </ul>
+          <a class="pill pill-sec" href="Empezar.dc.html">Empezar</a>
+          <p class="pla-fi">Sin tarjeta</p>
+        </article>
+        <article class="pla top">
+          <p class="pla-cap">Hostly Completo <span class="xip blau">Recomendado</span></p>
+          <p class="preu"><b>40 €</b><span>al mes por piso</span></p>
+          <p class="preu-nota">35 € desde 5 pisos · el primer mes, gratis</p>
+          <ul class="inclou">
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Todo lo del plan Gratis</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Airbnb y Booking, siempre cuadrados</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Contesta a los huéspedes en su idioma</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Avisa a la limpieza</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Precios que se ajustan solos</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Vende extras y hace las cuentas</li>
+          </ul>
+          <a class="pill pill-pri" href="Empezar.dc.html">Empezar</a>
+          <p class="pla-fi">Sin permanencia · Lo dejamos listo contigo</p>
+        </article>
+      </div>
+      <div class="referits"><span class="xip blau">Referidos</span><span>Trae 5 propietarios y uno de tus pisos deja de pagar.</span><a class="pill pill-sec" href="#">Cómo funciona</a></div>
+    </div>
+  </section>
+
+  <!-- 7 · Gestors -->
+  <section class="gestors">
+    <div class="cont">
+      <div class="gestors-cap">
+        <div style="display: flex; flex-direction: column; gap: 14px"><p class="retol">En sus palabras</p><h2 class="h2">Gestores como tú, en vídeo.</h2></div>
+        <p class="lead" style="max-width: 22em">Te cuentan cómo es su semana. Pronto, los vídeos.</p>
+      </div>
+      <div class="videos">
+        <div class="video"><img src="/_blob/3760582ceb1a948643df418837ec3e1b" alt=""><button class="play" type="button" aria-label="Ver el vídeo del gestor 1"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg></button><div class="video-peu"><div><b>Gestor 1</b><small>Vídeo próximamente</small></div><span class="exemple">Ejemplo</span></div></div>
+        <div class="video"><img src="/_blob/d5a52dfad507a0cea8d5fe6833aa578b" alt=""><button class="play" type="button" aria-label="Ver el vídeo del gestor 2"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg></button><div class="video-peu"><div><b>Gestor 2</b><small>Vídeo próximamente</small></div><span class="exemple">Ejemplo</span></div></div>
+        <div class="video"><img src="/_blob/70d6df1e54b2fd3a1a62010211cf8a8c" alt=""><button class="play" type="button" aria-label="Ver el vídeo del gestor 3"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg></button><div class="video-peu"><div><b>Gestor 3</b><small>Vídeo próximamente</small></div><span class="exemple">Ejemplo</span></div></div>
+      </div>
+      <div class="fundador"><span class="avatar" aria-hidden="true">B</span><q>Hostly no nació en una oficina. Nació de la frustración de gestionar mis propios apartamentos y no poder desconectar nunca. Lo construí para mí. Y funciona.</q><p>Biel Alsina · Fundador</p></div>
+    </div>
+  </section>
+
+  <!-- 8 · Tancament i peu -->
+  <section class="final">
+    <div class="cont">
+      <div class="banda">
+        <img src="/_blob/57677a80682dab88673c5ddaafef17e8" alt="">
+        <div><h2>Empieza gratis con el check-in.</h2><p>El resto, cuando lo veas claro.</p></div>
+        <a class="pill pill-pri pill-lg" href="Empezar.dc.html">Empezar</a>
+      </div>
+      <footer class="peu">
+        <div class="peu-dalt">
+          <div class="peu-marca"><img src="/_blob/c6906de28faf974e45ec97233444ac82" alt="Hostly"><p>La app que simplifica todo lo que implica tener un piso turístico.</p></div>
+          <div><h3>Producto</h3><ul><li>Funcionalidades</li><li>Precios</li><li>Calculadora</li></ul></div>
+          <div><h3>Recursos</h3><ul><li>Blog</li><li>Guía</li><li>Alternativas</li></ul></div>
+          <div><h3>Empresa</h3><ul><li>Sobre Hostly</li><li>Contacto</li><li>Referidos</li></ul></div>
+          <div><h3>Legal</h3><ul><li>Aviso legal</li><li>Privacidad</li><li>Cookies</li></ul></div>
+        </div>
+        <div class="peu-baix"><span>© 2026 Hostly Labs · Hecho en Cataluña, para toda España.</span><span>ES · CA</span></div>
+      </footer>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

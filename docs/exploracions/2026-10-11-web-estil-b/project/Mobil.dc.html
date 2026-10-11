@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Al móvil</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+.mo *{box-sizing:border-box}
+.mo p,.mo h1,.mo h2,.mo h3,.mo ul,.mo li{margin:0;padding:0;list-style:none}
+.mo a{text-decoration:none;color:inherit}
+.ic{width:18px;height:18px;flex-shrink:0}
+.columna{display:flex;flex-direction:column;align-items:center;gap:14px}
+.peu-tel{font-size:14px;font-weight:600;color:hsl(220 14% 25%);text-align:center}
+.peu-tel span{display:block;font-weight:400;font-size:13px;color:hsl(220 9% 46%);margin-top:2px}
+.tel{width:410px;height:864px;padding:10px;border-radius:58px;background:hsl(220 14% 11%);box-shadow:0 30px 60px -20px rgba(15,23,42,.35)}
+.pant{position:relative;width:390px;height:844px;border-radius:48px;overflow:hidden;background:hsl(210 20% 98%);color:hsl(220 14% 11%)}
+.barra{height:76px;padding:22px 20px 0;display:flex;align-items:center;justify-content:space-between}
+.barra img{height:20px;width:auto;display:block}
+.rodo{width:44px;height:44px;border-radius:9999px;display:grid;place-items:center;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 88%);border:0;color:inherit}
+.cos{padding:8px 20px 0;display:flex;flex-direction:column;gap:12px}
+.retol{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.cos h2{font-size:28px;line-height:1.12;font-weight:700;letter-spacing:-0.03em}
+/* 1 · avisos */
+.avis{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border-radius:16px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06),inset 0 0 0 1px hsl(220 13% 92%)}
+.avis .app{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;flex-shrink:0;overflow:hidden}
+.avis .app img{width:100%;height:100%}
+.avis div{min-width:0;flex:1}
+.avis b{display:flex;justify-content:space-between;font-size:12px;font-weight:600}
+.avis b span{font-weight:400;color:hsl(220 9% 46%)}
+.avis p{font-size:13px;line-height:1.35;color:hsl(220 14% 25%);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mes{text-align:center;font-size:12px;color:hsl(220 9% 46%)}
+.calma{margin-top:4px;padding:14px 16px;border-radius:18px;background:hsl(138 76% 97%);box-shadow:inset 0 0 0 1px hsl(142 60% 86%);font-size:15px;font-weight:600;color:hsl(142 76% 26%)}
+.calma span{display:block;font-size:13px;font-weight:400;color:hsl(142 40% 28%);margin-top:2px}
+/* 2 · setmana */
+.interr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:4px;border-radius:9999px;background:hsl(210 20% 93%)}
+.interr span{height:40px;border-radius:9999px;display:grid;place-items:center;font-size:14px;font-weight:500;color:hsl(220 9% 40%)}
+.interr span.on{background:#2563EB;color:#fff}
+.dia{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid hsl(0 0% 91%)}
+.dia small{font-size:12px;font-weight:600;color:hsl(220 9% 46%)}
+.dia p{font-size:14px;line-height:1.35}
+.qui{height:24px;padding:0 9px;border-radius:9999px;font-size:11px;font-weight:600;display:inline-flex;align-items:center}
+.qui.h{background:hsl(214 100% 97%);color:#1D4ED8}
+.qui.t{background:hsl(210 20% 93%);color:hsl(220 14% 25%)}
+.lema{font-size:20px;font-weight:700;letter-spacing:-0.02em;margin-top:6px}
+/* 3 · el que no veus */
+.veus{padding:16px;border-radius:20px;background:#fff;box-shadow:0 8px 24px rgba(15,23,42,.07),inset 0 0 0 1px hsl(220 13% 91%)}
+.veus small{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:hsl(142 76% 32%)}
+.veus small::before{content:"";width:6px;height:6px;border-radius:9999px;background:currentColor}
+.veus p{font-size:22px;line-height:1.15;font-weight:700;letter-spacing:-0.02em;margin-top:6px}
+.grup{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:hsl(220 9% 46%);margin-top:4px}
+.fet{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.4}
+.fet i{width:20px;height:20px;border-radius:9999px;background:hsl(138 76% 96%);color:hsl(142 76% 36%);display:grid;place-items:center;flex-shrink:0;margin-top:1px}
+.fet i .ic{width:12px;height:12px}
+.compte{margin-top:4px;padding:12px 14px;border-radius:14px;background:hsl(220 14% 11%);color:#fff;font-size:14px;font-weight:600;display:flex;justify-content:space-between}
+/* 4 · xat */
+.xat{display:flex;flex-direction:column;gap:8px}
+.bomb{max-width:84%;padding:10px 13px;border-radius:18px;font-size:14px;line-height:1.4}
+.bomb.jo{align-self:flex-end;background:#3B82F6;color:#fff;border-bottom-right-radius:6px}
+.bomb.h{align-self:flex-start;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 90%);border-bottom-left-radius:6px}
+.qui-h{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:hsl(220 9% 46%)}
+.qui-h img{width:18px;height:18px;border-radius:5px}
+</style>
+</helmet>
+<div class="mo" style="width: 1800px; height: 1000px; box-sizing: border-box; padding: 40px 40px 0; background: hsl(210 20% 95%); font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1; display: flex; justify-content: space-between; align-items: flex-start">
+
+  <div class="columna">
+    <div class="tel"><div class="pant">
+      <div class="barra"><img src="/_blob/c6906de28faf974e45ec97233444ac82" alt="Hostly"><button class="rodo" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+      <div class="cos">
+        <p class="retol">Sin Hostly</p>
+        <h2>Así es tener un piso turístico.</h2>
+        <div class="avis"><span class="app" style="background: #25D366"><svg class="ic" style="color: #fff; width: 16px; height: 16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></span><div><b>Sophie Martin<span>23:47</span></b><p>Bonsoir ! C'est quoi le code du wifi ?</p></div></div>
+        <div class="avis"><span class="app"><img src="/_blob/bc432560991384d2eb1fc435843c8d49" alt=""></span><div><b>Airbnb<span>23:31</span></b><p>Pieter: We arrive at 23h, is that ok?</p></div></div>
+        <div class="avis"><span class="app" style="background: #25D366"><svg class="ic" style="color: #fff; width: 16px; height: 16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></span><div><b>Anna · limpieza<span>22:10</span></b><p>¿Mañana a qué hora entro?</p></div></div>
+        <div class="avis"><span class="app"><img src="/_blob/a3ff985056ee58c6491ce0cf7319cf35" alt=""></span><div><b>Booking.com<span>21:58</span></b><p>Nueva reserva · 3 noches</p></div></div>
+        <div class="avis"><span class="app" style="background: hsl(0 72% 51%)"><svg class="ic" style="color: #fff; width: 16px; height: 16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path></svg></span><div><b>Recordatorio<span>20:00</span></b><p>Registro de viajeros de hoy</p></div></div>
+        <p class="mes">y 14 avisos más</p>
+        <p class="calma">Con Hostly, un solo aviso.<span>Y solo cuando de verdad haces falta.</span></p>
+      </div>
+    </div></div>
+    <p class="peu-tel">B1 · El móvil, antes y después<span>Los avisos se apilan; luego queda uno</span></p>
+  </div>
+
+  <div class="columna">
+    <div class="tel"><div class="pant">
+      <div class="barra"><img src="/_blob/c6906de28faf974e45ec97233444ac82" alt="Hostly"><button class="rodo" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+      <div class="cos">
+        <h2>Tu semana con un piso turístico.</h2>
+        <div class="interr"><span>Sin Hostly</span><span class="on">Con Hostly</span></div>
+        <div>
+          <div class="dia"><small>Lunes</small><p>El huésped hace el check-in. Hostly lo envía a la policía.</p><span class="qui h">Hostly</span></div>
+          <div class="dia"><small>Martes</small><p>Hostly avisa a la limpieza.</p><span class="qui h">Hostly</span></div>
+          <div class="dia"><small>Miércoles</small><p>Los precios se ajustan solos.</p><span class="qui h">Hostly</span></div>
+          <div class="dia"><small>Jueves</small><p>La IA contesta. Tú lees lo importante.</p><span class="qui h">Hostly</span></div>
+          <div class="dia"><small>Viernes</small><p>23:47. Ya está contestado.</p><span class="qui h">Hostly</span></div>
+          <div class="dia"><small>Sábado</small><p>Las cuentas del propietario, hechas.</p><span class="qui h">Hostly</span></div>
+          <div class="dia" style="border-bottom: 0"><small>Domingo</small><p><b>Libre.</b></p><span class="qui t">Tú</span></div>
+        </div>
+        <p class="lema">Vuelve a tener fines de semana.</p>
+      </div>
+    </div></div>
+    <p class="peu-tel">B2 · Tu semana<span>El interruptor, arriba y siempre a mano</span></p>
+  </div>
+
+  <div class="columna">
+    <div class="tel"><div class="pant">
+      <div class="barra"><img src="/_blob/c6906de28faf974e45ec97233444ac82" alt="Hostly"><button class="rodo" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+      <div class="cos">
+        <p class="retol">Tú ves esto</p>
+        <div class="veus"><small>Nada pendiente</small><p>Hoy no te necesita nada.</p></div>
+        <p class="retol" style="margin-top: 6px">Hostly ha hecho esto</p>
+        <p class="grup">Por la mañana</p>
+        <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i>Subió el precio del sábado.</p>
+        <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i>Entró una reserva en Booking y cerró Airbnb esas noches.</p>
+        <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i>Avisó a Carmen para limpiar mañana.</p>
+        <p class="grup">Por la tarde</p>
+        <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i>Envió el registro a la policía.</p>
+        <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i>Vendió una salida más tarde: 25 €.</p>
+        <p class="grup">Por la noche</p>
+        <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i>Le contestó a Sophie lo del wifi, en francés.</p>
+        <p class="compte">Hoy: 9 cosas.<span>Tú: ninguna.</span></p>
+      </div>
+    </div></div>
+    <p class="peu-tel">B3 · Lo que no ves<span>Una línea arriba; el día entero debajo</span></p>
+  </div>
+
+  <div class="columna">
+    <div class="tel"><div class="pant">
+      <div class="barra"><img src="/_blob/c6906de28faf974e45ec97233444ac82" alt="Hostly"><button class="rodo" type="button" aria-label="Abrir menú"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></div>
+      <div class="cos">
+        <h2>¿Qué hace, exactamente?</h2>
+        <div class="xat">
+          <p class="bomb jo">¿Has enviado el registro de los que llegan hoy?</p>
+          <p class="qui-h"><img src="/_blob/caf3e6d718902542d92de9848faf41b8" alt="">Hostly</p>
+          <p class="bomb h">Sí. Lo envié a la policía y te guardé el comprobante.</p>
+          <p class="bomb jo">¿Quién limpia mañana?</p>
+          <p class="bomb h">Carmen, a las 11. Ya lo sabe.</p>
+          <p class="bomb jo">Sophie pregunta por el wifi.</p>
+          <p class="bomb h">Ya le contesté. En francés.</p>
+          <p class="bomb jo">¿Algo más?</p>
+          <p class="bomb h">Los Weber quieren salir más tarde. Les cobré 25 €.</p>
+        </div>
+      </div>
+    </div></div>
+    <p class="peu-tel">B4 · Preguntas y respuestas<span>Como hablar con alguien de confianza</span></p>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1800,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Empezar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:hsl(210 20% 98%)}
+a{color:inherit}a:hover{color:inherit}
+.eb{container-type:inline-size;container-name:pagina}
+.eb *{box-sizing:border-box}
+.eb p,.eb h1,.eb h2,.eb h3,.eb ol,.eb ul,.eb li{margin:0;padding:0;list-style:none}
+.eb a{text-decoration:none}
+sc-if,sc-for{display:contents}
+.cont{width:100%;max-width:1440px;margin:0 auto;padding-inline:64px}
+.ic{width:18px;height:18px;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:9999px;font-size:16px;font-weight:500;white-space:nowrap;border:0;cursor:pointer;font-family:inherit}
+.pill-pri{background:#2563EB;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.pill-pri:hover{background:#1D4ED8}
+.pill-pri:disabled{background:hsl(220 13% 88%);color:hsl(220 9% 46%);box-shadow:none;cursor:default}
+.capcal{height:80px;display:flex;align-items:center;justify-content:space-between}
+.logo img{height:24px;width:auto;display:block}
+.capcal a.entrar{font-size:14px;font-weight:500}
+.cos{min-height:820px;display:grid;grid-template-columns:600px minmax(0,1fr);gap:72px;align-items:center;padding-bottom:56px}
+.pista{display:flex;gap:4px;padding:4px;border-radius:9999px;background:hsl(210 20% 94%);align-self:flex-start}
+.pas{height:34px;padding:0 14px;border-radius:9999px;display:inline-flex;align-items:center;font-size:13px;font-weight:500;color:hsl(220 9% 40%)}
+.pas.on{background:#fff;color:hsl(220 14% 11%);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.pas.fet{color:hsl(142 76% 30%)}
+.targeta{margin-top:20px;border-radius:28px;background:#fff;box-shadow:0 12px 40px rgba(15,23,42,.07),inset 0 0 0 1px hsl(220 13% 91%);padding:40px;display:flex;flex-direction:column;gap:22px}
+.targeta h1{font-size:34px;line-height:1.12;font-weight:700;letter-spacing:-0.03em;text-wrap:balance}
+.targeta .sub{font-size:16px;line-height:1.55;color:hsl(220 9% 46%);margin-top:-10px}
+.camp{display:flex;flex-direction:column;gap:6px}
+.camp label{font-size:14px;font-weight:500}
+.camp label small{font-weight:400;color:hsl(220 9% 46%)}
+.entrada{display:flex;align-items:center;height:54px;border-radius:14px;background:hsl(210 20% 98%);box-shadow:inset 0 0 0 1px hsl(220 13% 88%);padding:0 16px;gap:12px}
+.entrada input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:500 17px/1 Inter,ui-sans-serif,system-ui,sans-serif;color:hsl(220 14% 11%)}
+.prefix{height:32px;padding:0 10px;border-radius:9999px;background:hsl(210 20% 94%);display:inline-flex;align-items:center;font-size:15px;font-weight:600}
+.dos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.fi{font-size:13px;line-height:1.5;color:hsl(220 9% 46%)}
+.pla{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:22px;border-radius:22px;border:0;background:hsl(210 20% 98%);text-align:left;cursor:pointer;font-family:inherit;color:hsl(220 14% 11%);box-shadow:inset 0 0 0 1px hsl(220 13% 88%);height:100%}
+.pla.top{background:#fff;box-shadow:inset 0 0 0 2px #2563EB}
+.pla-nom{font-size:16px;font-weight:600}
+.pla-preu{font-size:32px;font-weight:700;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.pla-preu small{font-size:13px;font-weight:400;color:hsl(220 9% 46%);letter-spacing:0;margin-left:4px}
+.pla-desc{font-size:14px;line-height:1.5;color:hsl(220 9% 46%)}
+.tria p{font-size:14px;font-weight:500;margin-bottom:8px}
+.opcions{display:flex;flex-wrap:wrap;gap:8px}
+.opcio{height:40px;padding:0 15px;border-radius:9999px;border:0;background:hsl(210 20% 97%);box-shadow:inset 0 0 0 1px hsl(220 13% 88%);font-family:inherit;font-size:14px;font-weight:500;color:hsl(220 14% 11%);cursor:pointer;font-variant-numeric:tabular-nums}
+.opcio.on{background:#2563EB;color:#fff;box-shadow:none}
+.enrere{background:transparent;border:0;padding:0;font-family:inherit;font-size:14px;font-weight:500;color:hsl(220 9% 46%);cursor:pointer;align-self:flex-start}
+.fila-boto{display:flex;align-items:center;gap:18px}
+.confi{display:flex;gap:20px;margin-top:20px;font-size:13px;color:hsl(220 9% 40%)}
+.confi span{display:inline-flex;align-items:center;gap:6px}
+.confi .ic{width:14px;height:14px;color:hsl(142 76% 36%)}
+.fet-cap{width:56px;height:56px;border-radius:9999px;background:hsl(138 76% 96%);color:hsl(142 76% 36%);display:grid;place-items:center}
+
+/* La vista prèvia */
+.previa{display:flex;flex-direction:column;align-items:center;gap:20px}
+.previa-retol{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.tel{width:300px;height:620px;padding:10px;border-radius:46px;background:hsl(220 14% 11%);box-shadow:0 40px 80px -24px rgba(15,23,42,.4)}
+.pantalla{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:hsl(210 20% 98%);display:flex;flex-direction:column}
+.p-cos{flex:1;padding:44px 16px 12px;display:flex;flex-direction:column;gap:10px}
+.p-cos h3{font-size:22px;font-weight:600}
+.p-cos .data{font-size:11px;color:hsl(220 9% 46%);margin-top:-8px}
+.p-dies{display:flex;gap:4px}
+.p-dies span{height:22px;padding:0 9px;border-radius:9999px;font-size:10px;font-weight:500;color:hsl(218 11% 55%);display:inline-flex;align-items:center}
+.p-dies span.on{background:#3B82F6;color:#fff}
+.p-retol{font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#3B82F6;margin-top:4px}
+.p-fila{padding:10px 0;border-bottom:1px solid hsl(0 0% 92%)}
+.p-l1{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500}
+.p-xip{height:17px;padding:0 6px;border-radius:9999px;font-size:9px;font-weight:600;display:inline-flex;align-items:center}
+.p-xip.ent{background:hsl(217 91% 60% / .1);color:#2563EB}
+.p-xip.sor{background:hsl(45 93% 47% / .14);color:hsl(32 95% 38%)}
+.p-l2{display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:hsl(220 9% 46%)}
+.p-l2 span{display:inline-flex;align-items:center;gap:4px}
+.p-l2 span::before{content:"";width:5px;height:5px;border-radius:9999px;background:hsl(142 76% 36%)}
+.p-tabs{height:60px;display:flex;justify-content:space-around;align-items:flex-start;padding-top:9px;background:#fff;border-top:1px solid hsl(220 13% 91%)}
+.p-tabs span{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:9px;font-weight:500;color:hsl(218 11% 55%)}
+.p-tabs span.on{color:#3B82F6}
+.p-tabs .ic{width:18px;height:18px}
+.previa-peu{font-size:14px;color:hsl(220 9% 46%);text-align:center;max-width:22em}
+
+@container pagina (max-width: 1100px){
+  .cont{padding-inline:20px}
+  .cos{grid-template-columns:minmax(0,1fr);gap:40px;padding:16px 0 48px}
+  .targeta{padding:24px}
+  .dos{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</helmet>
+<div class="eb" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: hsl(210 20% 98%); -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+  <div class="cont">
+    <header class="capcal">
+      <a class="logo" href="B1-inici.dc.html" aria-label="Hostly, inicio"><img src="/_blob/c6906de28faf974e45ec97233444ac82" alt="Hostly"></a>
+      <a class="entrar" href="#">Iniciar sesión</a>
+    </header>
+
+    <div class="cos">
+      <div style="display: flex; flex-direction: column">
+        <div class="pista" aria-label="Pasos">
+          <span class="{{c1}}">1 · Tus datos</span>
+          <span class="{{c2}}">2 · Plan</span>
+          <span class="{{c3}}">3 · Listo</span>
+        </div>
+
+        <div class="targeta">
+          <sc-if value="{{p1}}" hint-placeholder-val="{{ true }}">
+            <h1>Para empezar, tu nombre y un teléfono.</h1>
+            <p class="sub">Solo te llamamos si hace falta ayudarte a ponerlo en marcha.</p>
+            <div class="dos">
+              <div class="camp"><label for="e-nom">Nombre</label><div class="entrada"><input id="e-nom" type="text" placeholder="Cómo te llamas" autocomplete="name"></div></div>
+              <div class="camp"><label for="e-tel">Teléfono</label><div class="entrada"><span class="prefix">+34</span><input id="e-tel" type="tel" inputmode="tel" placeholder="600 000 000" autocomplete="tel"></div></div>
+            </div>
+            <div class="camp"><label for="e-correu">Correo <small>(si quieres)</small></label><div class="entrada"><input id="e-correu" type="email" placeholder="tu@correo.com" autocomplete="email"></div></div>
+            <div class="fila-boto"><button class="pill pill-pri" type="button" onClick="{{continuar}}">Seguir</button><p class="fi">Tus datos son solo para esto. <a href="#" style="text-decoration: underline">Privacidad</a></p></div>
+          </sc-if>
+
+          <sc-if value="{{p2}}" hint-placeholder-val="{{ false }}">
+            <h1>¿Cómo quieres empezar?</h1>
+            <p class="sub">Puedes cambiar cuando quieras.</p>
+            <div class="dos">
+              <button class="pla top" type="button" onClick="{{triaCompleto}}"><span class="pla-nom">Hostly Completo</span><span class="pla-preu">40 €<small>al mes por piso</small></span><span class="pla-desc">Todo Hostly. El primer mes, gratis. Lo dejamos listo contigo en una llamada.</span></button>
+              <button class="pla" type="button" onClick="{{triaGratis}}"><span class="pla-nom">Solo el check-in y la policía</span><span class="pla-preu">0 €<small>para siempre</small></span><span class="pla-desc">Tu cuenta, ahora mismo. Sin tarjeta.</span></button>
+            </div>
+            <button class="enrere" type="button" onClick="{{enrere1}}">← Volver</button>
+          </sc-if>
+
+          <sc-if value="{{p3c}}" hint-placeholder-val="{{ false }}">
+            <h1>¿Cuándo te va bien hablar?</h1>
+            <p class="sub">Veinte minutos con Biel, el fundador, para dejarlo listo contigo.</p>
+            <div class="tria"><p>Día</p><div class="opcions"><sc-for list="{{dies}}" as="d" hint-placeholder-count="5"><button type="button" class="{{d.cls}}" onClick="{{d.pick}}">{{d.label}}</button></sc-for></div></div>
+            <div class="tria"><p>Hora</p><div class="opcions"><sc-for list="{{hores}}" as="h" hint-placeholder-count="10"><button type="button" class="{{h.cls}}" onClick="{{h.pick}}">{{h.label}}</button></sc-for></div></div>
+            <div class="fila-boto"><button class="pill pill-pri" type="button" disabled="{{noPot}}" onClick="{{confirmar}}">Reservar la llamada</button><p class="fi">{{resum}}</p></div>
+            <button class="enrere" type="button" onClick="{{enrere2}}">← Cambiar de plan</button>
+          </sc-if>
+
+          <sc-if value="{{p3g}}" hint-placeholder-val="{{ false }}">
+            <h1>Ya puedes crear tu cuenta.</h1>
+            <p class="sub">Pones el nombre de tu piso y tendrás el enlace del check-in para tus huéspedes.</p>
+            <div class="fila-boto"><a class="pill pill-pri" href="#">Crear la cuenta</a><p class="fi">Si te atascas, te ayudamos.</p></div>
+            <button class="enrere" type="button" onClick="{{enrere2}}">← Cambiar de plan</button>
+          </sc-if>
+
+          <sc-if value="{{p4}}" hint-placeholder-val="{{ false }}">
+            <span class="fet-cap"><svg class="ic" style="width: 26px; height: 26px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+            <h1>Hecho. {{resumCurt}}</h1>
+            <p class="sub">Te escribimos por WhatsApp para confirmarlo. Hasta entonces, nada más.</p>
+            <button class="enrere" type="button" onClick="{{reinicia}}">Volver a empezar la prueba</button>
+          </sc-if>
+        </div>
+
+        <p class="confi">
+          <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Sin permanencia</span>
+          <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>El primer mes del Completo, gratis</span>
+          <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>En castellano y en catalán</span>
+        </p>
+      </div>
+
+      <div class="previa" aria-label="Así será tu Hostly">
+        <p class="previa-retol">{{retolPrevia}}</p>
+        <div class="tel">
+          <div class="pantalla">
+            <div class="p-cos">
+              <h3>Resumen</h3>
+              <p class="data">martes, 13 de octubre</p>
+              <div class="p-dies"><span class="on">Hoy</span><span>3 días</span><span>7 días</span></div>
+              <p class="p-retol">Hoy · 1 entrada · 2 salidas</p>
+              <sc-if value="{{esGratis}}" hint-placeholder-val="{{ false }}">
+                <div class="p-fila"><p class="p-l1">Pieter de Vries <span class="p-xip ent">Entrada</span></p><p class="p-l2"><span>Check-in hecho</span>Tu piso</p></div>
+                <div class="p-fila"><p class="p-l1">Familie Becker <span class="p-xip sor">Salida</span></p><p class="p-l2"><span>Enviado a la policía</span>Tu piso</p></div>
+              </sc-if>
+              <sc-if value="{{noGratis}}" hint-placeholder-val="{{ true }}">
+                <div class="p-fila"><p class="p-l1">Pieter de Vries <span class="p-xip ent">Entrada</span></p><p class="p-l2"><span>Check-in · Limpieza</span>Cala Moreta</p></div>
+                <div class="p-fila"><p class="p-l1">Familie Becker <span class="p-xip sor">Salida</span></p><p class="p-l2"><span>Limpieza</span>Cala Moreta</p></div>
+                <div class="p-fila"><p class="p-l1">Sophie Martin <span class="p-xip sor">Salida</span></p><p class="p-l2"><span>Limpieza</span>El Mirador</p></div>
+              </sc-if>
+            </div>
+            <sc-if value="{{esGratis}}" hint-placeholder-val="{{ false }}">
+              <div class="p-tabs">
+                <span class="on"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="M2 12h2"></path><path d="M20 12h2"></path></svg>Resumen</span>
+                <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>Reservas</span>
+                <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4h-7"></path><path d="M10 4H3"></path><path d="M21 12h-9"></path><path d="M8 12H3"></path><path d="M21 20h-5"></path><path d="M12 20H3"></path></svg>Gestión</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{noGratis}}" hint-placeholder-val="{{ true }}">
+              <div class="p-tabs">
+                <span class="on"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="M2 12h2"></path><path d="M20 12h2"></path></svg>Resumen</span>
+                <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>Calendario</span>
+                <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6 5.6 1.9-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z"></path></svg>Limpieza</span>
+                <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Chat</span>
+                <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4h-7"></path><path d="M10 4H3"></path><path d="M21 12h-9"></path><path d="M8 12H3"></path><path d="M21 20h-5"></path><path d="M12 20H3"></path></svg>Gestión</span>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+        <p class="previa-peu">{{peuPrevia}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const paso = st.paso || 1;
+    const plan = st.plan || null;
+    const dia = st.dia || null;
+    const hora = st.hora || null;
+    const set = (o) => () => this.setState(Object.assign({}, this.state || {}, o));
+    const dies = [['mar 13', '13'], ['mié 14', '14'], ['jue 15', '15'], ['vie 16', '16'], ['lun 19', '19']];
+    const hores = ['10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '16:00', '16:30', '17:00', '17:30'];
+    const diaTxt = dia ? dies.find((d) => d[1] === dia)[0] : '';
+    const pas = (n) => (paso === n || (n === 3 && paso === 4) ? 'pas on' : (paso > n ? 'pas fet' : 'pas'));
+    const gratis = plan === 'gratis';
+    return {
+      p1: paso === 1, p2: paso === 2, p3c: paso === 3 && plan === 'completo', p3g: paso === 3 && gratis, p4: paso === 4,
+      c1: pas(1), c2: pas(2), c3: pas(3),
+      continuar: set({ paso: 2 }),
+      triaCompleto: set({ paso: 3, plan: 'completo' }),
+      triaGratis: set({ paso: 3, plan: 'gratis' }),
+      enrere1: set({ paso: 1 }),
+      enrere2: set({ paso: 2, plan: null, dia: null, hora: null }),
+      confirmar: set({ paso: 4 }),
+      reinicia: set({ paso: 1, plan: null, dia: null, hora: null }),
+      dies: dies.map((d) => ({ label: d[0], cls: dia === d[1] ? 'opcio on' : 'opcio', pick: set({ dia: d[1] }) })),
+      hores: hores.map((h) => ({ label: h, cls: hora === h ? 'opcio on' : 'opcio', pick: set({ hora: h }) })),
+      noPot: !(dia && hora),
+      resum: dia && hora ? 'El ' + diaTxt + ' a las ' + hora + '.' : 'Elige día y hora.',
+      resumCurt: dia && hora ? 'El ' + diaTxt + ' a las ' + hora + '.' : '',
+      esGratis: gratis, noGratis: !gratis,
+      retolPrevia: gratis ? 'Tu Hostly gratis' : (plan === 'completo' ? 'Tu Hostly Completo' : 'Así será tu Hostly'),
+      peuPrevia: gratis ? 'Lo justo para el check-in y la policía.' : 'Lo mismo en el móvil y en el ordenador.'
+    };
+  }
+}
+</script>
+</body>
+</html>

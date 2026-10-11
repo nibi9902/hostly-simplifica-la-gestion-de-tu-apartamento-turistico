@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<title>Com parla la web</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:hsl(210 20% 98%)}
+a{color:#2563EB}a:hover{color:#1D4ED8}
+.cp *{box-sizing:border-box}
+.cp p,.cp h1,.cp h2,.cp h3,.cp ol,.cp ul,.cp li{margin:0;padding:0;list-style:none}
+.targ{background:#fff;border-radius:20px;box-shadow:0 1px 2px rgba(0,0,0,.04),inset 0 0 0 1px hsl(220 13% 91%);padding:28px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.targ h2{font-size:21px;line-height:28px;font-weight:600;letter-spacing:-0.01em}
+.retol{font-size:11px;line-height:16px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.regla{display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;padding:9px 0;border-top:1px solid hsl(0 0% 94%)}
+.regla:first-child{border-top:0;padding-top:0}
+.regla b.n{width:28px;height:28px;border-radius:9999px;background:hsl(214 100% 97%);color:#2563EB;font-size:13px;display:grid;place-items:center}
+.regla p{font-size:16px;line-height:22px;font-weight:600}
+.regla span{display:block;font-size:14px;line-height:20px;font-weight:400;color:hsl(220 9% 46%);margin-top:2px}
+.canvi{display:flex;flex-direction:column;gap:6px;padding:12px 0;border-top:1px solid hsl(0 0% 94%)}
+.canvi:first-child{border-top:0;padding-top:0}
+.abans{font-size:14px;line-height:20px;color:hsl(220 9% 46%);text-decoration:line-through;text-decoration-color:hsl(0 60% 70%)}
+.ara{display:flex;gap:10px;font-size:16px;line-height:23px;font-weight:500}
+.ara svg{flex-shrink:0;margin-top:3px;color:hsl(142 76% 36%)}
+.frases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.frase{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border-radius:16px;background:hsl(210 20% 98%)}
+.frase small{align-self:flex-start;height:22px;padding:0 9px;border-radius:9999px;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 88%);font-size:11px;font-weight:600;display:inline-flex;align-items:center}
+.frase p{font-size:19px;line-height:1.25;font-weight:600;letter-spacing:-0.01em}
+</style>
+</helmet>
+<div class="cp" style="width: 1440px; height: 1040px; box-sizing: border-box; padding: 64px; background: hsl(210 20% 98%); font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; gap: 32px">
+
+  <header style="display: flex; justify-content: space-between; align-items: flex-start; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <p class="retol">hostlylabs.com · estil B · 11 d'octubre de 2026</p>
+      <h1 style="font-size: 56px; line-height: 1.05; font-weight: 700; letter-spacing: -0.03em">Com parla la web</h1>
+      <p style="font-size: 19px; line-height: 1.5; color: hsl(220 9% 46%)">Les regles que surten dels teus comentaris. Valen per a les quatre portades de sota.</p>
+    </div>
+    <img src="/_blob/c6906de28faf974e45ec97233444ac82" alt="Hostly" style="height: 26px; width: auto; margin-top: 8px">
+  </header>
+
+  <section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; height: 540px">
+    <article class="targ">
+      <h2>Les regles</h2>
+      <ol>
+        <li class="regla"><b class="n">1</b><p>El lema, sol<span>A dalt només «¿Gestionas apartamentos en Airbnb? ¿O te gestionan ellos a ti?». La resta apareix després, a poc a poc.</span></p></li>
+        <li class="regla"><b class="n">2</b><p>Primer el dolor<span>Després, què canvia. Les funcions, per a qui les busqui.</span></p></li>
+        <li class="regla"><b class="n">3</b><p>Literal i curt<span>El que passa, en una frase. Sense hores, dates ni noms de sistemes.</span></p></li>
+        <li class="regla"><b class="n">4</b><p>«La policía», no «los Mossos»<span>Així val per a tot Espanya.</span></p></li>
+        <li class="regla"><b class="n">5</b><p>Sense vendre<span>Res de «empecemos por tu teléfono». Si demanem el telèfon, diem per a què.</span></p></li>
+        <li class="regla"><b class="n">6</b><p>Una idea per pantalla<span>I menys paraules: el que sobra, fora.</span></p></li>
+      </ol>
+    </article>
+    <article class="targ">
+      <h2>Abans → ara</h2>
+      <div>
+        <div class="canvi"><p class="abans">Cada día a las 15:00, Hostly lo envía a los Mossos y guarda el comprobante.</p><p class="ara"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Cada día, Hostly lo envía a la policía y te guarda el comprobante.</p></div>
+        <div class="canvi"><p class="abans">La tasa turística: te avisa del 1 al 20 de abril y de octubre.</p><p class="ara"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>La tasa turística, calculada. Te avisa cuando toca presentarla.</p></div>
+        <div class="canvi"><p class="abans">Empecemos por tu teléfono.</p><p class="ara"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Para empezar, tu nombre y un teléfono. Solo te llamamos si hace falta.</p></div>
+        <div class="canvi"><p class="abans">Cinco puertas: Resumen, Calendario, Limpieza, Chat y Gestión.</p><p class="ara"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Contesta, avisa, envía y cobra por ti.</p></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="targ" style="gap: 14px; padding: 22px 24px">
+    <p class="retol">En lloc de «Todo va solo»: quatre frases amb més xitxa, una per portada</p>
+    <div class="frases">
+      <div class="frase"><small>B1</small><p>Hostly está pendiente. Tú, ya no.</p></div>
+      <div class="frase"><small>B2</small><p>Vuelve a tener fines de semana.</p></div>
+      <div class="frase"><small>B3</small><p>Te enteras solo de lo que importa.</p></div>
+      <div class="frase"><small>B4</small><p>Tu piso ya no te quita el sueño.</p></div>
+    </div>
+    <p style="font-size: 13px; color: hsl(220 9% 46%)">Surten del que et va dir el gestor: «des que el tinc, em preocupo molt menys del pis».</p>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
