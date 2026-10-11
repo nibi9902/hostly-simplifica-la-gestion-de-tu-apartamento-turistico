@@ -46,6 +46,30 @@ frase del Biel, i el tancament «Empieza gratis con el check-in. El resto, cuand
 **Pendent de permís:** la frase del gestor de la B4 és real (reunió del Biel), però surt amb
 «[Nombre y número de pisos, con su permiso]» fins que el gestor digui que sí.
 
+## Ronda 3 (11-10, tarda): la portada que va triar el Biel, en quatre versions
+
+Pàgina «La portada, en quatre versions» del mateix llenç (la ronda d'abans és a l'altra pàgina).
+Els tons encara no el convencen; primer, l'estructura. L'ordre que va dir, igual a les quatre:
+
+1. El lema i, sol, «Hostly simplifica todo lo que implica tener un apartamento turístico.».
+   Després, la pàgina baixa una mica sola, perquè se sàpiga que cal baixar.
+2. La frase de l'**Àngel** (el gestor; és seva) amb el seu vídeo al costat (el posarà el Biel).
+3. «Hostly está pendiente. Tú, ya no.» i el que ha fet (ara 8 coses: s'hi han afegit els codis
+   de la porta i la salida més tard).
+4. «Gratis para siempre: el check-in y la policía», gran: el bloc de la B del 10-10.
+5. «Tres pasos. El último dura siempre.»
+6. «Un plan gratis. Un plan completo. Nada más.»
+7. «¿Prefieres hablarlo? Déjame tu teléfono y te llamo yo.» (el Biel).
+
+| Versió | Com es veu |
+|---|---|
+| `P1-neta` | La B tal qual, afinada: gris clar i targetes blanques. |
+| `P2-calida` | Els tons del menjador (sorra i fusta). «Hostly está pendiente» sobre la foto del menjador. |
+| `P3-editorial` | Blanc, tipografia gran a l'esquerra, línies fines, sense caixes; el 0 €, enorme. |
+| `P4-nit` | Fosca fins a «Hostly está pendiente», amb el menjador de nit; clara des del «Gratis para siempre». |
+
+**Pendent:** el mòbil (al Biel no li agrada com es veia; es farà després de l'ordinador).
+
 ## Les fotos (pujades a aquest llenç)
 
 menjador dia / capvespre / nit / pluja · menjador vertical dia / nit · arbre dia / capvespre /

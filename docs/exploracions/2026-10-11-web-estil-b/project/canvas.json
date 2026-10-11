@@ -2,30 +2,43 @@
   "v": 3,
   "createdOnFiles": { "v": 1, "at": "2026-10-11T08:40:00Z" },
   "title": "Web de Hostly, estil B",
-  "launch": { "view": "canvas" },
-  "pages": [],
+  "launch": { "view": "canvas", "page": "portada" },
+  "pages": [
+    { "id": "portada", "name": "La portada, en quatre versions" },
+    { "id": "maneres", "name": "Quatre maneres d'explicar-la (11-10)" }
+  ],
   "boards": {
-    "Main.dc.html": { "x": 0, "y": 0, "w": 1440, "h": 1040, "title": "Com parla la web" },
-    "Empezar.dc.html": { "x": 1520, "y": 0, "w": 1440, "h": 900, "title": "Empezar, amb el to nou", "expand": "fill", "is_interactive": true },
-    "Mobil.dc.html": { "x": 3040, "y": 0, "w": 1800, "h": 1000, "title": "Al mòbil: la part que explica Hostly" },
-    "B1-inici.dc.html": { "x": 0, "y": 1500, "w": 1440, "h": 5600, "title": "B1 · Las notificaciones", "expand": "fill" },
-    "B2-inici.dc.html": { "x": 1520, "y": 1500, "w": 1440, "h": 5060, "title": "B2 · Tu semana", "expand": "fill", "is_interactive": true },
-    "B3-inici.dc.html": { "x": 3040, "y": 1500, "w": 1440, "h": 5440, "title": "B3 · Lo que no ves", "expand": "fill" },
-    "B4-inici.dc.html": { "x": 4560, "y": 1500, "w": 1440, "h": 4940, "title": "B4 · En palabras de un gestor", "expand": "fill" },
-    "B-original.dc.html": { "x": 6080, "y": 1500, "w": 1440, "h": 5100, "title": "La B del 10-10, per comparar", "expand": "fill", "is_interactive": true }
+    "Main.dc.html": { "x": 0, "y": 0, "w": 1440, "h": 1040, "title": "Com parla la web", "page": "maneres" },
+    "Empezar.dc.html": { "x": 1520, "y": 0, "w": 1440, "h": 900, "title": "Empezar, amb el to nou", "expand": "fill", "is_interactive": true, "page": "maneres" },
+    "Mobil.dc.html": { "x": 3040, "y": 0, "w": 1800, "h": 1000, "title": "Al mòbil: la part que explica Hostly", "page": "maneres" },
+    "B1-inici.dc.html": { "x": 0, "y": 1500, "w": 1440, "h": 5600, "title": "B1 · Las notificaciones", "expand": "fill", "page": "maneres" },
+    "B2-inici.dc.html": { "x": 1520, "y": 1500, "w": 1440, "h": 5060, "title": "B2 · Tu semana", "expand": "fill", "is_interactive": true, "page": "maneres" },
+    "B3-inici.dc.html": { "x": 3040, "y": 1500, "w": 1440, "h": 5440, "title": "B3 · Lo que no ves", "expand": "fill", "page": "maneres" },
+    "B4-inici.dc.html": { "x": 4560, "y": 1500, "w": 1440, "h": 4940, "title": "B4 · En palabras de un gestor", "expand": "fill", "page": "maneres" },
+    "B-original.dc.html": { "x": 6080, "y": 1500, "w": 1440, "h": 5100, "title": "La B del 10-10, per comparar", "expand": "fill", "is_interactive": true, "page": "maneres" },
+    "P1-neta.dc.html": { "x": 0, "y": 0, "w": 1440, "h": 4900, "title": "1 · La B, neta", "expand": "fill", "page": "portada" },
+    "P2-calida.dc.html": { "x": 1520, "y": 0, "w": 1440, "h": 4900, "title": "2 · Càlida", "expand": "fill", "page": "portada" },
+    "P3-editorial.dc.html": { "x": 3040, "y": 0, "w": 1440, "h": 4900, "title": "3 · Editorial", "expand": "fill", "page": "portada" },
+    "P4-nit.dc.html": { "x": 4560, "y": 0, "w": 1440, "h": 4900, "title": "4 · Nit", "expand": "fill", "page": "portada" }
   },
   "order": [
     "Main.dc.html", "Empezar.dc.html", "Mobil.dc.html",
     "B1-inici.dc.html", "B2-inici.dc.html", "B3-inici.dc.html", "B4-inici.dc.html",
-    "B-original.dc.html"
+    "B-original.dc.html",
+    "P1-neta.dc.html", "P2-calida.dc.html", "P3-editorial.dc.html", "P4-nit.dc.html"
   ],
   "notes": {
-    "llegir": { "x": 4920, "y": 40, "w": 560, "fill": "blue", "size": "m", "text": "Com llegir el llenç\n\nA dalt: com parla la web (les regles que surten dels teus comentaris), l'Empezar amb el to nou i la part que explica Hostly, al mòbil.\n\nA baix: quatre portades en l'estil de la B. Totes comencen només amb el lema; canvia com s'explica Hostly després.\n\nA la dreta de tot, la B del 10-10, per comparar.\n\nAmb Play: l'interruptor de la B2, l'Empezar i les portes de la B del 10-10." },
-    "colB1": { "x": 0, "y": 1220, "text": "B1 · Las notificaciones", "kind": "title1", "maxW": 1440 },
-    "colB2": { "x": 1520, "y": 1220, "text": "B2 · Tu semana", "kind": "title1", "maxW": 1440 },
-    "colB3": { "x": 3040, "y": 1220, "text": "B3 · Lo que no ves", "kind": "title1", "maxW": 1440 },
-    "colB4": { "x": 4560, "y": 1220, "text": "B4 · En palabras de un gestor", "kind": "title1", "maxW": 1440 },
-    "colBo": { "x": 6080, "y": 1220, "text": "La B del 10-10", "kind": "title1", "maxW": 1440 }
+    "llegir": { "x": 4920, "y": 40, "w": 560, "fill": "blue", "size": "m", "page": "maneres", "text": "Com llegir el llenç\n\nA dalt: com parla la web (les regles que surten dels teus comentaris), l'Empezar amb el to nou i la part que explica Hostly, al mòbil.\n\nA baix: quatre portades en l'estil de la B. Totes comencen només amb el lema; canvia com s'explica Hostly després.\n\nA la dreta de tot, la B del 10-10, per comparar.\n\nAmb Play: l'interruptor de la B2, l'Empezar i les portes de la B del 10-10." },
+    "colB1": { "x": 0, "y": 1220, "text": "B1 · Las notificaciones", "kind": "title1", "maxW": 1440, "page": "maneres" },
+    "colB2": { "x": 1520, "y": 1220, "text": "B2 · Tu semana", "kind": "title1", "maxW": 1440, "page": "maneres" },
+    "colB3": { "x": 3040, "y": 1220, "text": "B3 · Lo que no ves", "kind": "title1", "maxW": 1440, "page": "maneres" },
+    "colB4": { "x": 4560, "y": 1220, "text": "B4 · En palabras de un gestor", "kind": "title1", "maxW": 1440, "page": "maneres" },
+    "colBo": { "x": 6080, "y": 1220, "text": "La B del 10-10", "kind": "title1", "maxW": 1440, "page": "maneres" },
+    "pP1": { "x": 0, "y": -280, "text": "1 · La B, neta", "kind": "title1", "maxW": 1440, "page": "portada" },
+    "pP2": { "x": 1520, "y": -280, "text": "2 · Càlida", "kind": "title1", "maxW": 1440, "page": "portada" },
+    "pP3": { "x": 3040, "y": -280, "text": "3 · Editorial", "kind": "title1", "maxW": 1440, "page": "portada" },
+    "pP4": { "x": 4560, "y": -280, "text": "4 · Nit", "kind": "title1", "maxW": 1440, "page": "portada" },
+    "ordre": { "x": 6080, "y": 0, "w": 560, "fill": "blue", "size": "m", "page": "portada", "text": "La portada que em vas dir, igual a les quatre\n\n1. El lema i, sol, «Hostly simplifica todo lo que implica tener un apartamento turístico». Després la pàgina baixa una mica sola.\n2. La frase de l'Àngel, amb el seu vídeo al costat.\n3. «Hostly está pendiente. Tú, ya no.» i el que ha fet.\n4. «Gratis para siempre: el check-in y la policía», gran (el de la B del 10-10).\n5. Tres pasos. El último dura siempre.\n6. Un plan gratis. Un plan completo. Nada más.\n7. Te llamo: deixa el telèfon.\n\nCanvien els tons i com es posa cada part.\n\nL'altra pàgina del llenç té la ronda d'abans." }
   },
   "designSystems": []
 }
