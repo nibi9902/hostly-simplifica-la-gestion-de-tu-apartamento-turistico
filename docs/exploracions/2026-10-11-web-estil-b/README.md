@@ -70,6 +70,33 @@ Els tons encara no el convencen; primer, l'estructura. L'ordre que va dir, igual
 
 **Pendent:** el mòbil (al Biel no li agrada com es veia; es farà després de l'ordinador).
 
+## Ronda 4 (11-10, vespre): peça a peça
+
+Pàgina «Peça a peça» del llenç (la primera). Variants de cada part, totes amb l'estil de la 1 (la
+neta), per ajuntar-les després. El que va dir el Biel:
+
+- **Àngel:** la frase passa a «…me preocupo mucho menos de la gestión de mi apartamento». El
+  vídeo serà **vertical** («petit i després que es faci gran»). Variants: al costat i s'obre en
+  gran · dins d'un mòbil · bombolla que s'obre.
+- **«Hostly está pendiente»:** li agrada la **1** (la «U»), però amb la **pantalla de l'ordinador
+  de la B del 10-10** en lloc del mòbil. Variants: la U amb la pantalla al mig · pantalla gran amb
+  notes · llista a l'esquerra i pantalla a la dreta · pantalla a dalt i targetes a sota.
+- **«Gratis para siempre»:** a mig camí entre els requadres i el 0 € gegant. **Fora** els
+  missatges contestats i les neteges (són del pla complet) i «Llueva o haga sol». Ara hi ha el que
+  inclou de debò el gratuït: el check-in des del mòbil, l'enviament a la policia amb comprovant, la
+  taxa calculada i l'avís si falta algú. Variants: requadres amb el zero gegant · zero sense caixa
+  · el zero de fons · banda fosca.
+- **Tres passos:** l'estil 01-02-03 de l'editorial, sense línies. Tres textos per triar.
+- **Preus:** els de la 1. **«Te llamo»:** sí. Tres variants.
+
+## Per provar més endavant (A/B)
+
+- **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
+  `project/B-original.dc.html`): al Biel li va agradar «moltíssim». No es llença: és candidata per
+  a una prova A/B de conversió quan la web nova estigui feta. Les conversions ja es poden mesurar
+  amb els esdeveniments de l'embut (`empezar_datos`, `demo_solicitada`, `empezar_cuenta`,
+  `llamame_enviado`).
+
 ## Les fotos (pujades a aquest llenç)
 
 menjador dia / capvespre / nit / pluja · menjador vertical dia / nit · arbre dia / capvespre /

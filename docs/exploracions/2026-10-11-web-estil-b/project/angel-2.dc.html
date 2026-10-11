@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Àngel · vídeo dins d'un mòbil</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#fff}
+.pg{container-type:inline-size;container-name:pagina}
+.pg *{box-sizing:border-box}
+.pg p,.pg h2,.pg h3{margin:0;padding:0}
+.cont{width:100%;max-width:1440px;margin:0 auto;padding-inline:64px}
+.retol{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.ic{width:18px;height:18px;flex-shrink:0}
+.angel{height:720px;display:flex;align-items:center;background:#fff}
+.grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+.tel{justify-self:center;width:290px;height:600px;padding:9px;border-radius:48px;background:hsl(220 14% 11%);box-shadow:0 30px 70px -22px rgba(15,23,42,.45)}
+.pant{position:relative;width:100%;height:100%;border-radius:39px;overflow:hidden;color:#fff}
+.pant img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pant::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,12,18,.45),rgba(9,12,18,0) 25%,rgba(9,12,18,0) 60%,rgba(9,12,18,.7))}
+.barres{position:absolute;z-index:1;left:14px;right:14px;top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.barres span{height:3px;border-radius:9999px;background:rgba(255,255,255,.4)}
+.barres span:first-child{background:#fff}
+.qui-v{position:absolute;z-index:1;left:14px;top:30px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.qui-v i{width:30px;height:30px;border-radius:9999px;background:#fff;color:hsl(220 14% 11%);display:grid;place-items:center;font-style:normal;font-size:13px}
+.qui-v small{display:block;font-weight:400;opacity:.85;font-size:11px}
+.play{position:absolute;z-index:1;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:9999px;border:0;display:grid;place-items:center;background:hsl(0 0% 100% / .92);color:hsl(220 14% 11%);cursor:pointer}
+.play .ic{width:24px;height:24px;margin-left:4px}
+.sub-v{position:absolute;z-index:1;left:16px;right:16px;bottom:26px;font-size:15px;line-height:1.35;font-weight:600}
+.angel q{display:block;margin-top:20px;font-size:46px;line-height:1.15;font-weight:600;letter-spacing:-0.025em;quotes:"«" "»";text-wrap:balance}
+.qui{display:flex;align-items:center;gap:14px;margin-top:28px}
+.inicial{width:48px;height:48px;border-radius:9999px;background:hsl(210 20% 94%);display:grid;place-items:center;font-size:18px;font-weight:600}
+.qui b{display:block;font-size:16px;font-weight:600}
+.qui small{font-size:14px;color:hsl(220 9% 46%)}
+@container pagina (max-width: 900px){
+  .cont{padding-inline:20px}
+  .angel{height:auto;padding:56px 0}
+  .grid{grid-template-columns:minmax(0,1fr);gap:32px}
+  .angel q{font-size:28px}
+  .tel{width:240px;height:500px}
+}
+</style>
+</helmet>
+<div class="pg" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: #fff; -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+  <section class="angel">
+    <div class="cont grid">
+      <div class="tel" aria-label="El vídeo de Àngel, en vertical">
+        <div class="pant">
+          <img src="/_blob/c593400eec5b2a33eb4575e382b10889" alt="">
+          <div class="barres" aria-hidden="true"><span></span><span></span></div>
+          <p class="qui-v"><i>À</i><span>Àngel<small>Gestor de pisos turísticos</small></span></p>
+          <button class="play" type="button" aria-label="Ver el vídeo de Àngel"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg></button>
+          <p class="sub-v">«Me preocupo mucho menos…»</p>
+        </div>
+      </div>
+      <div>
+        <p class="retol">Le preguntamos a un gestor qué es Hostly</p>
+        <q>No sabría decirte qué es. Solo sé que, desde que lo tengo, me preocupo mucho menos de la gestión de mi apartamento.</q>
+        <div class="qui"><span class="inicial" aria-hidden="true">À</span><div><b>Àngel</b><small>Gestor de pisos turísticos · [pisos y lugar]</small></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

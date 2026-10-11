@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Àngel · bombolla que s'obre</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#fff}
+.pg{container-type:inline-size;container-name:pagina}
+.pg *{box-sizing:border-box}
+.pg p,.pg h2,.pg h3{margin:0;padding:0}
+sc-if{display:contents}
+.cont{width:100%;max-width:1440px;margin:0 auto;padding-inline:64px}
+.retol{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.ic{width:18px;height:18px;flex-shrink:0}
+.angel{position:relative;height:720px;display:flex;align-items:center;background:#fff;overflow:hidden}
+.centre{display:flex;flex-direction:column;align-items:center;text-align:center}
+.angel q{display:block;max-width:1060px;margin-top:22px;font-size:50px;line-height:1.14;font-weight:600;letter-spacing:-0.03em;quotes:"«" "»";text-wrap:balance}
+.qui{display:flex;align-items:center;gap:20px;margin-top:44px;text-align:left}
+.bombolla{position:relative;width:112px;height:112px;border-radius:9999px;padding:4px;border:0;background:#2563EB;cursor:pointer;flex-shrink:0}
+.bombolla span.foto{display:block;width:100%;height:100%;border-radius:9999px;overflow:hidden;border:3px solid #fff;position:relative}
+.bombolla img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bombolla .play{position:absolute;right:-2px;bottom:-2px;width:36px;height:36px;border-radius:9999px;background:#fff;color:hsl(220 14% 11%);display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.bombolla .play .ic{width:14px;height:14px;margin-left:2px}
+.qui b{display:block;font-size:20px;font-weight:600}
+.qui small{display:block;font-size:15px;color:hsl(220 9% 46%);margin-top:2px}
+.qui em{display:block;font-style:normal;font-size:14px;font-weight:500;color:#2563EB;margin-top:8px}
+.capa{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;background:rgba(9,12,18,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);animation:apareix .25s ease both}
+.gran{position:relative;width:360px;aspect-ratio:9/16;max-width:90%;border-radius:32px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:creix .3s cubic-bezier(.25,.46,.45,.94) both}
+.gran img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gran .barra{position:absolute;left:16px;right:16px;top:16px;height:3px;border-radius:9999px;background:rgba(255,255,255,.35)}
+.gran .barra i{display:block;width:30%;height:100%;border-radius:9999px;background:#fff}
+.gran .nom{position:absolute;left:18px;right:18px;bottom:20px;color:#fff;font-size:15px;font-weight:600}
+.gran .nom small{display:block;font-size:13px;font-weight:400;opacity:.85}
+.tanca{position:absolute;right:28px;top:28px;width:44px;height:44px;border-radius:9999px;border:0;background:#fff;color:hsl(220 14% 11%);display:grid;place-items:center;cursor:pointer}
+@keyframes apareix{from{opacity:0}to{opacity:1}}
+@keyframes creix{from{transform:scale(.4);opacity:.2}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){.capa,.gran{animation:none}}
+@container pagina (max-width: 900px){
+  .cont{padding-inline:20px}
+  .angel{height:auto;padding:56px 0}
+  .angel q{font-size:28px}
+  .qui{flex-direction:column;text-align:center}
+}
+</style>
+</helmet>
+<div class="pg" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: #fff; -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+  <section class="angel">
+    <div class="cont centre">
+      <p class="retol">Le preguntamos a un gestor qué es Hostly</p>
+      <q>No sabría decirte qué es. Solo sé que, desde que lo tengo, me preocupo mucho menos de la gestión de mi apartamento.</q>
+      <div class="qui">
+        <button class="bombolla" type="button" aria-label="Ver el vídeo de Àngel" onClick="{{obre}}">
+          <span class="foto"><img src="/_blob/c593400eec5b2a33eb4575e382b10889" alt=""></span>
+          <span class="play"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg></span>
+        </button>
+        <div><b>Àngel</b><small>Gestor de pisos turísticos · [pisos y lugar]</small><em>Toca para ver su vídeo</em></div>
+      </div>
+    </div>
+    <sc-if value="{{obert}}" hint-placeholder-val="{{ false }}">
+      <div class="capa" role="dialog" aria-label="Vídeo de Àngel">
+        <div class="gran">
+          <img src="/_blob/c593400eec5b2a33eb4575e382b10889" alt="">
+          <span class="barra"><i></i></span>
+          <p class="nom">Àngel<small>Gestor de pisos turísticos</small></p>
+        </div>
+        <button class="tanca" type="button" aria-label="Cerrar el vídeo" onClick="{{tanca}}"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+      </div>
+    </sc-if>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const obert = !!(this.state && this.state.obert);
+    return {
+      obert,
+      obre: () => this.setState({ obert: true }),
+      tanca: () => this.setState({ obert: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Tres pasos · text 1</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:hsl(210 20% 98%)}
+.pg{container-type:inline-size;container-name:pagina}
+.pg *{box-sizing:border-box}
+.pg p,.pg h2,.pg h3{margin:0;padding:0}
+.cont{width:100%;max-width:1440px;margin:0 auto;padding-inline:64px}
+.retol{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.passos{height:520px;padding-top:80px;background:hsl(210 20% 98%)}
+.cap{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
+.cap h2{font-size:48px;line-height:1.05;font-weight:700;letter-spacing:-0.03em;margin-top:12px}
+.cap .nota{font-size:16px;line-height:1.5;color:hsl(220 9% 46%);max-width:26em}
+.tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px;margin-top:40px}
+.pas small{display:block;font-size:96px;line-height:.9;font-weight:700;letter-spacing:-0.05em;color:hsl(220 12% 85%);font-variant-numeric:tabular-nums}
+.pas h3{font-size:26px;line-height:1.2;font-weight:600;letter-spacing:-0.015em;margin-top:16px}
+.pas p{font-size:17px;line-height:1.5;color:hsl(220 9% 46%);margin-top:8px}
+@container pagina (max-width: 900px){
+  .cont{padding-inline:20px}
+  .passos{height:auto;padding:56px 0}
+  .cap{flex-direction:column;align-items:flex-start;gap:12px}
+  .cap h2{font-size:32px}
+  .tres{grid-template-columns:minmax(0,1fr);gap:32px}
+  .pas small{font-size:64px}
+}
+</style>
+</helmet>
+<div class="pg" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: hsl(210 20% 98%); -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+  <section class="passos">
+    <div class="cont">
+      <div class="cap">
+        <div><p class="retol">Cómo empieza</p><h2>Tres pasos. El último dura siempre.</h2></div>
+        <p class="nota">¿Solo el check-in? Te creas la cuenta tú y en cinco minutos lo tienes.</p>
+      </div>
+      <div class="tres">
+        <div class="pas"><small>01</small><h3>Hablamos veinte minutos.</h3><p>Nos cuentas tus pisos y cómo trabajas.</p></div>
+        <div class="pas"><small>02</small><h3>Lo dejamos conectado contigo.</h3><p>Airbnb, Booking y tu equipo de limpieza.</p></div>
+        <div class="pas"><small>03</small><h3>Y te olvidas.</h3><p>Desde ese día, Hostly está pendiente.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":520}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

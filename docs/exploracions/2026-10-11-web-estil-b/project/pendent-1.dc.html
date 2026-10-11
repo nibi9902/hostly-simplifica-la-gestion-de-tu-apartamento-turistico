@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Pendiente · la U amb la pantalla</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:hsl(210 20% 98%)}
+.pg{container-type:inline-size;container-name:pagina}
+.pg *{box-sizing:border-box}
+.pg p,.pg h2,.pg h3{margin:0;padding:0}
+.cont{width:100%;max-width:1440px;margin:0 auto;padding-inline:64px}
+.retol{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.h2{font-size:64px;line-height:1.04;font-weight:700;letter-spacing:-0.03em;text-wrap:balance}
+.lead{font-size:19px;line-height:1.55;color:hsl(220 9% 46%)}
+.ic{width:18px;height:18px;flex-shrink:0}
+.pendent{height:780px;padding-top:88px;background:hsl(210 20% 98%)}
+.cap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 704px minmax(0,1fr);gap:40px;align-items:center;margin-top:48px}
+.fets{display:flex;flex-direction:column;gap:20px}
+.fets.esq{align-items:flex-end;text-align:right}
+.fet{display:flex;gap:14px;align-items:flex-start;max-width:280px}
+.fets.esq .fet{flex-direction:row-reverse}
+.fet i{width:40px;height:40px;border-radius:9999px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06),inset 0 0 0 1px hsl(220 13% 91%);display:grid;place-items:center;flex-shrink:0;color:hsl(142 76% 36%)}
+.fet b{display:block;font-size:17px;line-height:1.3;font-weight:600;color:hsl(220 14% 11%)}
+.fet span{display:block;font-size:14px;line-height:1.45;color:hsl(220 9% 46%);margin-top:2px}
+
+/* La pantalla de l'ordinador (la de la B del 10-10), a mida real 1100×580 i escalada */
+.escala{position:relative;width:704px;height:371px}
+.fin{position:absolute;left:0;top:0;width:1100px;height:580px;transform:scale(.64);transform-origin:0 0;border-radius:20px;background:#fff;overflow:hidden;box-shadow:0 40px 90px -20px rgba(15,23,42,.35),0 10px 30px rgba(15,23,42,.10),inset 0 0 0 1px hsl(220 13% 91%);text-align:left;color:hsl(220 14% 11%)}
+.crom{height:40px;display:flex;align-items:center;gap:8px;padding:0 16px;background:hsl(210 20% 97%);border-bottom:1px solid hsl(220 13% 91%)}
+.crom i{width:11px;height:11px;border-radius:9999px;background:hsl(220 13% 84%);display:block}
+.adreca{margin:0 auto;height:24px;width:300px;border-radius:9999px;background:#fff;box-shadow:inset 0 0 0 1px hsl(220 13% 91%);display:flex;align-items:center;justify-content:center;font-size:12px;color:hsl(220 9% 46%)}
+.app{position:relative;height:540px;font-size:13px}
+.app-cap{position:relative;z-index:2;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:hsl(0 0% 100% / .9);border-bottom:1px solid hsl(220 13% 91% / .7)}
+.marca{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
+.marca img{width:22px;height:22px;border-radius:6px}
+.sel{height:28px;padding:0 10px;border-radius:9999px;background:hsl(210 20% 96%);display:inline-flex;align-items:center;font-size:12px;font-weight:500;margin-left:6px}
+.portes{display:flex;gap:2px;padding:3px;border-radius:9999px;background:hsl(210 20% 96%)}
+.portes span{height:28px;padding:0 12px;border-radius:9999px;display:inline-flex;align-items:center;font-size:12px;font-weight:500;color:hsl(220 14% 25%)}
+.portes span.on{background:#3B82F6;color:#fff}
+.dreta{display:flex;align-items:center;gap:10px}
+.campana{width:28px;height:28px;display:grid;place-items:center;color:hsl(220 14% 25%)}
+.campana .ic{width:15px;height:15px}
+.inicials{width:28px;height:28px;border-radius:9999px;background:hsl(220 14% 11%);color:#fff;font-size:11px;font-weight:600;display:grid;place-items:center}
+.fons{position:absolute;inset:52px 0 0 0;overflow:hidden}
+.fons img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;display:block}
+.vel{position:absolute;inset:0;background:linear-gradient(100deg,hsl(210 20% 98% / .84) 0%,hsl(210 20% 98% / .52) 38%,hsl(210 20% 98% / .16) 62%,hsl(210 20% 98% / .08) 100%),linear-gradient(to top,hsl(210 20% 98% / .55) 0%,hsl(210 20% 98% / 0) 32%)}
+.cos{position:absolute;z-index:1;left:24px;top:78px;width:470px;display:flex;flex-direction:column;gap:14px}
+.targ{background:hsl(0 0% 100% / .95);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.12);padding:20px 22px;display:flex;flex-direction:column;gap:9px}
+.on-pis{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600}
+.on-pis .ic{width:13px;height:13px;color:hsl(218 11% 65%)}
+.que{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.que .ambre{color:hsl(32 95% 44%)}
+.que .verd{color:hsl(142 76% 32%)}
+.que i{width:1px;height:11px;background:hsl(220 14% 11% / .15)}
+.que .gris{color:hsl(220 9% 46%)}
+.targ h3{font-size:28px;line-height:1.1;font-weight:700;letter-spacing:-0.025em}
+.targ h4{margin:0;font-size:20px;line-height:1.2;font-weight:700;letter-spacing:-0.015em;color:hsl(142 76% 30%)}
+.targ p.petit{font-size:12px;color:hsl(220 9% 46%)}
+.m-pill{align-self:flex-start;height:34px;padding:0 16px;border-radius:9999px;background:#3B82F6;color:#fff;font-size:13px;font-weight:500;display:inline-flex;align-items:center;gap:6px;margin-top:4px}
+.pisos{position:absolute;z-index:1;right:24px;top:78px;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.pis{height:34px;padding:0 14px 0 4px;border-radius:9999px;background:hsl(0 0% 100% / .92);box-shadow:0 1px 3px rgba(0,0,0,.08);display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500}
+.pis b{width:26px;height:26px;border-radius:9999px;color:#fff;font-size:11px;display:grid;place-items:center}
+.tira{position:absolute;z-index:1;left:24px;right:24px;bottom:16px;height:66px;border-radius:16px;background:hsl(0 0% 100% / .92);box-shadow:0 4px 12px rgba(0,0,0,.08);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center}
+.tira div{padding:0 18px;border-left:1px solid hsl(0 0% 92%)}
+.tira div:first-child{border-left:0}
+.tira b{display:block;font-size:20px;font-weight:700;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
+.tira small{font-size:11px;color:hsl(220 9% 46%)}
+
+@container pagina (max-width: 1100px){
+  .cont{padding-inline:20px}
+  .pendent{height:auto;padding:56px 0}
+  .h2{font-size:36px}
+  .grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .fets.esq{align-items:flex-start;text-align:left}
+  .fets.esq .fet{flex-direction:row}
+  .escala{width:100%;height:auto;aspect-ratio:1100/580;overflow:hidden;border-radius:14px}
+}
+</style>
+</helmet>
+<div class="pg" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: hsl(210 20% 98%); -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+  <section class="pendent">
+    <div class="cont">
+      <div class="cap">
+        <p class="retol">Con Hostly</p>
+        <h2 class="h2">Hostly está pendiente. Tú, ya no.</h2>
+        <p class="lead">Contesta, avisa, envía y cobra por ti. Solo te escribe cuando de verdad haces falta.</p>
+      </div>
+      <div class="grid">
+        <div class="fets esq">
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Le contestó a Sophie</b><span>En francés, a las 23:47.</span></span></p>
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Le dijo a Pieter dónde aparcar</b><span>Antes de que llegara.</span></span></p>
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Avisó a Anna</b><span>Mañana limpia a las 11.</span></span></p>
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Les mandó los códigos</b><span>A los Weber, tras el check-in.</span></span></p>
+        </div>
+        <div class="escala" aria-label="La pantalla principal de Hostly en el ordenador">
+          <div class="fin">
+            <div class="crom"><i></i><i></i><i></i><span class="adreca">app.hostlylabs.com</span></div>
+            <div class="app">
+              <div class="app-cap">
+                <div class="marca"><img src="/_blob/caf3e6d718902542d92de9848faf41b8" alt="">Hostly<span class="sel">Todos</span></div>
+                <div class="portes"><span class="on">Resumen</span><span>Calendario</span><span>Limpieza</span><span>Chat</span><span>Gestión</span></div>
+                <div class="dreta"><span class="campana"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span><span class="inicials">MR</span></div>
+              </div>
+              <div class="fons"><img src="/_blob/3760582ceb1a948643df418837ec3e1b" alt=""><div class="vel"></div></div>
+              <div class="cos">
+                <div class="targ">
+                  <p class="on-pis"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>Cala Moreta</p>
+                  <p class="que"><span class="ambre">● Cuando puedas</span><i></i><span class="gris">Chat</span></p>
+                  <h3>Pieter pregunta si puede llevar a su perro</h3>
+                  <span class="m-pill">Contestar →</span>
+                </div>
+                <div class="targ">
+                  <p class="que"><span class="verd">● Nada más pendiente</span></p>
+                  <h4>Hoy entran 2 y sale 1.</h4>
+                  <p class="petit">Check-in, limpieza y policía: en marcha.</p>
+                </div>
+              </div>
+              <div class="pisos">
+                <span class="pis"><b style="background: hsl(176 55% 34%)">C</b>Cala Moreta</span>
+                <span class="pis"><b style="background: hsl(30 70% 45%)">M</b>El Mirador</span>
+                <span class="pis"><b style="background: hsl(150 35% 30%)">P</b>Casa dels Pins</span>
+              </div>
+              <div class="tira">
+                <div><b>12.261 €</b><small>lo que cobrarás en octubre</small></div>
+                <div><b>71 %</b><small>ocupación de octubre</small></div>
+                <div><b>2 · 1</b><small>entradas · salidas hoy</small></div>
+                <div><b>Mañana</b><small>2 entradas</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fets">
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Envió el registro a la policía</b><span>Y te guardó el comprobante.</span></span></p>
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Subió el precio del sábado</b><span>Hay mucha demanda.</span></span></p>
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Cobró la tasa turística</b><span>Con el check-in.</span></span></p>
+          <p class="fet"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span style="margin: 0"><b>Vendió una salida más tarde</b><span>25 € más para ti.</span></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":780}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

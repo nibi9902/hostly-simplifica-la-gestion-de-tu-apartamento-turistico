@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Gratis · banda fosca</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#fff}
+a{color:inherit}a:hover{color:inherit}
+.pg{container-type:inline-size;container-name:pagina}
+.pg *{box-sizing:border-box}
+.pg p,.pg h2,.pg h3,.pg ul,.pg li{margin:0;padding:0;list-style:none}
+.pg a{text-decoration:none}
+.cont{width:100%;max-width:1440px;margin:0 auto;padding-inline:64px}
+.ic{width:18px;height:18px;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:9999px;font-size:16px;font-weight:500;white-space:nowrap}
+.pill-blanc{background:#fff;color:hsl(220 14% 11%)}
+.gratis{height:760px;display:flex;align-items:center;background:#fff}
+.banda{border-radius:36px;background:hsl(220 14% 11%);color:#fff;padding:56px;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:56px;align-items:center;min-height:600px}
+.retol{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.esq{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.zero{font-size:220px;line-height:.82;font-weight:700;letter-spacing:-0.065em;font-variant-numeric:tabular-nums;margin-left:-6px}
+.esq h2{font-size:36px;line-height:1.1;font-weight:700;letter-spacing:-0.025em;text-wrap:balance}
+.esq p{font-size:17px;line-height:1.55;color:rgba(255,255,255,.82)}
+.accio{display:flex;align-items:center;gap:16px;margin-top:8px}
+.accio span{font-size:14px;color:rgba(255,255,255,.7)}
+.dreta{display:flex;flex-direction:column;gap:20px}
+.foto{position:relative;height:230px;border-radius:24px;overflow:hidden}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.foto::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(9,12,18,.6),rgba(9,12,18,0) 60%)}
+.foto p{position:absolute;z-index:1;left:20px;right:20px;bottom:18px;font-size:20px;line-height:1.25;font-weight:600}
+.inclou{display:flex;flex-direction:column;gap:12px}
+.inclou li{display:flex;gap:12px;align-items:flex-start}
+.inclou i{width:28px;height:28px;border-radius:9999px;background:hsl(142 70% 45% / .18);color:hsl(142 70% 62%);display:grid;place-items:center;flex-shrink:0}
+.inclou i .ic{width:14px;height:14px}
+.inclou b{display:block;font-size:16px;font-weight:600}
+.inclou small{display:block;font-size:14px;color:rgba(255,255,255,.7);margin-top:1px}
+@container pagina (max-width: 1100px){
+  .cont{padding-inline:20px}
+  .gratis{height:auto;padding:40px 0}
+  .banda{grid-template-columns:minmax(0,1fr);padding:28px;gap:32px}
+  .zero{font-size:140px}
+  .esq h2{font-size:28px}
+}
+</style>
+</helmet>
+<div class="pg" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: #fff; -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+  <section class="gratis">
+    <div class="cont">
+      <div class="banda">
+        <div class="esq">
+          <p class="retol">Plan Gratis</p>
+          <p class="zero">0 €</p>
+          <h2>Gratis para siempre: el check-in y la policía.</h2>
+          <p>El huésped hace el check-in desde el móvil. Cada día, Hostly lo envía a la policía y te guarda el comprobante.</p>
+          <div class="accio"><a class="pill pill-blanc" href="#">Empezar</a><span>Sin tarjeta</span></div>
+        </div>
+        <div class="dreta">
+          <div class="foto"><img src="/_blob/d5a52dfad507a0cea8d5fe6833aa578b" alt=""><p>Tu piso, en orden. Aunque no estés.</p></div>
+          <ul class="inclou">
+            <li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span><b>El check-in, desde su móvil</b><small>El huésped lo hace solo, en tres pantallas.</small></span></li>
+            <li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span><b>Cada día, a la policía</b><small>Y te guarda el comprobante.</small></span></li>
+            <li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span><b>La tasa turística, calculada</b><small>Te avisa cuando toca presentarla.</small></span></li>
+            <li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i><span><b>Te avisa si falta alguien</b><small>Antes de que lleguen, no después.</small></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
