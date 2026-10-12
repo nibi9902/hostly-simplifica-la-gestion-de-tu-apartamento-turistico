@@ -201,6 +201,15 @@ maneres a `pendent-amb-la-pantalla.html` i a https://claude.ai/artifact/55mGinCP
 - **C · La U, amb totes dues idees:** la pantalla al mig amb la línia del dia a sota. A l'esquerra, el
   vuit que compta i l'última cosa; a la dreta, l'u per a tu, tènue fins que arriba.
 
+**Afinades (12-10, nit):** li agraden l'A i la C (ell en diu «la 1 i la 3»). La B surt de la pàgina.
+- **1 (vuit i una):** «redistribueix-la perquè quedi millor, i que les coses que fa Hostly siguin més
+  visibles i no tan ràpides». Ara el 8 i l'1 van a la mateixa alçada, com un marcador. A sota, a
+  l'esquerra, les vuit coses són més grans i porten el detall. Surten una cada 0,75 s amb una llum verda.
+  A la dreta hi ha la pantalla, i l'1 es veu tènue fins al final.
+- **3 (la U amb el dia):** «que es vegi millor cada benefici i que al final surtin tots, que si no se'ns
+  obliden». El dia ara dura 18 s, uns dos segons per cosa. Cada cosa es veu gran al costat de la
+  pantalla. Al final surten totes vuit en llista i s'encén l'1. Es queda així: no torna a començar.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
