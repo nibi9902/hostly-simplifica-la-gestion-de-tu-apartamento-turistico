@@ -143,6 +143,14 @@ el Biel i el que s'ha fet:
   passi a primer pla i les lletres a segon». Ja no hi ha el pas del vídeo petit, que creixia cap avall. La
   bombolla espera mentre llegeixes la frase i després s'obre cap amunt (la vora de baix no es mou). El vídeo
   queda al davant i la frase es veu al darrere, esvaïda i borrosa.
+- **Gestors (12-10, tarda):** «el vídeo s'ha de reproduir amb la finestra petita abans que s'obri» i «hi ha
+  d'haver més d'una review: en volem tenir 2 o 3». La bombolla passa a ser tres finestres petites
+  verticals que ja es veuen en marxa, sense so, amb la barra que avança. La del gestor que parla porta
+  l'anella blava i l'ona de veu. Quan fa 4,5 s que la seva frase es veu, el seu vídeo s'obre cap amunt.
+  Quan acaba, passa al gestor següent: primer la frase i després el vídeo. Si toques una finestra,
+  s'obre aquella i el cicle s'atura. El segon i el tercer gestor són marcadors («[Nombre]», «[Aquí, la
+  frase…]») fins que tinguem les seves frases i els vídeos. El rètol diu «Les preguntamos a gestores qué
+  es Hostly»: és també la pregunta que cal fer-los.
 - **Taxa:** «correcte però poc fluid». Ara una franja blava passa per cada fila i els números pugen.
   La ratlla es dibuixa i el total creix. «Calculando» es converteix en «Lista para presentar».
 - **Pagament online:** l'hoste toca «Pagar 14,00 €» i el botó es fa una roda. Després surt «Pagada» i
