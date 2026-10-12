@@ -238,6 +238,14 @@ pantalla, «simplement els dos números… i a sota la línia de temps». Fet:
 - **2 · els dos números:** «8 cosas que ha hecho Hostly hoy» i «1 cosa que tienes que hacer tú». A sota,
   la línia, amb cada cosa en una píndola que surt quan el botó hi passa.
 
+**Línia mínima (12-10, nit):**
+- **Pieter:** perfecte que la targeta de Pieter surti al Resum.
+- **Notificacions:** fora, «es veuen més carregades».
+- **La línia:** li agrada, però és «excessiva… sense tants tics, sense tant color». Ara és un fil gris de
+  2 px i un sol punt blau que avança. Els trams van en gris, i el del moment, en negre.
+- **La 2:** ara és el «vuit i una» de les quatre opcions, tal qual, amb la llista una sota l'altra i la
+  línia mínima a sota. Les coses surten quan el punt hi passa.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
