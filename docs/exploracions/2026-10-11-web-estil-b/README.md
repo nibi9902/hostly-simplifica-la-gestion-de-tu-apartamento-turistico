@@ -139,6 +139,10 @@ el Biel i el que s'ha fet:
 - **Àngel:** es queda la que s'obre sola. Al botó de revisió deia «4»; ell la va anomenar «el 5».
   Ara, al cap d'uns cinc segons, quan ja has pogut llegir la frase, el vídeo es fa gran per sobre del text.
   La creu torna a la frase, i quan s'acaba el vídeo hi torna sol. S'ha tret l'Àngel 1 i el botó de revisió.
+- **Àngel, retoc (12-10):** «en comptes d'obrir-se cap avall, que s'obri cap amunt i tapi les lletres: que
+  passi a primer pla i les lletres a segon». Ja no hi ha el pas del vídeo petit, que creixia cap avall. La
+  bombolla espera mentre llegeixes la frase i després s'obre cap amunt (la vora de baix no es mou). El vídeo
+  queda al davant i la frase es veu al darrere, esvaïda i borrosa.
 - **Taxa:** «correcte però poc fluid». Ara una franja blava passa per cada fila i els números pugen.
   La ratlla es dibuixa i el total creix. «Calculando» es converteix en «Lista para presentar».
 - **Pagament online:** l'hoste toca «Pagar 14,00 €» i el botó es fa una roda. Després surt «Pagada» i

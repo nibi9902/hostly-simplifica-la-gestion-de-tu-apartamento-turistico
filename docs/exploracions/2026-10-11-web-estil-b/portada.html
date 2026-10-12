@@ -79,19 +79,23 @@ a{color:inherit}a:hover{color:inherit}
 @keyframes puja{to{transform:translateY(-36px)}}
 @keyframes bota{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 
-/* 2 · L'Àngel: primer la frase; la bombolla s'obre sola i, quan l'has llegida, el vídeo es fa gran */
-.angel{position:relative;min-height:760px;padding-top:86px;padding-bottom:40px;background:var(--blanc);overflow:hidden}
+/* 2 · L'Àngel: primer la frase; quan l'has llegida, la bombolla s'obre cap amunt i el vídeo passa al davant
+   (les lletres es queden al darrere, esvaïdes) */
+.angel{position:relative;min-height:800px;display:flex;align-items:center;padding-block:64px;background:var(--blanc);overflow:hidden}
 .angel .centre{display:flex;flex-direction:column;align-items:center;text-align:center}
-.angel .textos{display:flex;flex-direction:column;align-items:center}
+.angel .textos{display:flex;flex-direction:column;align-items:center;transform-origin:50% 60%}
 .angel q{display:block;max-width:1060px;margin-top:22px;font-size:50px;line-height:1.14;font-weight:600;letter-spacing:-0.03em;quotes:"«" "»";text-wrap:balance}
-.angel .qui4{display:flex;align-items:flex-start;gap:24px;margin-top:40px;text-align:left}
-.angel .lloc{position:relative;width:190px;height:338px;flex-shrink:0}
-.angel .mini{position:absolute;top:0;right:0;width:190px;height:338px;border-radius:24px;overflow:hidden;border:0;padding:0;cursor:pointer;background:hsl(210 20% 92%);color:#fff;box-shadow:0 24px 60px -20px rgba(15,23,42,.35);font-family:inherit}
-.angel .escenari{position:absolute;z-index:5;left:calc(50% - 190px);top:calc(50% - 338px);width:380px;height:676px;pointer-events:none}
-.angel .escenari .mini{width:100%;height:100%;border-radius:32px;pointer-events:auto;box-shadow:0 40px 100px -30px rgba(15,23,42,.55)}
+.angel .qui4{display:flex;align-items:center;gap:20px;margin-top:40px;text-align:left}
+.angel .lloc{position:relative;width:112px;height:112px;flex-shrink:0}
+.angel .lloc::before{content:"";position:absolute;inset:0;border-radius:9999px;box-shadow:0 0 0 6px hsl(217 91% 60% / .35);animation:batec 2.4s ease-out infinite}
+.angel.es-gran .lloc::before{animation:none;opacity:0}
+.angel .mini{position:absolute;left:0;top:0;width:112px;height:112px;border-radius:56px;overflow:hidden;border:0;padding:0;cursor:pointer;background:hsl(210 20% 92%);color:#fff;box-shadow:0 0 0 3px #fff,0 0 0 6px #2563EB,0 24px 60px -20px rgba(15,23,42,0);font-family:inherit}
+.angel .escenari{position:absolute;z-index:6;left:calc(50% - 150px);top:48px;width:300px;height:533px;pointer-events:none}
+.angel .escenari .mini{width:100%;height:100%;border-radius:28px;pointer-events:auto;box-shadow:0 0 0 0px #fff,0 0 0 0px #2563EB,0 50px 120px -30px rgba(15,23,42,.6)}
 .angel .ombra-v{position:absolute;inset:0;background:linear-gradient(to top,rgba(9,12,18,.62),rgba(9,12,18,0) 45%)}
-.angel .play-ini{position:absolute;z-index:2;left:50%;top:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:9999px;background:hsl(0 0% 100% / .94);color:var(--text);display:grid;place-items:center}
-.angel .play-ini .ic{width:18px;height:18px;margin-left:2px}
+.angel .play-ini{position:absolute;z-index:2;left:50%;top:50%;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:9999px;background:hsl(0 0% 100% / .94);color:var(--text);display:grid;place-items:center}
+.angel .play-ini .ic{width:16px;height:16px;margin-left:2px}
+@keyframes batec{0%{transform:scale(1);opacity:.9}70%,100%{transform:scale(1.35);opacity:0}}
 .angel .viu{position:absolute;inset:0;z-index:1;opacity:0;visibility:hidden}
 .angel .progres{position:absolute;left:12px;right:12px;top:12px;height:3px;border-radius:9999px;background:rgba(255,255,255,.35);overflow:hidden}
 .angel .progres i{display:block;width:100%;height:100%;border-radius:9999px;background:#fff;transform:scaleX(.3);transform-origin:0 50%}
@@ -108,11 +112,11 @@ a{color:inherit}a:hover{color:inherit}
 .angel .xip-so{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);height:32px;padding:0 14px;border-radius:9999px;background:hsl(0 0% 100% / .94);color:var(--text);font-size:13px;font-weight:600;display:inline-flex;align-items:center;white-space:nowrap;opacity:0;transition:opacity .3s ease}
 .angel.es-gran .xip-so{opacity:1}
 .angel .mini.amb-so .xip-so{opacity:0}
-.angel .nom{padding-top:6px}
+.angel .nom{padding-top:0}
 .angel .nom b{display:block;font-size:20px;font-weight:600}
 .angel .nom small{display:block;font-size:15px;color:var(--gris);margin-top:2px}
 .angel .nom em{display:block;font-style:normal;font-size:14px;font-weight:500;color:var(--blau);margin-top:10px}
-.angel .torna{position:absolute;z-index:12;left:calc(50% + 206px);top:calc(50% - 338px);width:44px;height:44px;border-radius:9999px;border:0;background:var(--blanc);color:var(--text);box-shadow:0 4px 14px rgba(15,23,42,.15),inset 0 0 0 1px var(--linia);display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden}
+.angel .torna{position:absolute;z-index:12;left:calc(50% + 166px);top:48px;width:44px;height:44px;border-radius:9999px;border:0;background:var(--blanc);color:var(--text);box-shadow:0 4px 14px rgba(15,23,42,.15),inset 0 0 0 1px var(--linia);display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden}
 @keyframes parla{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
 
 /* 3 · Hostly està pendent: la U amb la pantalla; amb el scroll, les vuit coses es fan una darrere l'altra */
@@ -291,7 +295,7 @@ a{color:inherit}a:hover{color:inherit}
 .peu-baix{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;margin-top:28px;padding-top:14px;border-top:1px solid hsl(0 0% 92%);font-size:13px;color:var(--gris)}
 
 @media (prefers-reduced-motion: reduce){
-  .l1,.l2,.sub,.hero-in,.cue,.cue svg,.angel .ona i,.gratis .punts i{animation:none}
+  .l1,.l2,.sub,.hero-in,.cue,.cue svg,.angel .ona i,.angel .lloc::before,.gratis .punts i{animation:none}
   .angel .xip-so{transition:none}
 }
 
@@ -316,8 +320,6 @@ a{color:inherit}a:hover{color:inherit}
   .pendent .grid,.passos .tres,.truca .targeta{grid-template-columns:minmax(0,1fr);gap:32px}
   .angel q{font-size:28px}
   .angel .qui4{flex-direction:column;align-items:center;text-align:center}
-  .angel .escenari{left:50%;top:50%;width:min(380px,calc(100% - 32px));height:auto;aspect-ratio:9/16;transform:translate(-50%,-50%)}
-  .angel .torna{left:auto;right:16px;top:16px}
   .h2,.pendent .h2,.gratis .h2{font-size:34px}
   .pendent .fets.esq{align-items:flex-start;text-align:left}
   .pendent .fets.esq .fet{flex-direction:row}
@@ -391,7 +393,7 @@ a{color:inherit}a:hover{color:inherit}
             </span>
           </button>
         </div>
-        <div class="nom"><b>Àngel</b><small>Gestor de pisos turísticos · [pisos y lugar]</small><em>Toca el vídeo para verlo en grande</em></div>
+        <div class="nom"><b>Àngel</b><small>Gestor de pisos turísticos · [pisos y lugar]</small><em>Toca para ver su vídeo</em></div>
       </div>
     </div>
     <div class="escenari"></div>
@@ -637,38 +639,54 @@ a{color:inherit}a:hover{color:inherit}
   var textos = seccio.querySelectorAll('.textos, .nom');
   var viu = seccio.querySelector('.viu');
   var playIni = seccio.querySelector('.play-ini');
-  var gran = false, tlAngel = null;
+  var gran = false, espera = null;
   var progres = gsap.fromTo(seccio.querySelector('.progres i'), { scaleX: 0 }, {
     scaleX: 1, duration: 22, ease: 'none', paused: true, immediateRender: false,
-    onComplete: function () { if (gran) encongeix(); progres.restart(); }
+    onComplete: function () { if (gran) encongeix(); }
   });
 
+  // El vídeo creix cap amunt: la vora de baix es queda on és la bombolla, i es centra
+  function situa() {
+    var s = seccio.getBoundingClientRect(), b = lloc.getBoundingClientRect();
+    var baix = b.bottom - s.top;
+    var alt = Math.round(Math.min(533, Math.max(240, baix - 32)));
+    var ample = Math.round(alt * 9 / 16);
+    var dalt = Math.max(16, baix - alt);
+    var esq = Math.round(s.width / 2 - ample / 2);
+    gsap.set(escenari, { top: dalt, left: esq, width: ample, height: alt });
+    gsap.set(torna, { top: dalt, left: esq + ample + 16 });
+  }
   function creix() {
     if (gran) return;
     gran = true;
-    if (tlAngel) tlAngel.progress(1).kill();
-    var estat = Flip.getState(mini);
-    gsap.set(mini, { clearProps: 'width,height,borderRadius,boxShadow' });
+    if (espera) { espera.kill(); espera = null; }
+    situa();
+    var estat = Flip.getState(mini, { props: 'borderRadius,boxShadow' });
     escenari.appendChild(mini);
     seccio.classList.add('es-gran');
-    Flip.from(estat, { duration: 0.9 * mou, ease: 'power3.inOut', absolute: true, zIndex: 10 });
-    gsap.to(textos, { autoAlpha: 0, y: -12, duration: 0.45 * mou, ease: 'power2.in' });
-    gsap.to(torna, { autoAlpha: 1, duration: 0.3 * mou, delay: 0.6 * mou });
-    gsap.to(viu, { autoAlpha: 1, duration: 0.3 * mou });
+    Flip.from(estat, { duration: 0.95 * mou, ease: 'power3.inOut', absolute: true, zIndex: 10 });
+    // les lletres passen al darrere: es queden, però esvaïdes
+    gsap.to(textos, { opacity: 0.25, scale: 0.97, filter: 'blur(2.5px)', duration: 0.8 * mou, ease: 'power3.out' });
     gsap.to(playIni, { autoAlpha: 0, duration: 0.2 * mou });
+    gsap.to(viu, { autoAlpha: 1, duration: 0.4 * mou, delay: 0.55 * mou });
+    gsap.to(torna, { autoAlpha: 1, duration: 0.3 * mou, delay: 0.7 * mou });
     progres.restart();
   }
   function encongeix() {
     if (!gran) return;
     gran = false;
-    var estat = Flip.getState(mini);
+    progres.pause();
+    var estat = Flip.getState(mini, { props: 'borderRadius,boxShadow' });
     lloc.appendChild(mini);
     seccio.classList.remove('es-gran');
     mini.classList.remove('amb-so');
     Flip.from(estat, { duration: 0.8 * mou, ease: 'power3.inOut', absolute: true, zIndex: 10 });
-    gsap.to(textos, { autoAlpha: 1, y: 0, duration: 0.5 * mou, delay: 0.25 * mou, ease: 'power3.out' });
+    gsap.to(viu, { autoAlpha: 0, duration: 0.2 * mou });
+    gsap.to(playIni, { autoAlpha: 1, duration: 0.3 * mou, delay: 0.55 * mou });
+    gsap.to(textos, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.6 * mou, delay: 0.15 * mou, ease: 'power3.out' });
     gsap.to(torna, { autoAlpha: 0, duration: 0.2 * mou });
   }
+  window.addEventListener('resize', function () { if (gran) situa(); });
   mini.addEventListener('click', function () {
     if (!gran) { creix(); return; }
     mini.classList.toggle('amb-so');
@@ -794,20 +812,15 @@ a{color:inherit}a:hover{color:inherit}
     mou = c.redueix ? 0.001 : 1;
     if (c.redueix) return;
 
-    // L'Àngel: bombolla → vídeo petit → (temps per llegir la frase) → gran, per sobre del text
-    gsap.set(mini, { width: 112, height: 112, borderRadius: 56, boxShadow: '0 0 0 3px #fff, 0 0 0 6px #2563EB, 0 24px 60px -20px rgba(15,23,42,0)' });
-    gsap.set(playIni, { autoAlpha: 1 });
-    tlAngel = gsap.timeline({ paused: true });
-    tlAngel.to(mini, { width: 190, height: 338, borderRadius: 24, boxShadow: '0 0 0 0px #fff, 0 0 0 0px #2563EB, 0 24px 60px -20px rgba(15,23,42,.35)', duration: 0.8, ease: 'power3.inOut' }, 1)
-      .to(playIni, { autoAlpha: 0, duration: 0.25 }, 1)
-      .to(viu, { autoAlpha: 1, duration: 0.4 }, 1.6)
-      .call(function () { progres.restart(); }, null, 1.6);
+    // L'Àngel: primer la frase. Quan fa 4,5 s que es veu sencera, la bombolla s'obre cap amunt
     if (c.escriptori) {
-      tlAngel.call(function () {
-        if (!gran && ScrollTrigger.isInViewport(seccio, 0.5)) creix();
-      }, null, 6);
+      ScrollTrigger.create({ trigger: seccio.querySelector('q'), start: 'bottom 85%', once: true, onEnter: function () {
+        espera = gsap.delayedCall(4.5, function () {
+          espera = null;
+          if (!gran && ScrollTrigger.isInViewport(seccio, 0.6)) creix();
+        });
+      } });
     }
-    ScrollTrigger.create({ trigger: seccio, start: 'top 55%', once: true, onEnter: function () { if (tlAngel) tlAngel.play(); } });
 
     // Hostly està pendent: només a l'ordinador
     if (c.escriptori) construeixFlux();
