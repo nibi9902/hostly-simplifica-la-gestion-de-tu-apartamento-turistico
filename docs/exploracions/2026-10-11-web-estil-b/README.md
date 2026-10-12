@@ -188,6 +188,19 @@ amb scroll: hi ha les dues, amb un botó de revisió «Pendiente 4 · 3» a baix
 havia tornat al compte d'ahir, la portada es va publicar amb un enllaç nou:
 https://claude.ai/artifact/UCSSqV8P32ccVztcKU5dhZ (l'enllaç SnghLHEa… és de l'altre compte).
 
+## Ronda 8 (12-10, nit): el 3 i el 4, amb la pantalla de Hostly
+
+El Biel ho aclareix: «integrar-ho amb la pantalla de la plataforma real». Vol agafar el concepte 3 (el
+dia) i el 4 (vuit i una) i portar-los a la part que ja li agradava, la pantalla de l'ordinador. Tres
+maneres a `pendent-amb-la-pantalla.html` i a https://claude.ai/artifact/55mGinCPYJVpNw9KQmceGx:
+
+- **A · Vuit i una, amb la pantalla:** el vuit compta a l'esquerra. Quan acaba, a la pantalla s'il·lumina
+  la targeta de Pieter i surt «1 cosa para ti».
+- **B · El dia, a la pantalla:** la foto del Resum passa de dia a tarda i a nit, com fa l'app. Sota, la
+  línia del dia, i a cada cosa surt un avís de Hostly que diu el moment.
+- **C · La U, amb totes dues idees:** la pantalla al mig amb la línia del dia a sota. A l'esquerra, el
+  vuit que compta i l'última cosa; a la dreta, l'u per a tu, tènue fins que arriba.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
