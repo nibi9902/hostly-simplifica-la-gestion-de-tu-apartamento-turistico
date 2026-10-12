@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Gratis · la taxa que es calcula</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#fff}
+a{color:inherit}a:hover{color:inherit}
+.pg{container-type:inline-size;container-name:pagina}
+.pg *{box-sizing:border-box}
+.pg p,.pg h2,.pg h3{margin:0;padding:0}
+.pg a{text-decoration:none}
+.cont{width:100%;max-width:1440px;margin:0 auto;padding-inline:64px}
+.retol{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 46%)}
+.h2{font-size:52px;line-height:1.04;font-weight:700;letter-spacing:-0.03em;text-wrap:balance}
+.ic{width:18px;height:18px;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:9999px;font-size:16px;font-weight:500;white-space:nowrap}
+.pill-blanc{background:#fff;color:hsl(220 14% 11%)}
+@property --hu{syntax:'<integer>';inherits:false;initial-value:0}
+@property --pe{syntax:'<integer>';inherits:false;initial-value:0}
+@property --to{syntax:'<integer>';inherits:false;initial-value:0}
+.gratis{height:790px;padding-top:72px;background:#fff}
+.gratis .cap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.gratis .bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:20px;height:520px;margin-top:40px}
+.gratis .fosca{grid-column:1 / 3;grid-row:1 / 3;border-radius:28px;background:hsl(220 14% 11%);color:#fff;padding:36px;display:flex;flex-direction:column;gap:12px}
+.gratis .fosca .retol{color:rgba(255,255,255,.65)}
+.gratis .zero{margin-top:auto;font-size:230px;line-height:.82;font-weight:700;letter-spacing:-0.06em;font-variant-numeric:tabular-nums}
+.gratis .sempre{font-size:24px;font-weight:600;letter-spacing:-0.01em}
+.gratis .txt{font-size:16px;line-height:1.5;color:rgba(255,255,255,.82);max-width:34em}
+.gratis .fosca .pill{align-self:flex-start;margin-top:6px}
+.gratis .tile{min-width:0;border-radius:24px;background:hsl(210 20% 98%);box-shadow:inset 0 0 0 1px hsl(220 13% 91%);padding:20px;display:flex;flex-direction:column;gap:6px}
+.gratis .tile h3{font-size:17px;line-height:1.3;font-weight:600}
+.gratis .tile > p{font-size:14px;line-height:1.45;color:hsl(220 9% 46%)}
+.gratis .mostra{margin-top:auto;border-radius:14px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:10px 12px;display:flex;flex-direction:column;gap:5px;font-size:12px;line-height:16px;color:hsl(220 14% 11%)}
+.gratis .fila{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.gratis .fila b{font-weight:600;font-variant-numeric:tabular-nums}
+.gratis .et{color:hsl(220 9% 46%)}
+.gratis .barra{display:flex;gap:4px}
+.gratis .barra span{flex:1;height:4px;border-radius:9999px;background:hsl(220 13% 88%)}
+.gratis .barra span.fet{background:#3B82F6}
+.gratis .ok{color:hsl(142 76% 30%);font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.gratis .ok .ic{width:14px;height:14px}
+.gratis .pdf{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px;border-radius:9999px;background:hsl(210 20% 96%);font-weight:500}
+.gratis .pdf .ic{width:13px;height:13px;color:hsl(0 72% 51%)}
+.gratis .xip-verd{align-self:flex-start;display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 9px;border-radius:9999px;background:hsl(138 76% 96%);color:hsl(142 76% 26%);font-weight:600;white-space:nowrap}
+.gratis .xip-verd .ic{width:12px;height:12px}
+.gratis .xip-gris{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:9999px;background:hsl(210 20% 95%);color:hsl(220 9% 40%);font-weight:600;white-space:nowrap}
+.gratis .estat{display:grid}
+.gratis .estat > span{grid-area:1 / 1;justify-self:start}
+.gratis .total{padding-top:6px;border-top:1px solid hsl(220 13% 91%)}
+.gratis .total > span{font-weight:600}
+.gratis .total b{font-size:18px;font-weight:700;letter-spacing:-0.01em}
+.gratis .n{font-variant-numeric:tabular-nums}
+.gratis .n-hu{--hu:72;counter-reset:hu var(--hu);animation:compta-hu 10s cubic-bezier(.22,.61,.36,1) .8s infinite both}
+.gratis .n-hu::before{content:counter(hu)}
+.gratis .n-pe{--pe:310;counter-reset:pe var(--pe);animation:compta-pe 10s cubic-bezier(.22,.61,.36,1) .8s infinite both}
+.gratis .n-pe::before{content:counter(pe)}
+.gratis .n-to{--to:542;counter-reset:to var(--to);animation:compta-to 10s cubic-bezier(.22,.61,.36,1) .8s infinite both}
+.gratis .n-to::before{content:counter(to)}
+.gratis .e-calc{opacity:0;animation:e-calc 10s linear .8s infinite both}
+.gratis .e-llesta{opacity:1;animation:e-llesta 10s linear .8s infinite both}
+@keyframes compta-hu{0%{--hu:0}12%,100%{--hu:72}}
+@keyframes compta-pe{0%,5%{--pe:0}19%,100%{--pe:310}}
+@keyframes compta-to{0%,14%{--to:0}30%,100%{--to:542}}
+@keyframes e-calc{0%{opacity:0}2%,29%{opacity:1}32%,100%{opacity:0}}
+@keyframes e-llesta{0%,29%{opacity:0}32%,96%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.gratis .n-hu,.gratis .n-pe,.gratis .n-to,.gratis .e-calc,.gratis .e-llesta{animation:none}}
+@container pagina (max-width: 1100px){
+  .cont{padding-inline:20px}
+  .gratis{height:auto;padding-block:56px}
+  .h2{font-size:34px}
+  .gratis .bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;height:auto}
+  .gratis .fosca{grid-column:1 / -1;grid-row:auto}
+  .gratis .zero{font-size:140px}
+}
+</style>
+</helmet>
+<div class="pg" style="width: 100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; color: hsl(220 14% 11%); background: #fff; -webkit-font-smoothing: antialiased; font-feature-settings: 'cv11' 1">
+  <section class="gratis">
+    <div class="cont">
+      <div class="cap"><p class="retol">Por qué empezar hoy</p><h2 class="h2">Gratis para siempre: el check-in y la policía.</h2></div>
+      <div class="bento">
+        <div class="fosca">
+          <p class="retol">Plan Gratis</p>
+          <p class="zero">0 €</p>
+          <p class="sempre">Para siempre. Sin tarjeta.</p>
+          <p class="txt">El huésped hace el check-in desde el móvil. Cada día, Hostly lo envía a la policía y te guarda el comprobante.</p>
+          <a class="pill pill-blanc" href="Empezar.dc.html">Empezar</a>
+        </div>
+        <div class="tile">
+          <h3>El check-in, desde su móvil</h3>
+          <p>El huésped lo hace solo, en tres pantallas.</p>
+          <div class="mostra">
+            <p class="fila"><b>Tu documento</b><span class="et">2 de 3</span></p>
+            <div class="barra"><span class="fet"></span><span class="fet"></span><span></span></div>
+            <p class="fila"><span class="et">Pasaporte · C01X 4417</span><span class="ok"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span></p>
+          </div>
+        </div>
+        <div class="tile">
+          <h3>Cada día, a la policía</h3>
+          <p>Hostly lo envía y te guarda el comprobante.</p>
+          <div class="mostra">
+            <p class="ok"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Registro de viajeros enviado</p>
+            <span class="pdf"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg>Comprobante</span>
+          </div>
+        </div>
+        <div class="tile">
+          <h3>La tasa turística, calculada</h3>
+          <p>De abril a septiembre</p>
+          <div class="mostra" role="group" aria-label="De abril a septiembre: 72 huéspedes y 310 pernoctaciones, a 1,75 € por noche y persona. Te toca pagar 542,50 €.">
+            <p class="estat"><span class="xip-gris e-calc">Calculando…</span><span class="xip-verd e-llesta"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Lista para presentar</span></p>
+            <p class="fila"><span class="et">Huéspedes</span><b class="n n-hu" aria-hidden="true"></b></p>
+            <p class="fila"><span class="et">Pernoctaciones</span><b class="n n-pe" aria-hidden="true"></b></p>
+            <p class="fila"><span class="et">Por noche y persona</span><b>1,75 €</b></p>
+            <p class="fila total"><span>Te toca pagar</span><b><span class="n n-to" aria-hidden="true"></span>,50 €</b></p>
+          </div>
+        </div>
+        <div class="tile">
+          <h3>La tasa, pagada online</h3>
+          <p>El huésped la paga al hacer el check-in.</p>
+          <div class="mostra">
+            <p class="fila"><b>Tasa turística</b><b>14,00 €</b></p>
+            <p class="fila"><span class="et">2 personas · 4 noches</span></p>
+            <span class="xip-verd"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pagada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":790}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -89,6 +89,43 @@ neta), per ajuntar-les després. El que va dir el Biel:
 - **Tres passos:** l'estil 01-02-03 de l'editorial, sense línies. Tres textos per triar.
 - **Preus:** els de la 1. **«Te llamo»:** sí. Tres variants.
 
+## Ronda 5 (11-10, nit): la portada, muntada
+
+`portada.dc.html` és la portada sencera, d'ordinador, amb les peces que va triar el Biel. Al llenç,
+és a la pàgina «La portada, muntada», la que s'obre primer. Ordre: el lema → l'Àngel → «Hostly
+está pendiente» → «Gratis para siempre» → «Así se empieza» → preus → «Te llamo» → peu.
+
+- **Àngel:** la 1 («em sembla perfecta»). També li agrada la 3 si, al cap d'un segon, la bombolla
+  s'obre una mica sola i es veu l'Àngel parlant. Si la toques, s'obre en gran. La frase mana i el
+  vídeo és la prova. Aquesta versió és `angel-4`: la bombolla es converteix en un vídeo vertical
+  petit, sense so, i la frase no es mou.
+- **«Hostly está pendiente»:** la 1. Les altres, «massa carregades».
+- **«Gratis para siempre»:** la 1, la dels requadres. Canvis als requadres (`gratis-5`, i dins de
+  la portada):
+  - «La tasa turística, calculada» porta una animació que fa el compte: persones, pernoctacions,
+    preu per nit i «Te toca pagar». El Biel va dir «aquest trimestre», però a Catalunya la taxa
+    es declara per semestres (`coneixement/03-funcionament/checkin-mossos-i-taxa.md` §5.3), i per
+    això diu «De abril a septiembre». Els números quadren: 310 × 1,75 € = 542,50 €. 1,75 € és la
+    tarifa de la llei per als HUT de fora de Barcelona.
+  - «Te avisa si falta alguien» surt i hi entra «La tasa, pagada online»: l'hoste la paga quan
+    fa el check-in.
+- **Tres pasos:** el text 2, «Así se empieza».
+- **Preus:** els de la 1. A la targeta del pla Gratis, «Te avisa si falta un check-in» →
+  «El huésped paga la tasa online», perquè digui el mateix que els requadres.
+- **«Te llamo»:** el text i els grisos de la 2, dins d'una targeta com la 1 (`truca-4`, i dins
+  de la portada).
+
+**Per decidir:** el pla gratuït cobra una comissió quan l'hoste paga la taxa online (0,25 € + 5 %;
+la pot pagar l'hoste). La web no la diu enlloc. Cal decidir si es posa a la targeta de preus.
+Segueix oberta la pregunta Q5 de `coneixement/05-estat/per-arreglar.md`: la comissió és sobre la
+taxa o sobre la reserva?
+
+**Falten:** el vídeo de l'Àngel (vertical) i el mòbil.
+
+**Incidència (12-10):** a mitja publicació, la sessió va passar a un compte sense cap artefacte.
+`gratis-5` i `truca-4` no es van poder pujar al llenç. Sí que són aquí, i el `canvas.json` publicat
+ja les té a la llista. La portada i l'`angel-4` sí que es van pujar.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
