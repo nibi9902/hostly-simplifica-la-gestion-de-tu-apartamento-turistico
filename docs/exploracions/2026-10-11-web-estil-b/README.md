@@ -183,7 +183,10 @@ a poc a poc, quan la tens davant, i porta un botó «Torna-ho a veure»:
    cada cosa apareix quan hi passa.
 4. **Vuit i una:** un 8 gran que compta i la llista; a l'altre costat, un 1 blau i la targeta de Pieter.
 
-La portada (`portada.html`) encara porta el flux amb scroll, fins que en triï una.
+Li agraden la **4** i la **3**, i les vol veure dins de la portada. Ara `portada.html` ja no porta el flux
+amb scroll: hi ha les dues, amb un botó de revisió «Pendiente 4 · 3» a baix a la dreta. Com que la sessió
+havia tornat al compte d'ahir, la portada es va publicar amb un enllaç nou:
+https://claude.ai/artifact/UCSSqV8P32ccVztcKU5dhZ (l'enllaç SnghLHEa… és de l'altre compte).
 
 ## Per provar més endavant (A/B)
 
