@@ -81,55 +81,61 @@ a{color:inherit}a:hover{color:inherit}
 @keyframes puja{to{transform:translateY(-36px)}}
 @keyframes bota{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 
-/* 2 · Els gestors: primer la frase; els vídeos ja es veuen en petit, en marxa; quan l'has llegida, el de la frase
-   s'obre cap amunt i passa al davant (la resta es queda al darrere, esvaïda). Dos o tres gestors. */
-.angel{position:relative;min-height:840px;display:flex;align-items:center;padding-block:64px;background:var(--blanc);overflow:hidden}
-.angel .centre{display:flex;flex-direction:column;align-items:center;text-align:center}
-.angel .textos{display:flex;flex-direction:column;align-items:center;transform-origin:50% 60%}
-.angel .cites{display:grid;max-width:1060px;margin-top:22px}
-.angel .cita{grid-area:1 / 1;align-self:center;margin:0;display:flex;flex-direction:column;align-items:center;gap:18px;opacity:0;visibility:hidden}
+/* 2 · Els gestors: una pantalla per gestor. La frase a l'esquerra i, al costat, la boleta amb el vídeo ja en
+   marxa. Quan l'has llegida, la boleta s'obre cap amunt i el vídeo passa al davant. Botons per passar al següent. */
+.angel{position:relative;min-height:800px;display:flex;align-items:center;padding-block:72px;background:var(--blanc);overflow:hidden}
+.angel .graella{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:64px;align-items:end}
+.angel .columna-text{min-width:0;transform-origin:30% 60%}
+.angel .cites{display:grid;margin-top:22px}
+.angel .cita{grid-area:1 / 1;align-self:start;margin:0;display:flex;flex-direction:column;gap:20px;opacity:0;visibility:hidden}
 .angel .cita.activa{opacity:1;visibility:visible}
 .angel blockquote{margin:0}
-.angel q{display:block;font-size:50px;line-height:1.14;font-weight:600;letter-spacing:-0.03em;quotes:"«" "»";text-wrap:balance}
+.angel q{display:block;max-width:880px;font-size:50px;line-height:1.14;font-weight:600;letter-spacing:-0.03em;quotes:"«" "»";text-wrap:balance}
 .angel figcaption{font-size:15px;line-height:22px;color:var(--gris)}
 .angel figcaption b{color:var(--text);font-weight:600}
-.angel .finestres{display:flex;gap:20px;margin-top:40px;align-items:flex-start}
-.angel .lloc{display:flex;flex-direction:column;align-items:center;gap:10px;transform-origin:50% 100%}
-.angel .forat{position:relative;width:140px;height:249px}
-.angel .finestra{position:absolute;left:0;top:0;width:140px;height:249px;border-radius:20px;overflow:hidden;border:0;padding:0;cursor:pointer;background:hsl(210 20% 92%);color:#fff;font-family:inherit;box-shadow:0 0 0 0px #fff,0 0 0 0px #2563EB,0 18px 40px -18px rgba(15,23,42,.35)}
-.angel .finestra.activa{box-shadow:0 0 0 3px #fff,0 0 0 6px #2563EB,0 18px 40px -18px rgba(15,23,42,.35)}
+.angel .nav{display:flex;align-items:center;gap:10px;margin-top:36px}
+.angel .nav button{width:44px;height:44px;border-radius:9999px;border:0;background:var(--blanc);color:var(--text);box-shadow:inset 0 0 0 1px var(--linia),0 1px 2px rgba(0,0,0,.04);display:grid;place-items:center;cursor:pointer}
+.angel .nav button:hover{background:var(--fons)}
+.angel .compta{margin-left:6px;font-size:14px;font-weight:600;color:var(--gris);font-variant-numeric:tabular-nums}
+.angel .columna-video{display:flex;flex-direction:column;align-items:center;gap:16px;transform-origin:50% 100%}
+.angel .boletes{display:grid}
+.angel .lloc{grid-area:1 / 1;position:relative;opacity:0;visibility:hidden}
+.angel .lloc.activa{opacity:1;visibility:visible}
+.angel .forat{position:relative;display:block;width:172px;height:172px}
+.angel .anell-p{position:absolute;left:-10px;top:-10px;width:calc(100% + 20px);height:calc(100% + 20px);transform:rotate(-90deg);pointer-events:none;transition:opacity .25s ease}
+.angel .anell-p circle{fill:none;stroke-width:2.5}
+.angel .anell-p .pista{stroke:hsl(214 95% 92%)}
+.angel .anell-p .fet{stroke:var(--blau);stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:70}
+.angel.es-gran .anell-p{opacity:0}
+.angel .boleta{position:absolute;left:0;top:0;width:172px;height:172px;border-radius:86px;overflow:hidden;border:0;padding:0;cursor:pointer;background:hsl(210 20% 92%);color:#fff;font-family:inherit;box-shadow:0 0 0 4px #fff,0 18px 40px -16px rgba(15,23,42,.35)}
 .angel .escenari{position:absolute;z-index:6;left:calc(50% - 150px);top:48px;width:300px;height:533px;pointer-events:none}
-.angel .escenari .finestra,.angel .escenari .finestra.activa{width:100%;height:100%;border-radius:28px;pointer-events:auto;box-shadow:0 0 0 0px #fff,0 0 0 0px #2563EB,0 50px 120px -30px rgba(15,23,42,.6)}
-.angel .finestra .foto{transform-origin:50% 40%;animation:roda 16s ease-in-out infinite alternate}
+.angel .escenari .boleta{width:100%;height:100%;border-radius:28px;pointer-events:auto;box-shadow:0 0 0 0px #fff,0 50px 120px -30px rgba(15,23,42,.6)}
+.angel .boleta .foto{transform-origin:50% 40%;animation:roda 16s ease-in-out infinite alternate}
 .angel .lloc:nth-child(2) .foto{animation-delay:-5s}
 .angel .lloc:nth-child(3) .foto{animation-delay:-11s}
 .angel .f-dia{background-image:var(--foto-vertical)}
 .angel .f-tarda{background-image:var(--foto-vertical-tarda)}
 .angel .f-nit{background-image:var(--foto-vertical-nit)}
-.angel .ombra-v{position:absolute;inset:0;background:linear-gradient(to top,rgba(9,12,18,.55),rgba(9,12,18,0) 45%)}
+.angel .ombra-v{position:absolute;inset:0;background:linear-gradient(to top,rgba(9,12,18,.5),rgba(9,12,18,0) 50%)}
 .angel .viu{position:absolute;inset:0;z-index:1}
-.angel .progres{position:absolute;left:10px;right:10px;top:10px;height:3px;border-radius:9999px;background:rgba(255,255,255,.35);overflow:hidden}
-.angel .progres i{display:block;width:100%;height:100%;border-radius:9999px;background:#fff;transform:scaleX(.3);transform-origin:0 50%}
-.angel .so{position:absolute;right:8px;top:20px;width:26px;height:26px;border-radius:9999px;background:rgba(9,12,18,.45);display:grid;place-items:center}
-.angel .so .ic{width:14px;height:14px}
-.angel .escenari .so{right:12px;top:26px;width:34px;height:34px}
-.angel .escenari .so .ic{width:17px;height:17px}
-.angel .so .so-on,.angel .finestra.amb-so .so .so-off{display:none}
-.angel .finestra.amb-so .so .so-on{display:block}
-.angel .ona{position:absolute;left:12px;bottom:12px;height:18px;display:flex;align-items:flex-end;gap:3px;opacity:0;transition:opacity .3s ease}
-.angel .finestra.activa .ona{opacity:1}
+.angel .progres{position:absolute;left:12px;right:12px;top:12px;height:3px;border-radius:9999px;background:rgba(255,255,255,.35);overflow:hidden;opacity:0}
+.angel .progres i{display:block;width:100%;height:100%;border-radius:9999px;background:#fff;transform:scaleX(0);transform-origin:0 50%}
+.angel .so{position:absolute;right:12px;top:26px;width:34px;height:34px;border-radius:9999px;background:rgba(9,12,18,.45);display:grid;place-items:center;opacity:0}
+.angel .so .ic{width:17px;height:17px}
+.angel .so .so-on,.angel .boleta.amb-so .so .so-off{display:none}
+.angel .boleta.amb-so .so .so-on{display:block}
+.angel .ona{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);height:18px;display:flex;align-items:flex-end;gap:3px}
 .angel .ona i{display:block;width:3px;height:18px;border-radius:9999px;background:#fff;transform:scaleY(.6);transform-origin:50% 100%;animation:parla 1.1s ease-in-out infinite}
 .angel .ona i:nth-child(2){animation-delay:-.3s}
 .angel .ona i:nth-child(3){animation-delay:-.6s}
 .angel .ona i:nth-child(4){animation-delay:-.15s}
-.angel .escenari .ona{left:16px;bottom:18px;height:24px}
+.angel .escenari .ona{left:18px;bottom:20px;transform:none;height:24px}
 .angel .escenari .ona i{width:4px;height:24px}
-.angel .xip-so{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);height:32px;padding:0 14px;border-radius:9999px;background:hsl(0 0% 100% / .94);color:var(--text);font-size:13px;font-weight:600;display:inline-flex;align-items:center;white-space:nowrap;opacity:0;transition:opacity .3s ease}
-.angel.es-gran .escenari .xip-so{opacity:1}
-.angel .finestra.amb-so .xip-so{opacity:0}
-.angel .peu-f{font-size:14px;font-weight:600;color:var(--gris)}
-.angel .lloc.activa .peu-f{color:var(--text)}
-.angel .torna{position:absolute;z-index:12;left:calc(50% + 166px);top:48px;width:44px;height:44px;border-radius:9999px;border:0;background:var(--blanc);color:var(--text);box-shadow:0 4px 14px rgba(15,23,42,.15),inset 0 0 0 1px var(--linia);display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden}
+.angel .xip-so{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);height:32px;padding:0 14px;border-radius:9999px;background:hsl(0 0% 100% / .94);color:var(--text);font-size:13px;font-weight:600;display:inline-flex;align-items:center;white-space:nowrap;opacity:0}
+.angel .escenari .progres,.angel .escenari .so,.angel .escenari .xip-so{opacity:1;transition:opacity .3s ease .4s}
+.angel .boleta.amb-so .xip-so{opacity:0}
+.angel .peu-b{font-size:14px;font-weight:500;color:var(--blau)}
+.angel .torna{position:absolute;z-index:12;left:0;top:0;width:44px;height:44px;border-radius:9999px;border:0;background:var(--blanc);color:var(--text);box-shadow:0 4px 14px rgba(15,23,42,.15),inset 0 0 0 1px var(--linia);display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden}
 @keyframes parla{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
 @keyframes roda{from{transform:scale(1.04) translate(0,0)}to{transform:scale(1.16) translate(-3%,-2%)}}
 
@@ -309,7 +315,7 @@ a{color:inherit}a:hover{color:inherit}
 .peu-baix{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;margin-top:28px;padding-top:14px;border-top:1px solid hsl(0 0% 92%);font-size:13px;color:var(--gris)}
 
 @media (prefers-reduced-motion: reduce){
-  .l1,.l2,.sub,.hero-in,.cue,.cue svg,.angel .ona i,.angel .finestra .foto,.gratis .punts i{animation:none}
+  .l1,.l2,.sub,.hero-in,.cue,.cue svg,.angel .ona i,.angel .boleta .foto,.gratis .punts i{animation:none}
   .angel .xip-so{transition:none}
 }
 
@@ -333,7 +339,8 @@ a{color:inherit}a:hover{color:inherit}
   .angel,.pendent,.gratis,.passos,.preus,.truca{min-height:0;padding-block:56px}
   .pendent .grid,.passos .tres,.truca .targeta{grid-template-columns:minmax(0,1fr);gap:32px}
   .angel q{font-size:28px}
-  .angel .finestres{gap:12px}
+  .angel .graella{grid-template-columns:minmax(0,1fr);gap:40px;justify-items:center;text-align:center}
+  .angel .nav{justify-content:center}
   .h2,.pendent .h2,.gratis .h2{font-size:34px}
   .pendent .fets.esq{align-items:flex-start;text-align:left}
   .pendent .fets.esq .fet{flex-direction:row}
@@ -361,7 +368,8 @@ a{color:inherit}a:hover{color:inherit}
 @media (max-width: 640px){
   .hero h1{font-size:34px}
   .sub{font-size:18px}
-  .angel .forat,.angel .finestra{width:96px;height:171px}
+  .angel .forat{width:132px;height:132px}
+  .angel .boleta{width:132px;height:132px;border-radius:66px}
   .pendent .escala{width:319px;height:168px;border-radius:6px}
   .pendent .fin{transform:scale(.29)}
   .gratis .bento{grid-template-columns:minmax(0,1fr)}
@@ -387,10 +395,10 @@ a{color:inherit}a:hover{color:inherit}
     <a class="cue" href="#angel" aria-label="Seguir bajando"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
   </section>
 
-  <!-- 2 · Els gestors (l'Àngel i dos més) -->
+  <!-- 2 · Els gestors: una pantalla per gestor -->
   <section class="angel" id="angel">
-    <div class="cont centre">
-      <div class="textos">
+    <div class="cont graella">
+      <div class="columna-text">
         <p class="retol">Les preguntamos a gestores qué es Hostly</p>
         <div class="cites">
           <figure class="cita activa">
@@ -406,15 +414,23 @@ a{color:inherit}a:hover{color:inherit}
             <figcaption><b>[Nombre]</b> · [pisos y lugar]</figcaption>
           </figure>
         </div>
+        <div class="nav">
+          <button class="ant" type="button" aria-label="Gestor anterior"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></button>
+          <button class="seg" type="button" aria-label="Gestor siguiente"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+          <span class="compta" aria-live="polite">1 / 3</span>
+        </div>
       </div>
-      <div class="finestres" role="group" aria-label="Vídeos de los gestores">
-        <div class="lloc activa"><span class="forat"><button class="finestra activa" type="button" aria-label="Ver el vídeo de Àngel"><span class="foto f-dia" aria-hidden="true"></span><span class="ombra-v" aria-hidden="true"></span><span class="viu" aria-hidden="true"><span class="progres"><i></i></span><span class="so"><svg class="ic so-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="m22 9-6 6"></path><path d="m16 9 6 6"></path></svg><svg class="ic so-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg></span><span class="ona"><i></i><i></i><i></i><i></i></span><span class="xip-so">Toca para oírlo</span></span></button></span><span class="peu-f">Àngel</span></div>
-        <div class="lloc"><span class="forat"><button class="finestra" type="button" aria-label="Ver el vídeo del segundo gestor"><span class="foto f-tarda" aria-hidden="true"></span><span class="ombra-v" aria-hidden="true"></span><span class="viu" aria-hidden="true"><span class="progres"><i></i></span><span class="so"><svg class="ic so-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="m22 9-6 6"></path><path d="m16 9 6 6"></path></svg><svg class="ic so-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg></span><span class="ona"><i></i><i></i><i></i><i></i></span><span class="xip-so">Toca para oírlo</span></span></button></span><span class="peu-f">[Nombre]</span></div>
-        <div class="lloc"><span class="forat"><button class="finestra" type="button" aria-label="Ver el vídeo del tercer gestor"><span class="foto f-nit" aria-hidden="true"></span><span class="ombra-v" aria-hidden="true"></span><span class="viu" aria-hidden="true"><span class="progres"><i></i></span><span class="so"><svg class="ic so-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="m22 9-6 6"></path><path d="m16 9 6 6"></path></svg><svg class="ic so-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg></span><span class="ona"><i></i><i></i><i></i><i></i></span><span class="xip-so">Toca para oírlo</span></span></button></span><span class="peu-f">[Nombre]</span></div>
+      <div class="columna-video">
+        <div class="boletes">
+          <div class="lloc activa"><span class="forat"><svg class="anell-p" viewBox="0 0 100 100" aria-hidden="true"><circle class="pista" cx="50" cy="50" r="48"></circle><circle class="fet" cx="50" cy="50" r="48" pathLength="100"></circle></svg><button class="boleta" type="button" aria-label="Ver el vídeo de Àngel"><span class="foto f-dia" aria-hidden="true"></span><span class="ombra-v" aria-hidden="true"></span><span class="viu" aria-hidden="true"><span class="progres"><i></i></span><span class="so"><svg class="ic so-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="m22 9-6 6"></path><path d="m16 9 6 6"></path></svg><svg class="ic so-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg></span><span class="ona"><i></i><i></i><i></i><i></i></span><span class="xip-so">Toca para oírlo</span></span></button></span></div>
+          <div class="lloc"><span class="forat"><svg class="anell-p" viewBox="0 0 100 100" aria-hidden="true"><circle class="pista" cx="50" cy="50" r="48"></circle><circle class="fet" cx="50" cy="50" r="48" pathLength="100"></circle></svg><button class="boleta" type="button" aria-label="Ver el vídeo del segundo gestor"><span class="foto f-tarda" aria-hidden="true"></span><span class="ombra-v" aria-hidden="true"></span><span class="viu" aria-hidden="true"><span class="progres"><i></i></span><span class="so"><svg class="ic so-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="m22 9-6 6"></path><path d="m16 9 6 6"></path></svg><svg class="ic so-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg></span><span class="ona"><i></i><i></i><i></i><i></i></span><span class="xip-so">Toca para oírlo</span></span></button></span></div>
+          <div class="lloc"><span class="forat"><svg class="anell-p" viewBox="0 0 100 100" aria-hidden="true"><circle class="pista" cx="50" cy="50" r="48"></circle><circle class="fet" cx="50" cy="50" r="48" pathLength="100"></circle></svg><button class="boleta" type="button" aria-label="Ver el vídeo del tercer gestor"><span class="foto f-nit" aria-hidden="true"></span><span class="ombra-v" aria-hidden="true"></span><span class="viu" aria-hidden="true"><span class="progres"><i></i></span><span class="so"><svg class="ic so-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="m22 9-6 6"></path><path d="m16 9 6 6"></path></svg><svg class="ic so-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg></span><span class="ona"><i></i><i></i><i></i><i></i></span><span class="xip-so">Toca para oírlo</span></span></button></span></div>
+        </div>
+        <p class="peu-b">Toca el vídeo para verlo en grande</p>
       </div>
     </div>
     <div class="escenari"></div>
-    <button class="torna" type="button" aria-label="Volver a las frases"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+    <button class="torna" type="button" aria-label="Volver a la frase"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
   </section>
 
   <!-- 3 · Hostly está pendiente -->
@@ -647,68 +663,79 @@ a{color:inherit}a:hover{color:inherit}
   var eur = new Intl.NumberFormat('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   var mou = 1;
 
-  /* ---------- 2 · Els gestors ---------- */
+  /* ---------- 2 · Els gestors: una pantalla per gestor ---------- */
   var seccio = document.querySelector('.angel');
+  var cites = Array.prototype.slice.call(seccio.querySelectorAll('.cita'));
   var llocs = Array.prototype.slice.call(seccio.querySelectorAll('.lloc'));
   var forats = llocs.map(function (l) { return l.querySelector('.forat'); });
-  var finestres = llocs.map(function (l) { return l.querySelector('.finestra'); });
-  var cites = Array.prototype.slice.call(seccio.querySelectorAll('.cita'));
+  var boletes = llocs.map(function (l) { return l.querySelector('.boleta'); });
+  var anells = llocs.map(function (l) { return l.querySelector('.anell-p .fet'); });
   var escenari = seccio.querySelector('.escenari');
   var torna = seccio.querySelector('.torna');
-  var fons = [seccio.querySelector('.textos')].concat(llocs);
-  var actiu = 0, obert = -1, automatic = false, espera = null, barres = [];
+  var compta = seccio.querySelector('.compta');
+  var fons = [seccio.querySelector('.columna-text'), seccio.querySelector('.peu-b')];
+  var n = cites.length, actiu = 0, obert = -1, automatic = false, espera = null, roda = null, barra = null;
 
-  function barra(i) { return finestres[i].querySelector('.progres i'); }
-  // Els vídeos petits es veuen en marxa (sense so), cadascun pel seu punt
-  function reprodueixPetit(i) {
-    if (barres[i]) barres[i].kill();
-    barres[i] = null;
+  // La boleta ja es veu en marxa (sense so): l'anell de fora avança com el vídeo
+  function giraAnell(i) {
+    if (roda) roda.kill();
+    roda = null;
     if (mou < 0.01) return;
-    barres[i] = gsap.fromTo(barra(i), { scaleX: 0 }, { scaleX: 1, duration: 16, ease: 'none', repeat: -1 });
-    barres[i].progress((i * 0.37) % 1);
+    roda = gsap.fromTo(anells[i], { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 16, ease: 'none', repeat: -1 });
   }
-  function activa(i) {
+  function mostra(i, dir) {
     if (i === actiu) return;
-    var abans = actiu;
-    llocs[abans].classList.remove('activa'); finestres[abans].classList.remove('activa');
-    llocs[i].classList.add('activa'); finestres[i].classList.add('activa');
-    gsap.to(cites[abans], { autoAlpha: 0, y: -8, duration: 0.35 * mou, ease: 'power2.in' });
-    gsap.fromTo(cites[i], { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: 0.5 * mou, delay: 0.25 * mou, ease: 'power3.out' });
+    var a = actiu;
     actiu = i;
+    if (espera) { espera.kill(); espera = null; }
+    gsap.to(cites[a], { autoAlpha: 0, x: -28 * dir, duration: 0.35 * mou, ease: 'power2.in' });
+    gsap.fromTo(cites[i], { autoAlpha: 0, x: 28 * dir }, { autoAlpha: 1, x: 0, duration: 0.6 * mou, delay: 0.2 * mou, ease: 'power3.out' });
+    gsap.to(llocs[a], { autoAlpha: 0, scale: 0.8, duration: 0.3 * mou, ease: 'power2.in' });
+    gsap.fromTo(llocs[i], { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.55 * mou, delay: 0.25 * mou, ease: 'power3.out' });
+    compta.textContent = (i + 1) + ' / ' + n;
+    giraAnell(i);
+    if (automatic) programa();
   }
-  // El vídeo creix cap amunt: la vora de baix es queda on és la finestra petita, i es centra
+  function ves(dir) {
+    automatic = false;
+    var desti = (actiu + dir + n) % n;
+    if (obert !== -1) { encongeix(false); gsap.delayedCall(0.6 * mou, function () { mostra(desti, dir); }); }
+    else mostra(desti, dir);
+  }
+  // El vídeo creix cap amunt: la vora de baix es queda on és la boleta; i es posa una mica a la dreta del centre
   function situa(i) {
     var s = seccio.getBoundingClientRect(), b = forats[i].getBoundingClientRect();
     var baix = b.bottom - s.top;
     var alt = Math.round(Math.min(533, Math.max(240, baix - 32)));
     var ample = Math.round(alt * 9 / 16);
     var dalt = Math.max(16, baix - alt);
-    var esq = Math.round(s.width / 2 - ample / 2);
+    var centre = s.width > 1100 ? s.width * 0.6 : s.width / 2;
+    var esq = Math.round(Math.max(16, Math.min(s.width - ample - 76, centre - ample / 2)));
     gsap.set(escenari, { top: dalt, left: esq, width: ample, height: alt });
     gsap.set(torna, { top: dalt, left: esq + ample + 16 });
   }
   function creix(i) {
     if (obert !== -1) return;
     if (espera) { espera.kill(); espera = null; }
-    activa(i);
     obert = i;
     situa(i);
-    var f = finestres[i];
+    var f = boletes[i];
     var estat = Flip.getState(f, { props: 'borderRadius,boxShadow' });
     escenari.appendChild(f);
     seccio.classList.add('es-gran');
     Flip.from(estat, { duration: 0.95 * mou, ease: 'power3.inOut', absolute: true, zIndex: 10 });
-    // tot el que no és el vídeo passa al darrere, esvaït
+    // les lletres passen al darrere: es queden, però esvaïdes
     gsap.to(fons, { opacity: 0.25, scale: 0.97, filter: 'blur(2.5px)', duration: 0.8 * mou, ease: 'power3.out' });
     gsap.to(torna, { autoAlpha: 1, duration: 0.3 * mou, delay: 0.7 * mou });
-    if (barres[i]) barres[i].kill();
-    barres[i] = gsap.fromTo(barra(i), { scaleX: 0 }, { scaleX: 1, duration: 14, ease: 'none', onComplete: function () { encongeix(true); } });
+    if (barra) barra.kill();
+    barra = gsap.fromTo(f.querySelector('.progres i'), { scaleX: 0 }, { scaleX: 1, duration: 14, ease: 'none', onComplete: function () { encongeix(true); } });
   }
   function encongeix(perqueAcaba) {
     if (obert === -1) return;
     var i = obert;
     obert = -1;
-    var f = finestres[i];
+    if (barra) { barra.kill(); barra = null; }
+    var f = boletes[i];
     var estat = Flip.getState(f, { props: 'borderRadius,boxShadow' });
     forats[i].appendChild(f);
     seccio.classList.remove('es-gran');
@@ -716,29 +743,30 @@ a{color:inherit}a:hover{color:inherit}
     Flip.from(estat, { duration: 0.8 * mou, ease: 'power3.inOut', absolute: true, zIndex: 10 });
     gsap.to(fons, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.6 * mou, delay: 0.15 * mou, ease: 'power3.out' });
     gsap.to(torna, { autoAlpha: 0, duration: 0.2 * mou });
-    reprodueixPetit(i);
     if (perqueAcaba && automatic) {
       // el gestor següent: primer la seva frase, després el seu vídeo
-      gsap.delayedCall(0.9, function () { activa((i + 1) % finestres.length); programa(); });
+      gsap.delayedCall(0.9, function () { mostra((i + 1) % n, 1); });
     }
   }
   function programa() {
     if (!automatic) return;
+    if (espera) espera.kill();
     espera = gsap.delayedCall(4.5, function () {
       espera = null;
       if (obert === -1 && automatic && ScrollTrigger.isInViewport(seccio, 0.6)) creix(actiu);
       else if (automatic && obert === -1) programa();
     });
   }
-  finestres.forEach(function (f, i) {
+  boletes.forEach(function (f, i) {
     f.addEventListener('click', function () {
       if (obert === i) { f.classList.toggle('amb-so'); return; }
       automatic = false;
       if (espera) { espera.kill(); espera = null; }
-      if (obert !== -1) return;
       creix(i);
     });
   });
+  seccio.querySelector('.ant').addEventListener('click', function () { ves(-1); });
+  seccio.querySelector('.seg').addEventListener('click', function () { ves(1); });
   torna.addEventListener('click', function () { automatic = false; encongeix(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { automatic = false; encongeix(false); } });
   window.addEventListener('resize', function () { if (obert !== -1) situa(obert); });
@@ -861,8 +889,8 @@ a{color:inherit}a:hover{color:inherit}
     mou = c.redueix ? 0.001 : 1;
     if (c.redueix) return;
 
-    // Els gestors: els vídeos petits es veuen en marxa; quan fa 4,5 s que la frase es veu sencera, el seu s'obre cap amunt
-    finestres.forEach(function (f, i) { reprodueixPetit(i); });
+    // Els gestors: la boleta ja es veu en marxa; quan fa 4,5 s que la frase es veu sencera, s'obre cap amunt
+    giraAnell(actiu);
     if (c.escriptori) {
       automatic = true;
       ScrollTrigger.create({ trigger: seccio.querySelector('.cites'), start: 'bottom 85%', once: true, onEnter: programa });

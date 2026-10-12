@@ -151,6 +151,12 @@ el Biel i el que s'ha fet:
   s'obre aquella i el cicle s'atura. El segon i el tercer gestor són marcadors («[Nombre]», «[Aquí, la
   frase…]») fins que tinguem les seves frases i els vídeos. El rètol diu «Les preguntamos a gestores qué
   es Hostly»: és també la pregunta que cal fer-los.
+- **Gestors, una pantalla per gestor (12-10, vespre):** «cadascú té una pantalla… s'ha de poder apretar
+  per buscar la següent review» i «posar la boleta del vídeo a un costat, així no queda tot tan centrat».
+  Ara es veu un gestor cada vegada: la frase a l'esquerra i, al costat dret, la boleta, que ja es veu
+  en marxa, amb un anell que avança com el vídeo. Sota la frase hi ha els botons ← → i el comptador
+  «1 / 3». La boleta s'obre cap amunt i el vídeo passa al davant, una mica a la dreta del centre, tapant
+  part de la frase. Quan s'acaba el vídeo, passa al gestor següent. Si toques res, deixa de fer-ho sol.
 - **Taxa:** «correcte però poc fluid». Ara una franja blava passa per cada fila i els números pugen.
   La ratlla es dibuixa i el total creix. «Calculando» es converteix en «Lista para presentar».
 - **Pagament online:** l'hoste toca «Pagar 14,00 €» i el botó es fa una roda. Després surt «Pagada» i
