@@ -302,7 +302,7 @@ a{color:inherit}a:hover{color:inherit}
   </section>
 
   <!-- 3 -->
-  <div class="etiqueta" id="u3"><div class="cont"><b>3 · Vuit i una, i la pantalla al final</b><span>Com la 2: el 8 compta i la llista surt una sota l'altra mentre el punt avança. Al final, el 8 i la llista llisquen a l'esquerra i al centre surt la pantalla de Hostly amb l'única cosa que és per a tu. A la dreta, l'1.</span><button type="button" data-torna="u3">Torna-ho a veure</button></div></div>
+  <div class="etiqueta" id="u3"><div class="cont"><b>3 · Vuit i una, i la pantalla al final</b><span>Com la 2: el 8 compta i la llista surt una sota l'altra mentre el punt avança. Al final, el 8 i la llista llisquen a l'esquerra. Primer s'encén l'1, a la dreta, i després surt al centre la pantalla de Hostly amb l'única cosa que és per a tu.</span><button type="button" data-torna="u3">Torna-ho a veure</button></div></div>
   <section class="v u3">
     <div class="cont">
       <div class="centre">
@@ -475,11 +475,12 @@ a{color:inherit}a:hover{color:inherit}
         .call(function () { n.textContent = String(i + 1); }, null, t + 0.05);
     });
     var tf = T0 + D + 0.5;
+    // al final: primer l'1 («cosa para ti») i, després, la pantalla que l'ensenya
     tl.call(function () { if (escriptori) aFinal(); }, null, tf)
-      .to(pant, { autoAlpha: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1 }, tf + 0.35)
-      .to(dreta, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.1 }, tf + 0.9)
-      .to(pieter, { autoAlpha: 1, height: 'auto', paddingTop: 20, paddingBottom: 20, marginBottom: 0, duration: 0.8 }, tf + 1.3)
-      .to(anell, { autoAlpha: 1, duration: 0.9, ease: 'sine.out' }, tf + 1.9);
+      .to(dreta, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.12 }, tf + 0.5)
+      .to(pant, { autoAlpha: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1 }, tf + 1.9)
+      .to(pieter, { autoAlpha: 1, height: 'auto', paddingTop: 20, paddingBottom: 20, marginBottom: 0, duration: 0.8 }, tf + 2.8)
+      .to(anell, { autoAlpha: 1, duration: 0.9, ease: 'sine.out' }, tf + 3.4);
     tls.u3 = tl;
     ScrollTrigger.create({ trigger: e3, start: 'top 70%', once: true, onEnter: function () { tl.play(0); } });
   })();
