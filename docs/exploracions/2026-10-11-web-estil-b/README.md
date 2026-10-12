@@ -254,6 +254,23 @@ targeta de Pieter «Para ti» sobre el «Hostly lo está haciendo por ti». A la
 Retoc: «primer que surti l'1 cosa… i després la pantalla». Ara, quan el 8 ja ha lliscat, primer s'encén l'1,
 a la dreta, i un segon i mig més tard surt la pantalla al centre.
 
+**Una incidència de veritat, files més riques i la 3 a la portada (12-10, nit):** «em sembla molt i molt
+bé». Demana tres coses. Primer, no perdre la pàgina de les opcions, «que potser hem de canviar». Segon,
+que el que ens demana a nosaltres sigui «una mica més greu, algo com se ha roto X o no funciona X».
+Tercer, que cada cosa de la llista s'assembli més a la primera opció, «amb una mica més d'info i amb
+algun selector que es vegi més». Fet:
+- **La pàgina de les opcions es queda** (`pendent-amb-la-pantalla.html`, el mateix enllaç), amb les tres.
+- **El que et necessita:** «● Urgente · Incidencia — No funciona el aire acondicionado. Lo ha avisado
+  Pieter, en Cala Moreta.», amb «Ver incidencia →». Substitueix «Pieter pregunta si puede llevar a su
+  perro», a la pantalla i a l'1 de la dreta.
+- **Les files:** cada cosa porta un títol i una línia de detall en gris (per exemple, «Vendió una salida
+  más tarde · 25 € más para ti»). Al davant hi ha un tic verd dins d'un cercle, que creix quan la fila
+  surt; la fila es banya d'un verd molt suau i s'apaga.
+- **A la portada:** «Hostly está pendiente» ja és la 3 (`portada.html` i el seu enllaç). Fora la 4, la
+  3 vella i el botó «Pendiente 4 · 3». Sense GSAP o amb «reduir moviment», la secció es veu sencera, tal
+  com queda al final del dia. Al telèfon, el 8, la pantalla i l'1 van un sota l'altre i res no surt pel
+  costat (el telèfon es farà a part).
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí

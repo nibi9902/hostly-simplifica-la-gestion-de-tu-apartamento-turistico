@@ -118,6 +118,7 @@ a{color:inherit}a:hover{color:inherit}
 .pantalla .anell em{position:absolute;top:-15px;right:18px;height:28px;padding:0 12px;border-radius:9999px;background:var(--blau-app);color:#fff;font-style:normal;font-size:14px;font-weight:600;line-height:28px}
 .pantalla .que{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
 .pantalla .que .ambre{color:hsl(32 95% 44%)}
+.pantalla .que .vermell{color:hsl(0 72% 51%)}
 .pantalla .que .verd{color:hsl(142 76% 32%)}
 .pantalla .que i{width:1px;height:11px;background:hsl(220 14% 11% / .15)}
 .pantalla .que .gris{color:var(--gris)}
@@ -143,6 +144,8 @@ a{color:inherit}a:hover{color:inherit}
 .v4-targeta{margin-top:28px;max-width:400px;padding:20px 22px;border-radius:20px;background:var(--blanc);box-shadow:0 22px 50px -22px rgba(15,23,42,.26),inset 0 0 0 1px var(--linia);display:flex;flex-direction:column;gap:9px}
 .v4-que{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
 .v4-que .ambre{color:hsl(32 95% 40%)}
+.v4-que .vermell{color:hsl(0 72% 46%)}
+.v4-det{font-size:14px;line-height:1.4;color:var(--gris)}
 .v4-que i{width:1px;height:11px;background:hsl(220 14% 11% / .15)}
 .v4-que .gris{color:var(--gris)}
 .v4-targeta h3{font-size:22px;line-height:1.25;font-weight:700;letter-spacing:-0.015em}
@@ -151,16 +154,23 @@ a{color:inherit}a:hover{color:inherit}
 
 /* 3 · La segona, i al final la pantalla al centre: durant el dia, el 8 i la llista al mig; al final llisquen a
    l'esquerra, surt la pantalla amb la targeta de Pieter i, a la dreta, l'1 */
-.e3{display:grid;grid-template-columns:minmax(0,1fr) 704px minmax(0,1fr);gap:44px;align-items:center;margin-top:64px;min-height:380px}
-.e3-esq{grid-row:1;width:262px;display:flex;flex-direction:column;align-items:flex-start}
+.e3{display:grid;grid-template-columns:minmax(0,1fr) 640px minmax(0,1fr);gap:44px;align-items:center;margin-top:64px;min-height:380px}
+.e3-esq{grid-row:1;width:292px;display:flex;flex-direction:column;align-items:flex-start}
 .e3.fase-final .e3-esq{grid-column:1;justify-self:end}
 .e3.fase-dia .e3-esq{grid-column:2;justify-self:center}
 .e3-pant{grid-row:1;grid-column:2;min-width:0}
 .e3-dreta{grid-row:1;grid-column:3;justify-self:start;width:262px;display:flex;flex-direction:column;align-items:flex-start}
-.e3-llista{display:flex;flex-direction:column;gap:9px;margin-top:22px}
-.e3-llista li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.35}
-.e3-llista .ic{width:16px;height:16px;color:var(--verd);margin-top:1px}
+.e3-llista{display:flex;flex-direction:column;gap:2px;margin-top:18px;width:100%}
+.e3-fila{position:relative;display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;padding:7px 10px;border-radius:14px}
+.e3-lava{position:absolute;inset:0;border-radius:14px;background:hsl(138 76% 95%);opacity:0}
+.e3-marca{position:relative;width:30px;height:30px;border-radius:9999px;background:hsl(138 76% 92%);color:var(--verd);display:grid;place-items:center}
+.e3-marca svg{width:15px;height:15px}
+.e3-fila p{position:relative;min-width:0}
+.e3-fila b{display:block;font-size:16px;line-height:1.3;font-weight:600}
+.e3-fila .det{display:block;font-size:13.5px;line-height:1.4;color:var(--gris);margin-top:1px}
 .u3 .pantalla .ft-nit{opacity:1}
+.u3 .pantalla{width:640px;height:337px}
+.u3 .pantalla .fin{transform:scale(.5818)}
 
 @media (max-width: 1100px){
   .cont{padding-inline:20px}
@@ -178,6 +188,8 @@ a{color:inherit}a:hover{color:inherit}
   .e3{grid-template-columns:minmax(0,1fr);gap:40px;justify-items:center}
   .e3 .e3-esq,.e3 .e3-pant,.e3 .e3-dreta{grid-column:1 !important;grid-row:auto;justify-self:center}
   .e3-pant{width:550px;max-width:100%}
+  .u3 .pantalla{width:550px;height:290px}
+  .u3 .pantalla .fin{transform:scale(.5)}
 }
 @media (max-width: 640px){
   .u-mig{width:319px}
@@ -185,6 +197,8 @@ a{color:inherit}a:hover{color:inherit}
   .pantalla .fin{transform:scale(.29)}
   .v4-llista{grid-template-columns:minmax(0,1fr)}
   .e3-pant{width:319px}
+  .u3 .pantalla{width:319px;height:168px}
+  .u3 .pantalla .fin{transform:scale(.29)}
 }
 @media (prefers-reduced-motion: reduce){.lm-trams span{transition:none}}
 </style>
@@ -195,14 +209,14 @@ a{color:inherit}a:hover{color:inherit}
     <div class="cont">
       <div>
         <h1>«Hostly está pendiente», amb la línia mínima</h1>
-        <p>La línia del dia, supermínima: un fil gris, un sol punt blau i els trams en gris. A la 1, la pantalla sense notificacions: al Resum, «Hostly lo está haciendo por ti» i, al final, la targeta de Pieter. La 2 és el «vuit i una» de les quatre opcions, tal qual, amb la línia a sota.</p>
+        <p>La línia del dia, supermínima: un fil gris, un sol punt blau i els trams en gris. A la 1, la pantalla sense notificacions: al Resum, «Hostly lo está haciendo por ti» i, al final, la incidència que et necessita. La 2 és el «vuit i una» de les quatre opcions, tal qual, amb la línia a sota.</p>
       </div>
       <nav class="salts" aria-label="Opcions"><a href="#u1">1 · Amb la pantalla</a><a href="#u2">2 · Vuit i una</a><a href="#u3">3 · I la pantalla al final</a></nav>
     </div>
   </header>
 
   <!-- 1 -->
-  <div class="etiqueta" id="u1"><div class="cont"><b>1 · Amb la pantalla</b><span>Sense notificacions. Al Resum, en verd, «Hostly lo está haciendo por ti» mentre el dia passa. Al final, la targeta de Pieter, l'única que et necessita. A sota, la línia mínima.</span><button type="button" data-torna="u1">Torna-ho a veure</button></div></div>
+  <div class="etiqueta" id="u1"><div class="cont"><b>1 · Amb la pantalla</b><span>Sense notificacions. Al Resum, en verd, «Hostly lo está haciendo por ti» mentre el dia passa. Al final, la incidència («No funciona el aire acondicionado»), l'única que et necessita. A sota, la línia mínima.</span><button type="button" data-torna="u1">Torna-ho a veure</button></div></div>
   <section class="v u1">
     <div class="cont">
       <div class="centre">
@@ -241,9 +255,10 @@ a{color:inherit}a:hover{color:inherit}
                 <div class="cos">
                   <div class="targ targ-pieter">
                     <span class="anell"><em>Para ti</em></span>
-                    <p class="que"><span class="ambre">● Cuando puedas</span><i></i><span class="gris">Chat</span></p>
-                    <h3>Pieter pregunta si puede llevar a su perro</h3>
-                    <span class="m-pill">Contestar →</span>
+                    <p class="que"><span class="vermell">● Urgente</span><i></i><span class="gris">Incidencia</span></p>
+                    <h3>No funciona el aire acondicionado</h3>
+                    <p class="petit">Lo ha avisado Pieter, en Cala Moreta.</p>
+                    <span class="m-pill">Ver incidencia →</span>
                   </div>
                   <div class="targ">
                     <p class="que"><span class="verd">● Todo en marcha</span></p>
@@ -264,15 +279,15 @@ a{color:inherit}a:hover{color:inherit}
         </div>
         <div class="u-dreta">
           <p class="compte"><span class="num num-blau">1</span><span class="num-t">cosa<br>para ti</span></p>
-          <p class="u-perti">Pieter pregunta si puede llevar a su perro.</p>
-          <span class="boto-blau">Contestar →</span>
+          <p class="u-perti">No funciona el aire acondicionado en Cala Moreta. Lo ha avisado Pieter.</p>
+          <span class="boto-blau">Ver incidencia →</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 2 -->
-  <div class="etiqueta" id="u2"><div class="cont"><b>2 · Vuit i una, amb la línia</b><span>El de les quatre opcions, tal qual: el 8 amb la llista i l'1 amb la targeta de Pieter. Ara, a sota, la línia mínima: cada cosa surt a la llista quan el punt hi passa. Al final, la ratlla i la teva.</span><button type="button" data-torna="u2">Torna-ho a veure</button></div></div>
+  <div class="etiqueta" id="u2"><div class="cont"><b>2 · Vuit i una, amb la línia</b><span>El de les quatre opcions, tal qual: el 8 amb la llista i l'1 amb la incidència. Ara, a sota, la línia mínima: cada cosa surt a la llista quan el punt hi passa. Al final, la ratlla i la teva.</span><button type="button" data-torna="u2">Torna-ho a veure</button></div></div>
   <section class="v u2">
     <div class="cont">
       <div class="centre">
@@ -291,9 +306,10 @@ a{color:inherit}a:hover{color:inherit}
           <p class="v4-num">1</p>
           <p class="v4-sub">cosa para ti</p>
           <div class="v4-targeta">
-            <p class="v4-que"><span class="ambre">● Cuando puedas</span><i></i><span class="gris">Chat · Cala Moreta</span></p>
-            <h3>Pieter pregunta si puede llevar a su perro</h3>
-            <span class="boto-blau">Contestar →</span>
+            <p class="v4-que"><span class="vermell">● Urgente</span><i></i><span class="gris">Incidencia · Cala Moreta</span></p>
+            <h3>No funciona el aire acondicionado</h3>
+            <p class="v4-det">Lo ha avisado Pieter.</p>
+            <span class="boto-blau">Ver incidencia →</span>
           </div>
         </div>
       </div>
@@ -313,7 +329,7 @@ a{color:inherit}a:hover{color:inherit}
       <div class="e3 fase-final">
         <div class="e3-esq">
           <p class="compte"><span class="num e3-n">8</span><span class="num-t">cosas que hizo<br>Hostly hoy</span></p>
-          <ul class="e3-llista"><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Subió el precio del sábado</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Cobró la tasa turística</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Vendió una salida más tarde</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Envió el registro a la policía</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Les mandó los códigos a los Weber</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Le dijo a Pieter dónde aparcar</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Avisó a Anna para mañana</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Le contestó a Sophie, en francés</li></ul>
+          <ol class="e3-llista"><li class="e3-fila"><span class="e3-lava" aria-hidden="true"></span><span class="e3-marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><p><b>Subió el precio del sábado</b><span class="det">Hay mucha demanda.</span></p></li><li class="e3-fila"><span class="e3-lava" aria-hidden="true"></span><span class="e3-marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><p><b>Cobró la tasa turística</b><span class="det">Con el check-in.</span></p></li><li class="e3-fila"><span class="e3-lava" aria-hidden="true"></span><span class="e3-marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><p><b>Vendió una salida más tarde</b><span class="det">25 € más para ti.</span></p></li><li class="e3-fila"><span class="e3-lava" aria-hidden="true"></span><span class="e3-marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><p><b>Envió el registro a la policía</b><span class="det">Y te guardó el comprobante.</span></p></li><li class="e3-fila"><span class="e3-lava" aria-hidden="true"></span><span class="e3-marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><p><b>Les mandó los códigos</b><span class="det">A los Weber, tras el check-in.</span></p></li><li class="e3-fila"><span class="e3-lava" aria-hidden="true"></span><span class="e3-marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><p><b>Le dijo a Pieter dónde aparcar</b><span class="det">Antes de que llegara.</span></p></li><li class="e3-fila"><span class="e3-lava" aria-hidden="true"></span><span class="e3-marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><p><b>Avisó a Anna</b><span class="det">Mañana limpia a las 11.</span></p></li><li class="e3-fila"><span class="e3-lava" aria-hidden="true"></span><span class="e3-marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><p><b>Le contestó a Sophie</b><span class="det">En francés, a las 23:47.</span></p></li></ol>
         </div>
         <div class="e3-pant">
           <div class="pantalla" role="img" aria-label="La pantalla de Hostly: el resumen dice que Hostly lo está haciendo por ti y, al final, enseña lo único que es para ti.">
@@ -329,9 +345,10 @@ a{color:inherit}a:hover{color:inherit}
                 <div class="cos">
                   <div class="targ targ-pieter">
                     <span class="anell"><em>Para ti</em></span>
-                    <p class="que"><span class="ambre">● Cuando puedas</span><i></i><span class="gris">Chat</span></p>
-                    <h3>Pieter pregunta si puede llevar a su perro</h3>
-                    <span class="m-pill">Contestar →</span>
+                    <p class="que"><span class="vermell">● Urgente</span><i></i><span class="gris">Incidencia</span></p>
+                    <h3>No funciona el aire acondicionado</h3>
+                    <p class="petit">Lo ha avisado Pieter, en Cala Moreta.</p>
+                    <span class="m-pill">Ver incidencia →</span>
                   </div>
                   <div class="targ">
                     <p class="que"><span class="verd">● Todo en marcha</span></p>
@@ -351,8 +368,8 @@ a{color:inherit}a:hover{color:inherit}
         </div>
         <div class="e3-dreta">
           <p class="compte"><span class="num num-blau">1</span><span class="num-t">cosa<br>para ti</span></p>
-          <p class="u-perti">Pieter pregunta si puede llevar a su perro.</p>
-          <span class="boto-blau">Contestar →</span>
+          <p class="u-perti">No funciona el aire acondicionado en Cala Moreta. Lo ha avisado Pieter.</p>
+          <span class="boto-blau">Ver incidencia →</span>
         </div>
       </div>
       <div class="lm" aria-hidden="true"><div class="lm-pista"><span class="lm-ple"></span></div><span class="lm-punt"></span><div class="lm-trams"><span>Mañana</span><span>Tarde</span><span class="on">Noche</span></div></div>
@@ -451,7 +468,7 @@ a{color:inherit}a:hover{color:inherit}
   /* 3 · Vuit i una, i la pantalla al final */
   (function () {
     var s = q('.u3'), D = 8;
-    var e3 = q('.e3', s), esq = q('.e3-esq', s), n = q('.e3-n', s), items = tots('.e3-llista li', s);
+    var e3 = q('.e3', s), esq = q('.e3-esq', s), n = q('.e3-n', s), items = tots('.e3-fila', s);
     var pant = q('.e3-pant', s), dreta = tots('.e3-dreta > *', s), pieter = q('.targ-pieter', s), anell = q('.anell', s);
     var escriptori = window.matchMedia('(min-width: 1101px)').matches;
     function aDia() { e3.classList.remove('fase-final'); e3.classList.add('fase-dia'); }
@@ -466,12 +483,18 @@ a{color:inherit}a:hover{color:inherit}
       .set(pant, amb({ autoAlpha: 0, y: 24, scale: 0.96, filter: 'blur(6px)' }), 0)
       .set(dreta, amb({ autoAlpha: 0, y: 12 }), 0)
       .set(items, amb({ autoAlpha: 0, y: 6, filter: 'blur(4px)' }), 0)
+      .set(items.map(function (f) { return q('.e3-lava', f); }), amb({ opacity: 0 }), 0)
+      .set(items.map(function (f) { return q('.e3-marca', f); }), amb({ scale: 0.6 }), 0)
       .set(pieter, amb({ autoAlpha: 0, height: 0, paddingTop: 0, paddingBottom: 0, marginBottom: -14 }), 0)
       .set(anell, amb({ autoAlpha: 0 }), 0)
       .call(function () { n.textContent = '0'; }, null, 0);
     var ts = liniaMinima(tl, s, D);
     ts.forEach(function (t, i) {
-      tl.to(items[i], { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.7 }, t)
+      var f = items[i];
+      tl.to(f, { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.7 }, t)
+        .to(q('.e3-marca', f), { scale: 1, duration: 0.6 }, t + 0.1)
+        .to(q('.e3-lava', f), { opacity: 1, duration: 0.35, ease: 'sine.out' }, t)
+        .to(q('.e3-lava', f), { opacity: 0, duration: 1.1, ease: 'sine.inOut' }, t + 0.6)
         .call(function () { n.textContent = String(i + 1); }, null, t + 0.05);
     });
     var tf = T0 + D + 0.5;
