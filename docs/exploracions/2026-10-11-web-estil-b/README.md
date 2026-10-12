@@ -271,6 +271,21 @@ algun selector que es vegi més». Fet:
   com queda al final del dia. Al telèfon, el 8, la pantalla i l'1 van un sota l'altre i res no surt pel
   costat (el telèfon es farà a part).
 
+**La llista, a dues columnes durant el dia (13-10):** «que la llista no estigui centrada sinó que sigui
+directament com el punt 2, aquí a l'esquerra… si ho posem al centre i llista única queda molt atapeït».
+Fet, a la portada (la pàgina de les opcions es queda com estava):
+- **Durant el dia:** el 8 compta a l'esquerra i les coses surten a dues columnes (1–4 i 5–8), com al
+  «vuit i una». La resta de la secció espera buida, com a la 2.
+- **Al final:** la segona columna baixa i llisca a sota de la primera, sense passar mai per sobre. Es
+  queda una sola llista al costat de la pantalla. Després s'encén l'1 i, al cap d'un segon i mig, surt
+  la pantalla amb la incidència.
+- **L'alçada del final es reserva des del principi:** la línia de sota no es mou quan la llista canvia.
+- **Abans d'arribar-hi**, el dia encara no ha començat (el comptador a 0, res fet). Abans s'hi veia la
+  llista sencera, que s'esborrava quan començava.
+- **Pantalles més estretes:** la pantalla de Hostly queda sempre al centre de la pàgina. Entre 1296 i
+  1383 px d'amplada es fa una mica més petita. Per sota de 1296, la secció va tota en una columna:
+  el mòbil encara es farà a part.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí

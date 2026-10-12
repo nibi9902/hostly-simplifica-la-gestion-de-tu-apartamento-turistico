@@ -139,8 +139,9 @@ a{color:inherit}a:hover{color:inherit}
 @keyframes parla{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
 @keyframes roda{from{transform:scale(1.04) translate(0,0)}to{transform:scale(1.16) translate(-3%,-2%)}}
 
-/* 3 · Hostly està pendent: el 8 compta al centre i les coses surten una sota l'altra, amb una línia del dia mínima.
-   Al final, el 8 llisca a l'esquerra, s'encén l'1 i surt la pantalla de Hostly amb l'única cosa que et necessita. */
+/* 3 · Hostly està pendent: el 8 compta i les coses surten a l'esquerra, a dues columnes (com al «vuit i una»),
+   amb una línia del dia mínima. Al final, la segona columna llisca a sota de la primera, s'encén l'1 i surt la
+   pantalla de Hostly amb l'única cosa que et necessita. */
 .pend{padding-block:96px 104px;background:var(--fons);overflow:hidden}
 .pend .h2{font-size:60px}
 .pend .centre{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
@@ -158,11 +159,9 @@ a{color:inherit}a:hover{color:inherit}
 .lm-trams{position:absolute;left:0;right:0;top:22px;display:grid;grid-template-columns:3fr 3fr 2fr}
 .lm-trams span{text-align:center;font-size:12px;font-weight:500;color:hsl(220 9% 64%);transition:color .4s ease}
 .lm-trams span.on{color:var(--text)}
-.e3{display:grid;grid-template-columns:minmax(0,1fr) 640px minmax(0,1fr);gap:44px;align-items:center;margin-top:64px;min-height:380px}
-.e3-esq{grid-row:1;width:292px;display:flex;flex-direction:column;align-items:flex-start}
-.e3.fase-final .e3-esq{grid-column:1;justify-self:end}
-.e3.fase-dia .e3-esq{grid-column:2;justify-self:center}
-.e3-pant{grid-row:1;grid-column:2;min-width:0}
+.e3{display:grid;grid-template-columns:292px minmax(0,1fr) 292px;column-gap:32px;align-items:center;margin-top:64px}
+.e3-esq{grid-row:1;grid-column:1;align-self:start;width:292px;display:flex;flex-direction:column;align-items:flex-start}
+.e3-pant{grid-row:1;grid-column:2;justify-self:center;min-width:0}
 .e3-dreta{grid-row:1;grid-column:3;justify-self:start;width:262px;display:flex;flex-direction:column;align-items:flex-start}
 .e3-llista{display:flex;flex-direction:column;gap:2px;margin-top:18px;width:100%}
 .e3-fila{position:relative;display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;padding:7px 10px;border-radius:14px}
@@ -214,6 +213,21 @@ a{color:inherit}a:hover{color:inherit}
 .pend .pantalla{width:640px;height:337px}
 .pend .pantalla .fin{transform:scale(.5818)}
 .pend .pantalla .ft-nit{background-image:var(--m-nit)}
+@media (min-width: 1296px){
+  .e3.fase-dia .e3-esq{grid-column:1 / 3;justify-self:start;width:auto}
+  .e3.fase-dia .e3-llista{display:grid;grid-template-columns:repeat(2,292px);grid-template-rows:repeat(4,auto);grid-auto-flow:column;gap:2px 40px;width:auto}
+}
+@media (min-width: 1296px) and (max-width: 1383px){
+  .pend .pantalla{width:550px;height:290px}
+  .pend .pantalla .fin{transform:scale(.5)}
+}
+@media (max-width: 1295px){
+  .e3{grid-template-columns:minmax(0,1fr);row-gap:40px;justify-items:center}
+  .e3-esq,.e3-pant,.e3-dreta{grid-column:1;grid-row:auto;justify-self:center}
+  .e3-pant{width:550px;max-width:100%}
+  .pend .pantalla{width:550px;height:290px}
+  .pend .pantalla .fin{transform:scale(.5)}
+}
 
 /* 4 · Gratis per sempre: la taxa que es calcula i el pagament online */
 .gratis{min-height:790px;padding-top:72px;padding-bottom:72px;background:var(--blanc)}
@@ -343,11 +357,6 @@ a{color:inherit}a:hover{color:inherit}
   .angel .nav{justify-content:center}
   .h2,.pend .h2,.gratis .h2{font-size:34px}
   .pend .num{font-size:88px}
-  .e3{grid-template-columns:minmax(0,1fr);gap:40px;justify-items:center}
-  .e3 .e3-esq,.e3 .e3-pant,.e3 .e3-dreta{grid-column:1 !important;grid-row:auto;justify-self:center}
-  .e3-pant{width:550px;max-width:100%}
-  .pend .pantalla{width:550px;height:290px}
-  .pend .pantalla .fin{transform:scale(.5)}
   .gratis .bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none}
   .gratis .fosca{grid-column:1 / -1;grid-row:auto}
   .gratis .zero{font-size:140px}
@@ -853,22 +862,55 @@ a{color:inherit}a:hover{color:inherit}
     return ts;
   }
 
-  // A l'ordinador, durant el dia el 8 i la llista són al centre; al final llisquen a l'esquerra (Flip),
-  // s'encén l'1 a la dreta i, després, surt la pantalla amb l'única cosa que és per a tu.
+  // A l'ordinador ample, durant el dia el 8 i la llista (a dues columnes) són a l'esquerra, com al «vuit i una».
+  // Al final, la segona columna baixa i llisca a sota de la primera, s'encén l'1 a la dreta i, després, surt la
+  // pantalla amb l'única cosa que és per a tu. L'alçada del final es reserva des del principi: la línia no es mou.
   var e3 = document.querySelector('.e3');
-  function aDia() { e3.classList.remove('fase-final'); e3.classList.add('fase-dia'); }
-  function aFinal(flip) {
-    var estat = flip ? Flip.getState(q('.e3-esq', e3)) : null;
-    e3.classList.remove('fase-dia'); e3.classList.add('fase-final');
-    if (estat) Flip.from(estat, { duration: 0.9, ease: 'power3.inOut' });
+  function fase(f) { e3.classList.toggle('fase-dia', f === 'dia'); e3.classList.toggle('fase-final', f !== 'dia'); }
+  function reserva() {
+    var dia = e3.classList.contains('fase-dia');
+    e3.style.minHeight = '';
+    fase('final');
+    var h = e3.offsetHeight;
+    fase(dia ? 'dia' : 'final');
+    e3.style.minHeight = h + 'px';
   }
-  function construeixPendent(escriptori) {
+  function aDia() { reserva(); fase('dia'); }
+  function aFinal(llisca) {
+    var files = tots('.e3-fila', e3);
+    var abans = llisca ? files.map(function (f) { return f.getBoundingClientRect(); }) : null;
+    fase('final');
+    if (!abans) return;
+    // primer baixa i després va a l'esquerra: la segona columna mai passa per sobre de la primera
+    files.forEach(function (f, i) {
+      var ara = f.getBoundingClientRect();
+      var dx = abans[i].left - ara.left, dy = abans[i].top - ara.top;
+      if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
+      gsap.set(f, { x: dx, y: dy });
+      gsap.to(f, { y: 0, duration: 0.6, ease: 'power2.inOut' });
+      gsap.to(f, { x: 0, duration: 0.7, delay: 0.4, ease: 'power3.inOut' });
+    });
+  }
+  // en desfer-se (canvi de mida, reduir moviment), la secció torna a quedar sencera, al final del dia
+  function desfesPendent() {
+    e3.style.minHeight = '';
+    fase('final');
+    q('.e3-n', e3).textContent = '8';
+    tots('.pend .lm-trams span').forEach(function (t, j, a) { t.classList.toggle('on', j === a.length - 1); });
+  }
+  function construeixPendent(ample) {
     var s = q('.pend'), D = 8;
-    var esq = q('.e3-esq', s), n = q('.e3-n', s), items = tots('.e3-fila', s);
+    var n = q('.e3-n', s), items = tots('.e3-fila', s), l = q('.lm', s);
     var pant = q('.e3-pant', s), dreta = tots('.e3-dreta > *', s), pieter = q('.targ-pieter', s), anell = q('.anell', s);
-    if (escriptori) { aDia(); gsap.set(pant, { autoAlpha: 0 }); gsap.set(dreta, { autoAlpha: 0 }); }
+    // abans d'arribar-hi, el dia encara no ha començat: res fet, el comptador a 0 i el punt a l'esquerra
+    if (ample) aDia();
+    gsap.set([pant].concat(dreta, items), { autoAlpha: 0 });
+    gsap.set(q('.lm-ple', l), { width: '0%' });
+    gsap.set(q('.lm-punt', l), { left: '0%' });
+    tots('.lm-trams span', l).forEach(function (t, j) { t.classList.toggle('on', j === 0); });
+    n.textContent = '0';
     var tl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
-    tl.call(function () { if (escriptori) aDia(); }, null, 0)
+    tl.call(function () { if (ample) aDia(); }, null, 0)
       .set(pant, amb({ autoAlpha: 0, y: 24, scale: 0.96, filter: 'blur(6px)' }), 0)
       .set(dreta, amb({ autoAlpha: 0, y: 12 }), 0)
       .set(items, amb({ autoAlpha: 0, y: 6, filter: 'blur(4px)' }), 0)
@@ -888,16 +930,16 @@ a{color:inherit}a:hover{color:inherit}
     });
     var tf = T0 + D + 0.5;
     // al final: primer l'1 («cosa para ti») i, després, la pantalla que l'ensenya
-    tl.call(function () { if (escriptori) aFinal(true); }, null, tf)
-      .to(dreta, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.12 }, tf + 0.5)
-      .to(pant, { autoAlpha: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1 }, tf + 1.9)
-      .to(pieter, { autoAlpha: 1, height: 'auto', paddingTop: 20, paddingBottom: 20, marginBottom: 0, duration: 0.8 }, tf + 2.8)
-      .to(anell, { autoAlpha: 1, duration: 0.9, ease: 'sine.out' }, tf + 3.4);
+    tl.call(function () { if (ample) aFinal(true); }, null, tf)
+      .to(dreta, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.12 }, tf + 0.9)
+      .to(pant, { autoAlpha: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1 }, tf + 2.3)
+      .to(pieter, { autoAlpha: 1, height: 'auto', paddingTop: 20, paddingBottom: 20, marginBottom: 0, duration: 0.8 }, tf + 3.2)
+      .to(anell, { autoAlpha: 1, duration: 0.9, ease: 'sine.out' }, tf + 3.8);
     return tl;
   }
 
   var mm = gsap.matchMedia();
-  mm.add({ escriptori: '(min-width: 1101px)', redueix: '(prefers-reduced-motion: reduce)' }, function (ctx) {
+  mm.add({ escriptori: '(min-width: 1101px)', ample: '(min-width: 1296px)', redueix: '(prefers-reduced-motion: reduce)' }, function (ctx) {
     var c = ctx.conditions;
     mou = c.redueix ? 0.001 : 1;
     if (c.redueix) return;
@@ -910,7 +952,7 @@ a{color:inherit}a:hover{color:inherit}
     }
 
     // Hostly està pendent: es mou sol quan el tens davant (sense tocar el scroll)
-    var tlP = construeixPendent(c.escriptori);
+    var tlP = construeixPendent(c.ample);
     ScrollTrigger.create({ trigger: e3, start: 'top 70%', once: true, onEnter: function () { tlP.play(0); } });
 
     // La taxa i el pagament: es mouen mentre es veuen
@@ -918,7 +960,7 @@ a{color:inherit}a:hover{color:inherit}
     var tlG = construeixPagament();
     ScrollTrigger.create({ trigger: '.tile-taxa', start: 'top 85%', end: 'bottom 10%', onToggle: function (s) { if (s.isActive) tlT.play(); else tlT.pause(); } });
     ScrollTrigger.create({ trigger: '.tile-pago', start: 'top 85%', end: 'bottom 10%', onToggle: function (s) { if (s.isActive) tlG.play(); else tlG.pause(); } });
-    return function () { tlP.kill(); aFinal(false); };
+    return function () { tlP.kill(); desfesPendent(); };
   });
 
   window.addEventListener('load', function () { ScrollTrigger.refresh(); });
