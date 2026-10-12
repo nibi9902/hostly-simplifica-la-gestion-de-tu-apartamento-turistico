@@ -149,6 +149,19 @@ a{color:inherit}a:hover{color:inherit}
 .v4-targeta .boto-blau{margin-top:4px}
 .u2 .lm{margin-top:64px}
 
+/* 3 · La segona, i al final la pantalla al centre: durant el dia, el 8 i la llista al mig; al final llisquen a
+   l'esquerra, surt la pantalla amb la targeta de Pieter i, a la dreta, l'1 */
+.e3{display:grid;grid-template-columns:minmax(0,1fr) 704px minmax(0,1fr);gap:44px;align-items:center;margin-top:64px;min-height:380px}
+.e3-esq{grid-row:1;width:262px;display:flex;flex-direction:column;align-items:flex-start}
+.e3.fase-final .e3-esq{grid-column:1;justify-self:end}
+.e3.fase-dia .e3-esq{grid-column:2;justify-self:center}
+.e3-pant{grid-row:1;grid-column:2;min-width:0}
+.e3-dreta{grid-row:1;grid-column:3;justify-self:start;width:262px;display:flex;flex-direction:column;align-items:flex-start}
+.e3-llista{display:flex;flex-direction:column;gap:9px;margin-top:22px}
+.e3-llista li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.35}
+.e3-llista .ic{width:16px;height:16px;color:var(--verd);margin-top:1px}
+.u3 .pantalla .ft-nit{opacity:1}
+
 @media (max-width: 1100px){
   .cont{padding-inline:20px}
   .v{padding-block:64px}
@@ -162,12 +175,16 @@ a{color:inherit}a:hover{color:inherit}
   .v4-graella{grid-template-columns:minmax(0,1fr);gap:40px}
   .v4-sep{display:none}
   .v4-num{font-size:112px}
+  .e3{grid-template-columns:minmax(0,1fr);gap:40px;justify-items:center}
+  .e3 .e3-esq,.e3 .e3-pant,.e3 .e3-dreta{grid-column:1 !important;grid-row:auto;justify-self:center}
+  .e3-pant{width:550px;max-width:100%}
 }
 @media (max-width: 640px){
   .u-mig{width:319px}
   .pantalla{width:319px;height:168px;border-radius:6px}
   .pantalla .fin{transform:scale(.29)}
   .v4-llista{grid-template-columns:minmax(0,1fr)}
+  .e3-pant{width:319px}
 }
 @media (prefers-reduced-motion: reduce){.lm-trams span{transition:none}}
 </style>
@@ -180,7 +197,7 @@ a{color:inherit}a:hover{color:inherit}
         <h1>«Hostly está pendiente», amb la línia mínima</h1>
         <p>La línia del dia, supermínima: un fil gris, un sol punt blau i els trams en gris. A la 1, la pantalla sense notificacions: al Resum, «Hostly lo está haciendo por ti» i, al final, la targeta de Pieter. La 2 és el «vuit i una» de les quatre opcions, tal qual, amb la línia a sota.</p>
       </div>
-      <nav class="salts" aria-label="Opcions"><a href="#u1">1 · Amb la pantalla</a><a href="#u2">2 · Vuit i una</a></nav>
+      <nav class="salts" aria-label="Opcions"><a href="#u1">1 · Amb la pantalla</a><a href="#u2">2 · Vuit i una</a><a href="#u3">3 · I la pantalla al final</a></nav>
     </div>
   </header>
 
@@ -283,16 +300,75 @@ a{color:inherit}a:hover{color:inherit}
       <div class="lm" aria-hidden="true"><div class="lm-pista"><span class="lm-ple"></span></div><span class="lm-punt"></span><div class="lm-trams"><span>Mañana</span><span>Tarde</span><span class="on">Noche</span></div></div>
     </div>
   </section>
+
+  <!-- 3 -->
+  <div class="etiqueta" id="u3"><div class="cont"><b>3 · Vuit i una, i la pantalla al final</b><span>Com la 2: el 8 compta i la llista surt una sota l'altra mentre el punt avança. Al final, el 8 i la llista llisquen a l'esquerra i al centre surt la pantalla de Hostly amb l'única cosa que és per a tu. A la dreta, l'1.</span><button type="button" data-torna="u3">Torna-ho a veure</button></div></div>
+  <section class="v u3">
+    <div class="cont">
+      <div class="centre">
+        <p class="retol">Con Hostly</p>
+        <h2 class="h2">Hostly está pendiente. Tú, ya no.</h2>
+        <p class="lead">Contesta, avisa, envía y cobra por ti. Solo te escribe cuando de verdad haces falta.</p>
+      </div>
+      <div class="e3 fase-final">
+        <div class="e3-esq">
+          <p class="compte"><span class="num e3-n">8</span><span class="num-t">cosas que hizo<br>Hostly hoy</span></p>
+          <ul class="e3-llista"><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Subió el precio del sábado</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Cobró la tasa turística</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Vendió una salida más tarde</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Envió el registro a la policía</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Les mandó los códigos a los Weber</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Le dijo a Pieter dónde aparcar</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Avisó a Anna para mañana</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Le contestó a Sophie, en francés</li></ul>
+        </div>
+        <div class="e3-pant">
+          <div class="pantalla" role="img" aria-label="La pantalla de Hostly: el resumen dice que Hostly lo está haciendo por ti y, al final, enseña lo único que es para ti.">
+            <div class="fin" aria-hidden="true">
+              <div class="crom"><i></i><i></i><i></i><span class="adreca">app.hostlylabs.com</span></div>
+              <div class="app">
+                <div class="app-cap">
+                  <div class="marca-app"><img src="data:image/png;base64,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" alt="" width="22" height="22">Hostly<span class="sel">Todos</span></div>
+                  <div class="portes"><span class="on">Resumen</span><span>Calendario</span><span>Limpieza</span><span>Chat</span><span>Gestión</span></div>
+                  <div class="dreta-cap"><span class="campana"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span><span class="inicials">MR</span></div>
+                </div>
+                <div class="fons"><span class="ft ft-dia"></span><span class="ft ft-tarda"></span><span class="ft ft-nit"></span><div class="vel"></div></div>
+                <div class="cos">
+                  <div class="targ targ-pieter">
+                    <span class="anell"><em>Para ti</em></span>
+                    <p class="que"><span class="ambre">● Cuando puedas</span><i></i><span class="gris">Chat</span></p>
+                    <h3>Pieter pregunta si puede llevar a su perro</h3>
+                    <span class="m-pill">Contestar →</span>
+                  </div>
+                  <div class="targ">
+                    <p class="que"><span class="verd">● Todo en marcha</span></p>
+                    <h4>Hostly lo está haciendo por ti.</h4>
+                    <p class="petit">Mensajes, check-in, limpieza y policía.</p>
+                  </div>
+                </div>
+                <div class="tira">
+                  <div><b>12.261 €</b><small>lo que cobrarás en octubre</small></div>
+                  <div><b>71 %</b><small>ocupación de octubre</small></div>
+                  <div><b>2 · 1</b><small>entradas · salidas hoy</small></div>
+                  <div><b>Mañana</b><small>2 entradas</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="e3-dreta">
+          <p class="compte"><span class="num num-blau">1</span><span class="num-t">cosa<br>para ti</span></p>
+          <p class="u-perti">Pieter pregunta si puede llevar a su perro.</p>
+          <span class="boto-blau">Contestar →</span>
+        </div>
+      </div>
+      <div class="lm" aria-hidden="true"><div class="lm-pista"><span class="lm-ple"></span></div><span class="lm-punt"></span><div class="lm-trams"><span>Mañana</span><span>Tarde</span><span class="on">Noche</span></div></div>
+    </div>
+  </section>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
 <script>
 (function () {
   // Sense GSAP, o amb «reduir moviment», cada opció es queda quieta i sencera (al final del dia).
-  if (!window.gsap || !window.ScrollTrigger) return;
+  if (!window.gsap || !window.ScrollTrigger || !window.Flip) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, Flip);
   var NO = { immediateRender: false };
   function amb(o) { return Object.assign({}, o, NO); }
   function q(sel, dins) { return (dins || document).querySelector(sel); }
@@ -369,6 +445,43 @@ a{color:inherit}a:hover{color:inherit}
       .to(tu, { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.9, stagger: 0.15 }, tf + 0.3);
     tls.u2 = tl;
     ScrollTrigger.create({ trigger: q('.v4-graella', s), start: 'top 70%', once: true, onEnter: function () { tl.play(0); } });
+  })();
+
+
+  /* 3 · Vuit i una, i la pantalla al final */
+  (function () {
+    var s = q('.u3'), D = 8;
+    var e3 = q('.e3', s), esq = q('.e3-esq', s), n = q('.e3-n', s), items = tots('.e3-llista li', s);
+    var pant = q('.e3-pant', s), dreta = tots('.e3-dreta > *', s), pieter = q('.targ-pieter', s), anell = q('.anell', s);
+    var escriptori = window.matchMedia('(min-width: 1101px)').matches;
+    function aDia() { e3.classList.remove('fase-final'); e3.classList.add('fase-dia'); }
+    function aFinal() {
+      var estat = Flip.getState(esq);
+      e3.classList.remove('fase-dia'); e3.classList.add('fase-final');
+      Flip.from(estat, { duration: 0.9, ease: 'power3.inOut' });
+    }
+    if (escriptori) { aDia(); gsap.set(pant, { autoAlpha: 0 }); gsap.set(dreta, { autoAlpha: 0 }); }
+    var tl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
+    tl.call(function () { if (escriptori) aDia(); }, null, 0)
+      .set(pant, amb({ autoAlpha: 0, y: 24, scale: 0.96, filter: 'blur(6px)' }), 0)
+      .set(dreta, amb({ autoAlpha: 0, y: 12 }), 0)
+      .set(items, amb({ autoAlpha: 0, y: 6, filter: 'blur(4px)' }), 0)
+      .set(pieter, amb({ autoAlpha: 0, height: 0, paddingTop: 0, paddingBottom: 0, marginBottom: -14 }), 0)
+      .set(anell, amb({ autoAlpha: 0 }), 0)
+      .call(function () { n.textContent = '0'; }, null, 0);
+    var ts = liniaMinima(tl, s, D);
+    ts.forEach(function (t, i) {
+      tl.to(items[i], { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.7 }, t)
+        .call(function () { n.textContent = String(i + 1); }, null, t + 0.05);
+    });
+    var tf = T0 + D + 0.5;
+    tl.call(function () { if (escriptori) aFinal(); }, null, tf)
+      .to(pant, { autoAlpha: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1 }, tf + 0.35)
+      .to(dreta, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.1 }, tf + 0.9)
+      .to(pieter, { autoAlpha: 1, height: 'auto', paddingTop: 20, paddingBottom: 20, marginBottom: 0, duration: 0.8 }, tf + 1.3)
+      .to(anell, { autoAlpha: 1, duration: 0.9, ease: 'sine.out' }, tf + 1.9);
+    tls.u3 = tl;
+    ScrollTrigger.create({ trigger: e3, start: 'top 70%', once: true, onEnter: function () { tl.play(0); } });
   })();
 
   Array.prototype.forEach.call(document.querySelectorAll('[data-torna]'), function (b) {

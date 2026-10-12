@@ -246,6 +246,12 @@ pantalla, «simplement els dos números… i a sota la línia de temps». Fet:
 - **La 2:** ara és el «vuit i una» de les quatre opcions, tal qual, amb la llista una sota l'altra i la
   línia mínima a sota. Les coses surten quan el punt hi passa.
 
+**I la pantalla al final (12-10, nit):** «m'agraden molt les dues». Vol provar la 2 amb la plataforma, que
+surti al centre al final per ensenyar la cosa que hem de fer nosaltres. És la 3 de la pàgina. Durant el
+dia, el 8 compta al centre amb la llista una sota l'altra, i a sota hi ha la línia mínima. Al final, el
+8 i la llista llisquen a l'esquerra (GSAP Flip). Al centre surt la pantalla de Hostly, de nit, amb la
+targeta de Pieter «Para ti» sobre el «Hostly lo está haciendo por ti». A la dreta s'encén l'1.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
