@@ -210,6 +210,20 @@ maneres a `pendent-amb-la-pantalla.html` i a https://claude.ai/artifact/55mGinCP
   obliden». El dia ara dura 18 s, uns dos segons per cosa. Cada cosa es veu gran al costat de la
   pantalla. Al final surten totes vuit en llista i s'encén l'1. Es queda així: no torna a començar.
 
+**La U amb el dia, amb i sense pantalla (12-10, nit):** de les dues, li agrada «la 2», la U amb el dia.
+Diu que és una mica lenta i que la línia del temps no té l'estil de Hostly. També, que la pantalla de
+l'app hauria de mostrar les coses al compàs, «si no, no té sentit que hi hagi la pantalla al centre».
+Demana el mateix sense la pantalla. Fet, a la mateixa pàgina:
+- **Més ràpida:** 1,4 s per cosa; tot el dia, uns 12 s.
+- **El dia, a l'estil de Hostly:** una franja de píndoles com les pestanyes de l'app, «Mañana · Tarde ·
+  Noche». La píndola blava llisca, i cada tram porta un comptador amb un tic.
+- **La pantalla al compàs:** la targeta de dalt mostra cada cosa com l'app (per exemple, «Precios ·
+  Sábado: 145 € → 168 €» o «Tasa turística · 14,00 € cobrados»). A la franja de baix, «cosas hechas
+  hoy» compta i «lo que cobrarás» puja de 12.261 € a 12.286 € quan es ven la sortida tard. Al final,
+  «Nada más pendiente · Hoy, 8 cosas hechas» i la targeta de Pieter, «Para ti».
+- **Sense la pantalla:** al mig, una targeta gran amb cada cosa i el moment del dia. Al final hi surten
+  totes vuit en dues columnes.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
