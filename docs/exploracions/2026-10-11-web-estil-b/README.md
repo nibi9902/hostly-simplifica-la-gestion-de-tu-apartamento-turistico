@@ -131,6 +131,25 @@ Publicada també al compte nou: https://claude.ai/artifact/SnghLHEawLQbEcJLDNZGP
 `gratis-5` i `truca-4` no es van poder pujar al llenç. Sí que són aquí, i el `canvas.json` publicat
 ja les té a la llista. La portada i l'`angel-4` sí que es van pujar.
 
+## Ronda 6 (12-10): el moviment
+
+Es treballa sobre `portada.html` (aquesta carpeta) i el seu enllaç, no sobre el llenç. El que va dir
+el Biel i el que s'ha fet:
+
+- **Àngel:** es queda la que s'obre sola. Al botó de revisió deia «4»; ell la va anomenar «el 5».
+  Ara, al cap d'uns cinc segons, quan ja has pogut llegir la frase, el vídeo es fa gran per sobre del text.
+  La creu torna a la frase, i quan s'acaba el vídeo hi torna sol. S'ha tret l'Àngel 1 i el botó de revisió.
+- **Taxa:** «correcte però poc fluid». Ara una franja blava passa per cada fila i els números pugen.
+  La ratlla es dibuixa i el total creix. «Calculando» es converteix en «Lista para presentar».
+- **Pagament online:** l'hoste toca «Pagar 14,00 €» i el botó es fa una roda. Després surt «Pagada» i
+  «+14,00 € en tu cuenta».
+- **«Hostly está pendiente»:** «es passa molt per alt». Ara és un flux lligat al scroll: la secció es
+  queda quieta mentre baixes i les vuit coses es fan una darrere l'altra (esquerra, dreta…). Cada una
+  porta el seu avís a la pantalla. Al final surt «8 cosas hechas hoy» i la targeta de Pieter es marca
+  «Para ti». Només a l'ordinador.
+- **Tècnica:** GSAP 3.12.5 de cdnjs (ScrollTrigger i Flip). Sense JavaScript, o amb «reduir moviment»,
+  la pàgina es queda quieta i sencera.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
