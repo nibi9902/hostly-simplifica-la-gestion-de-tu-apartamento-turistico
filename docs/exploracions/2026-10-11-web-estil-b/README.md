@@ -122,6 +122,11 @@ taxa o sobre la reserva?
 
 **Falten:** el vídeo de l'Àngel (vertical) i el mòbil.
 
+**Per veure-la sense el llenç (12-10):** `portada.html`, en aquesta carpeta. És la mateixa portada en una pàgina
+web normal, amb les fotos a dins: s'obre amb un doble clic. A baix a la dreta hi ha un botó «Àngel 1 · 4»,
+només per revisar, que canvia la versió de l'Àngel. La taxa es torna a calcular quan arribes al requadre.
+Publicada també al compte nou: https://claude.ai/artifact/SnghLHEawLQbEcJLDNZGPw (privada).
+
 **Incidència (12-10):** a mitja publicació, la sessió va passar a un compte sense cap artefacte.
 `gratis-5` i `truca-4` no es van poder pujar al llenç. Sí que són aquí, i el `canvas.json` publicat
 ja les té a la llista. La portada i l'`angel-4` sí que es van pujar.
