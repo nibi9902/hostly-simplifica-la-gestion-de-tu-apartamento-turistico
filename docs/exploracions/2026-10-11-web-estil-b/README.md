@@ -224,6 +224,20 @@ Demana el mateix sense la pantalla. Fet, a la mateixa pàgina:
 - **Sense la pantalla:** al mig, una targeta gran amb cada cosa i el moment del dia. Al final hi surten
   totes vuit en dues columnes.
 
+**La línia amb l'estil de Hostly i la pantalla «com sempre» (12-10, nit):** «la línia m'agradava però
+l'estil no era de Hostly». També: «a la pantalla ha de sortir com sempre, només el que ens necessita…
+una reserva nueva con el precio subido o registro enviado, però a les notificacions». I el mockup sense
+pantalla, «simplement els dos números… i a sota la línia de temps». Fet:
+- **La línia:** una pista arrodonida de 8 px, omplerta amb el blau de l'app. Les fites es tornen tics
+  verds i hi llisca un botó blanc amb vora blava, com un control de l'app. A sota, «Mañana · Tarde ·
+  Noche» en gris, i el tram del moment en blau. Sense rebots, com l'app.
+- **1 · amb la pantalla:** al Resum, en verd, «Todo en marcha · Hostly lo está haciendo por ti». A la
+  campana arriben dues notificacions: «Reserva nueva · Cala Moreta… el sábado, a 168 €: con el precio
+  subido», que fa pujar «lo que cobrarás» a 12.765 €, i «Registro enviado a la policía». Al final, al
+  Resum apareix la targeta de Pieter, «Para ti».
+- **2 · els dos números:** «8 cosas que ha hecho Hostly hoy» i «1 cosa que tienes que hacer tú». A sota,
+  la línia, amb cada cosa en una píndola que surt quan el botó hi passa.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí

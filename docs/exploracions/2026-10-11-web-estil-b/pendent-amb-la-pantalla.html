@@ -11,8 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
 <style>
-/* «Hostly está pendiente»: la U amb el dia, amb la pantalla de Hostly i sense. El dia es mostra amb una franja
-   de píndoles com les pestanyes de l'app; la pantalla mostra cada cosa com l'app. Sense tocar el scroll. */
+/* «Hostly está pendiente»: la línia del dia amb l'estil de Hostly (pista arrodonida, blau de l'app, fites que
+   es tornen tics verds, un botó que llisca). 1: amb la pantalla com sempre (el Resum només ensenya el que et
+   necessita; la resta arriba a les notificacions). 2: només els dos números i, a sota, la línia. */
 :root{
   color-scheme:light;
   --fons:hsl(210 20% 98%);
@@ -22,7 +23,9 @@
   --linia:hsl(220 13% 91%);
   --blau:#2563EB;
   --blau-app:#3B82F6;
+  --blau-clar:#93C5FD;
   --verd:hsl(142 76% 36%);
+  --verd-fita:hsl(142 71% 42%);
   --verd-fosc:hsl(142 76% 28%);
   --verd-clar:hsl(138 76% 95%);
   --fosc:hsl(220 14% 11%);
@@ -53,7 +56,7 @@ a{color:inherit}a:hover{color:inherit}
 .rev{background:var(--blanc);border-bottom:1px solid var(--linia)}
 .rev .cont{padding-block:28px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-end;justify-content:space-between}
 .rev h1{font-size:26px;line-height:1.2;font-weight:700;letter-spacing:-0.02em}
-.rev p{font-size:15px;line-height:1.5;color:var(--gris);max-width:66ch;margin-top:6px}
+.rev p{font-size:15px;line-height:1.5;color:var(--gris);max-width:68ch;margin-top:6px}
 .salts{display:flex;gap:8px;flex-wrap:wrap}
 .salts a{height:36px;padding:0 14px;border-radius:9999px;background:var(--fons);box-shadow:inset 0 0 0 1px var(--linia);display:inline-flex;align-items:center;font-size:14px;font-weight:500}
 .etiqueta{background:var(--blanc);border-top:1px solid var(--linia);border-bottom:1px solid var(--linia)}
@@ -63,47 +66,69 @@ a{color:inherit}a:hover{color:inherit}
 .etiqueta button{height:34px;padding:0 14px;border-radius:9999px;border:0;background:var(--fons);box-shadow:inset 0 0 0 1px var(--linia);font:500 13px/1 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--text);cursor:pointer}
 .v{padding-block:96px 104px;background:var(--fons);overflow:hidden}
 
-/* La U: a l'esquerra el compte, al mig l'escena (la pantalla o la targeta) i el dia, a la dreta l'1 */
+/* La línia del dia, amb l'estil de Hostly */
+.linia{position:relative;width:100%;height:84px;margin-top:30px}
+.l-pista{position:absolute;left:0;right:0;top:30px;height:8px;margin-top:-4px;border-radius:9999px;background:hsl(210 20% 93%);box-shadow:inset 0 0 0 1px hsl(220 13% 89%);overflow:hidden}
+.l-ple{position:absolute;left:0;top:0;bottom:0;width:100%;border-radius:9999px;background:linear-gradient(90deg,var(--blau-clar),var(--blau-app))}
+.l-fita{position:absolute;z-index:1;top:30px;left:var(--x);width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:9999px;background:var(--blanc);box-shadow:0 0 0 3px var(--fons),inset 0 0 0 2px hsl(220 13% 84%)}
+.l-fita i{position:absolute;inset:0;border-radius:9999px;background:var(--verd-fita);color:#fff;display:grid;place-items:center;box-shadow:0 2px 6px rgba(22,101,52,.25)}
+.l-fita svg{width:11px;height:11px}
+.l-pom{position:absolute;z-index:2;top:30px;left:100%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:9999px;background:var(--blanc);border:4px solid var(--blau-app);box-shadow:0 4px 12px rgba(59,130,246,.35)}
+.l-trams{position:absolute;left:0;right:0;top:52px;display:grid;grid-template-columns:3fr 3fr 2fr}
+.l-trams span{text-align:center;font-size:13px;font-weight:500;color:var(--gris);transition:color .35s ease}
+.l-trams span.on{color:var(--blau-app);font-weight:600}
+/* les etiquetes de cada cosa (només a la 2), com les píndoles de l'app */
+.linia-gran{width:auto;height:190px;margin:56px 72px 0}
+.linia-gran .l-pista,.linia-gran .l-fita,.linia-gran .l-pom{top:95px}
+.linia-gran .l-trams{top:162px}
+.l-xip{position:absolute;z-index:1;left:var(--x);transform:translateX(-50%)}
+.l-xip.dalt{top:12px}
+.l-xip.baix{top:120px}
+.l-xip.esq{transform:translateX(-14px)}
+.l-xip.dreta{transform:translateX(calc(-100% + 14px))}
+.l-xip > span{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:9999px;background:var(--blanc);box-shadow:0 8px 20px -10px rgba(15,23,42,.28),inset 0 0 0 1px var(--linia);font-size:14px;font-weight:500;white-space:nowrap}
+.l-xip svg{width:14px;height:14px;color:var(--verd)}
+.l-xip::after{content:"";position:absolute;left:50%;width:1px;height:28px;background:hsl(220 13% 84%)}
+.l-xip.esq::after{left:14px}
+.l-xip.dreta::after{left:auto;right:14px}
+.l-xip.dalt::after{top:34px}
+.l-xip.baix::after{bottom:34px;height:16px}
+
+/* 1 · La U, amb la pantalla com sempre */
 .u{display:grid;grid-template-columns:minmax(0,1fr) 704px minmax(0,1fr);gap:44px;align-items:center;margin-top:64px}
 .u-esq{justify-self:end;width:268px;display:flex;flex-direction:column;align-items:flex-start}
-.u-mig{min-width:0;display:flex;flex-direction:column;align-items:center}
+.u-mig{min-width:0;display:flex;flex-direction:column;align-items:stretch}
 .u-dreta{justify-self:start;width:268px;display:flex;flex-direction:column;align-items:flex-start}
 .u-perti{font-size:16px;line-height:1.45;font-weight:500;margin:16px 0 14px}
-
-/* El dia, a l'estil de Hostly: una franja de píndoles com les pestanyes de l'app */
-.franja{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;width:440px;max-width:100%;margin-top:26px;padding:4px;border-radius:9999px;background:hsl(210 20% 94%);box-shadow:inset 0 0 0 1px hsl(220 13% 90%)}
-.franja-llum{position:absolute;z-index:0;top:4px;bottom:4px;left:4px;width:calc((100% - 12px) / 3);transform:translateX(calc(200% + 4px));border-radius:9999px;background:var(--blau-app);box-shadow:0 6px 16px -6px rgba(59,130,246,.55)}
-.franja-seg{position:relative;z-index:1;height:38px;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9999px;font-size:14px;font-weight:500;color:hsl(220 14% 25%);transition:color .35s ease}
-.franja-seg.on{color:#fff}
-.franja-n{display:inline-flex;align-items:center;gap:3px;height:22px;padding:0 7px;border-radius:9999px;background:hsl(0 0% 100% / .92);color:var(--verd-fosc);font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
-.franja-n svg{width:11px;height:11px}
-
-/* L'esquerra: la cosa d'ara, gran; al final, totes vuit */
 .u-cos{display:grid;margin-top:22px;width:100%}
 .u-ara,.u-totes{grid-area:1 / 1}
 .u-ara{display:grid;opacity:0;visibility:hidden}
 .u-ara p{grid-area:1 / 1;opacity:0;visibility:hidden}
-.u-ara small{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:hsl(220 9% 58%);margin-bottom:4px}
+.u-ara small{display:block;font-size:12px;font-weight:600;color:var(--blau-app);margin-bottom:4px}
 .u-ara b{display:block;font-size:22px;line-height:1.25;font-weight:600;letter-spacing:-0.01em}
 .u-ara span{display:block;font-size:15px;line-height:1.45;color:var(--gris);margin-top:4px}
 .u-totes{display:flex;flex-direction:column;gap:9px}
 .u-totes li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.35}
 .u-totes .ic{width:16px;height:16px;color:var(--verd);margin-top:1px}
 
-/* La pantalla de Hostly (la de la B del 10-10), a mida real 1100×580 i escalada; la targeta de dalt va al compàs */
-.pantalla{position:relative;flex-shrink:0;width:704px;height:371px;border-radius:14px;box-shadow:0 40px 90px -24px rgba(15,23,42,.28),0 10px 30px rgba(15,23,42,.07)}
+/* La pantalla de Hostly, a mida real 1100×580 i escalada */
+.pantalla{position:relative;width:704px;height:371px;border-radius:14px;box-shadow:0 40px 90px -24px rgba(15,23,42,.28),0 10px 30px rgba(15,23,42,.07)}
 .pantalla .fin{position:absolute;left:0;top:0;width:1100px;height:580px;transform:scale(.64);transform-origin:0 0;border-radius:20px;background:var(--blanc);overflow:hidden;box-shadow:inset 0 0 0 1px var(--linia);text-align:left;color:var(--text)}
 .pantalla .crom{height:40px;display:flex;align-items:center;gap:8px;padding:0 16px;background:hsl(210 20% 97%);border-bottom:1px solid var(--linia)}
 .pantalla .crom i{width:11px;height:11px;border-radius:9999px;background:hsl(220 13% 84%);display:block}
 .pantalla .adreca{margin:0 auto;height:24px;width:300px;border-radius:9999px;background:var(--blanc);box-shadow:inset 0 0 0 1px var(--linia);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gris)}
 .pantalla .app{position:relative;height:540px;font-size:13px}
-.pantalla .app-cap{position:relative;z-index:2;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:hsl(0 0% 100% / .9);border-bottom:1px solid hsl(220 13% 91% / .7)}
+.pantalla .app-cap{position:relative;z-index:3;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:hsl(0 0% 100% / .9);border-bottom:1px solid hsl(220 13% 91% / .7)}
 .pantalla .marca-app{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
 .pantalla .marca-app img{width:22px;height:22px;border-radius:6px}
 .pantalla .sel{height:28px;padding:0 10px;border-radius:9999px;background:hsl(210 20% 96%);display:inline-flex;align-items:center;font-size:12px;font-weight:500;margin-left:6px}
 .pantalla .portes{display:flex;gap:2px;padding:3px;border-radius:9999px;background:hsl(210 20% 96%)}
 .pantalla .portes span{height:28px;padding:0 12px;border-radius:9999px;display:inline-flex;align-items:center;font-size:12px;font-weight:500;color:hsl(220 14% 25%)}
 .pantalla .portes span.on{background:var(--blau-app);color:#fff}
+.pantalla .dreta-cap{display:flex;align-items:center;gap:12px}
+.pantalla .campana{position:relative;width:32px;height:32px;border-radius:9999px;display:grid;place-items:center;color:hsl(220 14% 25%);background:hsl(210 20% 96%)}
+.pantalla .campana .ic{width:16px;height:16px}
+.pantalla .xifra{position:absolute;top:-4px;right:-5px;min-width:18px;height:18px;padding:0 5px;border-radius:9999px;background:var(--blau-app);color:#fff;font-size:11px;font-weight:700;line-height:18px;text-align:center;box-shadow:0 0 0 2px #fff}
 .pantalla .inicials{width:28px;height:28px;border-radius:9999px;background:var(--fosc);color:#fff;font-size:11px;font-weight:600;display:grid;place-items:center}
 .pantalla .fons{position:absolute;inset:52px 0 0 0;overflow:hidden}
 .pantalla .ft{position:absolute;inset:0;background-size:cover;background-position:60% 50%;background-repeat:no-repeat}
@@ -113,9 +138,6 @@ a{color:inherit}a:hover{color:inherit}
 .pantalla .vel{position:absolute;inset:0;background:linear-gradient(100deg,hsl(210 20% 98% / .84) 0%,hsl(210 20% 98% / .52) 38%,hsl(210 20% 98% / .16) 62%,hsl(210 20% 98% / .08) 100%),linear-gradient(to top,hsl(210 20% 98% / .55) 0%,hsl(210 20% 98% / 0) 32%)}
 .pantalla .cos{position:absolute;z-index:1;left:24px;top:78px;width:470px;display:flex;flex-direction:column;gap:14px}
 .pantalla .targ{position:relative;background:hsl(0 0% 100% / .95);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.12);padding:20px 22px;display:flex;flex-direction:column;gap:9px}
-.pantalla .ara-pila{display:grid}
-.pantalla .ara{grid-area:1 / 1;display:flex;flex-direction:column;gap:9px;opacity:0;visibility:hidden}
-.pantalla .ara.ara-fi{opacity:1;visibility:visible}
 .pantalla .anell{position:absolute;inset:-7px;border-radius:22px;box-shadow:0 0 0 3px hsl(217 91% 60% / .6)}
 .pantalla .anell em{position:absolute;top:-15px;right:18px;height:28px;padding:0 12px;border-radius:9999px;background:var(--blau-app);color:#fff;font-style:normal;font-size:14px;font-weight:600;line-height:28px}
 .pantalla .que{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
@@ -124,26 +146,30 @@ a{color:inherit}a:hover{color:inherit}
 .pantalla .que i{width:1px;height:11px;background:hsl(220 14% 11% / .15)}
 .pantalla .que .gris{color:var(--gris)}
 .pantalla .targ h3{font-size:28px;line-height:1.1;font-weight:700;letter-spacing:-0.025em}
-.pantalla .targ h4{margin:0;font-size:24px;line-height:1.15;font-weight:700;letter-spacing:-0.02em;color:hsl(142 76% 30%)}
+.pantalla .targ h4{margin:0;font-size:26px;line-height:1.15;font-weight:700;letter-spacing:-0.02em;color:hsl(142 76% 30%)}
 .pantalla .targ p.petit{font-size:13px;color:var(--gris)}
 .pantalla .m-pill{align-self:flex-start;height:34px;padding:0 16px;border-radius:9999px;background:var(--blau-app);color:#fff;font-size:13px;font-weight:500;display:inline-flex;align-items:center;margin-top:4px}
+.pantalla .notis{position:absolute;z-index:2;right:16px;top:62px;width:420px;padding:14px;border-radius:18px;background:hsl(0 0% 100% / .96);box-shadow:0 24px 50px -18px rgba(15,23,42,.35),inset 0 0 0 1px hsl(220 13% 91%);display:flex;flex-direction:column;gap:8px}
+.pantalla .notis-cap{display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700;padding:2px 4px 4px}
+.pantalla .notis-cap span{font-size:13px;font-weight:500;color:var(--gris)}
+.pantalla .noti{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:14px;background:hsl(210 20% 97%)}
+.pantalla .noti img{width:32px;height:32px;border-radius:9px;flex-shrink:0}
+.pantalla .noti div{flex:1;min-width:0}
+.pantalla .noti b{display:block;font-size:17px;line-height:1.3;font-weight:600}
+.pantalla .noti span{display:block;font-size:15px;line-height:1.4;color:var(--gris);margin-top:2px}
+.pantalla .noti small{font-size:13px;color:var(--gris);white-space:nowrap}
 .pantalla .tira{position:absolute;z-index:1;left:24px;right:24px;bottom:16px;height:66px;border-radius:16px;background:hsl(0 0% 100% / .92);box-shadow:0 4px 12px rgba(0,0,0,.08);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center}
 .pantalla .tira div{padding:0 18px;border-left:1px solid hsl(0 0% 92%)}
 .pantalla .tira div:first-child{border-left:0}
 .pantalla .tira b{display:block;font-size:20px;font-weight:700;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
 .pantalla .tira small{font-size:11px;color:var(--gris)}
 
-/* Sense la pantalla: al mig, una targeta gran amb cada cosa; al final, totes vuit */
-.escena{position:relative;width:704px;max-width:100%;min-height:330px;border-radius:28px;background:var(--blanc);box-shadow:0 30px 70px -30px rgba(15,23,42,.22),inset 0 0 0 1px var(--linia);display:grid}
-.escena > *{grid-area:1 / 1}
-.esc-ara{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:44px 52px;opacity:0;visibility:hidden}
-.esc-xip{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 12px;border-radius:9999px;background:var(--verd-clar);color:var(--verd-fosc);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.esc-xip i{width:6px;height:6px;border-radius:9999px;background:currentColor}
-.esc-ara b{font-size:38px;line-height:1.12;font-weight:700;letter-spacing:-0.025em;text-wrap:balance}
-.esc-ara span{font-size:19px;line-height:1.45;color:var(--gris)}
-.esc-totes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px;align-content:center;padding:40px 48px}
-.esc-totes li{display:flex;gap:10px;align-items:flex-start;font-size:16px;line-height:1.4}
-.esc-totes .ic{width:17px;height:17px;color:var(--verd);margin-top:2px}
+/* 2 · Només els dos números i, a sota, la línia */
+.dos{display:flex;justify-content:center;align-items:flex-end;gap:72px;margin-top:72px}
+.dos-n{display:flex;flex-direction:column;gap:14px}
+.dos-n .num{font-size:150px}
+.dos-sep{align-self:stretch;width:1px;background:var(--linia)}
+.dos-pista{font-size:16px;line-height:1.45;color:var(--gris);max-width:22em}
 
 @media (max-width: 1100px){
   .cont{padding-inline:20px}
@@ -151,19 +177,23 @@ a{color:inherit}a:hover{color:inherit}
   .h2{font-size:36px}
   .u{grid-template-columns:minmax(0,1fr);gap:40px;justify-items:center}
   .u-esq,.u-dreta{justify-self:center}
+  .u-mig{width:550px;max-width:100%}
   .pantalla{width:550px;height:290px}
   .pantalla .fin{transform:scale(.5)}
-  .num{font-size:88px}
+  .num,.dos-n .num{font-size:88px}
+  .dos{flex-direction:column;align-items:center;gap:32px}
+  .dos-sep{display:none}
+  .linia-gran{height:auto;display:flex;flex-direction:column;gap:10px;margin-top:40px}
+  .linia-gran .l-pista,.linia-gran .l-fita,.linia-gran .l-pom,.linia-gran .l-trams,.l-xip::after{display:none}
+  .l-xip,.l-xip.esq,.l-xip.dreta{position:static;transform:none}
 }
 @media (max-width: 640px){
+  .u-mig{width:319px}
   .pantalla{width:319px;height:168px;border-radius:6px}
   .pantalla .fin{transform:scale(.29)}
-  .esc-ara{padding:28px}
-  .esc-ara b{font-size:28px}
-  .esc-totes{grid-template-columns:minmax(0,1fr);padding:28px}
-  .franja{width:100%}
+  .l-xip > span{white-space:normal;height:auto;padding-block:8px}
 }
-@media (prefers-reduced-motion: reduce){.franja-seg{transition:none}}
+@media (prefers-reduced-motion: reduce){.l-trams span{transition:none}}
 </style>
 
 <div class="pb" lang="es">
@@ -171,16 +201,16 @@ a{color:inherit}a:hover{color:inherit}
   <header class="rev">
     <div class="cont">
       <div>
-        <h1>«Hostly está pendiente», la U amb el dia</h1>
-        <p>Més ràpida. El dia, amb una franja de píndoles com les pestanyes de l'app. La pantalla mostra cada cosa com l'app. I la mateixa idea sense la pantalla, per comparar-les.</p>
+        <h1>«Hostly está pendiente», amb la línia del dia</h1>
+        <p>La línia torna, amb l'estil de Hostly. A la 1, la pantalla fa com sempre: el Resum només ensenya el que et necessita («Hostly lo está haciendo por ti» mentre no hi ha res), i el que passa arriba a les notificacions. A la 2, només els dos números i la línia.</p>
       </div>
-      <nav class="salts" aria-label="Opcions"><a href="#amb">Amb la pantalla</a><a href="#sense">Sense la pantalla</a></nav>
+      <nav class="salts" aria-label="Opcions"><a href="#u1">1 · Amb la pantalla</a><a href="#u2">2 · Els dos números</a></nav>
     </div>
   </header>
 
-  <!-- Amb la pantalla -->
-  <div class="etiqueta" id="amb"><div class="cont"><b>Amb la pantalla</b><span>Ara dura uns dotze segons. La targeta de dalt de la pantalla mostra cada cosa com l'app («Precios · Sábado: 145 € → 168 €»). A la franja de baix, «hechas hoy» compta i «lo que cobrarás» puja 25 € quan es ven la sortida tard. Al final, totes vuit i la teva.</span><button type="button" data-torna="amb">Torna-ho a veure</button></div></div>
-  <section class="v amb">
+  <!-- 1 -->
+  <div class="etiqueta" id="u1"><div class="cont"><b>1 · Amb la pantalla, com sempre</b><span>Al Resum, en verd: «Hostly lo está haciendo por ti». A la campana arriben dues notificacions: la reserva nova amb el preu pujat i el registre enviat a la policia. Al final apareix la targeta de Pieter, l'única que et necessita.</span><button type="button" data-torna="u1">Torna-ho a veure</button></div></div>
+  <section class="v u1">
     <div class="cont">
       <div class="centre">
         <p class="retol">Con Hostly</p>
@@ -205,47 +235,44 @@ a{color:inherit}a:hover{color:inherit}
           </div>
         </div>
         <div class="u-mig">
-          <div class="pantalla" role="img" aria-label="La pantalla de Hostly: lo que hace durante el día y lo único que es para ti.">
+          <div class="pantalla" role="img" aria-label="La pantalla de Hostly: el resumen dice que Hostly lo está haciendo por ti, llegan dos notificaciones y, al final, lo único que es para ti.">
             <div class="fin" aria-hidden="true">
               <div class="crom"><i></i><i></i><i></i><span class="adreca">app.hostlylabs.com</span></div>
               <div class="app">
                 <div class="app-cap">
                   <div class="marca-app"><img src="data:image/png;base64,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" alt="" width="22" height="22">Hostly<span class="sel">Todos</span></div>
                   <div class="portes"><span class="on">Resumen</span><span>Calendario</span><span>Limpieza</span><span>Chat</span><span>Gestión</span></div>
-                  <span class="inicials">MR</span>
+                  <div class="dreta-cap"><span class="campana"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="xifra">2</span></span><span class="inicials">MR</span></div>
                 </div>
                 <div class="fons"><span class="ft ft-dia"></span><span class="ft ft-tarda"></span><span class="ft ft-nit"></span><div class="vel"></div></div>
                 <div class="cos">
-                  <div class="targ">
-                    <div class="ara-pila">
-                      <div class="ara"><p class="que"><span class="verd">● Hecho</span><i></i><span class="gris">Precios</span></p><h3>Sábado: 145 € → 168 €</h3><p class="petit">Hay mucha demanda.</p></div>
-                      <div class="ara"><p class="que"><span class="verd">● Hecho</span><i></i><span class="gris">Tasa turística</span></p><h3>14,00 € cobrados</h3><p class="petit">Con el check-in · 2 personas, 4 noches.</p></div>
-                      <div class="ara"><p class="que"><span class="verd">● Hecho</span><i></i><span class="gris">Extras</span></p><h3>Salida a las 14:00 · +25 €</h3><p class="petit">Vendida a los Weber.</p></div>
-                      <div class="ara"><p class="que"><span class="verd">● Hecho</span><i></i><span class="gris">Policía</span></p><h3>Registro enviado</h3><p class="petit">Comprobante guardado.</p></div>
-                      <div class="ara"><p class="que"><span class="verd">● Hecho</span><i></i><span class="gris">Check-in</span></p><h3>Códigos enviados a los Weber</h3><p class="petit">Tras el check-in.</p></div>
-                      <div class="ara"><p class="que"><span class="verd">● Hecho</span><i></i><span class="gris">Chat</span></p><h3>A Pieter: dónde aparcar</h3><p class="petit">Antes de que llegara.</p></div>
-                      <div class="ara"><p class="que"><span class="verd">● Hecho</span><i></i><span class="gris">Limpieza</span></p><h3>Anna, mañana a las 11</h3><p class="petit">Limpieza confirmada.</p></div>
-                      <div class="ara"><p class="que"><span class="verd">● Hecho</span><i></i><span class="gris">Chat · 23:47</span></p><h3>Respuesta a Sophie, en francés</h3><p class="petit">Hostly contestó por ti.</p></div>
-                      <div class="ara ara-fi"><p class="que"><span class="verd">● Nada más pendiente</span></p><h4>Hoy, 8 cosas hechas.</h4><p class="petit">Check-in, limpieza y policía: en marcha.</p></div>
-                    </div>
-                  </div>
-                  <div class="targ">
+                  <div class="targ targ-pieter">
                     <span class="anell"><em>Para ti</em></span>
                     <p class="que"><span class="ambre">● Cuando puedas</span><i></i><span class="gris">Chat</span></p>
                     <h3>Pieter pregunta si puede llevar a su perro</h3>
                     <span class="m-pill">Contestar →</span>
                   </div>
+                  <div class="targ">
+                    <p class="que"><span class="verd">● Todo en marcha</span></p>
+                    <h4>Hostly lo está haciendo por ti.</h4>
+                    <p class="petit">Mensajes, check-in, limpieza y policía.</p>
+                  </div>
+                </div>
+                <div class="notis">
+                  <p class="notis-cap">Notificaciones <span>Hoy</span></p>
+                  <div class="noti n-reserva"><img src="data:image/png;base64,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" alt=""><div><b>Reserva nueva · Cala Moreta</b><span>Los Weber, 3 noches. El sábado, a 168 €: con el precio subido.</span></div><small>ahora</small></div>
+                  <div class="noti n-policia"><img src="data:image/png;base64,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" alt=""><div><b>Registro enviado a la policía</b><span>Comprobante guardado.</span></div><small>ahora</small></div>
                 </div>
                 <div class="tira">
-                  <div><b class="t-cobra">12.286 €</b><small>lo que cobrarás en octubre</small></div>
+                  <div><b class="t-cobra">12.765 €</b><small>lo que cobrarás en octubre</small></div>
                   <div><b>71 %</b><small>ocupación de octubre</small></div>
-                  <div><b class="t-fet">8</b><small>cosas hechas hoy</small></div>
-                  <div><b>1</b><small>para ti</small></div>
+                  <div><b>2 · 1</b><small>entradas · salidas hoy</small></div>
+                  <div><b>Mañana</b><small>2 entradas</small></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="franja" aria-hidden="true"><span class="franja-llum"></span><span class="franja-seg">Mañana <span class="franja-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><b>3</b></span></span><span class="franja-seg">Tarde <span class="franja-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><b>3</b></span></span><span class="franja-seg on">Noche <span class="franja-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><b>2</b></span></span></div>
+          <div class="linia" aria-hidden="true"><div class="l-pista"><span class="l-ple"></span></div><span class="l-fita" style="--x:6.25%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span class="l-fita" style="--x:18.75%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span class="l-fita" style="--x:31.25%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span class="l-fita" style="--x:43.75%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span class="l-fita" style="--x:56.25%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span class="l-fita" style="--x:68.75%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span class="l-fita" style="--x:81.25%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span class="l-fita" style="--x:93.75%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span class="l-pom"></span><div class="l-trams"><span>Mañana</span><span>Tarde</span><span class="on">Noche</span></div></div>
         </div>
         <div class="u-dreta">
           <p class="compte"><span class="num num-blau">1</span><span class="num-t">cosa<br>para ti</span></p>
@@ -256,39 +283,21 @@ a{color:inherit}a:hover{color:inherit}
     </div>
   </section>
 
-  <!-- Sense la pantalla -->
-  <div class="etiqueta" id="sense"><div class="cont"><b>Sense la pantalla</b><span>La mateixa idea. Al mig, en lloc de la pantalla, una targeta gran amb cada cosa i el moment del dia. A sota, la mateixa franja. Al final, la targeta ensenya totes vuit i s'encén la teva.</span><button type="button" data-torna="sense">Torna-ho a veure</button></div></div>
-  <section class="v sense">
+  <!-- 2 -->
+  <div class="etiqueta" id="u2"><div class="cont"><b>2 · Els dos números i la línia</b><span>Sense cap pantalla. El que ha fet Hostly i el que has de fer tu. A sota, la línia del dia: cada cosa surt quan el botó hi passa, i el vuit va comptant. Al final s'encén l'u.</span><button type="button" data-torna="u2">Torna-ho a veure</button></div></div>
+  <section class="v u2">
     <div class="cont">
       <div class="centre">
         <p class="retol">Con Hostly</p>
         <h2 class="h2">Hostly está pendiente. Tú, ya no.</h2>
         <p class="lead">Contesta, avisa, envía y cobra por ti. Solo te escribe cuando de verdad haces falta.</p>
       </div>
-      <div class="u">
-        <div class="u-esq">
-          <p class="compte"><span class="num u-n">8</span><span class="num-t">cosas hechas<br>hoy</span></p>
-        </div>
-        <div class="u-mig">
-          <div class="escena">
-            <div class="esc-ara"><span class="esc-xip"><i></i>Mañana · Precios</span><b>Subió el precio del sábado.</b><span>Hay mucha demanda.</span></div>
-            <div class="esc-ara"><span class="esc-xip"><i></i>Mañana · Tasa turística</span><b>Cobró la tasa turística.</b><span>Con el check-in.</span></div>
-            <div class="esc-ara"><span class="esc-xip"><i></i>Mañana · Extras</span><b>Vendió una salida más tarde.</b><span>25 € más para ti.</span></div>
-            <div class="esc-ara"><span class="esc-xip"><i></i>Tarde · Policía</span><b>Envió el registro a la policía.</b><span>Y te guardó el comprobante.</span></div>
-            <div class="esc-ara"><span class="esc-xip"><i></i>Tarde · Check-in</span><b>Les mandó los códigos.</b><span>A los Weber, tras el check-in.</span></div>
-            <div class="esc-ara"><span class="esc-xip"><i></i>Tarde · Chat</span><b>Le dijo a Pieter dónde aparcar.</b><span>Antes de que llegara.</span></div>
-            <div class="esc-ara"><span class="esc-xip"><i></i>Noche · Limpieza</span><b>Avisó a Anna.</b><span>Mañana limpia a las 11.</span></div>
-            <div class="esc-ara"><span class="esc-xip"><i></i>23:47 · Chat</span><b>Le contestó a Sophie.</b><span>En francés.</span></div>
-            <ul class="esc-totes"><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Subió el precio del sábado</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Cobró la tasa turística</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Vendió una salida más tarde</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Envió el registro a la policía</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Les mandó los códigos</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Le dijo a Pieter dónde aparcar</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Avisó a Anna</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Le contestó a Sophie</li></ul>
-          </div>
-          <div class="franja" aria-hidden="true"><span class="franja-llum"></span><span class="franja-seg">Mañana <span class="franja-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><b>3</b></span></span><span class="franja-seg">Tarde <span class="franja-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><b>3</b></span></span><span class="franja-seg on">Noche <span class="franja-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><b>2</b></span></span></div>
-        </div>
-        <div class="u-dreta">
-          <p class="compte"><span class="num num-blau">1</span><span class="num-t">cosa<br>para ti</span></p>
-          <p class="u-perti">Pieter pregunta si puede llevar a su perro.</p>
-          <span class="boto-blau">Contestar →</span>
-        </div>
+      <div class="dos">
+        <div class="dos-n"><span class="num u-n">8</span><span class="num-t">cosas que ha hecho<br>Hostly hoy</span></div>
+        <span class="dos-sep" aria-hidden="true"></span>
+        <div class="dos-n dos-tu"><span class="num num-blau">1</span><span class="num-t">cosa que tienes<br>que hacer tú</span><span class="dos-pista">Pieter pregunta si puede llevar a su perro.</span></div>
       </div>
+      <div class="linia linia-gran"><div class="l-pista" aria-hidden="true"><span class="l-ple"></span></div><span aria-hidden="true" class="l-fita" style="--x:6.25%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span aria-hidden="true" class="l-fita" style="--x:18.75%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span aria-hidden="true" class="l-fita" style="--x:31.25%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span aria-hidden="true" class="l-fita" style="--x:43.75%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span aria-hidden="true" class="l-fita" style="--x:56.25%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span aria-hidden="true" class="l-fita" style="--x:68.75%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span aria-hidden="true" class="l-fita" style="--x:81.25%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span aria-hidden="true" class="l-fita" style="--x:93.75%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></i></span><span class="l-pom" aria-hidden="true"></span><span class="l-xip dalt" style="--x:6.25%"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Subió el precio del sábado</span></span><span class="l-xip baix" style="--x:18.75%"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Cobró la tasa turística</span></span><span class="l-xip dalt" style="--x:31.25%"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Vendió una salida más tarde</span></span><span class="l-xip baix" style="--x:43.75%"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Envió el registro a la policía</span></span><span class="l-xip dalt" style="--x:56.25%"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Les mandó los códigos</span></span><span class="l-xip baix" style="--x:68.75%"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Le dijo a Pieter dónde aparcar</span></span><span class="l-xip dalt" style="--x:81.25%"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Avisó a Anna</span></span><span class="l-xip baix" style="--x:93.75%"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Le contestó a Sophie</span></span><div class="l-trams" aria-hidden="true"><span>Mañana</span><span>Tarde</span><span class="on">Noche</span></div></div>
     </div>
   </section>
 </div>
@@ -307,103 +316,96 @@ a{color:inherit}a:hover{color:inherit}
   function tots(sel, dins) { return Array.prototype.slice.call((dins || document).querySelectorAll(sel)); }
   var eur = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 0 });
   var tls = {};
-  var TRAM = [0, 0, 0, 1, 1, 1, 2, 2];   // mañana, tarde, noche
-  var PAS = 1.4;                          // cada cosa, 1,4 s
+  var D = 11.2, T0 = 0.4;
 
-  // La franja del dia: la píndola blava llisca i cada tram compta el que s'ha fet
-  function franja(tl, s, tCanvis) {
-    var f = q('.franja', s), llum = q('.franja-llum', f), segs = tots('.franja-seg', f), ns = tots('.franja-n b', f);
-    var x = function (i) { return segs[i].offsetLeft - segs[0].offsetLeft; };
-    tl.set(llum, amb({ x: 0 }), 0)
-      .call(function () { segs.forEach(function (sg, k) { sg.classList.toggle('on', k === 0); }); ns.forEach(function (b) { b.textContent = '0'; }); }, null, 0);
-    tCanvis.forEach(function (t, k) {
-      var i = k + 1;
-      tl.to(llum, { x: function () { return x(i); }, duration: 0.8, ease: 'power3.inOut' }, t)
-        .call(function () { segs.forEach(function (sg, j) { sg.classList.toggle('on', j === i); }); }, null, t + 0.3);
+  // La línia del dia: la pista s'omple, el botó llisca, cada fita es torna un tic verd, el tram del dia s'encén
+  function linia(tl, s) {
+    var l = q('.linia', s), ple = q('.l-ple', l), pom = q('.l-pom', l), fites = tots('.l-fita', l), trams = tots('.l-trams span', l);
+    var xs = fites.map(function (f) { return parseFloat(f.style.getPropertyValue('--x')) / 100; });
+    tl.set(ple, amb({ width: '0%' }), 0)
+      .set(pom, amb({ left: '0%' }), 0)
+      .set(fites.map(function (f) { return q('i', f); }), amb({ scale: 0 }), 0)
+      .call(function () { trams.forEach(function (t, k) { t.classList.toggle('on', k === 0); }); }, null, 0)
+      .to(ple, { width: '100%', duration: D, ease: 'none' }, T0)
+      .to(pom, { left: '100%', duration: D, ease: 'none' }, T0)
+      .call(function () { trams.forEach(function (t, k) { t.classList.toggle('on', k === 1); }); }, null, T0 + 0.375 * D)
+      .call(function () { trams.forEach(function (t, k) { t.classList.toggle('on', k === 2); }); }, null, T0 + 0.75 * D);
+    return xs.map(function (x, i) {
+      var t = T0 + x * D;
+      tl.to(q('i', fites[i]), { scale: 1, duration: 0.5, ease: 'power3.out' }, t);
+      return t;
     });
-    return function compta(tram, t) {
-      var b = ns[tram];
-      tl.call(function () { b.textContent = String(parseInt(b.textContent, 10) + 1); }, null, t)
-        .fromTo(b.parentNode, { scale: 0.8 }, amb({ scale: 1, duration: 0.45, ease: 'power3.out' }), t);
-    };
   }
 
-  function construeix(s, opcions) {
-    var n = q('.u-n', s), dreta = tots('.u-dreta > *', s);
-    var cadascuna = opcions.cadascuna, totes = opcions.totes;
+  /* 1 · Amb la pantalla, com sempre */
+  (function () {
+    var s = q('.u1');
+    var n = q('.u-n', s), ara = q('.u-ara', s), cadascuna = tots('.u-ara p', s), totes = tots('.u-totes li', s), dreta = tots('.u-dreta > *', s);
+    var tarda = q('.ft-tarda', s), nit = q('.ft-nit', s);
+    var pieter = q('.targ-pieter', s), anell = q('.anell', s);
+    var notis = q('.notis', s), nRes = q('.n-reserva', s), nPol = q('.n-policia', s), xifra = q('.xifra', s);
+    var tCobra = q('.t-cobra', s), cobra = { v: 12261 };
     var tl = gsap.timeline({ paused: true });
-    var t0 = 0.4;
-    var tTarda = t0 + 3 * PAS - 0.3, tNit = t0 + 6 * PAS - 0.3;
-    tl.set(cadascuna, amb({ autoAlpha: 0 }), 0)
+    tl.set(ara, amb({ autoAlpha: 1 }), 0)
+      .set(cadascuna, amb({ autoAlpha: 0 }), 0)
       .set(totes, amb({ autoAlpha: 0, y: 6, filter: 'blur(4px)' }), 0)
       .set(dreta, amb({ opacity: 0.18, filter: 'blur(2px)' }), 0)
-      .call(function () { n.textContent = '0'; }, null, 0);
-    if (opcions.abans) opcions.abans(tl);
-    var compta = franja(tl, s, [tTarda, tNit]);
-    cadascuna.forEach(function (el, i) {
-      var t = t0 + i * PAS;
+      .set([tarda, nit], amb({ opacity: 0 }), 0)
+      .set(pieter, amb({ autoAlpha: 0, height: 0, paddingTop: 0, paddingBottom: 0, marginBottom: -14 }), 0)
+      .set(anell, amb({ autoAlpha: 0 }), 0)
+      .set(notis, amb({ autoAlpha: 0, y: -10 }), 0)
+      .set([nRes, nPol], amb({ autoAlpha: 0, height: 0, paddingTop: 0, paddingBottom: 0, marginTop: -8 }), 0)
+      .set(xifra, amb({ autoAlpha: 0, scale: 0.6 }), 0)
+      .call(function () { n.textContent = '0'; xifra.textContent = '0'; cobra.v = 12261; tCobra.textContent = '12.261 €'; }, null, 0);
+    var ts = linia(tl, s);
+    ts.forEach(function (t, i) {
+      var el = cadascuna[i];
       tl.fromTo(el, { autoAlpha: 0, y: 10, filter: 'blur(6px)' }, amb({ autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.6, ease: 'power3.out' }), t)
         .call(function () { n.textContent = String(i + 1); }, null, t + 0.05);
-      compta(TRAM[i], t + 0.1);
-      if (opcions.cadaCosa) opcions.cadaCosa(tl, i, t);
-      var fora = t + PAS - 0.4;
-      tl.to(el, { autoAlpha: 0, y: -8, filter: 'blur(6px)', duration: 0.4, ease: 'power2.in' }, fora);
+      var seg = i < ts.length - 1 ? ts[i + 1] : t + 1.2;
+      tl.to(el, { autoAlpha: 0, y: -8, filter: 'blur(6px)', duration: 0.4, ease: 'power2.in' }, seg - 0.4);
     });
-    var tf = t0 + cadascuna.length * PAS + 0.1;
-    tl.to(totes, { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.6, stagger: 0.09, ease: 'power3.out' }, tf)
-      .to(dreta, { opacity: 1, filter: 'blur(0px)', duration: 0.8, stagger: 0.1, ease: 'power3.out' }, tf + 0.3);
-    if (opcions.alFinal) opcions.alFinal(tl, tf, tTarda, tNit);
-    return tl;
-  }
-
-  /* Amb la pantalla */
-  (function () {
-    var s = q('.amb');
-    var ara = q('.u-ara', s);
-    var targes = tots('.pantalla .ara', s), fi = targes.pop();
-    var tarda = q('.ft-tarda', s), nit = q('.ft-nit', s), anell = q('.anell', s);
-    var tCobra = q('.t-cobra', s), tFet = q('.t-fet', s);
-    var cobra = { v: 12261 };
-    var tl = construeix(s, {
-      cadascuna: tots('.u-ara p', s),
-      totes: tots('.u-totes li', s),
-      abans: function (tl) {
-        tl.set(ara, amb({ autoAlpha: 1 }), 0)
-          .set(targes, amb({ autoAlpha: 0 }), 0)
-          .set(fi, amb({ autoAlpha: 0 }), 0)
-          .set([tarda, nit], amb({ opacity: 0 }), 0)
-          .set(anell, amb({ autoAlpha: 0 }), 0)
-          .call(function () { cobra.v = 12261; tCobra.textContent = '12.261 €'; tFet.textContent = '0'; }, null, 0);
-      },
-      cadaCosa: function (tl, i, t) {
-        tl.fromTo(targes[i], { autoAlpha: 0, y: 12 }, amb({ autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out' }), t)
-          .to(targes[i], { autoAlpha: 0, y: -10, duration: 0.4, ease: 'power2.in' }, t + PAS - 0.4)
-          .call(function () { tFet.textContent = String(i + 1); }, null, t + 0.1);
-        if (i === 2) {
-          tl.to(cobra, { v: 12286, duration: 0.9, ease: 'power2.out', onUpdate: function () { tCobra.textContent = eur.format(Math.round(cobra.v)) + ' €'; } }, t + 0.2);
-        }
-      },
-      alFinal: function (tl, tf, tTarda, tNit) {
-        tl.to(tarda, { opacity: 1, duration: 1.2, ease: 'sine.inOut' }, tTarda)
-          .to(nit, { opacity: 1, duration: 1.2, ease: 'sine.inOut' }, tNit)
-          .set(ara, { autoAlpha: 0 }, tf)
-          .fromTo(fi, { autoAlpha: 0, y: 12 }, amb({ autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }), tf)
-          .to(anell, { autoAlpha: 1, duration: 0.9, ease: 'sine.out' }, tf + 0.4);
-      }
-    });
-    tls.amb = tl;
+    // la foto del Resum passa de dia a tarda i a nit, com a l'app
+    tl.to(tarda, { opacity: 1, duration: 1.2, ease: 'sine.inOut' }, T0 + 0.375 * D - 0.4)
+      .to(nit, { opacity: 1, duration: 1.2, ease: 'sine.inOut' }, T0 + 0.75 * D - 0.4);
+    // les notificacions: la reserva nova (amb el preu pujat) i el registre enviat
+    var tRes = ts[0] + 0.7, tPol = ts[3] + 0.2;
+    tl.to(notis, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, tRes)
+      .to(nRes, { autoAlpha: 1, height: 'auto', paddingTop: 12, paddingBottom: 12, marginTop: 0, duration: 0.6, ease: 'power3.out' }, tRes)
+      .to(xifra, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'power3.out' }, tRes)
+      .call(function () { xifra.textContent = '1'; }, null, tRes)
+      .to(cobra, { v: 12765, duration: 1, ease: 'power2.out', onUpdate: function () { tCobra.textContent = eur.format(Math.round(cobra.v)) + ' €'; } }, tRes + 0.2)
+      .to(nPol, { autoAlpha: 1, height: 'auto', paddingTop: 12, paddingBottom: 12, marginTop: 0, duration: 0.6, ease: 'power3.out' }, tPol)
+      .fromTo(xifra, { scale: 0.7 }, amb({ scale: 1, duration: 0.4, ease: 'power3.out' }), tPol)
+      .call(function () { xifra.textContent = '2'; }, null, tPol);
+    // al final: totes vuit, i al Resum apareix l'única que et necessita
+    var tf = T0 + D + 0.3;
+    tl.set(ara, { autoAlpha: 0 }, tf)
+      .to(totes, { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.6, stagger: 0.09, ease: 'power3.out' }, tf)
+      .to(pieter, { autoAlpha: 1, height: 'auto', paddingTop: 20, paddingBottom: 20, marginBottom: 0, duration: 0.8, ease: 'power3.out' }, tf + 0.2)
+      .to(anell, { autoAlpha: 1, duration: 0.9, ease: 'sine.out' }, tf + 0.8)
+      .to(dreta, { opacity: 1, filter: 'blur(0px)', duration: 0.8, stagger: 0.1, ease: 'power3.out' }, tf + 0.6);
+    tls.u1 = tl;
     ScrollTrigger.create({ trigger: q('.u', s), start: 'top 70%', once: true, onEnter: function () { tl.play(0); } });
   })();
 
-  /* Sense la pantalla */
+  /* 2 · Els dos números i la línia */
   (function () {
-    var s = q('.sense');
-    var tl = construeix(s, {
-      cadascuna: tots('.esc-ara', s),
-      totes: tots('.esc-totes li', s)
+    var s = q('.u2');
+    var n = q('.u-n', s), tu = tots('.dos-tu > *', s), xips = tots('.l-xip > span', s);
+    var tl = gsap.timeline({ paused: true });
+    tl.set(xips, amb({ autoAlpha: 0, y: 8, filter: 'blur(5px)' }), 0)
+      .set(tu, amb({ opacity: 0.18, filter: 'blur(2px)' }), 0)
+      .call(function () { n.textContent = '0'; }, null, 0);
+    var ts = linia(tl, s);
+    ts.forEach(function (t, i) {
+      tl.to(xips[i], { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.7, ease: 'power3.out' }, t)
+        .call(function () { n.textContent = String(i + 1); }, null, t + 0.05);
     });
-    tls.sense = tl;
-    ScrollTrigger.create({ trigger: q('.u', s), start: 'top 70%', once: true, onEnter: function () { tl.play(0); } });
+    var tf = T0 + D + 0.3;
+    tl.to(tu, { opacity: 1, filter: 'blur(0px)', duration: 0.9, stagger: 0.1, ease: 'power3.out' }, tf);
+    tls.u2 = tl;
+    ScrollTrigger.create({ trigger: q('.dos', s), start: 'top 70%', once: true, onEnter: function () { tl.play(0); } });
   })();
 
   Array.prototype.forEach.call(document.querySelectorAll('[data-torna]'), function (b) {
