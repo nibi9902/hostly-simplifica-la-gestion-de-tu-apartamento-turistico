@@ -168,6 +168,23 @@ el Biel i el que s'ha fet:
 - **Tècnica:** GSAP 3.12.5 de cdnjs (ScrollTrigger i Flip). Sense JavaScript, o amb «reduir moviment»,
   la pàgina es queda quieta i sencera.
 
+## Ronda 7 (12-10, vespre): «Hostly está pendiente», sense scroll
+
+Els gestors, «correctíssim, s'ha de polir una mica». El flux lligat al scroll de «Hostly está pendiente»
+no: «no vull jugar amb l'scroll». Va demanar quatre maneres «elegants, minimalistes i super soft». Són a
+`pendent-quatre-opcions.html` i a https://claude.ai/artifact/5wGPyuHvRRvDiR8UCxuC1E. Cada una es mou sola,
+a poc a poc, quan la tens davant, i porta un botó «Torna-ho a veure»:
+
+1. **Una cosa cada vegada:** damunt la pantalla de l'ordinador, un avís que canvia cada 2,6 s. Sota, vuit
+   punts i «3 de 8 hechas hoy». Al final, la targeta de Pieter es marca «Para ti».
+2. **La llista que es fa sola:** les vuit en gris, que es marquen una darrere l'altra. Al final surt
+   «Solo una cosa para ti».
+3. **El dia, sense tu:** una línia de matí a nit, sense hores (només la de Sophie). Un punt la recorre i
+   cada cosa apareix quan hi passa.
+4. **Vuit i una:** un 8 gran que compta i la llista; a l'altre costat, un 1 blau i la targeta de Pieter.
+
+La portada (`portada.html`) encara porta el flux amb scroll, fins que en triï una.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
