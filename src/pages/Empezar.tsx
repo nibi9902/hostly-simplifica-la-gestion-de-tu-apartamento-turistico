@@ -20,7 +20,7 @@ import { useTranslation } from "react-i18next";
 import SEO from "@/components/SEO";
 import { LangLink } from "@/i18n/LangLink";
 import { useLang } from "@/i18n/useLang";
-import hostlyLogo from "@/assets/hostly-logo-new.webp";
+import hostlyMarca from "@/assets/hostly-marca.webp";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/analytics";
 import { correuValid, dadesRecordades, desaLead, recordaDades, telefonPerBD } from "@/lib/leads";
@@ -141,9 +141,9 @@ export default function Empezar() {
       {/* Capçal mínim: on ets i com tornar. Res més que distregui. */}
       <header className="sticky top-0 z-40 bg-background/90 backdrop-blur-md border-b border-slate-100">
         <div className="contenidor h-16 flex items-center justify-between gap-4">
-          <LangLink to="/" className="flex items-center gap-1 shrink-0" aria-label={t("empezar.inicio")}>
-            <img src={hostlyLogo} alt="" width={28} height={28} className="h-7 w-auto" />
-            <span className="font-semibold text-base tracking-tight text-foreground">Hostly™</span>
+          {/* el mateix logotip que el capçal de la web */}
+          <LangLink to="/" className="flex items-center shrink-0" aria-label={t("empezar.inicio")}>
+            <img src={hostlyMarca} alt="" width={160} height={24} className="h-6 w-auto" />
           </LangLink>
           <div className="flex items-center gap-3">
             <span className="text-xs font-medium text-muted-foreground tabular-nums">

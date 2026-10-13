@@ -354,6 +354,25 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-referits-fila .pt-pill { margin-left: auto; }
 .pt-referits-detall { padding: 0 22px 18px; font-size: 14px; line-height: 1.5; color: var(--pt-gris); max-width: 72ch; }
 .pt-referits-detall b { color: var(--pt-text); font-weight: 600; }
+/* A /precios els preus són la primera secció: sota el capçal fix (80 px) els cal més aire */
+.pt-preus.pt-pagina { min-height: 0; padding-top: 136px; }
+.pt-preus .pt-lead { max-width: 36em; }
+.pt-preus-calcula { margin-top: 24px; text-align: center; }
+.pt-preus-calcula a { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 500; color: var(--pt-blau); }
+.pt-preus-calcula a:hover { color: var(--pt-blau-fosc); }
+.pt-preus-calcula .pt-ic { width: 16px; height: 16px; }
+
+/* Les preguntes de /precios: el títol a l'esquerra (es queda quiet) i les preguntes a la dreta */
+.pt-preguntes { padding-block: 88px; background: var(--pt-fons); }
+.pt-preguntes-graella { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 64px; align-items: start; }
+.pt-preguntes-cap { position: sticky; top: 112px; }
+.pt-preguntes-cap h2 { font-size: 36px; line-height: 1.1; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
+.pt-preguntes-cap p { font-size: 16px; line-height: 1.5; color: var(--pt-gris); margin-top: 12px; }
+.pt-preguntes-llista { margin: 0; }
+.pt-preguntes-llista > div { padding-block: 22px; border-top: 1px solid var(--pt-linia); }
+.pt-preguntes-llista > div:first-child { border-top: 0; padding-top: 0; }
+.pt-preguntes-llista dt { font-size: 17px; line-height: 1.35; font-weight: 600; }
+.pt-preguntes-llista dd { margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: var(--pt-gris); max-width: 62ch; }
 
 /* ── 7 · Et truco: el text, dins d'una targeta ── */
 .pt-truca { min-height: 400px; display: flex; align-items: center; background: var(--pt-fons); }
@@ -408,6 +427,11 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-plans { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   /* apilats, primer el Completo (és el pla principal: decisió de la versió 09) */
   .pt-pla.pt-pla-top { order: -1; }
+  .pt-preus.pt-pagina { padding-top: 112px; }
+  .pt-preguntes { padding-block: 56px; }
+  .pt-preguntes-graella { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .pt-preguntes-cap { position: static; }
+  .pt-preguntes-cap h2 { font-size: 28px; }
   .pt-referits-fila { flex-wrap: wrap; padding: 12px; }
   .pt-referits-fila .pt-pill { margin-left: 0; }
   .pt-targeta { padding: 24px; }

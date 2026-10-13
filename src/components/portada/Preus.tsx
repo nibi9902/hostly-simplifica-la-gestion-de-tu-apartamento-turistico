@@ -2,25 +2,30 @@
  * «Un plan gratis. Un plan completo. Nada más.» — els dos plans i, a sota, els referits.
  * Els dos botons porten a /empezar (allà es tria el pla). «Cómo funciona» desplega la regla dels
  * referits, la mateixa que diuen els termes (5 propietaris al Completo = un pis teu deixa de pagar).
+ * A /precios (`pagina`) és la primera secció: el títol és l'h1, porta una frase a sota i, al final,
+ * l'enllaç a la calculadora.
  */
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import { LangLink } from "@/i18n/LangLink";
 
-export default function Preus({ onEmpezar }: { onEmpezar: () => void }) {
+export default function Preus({ onEmpezar, pagina = false }: { onEmpezar: () => void; pagina?: boolean }) {
   const { t } = useTranslation("home");
   const [referitsObert, setReferitsObert] = useState(false);
   const gratis = t("portada.preus.gratis.inclou", { returnObjects: true }) as string[];
   const complet = t("portada.preus.complet.inclou", { returnObjects: true }) as string[];
+  const Titol = pagina ? "h1" : "h2";
 
   return (
-    <section id="precios" className="pt-seccio pt-preus" aria-labelledby="pt-preus-titol">
+    <section id="precios" className={`pt-seccio pt-preus${pagina ? " pt-pagina" : ""}`} aria-labelledby="pt-preus-titol">
       <div className="contenidor">
         <div className="pt-centre">
           <p className="pt-retol">{t("portada.preus.retol")}</p>
-          <h2 id="pt-preus-titol" className="pt-h2">
+          <Titol id="pt-preus-titol" className="pt-h2">
             {t("portada.preus.titol")} <span>{t("portada.preus.titol_gris")}</span>
-          </h2>
+          </Titol>
+          {pagina && <p className="pt-lead">{t("pricing.subtitle")}</p>}
         </div>
 
         <div className="pt-plans">
@@ -68,6 +73,11 @@ export default function Preus({ onEmpezar }: { onEmpezar: () => void }) {
             <b>{t("pricing.referral_title")}</b> {t("pricing.referral_desc")}
           </p>
         </div>
+        {pagina && (
+          <p className="pt-preus-calcula">
+            <LangLink to="/calcula">{t("pricing.calcula_link")}<ArrowRight className="pt-ic" aria-hidden="true" /></LangLink>
+          </p>
+        )}
       </div>
     </section>
   );

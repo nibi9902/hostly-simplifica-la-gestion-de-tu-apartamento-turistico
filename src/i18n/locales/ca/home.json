@@ -5,45 +5,10 @@
     "subtitle": "Hostly simplifica tot el que implica tenir un apartament turístic."
   },
   "pricing": {
-    "title": "Un pla gratis. Un pla complet.",
-    "title_sub": "Res més.",
     "subtitle": "El check-in i la policia, gratis per sempre. La resta, en un sol preu per pis.",
-    "free_badge": "Gratis · Per sempre",
-    "free_price_note": "Sense targeta. Sense caducitat.",
-    "free_desc": "Per registrar els teus hostes a la policia sense pagar res al mes.",
-    "free_cta": "Començar",
-    "free_fine": "Sense targeta · Si t'encalles, et truquem",
-    "free_features": [
-      "Check-in online de l'hoste, des del seu mòbil",
-      "Registre a la policia: automàtic amb els Mossos; SES, l'activem amb tu",
-      "Taxa turística de Catalunya, llesta per declarar",
-      "Calendari d'Airbnb i Booking llegit cada 30 minuts",
-      "Avisos quan falta un check-in"
-    ],
-    "paid_badge": "Hostly Complet",
-    "paid_badge_recommended": "Recomanat",
-    "paid_price_per": "/mes per apt.",
-    "paid_price_bulk_prefix": "35 €/mes",
-    "paid_price_bulk_suffix": "per apartament des de 5 apt.",
-    "paid_desc": "Hostly gestiona. Tu, menys. Reemplaça Chekin, Smoobu i l'Excel.",
-    "paid_cta": "Començar",
-    "paid_fine": "El primer mes, gratis · Sense permanència",
-    "paid_features": [
-      "Tot el del pla Gratis",
-      "Airbnb i Booking sincronitzats en temps real",
-      "Missatges amb hostes contestats per IA, en el seu idioma",
-      "Neteges assignades i avisades soles",
-      "Preus al dia, segons la demanda",
-      "Finances i liquidacions al propietari",
-      "Configuració 1 a 1 el primer mes",
-      "Suport humà. No un xatbot."
-    ],
     "calcula_link": "Et surt a compte? Fes números en un minut",
-    "referral_badge": "Programa de referits",
-    "referral_num_label": "Propietaris que portes",
-    "referral_reward_label": "Apartament gratis",
-    "referral_title": "Per cada 5 propietaris que portis a Hostly Complet, 1 apartament teu deixa de costar‑te.",
-    "referral_desc": "Mentre segueixin a Hostly Complet, no pagues per aquell apartament. Sense límit: porta 10 propietaris i en seran 2."
+    "referral_title": "Per cada 5 propietaris que portis a Hostly Complet, 1 pis teu deixa de costar-te.",
+    "referral_desc": "Mentre segueixin a Hostly Complet, no pagues per aquell pis. Sense límit: si en portes 10, en són 2."
   },
   "footer": {
     "tagline": "Simplifica la gestió del teu apartament turístic.",
@@ -78,42 +43,37 @@
   },
   "precios_page": {
     "meta_title": "Preus — Hostly",
-    "meta_description": "Un pla gratis per sempre amb el check-in i el registre a la policia. Un pla complet de 40 €/mes per apartament, el primer mes gratis.",
-    "sr_h1": "Preus de Hostly — Un pla gratis i un pla complet de 40 €/mes per apartament",
+    "meta_description": "Un pla gratis per sempre amb el check-in i el registre a la policia. Un pla complet de 40 € al mes per pis, el primer mes gratis.",
     "faq_heading": "Preguntes sobre el preu",
     "faq_subheading": "El que ens pregunten gairebé tots abans de començar.",
-    "cta_heading": "Comença pel que és gratis.",
-    "cta_body": "Crea el teu compte, afegeix el teu pis i Hostly envia el registre a la policia per tu. Gratis per sempre.",
-    "cta_button": "Començar",
-    "cta_disclaimer": "Sense targeta · Sense caducitat · Sense compromís",
     "faqs": [
       {
         "q": "El pla Gratis és realment gratis per sempre?",
-        "a": "Sí. El check-in online, el registre a la policia (amb els Mossos, automàtic; SES, l'activem amb tu) i la taxa turística de Catalunya són gratis per sempre, sense targeta i sense límit d'apartaments."
+        "a": "Sí. El check-in online, el registre a la policia i la taxa turística de Catalunya són gratis per sempre, sense targeta i sense límit de pisos. Fora de Catalunya, la connexió amb la policia l'activem amb tu."
       },
       {
         "q": "Puc començar gratis i passar-me a Hostly Complet més endavant?",
         "a": "Sí, així està pensat. Quan vulguis la resta de Hostly, ens ho dius (des de «Començar» o escrivint-nos), fem una demo de 20 minuts i l'activem aquell mateix dia, amb el primer mes gratis."
       },
       {
-        "q": "Què inclou exactament el pla de 40 €/mes?",
-        "a": "Tot el de la llista: Airbnb i Booking sincronitzats, missatges amb hostes contestats per IA, neteges avisades soles, preus al dia segons la demanda, finances i liquidacions, i la configuració 1 a 1 el primer mes. L'única cosa a part són les automatitzacions a mida, si algun dia les vols."
+        "q": "Què inclou exactament el pla de 40 € al mes?",
+        "a": "Tot el del pla Gratis i, a més: Airbnb i Booking sempre quadrats, les respostes als hostes en el seu idioma, els avisos a la neteja, preus que s'ajusten sols, els extres i els comptes. El primer mes el configurem amb tu. L'única cosa a part són les automatitzacions a mida, si algun dia les vols."
       },
       {
         "q": "Hi ha permanència?",
         "a": "No. Si no et simplifica la vida, ho deixes quan vulguis, sense penalització."
       },
       {
-        "q": "Què passa si tinc 5 apartaments o més?",
-        "a": "Des de 5 apartaments, cadascun passa a 35 €/mes en lloc de 40 €. Amb 10 pisos, 350 €/mes."
+        "q": "I si tinc 5 pisos o més?",
+        "a": "Des de 5 pisos, cadascun passa a 35 € al mes en lloc de 40 €. Amb 10 pisos, 350 € al mes."
       },
       {
         "q": "Com funciona el programa de referits?",
-        "a": "Per cada 5 propietaris que portis a Hostly Complet, deixem de cobrar-te un apartament cada mes, mentre segueixin actius. En portes 10 i són 2."
+        "a": "Per cada 5 propietaris que portis a Hostly Complet, deixem de cobrar-te un pis cada mes, mentre segueixin actius. Si en portes 10, en són 2."
       },
       {
         "q": "Quant triga a configurar-se?",
-        "a": "El primer pis, en uns minuts. A Hostly Complet, les connexions amb Airbnb i Booking les fem amb tu a la configuració 1 a 1 del primer mes."
+        "a": "El primer pis, en uns minuts. A Hostly Complet, les connexions amb Airbnb i Booking les fem amb tu el primer mes."
       }
     ]
   },
@@ -129,7 +89,7 @@
       "fins": "fins a",
       "preu": "95 €",
       "any": "a l'any",
-      "text": "Cada vegada que entra un hoste, Hostly envia el registre a la policia per tu. Gratis avui i gratis sempre.",
+      "text": "L'hoste fa el check-in des del mòbil. Cada dia, Hostly l'envia a la policia i et guarda el comprovant.",
       "empezar": "Començar",
       "com": "Veure com funciona",
       "connectat": "Connectat amb",
@@ -292,7 +252,7 @@
       }
     },
     "passos": {
-      "retol": "Com comença",
+      "retol": "En tres passos",
       "titol": "Així es comença.",
       "nota": "Només el check-in? Et crees el compte tu i en cinc minuts el tens.",
       "llista": [

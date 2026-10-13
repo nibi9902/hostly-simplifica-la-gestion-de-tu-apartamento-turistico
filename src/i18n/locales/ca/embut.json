@@ -11,7 +11,7 @@
       "subtitulo": "Tres dades i tries com començar.",
       "telefono": "Telèfon",
       "telefono_placeholder": "612 345 678",
-      "telefono_ayuda": "Et truquem per ajudar-te a posar-ho en marxa.",
+      "telefono_ayuda": "Només et truquem si cal.",
       "nombre": "Nom",
       "nombre_placeholder": "Anna",
       "correo": "Correu",
@@ -33,18 +33,20 @@
       "gratis_nombre": "Només el check-in i la policia",
       "gratis_precio": "Gratis, per sempre",
       "gratis_items": [
-        "Check-in online de l'hoste, des del seu mòbil",
-        "Registre a la policia: automàtic amb els Mossos; SES, l'activem amb tu",
-        "Taxa turística de Catalunya, llesta per declarar"
+        "El check-in de l'hoste, des del seu mòbil",
+        "Hostly ho envia a la policia",
+        "La taxa turística, calculada",
+        "L'hoste paga la taxa online"
       ],
       "completo_nombre": "Hostly Complet",
-      "completo_precio": "40 €/mes per apartament · el primer mes, gratis",
+      "completo_precio": "40 € al mes per pis · el primer mes, gratis",
       "completo_items": [
         "Tot el del pla Gratis",
-        "Airbnb i Booking en un sol calendari",
-        "Missatges amb hostes contestats per IA",
-        "Neteges avisades soles",
-        "Preus i finances al dia"
+        "Airbnb i Booking, sempre quadrats",
+        "Contesta els hostes en el seu idioma",
+        "Avisa la neteja",
+        "Preus que s'ajusten sols",
+        "Ven extres i fa els comptes"
       ],
       "elegir": "Triar"
     },
@@ -77,7 +79,7 @@
         },
         {
           "titulo": "Tries el pla",
-          "texto": "Gratis: el check-in i la policia, per sempre. Complet: 40 € al mes per apartament, el primer mes gratis."
+          "texto": "Gratis: el check-in i la policia, per sempre. Complet: 40 € al mes per pis, el primer mes gratis."
         },
         {
           "titulo": "Comences",
@@ -145,7 +147,7 @@
       "calculado_para": "Calculat per a {{n}} pisos, el punt mitjà de la teva resposta.",
       "calculado_para_mes": "Calculat per a {{n}} pisos; amb més, suma-hi el de cada pis.",
       "horas_ano": "Això són {{ano}} del teu temps.",
-      "registro_cat": "I el registre als Mossos d'Esquadra el fa Hostly, gratis.",
+      "registro_cat": "I el registre a la policia el fa Hostly, gratis.",
       "registro_otra": "I el registre a la policia l'activem amb tu, gratis.",
       "gate_titulo": "Veure el detall",
       "gate_texto": "Deixa'ns el teu telèfon i t'ensenyem el detall, eina per eina. Si vols, et truquem per ajudar-te a decidir.",
@@ -165,7 +167,7 @@
       "detalle_horas": "Missatges, neteges i registres",
       "detalle_horas_hostly": "La IA contesta, les neteges s'avisen i els registres surten sols",
       "detalle_horas_hostly_otra": "La IA contesta, les neteges s'avisen i els registres surten sols tan bon punt activem amb tu la connexió amb la policia",
-      "nota": "Preus orientatius que publica cada eina (octubre de 2026), per apartament i mes.",
+      "nota": "Preus orientatius que publica cada eina (octubre de 2026), per pis i mes.",
       "otra_vez": "Tornar a calcular",
       "horas_frase": [
         "menys de 2 hores",
@@ -187,7 +189,7 @@
       "items": [
         {
           "titulo": "El que pagues avui",
-          "texto": "El preu que publica cada eina (octubre de 2026), per apartament i mes."
+          "texto": "El preu que publica cada eina (octubre de 2026), per pis i mes."
         },
         {
           "titulo": "El teu temps",

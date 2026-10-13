@@ -1,4 +1,4 @@
-import hostlyLogo from "@/assets/hostly-logo-new.webp";
+import hostlyMarca from "@/assets/hostly-marca.webp";
 import { LangLink } from "@/i18n/LangLink";
 import { useTranslation } from "react-i18next";
 
@@ -54,9 +54,9 @@ const Footer = () => {
 
           {/* Marca i contacte */}
           <div className="lg:col-span-4">
-            <LangLink to="/" className="inline-flex items-center gap-2" aria-label="Hostly">
-              <img src={hostlyLogo} alt="" className="w-7 h-7 object-contain" loading="lazy" />
-              <span className="text-base font-semibold text-foreground">Hostly™</span>
+            {/* el mateix logotip que el capçal */}
+            <LangLink to="/" className="inline-flex items-center" aria-label="Hostly">
+              <img src={hostlyMarca} alt="" width={160} height={24} className="h-6 w-auto" loading="lazy" />
             </LangLink>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xs">{t("footer.tagline")}</p>
             <a
