@@ -6,39 +6,16 @@
  * `llamame`). Decisió del 09-10-2026: el telèfon de tothom que s'hi hagi interessat,
  * i que hi surti ell, no unes assessores inventades.
  */
-import { useState, type FormEvent } from "react";
 import { Check, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useLang } from "@/i18n/useLang";
 import { LangLink } from "@/i18n/LangLink";
 import { cn } from "@/lib/utils";
-import { track } from "@/lib/analytics";
-import { dadesRecordades, desaLead, recordaDades, telefonPerBD } from "@/lib/leads";
+import { useLlamame } from "@/lib/useLlamame";
 
 /** `columnaXl`: a l'ordinador gran va a la columna estreta del costat dels preus, i allà s'apila. */
 export default function Llamame({ className, columnaXl = false }: { className?: string; columnaXl?: boolean }) {
   const { t } = useTranslation("embut");
-  const { lang } = useLang();
-  const [telefon, setTelefon] = useState(() => {
-    const p = dadesRecordades().phone;
-    return p ? `+${p}` : "";
-  });
-  const [error, setError] = useState<string | null>(null);
-  const [desant, setDesant] = useState(false);
-  const [fet, setFet] = useState(false);
-
-  async function envia(e: FormEvent) {
-    e.preventDefault();
-    const tel = await telefonPerBD(telefon);
-    if (!tel) { setError(t("empezar.error.telefono")); return; }
-    setDesant(true);
-    const r = await desaLead({ phone: tel, source: "llamame" }, lang);
-    setDesant(false);
-    if (!r.ok) { setError(r.motiu === "telefon" ? t("empezar.error.telefono") : t("empezar.error.guardar")); return; }
-    recordaDades({ phone: tel });
-    track("llamame_enviado");
-    setFet(true);
-  }
+  const { telefon, canvia, error, desant, fet, envia } = useLlamame();
 
   return (
     <div className={cn("rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 flex flex-col gap-6 md:flex-row md:items-center", columnaXl && "xl:flex-col xl:items-stretch", className)}>
@@ -68,7 +45,7 @@ export default function Llamame({ className, columnaXl = false }: { className?: 
               inputMode="tel"
               autoComplete="tel"
               value={telefon}
-              onChange={(e) => { setTelefon(e.target.value); setError(null); }}
+              onChange={(e) => canvia(e.target.value)}
               placeholder={t("llamame.placeholder")}
               aria-invalid={!!error}
               aria-describedby={error ? "llamame-error" : undefined}

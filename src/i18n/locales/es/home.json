@@ -494,5 +494,234 @@
         "a": "El primer piso, en unos minutos. En Hostly Completo, las conexiones con Airbnb y Booking las hacemos contigo en la configuración 1 a 1 del primer mes."
       }
     ]
+  },
+  "portada": {
+    "gestors": {
+      "retol": "Les preguntamos a gestores qué es Hostly",
+      "llista": [
+        {
+          "frase": "No sabría decirte qué es. Solo sé que, desde que lo tengo, me preocupo mucho menos de la gestión de mi apartamento.",
+          "nom": "Àngel",
+          "detall": "Gestor de pisos turísticos · [pisos y lugar]",
+          "video": "Ver el vídeo de Àngel"
+        },
+        {
+          "frase": "[Aquí, la frase del segundo gestor, con sus palabras.]",
+          "nom": "[Nombre]",
+          "detall": "[pisos y lugar]",
+          "video": "Ver el vídeo del segundo gestor"
+        },
+        {
+          "frase": "[Y aquí, la del tercero.]",
+          "nom": "[Nombre]",
+          "detall": "[pisos y lugar]",
+          "video": "Ver el vídeo del tercer gestor"
+        }
+      ],
+      "anterior": "Gestor anterior",
+      "seguent": "Gestor siguiente",
+      "oir": "Toca para oírlo",
+      "gran": "Toca el vídeo para verlo en grande",
+      "torna": "Volver a la frase"
+    },
+    "pendent": {
+      "retol": "Con Hostly",
+      "titol": "Hostly está pendiente. Tú, ya no.",
+      "lead": "Contesta, avisa, envía y cobra por ti. Solo te escribe cuando de verdad haces falta.",
+      "fet_1": "cosas que hizo",
+      "fet_2": "Hostly hoy",
+      "tu_1": "cosa",
+      "tu_2": "para ti",
+      "coses": [
+        {
+          "titol": "Subió el precio del sábado",
+          "detall": "Hay mucha demanda."
+        },
+        {
+          "titol": "Cobró la tasa turística",
+          "detall": "Con el check-in."
+        },
+        {
+          "titol": "Vendió una salida más tarde",
+          "detall": "25 € más para ti."
+        },
+        {
+          "titol": "Envió el registro a la policía",
+          "detall": "Y te guardó el comprobante."
+        },
+        {
+          "titol": "Les mandó los códigos",
+          "detall": "A los Weber, tras el check-in."
+        },
+        {
+          "titol": "Le dijo a Pieter dónde aparcar",
+          "detall": "Antes de que llegara."
+        },
+        {
+          "titol": "Avisó a Anna",
+          "detall": "Mañana limpia a las 11."
+        },
+        {
+          "titol": "Le contestó a Sophie",
+          "detall": "En francés, a las 23:47."
+        }
+      ],
+      "trams": [
+        "Mañana",
+        "Tarde",
+        "Noche"
+      ],
+      "incidencia": "No funciona el aire acondicionado en Cala Moreta. Lo ha avisado Pieter.",
+      "veure": "Ver incidencia →",
+      "pantalla": {
+        "aria": "La pantalla de Hostly: el resumen dice que Hostly lo está haciendo por ti y, al final, enseña lo único que es para ti.",
+        "tots": "Todos",
+        "portes": [
+          "Resumen",
+          "Calendario",
+          "Limpieza",
+          "Chat",
+          "Gestión"
+        ],
+        "per_tu": "Para ti",
+        "urgent": "● Urgente",
+        "tipus": "Incidencia",
+        "titol": "No funciona el aire acondicionado",
+        "qui": "Lo ha avisado Pieter, en Cala Moreta.",
+        "boto": "Ver incidencia →",
+        "marxa": "● Todo en marcha",
+        "marxa_titol": "Hostly lo está haciendo por ti.",
+        "marxa_detall": "Mensajes, check-in, limpieza y policía.",
+        "tira": [
+          {
+            "xifra": "12.261 €",
+            "text": "lo que cobrarás en octubre"
+          },
+          {
+            "xifra": "71 %",
+            "text": "ocupación de octubre"
+          },
+          {
+            "xifra": "2 · 1",
+            "text": "entradas · salidas hoy"
+          },
+          {
+            "xifra": "Mañana",
+            "text": "2 entradas"
+          }
+        ]
+      }
+    },
+    "gratis": {
+      "retol": "Por qué empezar hoy",
+      "titol": "Gratis para siempre: el check-in y la policía.",
+      "pla": "Plan Gratis",
+      "zero": "0 €",
+      "sempre": "Para siempre. Sin tarjeta.",
+      "text": "El huésped hace el check-in desde el móvil. Cada día, Hostly lo envía a la policía y te guarda el comprobante.",
+      "boto": "Empezar",
+      "checkin": {
+        "titol": "El check-in, desde su móvil",
+        "text": "El huésped lo hace solo, en tres pantallas.",
+        "document": "Tu documento",
+        "pas": "2 de 3",
+        "passaport": "Pasaporte · C01X 4417"
+      },
+      "policia": {
+        "titol": "Cada día, a la policía",
+        "text": "Hostly lo envía y te guarda el comprobante.",
+        "enviat": "Registro de viajeros enviado",
+        "comprovant": "Comprobante"
+      },
+      "taxa": {
+        "titol": "La tasa turística, calculada",
+        "text": "De abril a septiembre",
+        "aria": "De abril a septiembre: 72 huéspedes y 310 pernoctaciones, a 1,75 € por noche y persona. Te toca pagar 542,50 €.",
+        "calculant": "Calculando",
+        "llesta": "Lista para presentar",
+        "hostes": "Huéspedes",
+        "nits": "Pernoctaciones",
+        "preu": "Por noche y persona",
+        "total": "Te toca pagar"
+      },
+      "pagament": {
+        "titol": "La tasa, pagada online",
+        "text": "El huésped la paga al hacer el check-in.",
+        "concepte": "Tasa turística",
+        "detall": "2 personas · 4 noches",
+        "pagar": "Pagar 14,00 €",
+        "pagada": "Pagada",
+        "cobrat": "+14,00 € en tu cuenta"
+      }
+    },
+    "passos": {
+      "retol": "Cómo empieza",
+      "titol": "Así se empieza.",
+      "nota": "¿Solo el check-in? Te creas la cuenta tú y en cinco minutos lo tienes.",
+      "llista": [
+        {
+          "titol": "Te llamamos.",
+          "text": "O nos llamas tú. Para conocer tus pisos."
+        },
+        {
+          "titol": "Lo preparamos juntos.",
+          "text": "Conectamos tus canales y lo repasamos contigo."
+        },
+        {
+          "titol": "Hostly se queda pendiente.",
+          "text": "Tú solo te enteras de lo que importa."
+        }
+      ]
+    },
+    "preus": {
+      "retol": "Precios",
+      "titol": "Un plan gratis. Un plan completo.",
+      "titol_gris": "Nada más.",
+      "gratis": {
+        "nom": "Gratis",
+        "preu": "0 €",
+        "periode": "al mes, para siempre",
+        "nota": "Para el check-in y la policía.",
+        "inclou": [
+          "El check-in del huésped, desde su móvil",
+          "Hostly lo envía a la policía",
+          "La tasa turística, calculada",
+          "El huésped paga la tasa online"
+        ],
+        "boto": "Empezar",
+        "peu": "Sin tarjeta"
+      },
+      "complet": {
+        "nom": "Hostly Completo",
+        "recomanat": "Recomendado",
+        "preu": "40 €",
+        "periode": "al mes por piso",
+        "nota": "35 € desde 5 pisos · el primer mes, gratis",
+        "inclou": [
+          "Todo lo del plan Gratis",
+          "Airbnb y Booking, siempre cuadrados",
+          "Contesta a los huéspedes en su idioma",
+          "Avisa a la limpieza",
+          "Precios que se ajustan solos",
+          "Vende extras y hace las cuentas"
+        ],
+        "boto": "Empezar",
+        "peu": "Sin permanencia · Lo dejamos listo contigo"
+      },
+      "referits": {
+        "etiqueta": "Referidos",
+        "text": "Trae 5 propietarios y uno de tus pisos deja de pagar.",
+        "boto": "Cómo funciona"
+      }
+    },
+    "truca": {
+      "titol": "¿Prefieres hablarlo?",
+      "titol_gris": "Déjame tu teléfono y te llamo yo.",
+      "signa": "Biel Alsina, fundador de Hostly",
+      "prefix": "+34",
+      "telefon": "Tu teléfono",
+      "boto": "Llámame",
+      "nota": "Solo para hablar de tus pisos."
+    }
   }
 }

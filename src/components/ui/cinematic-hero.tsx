@@ -11,6 +11,10 @@ import badgeGoogle from "@/assets/badge-google.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Aquests estils van dins d'un <style> a la pàgina: els comentaris, aquí fora (si no, surten al text de la
+// pàgina i la revisió d'idioma els troba). `.text-days`: el degradat només pinta dins de la caixa, i amb
+// l'interlineat tan just el «¿» i la «g» de «gestionan» en sobresortien per sota i quedaven tallats. El
+// farciment eixampla la caixa i el marge negatiu ho compensa: el lema no es mou de lloc.
 const INJECTED_STYLES = `
   .gsap-reveal { visibility: hidden; }
 
@@ -46,6 +50,8 @@ const INJECTED_STYLES = `
       drop-shadow(0px 10px 20px rgba(15,23,42,0.10))
       drop-shadow(0px 2px 4px rgba(15,23,42,0.06));
   }
+
+  .text-days { padding: 0.12em 0.04em 0.24em; margin: -0.12em -0.04em -0.24em; }
 
   .text-card-silver {
     background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
@@ -336,7 +342,8 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
       });
       introTl
         .to(".text-track",    { duration: 1.8, autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)", rotationX: 0, ease: "expo.out" })
-        .to(".text-days",     { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut" }, "-=1.0")
+        // en acabar es treu el retall, que si no també talla l'ombra de les lletres
+        .to(".text-days",     { duration: 1.4, clipPath: "inset(0 0% 0 0)", ease: "power4.inOut", clearProps: "clipPath" }, "-=1.0")
         .to(".hero-subtitle", { duration: 1.0, autoAlpha: 1, y: 0, ease: "expo.out" }, "-=0.4");
 
       // Scroll-driven. Redisseny d'octubre 2026: el tram fixat passa de 3.200 a 1.700 px
@@ -500,6 +507,8 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
             </span>
             {t("hero.cta_main_text")}{' '}
             <span className="whitespace-nowrap">
+            {/* El farciment de sota deixa que el degradat arribi a la cua de la «y» (abans quedava
+                tallada); el marge negatiu el compensa, i la línia de sota baixa el mateix per no moure's. */}
             <span
               className="hero-brand-wrap relative inline-block"
               style={{
@@ -507,6 +516,8 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
+                paddingBottom: '0.22em',
+                marginBottom: '-0.22em',
               }}
             >
               {t("hero.cta_main_brand")}
@@ -516,7 +527,7 @@ export function CinematicHero({ onEmpezar, className, ...props }: CinematicHeroP
                 style={{
                   position: 'absolute',
                   left: 0,
-                  bottom: '-0.14em',
+                  bottom: '0.08em',
                   width: '100%',
                   height: '0.045em',
                   background: 'linear-gradient(90deg, #1a3a8f 0%, #2563EB 100%)',

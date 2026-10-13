@@ -30,7 +30,7 @@ const PreciosPage = () => {
 
       {/* FAQ de preus */}
       {/* A l'ordinador: el títol a l'esquerra i les preguntes a la dreta, com a la portada */}
-      <section className="py-20 md:py-28 bg-background border-t border-border">
+      <section id="preguntas" className="py-20 md:py-28 bg-background border-t border-border">
         <div className="contenidor grid gap-x-16 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

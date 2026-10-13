@@ -127,14 +127,29 @@ const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
     ok(`${nom} · /funciones/check-in → ${new URL(p.url()).pathname}`, p.url().endsWith('/es/funcionalidades/check-in-online'));
     await p.goto(`${BASE}/es/pms-con-ia`, { waitUntil: 'networkidle' });
     ok(`${nom} · /pms-con-ia → ${new URL(p.url()).pathname}`, p.url().endsWith('/es/funcionalidades/ia-whatsapp'));
-    // 10. Portada: vídeos d'exemple
+    // 10. Portada: els gestors. Des de la portada nova (13-10-2026) ja no hi ha els tres vídeos marcats
+    // «Ejemplo»: hi ha una pantalla per gestor (l'Àngel i dos marcadors fins que hi hagi les frases reals).
     await p.goto(`${BASE}/es`, { waitUntil: 'networkidle' });
     await p.waitForTimeout(1500);
-    const exemples = await p.locator('text=Ejemplo').count();
-    ok(`${nom} · la portada té 3 vídeos marcats «Ejemplo» (${exemples})`, exemples === 3);
-    const v = p.locator('text=Gestores que ya').first();
+    const cites = await p.locator('#gestores .pt-cita').count();
+    ok(`${nom} · la portada té una pantalla per gestor (${cites})`, cites === 3);
+    const v = p.locator('#gestores').first();
     await v.scrollIntoViewIfNeeded(); await p.waitForTimeout(900);
     await p.screenshot({ path: `${OUT}/${nom}-videos.png` });
+    // 11. «Te llamo» de la portada: el camp ja porta «+34» al davant i desa com el de preus
+    await p.evaluate(() => { try { localStorage.removeItem('hostly_lead_dades'); } catch (e) {} });
+    await p.goto(`${BASE}/es`, { waitUntil: 'networkidle' });
+    const truca = p.locator('#llamame');
+    await truca.scrollIntoViewIfNeeded(); await p.waitForTimeout(600);
+    const hTruca = await truca.locator('input[type=tel]').evaluate((e) => Math.round(e.getBoundingClientRect().height));
+    ok(`${nom} · el camp de «Te llamo» de la portada fa ${hTruca}px (no aixafat)`, hTruca >= 44);
+    const abansTruca = crides.length;
+    await truca.locator('input[type=tel]').fill('612 34 56 78');
+    await truca.locator('button:has-text("Llámame")').click();
+    await p.waitForSelector('#llamame >> text=Hecho. Te llamo en cuanto pueda');
+    const novaTruca = crides.slice(abansTruca).find((c) => c.p_dades?.source === 'llamame');
+    ok(`${nom} · «Te llamo» de la portada desa el telèfon (${novaTruca?.p_dades?.phone})`, novaTruca?.p_dades?.phone === '34612345678');
+    await p.screenshot({ path: `${OUT}/${nom}-portada-truca.png` });
     ok(`${nom} · sense errors a la consola (${errors.length})`, errors.length === 0);
     if (errors.length) resultats.push('   ' + errors.slice(0, 5).join('\n   '));
     await ctx.close();

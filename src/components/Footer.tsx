@@ -29,7 +29,8 @@ const COLUMNES: Array<{ titol: string; enllacos: Array<{ clau: string; href: str
       { clau: "blog", href: "/blog" },
       { clau: "guia", href: "/guia" },
       { clau: "alternativas", href: "/alternativas" },
-      { clau: "faq", href: "/#faq" },
+      // la portada nova (13-10-2026) ja no té preguntes: les de preus són a /precios
+      { clau: "faq", href: "/precios#preguntas" },
     ],
   },
   {
