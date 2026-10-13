@@ -329,6 +329,20 @@ els logotips d'Airbnb, Booking.com, Google i WhatsApp, amb el seu color, de quat
    viatja.
 4. Icones d'app que es connecten una a una i reben el tic verd.
 
+**Les insígnies, segona volta (13-10):**
+- El 95 € va a la dreta, al costat de «Otras apps te lo cobran cada mes.», i el 0 € es queda sol.
+- De les quatre maneres, al Biel li agraden la 3 (tot connectat) i la 4 (icones d'app). La 3, però, és
+  massa gran, i a la 4 s'ha d'entendre que Hostly es connecta a més llocs.
+- Les marques són Airbnb, Booking.com, Vrbo, Google, WhatsApp, Stripe i la policía. PriceLabs no hi surt
+  mai: el Biel no vol que se sàpiga que el fem servir.
+- Stripe i Vrbo porten el nom amb el seu color fins que tinguem els logotips oficials.
+
+A `zero-insignies-segona-volta.html`, al mateix enllaç (https://claude.ai/artifact/MQZvXD8A4HZbpKNFSNUoJF):
+- 3A · la línia, de 100 px d'alt;
+- 3B · els arcs;
+- 4A · les icones que es connecten, amb la casella «Y más»;
+- 4B · la cinta d'icones que no s'atura.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
