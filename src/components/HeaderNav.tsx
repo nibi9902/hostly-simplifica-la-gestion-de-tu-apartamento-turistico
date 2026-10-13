@@ -1,17 +1,22 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation } from 'react-router-dom';
-import { ChevronDown, Menu, X, ArrowRight, LogIn } from 'lucide-react';
+import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { NavConfig } from '@/lib/data/nav';
 import { cn } from '@/lib/utils';
 import { LangLink } from '@/i18n/LangLink';
+import { useLang } from '@/i18n/useLang';
+
+/** Un apartat de la píndola del mig (enllaç o botó que obre el desplegable). */
+const PINDOLA = 'h-9 px-4 rounded-full inline-flex items-center gap-1 text-sm font-medium text-[hsl(220_14%_20%)] transition-colors duration-150 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary';
 
 type MegaState = 'closed' | 'opening' | 'open' | 'closing';
 type Props = { nav: NavConfig };
 
 export function HeaderNav({ nav }: Props) {
   const { t } = useTranslation('common');
+  const { lang, setLang } = useLang();
   const [megaState, setMegaState] = useState<MegaState>('closed');
   const [megaLabel, setMegaLabel] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -60,8 +65,8 @@ export function HeaderNav({ nav }: Props) {
 
   return (
     <>
-      {/* Desktop nav */}
-      <nav className="hidden lg:flex items-center gap-9 text-sm font-medium" aria-label="Primary">
+      {/* Ordinador: els apartats, en una píndola grisa al mig */}
+      <nav className="hidden lg:flex items-center gap-0.5 p-1 rounded-full bg-[hsl(210_20%_94%)] justify-self-center" aria-label="Primary">
         {nav.main.map((item) => {
           if (!item.dropdown && !item.groups) {
             const isActive = pathname === item.href || pathname.endsWith(item.href);
@@ -70,13 +75,7 @@ export function HeaderNav({ nav }: Props) {
                 key={item.label}
                 to={item.href}
                 onMouseEnter={triggerClose}
-                className={cn(
-                  'relative py-1 text-foreground/60 hover:text-foreground transition-colors duration-150',
-                  'after:absolute after:bottom-0 after:left-0 after:h-px after:w-full',
-                  'after:bg-foreground/40 after:scale-x-0 after:origin-left',
-                  'after:transition-transform after:duration-200 hover:after:scale-x-100',
-                  isActive && 'text-foreground after:scale-x-100 after:bg-foreground',
-                )}
+                className={cn(PINDOLA, isActive && 'bg-white')}
               >
                 {item.label}
               </LangLink>
@@ -88,13 +87,7 @@ export function HeaderNav({ nav }: Props) {
               <button
                 type="button"
                 onClick={() => (itemOpen ? triggerClose() : triggerOpen(item.label))}
-                className={cn(
-                  'relative flex items-center gap-1 py-1 transition-colors duration-150 text-foreground/60 hover:text-foreground',
-                  'after:absolute after:bottom-0 after:left-0 after:h-px after:w-full',
-                  'after:bg-foreground/40 after:scale-x-0 after:origin-left',
-                  'after:transition-transform after:duration-200 hover:after:scale-x-100',
-                  itemOpen && 'text-foreground after:scale-x-100 after:bg-foreground',
-                )}
+                className={cn(PINDOLA, itemOpen && 'bg-white')}
                 aria-expanded={itemOpen}
                 aria-haspopup="true"
               >
@@ -106,22 +99,41 @@ export function HeaderNav({ nav }: Props) {
         })}
       </nav>
 
-      {/* Desktop CTAs */}
-      <div className="hidden lg:flex items-center gap-5 ml-8">
+      {/* A la dreta: l'idioma, «Iniciar sesión» i «Empezar»; al mòbil, l'idioma i el menú */}
+      <div className="flex items-center justify-end gap-5 justify-self-end">
+        <div className="hidden sm:flex items-center gap-0.5 p-0.5 rounded-full bg-[hsl(210_20%_94%)] text-[11px] font-semibold" role="group" aria-label="Idioma">
+          {(['es', 'ca'] as const).map((l) => (
+            <button
+              key={l}
+              type="button"
+              onClick={() => setLang(l)}
+              aria-pressed={lang === l}
+              aria-label={l === 'es' ? 'Español' : 'Català'}
+              className={cn(
+                'h-7 min-w-[34px] px-2.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
+                lang === l ? 'bg-white text-foreground shadow-[0_1px_2px_rgba(0,0,0,0.06)]' : 'text-slate-500 hover:text-foreground',
+              )}
+            >
+              {l.toUpperCase()}
+            </button>
+          ))}
+        </div>
         <a
           href={nav.ctas.secondary.href}
           target="_blank"
           rel="noopener noreferrer"
-          title="Acceder a la app"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 text-[11px] font-semibold text-foreground/60 hover:text-foreground hover:border-slate-300 hover:bg-slate-50 transition-all duration-150"
+          className="hidden lg:inline-flex text-sm font-medium text-foreground hover:text-primary transition-colors"
         >
-          <LogIn className="w-3 h-3" />
-          App
+          {t('nav.login')}
         </a>
         <LangLink to="/empezar" state={{ desde: pathname }}
-          className="inline-flex items-center px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:shadow-[0_4px_20px_hsl(var(--primary)/0.3)] hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.98]">
+          className="hidden lg:inline-flex items-center justify-center h-11 px-5 rounded-full bg-primary text-primary-foreground text-[15px] font-medium shadow-[0_1px_3px_rgba(0,0,0,0.08)] hover:bg-[#1d4ed8] transition-colors">
           {nav.ctas.primary.label}
         </LangLink>
+        <button type="button" onClick={() => setMobileOpen(true)}
+          className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-foreground hover:bg-muted transition-colors" aria-label={t('nav.aria_open_menu')}>
+          <Menu className="w-5 h-5" />
+        </button>
       </div>
 
       {/* Mega menu portal */}
@@ -198,12 +210,6 @@ export function HeaderNav({ nav }: Props) {
           </>,
           document.body,
         )}
-
-      {/* Mobile burger */}
-      <button type="button" onClick={() => setMobileOpen(true)}
-        className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-foreground hover:bg-muted transition-colors" aria-label={t('nav.aria_open_menu')}>
-        <Menu className="w-5 h-5" />
-      </button>
 
       {/* Mobile menu */}
       {mobileOpen && createPortal(

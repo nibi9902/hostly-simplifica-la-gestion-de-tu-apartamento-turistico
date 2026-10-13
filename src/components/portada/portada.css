@@ -43,6 +43,27 @@
 .pt-xip-blau { background: hsl(214 100% 97%); color: var(--pt-blau-fosc); box-shadow: inset 0 0 0 1px hsl(212 96% 88%); }
 .pt-boto-blau { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 16px; border-radius: 9999px; background: var(--pt-blau); color: #fff; font-size: 14px; font-weight: 500; white-space: nowrap; }
 
+/* ── 1 · L'entrada: només el lema, amb l'aspecte de l'entrada d'abans (CinematicHero) ──
+   La reixa i el gra de fons, la primera línia amb relleu i la segona amb el degradat platejat. */
+.pt-entrada { position: relative; height: 100vh; min-height: 560px; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--pt-fons); perspective: 1500px; }
+.pt-reixa { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .6; background-size: 60px 60px; background-image: linear-gradient(to right, rgba(0, 0, 0, .04) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, .04) 1px, transparent 1px); -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%); mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%); }
+.pt-gra { position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: .04; mix-blend-mode: overlay; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>'); }
+.pt-entrada-in { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding-inline: 16px; will-change: transform; }
+.pt-lema-1 { font-size: 2.25rem; line-height: 1.05; font-weight: 700; letter-spacing: -0.025em; color: #0f172a; margin-bottom: 8px; text-shadow: 0 10px 30px rgba(15, 23, 42, .12), 0 2px 4px rgba(15, 23, 42, .06); }
+.pt-lema-2 { font-size: 2.25rem; line-height: 1.05; font-weight: 800; letter-spacing: -0.05em; background: linear-gradient(180deg, #0f172a 0%, rgba(15, 23, 42, .4) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; transform: translateZ(0); filter: drop-shadow(0 10px 20px rgba(15, 23, 42, .10)) drop-shadow(0 2px 4px rgba(15, 23, 42, .06)); padding: 0.12em 0.04em 0.24em; margin: -0.12em -0.04em -0.24em; }
+.pt-entrada-sub { margin-top: 24px; max-width: 42rem; font-size: 16px; line-height: 1.625; color: #64748b; }
+.pt-cue { position: absolute; z-index: 3; left: 50%; bottom: 40px; margin-left: -22px; width: 44px; height: 44px; border-radius: 9999px; display: grid; place-items: center; color: var(--pt-gris); box-shadow: inset 0 0 0 1px hsl(220 13% 86%); }
+.pt-cue:hover { color: var(--pt-text); }
+.pt-cue svg { animation: pt-flota 2.4s ease-in-out infinite; }
+@keyframes pt-flota { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+@media (min-width: 768px) {
+  .pt-lema-1, .pt-lema-2 { font-size: 3.75rem; }
+  .pt-entrada-sub { margin-top: 32px; font-size: 20px; }
+}
+@media (min-width: 1024px) {
+  .pt-lema-1, .pt-lema-2 { font-size: 5rem; }
+}
+
 /* ── 2 · Els gestors: una pantalla per gestor ──
    La frase a l'esquerra i, al costat, la boleta amb el vídeo ja en marxa. Quan l'has llegida, la boleta
    s'obre cap amunt i el vídeo passa al davant; les lletres es queden darrere, esvaïdes. */
@@ -299,7 +320,7 @@
 .pt-truca .pt-privacitat a { text-decoration: underline; text-underline-offset: 2px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .pt-ona i, .pt-foto, .pt-punts i { animation: none; }
+  .pt-ona i, .pt-foto, .pt-punts i, .pt-cue svg { animation: none; }
   .pt-xip-so, .pt-lm-trams span { transition: none; }
 }
 

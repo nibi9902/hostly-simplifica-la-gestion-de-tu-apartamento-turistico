@@ -196,6 +196,9 @@
     ]
   },
   "portada": {
+    "entrada": {
+      "baixa": "Seguir bajando"
+    },
     "gestors": {
       "retol": "Les preguntamos a gestores qué es Hostly",
       "llista": [

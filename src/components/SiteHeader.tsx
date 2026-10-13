@@ -2,14 +2,16 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNav } from '@/lib/data/useNav';
 import { HeaderNav } from './HeaderNav';
-import hostlyLogo from '@/assets/hostly-logo-new.webp';
+import hostlyMarca from '@/assets/hostly-marca.webp';
 import { cn } from '@/lib/utils';
 import { LangLink } from '@/i18n/LangLink';
-import { useLang } from '@/i18n/useLang';
 
+/**
+ * El capçal, com el de la portada aprovada (13-10-2026): la marca a l'esquerra, els apartats en una
+ * píndola grisa al mig i, a la dreta, l'idioma, «Iniciar sesión» i «Empezar» (`HeaderNav`).
+ */
 export function SiteHeader() {
   const { pathname } = useLocation();
-  const { lang, setLang } = useLang();
   const NAV = useNav();
   // Home: tant `/` com `/es` o `/ca`
   const segments = pathname.split('/').filter(Boolean);
@@ -46,39 +48,11 @@ export function SiteHeader() {
         !visible && '-translate-y-full opacity-0 pointer-events-none',
       )}
     >
-      <div className="contenidor h-20 flex items-center justify-between gap-6">
-        {/* Switcher d'idioma + logo a l'esquerra */}
-        <div className="flex items-center gap-4 shrink-0">
-          <div className="hidden sm:flex items-center gap-0.5 rounded-full border border-slate-200 bg-white p-0.5 text-[11px] font-semibold">
-            {(['es', 'ca'] as const).map((l) => (
-              <button
-                key={l}
-                type="button"
-                onClick={() => setLang(l)}
-                aria-pressed={lang === l}
-                aria-label={l === 'es' ? 'Español' : 'Català'}
-                className={cn(
-                  'px-3 py-1.5 rounded-full transition-colors min-w-[36px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-                  lang === l ? 'bg-slate-900 text-white' : 'text-slate-500 hover:text-slate-900',
-                )}
-              >
-                {l.toUpperCase()}
-              </button>
-            ))}
-          </div>
-          <LangLink to="/" className="flex items-center gap-0.5" aria-label="Hostly">
-            <img
-              src={hostlyLogo}
-              alt=""
-              width={32}
-              height={32}
-              className="h-8 w-auto object-contain"
-            />
-            <span className="font-semibold text-lg tracking-tight text-foreground">
-              Hostly™
-            </span>
-          </LangLink>
-        </div>
+      {/* A l'ordinador, tres columnes: la píndola dels apartats queda al mig de la pàgina */}
+      <div className="contenidor h-20 flex items-center justify-between gap-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+        <LangLink to="/" className="flex items-center shrink-0 justify-self-start" aria-label="Hostly">
+          <img src={hostlyMarca} alt="" width={160} height={24} className="h-6 w-auto" />
+        </LangLink>
         <HeaderNav nav={NAV} />
       </div>
     </header>

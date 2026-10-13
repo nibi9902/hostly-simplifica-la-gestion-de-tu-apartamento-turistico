@@ -1,6 +1,6 @@
 import { SiteHeader } from "@/components/SiteHeader";
 import SEO from "@/components/SEO";
-import { CinematicHero } from "@/components/ui/cinematic-hero";
+import Entrada from "@/components/portada/Entrada";
 import Gestors from "@/components/portada/Gestors";
 import Pendent from "@/components/portada/Pendent";
 import Gratis from "@/components/portada/Gratis";
@@ -19,9 +19,10 @@ import {
 } from "@/lib/seo/schemas";
 
 /**
- * La portada (redisseny d'octubre 2026). L'entrada és la de sempre (CinematicHero: decisió del Biel del
- * 13-10). A sota, la portada que va aprovar a l'exploració `docs/exploracions/2026-10-11-web-estil-b/`:
- * gestors → «Hostly está pendiente» → «Gratis para siempre» → «Así se empieza» → preus → «Te llamo».
+ * La portada (redisseny d'octubre 2026). L'entrada és només el lema, amb l'aspecte de l'entrada d'abans
+ * (decisió del Biel del 13-10). A sota, la portada que va aprovar a l'exploració
+ * `docs/exploracions/2026-10-11-web-estil-b/`: gestors → «Hostly está pendiente» → «Gratis para siempre»
+ * → «Así se empieza» → preus → «Te llamo».
  * La portada nova no té preguntes freqüents: per això ja no porta el marcatge FAQPage.
  */
 const Index = () => {
@@ -46,7 +47,7 @@ const Index = () => {
       />
       <SiteHeader />
       <main>
-        <CinematicHero onEmpezar={empezar} />
+        <Entrada />
         <Gestors />
         <Pendent />
         <Gratis onEmpezar={empezar} />
