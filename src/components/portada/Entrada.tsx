@@ -51,7 +51,7 @@ export default function Entrada() {
         <span aria-hidden="true" className="pt-lema-2">{t("hero.h1_line2")}</span>
         <p className="pt-entrada-sub">{t("hero.subtitle")}</p>
       </div>
-      <a className="pt-cue" href="#gestores" aria-label={t("portada.entrada.baixa")}>
+      <a className="pt-cue" href="#cero" aria-label={t("portada.entrada.baixa")}>
         <ArrowDown className="pt-ic" aria-hidden="true" />
       </a>
     </section>

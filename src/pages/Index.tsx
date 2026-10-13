@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/SiteHeader";
 import SEO from "@/components/SEO";
 import Entrada from "@/components/portada/Entrada";
+import Zero from "@/components/portada/Zero";
 import Gestors from "@/components/portada/Gestors";
 import Pendent from "@/components/portada/Pendent";
 import Gratis from "@/components/portada/Gratis";
@@ -20,9 +21,9 @@ import {
 
 /**
  * La portada (redisseny d'octubre 2026). L'entrada és només el lema, amb l'aspecte de l'entrada d'abans
- * (decisió del Biel del 13-10). A sota, la portada que va aprovar a l'exploració
- * `docs/exploracions/2026-10-11-web-estil-b/`: gestors → «Hostly está pendiente» → «Gratis para siempre»
- * → «Así se empieza» → preus → «Te llamo».
+ * (decisió del Biel del 13-10), i just a sota, el 0 € amb la cinta de logotips (també del 13-10). Després,
+ * la portada que va aprovar a l'exploració `docs/exploracions/2026-10-11-web-estil-b/`: gestors →
+ * «Hostly está pendiente» → «Gratis para siempre» → «Así se empieza» → preus → «Te llamo».
  * La portada nova no té preguntes freqüents: per això ja no porta el marcatge FAQPage.
  */
 const Index = () => {
@@ -48,6 +49,7 @@ const Index = () => {
       <SiteHeader />
       <main>
         <Entrada />
+        <Zero onEmpezar={empezar} />
         <Gestors />
         <Pendent />
         <Gratis onEmpezar={empezar} />

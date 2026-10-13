@@ -2,85 +2,7 @@
   "hero": {
     "h1_line1": "¿Gestionas apartamentos en Airbnb?",
     "h1_line2": "¿O te gestionan ellos a ti?",
-    "subtitle": "Hostly simplifica todo lo que implica tener un apartamento turístico.",
-    "partner_label": "Conectado con",
-    "cta_tagline": "Check-in + registro a la policía",
-    "cta_compare_rest": "Otras apps te lo cobran cada mes.",
-    "cta_main_price": "0 €",
-    "cta_main_text": "en",
-    "cta_main_brand": "Hostly",
-    "cta_forever": "Para siempre.",
-    "cta_sub": "Cada vez que entra un huésped, Hostly envía el registro a la policía por ti. Gratis hoy y gratis siempre: es nuestra forma de darnos a conocer.",
-    "stat_messages": "mensajes respondidos",
-    "stat_police": "registros policiales",
-    "stat_cleanings": "limpiezas coordinadas",
-    "btn_start": "Empezar",
-    "btn_how": "Ver cómo funciona",
-    "card_title_1": "Hostly simplifica",
-    "card_title_2": "tu apartamento",
-    "card_title_3": "al máximo.",
-    "card_body": "Las apps sueltas, las hojas de cálculo, los grupos de WhatsApp y las llamadas de última hora —",
-    "card_body_strong": "todo eso se acaba.",
-    "phone_date": "Viernes, 18 de abril",
-    "phone_now": "ahora",
-    "phone_notifs": [
-      {
-        "label": "Hostly · Fiscal",
-        "title": "Tasa turística · semestre listo",
-        "detail": "1.284 € a ingresar · fichero listo para presentar"
-      },
-      {
-        "label": "Hostly · Check-in",
-        "title": "Check-in de Miguel completado",
-        "detail": "Registro enviado a los Mossos · tasa cobrada"
-      },
-      {
-        "label": "Hostly · Limpiezas",
-        "title": "Limpieza confirmada · Anna",
-        "detail": "Coordinada automáticamente · mañana 11h"
-      },
-      {
-        "label": "Hostly · IA",
-        "title": "Pol ha obtenido respuesta de la IA",
-        "detail": "Wifi + 3 restaurantes recomendados · sin tu intervención"
-      },
-      {
-        "label": "Hostly · Precios",
-        "title": "Festival local detectado en tu zona",
-        "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
-      },
-      {
-        "label": "Hostly · Reservas",
-        "title": "Nueva reserva · Booking",
-        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
-      }
-    ],
-    "bubbles": [
-      {
-        "title": "Tasa turística · semestre listo",
-        "detail": "1.284 € a ingresar · fichero listo para presentar"
-      },
-      {
-        "title": "Check-in de Miguel completado",
-        "detail": "Registro enviado a los Mossos · tasa cobrada"
-      },
-      {
-        "title": "Limpieza confirmada · Anna",
-        "detail": "Coordinada automáticamente · mañana 11h"
-      },
-      {
-        "title": "Pol ha obtenido respuesta de la IA",
-        "detail": "Wifi + 3 restaurantes recomendados · sin tu intervención"
-      },
-      {
-        "title": "Festival local detectado en tu zona",
-        "detail": "Precio del 15–19 jun ajustado a 235 €/noche"
-      },
-      {
-        "title": "Nueva reserva · Booking",
-        "detail": "4 noches · 620 € · fechas bloqueadas en Airbnb"
-      }
-    ]
+    "subtitle": "Hostly simplifica todo lo que implica tener un apartamento turístico."
   },
   "pricing": {
     "title": "Un plan gratis. Un plan completo.",
@@ -198,6 +120,33 @@
   "portada": {
     "entrada": {
       "baixa": "Seguir bajando"
+    },
+    "zero": {
+      "retol": "Check-in + registro a la policía",
+      "zero": "0 €",
+      "sempre": "en Hostly. Para siempre.",
+      "altres": "Otras apps te lo cobran cada mes.",
+      "fins": "hasta",
+      "preu": "95 €",
+      "any": "al año",
+      "text": "Cada vez que entra un huésped, Hostly envía el registro a la policía por ti. Gratis hoy y gratis siempre.",
+      "empezar": "Empezar",
+      "com": "Ver cómo funciona",
+      "connectat": "Conectado con",
+      "xifres": [
+        {
+          "n": 7983,
+          "text": "mensajes respondidos"
+        },
+        {
+          "n": 4271,
+          "text": "registros policiales"
+        },
+        {
+          "n": 3548,
+          "text": "limpiezas coordinadas"
+        }
+      ]
     },
     "gestors": {
       "retol": "Les preguntamos a gestores qué es Hostly",

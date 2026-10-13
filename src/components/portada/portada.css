@@ -2,7 +2,7 @@
    Ve de l'exploració aprovada pel Biel: docs/exploracions/2026-10-11-web-estil-b/portada.html.
    Les mides i els colors són els d'aquella pàgina, perquè és la que va dir que estava bé; per això
    viuen aquí i no en classes de Tailwind. Tot porta el prefix «pt-» i només s'aplica a les seccions
-   de la portada. L'entrada (CinematicHero), el capçal i el peu són els de sempre.
+   de la portada. L'entrada té l'aspecte de l'entrada d'abans; el capçal i el peu són els del web.
    El moviment: GSAP, sense rebots (power3.out) i sense lligar-lo al scroll. Sense JavaScript o amb
    «reduir moviment», cada secció es veu sencera, com queda al final. */
 
@@ -63,6 +63,53 @@
 @media (min-width: 1024px) {
   .pt-lema-1, .pt-lema-2 { font-size: 5rem; }
 }
+
+/* ── 1 bis · El 0 € (just després del lema) ──
+   La franja de l'entrada d'abans, a l'estil d'ara: a la targeta fosca, el 0 € sol a l'esquerra i, a la dreta,
+   la frase amb el preu de les altres apps al costat, ratllat. A sota, les xifres i la cinta de logotips, que
+   passa sense parar (la volta no es veu perquè hi ha dues tandes iguals) i s'atura amb el ratolí. */
+.pt-zero-s { padding-block: 88px 96px; background: var(--pt-blanc); }
+.pt-zf { border-radius: 32px; background: var(--pt-fosc); color: #fff; padding: 64px 72px; }
+.pt-zf-graella { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 80px; align-items: center; }
+.pt-zf-esq { margin: 0; font-weight: 700; }
+.pt-zf-zero { display: block; font-size: 260px; line-height: .8; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; }
+.pt-zf-sempre { display: block; font-size: 28px; line-height: 1.2; font-weight: 600; letter-spacing: -0.02em; margin-top: 24px; }
+.pt-zf-dreta { min-width: 0; }
+.pt-zf .pt-retol { color: rgba(255, 255, 255, .6); }
+.pt-zf-cap { display: flex; align-items: center; gap: 36px; margin-top: 14px; }
+.pt-zf-altres { font-size: 46px; line-height: 1.1; font-weight: 700; letter-spacing: -0.03em; max-width: 9.2em; text-wrap: balance; }
+.pt-zf-vell { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; flex-shrink: 0; color: rgba(255, 255, 255, .5); }
+.pt-zf-vell small { font-size: 15px; line-height: 1; font-weight: 500; }
+.pt-zf-cent { position: relative; display: inline-block; font-size: 60px; line-height: 1; font-weight: 700; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.pt-zf-tatxa { position: absolute; left: -6px; right: -6px; top: 52%; height: 5px; margin-top: -2px; border-radius: 9999px; background: hsl(0 84% 63%); transform-origin: 0 50%; }
+.pt-zf-txt { font-size: 17px; line-height: 1.55; color: rgba(255, 255, 255, .78); margin-top: 20px; max-width: 34em; }
+.pt-zf-botons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.pt-zf-botons .pt-pill { height: 48px; padding: 0 24px; font-size: 16px; }
+.pt-pill-buit { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .32); }
+.pt-pill-buit:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.pt-zb { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 44px; }
+.pt-zx { display: flex; align-items: stretch; flex-shrink: 0; }
+.pt-zx li { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 0 30px; }
+.pt-zx li:first-child { padding-left: 0; }
+.pt-zx li + li { box-shadow: inset 1px 0 0 var(--pt-linia); }
+.pt-zx b { font-size: 40px; line-height: 1; font-weight: 700; letter-spacing: -0.035em; font-variant-numeric: tabular-nums; }
+.pt-zx span { font-size: 14px; color: var(--pt-gris); white-space: nowrap; }
+.pt-zc { flex: 0 1 620px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.pt-cinta { width: 100%; overflow: hidden; padding-block: 10px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.pt-cinta-pista { display: flex; width: max-content; animation: pt-cinta 30s linear infinite; }
+.pt-cinta.espera .pt-cinta-pista, .pt-cinta:hover .pt-cinta-pista { animation-play-state: paused; }
+@keyframes pt-cinta { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.pt-tanda { display: flex; gap: 22px; padding-right: 22px; }
+/* cada marca, com una icona d'app, amb el tic verd */
+.pt-cn { position: relative; width: 54px; height: 54px; border-radius: 15px; background: #fff; display: grid; place-items: center; box-shadow: 0 12px 24px -14px rgba(15, 23, 42, .45), 0 0 0 1px rgba(15, 23, 42, .06); }
+.pt-cn img { display: block; width: 32px; height: 32px; object-fit: contain; }
+.pt-cn-booking img, .pt-cn-whatsapp img { width: 54px; height: 54px; border-radius: 15px; }
+.pt-cn-ses img { width: 44px; height: auto; }
+.pt-cn svg { display: block; width: 30px; height: 30px; }
+.pt-cn-stripe svg { width: 40px; height: auto; }
+.pt-cn-txt { font-size: 15px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #245abc; }
+.pt-cn-tic { position: absolute; top: -6px; right: -6px; width: 21px; height: 21px; border-radius: 9999px; background: var(--pt-verd); color: #fff; display: grid; place-items: center; box-shadow: 0 0 0 3px #fff; }
+.pt-cn .pt-cn-tic svg { width: 11px; height: 11px; }
 
 /* ── 2 · Els gestors: una pantalla per gestor ──
    La frase a l'esquerra i, al costat, la boleta amb el vídeo ja en marxa. Quan l'has llegida, la boleta
@@ -320,13 +367,24 @@
 .pt-truca .pt-privacitat a { text-decoration: underline; text-underline-offset: 2px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .pt-ona i, .pt-foto, .pt-punts i, .pt-cue svg { animation: none; }
+  .pt-ona i, .pt-foto, .pt-punts i, .pt-cue svg, .pt-cinta-pista { animation: none; }
   .pt-xip-so, .pt-lm-trams span { transition: none; }
+  /* la cinta, quieta: una sola tanda i sense les vores esvaïdes */
+  .pt-tanda + .pt-tanda { display: none; }
+  .pt-cinta { -webkit-mask-image: none; mask-image: none; }
 }
 
 /* El mòbil es farà a part; això només evita que es trenqui */
 @media (max-width: 1100px) {
-  .pt-angel, .pt-pend, .pt-gratis, .pt-passos, .pt-preus, .pt-truca { min-height: 0; padding-block: 56px; }
+  .pt-angel, .pt-pend, .pt-gratis, .pt-passos, .pt-preus, .pt-truca, .pt-zero-s { min-height: 0; padding-block: 56px; }
+  .pt-zf { padding: 36px; border-radius: 28px; }
+  .pt-zf-graella { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .pt-zf-zero { font-size: 150px; }
+  .pt-zf-cap { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .pt-zf-altres { font-size: 30px; }
+  .pt-zf-cent { font-size: 44px; }
+  .pt-zb { flex-direction: column; align-items: flex-start; }
+  .pt-zc { flex-basis: auto; width: 100%; }
   .pt-tres, .pt-targeta { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .pt-cita q { font-size: 28px; }
   .pt-angel .pt-graella { grid-template-columns: minmax(0, 1fr); gap: 40px; justify-items: center; text-align: center; }
@@ -350,11 +408,30 @@
 @media (max-width: 640px) {
   .pt-forat { width: 132px; height: 132px; }
   .pt-boleta { width: 132px; height: 132px; border-radius: 66px; }
-  .pt-e3-pant { width: 319px; }
-  .pt-pantalla { width: 319px; height: 168px; border-radius: 6px; }
-  .pt-pantalla .pt-fin { transform: scale(.29); }
+  /* la pantalla de Hostly, estreta com al mòbil i a una mida que es llegeix: 560 × 640, escalada a 320 */
+  .pt-e3-pant { width: 320px; }
+  .pt-pantalla { width: 320px; height: 366px; border-radius: 12px; }
+  .pt-pantalla .pt-fin { width: 560px; height: 640px; transform: scale(.5714); }
+  .pt-pantalla .pt-app { height: 600px; }
+  .pt-pantalla .pt-adreca { width: 240px; }
+  .pt-pantalla .pt-portes, .pt-pantalla .pt-sel { display: none; }
+  .pt-pantalla .pt-cos { left: 20px; right: 20px; width: auto; top: 72px; }
+  .pt-pantalla .pt-tira { left: 16px; right: 16px; height: auto; padding-block: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 12px; }
+  .pt-pantalla .pt-tira div:nth-child(3) { border-left: 0; }
   .pt-bento { grid-template-columns: minmax(0, 1fr); }
   .pt-zero { font-size: 120px; }
+  .pt-zf { padding: 28px 24px; }
+  .pt-zf-zero { font-size: 120px; }
+  .pt-zf-sempre { font-size: 22px; margin-top: 16px; }
+  /* «hasta 95 € al año», en una sola línia; i els botons, d'amplada sencera */
+  .pt-zf-vell { flex-direction: row; align-items: baseline; gap: 10px; }
+  .pt-zf-cent { font-size: 36px; }
+  .pt-zf-botons .pt-pill { flex: 1 1 100%; }
+  .pt-zx { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+  .pt-zx li, .pt-zx li:first-child { padding: 0; }
+  .pt-zx li + li { box-shadow: none; }
+  .pt-zx b { font-size: 30px; }
+  .pt-zx span { white-space: normal; }
   .pt-camp { flex-wrap: wrap; }
   .pt-camp input { font-size: 18px; }
 }
