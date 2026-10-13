@@ -48,12 +48,30 @@
     "ca": "Català"
   },
   "not_found": {
-    "title": "Pàgina no trobada · Hostly",
-    "badge": "404",
-    "heading": "Aquesta pàgina no existeix.",
-    "body": "Potser l'enllaç està malament o l'hem moguda.",
+    "title": "Pàgina no trobada · Hostly",
+    "badge": "Error 404",
+    "heading": "Aquesta pàgina ja ha fet el check-out.",
+    "body": "Se n'ha anat sense deixar adreça. Potser l'enllaç està malament o l'hem moguda.",
     "go_home": "Tornar a l'inici",
-    "go_back": "Pàgina anterior"
+    "go_back": "Pàgina anterior",
+    "avis_que": "Check-out",
+    "avis_titol": "Pàgina 404",
+    "avis_text": "Ha sortit a les 4:04. Sense incidències.",
+    "o_ves": "O ves directament a",
+    "enllacos": [
+      [
+        "/precios",
+        "Preus"
+      ],
+      [
+        "/funcionalidades",
+        "Funcionalitats"
+      ],
+      [
+        "/demo",
+        "Com funciona"
+      ]
+    ]
   },
   "sobre": {
     "meta_title": "Sobre Hostly · L'app que simplifica tenir un pis turístic",

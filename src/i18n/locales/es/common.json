@@ -48,12 +48,30 @@
     "ca": "Català"
   },
   "not_found": {
-    "title": "Página no encontrada · Hostly",
-    "badge": "404",
-    "heading": "Esta página no existe.",
-    "body": "Puede que el enlace esté mal o que la hayamos movido.",
+    "title": "Página no encontrada · Hostly",
+    "badge": "Error 404",
+    "heading": "Esta página ya ha hecho el check-out.",
+    "body": "Se fue sin dejar dirección. Puede que el enlace esté mal o que la hayamos movido.",
     "go_home": "Volver al inicio",
-    "go_back": "Página anterior"
+    "go_back": "Página anterior",
+    "avis_que": "Check-out",
+    "avis_titol": "Página 404",
+    "avis_text": "Salió a las 4:04. Sin incidencias.",
+    "o_ves": "O ve directo a",
+    "enllacos": [
+      [
+        "/precios",
+        "Precios"
+      ],
+      [
+        "/funcionalidades",
+        "Funcionalidades"
+      ],
+      [
+        "/demo",
+        "Cómo funciona"
+      ]
+    ]
   },
   "sobre": {
     "meta_title": "Sobre Hostly · La app que simplifica tener un piso turístico",
