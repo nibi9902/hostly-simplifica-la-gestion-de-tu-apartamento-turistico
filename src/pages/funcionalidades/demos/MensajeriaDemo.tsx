@@ -135,12 +135,12 @@ function ChatView({ frame, fps }: { frame: number; fps: number }) {
     <div style={{ background:colors.bg, padding:'16px 16px 20px', fontFamily, minHeight:'440px' }}>
       <div style={{ opacity:headerP, transform:`translateY(${(1-headerP)*5}px)`, marginBottom:14 }}>
         <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-          <div style={{ fontSize:14, fontWeight:700, color:colors.foreground }}>David Taisne</div>
+          <div style={{ fontSize:14, fontWeight:700, color:colors.foreground }}>Tom Becker</div>
           <div style={{ display:'flex', alignItems:'center', gap:4, padding:'2px 8px', borderRadius:999, background:colors.primarySoft, color:colors.primary, fontSize:9, fontWeight:700, letterSpacing:0.3 }}>
             <Sparkles size={9} /> {t('mensajeria.automaticBadge')}
           </div>
         </div>
-        <div style={{ fontSize:10, color:colors.meta, marginTop:2 }}>Luminoso Apartamento · ref. 5770048427</div>
+        <div style={{ fontSize:10, color:colors.meta, marginTop:2 }}>Apartamento Cala Moreta · ref. 4419302858</div>
       </div>
 
       <div style={{ display:'flex', flexDirection:'column', gap:12 }}>

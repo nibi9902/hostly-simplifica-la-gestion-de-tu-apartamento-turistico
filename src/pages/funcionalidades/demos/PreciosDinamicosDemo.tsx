@@ -87,7 +87,7 @@ function PreciosDinamicosView({ frame, fps }: { frame: number; fps: number }) {
         {/* Apartment + month nav */}
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:10 }}>
           <div style={{ display:'flex', alignItems:'center', gap:4, fontSize:10, color:colors.mutedFg }}>
-            Luminoso Apartamento · Dalí <ChevronDown size={11} />
+            Apartamento Cala Moreta <ChevronDown size={11} />
           </div>
           <div style={{ display:'flex', alignItems:'center', gap:4 }}>
             <ChevronLeft size={14} color={colors.foreground} />

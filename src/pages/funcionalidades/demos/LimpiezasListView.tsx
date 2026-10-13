@@ -196,7 +196,7 @@ export default function LimpiezasListView({ frame, fps }: { frame: number; fps: 
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 10, opacity: chipsP }}>
         <Chip label={t('limpiezas.filterAll')} active />
         <Chip label="Moderna casa…" />
-        <Chip label="Luminoso…" />
+        <Chip label="Cala Moreta…" />
       </div>
 
       {/* Llista */}
@@ -211,7 +211,7 @@ export default function LimpiezasListView({ frame, fps }: { frame: number; fps: 
         <Row
           progress={row1P}
           host="Clara Puig" refCode="HMX4K9B2TP" cleaner="Eva"
-          apartment="Luminoso Apartamento a 4 min del Museo…"
+          apartment="Apartamento Cala Moreta"
           statusLabel={statusT > 0 ? t('limpiezas.statusConfirmed') : t('limpiezas.statusPending')}
           statusColor={statusT > 0.1 ? colors.primary : colors.meta}
           statusT={statusT}
@@ -219,7 +219,7 @@ export default function LimpiezasListView({ frame, fps }: { frame: number; fps: 
         <Row
           progress={row2P}
           host="Marc Rovira" refCode="HMQ7N3D5WR" cleaner="Eva"
-          apartment="Luminoso Apartamento a 4 min del Museo…"
+          apartment="Apartamento Cala Moreta"
           statusLabel={t('limpiezas.statusConfirmed')}
           statusColor={colors.primary}
           statusT={1}
@@ -227,7 +227,7 @@ export default function LimpiezasListView({ frame, fps }: { frame: number; fps: 
         <Row
           progress={row3P}
           host="Elena Soler" refCode="8831920455" cleaner="Eva"
-          apartment="Luminoso Apartamento a 4 min del Museo…"
+          apartment="Apartamento Cala Moreta"
           statusLabel={t('limpiezas.statusConfirmed')}
           statusColor={colors.primary}
           statusT={1}
@@ -237,8 +237,8 @@ export default function LimpiezasListView({ frame, fps }: { frame: number; fps: 
         </div>
         <Row
           progress={row4P}
-          host="David Taisne" refCode="5770048427" cleaner="Eva"
-          apartment="Luminoso Apartamento a 4 min del Museo…"
+          host="Tom Becker" refCode="4419302858" cleaner="Eva"
+          apartment="Apartamento Cala Moreta"
           statusLabel={t('limpiezas.statusConfirmed')}
           statusColor={colors.success}
           statusT={1}

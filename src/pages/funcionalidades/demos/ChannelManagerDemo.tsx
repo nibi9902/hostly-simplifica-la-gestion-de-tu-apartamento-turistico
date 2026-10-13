@@ -35,7 +35,7 @@ const EXISTING: Stripe[] = [
   { initials:'MP', name:'Marta Pujol', weekIdx:1, col:0, span:3, platform:'airbnb'  },
   { initials:'AG', name:'Anna García', weekIdx:2, col:1, span:3, platform:'booking' },
 ];
-const NEW: Stripe = { initials:'DT', name:'David Taisne', weekIdx:3, col:2, span:4, platform:'booking' };
+const NEW: Stripe = { initials:'TB', name:'Tom Becker', weekIdx:3, col:2, span:4, platform:'booking' };
 
 function stripeTheme(p: 'airbnb'|'booking'|'hostly') {
   if (p === 'airbnb')
@@ -54,7 +54,7 @@ const stripeWidth = (span: number) => `calc(${span} * (100% - ${6*GAP}px) / 7 + 
    Timeline:
      0  → calendar fades in (existing stripes already present)
     14  → "Nueva reserva" notification badge slides in
-    30  → David Taisne stripe slides in from left
+    30  → Tom Becker stripe slides in from left
     42  → glow peaks
     80  → glow fades out
 ─────────────────────────────────────────────────────────────── */
@@ -107,7 +107,7 @@ function CalendarView({ frame, fps }: { frame: number; fps: number }) {
         {/* Apartment selector + month nav */}
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:10 }}>
           <div style={{ display:'flex', alignItems:'center', gap:4, fontSize:10, color:colors.mutedFg }}>
-            Luminoso Apartamento · Dalí <ChevronDown size={11} />
+            Apartamento Cala Moreta <ChevronDown size={11} />
           </div>
           <div style={{ display:'flex', alignItems:'center', gap:4 }}>
             <ChevronLeft size={14} color={colors.foreground} />

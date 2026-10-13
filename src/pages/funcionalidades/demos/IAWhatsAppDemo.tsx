@@ -26,7 +26,7 @@ Hola David 😊
 ¡Estamos encantados de recibiros y esperamos que disfrutéis mucho de la estancia!
 
 **Check-in online (obligatorio)**
-caserna13.com
+hostlylabs.com/i/k7q2
 (Al completarlo recibiréis los códigos de acceso)
 
 **Horarios**
@@ -299,7 +299,7 @@ const CheckinCard: React.FC<{ frame: number; fps: number; enterFrame: number }> 
           fontSize: 10, color: colors.primary, marginTop: 1,
           overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
         }}>
-          caserna13.com
+          hostlylabs.com/i/k7q2
         </div>
       </div>
     </div>
@@ -414,9 +414,9 @@ const IAWhatsAppDemo: React.FC<IAWhatsAppDemoProps> = ({ loop = false, staticMod
           fontFamily,
           overflow: 'hidden',
         }}>
-          {/* Header — David Taisne */}
+          {/* Header — Tom Becker */}
           <div style={{ fontSize: 13, fontWeight: 600, color: colors.foreground }}>
-            David Taisne · Luminoso Apartamento
+            Tom Becker · Apartamento Cala Moreta
           </div>
           <div style={{ fontSize: 10, color: colors.meta, marginBottom: 12 }}>
             {t('iaWhatsapp.header')}

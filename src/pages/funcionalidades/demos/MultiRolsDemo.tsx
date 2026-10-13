@@ -46,7 +46,7 @@ const STRIPES: Stripe[] = [
   { initials:'RC', name:'Rosa Camps',  weekIdx:0, col:2, span:3, platform:'hostly'  },
   { initials:'MP', name:'Marta Pujol', weekIdx:1, col:0, span:3, platform:'airbnb'  },
   { initials:'AG', name:'Anna García', weekIdx:2, col:1, span:3, platform:'booking' },
-  { initials:'DT', name:'David Taisne',weekIdx:3, col:2, span:4, platform:'booking' },
+  { initials:'TB', name:'Tom Becker',weekIdx:3, col:2, span:4, platform:'booking' },
 ];
 
 function stripeTheme(p: Stripe['platform']) {
@@ -86,7 +86,7 @@ function PropietariView({ frame, fps }: { frame: number; fps: number }) {
             <div style={{ width: 24, height: 24, borderRadius: 6, background: 'linear-gradient(135deg,#1a3a8f,#2563EB)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Sparkles size={11} color="#fff" />
             </div>
-            <span style={{ fontSize: 13, fontWeight: 700, color: colors.foreground }}>Luminoso Dalí</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: colors.foreground }}>Cala Moreta</span>
             <ChevronDown size={12} color={colors.mutedFg} />
           </div>
           <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'linear-gradient(135deg,#374151,#111827)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, color: '#fff' }}>JM</div>
@@ -109,7 +109,7 @@ function PropietariView({ frame, fps }: { frame: number; fps: number }) {
       {!showFinances && (
         <div style={{ padding: '10px 12px', opacity: calP }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-            <div style={{ fontSize: 10, color: colors.mutedFg }}>Luminoso Apartamento · Dalí <ChevronDown size={10} /></div>
+            <div style={{ fontSize: 10, color: colors.mutedFg }}>Apartamento Cala Moreta <ChevronDown size={10} /></div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
               <ChevronLeft size={13} color={colors.foreground} />
               <span style={{ fontSize: 11, fontWeight: 600, color: colors.foreground, padding: '0 5px' }}>abril 2026</span>
@@ -352,12 +352,12 @@ function NetejadoraView({ frame, fps }: { frame: number; fps: number }) {
     14: { bg:'rgba(0,53,128,0.08)',   border:'rgba(0,53,128,0.2)',    nameColor:'#1E3A8A', name:'Anna' },
     15: { bg:'rgba(0,53,128,0.08)',   border:'rgba(0,53,128,0.2)',    nameColor:'#1E3A8A' },
     16: { bg:'#F0FDF4', border:'#86EFAC', nameColor:colors.green, clean:'done' },
-    // Judit Masip (Airbnb)
+    // Nora Vidal (Airbnb)
     20: { bg:'rgba(255,90,95,0.09)',  border:'rgba(255,90,95,0.2)',   nameColor:'#9B2335', name:'Judit' },
     21: { bg:'rgba(255,90,95,0.09)',  border:'rgba(255,90,95,0.2)',   nameColor:'#9B2335' },
     // Avui: neteja urgent
     22: { bg:'#FFF7ED', border:colors.orange, nameColor:colors.orange, clean:'today' },
-    // David Taisne (Booking)
+    // Tom Becker (Booking)
     23: { bg:'rgba(0,53,128,0.08)',   border:'rgba(0,53,128,0.2)',    nameColor:'#1E3A8A', name:'David' },
     24: { bg:'rgba(0,53,128,0.08)',   border:'rgba(0,53,128,0.2)',    nameColor:'#1E3A8A' },
     25: { bg:'rgba(0,53,128,0.08)',   border:'rgba(0,53,128,0.2)',    nameColor:'#1E3A8A' },
@@ -410,7 +410,7 @@ function NetejadoraView({ frame, fps }: { frame: number; fps: number }) {
           </div>
           {/* Weekday labels */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(7,1fr)', padding:'0 10px 4px', opacity: calItem1P }}>
-            {['DL','DT','DC','DJ','DV','DS','DG'].map(d => (
+            {['DL','TB','DC','DJ','DV','DS','DG'].map(d => (
               <div key={d} style={{ textAlign:'center', fontSize:9, fontWeight:600, color:colors.meta, letterSpacing:'0.04em' }}>{d}</div>
             ))}
           </div>
@@ -471,7 +471,7 @@ function NetejadoraView({ frame, fps }: { frame: number; fps: number }) {
                 <span style={{ fontSize:11, fontWeight:700, color:colors.orange }}>{t('limpiezas.cleaningToday')}</span>
                 <span style={{ fontSize:9, fontWeight:700, padding:'2px 8px', borderRadius:999, background:colors.orangeSoft, color:colors.orange }}>{t('limpiezas.urgentBadge')}</span>
               </div>
-              <div style={{ fontSize:13, fontWeight:700, color:colors.foreground }}>Luminoso Dalí</div>
+              <div style={{ fontSize:13, fontWeight:700, color:colors.foreground }}>Cala Moreta</div>
               <div style={{ fontSize:10, color:colors.meta, marginTop:2 }}>Judit sale 11:00 · David entra 15:00 · 2 adultos + 1 niño</div>
             </div>
           )}
@@ -487,7 +487,7 @@ function NetejadoraView({ frame, fps }: { frame: number; fps: number }) {
             <div style={{ background: colors.card, borderRadius: 14, border: `2px solid ${colors.orange}`, boxShadow: `0 0 0 4px ${colors.orangeSoft}`, padding: '12px 13px', opacity: cardP, transform: `translateY(${(1-cardP)*6}px)` }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 7 }}>
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: colors.foreground }}>Luminoso Dalí</div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: colors.foreground }}>Cala Moreta</div>
                   <div style={{ fontSize: 10, color: colors.meta, marginTop: 1 }}>{t('limpiezas.exitTime')}</div>
                 </div>
                 <div style={{ padding: '3px 9px', borderRadius: 999, background: colors.orangeSoft, fontSize: 9, fontWeight: 700, color: colors.orange }}>{t('limpiezas.todayBadge')}</div>

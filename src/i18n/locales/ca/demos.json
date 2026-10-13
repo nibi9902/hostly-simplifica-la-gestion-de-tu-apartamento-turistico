@@ -53,7 +53,7 @@
       "checkin": "El check-in és autònom a partir de les 15:00…",
       "dades": "Hola, David! 👋 Necessitem que ens enviïs…",
       "checkout": "Recorda que el check-out s'ha de fer abans…",
-      "netejaNova": "Hola, Eva, hi ha una reserva nova a Luminoso…",
+      "netejaNova": "Hola, Eva, hi ha una reserva nova a Cala Moreta…",
       "netejaCancel": "Hola, Eva, la reserva prevista s'ha cancel·lat…",
       "netejaRecordatori": "Recorda que demà hi ha neteja a les 11:00…"
     },
@@ -110,9 +110,9 @@
     "exitTime": "La Judit marxa a les 11:00",
     "guestDetails": "Judit marxa 11:00 · David entra 15:00 · 2 adults + 1 nen",
     "typing": "HOSTLY IA · escrivint…",
-    "iaAEva": "Hola Eva\nNOVA Reserva – 5770048427\nApartament: Luminoso Apartamento a 4 min del Museu Dalí\nEntren el dia: 2026-04-22 a les 15:00\nSurten el: 2026-04‑26 a les 11:00\nSón 2 adults i 1 nen\nPots fer la neteja aquest dia?",
+    "iaAEva": "Hola Eva\nNOVA Reserva – 4419302858\nApartament: Apartament Cala Moreta\nEntren el dia: 2026-04-22 a les 15:00\nSurten el: 2026-04‑26 a les 11:00\nSón 2 adults i 1 nen\nPots fer la neteja aquest dia?",
     "respostaEva": "Sí, la faré, hi aniré cap a les 11",
-    "iaConfirma": "Perfecte, Eva, gràcies! 😊\n\nQueda **confirmada** la neteja de la reserva **5770048427** per al **26 d'abril de 2026** a les **11:00**.\n\nSi hi ha cap canvi, avisa'm."
+    "iaConfirma": "Perfecte, Eva, gràcies! 😊\n\nQueda **confirmada** la neteja de la reserva **4419302858** per al **26 d'abril de 2026** a les **11:00**.\n\nSi hi ha cap canvi, avisa'm."
   },
   "precios": {
     "dynamicPrices": "Preus dinàmics",

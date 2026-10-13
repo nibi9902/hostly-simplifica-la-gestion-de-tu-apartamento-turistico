@@ -169,7 +169,7 @@ function ChatView({ frame, fps }: { frame: number; fps: number }) {
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
         <div style={{ fontSize: 13, fontWeight: 600, color: colors.foreground }}>
-          Eva · Luminoso Apartamento
+          Eva · Apartamento Cala Moreta
         </div>
         <div style={{
           display: 'flex', alignItems: 'center', gap: 4,

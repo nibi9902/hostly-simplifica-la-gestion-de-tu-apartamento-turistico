@@ -115,7 +115,7 @@ function HuespedView({ frame, fps }: { frame: number; fps: number }) {
       }}>
         <div style={{ fontSize: 10, color: colors.mutedFg, marginBottom: 4 }}>{t('checkin.apartment')}</div>
         <div style={{ fontSize: 13, fontWeight: 700, color: colors.foreground }}>
-          Luminoso Apartamento a 4 min del Museo Dalí
+          Apartamento Cala Moreta
         </div>
       </div>
 
@@ -290,15 +290,15 @@ function PropietariView({ frame, fps }: { frame: number; fps: number }) {
             <User size={16} color="#fff" />
           </div>
           <div>
-            <div style={{ fontSize: 13, fontWeight: 700, color: colors.foreground }}>Judit Masip</div>
-            <div style={{ fontSize: 10, color: colors.mutedFg }}>2 {t('checkin.adults')} · 1 {t('checkin.child')} · ref. 5770048427</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: colors.foreground }}>Nora Vidal</div>
+            <div style={{ fontSize: 10, color: colors.mutedFg }}>2 {t('checkin.adults')} · 1 {t('checkin.child')} · ref. 4419302858</div>
           </div>
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
           {[
             { icon: <Calendar size={10} />, text: t('checkin.checkInShort') },
             { icon: <Calendar size={10} />, text: t('checkin.checkOutShort') },
-            { icon: <Building2 size={10} />, text: 'Luminoso Dalí' },
+            { icon: <Building2 size={10} />, text: 'Cala Moreta' },
           ].map(({ icon, text }) => (
             <div key={text} style={{
               display: 'flex', alignItems: 'center', gap: 4,
@@ -439,8 +439,8 @@ const CheckinDemo: React.FC<CheckinDemoProps> = ({ loop = false, staticMode = fa
   const propietariFrame = staticMode ? PROPIETARI_FRAMES : propietariFramePlayback;
 
   const chromeUrl = view === 'huesped'
-    ? 'checkin.hostlylabs.com/acceso/5770048427'
-    : 'app.hostlylabs.com/checkins/5770048427';
+    ? 'checkin.hostlylabs.com/acceso/4419302858'
+    : 'app.hostlylabs.com/checkins/4419302858';
 
   return (
     <div
