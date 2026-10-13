@@ -512,6 +512,13 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 /* ── /demo: els cinc vídeos de la sèrie «Todo va solo» ──
    A l'ordinador, en fila; al mòbil, una tira que llisca amb el dit (fins a la vora, com .fins-a-la-vora). */
 .pt-demo { padding-block: 136px 88px; background: var(--pt-blanc); }
+/* el vídeo d'un minut, a dalt: 16:9, sense passar de l'alçada de la pantalla */
+.pt-demo-gran { margin: 44px auto 0; width: min(100%, 1120px, calc((100vh - 180px) * 16 / 9)); }
+.pt-demo-gran-marc { position: relative; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 22px; overflow: hidden; background: #eef0f3; box-shadow: 0 30px 70px -30px rgba(15, 23, 42, .45), 0 0 0 1px rgba(15, 23, 42, .06); }
+.pt-demo-gran-marc video { display: block; width: 100%; height: 100%; object-fit: cover; background: #eef0f3; }
+.pt-video-play.pt-video-play-gran { width: 76px; height: 76px; margin: -38px 0 0 -38px; background: var(--pt-text); color: #fff; box-shadow: 0 14px 34px rgba(15, 23, 42, .35); }
+.pt-video-play.pt-video-play-gran .pt-ic { width: 26px; height: 26px; margin-left: 4px; }
+.pt-demo-curts { margin-top: 96px; text-align: center; font-size: 30px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
 .pt-videos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; margin-top: 48px; }
 .pt-video { margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
 .pt-video-marc { position: relative; aspect-ratio: 9 / 16; max-width: 100%; border-radius: 22px; overflow: hidden; background: #0b0d12; box-shadow: 0 24px 50px -24px rgba(15, 23, 42, .45), 0 0 0 1px rgba(15, 23, 42, .06); }
@@ -605,6 +612,10 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-preguntes-cap { position: static; }
   .pt-preguntes-cap h2 { font-size: 28px; }
   .pt-demo { padding-block: 112px 56px; }
+  .pt-demo-gran { margin-top: 32px; }
+  .pt-demo-gran-marc { border-radius: 14px; }
+  .pt-video-play.pt-video-play-gran { width: 60px; height: 60px; margin: -30px 0 0 -30px; }
+  .pt-demo-curts { margin-top: 64px; font-size: 24px; }
   .pt-fp-entrada { padding-block: 112px 48px; }
   .pt-fp-entrada-graella, .pt-fp-dues { grid-template-columns: minmax(0, 1fr); gap: 36px; }
   .pt-fp-h1 { font-size: 34px; }

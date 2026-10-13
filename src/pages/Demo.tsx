@@ -1,7 +1,8 @@
 /**
- * /demo («Ver cómo funciona»), a l'estil de la portada (13-10-2026): els cinc vídeos de la sèrie
- * «Todo va solo» (~/hostly-videos/entregues), un per cosa que Hostly fa per tu. Abans hi havia un sol
- * vídeo de l'app d'abril, en català i amb «Hostly Automàtic», que no torna tal com era.
+ * /demo («Ver cómo funciona»), a l'estil de la portada (13-10-2026). A dalt, el vídeo d'un minut d'abril
+ * («un día cualquiera con Hostly»): el Biel el volia tal com era, i s'ha tornat a renderitzar amb l'app
+ * en castellà (projecte de Remotion a ~/hostly-videos/demo-60s). A sota, els cinc
+ * vídeos de la sèrie «Todo va solo» (~/hostly-videos/entregues), un per cosa que Hostly fa per tu.
  *
  * Els vídeos de la web són còpies a 720 px, tallades abans de la píndola final «Pruébala gratis 14
  * días» (ja no és l'oferta): acaben amb el logotip i «Que tu piso no te gestione a ti». Els originals
@@ -12,7 +13,7 @@
  * passar al següent; es tanca amb Esc, la creu o un clic fora. Mirar-ne un compta com a `video_play`
  * (a Meta, «VerVideo»).
  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as Dialeg from "@radix-ui/react-dialog";
 import { ArrowLeft, ArrowRight, Play, X } from "lucide-react";
@@ -32,6 +33,27 @@ export default function Demo() {
   const nota = t("demo.nota_idioma", { defaultValue: "" });
   // el vídeo obert (índex), o cap
   const [obert, setObert] = useState<number | null>(null);
+  // el vídeo gran: fins que no el posen en marxa, la portada amb el botó; després, els controls del navegador
+  const principal = useRef<HTMLVideoElement>(null);
+  const [enMarxa, setEnMarxa] = useState(false);
+  const comptat = useRef(false);
+  const posaEnMarxa = () => {
+    setEnMarxa(true);
+    const v = principal.current as (HTMLVideoElement & { webkitEnterFullscreen?: () => void }) | null;
+    if (!v) return;
+    void v.play().catch(() => {});
+    // Al mòbil, aquest vídeo (apaïsat i amb el text de l'app petit) es mira a pantalla completa
+    if (window.matchMedia("(max-width: 640px)").matches) {
+      if (v.requestFullscreen) void v.requestFullscreen().catch(() => v.webkitEnterFullscreen?.());
+      else v.webkitEnterFullscreen?.();
+    }
+  };
+  const quanComenca = () => {
+    setEnMarxa(true);
+    if (comptat.current) return;
+    comptat.current = true;
+    track("video_play", { location: "demo", variant: "un-dia" });
+  };
 
   const mira = (i: number) => {
     setObert(i);
@@ -66,6 +88,27 @@ export default function Demo() {
             <p className="pt-lead">{t("demo.subheading")}</p>
           </div>
 
+          <figure className="pt-demo-gran">
+            <div className="pt-demo-gran-marc">
+              <video
+                ref={principal}
+                src="/assets/demo/un-dia-con-hostly.mp4"
+                poster="/assets/demo/un-dia-con-hostly.webp"
+                preload="none"
+                playsInline
+                controls={enMarxa}
+                onPlay={quanComenca}
+              />
+              {!enMarxa && (
+                <button type="button" className="pt-video-boto" onClick={posaEnMarxa} aria-label={t("demo.principal_veure")}>
+                  <span className="pt-video-play pt-video-play-gran" aria-hidden="true"><Play className="pt-ic" fill="currentColor" /></span>
+                </button>
+              )}
+            </div>
+          </figure>
+          {nota && <p className="pt-videos-nota">{nota}</p>}
+
+          <h2 className="pt-demo-curts">{t("demo.curts_titol")}</h2>
           <div className="pt-videos">
             {videos.map((v, i) => (
               <figure key={v.id} className="pt-video">
@@ -79,7 +122,6 @@ export default function Demo() {
               </figure>
             ))}
           </div>
-          {nota && <p className="pt-videos-nota">{nota}</p>}
 
           <div className="pt-demo-peu">
             <div className="pt-demo-botons">

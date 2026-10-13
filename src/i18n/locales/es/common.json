@@ -113,10 +113,10 @@
   },
   "demo": {
     "meta_title": "Así funciona Hostly, en vídeo",
-    "meta_description": "Cinco vídeos cortos con la app de verdad: el registro a la policía, los mensajes, el calendario, la limpieza y las cuentas.",
+    "meta_description": "Un día con Hostly en un minuto y cinco vídeos cortos con la app de verdad: el registro a la policía, los mensajes, el calendario, la limpieza y las cuentas.",
     "eyebrow": "Cómo funciona",
     "heading": "Así funciona Hostly.",
-    "subheading": "Cinco vídeos de menos de un minuto, con la app de verdad.",
+    "subheading": "Un día cualquiera con Hostly, en un minuto. Debajo, cada cosa por separado.",
     "videos": [
       {
         "id": "policia",
@@ -150,7 +150,9 @@
     "disclaimer": "Sin permanencia · El primer mes, gratis",
     "anterior": "Vídeo anterior",
     "seguent": "Vídeo siguiente",
-    "tancar": "Cerrar"
+    "tancar": "Cerrar",
+    "principal_veure": "Ver el vídeo: un día con Hostly",
+    "curts_titol": "Cada cosa, en menos de un minuto"
   },
   "guia": {
     "meta_title": "Superguía de gestión de apartamentos turísticos 2026 | Hostly",

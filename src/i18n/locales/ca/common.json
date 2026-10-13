@@ -113,10 +113,10 @@
   },
   "demo": {
     "meta_title": "Així funciona Hostly, en vídeo",
-    "meta_description": "Cinc vídeos curts amb l'app de debò: el registre a la policia, els missatges, el calendari, la neteja i els comptes.",
+    "meta_description": "Un dia amb Hostly en un minut i cinc vídeos curts amb l'app de debò: el registre a la policia, els missatges, el calendari, la neteja i els comptes.",
     "eyebrow": "Com funciona",
     "heading": "Així funciona Hostly.",
-    "subheading": "Cinc vídeos de menys d'un minut, amb l'app de debò.",
+    "subheading": "Un dia qualsevol amb Hostly, en un minut. A sota, cada cosa per separat.",
     "videos": [
       {
         "id": "policia",
@@ -151,7 +151,9 @@
     "disclaimer": "Sense permanència · El primer mes, gratis",
     "anterior": "Vídeo anterior",
     "seguent": "Vídeo següent",
-    "tancar": "Tancar"
+    "tancar": "Tancar",
+    "principal_veure": "Veure el vídeo: un dia amb Hostly",
+    "curts_titol": "Cada cosa, en menys d'un minut"
   },
   "guia": {
     "meta_title": "Superguia de gestió d'apartaments turístics 2026 | Hostly",
