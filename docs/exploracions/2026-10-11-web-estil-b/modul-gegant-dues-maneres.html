@@ -1,0 +1,422 @@
+<title>Mòdul gegant del Completo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+/* El mòdul que aniria just després de «Gratis para siempre», amb el mateix llenguatge: la targeta
+   fosca amb el número gegant i quatre peces clares. Aquí, una per cada funció del Completo, i es
+   passa d'una a l'altra clicant. Dues maneres: A, pestanyes a dalt; B, l'índex dins de la targeta.
+   Colors i lletra: els de la portada de hostlylabs.com (una sola aparença, clara, com la web). */
+:root {
+  color-scheme: light;
+  --fons: hsl(210 20% 98%);
+  --blanc: #fff;
+  --text: hsl(220 14% 11%);
+  --gris: hsl(220 9% 46%);
+  --linia: hsl(220 13% 91%);
+  --blau: #2563EB;
+  --blau-fosc: #1D4ED8;
+  --blau-app: #3B82F6;
+  --blau-suau: hsl(214 100% 97%);
+  --verd: hsl(142 76% 36%);
+  --verd-fosc: hsl(142 76% 26%);
+  --verd-suau: hsl(138 76% 96%);
+  --fosc: hsl(220 14% 11%);
+  --airbnb: #FF385C;
+  --booking: #1E40AF;
+  --whatsapp: #16A34A;
+  --cos: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fons); color: var(--text); font-family: var(--cos); -webkit-font-smoothing: antialiased; font-feature-settings: "cv11" 1; }
+p, h1, h2, h3 { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+.ic { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.pg { max-width: 1360px; margin: 0 auto; padding-inline: 24px; padding-block: 40px 96px; display: flex; flex-direction: column; gap: 40px; }
+
+/* ── Notes per al Biel (en català) ── */
+.cap { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
+.cap small { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gris); }
+.cap h1 { font-size: 34px; line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+.cap p { font-size: 16px; line-height: 1.55; color: var(--gris); }
+.nom-opcio { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.nom-opcio b { font-size: 20px; letter-spacing: -0.01em; }
+.nom-opcio span { font-size: 15px; color: var(--gris); }
+
+/* ── L'escenari: com la secció blanca de la portada ── */
+.esc { background: var(--blanc); border-radius: 28px; box-shadow: 0 0 0 1px var(--linia); padding: 64px 40px 56px; }
+.centre { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+.retol { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gris); }
+.h2 { font-size: 52px; line-height: 1.04; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
+
+/* Pestanyes (A) */
+.pestanyes { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.pest { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 20px; border-radius: 9999px; border: 0; background: var(--blanc); color: var(--text); font-size: 15px; font-weight: 500; cursor: pointer; box-shadow: inset 0 0 0 1px var(--linia), 0 1px 2px rgba(0, 0, 0, .04); transition: background-color .2s ease, color .2s ease; }
+.pest:hover { background: var(--fons); }
+.pest[aria-selected="true"] { background: var(--fosc); color: #fff; box-shadow: none; }
+.pest .ic { width: 17px; height: 17px; }
+.pest i { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--blau-app); }
+
+/* El bento: igual que el del Gratis */
+.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(250px, auto)); gap: 20px; margin-top: 28px; }
+.fosca { grid-column: 1 / 3; grid-row: 1 / 3; border-radius: 28px; background: var(--fosc); color: #fff; padding: 36px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.fosca .retol { color: rgba(255, 255, 255, .65); }
+.gran { margin-top: auto; font-size: 220px; line-height: .82; font-weight: 700; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.gran[data-mida="m"] { font-size: 170px; letter-spacing: -0.05em; }
+.frase { font-size: 24px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance; }
+.txt { font-size: 16px; line-height: 1.5; color: rgba(255, 255, 255, .82); max-width: 34em; }
+.pill { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 24px; margin-top: 6px; border-radius: 9999px; background: var(--blanc); color: var(--text); font-size: 16px; font-weight: 500; }
+.pill:hover { background: hsl(210 20% 94%); }
+.pill .ic { width: 16px; height: 16px; }
+
+.tile { min-width: 0; border-radius: 24px; background: var(--fons); box-shadow: inset 0 0 0 1px var(--linia); padding: 20px; display: flex; flex-direction: column; gap: 6px; }
+.tile h3 { font-size: 17px; line-height: 1.3; font-weight: 600; }
+.tile > p { font-size: 14px; line-height: 1.45; color: var(--gris); }
+.mostra { margin-top: auto; border-radius: 14px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0, 0, 0, .06); padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; font-size: 12px; line-height: 16px; }
+.fila { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.fila b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.et { color: var(--gris); }
+.xip-verd, .xip-gris, .xip-blau { align-self: flex-start; display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 9px; border-radius: 9999px; font-weight: 600; white-space: nowrap; }
+.fila .xip-verd, .fila .xip-gris, .fila .xip-blau { align-self: center; }
+.xip-verd { background: var(--verd-suau); color: var(--verd-fosc); }
+.xip-gris { background: hsl(210 20% 95%); color: hsl(220 9% 40%); }
+.xip-blau { background: var(--blau-suau); color: var(--blau-fosc); }
+.xip-verd .ic, .xip-gris .ic, .xip-blau .ic { width: 12px; height: 12px; stroke-width: 3; }
+.punt { display: inline-block; width: 8px; height: 8px; border-radius: 9999px; margin-right: 6px; vertical-align: 0; }
+
+/* bombolles */
+.bom { max-width: 92%; padding: 7px 10px; border-radius: 12px; line-height: 1.35; }
+.bom-hu { align-self: flex-start; background: var(--fons); box-shadow: inset 0 0 0 1px var(--linia); border-bottom-left-radius: 4px; }
+.bom-ia { align-self: flex-end; background: var(--blau-suau); border-bottom-right-radius: 4px; }
+.bom-ia small { display: block; font-size: 9px; font-weight: 700; letter-spacing: .06em; color: var(--blau); margin-bottom: 2px; }
+.botons { display: flex; gap: 6px; }
+.boto { flex: 1; display: inline-flex; align-items: center; justify-content: center; height: 28px; border-radius: 9999px; font-weight: 600; background: var(--blau); color: #fff; }
+.boto-sec { background: var(--blanc); color: var(--text); box-shadow: inset 0 0 0 1px var(--linia); }
+.av { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 9999px; background: var(--blau-suau); color: var(--blau-fosc); font-size: 10px; font-weight: 700; flex-shrink: 0; }
+
+/* calendari petit */
+.setm { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; font-size: 10px; color: var(--gris); text-align: center; }
+.barres { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); row-gap: 4px; }
+.barra { height: 18px; border-radius: 9999px; font-size: 10px; font-weight: 600; line-height: 18px; padding-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.b-air { background: hsl(350 100% 96%); color: hsl(350 70% 38%); }
+.b-boo { background: hsl(222 90% 95%); color: var(--booking); }
+.b-dir { background: hsl(220 14% 93%); color: hsl(220 9% 30%); }
+
+/* preus de la setmana */
+.preus { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); align-items: end; gap: 5px; height: 74px; }
+.preus span { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 3px; height: 100%; font-size: 9px; color: var(--gris); }
+.preus i { width: 100%; border-radius: 5px 5px 2px 2px; background: hsl(214 95% 90%); }
+.preus span.alt i { background: var(--blau-app); }
+.preus span b { font-size: 9px; color: var(--text); font-weight: 600; }
+.limits { position: relative; height: 6px; border-radius: 9999px; background: hsl(220 13% 90%); margin: 8px 2px 2px; }
+.limits i { position: absolute; top: 0; bottom: 0; left: 20%; right: 18%; border-radius: 9999px; background: hsl(214 95% 85%); }
+.limits b { position: absolute; top: 50%; left: 63%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 9999px; background: var(--blau); box-shadow: 0 0 0 3px #fff; }
+
+/* fotos de la neteja */
+.fotos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+.fotos i { aspect-ratio: 1; border-radius: 8px; }
+.fotos i:nth-child(1) { background: linear-gradient(135deg, hsl(36 40% 86%), hsl(30 25% 70%)); }
+.fotos i:nth-child(2) { background: linear-gradient(135deg, hsl(200 30% 88%), hsl(205 20% 68%)); }
+.fotos i:nth-child(3) { background: linear-gradient(135deg, hsl(140 15% 86%), hsl(150 10% 66%)); }
+
+/* barres de mesos */
+.mesos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: end; gap: 8px; height: 46px; }
+.mesos i { display: block; border-radius: 5px 5px 2px 2px; background: hsl(214 95% 88%); }
+.mesos i:last-child { background: var(--blau-app); }
+.pdf { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 9px; border-radius: 9999px; background: hsl(210 20% 96%); font-weight: 500; }
+.pdf .ic { width: 13px; height: 13px; color: hsl(0 72% 51%); }
+
+/* B: l'índex dins de la targeta fosca */
+.fosca-b { gap: 0; padding: 28px 28px 30px; }
+.idx { display: flex; flex-direction: column; }
+.idx-el { border-top: 1px solid rgba(255, 255, 255, .12); }
+.idx-el:first-child { border-top: 0; }
+.idx-cap { width: 100%; display: flex; align-items: center; gap: 12px; padding: 14px 4px; border: 0; background: none; color: rgba(255, 255, 255, .62); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; text-align: left; cursor: pointer; }
+.idx-cap:hover { color: #fff; }
+.idx-cap .ic { width: 18px; height: 18px; }
+.idx-cap em { margin-left: auto; font-style: normal; font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, .45); }
+.idx-el.obert .idx-cap { color: #fff; }
+.idx-el.obert .idx-cap em { visibility: hidden; }
+.idx-cos { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s cubic-bezier(.22, 1, .36, 1); }
+.idx-el.obert .idx-cos { grid-template-rows: 1fr; }
+.idx-cos > div { overflow: hidden; display: flex; flex-direction: column; gap: 12px; }
+.idx-cos .gran { margin-top: 4px; font-size: 150px; }
+.idx-cos .gran[data-mida="m"] { font-size: 118px; }
+.idx-cos .pill { margin-bottom: 18px; }
+.idx-barra { height: 2px; margin: -1px 4px 0; background: rgba(255, 255, 255, .12); overflow: hidden; }
+.idx-barra i { display: block; height: 100%; width: 0; background: var(--blau-app); }
+.bento-b .fosca { grid-row: 1 / 3; }
+
+/* l'entrada de les peces quan canvia la funció */
+.surt { animation: surt .5s cubic-bezier(.22, 1, .36, 1) both; }
+.surt:nth-child(2) { animation-delay: .05s; } .surt:nth-child(3) { animation-delay: .1s; } .surt:nth-child(4) { animation-delay: .15s; } .surt:nth-child(5) { animation-delay: .2s; }
+@keyframes surt { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+.peu-op { margin-top: 18px; font-size: 14px; line-height: 1.5; color: var(--gris); text-align: center; text-wrap: balance; }
+
+@media (max-width: 1100px) {
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; }
+  .fosca, .bento-b .fosca { grid-column: 1 / -1; grid-row: auto; }
+  .gran { font-size: 150px; } .gran[data-mida="m"] { font-size: 120px; }
+}
+@media (max-width: 640px) {
+  .esc { padding: 40px 16px 32px; border-radius: 20px; }
+  .h2 { font-size: 34px; }
+  .pestanyes { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin-inline: -16px; padding-inline: 16px; scrollbar-width: none; }
+  .pest { flex-shrink: 0; }
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .fosca { padding: 28px 24px; }
+  .gran, .idx-cos .gran { font-size: 112px; } .gran[data-mida="m"], .idx-cos .gran[data-mida="m"] { font-size: 88px; }
+  .frase { font-size: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .surt { animation: none; }
+  .idx-cos { transition: none; }
+}
+</style>
+
+<div class="pg">
+  <header class="cap">
+    <small>Exploració · 13-10-2026</small>
+    <h1>El mòdul gegant, de dues maneres</h1>
+    <p>Aniria just després de «Gratis para siempre», amb el mateix llenguatge: la targeta fosca amb un número gegant i quatre peces que s'entenen d'un cop d'ull. A dalt, el 0 € del pla gratis; aquí, el Completo, funció per funció. Passa sol cada vuit segons fins que hi cliques; amb «reduir moviment», no passa sol.</p>
+  </header>
+
+  <section aria-labelledby="t-a">
+    <div class="nom-opcio"><b id="t-a">A · Pestanyes a dalt</b><span>Es veu d'entrada que n'hi ha cinc. És la més clara al mòbil (les pestanyes llisquen).</span></div>
+    <div class="esc" style="margin-top:14px">
+      <div class="centre">
+        <p class="retol">Hostly Completo</p>
+        <h2 class="h2">Con el Completo, todo lo demás.</h2>
+      </div>
+      <div class="pestanyes" role="tablist" aria-label="Funciones del Completo" id="pest-a"></div>
+      <div class="bento" id="bento-a" role="tabpanel" aria-labelledby="t-a"></div>
+      <p class="peu-op">El botó blanc porta a la pàgina de cada funció.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-b">
+    <div class="nom-opcio"><b id="t-b">B · L'índex dins de la targeta fosca</b><span>Sembla més una sola peça. El número gran s'obre a la funció triada; les altres queden plegades.</span></div>
+    <div class="esc" style="margin-top:14px">
+      <div class="centre">
+        <p class="retol">Hostly Completo</p>
+        <h2 class="h2">Con el Completo, todo lo demás.</h2>
+      </div>
+      <div class="bento bento-b" id="bento-b"></div>
+      <p class="peu-op">Les quatre peces de la dreta canvien amb la funció oberta.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+// Icones (traços de lucide)
+const IC = {
+  missatges: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+  calendari: '<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+  neteja: '<path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>',
+  preus: '<path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/>',
+  comptes: '<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>',
+  tic: '<path d="M20 6 9 17l-5-5"/>',
+  rellotge: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+  pdf: '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8"/>',
+  fletxa: '<path d="M5 12h14M12 5l7 7-7 7"/>',
+};
+const ic = (n, cls = "ic") => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
+const verd = (t) => `<span class="xip-verd">${ic("tic")}${t}</span>`;
+const gris = (t, icona = "rellotge") => `<span class="xip-gris">${ic(icona)}${t}</span>`;
+const tile = (h, p, mostra) => `<div class="tile surt"><h3>${h}</h3><p>${p}</p><div class="mostra" aria-hidden="true">${mostra}</div></div>`;
+
+// Les cinc funcions: la targeta fosca i les quatre peces de cadascuna
+const F = [
+  {
+    id: "missatges", nom: "Mensajes", curt: "Contesta solo",
+    gran: "24/7", frase: "Contesta a tus huéspedes automáticamente.",
+    txt: "Con lo que sabe de cada piso: el wifi, las normas, cómo llegar. Lo que no sabe, te lo pasa a ti.",
+    peces: [
+      tile("Contesta al momento", "Por WhatsApp, Airbnb o Booking.",
+        `<p class="bom bom-hu">¿Cuál es la clave del wifi?</p>
+         <p class="bom bom-ia"><small>HOSTLY IA</small>Red «CalaMoreta», clave mar-azul-26 🙂</p>
+         <p class="fila"><span class="et">Contestado en 4 s</span></p>`),
+      tile("Lo que no sabe, te lo pasa", "Y decides tú.",
+        `<p class="fila" style="justify-content:flex-start"><span class="av">NV</span><span>Nora pregunta si pueden entrar a las 12.</span></p>
+         <div class="botons"><span class="boto">Sí, que entren</span><span class="boto boto-sec">No</span></div>`),
+      tile("Mensajes que salen solos", "La bienvenida, cómo llegar, la salida.",
+        `<p class="fila"><span class="et">Al reservar</span><b>Bienvenida</b>${verd("Enviado")}</p>
+         <p class="fila"><span class="et">1 día antes</span><b>Cómo llegar</b>${verd("Enviado")}</p>
+         <p class="fila"><span class="et">Día de salida</span><b>Recordatorio</b>${gris("9:00")}</p>`),
+      tile("Todo en un solo chat", "Las conversaciones de todos los canales.",
+        `<p class="fila"><span><i class="punt" style="background:var(--whatsapp)"></i>WhatsApp</span><b>12</b></p>
+         <p class="fila"><span><i class="punt" style="background:var(--airbnb)"></i>Airbnb</span><b>5</b></p>
+         <p class="fila"><span><i class="punt" style="background:var(--booking)"></i>Booking</span><b>3</b></p>`),
+    ],
+  },
+  {
+    id: "calendari", nom: "Calendario", curt: "Uno solo",
+    gran: "1", frase: "Un solo calendario para Airbnb, Booking y tus reservas.",
+    txt: "Cuando entra una reserva, esas noches se cierran en los demás canales. Sin dobles reservas.",
+    peces: [
+      tile("Todas las reservas, juntas", "Cada canal, con su color.",
+        `<div class="setm"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+         <div class="barres">
+           <span class="barra b-air" style="grid-column:1 / 4">Camille</span>
+           <span class="barra b-boo" style="grid-column:3 / 7">Nora</span>
+           <span class="barra b-dir" style="grid-column:6 / 8">Lukas</span>
+         </div>`),
+      tile("Se cierra solo en los demás", "En cuanto entra la reserva.",
+        `<p class="fila"><span class="et">Booking · Nora Vidal</span><b>22–26 abr</b></p>
+         <p class="fila"><span>Airbnb</span>${verd("Cerrado")}</p>
+         <p class="fila"><span>Reservas directas</span>${verd("Cerrado")}</p>`),
+      tile("Bloquea los días que quieras", "Para ti, la familia o una obra.",
+        `<p class="fila"><b>1–3 may</b>${gris("Bloqueado", "calendari")}</p>
+         <p class="fila"><span class="et">Motivo</span><span>Familia</span></p>`),
+      tile("Siempre cuadrado", "Y cada 20 minutos lo vuelve a comprobar.",
+        `<p class="fila"><span>Airbnb y Booking</span>${verd("Todo cuadra")}</p>
+         <p class="fila"><span class="et">Comprobado hace 3 min</span></p>`),
+    ],
+  },
+  {
+    id: "neteja", nom: "Limpieza", curt: "Se coordina sola",
+    gran: "0", frase: "llamadas para cuadrar la limpieza.",
+    txt: "Cada salida crea su limpieza y Hostly avisa al equipo por WhatsApp. Si alguien no puede, se lo pide a la siguiente.",
+    peces: [
+      tile("Avisa al equipo", "Por WhatsApp, con la hora de salida.",
+        `<p class="bom bom-ia"><small>HOSTLY</small>Pilar, ¿puedes el domingo 26 a las 11?</p>
+         <p class="bom bom-hu">Sí, la hago 👍</p>
+         ${verd("Confirmada")}`),
+      tile("Si no puede, la siguiente", "Por orden, hasta que alguien diga que sí.",
+        `<p class="fila"><span>1 · Pilar</span><span class="et" style="text-decoration:line-through">No puede</span></p>
+         <p class="fila"><span>2 · Carmen</span>${verd("Confirmada")}</p>`),
+      tile("Fotos al terminar", "Y la hora en que ha acabado.",
+        `<div class="fotos"><i></i><i></i><i></i></div>
+         <p class="fila"><span class="et">Hecha a las 12:40</span>${verd("Hecha")}</p>`),
+      tile("Lo que le debes", "Cada limpieza, apuntada.",
+        `<p class="fila"><span>Pilar · 4 limpiezas</span><b>140 €</b></p>
+         <div class="botons"><span class="boto boto-sec">Marcar como pagado</span></div>`),
+    ],
+  },
+  {
+    id: "preus", nom: "Precios", curt: "Cada día",
+    gran: "+16 %", mida: "m", frase: "Sube y baja los precios cada día, según la demanda.",
+    txt: "Tú pones el mínimo y el máximo. Hostly ajusta cada noche y lo manda a Airbnb y Booking.",
+    peces: [
+      tile("Cada noche, su precio", "Más caro cuando hay demanda.",
+        `<div class="preus">
+           <span><b>118</b><i style="height:40%"></i>L</span><span><b>118</b><i style="height:40%"></i>M</span>
+           <span><b>125</b><i style="height:46%"></i>X</span><span><b>140</b><i style="height:58%"></i>J</span>
+           <span class="alt"><b>172</b><i style="height:84%"></i>V</span><span class="alt"><b>189</b><i style="height:100%"></i>S</span>
+           <span><b>150</b><i style="height:66%"></i>D</span>
+         </div>`),
+      tile("Días de mucha demanda", "Los ve antes que tú.",
+        `<p class="fila"><span class="et">24–28 abr</span><span class="xip-blau">+16 %</span></p>
+         <p class="fila"><span class="et" style="text-decoration:line-through">170 €</span><b style="font-size:15px">197 €</b></p>`),
+      tile("Tus límites", "Nunca por debajo ni por encima.",
+        `<div class="limits"><i></i><b></b></div>
+         <p class="fila"><span class="et">Mínimo 90 €</span><span class="et">Máximo 260 €</span></p>`),
+      tile("En todos los canales", "Sin que toques nada.",
+        `<p class="fila"><span>Airbnb</span>${verd("Actualizado")}</p>
+         <p class="fila"><span>Booking</span>${verd("Actualizado")}</p>
+         <p class="fila"><span class="et">Hace 3 min</span></p>`),
+    ],
+  },
+  {
+    id: "comptes", nom: "Extras y cuentas", curt: "Hace las cuentas",
+    gran: "+25 €", mida: "m", frase: "por cada salida tardía que vendes.",
+    txt: "Ofrece llegar antes, salir más tarde o extras. El huésped paga online y Hostly hace las cuentas, también las del propietario.",
+    peces: [
+      tile("Salida tardía", "El huésped la pide y la paga.",
+        `<p class="fila"><b>Salir a las 14:00</b><b>25,00 €</b></p>
+         <p class="fila"><span class="et">Nora Vidal · domingo 26</span>${verd("Pagada")}</p>`),
+      tile("Lo que has ganado", "Este año, mes a mes.",
+        `<div class="mesos"><i style="height:38%"></i><i style="height:52%"></i><i style="height:71%"></i><i style="height:100%"></i></div>
+         <p class="fila"><span class="et">Ene – abr</span><b style="font-size:15px">9.795 €</b></p>`),
+      tile("Por canal", "Con las comisiones ya restadas.",
+        `<p class="fila"><span><i class="punt" style="background:var(--airbnb)"></i>Airbnb</span><b>5.890 €</b></p>
+         <p class="fila"><span><i class="punt" style="background:var(--booking)"></i>Booking</span><b>4.120 €</b></p>
+         <p class="fila"><span><i class="punt" style="background:hsl(220 9% 60%)"></i>Directas</span><b>1.310 €</b></p>`),
+      tile("Para el propietario", "La liquidación, en un PDF.",
+        `<p class="fila"><span>Propietario · 80 %</span><b>7.836 €</b></p>
+         <p class="fila"><span>Gestor · 20 %</span><b>1.959 €</b></p>
+         <span class="pdf">${ic("pdf")}Liquidación de abril</span>`),
+    ],
+  },
+];
+
+const redueix = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const DURA = 8000;
+
+const targetaFosca = (f) => `
+  <div class="fosca surt">
+    <p class="retol">${f.nom}</p>
+    <p class="gran"${f.mida ? ` data-mida="${f.mida}"` : ""}>${f.gran}</p>
+    <p class="frase">${f.frase}</p>
+    <p class="txt">${f.txt}</p>
+    <a class="pill" href="#">Ver cómo funciona ${ic("fletxa")}</a>
+  </div>`;
+
+// Un rellotge que passa a la següent funció fins que la persona hi toca
+function rellotge(onPas, barra) {
+  let actiu = !redueix, t0 = 0, raf = 0, aturat = false;
+  const pas = (t) => {
+    if (!t0) t0 = t;
+    const p = Math.min(1, (t - t0) / DURA);
+    barra(p);
+    if (p >= 1) { t0 = 0; onPas(); }
+    if (actiu && !aturat) raf = requestAnimationFrame(pas);
+  };
+  const atura = () => { aturat = true; cancelAnimationFrame(raf); barra(null); };
+  if (actiu) raf = requestAnimationFrame(pas);
+  return { atura, reinicia: () => { t0 = 0; } };
+}
+
+// ── A ──
+(function () {
+  const pest = document.getElementById("pest-a"), bento = document.getElementById("bento-a");
+  let i = 0;
+  pest.innerHTML = F.map((f, k) => `<button type="button" class="pest" role="tab" id="pa-${f.id}" aria-selected="${k === 0}" tabindex="${k === 0 ? 0 : -1}">${ic(f.id)}${f.nom}<i></i></button>`).join("");
+  const botons = [...pest.querySelectorAll(".pest")];
+  const pinta = () => {
+    botons.forEach((b, k) => { b.setAttribute("aria-selected", String(k === i)); b.tabIndex = k === i ? 0 : -1; b.querySelector("i").style.width = "0"; });
+    bento.innerHTML = targetaFosca(F[i]) + F[i].peces.join("");
+    bento.setAttribute("aria-labelledby", botons[i].id);
+  };
+  const r = rellotge(() => { i = (i + 1) % F.length; pinta(); }, (p) => { const b = botons[i].querySelector("i"); b.style.width = p == null ? "0" : `${p * 100}%`; });
+  botons.forEach((b, k) => b.addEventListener("click", () => { r.atura(); i = k; pinta(); }));
+  pest.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    r.atura(); i = (i + (e.key === "ArrowRight" ? 1 : F.length - 1)) % F.length; pinta(); botons[i].focus();
+  });
+  pinta();
+})();
+
+// ── B ──
+(function () {
+  const bento = document.getElementById("bento-b");
+  let i = 0;
+  bento.innerHTML = `<div class="fosca fosca-b"><div class="idx">${F.map((f, k) => `
+      <div class="idx-el${k === 0 ? " obert" : ""}" data-k="${k}">
+        <button type="button" class="idx-cap" aria-expanded="${k === 0}">${ic(f.id)}${f.nom}<em>${f.curt}</em></button>
+        <div class="idx-barra"><i></i></div>
+        <div class="idx-cos"><div>
+          <p class="gran"${f.mida ? ` data-mida="${f.mida}"` : ""}>${f.gran}</p>
+          <p class="frase">${f.frase}</p>
+          <p class="txt">${f.txt}</p>
+          <a class="pill" href="#" tabindex="${k === 0 ? 0 : -1}">Ver cómo funciona ${ic("fletxa")}</a>
+        </div></div>
+      </div>`).join("")}</div></div><div class="peces" style="display:contents"></div>`;
+  const els = [...bento.querySelectorAll(".idx-el")], peces = bento.querySelector(".peces");
+  const pinta = () => {
+    els.forEach((el, k) => {
+      el.classList.toggle("obert", k === i);
+      el.querySelector(".idx-cap").setAttribute("aria-expanded", String(k === i));
+      el.querySelector(".pill").tabIndex = k === i ? 0 : -1;
+      el.querySelector(".idx-barra i").style.width = "0";
+    });
+    peces.innerHTML = F[i].peces.join("");
+  };
+  const r = rellotge(() => { i = (i + 1) % F.length; pinta(); }, (p) => { const b = els[i].querySelector(".idx-barra i"); b.style.width = p == null ? "0" : `${p * 100}%`; });
+  els.forEach((el, k) => el.querySelector(".idx-cap").addEventListener("click", () => { r.atura(); i = k; pinta(); }));
+  pinta();
+})();
+</script>

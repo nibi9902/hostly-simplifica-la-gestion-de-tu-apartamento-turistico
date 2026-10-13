@@ -379,3 +379,28 @@ compta amb cada cosa gran d'una en una i el moment del dia, la línia mínima a 
 final, les vuit en llista, la incidència «Para ti» i l'1 que s'encén. Només es mou a l'ordinador ample
 (≥ 1280 px); més estret o amb «reduir moviment», es veu com al final del dia. La 3 es queda a l'historial
 del git (commit anterior a aquest canvi) per si s'hi vol tornar.
+
+## El mòdul gegant del Completo (13-10, nit)
+
+El Biel: després de «Hostly está pendiente de ti», el mòdul del 0 € («m'agrada molt, amb el zero aquest tan
+gran») i, per a la resta de funcions, «o diferents mòduls amb la mateixa idea, o un mòdul gegant… que tu puguis
+anar clicant per anar veient informació de cada una. Fes-me algun mockup».
+
+A `modul-gegant-dues-maneres.html`: el mateix bento que el Gratis (targeta fosca amb el número gegant i quatre
+peces clares), un cop per cada funció del Completo, i es passa d'una a l'altra clicant. Passa sol cada vuit
+segons fins que s'hi toca.
+
+| Funció | Número | La frase |
+|---|---|---|
+| Mensajes | 24/7 | Contesta a tus huéspedes automáticamente. |
+| Calendario | 1 | Un solo calendario para Airbnb, Booking y tus reservas. |
+| Limpieza | 0 | llamadas para cuadrar la limpieza. |
+| Precios | +16 % | Sube y baja los precios cada día, según la demanda. |
+| Extras y cuentas | +25 € | por cada salida tardía que vendes. |
+
+- **A · Pestanyes a dalt:** es veu d'entrada que n'hi ha cinc; al mòbil, les pestanyes llisquen.
+- **B · L'índex dins de la targeta fosca:** sembla una sola peça; la funció triada s'obre amb el número gran
+  i les altres queden plegades. Al mòbil, les peces queden a sota de l'índex.
+
+Les dades són les del vídeo de /demo (la Nora, la Pilar, la Carmen, Cala Moreta). El títol, provisional:
+«Con el Completo, todo lo demás.»

@@ -25,9 +25,9 @@ Abans de donar un punt per fet, ha de complir tot això:
 
 | # | Punt | Estat |
 |---|---|---|
-| 1 | Portada: el 0 € amb la cinta de logotips (la 4B), just després del lema | Fet (13-10, 9901cf1). Vespre: sense animació d'entrada (el Biel: «no m'agrada que porti animació»); només es mou la cinta |
+| 1 | Portada: el 0 € amb la cinta de logotips (la 4B), just després del lema | Fet (13-10, 9901cf1). Vespre: sense animació d'entrada (el Biel: «no m'agrada que porti animació»); només es mou la cinta. Nit: el capçal surt quan acaba el subtítol del lema i, en acabar l'entrada, la pàgina baixa una mica sola (un cop per sessió) |
 | 2 | Portada al mòbil, secció per secció (el trànsit dels anuncis arriba pel mòbil) | Fet (13-10): el 0 €, la pantalla de Hostly estreta i llegible, «Gratis» sense forats, gestors sense marcadors |
-| 3 | El recorregut de qui ve d'un anunci: `/empezar`, la calculadora, `/demo` i `/precios` | Fet (13-10): `/precios` i `/demo` refetes; textos de l'embut iguals que la portada |
+| 3 | El recorregut de qui ve d'un anunci: `/empezar`, la calculadora, `/demo` i `/precios` | Fet (13-10): `/precios` i `/demo` refetes; textos de l'embut iguals que la portada. Nit: `/demo` torna a tenir a dalt el vídeo d'un minut (refet, amb l'app en castellà; projecte a `~/hostly-videos/demo-60s`) i a sota els cinc curts; el pas del Completo de `/empezar` ja no parla de «demo de 20 minutos»: «Llamadme ahora» o triar dia, i es pot desfer fins a triar el pla |
 | 4 | Seguiment: Analytics, el píxel de Meta i Google Ads, provats de cap a peus | Codi a punt (prova-publicitat 42/42, `VerVideo` nou). Falten els identificadors (Biel) |
 | 5 | Portada a l'ordinador: el 0 € repetit a «Gratis para siempre», les pantalles de 1280 px i els textos | Fet (13-10). Vespre: la targeta fosca del 0 € torna a «Gratis para siempre» (la vaig treure sense que el Biel ho decidís); el lema torna a animar-se (no corria per a ningú); «Hostly está pendiente» amb la pantalla sempre al mig (la «1 · Amb la pantalla») |
 | 6 | Funcionalitats: l'índex i les deu pàgines | Plantilla nova i textos repassats (13-10). Vespre: d'una funcionalitat a una altra, la pàgina nova comença a dalt, i passar a «Burocracia» ja no la deixa en blanc. Falta: les demos animades ensenyen l'app d'abril |
@@ -63,6 +63,9 @@ Mentre no hi sigui, es treballa amb marcadors i no bloqueja la resta.
   publicació també ho diu. Ja no és l'oferta: el check-in i la policia són gratis per sempre, i el
   Completo té el primer mes gratis. A `/demo` es fan servir còpies tallades abans d'aquesta píndola.
   Abans d'usar-los en anuncis, cal canviar la targeta final. El de la policia diu també «Mossos».
+- **Trucar «ara».** A `/empezar`, «Llamadme ahora» promet una trucada «en unos minutos» a qualsevol hora.
+  Si de nit no hi ha ningú, caldria un horari (fora d'hores: «te llamamos mañana a primera hora»). Ho
+  decideix el Biel.
 - **Seguiment de tothom.** Analytics, Meta i Google Ads només compten qui accepta les galetes (sovint la
   meitat o menys). Els contactes sí que es desen tots, amb la font: UTM, `gclid`, `fbclid`, la pàgina
   d'entrada i la web d'on venen. Per comptar totes les visites sense galetes, una opció és Vercel Web
