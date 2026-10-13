@@ -863,8 +863,8 @@ a{color:inherit}a:hover{color:inherit}
   }
 
   // A l'ordinador ample, durant el dia el 8 i la llista (a dues columnes) són a l'esquerra, com al «vuit i una».
-  // Al final, la segona columna baixa i llisca a sota de la primera, s'encén l'1 a la dreta i, després, surt la
-  // pantalla amb l'única cosa que és per a tu. L'alçada del final es reserva des del principi: la línia no es mou.
+  // Al final, la segona columna s'esvaeix i reapareix a sota de la primera, s'encén l'1 a la dreta i, després, surt
+  // la pantalla amb l'única cosa que és per a tu. L'alçada del final es reserva des del principi: la línia no es mou.
   var e3 = document.querySelector('.e3');
   function fase(f) { e3.classList.toggle('fase-dia', f === 'dia'); e3.classList.toggle('fase-final', f !== 'dia'); }
   function reserva() {
@@ -876,20 +876,19 @@ a{color:inherit}a:hover{color:inherit}
     e3.style.minHeight = h + 'px';
   }
   function aDia() { reserva(); fase('dia'); }
-  function aFinal(llisca) {
+  function aFinal(canvi) {
+    if (!canvi) { fase('final'); return; }
+    // quines files canvien de lloc (la segona columna): es mira el final sense pintar-lo i es torna al dia
     var files = tots('.e3-fila', e3);
-    var abans = llisca ? files.map(function (f) { return f.getBoundingClientRect(); }) : null;
+    var abans = files.map(function (f) { return f.getBoundingClientRect(); });
     fase('final');
-    if (!abans) return;
-    // primer baixa i després va a l'esquerra: la segona columna mai passa per sobre de la primera
-    files.forEach(function (f, i) {
-      var ara = f.getBoundingClientRect();
-      var dx = abans[i].left - ara.left, dy = abans[i].top - ara.top;
-      if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
-      gsap.set(f, { x: dx, y: dy });
-      gsap.to(f, { y: 0, duration: 0.6, ease: 'power2.inOut' });
-      gsap.to(f, { x: 0, duration: 0.7, delay: 0.4, ease: 'power3.inOut' });
-    });
+    var mouen = files.filter(function (f, i) { var b = f.getBoundingClientRect(); return Math.abs(b.left - abans[i].left) > 1 || Math.abs(b.top - abans[i].top) > 1; });
+    fase('dia');
+    // s'esvaeixen on són i reapareixen al lloc nou, una rere l'altra: res no travessa la pantalla
+    gsap.timeline({ defaults: { ease: 'power3.out' } })
+      .to(mouen, { autoAlpha: 0, x: -10, filter: 'blur(4px)', duration: 0.22, ease: 'power2.in' })
+      .call(function () { fase('final'); })
+      .fromTo(mouen, { x: 14, filter: 'blur(4px)' }, { autoAlpha: 1, x: 0, filter: 'blur(0px)', duration: 0.45, stagger: 0.05 });
   }
   // en desfer-se (canvi de mida, reduir moviment), la secció torna a quedar sencera, al final del dia
   function desfesPendent() {
@@ -931,10 +930,10 @@ a{color:inherit}a:hover{color:inherit}
     var tf = T0 + D + 0.5;
     // al final: primer l'1 («cosa para ti») i, després, la pantalla que l'ensenya
     tl.call(function () { if (ample) aFinal(true); }, null, tf)
-      .to(dreta, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.12 }, tf + 0.9)
-      .to(pant, { autoAlpha: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1 }, tf + 2.3)
-      .to(pieter, { autoAlpha: 1, height: 'auto', paddingTop: 20, paddingBottom: 20, marginBottom: 0, duration: 0.8 }, tf + 3.2)
-      .to(anell, { autoAlpha: 1, duration: 0.9, ease: 'sine.out' }, tf + 3.8);
+      .to(dreta, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.12 }, tf + 0.6)
+      .to(pant, { autoAlpha: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1 }, tf + 2.0)
+      .to(pieter, { autoAlpha: 1, height: 'auto', paddingTop: 20, paddingBottom: 20, marginBottom: 0, duration: 0.8 }, tf + 2.9)
+      .to(anell, { autoAlpha: 1, duration: 0.9, ease: 'sine.out' }, tf + 3.5);
     return tl;
   }
 

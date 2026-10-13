@@ -276,9 +276,12 @@ directament com el punt 2, aquí a l'esquerra… si ho posem al centre i llista 
 Fet, a la portada (la pàgina de les opcions es queda com estava):
 - **Durant el dia:** el 8 compta a l'esquerra i les coses surten a dues columnes (1–4 i 5–8), com al
   «vuit i una». La resta de la secció espera buida, com a la 2.
-- **Al final:** la segona columna baixa i llisca a sota de la primera, sense passar mai per sobre. Es
-  queda una sola llista al costat de la pantalla. Després s'encén l'1 i, al cap d'un segon i mig, surt
-  la pantalla amb la incidència.
+- **Al final:** es queda una sola llista al costat de la pantalla. Després s'encén l'1 i, al cap d'un
+  segon i mig, surt la pantalla amb la incidència.
+- **El canvi de dues columnes a una (13-10, retoc):** primer la segona columna baixava i lliscava a sota
+  de la primera, però el Biel ho volia «sense tant de temps de moviment… no fer més ràpid el moviment,
+  que sigui un moviment que faci que sigui més ràpid». Ara les quatre files s'esvaeixen on són i
+  reapareixen a sota, una rere l'altra. Dura uns 0,7 s i res no travessa la pantalla.
 - **L'alçada del final es reserva des del principi:** la línia de sota no es mou quan la llista canvia.
 - **Abans d'arribar-hi**, el dia encara no ha començat (el comptador a 0, res fet). Abans s'hi veia la
   llista sencera, que s'esborrava quan començava.
