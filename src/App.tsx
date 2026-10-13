@@ -1,9 +1,9 @@
-import { lazy, Suspense, useEffect, useRef } from "react";
+import { lazy, Suspense, useEffect, useLayoutEffect, useRef } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, Outlet, useParams, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Outlet, useParams, useLocation, useNavigationType } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { SUPPORTED_LANGS, DEFAULT_LANG, type Lang } from "./i18n/config";
 
@@ -85,6 +85,26 @@ function LangLayout() {
 function Redirigeix({ a }: { a: string }) {
   const { lang } = useParams<{ lang: string }>();
   return <Navigate to={`/${lang}${a}`} replace />;
+}
+
+/* ─── Pàgina nova, des de dalt ───
+ * React Router no ho fa sol: d'una funcionalitat a una altra (les relacionades són al final)
+ * s'arribava al final de la pàgina nova. Enrere i endavant (POP) ho deixa al navegador, que
+ * recorda on eres; canviar d'idioma no es mou (és la mateixa pàgina); i els enllaços amb #
+ * els porta `ScrollAHash`. */
+function PaginaDesDeDalt() {
+  const { pathname, hash } = useLocation();
+  const tipus = useNavigationType();
+  const anterior = useRef(pathname);
+  useLayoutEffect(() => {
+    const abans = anterior.current;
+    anterior.current = pathname;
+    if (abans === pathname || tipus === 'POP' || hash) return;
+    const senseIdioma = (p: string) => p.replace(/^\/(es|ca)(?=\/|$)/, '');
+    if (senseIdioma(abans) === senseIdioma(pathname)) return;
+    window.scrollTo(0, 0);
+  }, [pathname, hash, tipus]);
+  return null;
 }
 
 /* ─── Enllaços amb # (/es#faq, /es/precios#precios): baixar fins a la secció ───
@@ -209,6 +229,7 @@ const App = () => (
           </Routes>
         </Suspense>
         <AvisGaletes />
+        <PaginaDesDeDalt />
         <ScrollAHash />
         <SeguimentPagines />
       </BrowserRouter>

@@ -16,5 +16,6 @@ export default function FeatureRoute() {
   }, [feature, navigate, localized]);
 
   if (!feature) return null;
-  return <FeaturePage feature={feature} />;
+  // `key`: cada funcionalitat és una pàgina nova (les animacions i la demo tornen a començar)
+  return <FeaturePage key={feature.slug} feature={feature} />;
 }
