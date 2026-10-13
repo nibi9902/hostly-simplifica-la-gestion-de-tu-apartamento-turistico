@@ -107,6 +107,53 @@
   catalana a la versió castellana (o al revés) la detecta la revisió (`textTot`, amb les
   vistes amagades incloses).
 
+## La portada nova (13-10-2026)
+
+El Biel va aprovar la portada de l'exploració (`docs/exploracions/2026-10-11-web-estil-b/`,
+`portada.html`) i va decidir:
+- **Primer la portada.** Les altres pàgines passen a l'estil nou després.
+- **El mòbil, després.**
+- **L'entrada, la d'ara** (`CinematicHero`), «però sense el tall d'alguna de les lletres».
+
+Què hi ha:
+- **L'entrada** de sempre. El «¿» i la «g» de «¿O te gestionan ellos a ti?» i la «y» de «Hostly»
+  ja no queden tallats. El degradat de les lletres només pintava fins a la vora de la caixa.
+- **A sota, sis seccions** (`src/components/portada/`):
+  1. els gestors (`Gestors`): una pantalla per gestor, i el vídeo que s'obre cap amunt;
+  2. «Hostly está pendiente» (`Pendent` + `PantallaApp`);
+  3. «Gratis para siempre» (`Gratis`): la taxa que es calcula i el pagament online;
+  4. «Así se empieza» (`Passos`);
+  5. els preus (`Preus`);
+  6. «Te llamo» (`Truca`).
+- **Estils, textos i fotos.** Els estils són a `portada.css`, amb les mides de l'exploració i el
+  prefix `pt-`. Els textos, a `home.json` › `portada` (castellà i català). Les fotos, a
+  `src/assets/portada/`.
+- **«Te llamo»** desa igual que el «¿Prefieres hablarlo?» de preus (`src/lib/useLlamame.ts`).
+- **Fora de la portada vella:** el dolor, les funcionalitats, «Lo que reemplaza», els passos,
+  els vídeos d'exemple, les preguntes, la franja del final i la barra de punts del costat (els
+  components i els seus textos s'han esborrat).
+- **Les preguntes freqüents.** «Preguntas frecuentes» del peu porta a les preguntes de
+  `/precios`. La portada ja no porta el marcatge FAQPage.
+- **Proves:**
+  - `revisio-web`: portada ES/CA a 1440 i 390, cap problema;
+  - `prova-amplada`: 15/15;
+  - `prova-embut`: 40/40, i ara també mira el «Te llamo» de la portada;
+  - `prova-galetes`: totes passen;
+  - `vite build` passa.
+  - `prova-reemplaza` s'ha tret.
+
+Falta per **publicar-la** (mentrestant, marcadors):
+- **Gestors:** les frases i els vídeos dels gestors 2 i 3. El vídeo vertical de l'Àngel i el seu
+  permís per sortir-hi; avui la boleta ensenya la foto del menjador i fa veure que parla.
+- **Preus:** si la comissió del pla gratis (0,25 € + 5 %) surt a la targeta, l'IVA dels 40 € i
+  «Partner oficial» (preguntes 2, 6 i 12).
+- **Català:** revisar els textos. La frase de l'Àngel s'hi ha traduït.
+- **Mòbil:** el disseny del mòbil. Ara només no es trenca: tot va en una columna.
+- **Pantalles d'ordinador de 1280 px:** «Hostly está pendiente» hi va un sota l'altre. La
+  composició de tres columnes només cap a partir de 1296 px.
+- **Dues vegades el 0 €:** l'entrada acaba amb «0 € en Hostly. Para siempre.» i, una mica més
+  avall, «Gratis para siempre». Cal decidir si es deixen totes dues.
+
 ## Preguntes obertes per al Biel
 
 1. **Segon cognom i adreça fiscal** per a l'avís legal (LSSI art. 10): `src/lib/titular.ts`.

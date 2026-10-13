@@ -160,7 +160,7 @@ export function productComparisonSchema(input: ProductComparisonInput): Schema {
   };
 }
 
-// ─── HowTo (per StepsBlock) ───────────────────────────────
+// ─── HowTo (per «Así se empieza» de la portada) ──────────
 export interface HowToStep {
   name: string;
   text: string;

@@ -11,17 +11,6 @@
     "aria_open_menu": "Abrir menú",
     "aria_close_menu": "Cerrar menú"
   },
-  "page_progress": {
-    "nav_aria": "Navegación por secciones",
-    "sections": {
-      "pain": "Sin Hostly / Con Hostly",
-      "features": "Lo que reemplaza",
-      "funciones": "Funciones",
-      "steps": "Cómo funciona",
-      "soporte": "Soporte",
-      "precios": "Precios"
-    }
-  },
   "footer": {
     "tagline": "La app que simplifica todo lo que implica tener un piso turístico.",
     "product": "Producto",

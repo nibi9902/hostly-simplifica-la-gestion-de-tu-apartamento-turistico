@@ -56,7 +56,7 @@ const PROHIBITS = {
   ca: [/\bEmpezar\b/, /\bPrecios\b(?!\s*din)/, /\bSin tarjeta\b/,
     /(?<![\p{L}/.])(también|pero|porque|mañana|noches?|huésped(es)?|limpiezas?|mensajes?|semana|gracias|está|más|hasta|días|piso|automáticamente|enviados?|escribiendo|ahora|nuestr[oa]s?|usted|tarjeta|puedes|reservas|precios?)(?![\p{L}])/iu],
 };
-const CLAU_I18N = /\b(?:hero|pain|steps|pricing|faq|final_cta|glass_cards|testimonials|support|empezar|calcula|llamame|page|index|nav|footer|galetes|aviso|privacidad|cookies|terminos)\.[a-z_]+(?:\.[a-z_]+)*\b/;
+const CLAU_I18N = /\b(?:hero|portada|pain|steps|pricing|faq|final_cta|glass_cards|testimonials|support|empezar|calcula|llamame|page|index|nav|footer|galetes|aviso|privacidad|cookies|terminos)\.[a-z_]+(?:\.[a-z_]+)*\b/;
 
 (async () => {
   const b = await chromium.launch({ channel: 'chrome' });

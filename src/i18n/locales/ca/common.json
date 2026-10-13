@@ -11,17 +11,6 @@
     "aria_open_menu": "Obrir menú",
     "aria_close_menu": "Tancar menú"
   },
-  "page_progress": {
-    "nav_aria": "Navegació per seccions",
-    "sections": {
-      "pain": "Sense Hostly / Amb Hostly",
-      "features": "El que reemplaça",
-      "funciones": "Funcions",
-      "steps": "Com funciona",
-      "soporte": "Suport",
-      "precios": "Preus"
-    }
-  },
   "footer": {
     "tagline": "L'app que simplifica tot el que implica tenir un pis turístic.",
     "product": "Producte",

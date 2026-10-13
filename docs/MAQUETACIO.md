@@ -39,9 +39,10 @@
 | Patró | On | Com |
 |---|---|---|
 | **Text + demo** | entrada de les funcionalitats i dels perfils | text a l'esquerra, demo animada a la dreta (els perfils: IA de WhatsApp, calendari, missatges programats, check-in) |
-| **Títol al costat** | «Sin sistema / Con Hostly», el problema de cada funcionalitat, preguntes freqüents, perfils, «Sobre Hostly», capítols de la guia | títol (4–5 columnes de 12, es queda a la vista en baixar) i el contingut a la dreta |
-| **Graella plena** | passos (4 en fila), avantatges (3), casos (3), funcionalitats (3 × 3 + «Conéctalo todo» a sota), alternatives (4 × 2), vídeos (3) | el nombre de columnes es tria perquè les files quedin plenes |
-| **Preus** | portada i `/precios` | els dos plans (8 columnes) i, al costat, «¿Prefieres hablarlo?», la calculadora i els referits; més estret, un sota l'altre |
+| **Títol al costat** | el problema de cada funcionalitat, preguntes freqüents, perfils, «Sobre Hostly», capítols de la guia | títol (4–5 columnes de 12, es queda a la vista en baixar) i el contingut a la dreta |
+| **Graella plena** | avantatges (3), casos (3), funcionalitats (3 × 3 + «Conéctalo todo» a sota), alternatives (4 × 2) | el nombre de columnes es tria perquè les files quedin plenes |
+| **Preus** | `/precios` | els dos plans (8 columnes) i, al costat, «¿Prefieres hablarlo?», la calculadora i els referits; més estret, un sota l'altre |
+| **La portada nova** (13-10-2026) | `/` | les seccions de la portada aprovada (`src/components/portada/`): la caixa de sempre, i a dins les mides de l'exploració. «Hostly está pendiente» és llista · pantalla · «1 cosa para ti» en tres columnes, amb la pantalla al centre de la pàgina (més petita entre 1296 i 1383 px); per sota de 1296 px, un sota l'altre. Els preus de la portada són els seus (dos plans i els referits a sota) |
 | **Lectura** | articles del blog, pàgines legals | el text en la seva columna i, al costat, l'índex dels apartats (sap on ets) i «Empezar» o les altres pàgines legals |
 | **Formulari** | `/empezar`, `/calcula` | el pas a l'esquerra (a la línia del logotip) i, al costat, «Cómo funciona» / «Cómo lo calculamos» |
 | **Franja** | el blau del final de cada pàgina | el fons d'una vora a l'altra; el text, centrat dins de la caixa |
@@ -56,8 +57,8 @@
    «Cómo funciona» de `/empezar`, «Cómo lo calculamos») **no surten**: al mòbil la pàgina ha de ser curta.
 3. **L'índex** dels textos llargs: a les legals, un desplegable «Índice» abans del text; als
    articles, no cal (el text ja és el protagonista) i «Empezar» va al final.
-4. **Files que llisquen** amb la vora de la següent a la vista (vídeos, «Lo que reemplaza»), sempre
-   començant a la línia de 20 px.
+4. **Files que llisquen** amb la vora de la següent a la vista, sempre començant a la línia de
+   20 px.
 5. **Botons principals a tota l'amplada** del contingut (entrada, preus, franja del final).
 6. Els plans: **Hostly Completo primer** (decisió de la versió 09).
 7. Capçal: el logotip a la línia i el menú (☰) a l'altra vora; el menú obert fa servir els
@@ -67,8 +68,6 @@
 
 - **L'entrada animada de la portada** (`CinematicHero`) ocupa tota la pantalla: `data-amplada="vora"`.
   La fase del telèfon sí que fa servir la caixa.
-- **La tira de «Lo que reemplaza»** va d'una vora a l'altra (`data-amplada="vora"`); la targeta
-  activa fa l'amplada de la caixa.
 - **La 404** és un missatge al mig de la pantalla, sense capçal: `data-sense-caixa`.
 - El vídeo de `/demo` es queda a 1024 px centrat (un vídeo més gran no cap amb el text a la vista).
 

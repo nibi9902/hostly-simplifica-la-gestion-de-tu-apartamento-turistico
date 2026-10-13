@@ -425,20 +425,3 @@
   }
 }
 
-/* ── Seccions — reducció de padding vertical en mòbil ── */
-@media (max-width: 767px) {
-  /* StepsBlock py-24 és excessiu en mòbil */
-  #steps {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-  }
-  /* FAQ i altres seccions amb py-20/28 */
-  #faq {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-  }
-  #compliance {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-  }
-}
