@@ -162,7 +162,7 @@ function HuespedView({ frame, fps }: { frame: number; fps: number }) {
           fontVariantNumeric: 'tabular-nums', letterSpacing: 4,
           marginBottom: 12,
         }}>
-          432126
+          718305
         </div>
         <button style={{
           width: '100%', height: 38,
