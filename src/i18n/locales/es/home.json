@@ -302,7 +302,10 @@
       "referits": {
         "etiqueta": "Referidos",
         "text": "Trae 5 propietarios y uno de tus pisos deja de pagar.",
-        "boto": "Cómo funciona"
+        "boto": "Cómo funciona",
+        "titol": "Cómo funcionan los referidos",
+        "entesos": "Entendido",
+        "tancar": "Cerrar"
       }
     },
     "truca": {

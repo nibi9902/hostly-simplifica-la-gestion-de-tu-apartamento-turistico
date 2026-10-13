@@ -1,18 +1,49 @@
 /**
  * «Un plan gratis. Un plan completo. Nada más.» — els dos plans i, a sota, els referits.
- * Els dos botons porten a /empezar (allà es tria el pla). «Cómo funciona» desplega la regla dels
- * referits, la mateixa que diuen els termes (5 propietaris al Completo = un pis teu deixa de pagar).
+ * Els dos botons porten a /empezar (allà es tria el pla). «Cómo funciona» obre una finestra amb la regla
+ * dels referits, la mateixa que diuen els termes (5 propietaris al Completo = un pis teu deixa de pagar).
+ * Abans es desplegava a sota; el Biel (13-10): «hauria de sortir un pop-up, no així cap avall».
  * A /precios (`pagina`) és la primera secció: el títol és l'h1, porta una frase a sota i, al final,
  * l'enllaç a la calculadora.
  */
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ArrowRight, Check } from "lucide-react";
+import * as Dialeg from "@radix-ui/react-dialog";
+import { ArrowRight, Check, Home, UserRound, X } from "lucide-react";
 import { LangLink } from "@/i18n/LangLink";
+
+/** La finestra dels referits: cinc propietaris → un pis teu a 0 €, i la regla en dues frases. */
+function Referits() {
+  const { t } = useTranslation("home");
+  return (
+    <Dialeg.Root>
+      <Dialeg.Trigger className="pt-pill pt-pill-sec">{t("portada.preus.referits.boto")}</Dialeg.Trigger>
+      <Dialeg.Portal>
+        <Dialeg.Overlay className="pt-dialeg-fons" />
+        <Dialeg.Content className="pt-seccio pt-dialeg">
+          <p className="pt-retol">{t("portada.preus.referits.etiqueta")}</p>
+          <Dialeg.Title className="pt-dialeg-titol">{t("portada.preus.referits.titol")}</Dialeg.Title>
+          {/* cinc propietaris i, a canvi, un pis teu deixa de pagar */}
+          <div className="pt-dialeg-dibuix" aria-hidden="true">
+            <span className="pt-dialeg-cinc">{Array.from({ length: 5 }, (_, i) => <span key={i}><UserRound className="pt-ic" /></span>)}</span>
+            <ArrowRight className="pt-ic pt-dialeg-fletxa" />
+            <span className="pt-dialeg-pis"><Home className="pt-ic" /><b>0 €</b></span>
+          </div>
+          <Dialeg.Description asChild>
+            <div className="pt-dialeg-text">
+              <p><b>{t("pricing.referral_title")}</b></p>
+              <p>{t("pricing.referral_desc")}</p>
+            </div>
+          </Dialeg.Description>
+          <Dialeg.Close className="pt-pill pt-pill-pri pt-dialeg-ok">{t("portada.preus.referits.entesos")}</Dialeg.Close>
+          <Dialeg.Close className="pt-dialeg-x" aria-label={t("portada.preus.referits.tancar")}><X className="pt-ic" /></Dialeg.Close>
+        </Dialeg.Content>
+      </Dialeg.Portal>
+    </Dialeg.Root>
+  );
+}
 
 export default function Preus({ onEmpezar, pagina = false }: { onEmpezar: () => void; pagina?: boolean }) {
   const { t } = useTranslation("home");
-  const [referitsObert, setReferitsObert] = useState(false);
   const gratis = t("portada.preus.gratis.inclou", { returnObjects: true }) as string[];
   const complet = t("portada.preus.complet.inclou", { returnObjects: true }) as string[];
   const Titol = pagina ? "h1" : "h2";
@@ -59,19 +90,8 @@ export default function Preus({ onEmpezar, pagina = false }: { onEmpezar: () => 
           <div className="pt-referits-fila">
             <span className="pt-xip pt-xip-blau">{t("portada.preus.referits.etiqueta")}</span>
             <span>{t("portada.preus.referits.text")}</span>
-            <button
-              type="button"
-              className="pt-pill pt-pill-sec"
-              aria-expanded={referitsObert}
-              aria-controls="pt-referits-detall"
-              onClick={() => setReferitsObert((o) => !o)}
-            >
-              {t("portada.preus.referits.boto")}
-            </button>
+            <Referits />
           </div>
-          <p id="pt-referits-detall" className="pt-referits-detall" hidden={!referitsObert}>
-            <b>{t("pricing.referral_title")}</b> {t("pricing.referral_desc")}
-          </p>
         </div>
         {pagina && (
           <p className="pt-preus-calcula">

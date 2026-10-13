@@ -302,7 +302,10 @@
       "referits": {
         "etiqueta": "Referits",
         "text": "Porta 5 propietaris i un dels teus pisos deixa de pagar.",
-        "boto": "Com funciona"
+        "boto": "Com funciona",
+        "titol": "Com funcionen els referits",
+        "entesos": "Entesos",
+        "tancar": "Tancar"
       }
     },
     "truca": {

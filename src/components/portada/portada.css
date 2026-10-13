@@ -355,8 +355,29 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-referits-fila { min-height: 56px; display: flex; align-items: center; gap: 14px; padding: 0 8px 0 10px; font-size: 15px; }
 .pt-referits-fila .pt-xip { height: 38px; padding: 0 14px; }
 .pt-referits-fila .pt-pill { margin-left: auto; }
-.pt-referits-detall { padding: 0 22px 18px; font-size: 14px; line-height: 1.5; color: var(--pt-gris); max-width: 72ch; }
-.pt-referits-detall b { color: var(--pt-text); font-weight: 600; }
+/* la finestra dels referits */
+.pt-dialeg-fons { position: fixed; inset: 0; z-index: 60; background: hsl(220 14% 11% / .32); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); animation: pt-dialeg-fons .2s ease-out; }
+.pt-dialeg { position: fixed; z-index: 61; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(460px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; border-radius: 28px; background: var(--pt-blanc); padding: 32px; box-shadow: 0 40px 100px -30px rgba(15, 23, 42, .45), 0 0 0 1px var(--pt-linia); display: flex; flex-direction: column; gap: 14px; animation: pt-dialeg .22s cubic-bezier(.22, 1, .36, 1); }
+.pt-dialeg:focus { outline: none; }
+.pt-dialeg-titol { font-size: 26px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+.pt-dialeg-dibuix { display: flex; align-items: center; gap: 14px; margin-block: 6px; padding: 18px; border-radius: 20px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); }
+.pt-dialeg-cinc { display: flex; }
+.pt-dialeg-cinc span { width: 34px; height: 34px; margin-left: -8px; border-radius: 9999px; background: var(--pt-blanc); box-shadow: 0 0 0 2px var(--pt-fons), inset 0 0 0 1px var(--pt-linia); display: grid; place-items: center; color: var(--pt-gris); }
+.pt-dialeg-cinc span:first-child { margin-left: 0; }
+.pt-dialeg-cinc .pt-ic { width: 17px; height: 17px; }
+.pt-dialeg-fletxa { width: 18px; height: 18px; color: var(--pt-gris); flex-shrink: 0; }
+.pt-dialeg-pis { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 14px; background: var(--pt-fosc); color: #fff; }
+.pt-dialeg-pis .pt-ic { width: 18px; height: 18px; }
+.pt-dialeg-pis b { font-size: 17px; font-weight: 700; }
+.pt-dialeg-text { display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.55; color: var(--pt-gris); }
+.pt-dialeg-text b { color: var(--pt-text); font-weight: 600; }
+.pt-dialeg-ok { align-self: flex-start; margin-top: 6px; }
+.pt-dialeg-x { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border: 0; border-radius: 9999px; background: transparent; color: var(--pt-gris); display: grid; place-items: center; cursor: pointer; }
+.pt-dialeg-x:hover { background: var(--pt-fons); color: var(--pt-text); }
+.pt-dialeg-x .pt-ic { width: 18px; height: 18px; }
+@keyframes pt-dialeg-fons { from { opacity: 0; } }
+@keyframes pt-dialeg { from { opacity: 0; transform: translate(-50%, calc(-50% + 8px)) scale(.98); } }
+@media (prefers-reduced-motion: reduce) { .pt-dialeg, .pt-dialeg-fons { animation: none; } }
 /* A /precios els preus són la primera secció: sota el capçal fix (80 px) els cal més aire */
 .pt-preus.pt-pagina { min-height: 0; padding-top: 136px; }
 .pt-preus .pt-lead { max-width: 36em; }
