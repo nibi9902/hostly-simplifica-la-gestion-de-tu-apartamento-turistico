@@ -319,11 +319,15 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-total > span { font-weight: 600; }
 .pt-total b { display: inline-flex; align-items: baseline; gap: 3px; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; transform-origin: 100% 50%; }
 .pt-n-eur { display: inline-block; min-width: 6ch; text-align: right; }
-/* la taxa ocupa les dues columnes de sota: el text a l'esquerra i el càlcul al costat (sense la peça del
-   pagament online, des del 13-10) */
-.pt-tile-taxa { grid-column: 3 / 5; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); grid-template-rows: auto 1fr; column-gap: 24px; row-gap: 6px; align-items: start; }
-.pt-tile-taxa > h3, .pt-tile-taxa > p { grid-column: 1; }
-.pt-tile-taxa > .pt-mostra { grid-column: 2; grid-row: 1 / 3; margin-top: 0; align-self: end; }
+/* el pagament */
+.pt-accio { position: relative; z-index: 1; display: grid; align-items: center; justify-items: start; height: 28px; }
+.pt-accio > * { grid-area: 1 / 1; }
+.pt-boto-pagar { display: inline-flex; align-items: center; height: 28px; padding: 0 13px; border-radius: 9999px; background: var(--pt-blau); color: #fff; font-weight: 600; opacity: 0; visibility: hidden; }
+.pt-spin { width: 28px; height: 28px; display: grid; place-items: center; opacity: 0; visibility: hidden; }
+.pt-spin svg { width: 22px; height: 22px; }
+.pt-spin circle { fill: none; stroke: var(--pt-blau); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 38 100; }
+.pt-dit { width: 30px; height: 30px; margin-left: 38px; border-radius: 9999px; background: hsl(217 91% 60% / .35); opacity: 0; visibility: hidden; }
+.pt-cobrat { position: absolute; z-index: 1; right: 12px; bottom: 13px; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; color: var(--pt-verd-fosc); opacity: 0; visibility: hidden; }
 
 /* ── 5 · Així es comença ── */
 .pt-passos { min-height: 460px; padding-block: 80px 64px; background: var(--pt-fons); }
@@ -520,6 +524,22 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-video figcaption b { font-size: 16px; line-height: 1.3; font-weight: 600; }
 .pt-video figcaption span { font-size: 14px; line-height: 1.45; color: var(--pt-gris); }
 .pt-videos-nota { margin-top: 16px; font-size: 13px; color: var(--pt-gris); text-align: center; }
+/* el vídeo obert, gran: gairebé tota l'alçada de la pantalla, amb les fletxes a sota */
+.pt-gran-fons { position: fixed; inset: 0; z-index: 60; background: hsl(220 14% 6% / .84); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: pt-dialeg-fons .2s ease-out; }
+.pt-gran { position: fixed; z-index: 61; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: stretch; gap: 14px; outline: none; animation: pt-dialeg .22s cubic-bezier(.22, 1, .36, 1); }
+.pt-gran-marc { height: min(84vh, calc((100vw - 32px) * 16 / 9)); aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: #000; box-shadow: 0 40px 120px -20px rgba(0, 0, 0, .6); }
+.pt-gran-marc video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+.pt-gran-peu { display: flex; align-items: center; justify-content: space-between; gap: 16px; color: #fff; }
+.pt-gran-peu p { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pt-gran-peu b { font-size: 16px; line-height: 1.3; font-weight: 600; }
+.pt-gran-peu span { font-size: 13.5px; line-height: 1.4; color: rgba(255, 255, 255, .7); }
+.pt-gran-fletxes { display: flex; align-items: center; gap: 10px; flex-shrink: 0; font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, .7); font-variant-numeric: tabular-nums; }
+.pt-gran-fletxes button, .pt-gran-x { width: 40px; height: 40px; border-radius: 9999px; border: 0; background: rgba(255, 255, 255, .14); color: #fff; display: grid; place-items: center; cursor: pointer; transition: background-color .15s ease; }
+.pt-gran-fletxes button:hover, .pt-gran-x:hover { background: rgba(255, 255, 255, .26); }
+.pt-gran-fletxes .pt-ic, .pt-gran-x .pt-ic { width: 18px; height: 18px; }
+.pt-gran-x { position: absolute; top: 0; right: -56px; width: 44px; height: 44px; }
+@media (max-width: 640px) { .pt-gran { top: calc(50% + 22px); } .pt-gran-x { top: -54px; right: 0; } }
+@media (prefers-reduced-motion: reduce) { .pt-gran, .pt-gran-fons { animation: none; } }
 .pt-demo-peu { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 44px; font-size: 14px; color: var(--pt-gris); }
 .pt-demo-botons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .pt-demo-botons .pt-pill { height: 48px; padding: 0 26px; font-size: 16px; }
@@ -571,7 +591,6 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-h2, .pt-pend .pt-h2, .pt-gratis .pt-h2 { font-size: 34px; }
   .pt-num { font-size: 88px; }
   .pt-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; }
-  .pt-tile-taxa { grid-column: 1 / -1; }
   .pt-fosca { grid-column: 1 / -1; grid-row: auto; }
   .pt-zero { font-size: 140px; }
   .pt-passos .pt-cap { flex-direction: column; align-items: flex-start; gap: 12px; }
@@ -621,9 +640,6 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-pantalla .pt-tira { left: 16px; right: 16px; height: auto; padding-block: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 12px; }
   .pt-pantalla .pt-tira div:nth-child(3) { border-left: 0; }
   .pt-bento { grid-template-columns: minmax(0, 1fr); }
-  /* al mòbil, la taxa com les altres peces: el càlcul a sota del text */
-  .pt-tile-taxa { display: flex; }
-  .pt-tile-taxa > .pt-mostra { margin-top: 8px; }
   .pt-zero { font-size: 120px; }
   .pt-fp-passos { grid-template-columns: minmax(0, 1fr); }
   /* la targeta «Hoy, en …»: el moment (o el pis) a sobre del títol, perquè el text tingui tota l'amplada */

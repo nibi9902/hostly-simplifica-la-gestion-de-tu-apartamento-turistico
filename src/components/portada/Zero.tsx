@@ -144,7 +144,8 @@ export default function Zero({ onEmpezar }: { onEmpezar: () => void }) {
               <p className="pt-zf-txt">{t("portada.zero.text")}</p>
               <div className="pt-zf-botons">
                 <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-blanc">{t("portada.zero.empezar")}</button>
-                <LangLink to="/demo" className="pt-pill pt-pill-buit">{t("portada.zero.com")}</LangLink>
+                {/* «Ver cómo funciona» va a la fitxa del check-in (el que és gratis), no a /demo (el Biel, 13-10) */}
+                <LangLink to="/funcionalidades/check-in-online" className="pt-pill pt-pill-buit">{t("portada.zero.com")}</LangLink>
               </div>
             </div>
           </div>

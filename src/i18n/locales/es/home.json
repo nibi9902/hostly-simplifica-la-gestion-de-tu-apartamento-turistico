@@ -140,8 +140,8 @@
           "detall": "Hay mucha demanda."
         },
         {
-          "titol": "Cerró las fechas en Booking",
-          "detall": "Tras una reserva de Airbnb."
+          "titol": "Cobró la tasa turística",
+          "detall": "Con el check-in."
         },
         {
           "titol": "Vendió una salida más tarde",
@@ -245,6 +245,15 @@
         "nits": "Pernoctaciones",
         "preu": "Por noche y persona",
         "total": "Te toca pagar"
+      },
+      "pagament": {
+        "titol": "La tasa, pagada online",
+        "text": "El huésped la paga al hacer el check-in.",
+        "concepte": "Tasa turística",
+        "detall": "2 personas · 4 noches",
+        "pagar": "Pagar 14,00 €",
+        "pagada": "Pagada",
+        "cobrat": "+14,00 € en tu cuenta"
       }
     },
     "passos": {
@@ -278,7 +287,8 @@
         "inclou": [
           "El check-in del huésped, desde su móvil",
           "Hostly lo envía a la policía",
-          "La tasa turística, calculada"
+          "La tasa turística, calculada",
+          "El huésped paga la tasa online"
         ],
         "boto": "Empezar",
         "peu": "Sin tarjeta"

@@ -1,13 +1,13 @@
 /**
  * «Gratis para siempre: el check-in y la policía.» — el bloc gran del pla gratis (la targeta fosca
- * amb el 0 €) i, al costat, tres peces: el check-in, la policia i, a sota de totes dues, la taxa que es
- * calcula. La peça «La tasa, pagada online» va sortir el 13-10-2026 (el Biel: «de primeres no posarem
- * que es pot pagar la taxa online»; la comissió del 5 % es diu a les preguntes de /precios).
+ * amb el 0 €) i, al costat, quatre peces: el check-in, la policia, la taxa que es calcula i la taxa
+ * pagada online.
  *
  * La taxa: es compta de nou cada vegada (hostes × pernoctacions × preu per nit = el que toca pagar) i
  * es declara per SEMESTRES («De abril a septiembre»), encara que el Biel en digués «trimestre». La
  * xifra és un exemple: 310 pernoctacions × 1,75 € (pis turístic fora de Barcelona) = 542,50 €.
- * Es mou només mentre es veu, i torna a començar.
+ * El pagament: l'hoste toca «Pagar», el botó es fa una roda, «Pagada» i els diners arriben.
+ * Les dues es mouen només mentre es veuen, i tornen a començar.
  */
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -72,6 +72,35 @@ function construeixTaxa(m: HTMLElement, eur: Intl.NumberFormat): gsap.core.Timel
   return tl;
 }
 
+function construeixPagament(m: HTMLElement): gsap.core.Timeline {
+  const q = (s: string) => m.querySelector(s) as HTMLElement;
+  const boto = q(".pt-boto-pagar"), spin = q(".pt-spin"), pagada = q(".pt-pagada");
+  const chk = pagada.querySelector(".pt-chk"), dit = q(".pt-dit"), cobrat = q(".pt-cobrat");
+  const tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 0.3, defaults: { ease: "power3.out", duration: 0.4 } });
+  tl.set(boto, amb({ autoAlpha: 1, scale: 1 }), 0)
+    .set(spin, amb({ autoAlpha: 0, scale: 0.6, rotation: 0 }), 0)
+    .set(pagada, amb({ autoAlpha: 0, scale: 0.85 }), 0)
+    .set(cobrat, amb({ autoAlpha: 0, y: 8 }), 0)
+    .set(dit, amb({ autoAlpha: 0, scale: 0.3 }), 0)
+    // l'hoste toca «Pagar»
+    .to(dit, { autoAlpha: 0.6, scale: 1, duration: 0.25, ease: "power2.out" }, 1.0)
+    .to(dit, { autoAlpha: 0, scale: 1.9, duration: 0.45, ease: "power2.out" }, 1.25)
+    .to(boto, { scale: 0.94, duration: 0.12, ease: "power1.in" }, 1.0)
+    .to(boto, { scale: 1, duration: 0.3 }, 1.12)
+    // el botó es fa una roda que gira
+    .to(boto, { autoAlpha: 0, scale: 0.6, duration: 0.3, ease: "power2.in" }, 1.45)
+    .to(spin, { autoAlpha: 1, scale: 1, duration: 0.3 }, 1.55)
+    .to(spin, { rotation: 540, duration: 1.1, ease: "none" }, 1.55)
+    // pagada, i els diners arriben
+    .to(spin, { autoAlpha: 0, scale: 0.6, duration: 0.25, ease: "power2.in" }, 2.6)
+    .to(pagada, { autoAlpha: 1, scale: 1, duration: 0.45 }, 2.7)
+    .fromTo(chk, { strokeDashoffset: 24 }, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, 2.8)
+    .to(cobrat, { autoAlpha: 1, y: 0, duration: 0.5 }, 3.2)
+    .to(cobrat, { autoAlpha: 0, y: -8, duration: 0.45, ease: "power2.in" }, 7.6)
+    .to(pagada, { autoAlpha: 0, duration: 0.3, ease: "power2.in" }, 8.0);
+  return tl;
+}
+
 export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
   const { t } = useTranslation("home");
   const { lang } = useLang();
@@ -85,11 +114,15 @@ export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
     const mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const taxa = s.querySelector(".pt-tile-taxa") as HTMLElement;
+      const pago = s.querySelector(".pt-tile-pago") as HTMLElement;
       const tlT = construeixTaxa(taxa.querySelector(".pt-calc") as HTMLElement, format);
-      // es mou mentre es veu
+      const tlG = construeixPagament(pago.querySelector(".pt-pago") as HTMLElement);
+      // es mouen mentre es veuen
       ScrollTrigger.create({ trigger: taxa, start: "top 85%", end: "bottom 10%", onToggle: (st) => { if (st.isActive) tlT.play(); else tlT.pause(); } });
+      ScrollTrigger.create({ trigger: pago, start: "top 85%", end: "bottom 10%", onToggle: (st) => { if (st.isActive) tlG.play(); else tlG.pause(); } });
       return () => {
         tlT.kill();
+        tlG.kill();
         // en repòs, les xifres del final
         (taxa.querySelector(".pt-n-hu") as HTMLElement).textContent = "72";
         (taxa.querySelector(".pt-n-pe") as HTMLElement).textContent = "310";
@@ -151,6 +184,22 @@ export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
                 <span><i className="pt-op">=</i>{t("portada.gratis.taxa.total")}</span>
                 <b><span className="pt-n-eur">{eur.format(542.5)}</span>€</b>
               </p>
+            </div>
+          </div>
+
+          <div className="pt-tile pt-tile-pago">
+            <h3>{t("portada.gratis.pagament.titol")}</h3>
+            <p>{t("portada.gratis.pagament.text")}</p>
+            <div className="pt-mostra pt-pago">
+              <p className="pt-fila"><b>{t("portada.gratis.pagament.concepte")}</b><b>{`${eur.format(14)} €`}</b></p>
+              <p className="pt-fila"><span className="pt-et">{t("portada.gratis.pagament.detall")}</span></p>
+              <div className="pt-accio">
+                <span className="pt-boto-pagar" aria-hidden="true">{t("portada.gratis.pagament.pagar")}</span>
+                <span className="pt-dit" aria-hidden="true" />
+                <span className="pt-spin" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /></svg></span>
+                <span className="pt-xip-verd pt-pagada"><TicDibuixat />{t("portada.gratis.pagament.pagada")}</span>
+              </div>
+              <span className="pt-cobrat" aria-hidden="true">{t("portada.gratis.pagament.cobrat")}</span>
             </div>
           </div>
         </div>

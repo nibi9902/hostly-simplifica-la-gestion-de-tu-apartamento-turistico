@@ -140,8 +140,8 @@
           "detall": "Hi ha molta demanda."
         },
         {
-          "titol": "Ha tancat les dates a Booking",
-          "detall": "Després d'una reserva d'Airbnb."
+          "titol": "Ha cobrat la taxa turística",
+          "detall": "Amb el check-in."
         },
         {
           "titol": "Ha venut una sortida més tard",
@@ -245,6 +245,15 @@
         "nits": "Pernoctacions",
         "preu": "Per nit i persona",
         "total": "Et toca pagar"
+      },
+      "pagament": {
+        "titol": "La taxa, pagada online",
+        "text": "L'hoste la paga en fer el check-in.",
+        "concepte": "Taxa turística",
+        "detall": "2 persones · 4 nits",
+        "pagar": "Pagar 14,00 €",
+        "pagada": "Pagada",
+        "cobrat": "+14,00 € al teu compte"
       }
     },
     "passos": {
@@ -278,7 +287,8 @@
         "inclou": [
           "El check-in de l'hoste, des del seu mòbil",
           "Hostly ho envia a la policia",
-          "La taxa turística, calculada"
+          "La taxa turística, calculada",
+          "L'hoste paga la taxa online"
         ],
         "boto": "Començar",
         "peu": "Sense targeta"
