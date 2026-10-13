@@ -23,10 +23,10 @@ export function SiteHeader() {
       setVisible(true);
       return;
     }
-    // A la home el menú espera que acabi l'animació d'ENTRADA (~3 s, s'acaba
-    // sola). L'avís que s'escoltava abans —`hero-cta-visible`— surt de la
-    // seqüència lligada al scroll, així que qui entrava i no baixava els
-    // ~3.200 px del hero es quedava sense menú.
+    // A la home el menú espera l'avís de l'ENTRADA, que arriba quan el subtítol
+    // («…apartamento turístico.») ja s'hi veu (~2,6 s, s'acaba sola). L'avís
+    // que s'escoltava abans —`hero-cta-visible`— surt de la seqüència lligada
+    // al scroll, així que qui entrava i no baixava es quedava sense menú.
     // Amb «reduir moviment» l'entrada no s'anima i avisa abans que aquí s'escolti: no hi ha res a esperar.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setVisible(true);
