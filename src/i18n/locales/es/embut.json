@@ -57,18 +57,22 @@
       "nota": "Te llevamos a app.hostlylabs.com. Si te atascas, te llamamos."
     },
     "demo": {
-      "titulo": "Antes de activarlo, una demo de 20 minutos.",
-      "subtitulo": "Te enseñamos Hostly funcionando y resolvemos tus dudas. Si encaja, lo activamos ese mismo día con el primer mes gratis.",
+      "titulo": "Genial, {{nombre}}. Te ayudamos a conectarlo todo.",
+      "subtitulo": "Para que te funcione bien desde el primer día, lo dejamos listo contigo en una llamada: vemos tus pisos y conectamos Airbnb y Booking. El primer mes es gratis.",
       "dia": "Elige el día",
       "hora": "Elige la hora",
       "zona": "Hora de España peninsular",
-      "boton": "Reservar la demo",
+      "boton": "Reservar la llamada",
       "boton_falta": "Elige día y hora",
       "hecho_titulo": "Apuntado, {{nombre}}: {{dia}} a las {{hora}}.",
-      "hecho_texto": "Te lo confirmamos por WhatsApp y te mandamos el enlace de la videollamada.",
+      "hecho_texto": "Te lo confirmamos por WhatsApp.",
       "mientras": "Mientras tanto, si quieres, crea tu cuenta gratis.",
       "mientras_boton": "Crear mi cuenta gratis",
-      "cambiar": "Cambiar la hora"
+      "cambiar": "Cambiar la hora",
+      "titulo_sense_nom": "Genial. Te ayudamos a conectarlo todo.",
+      "ara": "Llamadme ahora",
+      "ara_nota": "Te llamamos en unos minutos al {{telefon}}.",
+      "o_dia": "Prefiero elegir un día"
     },
     "costat": {
       "titulo": "Cómo funciona",
@@ -83,7 +87,7 @@
         },
         {
           "titulo": "Empiezas",
-          "texto": "Con el Gratis, creas tu cuenta al momento. Con el Completo, una demo de 20 minutos y, si encaja, lo activamos ese mismo día."
+          "texto": "Con el Gratis, creas tu cuenta al momento. Con el Completo, te llamamos, lo dejamos listo contigo y lo activamos ese mismo día."
         }
       ],
       "garantias": [
@@ -91,6 +95,12 @@
         "Sin permanencia",
         "Soporte en castellano y catalán"
       ]
+    },
+    "trucant": {
+      "titulo": "Te llamamos ahora, {{nombre}}.",
+      "titulo_sense_nom": "Te llamamos ahora.",
+      "texto": "En unos minutos, al {{telefon}}. Si no es buen momento, elige otro.",
+      "cambiar": "Elegir otro momento"
     }
   },
   "calcula": {

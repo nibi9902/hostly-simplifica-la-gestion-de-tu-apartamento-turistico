@@ -7,7 +7,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 ## Planes y precios
 
 - **Gratis, para siempre y sin tarjeta:** check-in online del huésped, registro a la policía, cálculo de la tasa turística, lectura del calendario de Airbnb y Booking por iCal cada 30 minutos y avisos cuando falta un check-in. No incluye IA, limpiezas, mensajes automáticos ni precios dinámicos.
-- **Hostly completo:** 40 €/mes por apartamento + IVA; con 5 apartamentos o más, 35 €/mes + IVA cada uno. El primer mes es gratis. Se activa después de una demo de 20 minutos. Sin permanencia. Durante el primer mes, la configuración se hace 1 a 1 con el equipo de Hostly.
+- **Hostly completo:** 40 €/mes por apartamento + IVA; con 5 apartamentos o más, 35 €/mes + IVA cada uno. El primer mes es gratis. Se activa con una llamada en la que lo dejamos listo con el cliente. Sin permanencia. Durante el primer mes, la configuración se hace 1 a 1 con el equipo de Hostly.
 - **Automatizaciones a medida («Conéctalo todo»):** servicio aparte para conectar Hostly con la gestoría, la web, el ERP u otras herramientas del cliente. Cuota mensual según lo que se automatice.
 - **Programa de referidos:** por cada 5 propietarios que traigas y sigan activos en Hostly, uno de tus apartamentos deja de pagar mientras sigan activos.
 
@@ -27,7 +27,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 ## Páginas principales
 
 - [Inicio](https://hostlylabs.com/es): qué es Hostly, planes y preguntas frecuentes.
-- [Empezar](https://hostlylabs.com/es/empezar): alta en el plan gratis o reserva de la demo de 20 minutos para Hostly completo.
+- [Empezar](https://hostlylabs.com/es/empezar): alta en el plan gratis o, para Hostly completo, una llamada (al momento o el día que se elija).
 - [Precios](https://hostlylabs.com/es/precios): plan gratis y Hostly completo (40 €/mes por apartamento + IVA, 35 € desde 5, primer mes gratis).
 - [Calculadora](https://hostlylabs.com/es/calcula): cinco preguntas para ver si Hostly te sale a cuenta.
 - [Super Guía de gestión](https://hostlylabs.com/es/guia): guía en 8 capítulos sobre la gestión de pisos turísticos en España.

@@ -6,7 +6,10 @@
  *      al pas 2, el Biel ja té el telèfon (avís a Telegram en menys d'un minut).
  *   2. Què necessita: «Solo el check-in y la policía» (gratis) o «Hostly completo».
  *   3. Gratis → crea el compte a l'app (`/signup?pla=gratuit`, ja existeix des del 7-10).
- *      Complet → «Antes de activarlo, una demo de 20 minutos»: tria dia i hora.
+ *      Complet → «Genial, te ayudamos a conectarlo todo»: «Llamadme ahora» (el telèfon ja el tenim)
+ *      o tria dia i hora. El Biel (13-10): «una demo de 20 minutos… és com espera un moment, encara
+ *      no ho compris»; primer el sí, i després la trucada, perquè li vagi millor a ell.
+ * Cada pas té «Atrás» i es pot desfer del tot (també després de demanar la trucada).
  *
  * Decisions del Biel (09-10-2026): un sol botó «Empezar» a tota la web; la demo no va
  * de primeres sinó al final del recorregut; el telèfon abans que el correu; la demo
@@ -15,7 +18,7 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { useLocation } from "react-router-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Check, CalendarCheck, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, CalendarCheck, Phone, ShieldCheck, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import SEO from "@/components/SEO";
 import { LangLink } from "@/i18n/LangLink";
@@ -27,8 +30,8 @@ import { correuValid, dadesRecordades, desaLead, recordaDades, telefonPerBD } fr
 import { diaLlarg, diesDemo, etiquetaDia, isoDemo } from "@/lib/demo";
 import { URL_ALTA_GRATUITA, type EstatEmpezar } from "@/lib/empezar";
 
-type Pas = "datos" | "plan" | "gratis" | "demo" | "demo_hecha";
-const NUM_PAS: Record<Pas, number> = { datos: 1, plan: 2, gratis: 3, demo: 3, demo_hecha: 3 };
+type Pas = "datos" | "plan" | "gratis" | "demo" | "demo_hecha" | "trucant";
+const NUM_PAS: Record<Pas, number> = { datos: 1, plan: 2, gratis: 3, demo: 3, demo_hecha: 3, trucant: 3 };
 
 const CLAU_DESDE = "hostly_empezar_desde";
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -42,6 +45,13 @@ const botoPrimari =
   "font-semibold text-base transition-all duration-200 hover:-translate-y-0.5 " +
   "hover:shadow-[0_10px_28px_hsl(var(--primary)/0.30)] active:scale-[0.98] focus-visible:outline-none " +
   "focus-visible:ring-4 focus-visible:ring-primary/25 disabled:opacity-60 disabled:pointer-events-none";
+
+/** El telèfon, per llegir-lo: «612 34 56 78» si és d'aquí; si no, tal com l'han escrit. */
+function telefonVisible(t: string): string {
+  const d = t.replace(/\D/g, "");
+  const nacional = d.length === 11 && d.startsWith("34") ? d.slice(2) : d.length === 9 ? d : null;
+  return nacional ? nacional.replace(/(\d{3})(\d{2})(\d{2})(\d{2})/, "$1 $2 $3 $4") : t.trim();
+}
 
 function llegeixDesde(estat: unknown): string | undefined {
   const des = (estat as EstatEmpezar | null)?.desde;
@@ -69,6 +79,8 @@ export default function Empezar() {
   const [desant, setDesant] = useState(false);
 
   const dies = useMemo(() => diesDemo(), []);
+  // «O elige un día»: el calendari, plegat fins que el demana
+  const [veureDies, setVeureDies] = useState(false);
   const [dia, setDia] = useState<string | null>(null);
   const [hora, setHora] = useState<string | null>(null);
 
@@ -132,7 +144,22 @@ export default function Empezar() {
     setPas("demo_hecha");
   }
 
-  const enrere: Partial<Record<Pas, Pas>> = { plan: "datos", gratis: "plan", demo: "plan" };
+  // «Ara et truquem»: es desa com una trucada per ara mateix, i la BD avisa per Telegram com una demo
+  async function trucaAra() {
+    setDesant(true);
+    const r = await desaLead({ plan: "completo", demo_slot: new Date().toISOString(), answers: { trucar: "ara" } }, lang, desde);
+    setDesant(false);
+    if (!r.ok) {
+      setErrors({ general: t("empezar.error.guardar") });
+      return;
+    }
+    setErrors({});
+    track("demo_solicitada", { variant: "ara" });
+    setPas("trucant");
+  }
+
+  // Tots els passos es poden desfer, també després de demanar la trucada (el Biel, 13-10)
+  const enrere: Partial<Record<Pas, Pas>> = { plan: "datos", gratis: "plan", demo: "plan", demo_hecha: "demo", trucant: "demo" };
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -361,10 +388,35 @@ export default function Empezar() {
           {pas === "demo" && (
             <motion.section key="demo" {...anim} transition={{ duration: 0.25, ease }}>
               <h1 ref={titolRef} tabIndex={-1} className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 focus:outline-none">
-                {t("empezar.demo.titulo")}
+                {primerNom ? t("empezar.demo.titulo", { nombre: primerNom }) : t("empezar.demo.titulo_sense_nom")}
               </h1>
               <p className="text-lg text-muted-foreground mb-8">{t("empezar.demo.subtitulo")}</p>
 
+              <button type="button" onClick={trucaAra} disabled={desant} className={cn(botoPrimari, "w-full")}>
+                {desant && !veureDies ? (
+                  <span className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" aria-label={t("empezar.demo.ara")} />
+                ) : (
+                  <>
+                    <Phone className="w-5 h-5" />
+                    {t("empezar.demo.ara")}
+                  </>
+                )}
+              </button>
+              <p className="mt-3 text-sm text-muted-foreground text-center">{t("empezar.demo.ara_nota", { telefon: telefonVisible(telefon) })}</p>
+
+              {!veureDies && (
+                <button
+                  type="button"
+                  onClick={() => setVeureDies(true)}
+                  className="mt-8 w-full h-14 rounded-full border border-slate-200 text-base font-semibold text-foreground hover:bg-slate-50 transition-colors inline-flex items-center justify-center gap-2"
+                >
+                  <CalendarCheck className="w-5 h-5" />
+                  {t("empezar.demo.o_dia")}
+                </button>
+              )}
+
+              {veureDies && (
+              <div className="mt-10">
               <h2 className="text-sm font-semibold text-foreground mb-3">{t("empezar.demo.dia")}</h2>
               <div className="-mx-5 sm:mx-0 px-5 sm:px-0 flex gap-2 overflow-x-auto pb-2 snap-x sm:[mask-image:linear-gradient(to_right,black_88%,transparent)]" role="radiogroup" aria-label={t("empezar.demo.dia")}>
                 {dies.map((d) => {
@@ -423,10 +475,6 @@ export default function Empezar() {
                 <p className="mt-3 text-xs text-muted-foreground">{t("empezar.demo.zona")}</p>
               </div>
 
-              {errors.general && (
-                <p role="alert" className="mt-6 text-sm text-rose-700 bg-rose-50 rounded-2xl px-4 py-3">{errors.general}</p>
-              )}
-
               <button
                 type="button"
                 onClick={reservaDemo}
@@ -443,6 +491,48 @@ export default function Empezar() {
                 ) : (
                   t("empezar.demo.boton_falta")
                 )}
+              </button>
+              </div>
+              )}
+
+              {errors.general && (
+                <p role="alert" className="mt-6 text-sm text-rose-700 bg-rose-50 rounded-2xl px-4 py-3">{errors.general}</p>
+              )}
+            </motion.section>
+          )}
+
+          {/* ── 3b · «Llamadme ahora»: et truquem ─────────────────────────── */}
+          {pas === "trucant" && (
+            <motion.section key="trucant" {...anim} transition={{ duration: 0.25, ease }}>
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                <Phone className="w-7 h-7 text-primary" strokeWidth={2.2} />
+              </div>
+              <h1 ref={titolRef} tabIndex={-1} className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 focus:outline-none">
+                {primerNom ? t("empezar.trucant.titulo", { nombre: primerNom }) : t("empezar.trucant.titulo_sense_nom")}
+              </h1>
+              <p className="text-lg text-muted-foreground mb-10">{t("empezar.trucant.texto", { telefon: telefonVisible(telefon) })}</p>
+
+              <div className="rounded-3xl bg-white border border-slate-200 p-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+                <div className="flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <p className="text-sm text-foreground/85">{t("empezar.demo.mientras")}</p>
+                </div>
+                <a
+                  href={URL_ALTA_GRATUITA}
+                  onClick={() => track("empezar_cuenta", { variant: "despues_llamada" })}
+                  className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full border border-slate-200 text-sm font-semibold text-foreground hover:bg-slate-50 transition-colors shrink-0"
+                >
+                  {t("empezar.demo.mientras_boton")}
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => { setVeureDies(true); setPas("demo"); }}
+                className="mt-6 text-sm font-medium text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
+              >
+                {t("empezar.trucant.cambiar")}
               </button>
             </motion.section>
           )}

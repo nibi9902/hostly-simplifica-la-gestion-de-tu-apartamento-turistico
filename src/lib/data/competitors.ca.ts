@@ -150,7 +150,7 @@ export const competitorsCa: Competitor[] = [
     priceNote: "Guesty: pla Lite (1‑3 anuncis) des de 9 $ per anunci al mes; Pro i Enterprise, pressupost a mida (preu publicat l'octubre del 2026) · Hostly: 40 €/mes per pis + IVA, 35 € a partir de 5",
     advantages: [
       { title: 'Pensat per a 1 a 15 pisos', body: "Guesty se centra sobretot en empreses de gestió mitjanes i grans. Hostly està pensat des del primer dia per al propietari i el gestor petit, d'1 a 15 pisos." },
-      { title: 'Comences gratis, sense demo', body: "El pla Gratis (check-in, registre de viatgers i taxa turística) l'actives tu sol, sense targeta. Per a Hostly Complet fem una demo i el configurem amb tu." },
+      { title: 'Comences gratis, sense demo', body: "El pla Gratis (check-in, registre de viatgers i taxa turística) l'actives tu sol, sense targeta. Per a Hostly Complet et truquem i el deixem a punt amb tu." },
       { title: 'Preu públic, tinguis els pisos que tinguis', body: "Hostly publica el seu preu: 40 €/mes per pis + IVA, 35 € a partir de 5. Guesty publica preu només per al pla Lite (d'1 a 3 anuncis); a partir d'aquí, treballa amb pressupost a mida." },
       { title: 'Check-in i registre gratis', body: registreGratis },
       { title: 'Suport proper', body: "A Hostly Complet, el primer mes ho configurem tot amb tu en una videotrucada. Després t'atén una persona, en català o castellà." },

@@ -1,5 +1,5 @@
 /**
- * Les hores que es poden triar per a la demo de 20 minuts.
+ * Les hores que es poden triar per a la trucada del pla Completo.
  *
  * De moment és només el disseny (decisió del Biel, 09-10-2026: es farà amb Cal.com al
  * nostre servidor, però «de moment només fes el disseny»). L'hora triada es desa al

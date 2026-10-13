@@ -57,18 +57,22 @@
       "nota": "Et portem a app.hostlylabs.com. Si t'encalles, et truquem."
     },
     "demo": {
-      "titulo": "Abans d'activar-lo, una demo de 20 minuts.",
-      "subtitulo": "T'ensenyem Hostly funcionant i resolem els teus dubtes. Si encaixa, l'activem aquell mateix dia amb el primer mes gratis.",
+      "titulo": "Genial, {{nombre}}. T'ajudem a connectar-ho tot.",
+      "subtitulo": "Perquè et funcioni bé des del primer dia, ho deixem a punt amb tu en una trucada: mirem els teus pisos i connectem Airbnb i Booking. El primer mes és gratis.",
       "dia": "Tria el dia",
       "hora": "Tria l'hora",
       "zona": "Hora d'Espanya peninsular",
-      "boton": "Reservar la demo",
+      "boton": "Reservar la trucada",
       "boton_falta": "Tria dia i hora",
       "hecho_titulo": "Apuntat, {{nombre}}: {{dia}} a les {{hora}}.",
-      "hecho_texto": "T'ho confirmem per WhatsApp i t'enviem l'enllaç de la videotrucada.",
+      "hecho_texto": "T'ho confirmem per WhatsApp.",
       "mientras": "Mentrestant, si vols, crea el teu compte gratis.",
       "mientras_boton": "Crear el meu compte gratis",
-      "cambiar": "Canviar l'hora"
+      "cambiar": "Canviar l'hora",
+      "titulo_sense_nom": "Genial. T'ajudem a connectar-ho tot.",
+      "ara": "Truqueu-me ara",
+      "ara_nota": "Et truquem d'aquí a uns minuts al {{telefon}}.",
+      "o_dia": "Prefereixo triar un dia"
     },
     "costat": {
       "titulo": "Com funciona",
@@ -83,7 +87,7 @@
         },
         {
           "titulo": "Comences",
-          "texto": "Amb el Gratis, et crees el compte al moment. Amb el Complet, una demo de 20 minuts i, si encaixa, l'activem el mateix dia."
+          "texto": "Amb el Gratis, et crees el compte al moment. Amb el Complet, et truquem, ho deixem a punt amb tu i l'activem aquell mateix dia."
         }
       ],
       "garantias": [
@@ -91,6 +95,12 @@
         "Sense permanència",
         "Suport en castellà i català"
       ]
+    },
+    "trucant": {
+      "titulo": "Et truquem ara, {{nombre}}.",
+      "titulo_sense_nom": "Et truquem ara.",
+      "texto": "D'aquí a uns minuts, al {{telefon}}. Si no és bon moment, tria'n un altre.",
+      "cambiar": "Triar un altre moment"
     }
   },
   "calcula": {

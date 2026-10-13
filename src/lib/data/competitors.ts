@@ -169,7 +169,7 @@ export const competitors: Competitor[] = [
     priceNote: 'Guesty: plan Lite (1‑3 anuncios) desde 9 $ por anuncio al mes; Pro y Enterprise, presupuesto a medida (precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso + IVA, 35 € desde 5',
     advantages: [
       { title: 'Pensado para 1 a 15 pisos', body: 'Guesty está enfocado sobre todo a gestoras medianas y grandes. Hostly está pensado desde el primer día para el propietario y el gestor pequeño, de 1 a 15 pisos.' },
-      { title: 'Empiezas gratis, sin demo', body: 'El plan Gratis (check-in, registro de viajeros y tasa turística) lo activas tú solo, sin tarjeta. Para Hostly Completo hacemos una demo y lo configuramos contigo.' },
+      { title: 'Empiezas gratis, sin demo', body: 'El plan Gratis (check-in, registro de viajeros y tasa turística) lo activas tú solo, sin tarjeta. Para Hostly Completo te llamamos y lo dejamos listo contigo.' },
       { title: 'Precio público, tengas los pisos que tengas', body: 'Hostly publica su precio: 40 €/mes por piso + IVA, 35 € desde 5. Guesty publica precio solo para Lite (de 1 a 3 anuncios); a partir de ahí, trabaja con presupuesto a medida.' },
       { title: 'Check-in y registro gratis', body: registroGratis },
       { title: 'Soporte cercano', body: 'En Hostly Completo, el primer mes lo configuramos todo contigo en una videollamada. Después te atiende una persona, en castellano o catalán.' },
