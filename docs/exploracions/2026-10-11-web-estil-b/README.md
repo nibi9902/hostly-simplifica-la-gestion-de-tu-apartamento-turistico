@@ -301,6 +301,17 @@ a https://claude.ai/artifact/2tV8XqvKXSA6iCvtdLtzdZ, totes amb les xifres, els b
 4. Dins de «Gratis para siempre»: la frase passa a ser el títol d'aquella secció i el 0 € només surt
    una vegada.
 
+**La 3, afinada (13-10):** «el 3 m'agrada molt». Tres canvis, i dues maneres de posar les insígnies
+(a dalt de `zero-quatre-opcions.html`, el mateix enllaç):
+- **El preu de les altres apps, més fort.** El Biel proposava «180 € l'any o algo així». 180 € era la
+  xifra que deia la web abans de la revisió d'octubre, i es va treure perquè Chekin publica des de
+  3,95 € al mes per pis (uns 47 € l'any). Ara diu «190 € al año, con 4 pisos» (4 × 3,95 × 12 =
+  189,60 €), ratllat, amb la font en lletra petita a la targeta.
+- **Fora «es nuestra forma de darnos a conocer»** (el Biel: «no podem dir-ho»). Ara és «Gratis hoy y
+  gratis siempre.».
+- **Les insígnies, soles.** Ja són targetes (fons beix i vora pròpia); dins de la bombolla grisa feien
+  de caixa dins d'una caixa. A: a baix de tot de la targeta fosca. B: a sota, al costat de les xifres.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
