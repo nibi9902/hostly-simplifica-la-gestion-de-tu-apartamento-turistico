@@ -369,3 +369,13 @@ A `zero-insignies-tercera-volta.html`, al mateix enllaç (https://claude.ai/arti
 menjador dia / capvespre / nit / pluja · menjador vertical dia / nit · arbre dia / capvespre /
 pluja · sala · logotip, icona de l'app, Airbnb, Booking i les tres insígnies. Els identificadors
 són a cada `.dc.html` (`/_blob/…`); l'origen de cada foto, a `../2026-10-10-web-minimal/README.md`.
+
+## La 1 a la portada (13-10, vespre)
+
+El Biel vol provar a la portada la «1 · Amb la pantalla» d'aquesta pàgina (`pendent-amb-la-pantalla.html`),
+en lloc de la 3. Feta a `src/components/portada/Pendent.tsx`, tal com és aquí: la pantalla sempre al mig,
+la foto del Resum que passa de dia a tarda i a nit (les tres fotos, ara a `src/assets/portada/`), el 8 que
+compta amb cada cosa gran d'una en una i el moment del dia, la línia mínima a sota de la pantalla i, al
+final, les vuit en llista, la incidència «Para ti» i l'1 que s'encén. Només es mou a l'ordinador ample
+(≥ 1280 px); més estret o amb «reduir moviment», es veu com al final del dia. La 3 es queda a l'historial
+del git (commit anterior a aquest canvi) per si s'hi vol tornar.

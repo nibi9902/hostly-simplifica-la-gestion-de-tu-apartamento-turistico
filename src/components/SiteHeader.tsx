@@ -27,6 +27,11 @@ export function SiteHeader() {
     // sola). L'avís que s'escoltava abans —`hero-cta-visible`— surt de la
     // seqüència lligada al scroll, així que qui entrava i no baixava els
     // ~3.200 px del hero es quedava sense menú.
+    // Amb «reduir moviment» l'entrada no s'anima i avisa abans que aquí s'escolti: no hi ha res a esperar.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setVisible(true);
+      return;
+    }
     setVisible(false);
     const show = () => setVisible(true);
     window.addEventListener('hostly:hero-intro-done', show);

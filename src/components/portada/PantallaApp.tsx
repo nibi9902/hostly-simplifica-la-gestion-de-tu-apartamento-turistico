@@ -2,16 +2,19 @@
  * La pantalla principal de Hostly a l'ordinador (el Resum), «com sempre»: al Resum només hi surt el que
  * et necessita (una incidència, «Para ti») i, a sota, en verd, «Hostly lo está haciendo por ti».
  * Es dibuixa a mida real (1100 × 580) i s'escala amb CSS (`.pt-pantalla .pt-fin`).
- * La foto és el fons del Resum de l'app, de nit.
+ * La foto és el fons del Resum de l'app, de nit. Amb `diaSencer`, a sota hi ha també la de dia i la de
+ * tarda, perquè la secció les pugui fer passar (a l'ordinador ample; si no, el CSS les amaga i no es baixen).
  */
 import { useTranslation } from "react-i18next";
 import { Bell } from "lucide-react";
+import fotoDia from "@/assets/portada/menjador-dia.webp";
+import fotoTarda from "@/assets/portada/menjador-tarda.webp";
 import fotoNit from "@/assets/portada/menjador-nit.webp";
 import iconaApp from "@/assets/portada/icona-app.webp";
 
 type Xifra = { xifra: string; text: string };
 
-export default function PantallaApp() {
+export default function PantallaApp({ diaSencer = false }: { diaSencer?: boolean }) {
   const { t } = useTranslation("home");
   const portes = t("portada.pendent.pantalla.portes", { returnObjects: true }) as string[];
   const tira = t("portada.pendent.pantalla.tira", { returnObjects: true }) as Xifra[];
@@ -36,7 +39,9 @@ export default function PantallaApp() {
             </div>
           </div>
           <div className="pt-fons">
-            <span className="pt-ft" style={{ backgroundImage: `url(${fotoNit})` }} />
+            {diaSencer && <img className="pt-ft pt-ft-dia" src={fotoDia} alt="" width={1200} height={675} loading="lazy" decoding="async" />}
+            {diaSencer && <img className="pt-ft pt-ft-tarda" src={fotoTarda} alt="" width={1200} height={675} loading="lazy" decoding="async" />}
+            <img className="pt-ft pt-ft-nit" src={fotoNit} alt="" width={1200} height={675} loading="lazy" decoding="async" />
             <div className="pt-vel" />
           </div>
           <div className="pt-cos">

@@ -173,10 +173,9 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 @keyframes pt-parla { 0%, 100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
 @keyframes pt-roda { from { transform: scale(1.04) translate(0, 0); } to { transform: scale(1.16) translate(-3%, -2%); } }
 
-/* ── 3 · Hostly està pendent ──
-   El 8 compta i les coses surten a l'esquerra, a dues columnes, amb una línia del dia mínima. Al final, la
-   segona columna s'esvaeix i reapareix a sota de la primera, s'encén l'1 i surt la pantalla de Hostly amb
-   l'única cosa que et necessita. */
+/* ── 3 · Hostly està pendent: la U, amb la pantalla sempre al mig («1 · Amb la pantalla») ──
+   A l'esquerra el 8 compta i cada cosa surt gran, d'una en una; a sota de la pantalla, la línia del dia
+   mínima. Al final, totes vuit en llista, la incidència a la pantalla i, a la dreta, l'1 s'encén. */
 .pt-pend { padding-block: 96px 104px; background: var(--pt-fons); overflow: hidden; }
 .pt-pend .pt-h2 { font-size: 60px; }
 .pt-num { font-size: 112px; line-height: .82; font-weight: 700; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; }
@@ -193,27 +192,26 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-lm-trams { position: absolute; left: 0; right: 0; top: 22px; display: grid; grid-template-columns: 3fr 3fr 2fr; }
 .pt-lm-trams span { text-align: center; font-size: 12px; font-weight: 500; color: hsl(220 9% 64%); transition: color .4s ease; }
 .pt-lm-trams span.on { color: var(--pt-text); }
-/* la graella: costats fixos i la pantalla sempre al centre de la pàgina */
-.pt-e3 { display: grid; grid-template-columns: 292px minmax(0, 1fr) 292px; column-gap: 32px; align-items: center; margin-top: 64px; }
-.pt-e3-esq { grid-row: 1; grid-column: 1; align-self: start; width: 292px; display: flex; flex-direction: column; align-items: flex-start; }
-.pt-e3-pant { grid-row: 1; grid-column: 2; justify-self: center; min-width: 0; }
-.pt-e3-dreta { grid-row: 1; grid-column: 3; justify-self: start; width: 262px; display: flex; flex-direction: column; align-items: flex-start; }
-.pt-e3-llista { display: flex; flex-direction: column; gap: 2px; margin-top: 14px; width: 100%; }
-.pt-e3-fila { position: relative; display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 12px; align-items: start; border-radius: 14px; }
-.pt-e3-lava { position: absolute; inset: 0; border-radius: 14px; background: hsl(138 76% 95%); opacity: 0; }
-.pt-e3-marca { position: relative; width: 30px; height: 30px; border-radius: 9999px; background: hsl(138 76% 92%); color: var(--pt-verd); display: grid; place-items: center; }
-.pt-e3-marca svg { width: 15px; height: 15px; }
-.pt-e3-fila p { position: relative; min-width: 0; }
-.pt-e3-fila b { display: block; font-size: 16px; line-height: 1.3; font-weight: 600; }
-.pt-e3-det { display: block; font-size: 13.5px; line-height: 1.4; color: var(--pt-gris); margin-top: 1px; }
-@media (min-width: 1280px) {
-  .pt-e3.fase-dia .pt-e3-esq { grid-column: 1 / 3; justify-self: start; width: auto; }
-  .pt-e3.fase-dia .pt-e3-llista { display: grid; grid-template-columns: repeat(2, 292px); grid-template-rows: repeat(4, auto); grid-auto-flow: column; gap: 2px 40px; width: auto; }
-}
+/* la graella: la pantalla al centre de la pàgina i, als costats, el que hi cap (fins a 260 px) */
+.pt-u { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); column-gap: 40px; align-items: center; margin-top: 64px; }
+.pt-u-esq { justify-self: end; width: min(260px, 100%); display: flex; flex-direction: column; align-items: flex-start; }
+.pt-u-mig { min-width: 0; display: flex; flex-direction: column; align-items: stretch; }
+.pt-u-dreta { justify-self: start; width: min(260px, 100%); display: flex; flex-direction: column; align-items: flex-start; }
+/* la cosa que passa ara i la llista de totes comparteixen lloc: l'alçada no canvia quan es fa de nit */
+.pt-u-cos { display: grid; margin-top: 22px; width: 100%; }
+.pt-u-ara, .pt-u-totes { grid-area: 1 / 1; }
+.pt-u-ara { display: grid; opacity: 0; visibility: hidden; }
+.pt-u-ara p { grid-area: 1 / 1; opacity: 0; visibility: hidden; }
+.pt-u-ara small { display: block; font-size: 12px; font-weight: 500; color: var(--pt-gris); margin-bottom: 4px; }
+.pt-u-ara b { display: block; font-size: 22px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
+.pt-u-ara span { display: block; font-size: 15px; line-height: 1.45; color: var(--pt-gris); margin-top: 4px; }
+.pt-u-totes { display: flex; flex-direction: column; gap: 9px; }
+.pt-u-totes li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.35; }
+.pt-u-totes .pt-ic { width: 16px; height: 16px; color: var(--pt-verd); margin-top: 1px; }
 
 /* La pantalla de Hostly, a mida real (1100 × 580) i escalada */
-.pt-pantalla { position: relative; width: 640px; height: 337px; border-radius: 14px; box-shadow: 0 40px 90px -24px rgba(15, 23, 42, .28), 0 10px 30px rgba(15, 23, 42, .07); }
-.pt-pantalla .pt-fin { position: absolute; left: 0; top: 0; width: 1100px; height: 580px; transform: scale(.5818); transform-origin: 0 0; border-radius: 20px; background: var(--pt-blanc); overflow: hidden; box-shadow: inset 0 0 0 1px var(--pt-linia); text-align: left; color: var(--pt-text); }
+.pt-pantalla { position: relative; width: 704px; height: 371px; border-radius: 14px; box-shadow: 0 40px 90px -24px rgba(15, 23, 42, .28), 0 10px 30px rgba(15, 23, 42, .07); }
+.pt-pantalla .pt-fin { position: absolute; left: 0; top: 0; width: 1100px; height: 580px; transform: scale(.64); transform-origin: 0 0; border-radius: 20px; background: var(--pt-blanc); overflow: hidden; box-shadow: inset 0 0 0 1px var(--pt-linia); text-align: left; color: var(--pt-text); }
 .pt-pantalla .pt-crom { height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 16px; background: hsl(210 20% 97%); border-bottom: 1px solid var(--pt-linia); }
 .pt-pantalla .pt-crom i { width: 11px; height: 11px; border-radius: 9999px; background: hsl(220 13% 84%); display: block; }
 .pt-pantalla .pt-adreca { margin: 0 auto; height: 24px; width: 300px; border-radius: 9999px; background: var(--pt-blanc); box-shadow: inset 0 0 0 1px var(--pt-linia); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--pt-gris); }
@@ -230,7 +228,13 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-pantalla .pt-campana .pt-ic { width: 16px; height: 16px; }
 .pt-pantalla .pt-inicials { width: 28px; height: 28px; border-radius: 9999px; background: var(--pt-fosc); color: #fff; font-size: 11px; font-weight: 600; display: grid; place-items: center; }
 .pt-pantalla .pt-fons { position: absolute; inset: 52px 0 0 0; overflow: hidden; }
-.pt-pantalla .pt-ft { position: absolute; inset: 0; background-size: cover; background-position: 60% 50%; background-repeat: no-repeat; }
+.pt-pantalla .pt-ft { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; }
+/* la foto de dia i la de tarda només hi són quan el dia passa (a l'ordinador ample i amb moviment):
+   amagades, el navegador no les baixa */
+.pt-pantalla .pt-ft-dia, .pt-pantalla .pt-ft-tarda { display: none; }
+@media (min-width: 1280px) and (prefers-reduced-motion: no-preference) {
+  .pt-pantalla .pt-ft-dia, .pt-pantalla .pt-ft-tarda { display: block; }
+}
 .pt-pantalla .pt-vel { position: absolute; inset: 0; background: linear-gradient(100deg, hsl(210 20% 98% / .84) 0%, hsl(210 20% 98% / .52) 38%, hsl(210 20% 98% / .16) 62%, hsl(210 20% 98% / .08) 100%), linear-gradient(to top, hsl(210 20% 98% / .55) 0%, hsl(210 20% 98% / 0) 32%); }
 .pt-pantalla .pt-cos { position: absolute; z-index: 1; left: 24px; top: 78px; width: 470px; display: flex; flex-direction: column; gap: 14px; }
 .pt-pantalla .pt-targ { position: relative; background: hsl(0 0% 100% / .95); border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, .12); padding: 20px 22px; display: flex; flex-direction: column; gap: 9px; }
@@ -250,24 +254,20 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-pantalla .pt-tira div:first-child { border-left: 0; }
 .pt-pantalla .pt-tira b { display: block; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .pt-pantalla .pt-tira small { font-size: 11px; color: var(--pt-gris); }
-/* on no hi cap la de 640, una mica més petita; i més estret, tot un sota l'altre.
-   A 1280 px (64 de marge, 1.152 de caixa) les tres columnes hi caben si els costats fan 272 i la pantalla 520. */
-@media (min-width: 1280px) and (max-width: 1295px) {
-  .pt-e3 { grid-template-columns: 272px minmax(0, 1fr) 272px; }
-  .pt-e3-esq { width: 272px; }
-  .pt-e3-dreta { width: 252px; }
-  .pt-e3.fase-dia .pt-e3-llista { grid-template-columns: repeat(2, 272px); }
-  .pt-pantalla { width: 520px; height: 274px; }
-  .pt-pantalla .pt-fin { transform: scale(.4727); }
+/* la pantalla es fa petita a mesura que la pàgina s'estreny (a 1280 px, 1.152 de caixa: 576 + 2 × 40 de
+   separació, i 248 per costat); més estret, tot un sota l'altre */
+@media (min-width: 1384px) and (max-width: 1439px) {
+  .pt-pantalla { width: 640px; height: 337px; }
+  .pt-pantalla .pt-fin { transform: scale(.5818); }
 }
-@media (min-width: 1296px) and (max-width: 1383px) {
-  .pt-pantalla { width: 550px; height: 290px; }
-  .pt-pantalla .pt-fin { transform: scale(.5); }
+@media (min-width: 1280px) and (max-width: 1383px) {
+  .pt-pantalla { width: 576px; height: 304px; }
+  .pt-pantalla .pt-fin { transform: scale(.5236); }
 }
 @media (max-width: 1279px) {
-  .pt-e3 { grid-template-columns: minmax(0, 1fr); row-gap: 40px; justify-items: center; }
-  .pt-e3-esq, .pt-e3-pant, .pt-e3-dreta { grid-column: 1; grid-row: auto; justify-self: center; }
-  .pt-e3-pant { width: 550px; max-width: 100%; }
+  .pt-u { grid-template-columns: minmax(0, 1fr); row-gap: 40px; justify-items: center; }
+  .pt-u-esq, .pt-u-dreta { justify-self: center; }
+  .pt-u-mig { width: 550px; max-width: 100%; }
   .pt-pantalla { width: 550px; height: 290px; }
   .pt-pantalla .pt-fin { transform: scale(.5); }
 }
@@ -510,7 +510,7 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-forat { width: 132px; height: 132px; }
   .pt-boleta { width: 132px; height: 132px; border-radius: 66px; }
   /* la pantalla de Hostly, estreta com al mòbil i a una mida que es llegeix: 560 × 640, escalada a 320 */
-  .pt-e3-pant { width: 320px; }
+  .pt-u-mig { width: 320px; }
   .pt-pantalla { width: 320px; height: 366px; border-radius: 12px; }
   .pt-pantalla .pt-fin { width: 560px; height: 640px; transform: scale(.5714); }
   .pt-pantalla .pt-app { height: 600px; }
