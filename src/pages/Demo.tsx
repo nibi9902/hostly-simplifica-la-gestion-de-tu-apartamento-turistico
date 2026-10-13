@@ -1,18 +1,21 @@
 /**
  * /demo («Ver cómo funciona»), a l'estil de la portada (13-10-2026): els cinc vídeos de la sèrie
  * «Todo va solo» (~/hostly-videos/entregues), un per cosa que Hostly fa per tu. Abans hi havia un sol
- * vídeo de Remotion amb l'app d'abril, en català i amb «Hostly Automàtic».
+ * vídeo de l'app d'abril, en català i amb «Hostly Automàtic», que no torna tal com era.
  *
  * Els vídeos de la web són còpies a 720 px, tallades abans de la píndola final «Pruébala gratis 14
  * días» (ja no és l'oferta): acaben amb el logotip i «Que tu piso no te gestione a ti». Els originals
  * no s'han tocat. Són en castellà (a /ca, una nota ho diu).
  *
- * Cada targeta ensenya la portada; en tocar-la, el vídeo surt al seu lloc i comença amb so. Només en
- * sona un alhora. Mirar-ne un compta com a `video_play` (a Meta, «VerVideo»).
+ * Les cinc portades van en una fila. En tocar-ne una, el vídeo s'obre gran, gairebé a tota la pantalla
+ * (el Biel, 13-10: «pot ser inclús una mica més gran, que ocupi gairebé tot»), amb so i amb fletxes per
+ * passar al següent; es tanca amb Esc, la creu o un clic fora. Mirar-ne un compta com a `video_play`
+ * (a Meta, «VerVideo»).
  */
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Play } from "lucide-react";
+import * as Dialeg from "@radix-ui/react-dialog";
+import { ArrowLeft, ArrowRight, Play, X } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Truca from "@/components/portada/Truca";
 import { LangLink } from "@/i18n/LangLink";
@@ -27,15 +30,31 @@ export default function Demo() {
   const { t } = useTranslation("common");
   const videos = t("demo.videos", { returnObjects: true }) as Video[];
   const nota = t("demo.nota_idioma", { defaultValue: "" });
-  const [enMarxa, setEnMarxa] = useState<string | null>(null);
-  const graella = useRef<HTMLDivElement>(null);
+  // el vídeo obert (índex), o cap
+  const [obert, setObert] = useState<number | null>(null);
 
-  const mira = (id: string) => {
-    // només un alhora: els altres es paren
-    graella.current?.querySelectorAll("video").forEach((v) => { if (v.dataset.id !== id) v.pause(); });
-    setEnMarxa(id);
-    track("video_play", { location: "demo", variant: id });
+  const mira = (i: number) => {
+    setObert(i);
+    track("video_play", { location: "demo", variant: videos[i].id });
   };
+  const passa = (dir: number) => {
+    if (obert === null) return;
+    mira((obert + dir + videos.length) % videos.length);
+  };
+
+  // amb el teclat, ← → passen de vídeo
+  useEffect(() => {
+    if (obert === null) return;
+    const tecla = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") passa(1);
+      if (e.key === "ArrowLeft") passa(-1);
+    };
+    window.addEventListener("keydown", tecla);
+    return () => window.removeEventListener("keydown", tecla);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [obert]);
+
+  const actual = obert !== null ? videos[obert] : null;
 
   return (
     <PageShell title={t("demo.meta_title")} description={t("demo.meta_description")} path="/demo">
@@ -47,27 +66,14 @@ export default function Demo() {
             <p className="pt-lead">{t("demo.subheading")}</p>
           </div>
 
-          <div ref={graella} className="pt-videos">
-            {videos.map((v) => (
+          <div className="pt-videos">
+            {videos.map((v, i) => (
               <figure key={v.id} className="pt-video">
                 <div className="pt-video-marc">
-                  {enMarxa === v.id ? (
-                    <video
-                      data-id={v.id}
-                      src={`/assets/funciona/${v.id}.mp4`}
-                      poster={`/assets/funciona/${v.id}.webp`}
-                      controls
-                      autoPlay
-                      playsInline
-                      preload="auto"
-                      onPlay={(e) => graella.current?.querySelectorAll("video").forEach((o) => { if (o !== e.currentTarget) o.pause(); })}
-                    />
-                  ) : (
-                    <button type="button" className="pt-video-boto" onClick={() => mira(v.id)} aria-label={t("demo.veure", { titol: v.titol })}>
-                      <img src={`/assets/funciona/${v.id}.webp`} alt="" width={480} height={854} loading="lazy" decoding="async" />
-                      <span className="pt-video-play" aria-hidden="true"><Play className="pt-ic" fill="currentColor" /></span>
-                    </button>
-                  )}
+                  <button type="button" className="pt-video-boto" onClick={() => mira(i)} aria-label={t("demo.veure", { titol: v.titol })}>
+                    <img src={`/assets/funciona/${v.id}.webp`} alt="" width={480} height={854} loading="lazy" decoding="async" />
+                    <span className="pt-video-play" aria-hidden="true"><Play className="pt-ic" fill="currentColor" /></span>
+                  </button>
                 </div>
                 <figcaption><b>{v.titol}</b><span>{v.text}</span></figcaption>
               </figure>
@@ -84,6 +90,40 @@ export default function Demo() {
           </div>
         </div>
       </section>
+
+      {/* El vídeo obert, gran: gairebé tota l'alçada de la pantalla */}
+      <Dialeg.Root open={obert !== null} onOpenChange={(o) => { if (!o) setObert(null); }}>
+        <Dialeg.Portal>
+          <Dialeg.Overlay className="pt-gran-fons" />
+          <Dialeg.Content className="pt-seccio pt-gran" aria-describedby={undefined}>
+            {actual && (
+              <>
+                <Dialeg.Title className="sr-only">{actual.titol}</Dialeg.Title>
+                <div className="pt-gran-marc">
+                  <video
+                    key={actual.id}
+                    src={`/assets/funciona/${actual.id}.mp4`}
+                    poster={`/assets/funciona/${actual.id}.webp`}
+                    controls
+                    autoPlay
+                    playsInline
+                    preload="auto"
+                  />
+                </div>
+                <div className="pt-gran-peu">
+                  <p><b>{actual.titol}</b><span>{actual.text}</span></p>
+                  <div className="pt-gran-fletxes">
+                    <button type="button" onClick={() => passa(-1)} aria-label={t("demo.anterior")}><ArrowLeft className="pt-ic" aria-hidden="true" /></button>
+                    <span>{`${(obert ?? 0) + 1} / ${videos.length}`}</span>
+                    <button type="button" onClick={() => passa(1)} aria-label={t("demo.seguent")}><ArrowRight className="pt-ic" aria-hidden="true" /></button>
+                  </div>
+                </div>
+              </>
+            )}
+            <Dialeg.Close className="pt-gran-x" aria-label={t("demo.tancar")}><X className="pt-ic" /></Dialeg.Close>
+          </Dialeg.Content>
+        </Dialeg.Portal>
+      </Dialeg.Root>
 
       <Truca />
     </PageShell>

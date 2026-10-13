@@ -129,10 +129,10 @@ function Contingut({ item, onTria }: { item: NavMainItem; onTria: () => void }) 
       </div>
     );
   }
-  // Per a qui: les quatre peces, dues i dues
+  // Per a qui: les quatre peces en una fila (13-10: «per què tenim dues files? per què no ho podem fer tot en una?»)
   if (item.dropdown) {
     return (
-      <ul className="grid grid-cols-2 gap-0.5">
+      <ul className="grid grid-cols-4 gap-0.5">
         {item.dropdown.map((sub) => <li key={sub.href}><Peca item={sub} onTria={onTria} /></li>)}
       </ul>
     );
@@ -355,7 +355,7 @@ export function HeaderNav({ nav }: Props) {
                       'transition-[opacity,transform] motion-reduce:transition-opacity',
                       visible ? 'duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] opacity-100 translate-y-0 scale-100'
                         : 'duration-150 ease-in opacity-0 -translate-y-1.5 scale-[0.985] motion-reduce:translate-y-0 motion-reduce:scale-100',
-                      item.groups || item.href ? 'w-[min(1240px,calc(100vw_-_2*var(--web-marge)))]' : 'w-[min(680px,calc(100vw_-_2*var(--web-marge)))]',
+                      'w-[min(var(--web-ample),calc(100vw_-_2*var(--web-marge)))]',
                     )}
                   >
                     <div className="rounded-[28px] bg-white p-2 shadow-[0_24px_64px_-24px_rgba(15,23,42,0.28),0_2px_8px_rgba(15,23,42,0.04)] ring-1 ring-[hsl(220_13%_91%)]">
