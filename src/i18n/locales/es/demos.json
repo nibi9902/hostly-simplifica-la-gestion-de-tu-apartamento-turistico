@@ -23,7 +23,8 @@
     "checkOutShort": "Salida 10 abr.",
     "validatLabel": "Datos del huésped validados",
     "validatSubtitle": "Documento, nacimiento y nacionalidad revisados",
-    "taxLabel": "Tasa turística"
+    "taxLabel": "Tasa turística",
+    "policiaLabel": "Policía"
   },
   "mensajeria": {
     "automaticBadge": "Automático",
@@ -189,7 +190,7 @@
     "step3Badge": "Hoy 11:30",
     "step4Event": "Registro enviado",
     "step4Detail": "Registro viajeros · enviado",
-    "step4Badge": "Mossos OK",
+    "step4Badge": "Policía OK",
     "step5Event": "Mensaje respondido",
     "step5Detail": "Mensaje huésped · resuelto",
     "step5Badge": "Auto-reply · 3 idiomas"

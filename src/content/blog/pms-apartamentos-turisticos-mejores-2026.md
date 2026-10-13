@@ -22,11 +22,11 @@ faqs:
   - question: "¿A partir de cuántos apartamentos compensa tener un PMS?"
     answer: "Con 1 apartamento ya te ahorra tiempo si valoras tu tiempo. Con 2‑3 se nota mucho. Con 5+ es prácticamente imposible gestionar sin. La pregunta no es 'cuántos apartamentos' sino 'cuánto tiempo quieres dedicar a tareas manuales'."
   - question: "¿Cuánto cuesta un PMS para alquiler vacacional?"
-    answer: "Depende del proveedor, de cuántos pisos tengas y de lo que incluya. Con los precios publicados en octubre de 2026: Hostly es gratis para el check-in y el registro, y Hostly Completo cuesta 40 €/mes por piso (35 € desde 5); Smoobu, desde 29 €/mes por alojamiento (+0,9 % por reserva en el plan Flex); Hospitable tiene un plan gratis y planes de pago desde 29 €/mes + IVA; Hostify, desde 20 $ por alojamiento al mes, a partir de 5; Icnea, desde 150 €/mes hasta 10 propiedades; Avantio, una cuota mínima de 295 €/mes + IVA. Lodgify tiene varios planes (consulta su web) y Guesty publica precio solo para su plan Lite."
+    answer: "Depende del proveedor, de cuántos pisos tengas y de lo que incluya. Con los precios publicados en octubre de 2026: Hostly es gratis para el check-in y el registro, y Hostly Completo cuesta 40 €/mes por piso + IVA (35 € desde 5); Smoobu, desde 29 €/mes por alojamiento (+0,9 % por reserva en el plan Flex); Hospitable tiene un plan gratis y planes de pago desde 29 €/mes + IVA; Hostify, desde 20 $ por alojamiento al mes, a partir de 5; Icnea, desde 150 €/mes hasta 10 propiedades; Avantio, una cuota mínima de 295 €/mes + IVA. Lodgify tiene varios planes (consulta su web) y Guesty publica precio solo para su plan Lite."
   - question: "¿Qué pasa con mis datos si cambio de PMS?"
     answer: "Todos los PMS modernos permiten exportar tus reservas, huéspedes y facturación en formatos estándar (CSV, JSON) o vía API. Migrar a otro sistema es trabajoso pero posible. Pide siempre a un proveedor la política de exportación antes de contratar."
   - question: "¿Un PMS sustituye a Chekin?"
-    answer: "Depende. Hostly incluye el check-in y el registro a la policía (automático con los Mossos d'Esquadra; en el resto de España, activamos contigo la conexión con la policía que te toque), así que no necesitas Chekin. Hostify tiene integración con SES. Smoobu o Lodgify se suelen complementar con Chekin. Si quieres todo en uno, elige un PMS que cubra el registro de tu comunidad."
+    answer: "Depende. Hostly incluye el check-in y el registro a la policía (automático, cada día), así que no necesitas Chekin. Hostify tiene integración con SES. Smoobu o Lodgify se suelen complementar con Chekin. Si quieres todo en uno, elige un PMS que cubra el registro de tu comunidad."
 ---
 
 Si gestionas apartamentos turísticos y ya has pasado el punto de organizarlo todo con Excel y el calendario de Airbnb, es hora de conocer qué es un PMS y cuándo tiene sentido. Esta guía cubre **qué hace un PMS, en qué se diferencia de otras herramientas, cómo saber si te compensa y los 10 sistemas más relevantes del mercado en 2026** para un propietario o gestor en España.
@@ -86,9 +86,9 @@ Análisis honesto de las opciones más relevantes para un propietario o gestor e
 
 ### 1. Hostly
 
-**Origen**: Cataluña. **Para quién**: de 1 a 15 pisos en España. **Precio**: gratis para el check-in y el registro a la policía; Hostly Completo, 40 €/mes por piso (35 € desde 5).
+**Origen**: Cataluña. **Para quién**: de 1 a 15 pisos en España. **Precio**: gratis para el check-in y el registro a la policía; Hostly Completo, 40 €/mes por piso + IVA (35 € desde 5).
 
-Combina IA en WhatsApp, check-in con registro automático en los Mossos d'Esquadra, channel manager para Airbnb y Booking, limpiezas con app propia, precios al día según la demanda y atención en castellano y catalán. En el resto de España, activamos contigo la conexión con la policía que te toque. Pensado específicamente para el mercado español y la operativa del día a día.
+Combina IA en WhatsApp, check-in con registro automático a la policía, channel manager para Airbnb y Booking, limpiezas con app propia, precios al día según la demanda y atención en castellano y catalán. Pensado específicamente para el mercado español y la operativa del día a día.
 
 **Pros**: check-in, registro, mensajes, limpiezas y precios en una sola app. La IA contesta a los huéspedes por WhatsApp. Registro a los Mossos automático. Plan Gratis para el check-in y el registro.
 **Contras**: marca joven. Solo Airbnb y Booking.com (una web propia con reservas directas se hace a medida, como automatización aparte), muchos menos canales que Hostify.

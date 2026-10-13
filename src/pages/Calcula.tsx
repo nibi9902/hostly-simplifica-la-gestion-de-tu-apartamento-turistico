@@ -260,7 +260,7 @@ export default function Calcula() {
                   )}
                   <p className="text-base text-muted-foreground">
                     {t("calcula.resultado.horas_ano", { ano: horasAno[iHoras] })}{" "}
-                    {r.donde === "catalunya" ? t("calcula.resultado.registro_cat") : t("calcula.resultado.registro_otra")}
+                    {t("calcula.resultado.registro_cat")}
                   </p>
                   <button
                     type="button"
@@ -342,7 +342,7 @@ export default function Calcula() {
                             <span className="font-semibold text-foreground">{t("calcula.resultado.detalle_gestoria")}</span>
                             <span className="text-foreground/80 text-right">
                               {/* La taxa que calcula Hostly és la de Catalunya: fora, la gestoria segueix igual */}
-                              {r.donde === "catalunya" ? t("calcula.resultado.detalle_gestoria_hostly") : t("calcula.resultado.detalle_gestoria_otra")}
+                              {t("calcula.resultado.detalle_gestoria_hostly")}
                             </span>
                           </li>
                         )}
@@ -351,7 +351,7 @@ export default function Calcula() {
                             <span className="font-semibold text-foreground">{t("calcula.resultado.detalle_horas")}</span>
                             <span className="block text-muted-foreground">{horasFrase[iHoras]}</span>
                           </span>
-                          <span className="text-foreground/80 text-right">{r.donde === "catalunya" ? t("calcula.resultado.detalle_horas_hostly") : t("calcula.resultado.detalle_horas_hostly_otra")}</span>
+                          <span className="text-foreground/80 text-right">{t("calcula.resultado.detalle_horas_hostly")}</span>
                         </li>
                       </ul>
                       <p className="mt-4 text-xs text-muted-foreground">{t("calcula.resultado.nota")}</p>

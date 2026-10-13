@@ -339,7 +339,7 @@ function PropietariView({ frame, fps }: { frame: number; fps: number }) {
           frame={frame} fps={fps}
           enterFrame={45} doneFrame={74}
           Icon={Shield}
-          label="Mossos d'Esquadra"
+          label={t('checkin.policiaLabel')}
           sublabel={t('checkin.mossosSubtitle')}
         />
         <LegalItem

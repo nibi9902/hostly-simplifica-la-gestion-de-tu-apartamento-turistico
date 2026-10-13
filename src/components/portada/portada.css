@@ -316,15 +316,11 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-total > span { font-weight: 600; }
 .pt-total b { display: inline-flex; align-items: baseline; gap: 3px; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; transform-origin: 100% 50%; }
 .pt-n-eur { display: inline-block; min-width: 6ch; text-align: right; }
-/* el pagament */
-.pt-accio { position: relative; z-index: 1; display: grid; align-items: center; justify-items: start; height: 28px; }
-.pt-accio > * { grid-area: 1 / 1; }
-.pt-boto-pagar { display: inline-flex; align-items: center; height: 28px; padding: 0 13px; border-radius: 9999px; background: var(--pt-blau); color: #fff; font-weight: 600; opacity: 0; visibility: hidden; }
-.pt-spin { width: 28px; height: 28px; display: grid; place-items: center; opacity: 0; visibility: hidden; }
-.pt-spin svg { width: 22px; height: 22px; }
-.pt-spin circle { fill: none; stroke: var(--pt-blau); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 38 100; }
-.pt-dit { width: 30px; height: 30px; margin-left: 38px; border-radius: 9999px; background: hsl(217 91% 60% / .35); opacity: 0; visibility: hidden; }
-.pt-cobrat { position: absolute; z-index: 1; right: 12px; bottom: 13px; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; color: var(--pt-verd-fosc); opacity: 0; visibility: hidden; }
+/* la taxa ocupa les dues columnes de sota: el text a l'esquerra i el càlcul al costat (sense la peça del
+   pagament online, des del 13-10) */
+.pt-tile-taxa { grid-column: 3 / 5; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); grid-template-rows: auto 1fr; column-gap: 24px; row-gap: 6px; align-items: start; }
+.pt-tile-taxa > h3, .pt-tile-taxa > p { grid-column: 1; }
+.pt-tile-taxa > .pt-mostra { grid-column: 2; grid-row: 1 / 3; margin-top: 0; align-self: end; }
 
 /* ── 5 · Així es comença ── */
 .pt-passos { min-height: 460px; padding-block: 80px 64px; background: var(--pt-fons); }
@@ -523,6 +519,7 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-h2, .pt-pend .pt-h2, .pt-gratis .pt-h2 { font-size: 34px; }
   .pt-num { font-size: 88px; }
   .pt-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; }
+  .pt-tile-taxa { grid-column: 1 / -1; }
   .pt-fosca { grid-column: 1 / -1; grid-row: auto; }
   .pt-zero { font-size: 140px; }
   .pt-passos .pt-cap { flex-direction: column; align-items: flex-start; gap: 12px; }
@@ -572,6 +569,9 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-pantalla .pt-tira { left: 16px; right: 16px; height: auto; padding-block: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 12px; }
   .pt-pantalla .pt-tira div:nth-child(3) { border-left: 0; }
   .pt-bento { grid-template-columns: minmax(0, 1fr); }
+  /* al mòbil, la taxa com les altres peces: el càlcul a sota del text */
+  .pt-tile-taxa { display: flex; }
+  .pt-tile-taxa > .pt-mostra { margin-top: 8px; }
   .pt-zero { font-size: 120px; }
   .pt-fp-passos { grid-template-columns: minmax(0, 1fr); }
   /* la targeta «Hoy, en …»: el moment (o el pis) a sobre del títol, perquè el text tingui tota l'amplada */

@@ -62,7 +62,7 @@
     "hero_heading": "Va néixer de viure-ho.",
     "hero_body": "Hostly no va sorgir en una oficina ni d'un estudi de mercat. Va sorgir de la frustració de gestionar apartaments turístics amb cinc eines diferents i no poder desconnectar mai.",
     "story_p1": "Tenia els meus propis apartaments a Airbnb i Booking. El channel manager aquí, Chekin allà, les plantilles de missatges en un altre lloc, l'Excel de cobraments obert sempre, el grup de WhatsApp amb la netejadora.",
-    "story_p2": "Cada reserva implicava tocar cinc eines diferents. Cada check-in, entrar a mà al portal dels Mossos. Cada final de mes, una tarda d'Excel. I la sensació constant que si em despistava, alguna cosa es trencava.",
+    "story_p2": "Cada reserva implicava tocar cinc eines diferents. Cada check-in, entrar a mà al portal de la policia. Cada final de mes, una tarda d'Excel. I la sensació constant que si em despistava, alguna cosa es trencava.",
     "story_p3": "No vaig trobar cap eina que ho fes tot de manera senzilla per al mercat espanyol. Les que existien eren complexes, cares, o no entenien la burocràcia espanyola.",
     "story_p4": "Així que ho vaig construir jo. Primer per a mi. Després, quan va funcionar, per a tots els que estaven en la mateixa situació.",
     "founder_name": "Biel Alsina",
@@ -85,7 +85,7 @@
       },
       {
         "title": "Pensat per a Espanya",
-        "body": "El registre als Mossos, SES.Hospedajes, la taxa turística catalana. No és la traducció d'un producte americà. Està construït per al mercat espanyol des del primer dia."
+        "body": "El registre de viatgers, SES.Hospedajes, la taxa turística. No és la traducció d'un producte americà. Està construït per al mercat espanyol des del primer dia."
       }
     ],
     "contact_heading": "Parlem?",
@@ -158,8 +158,8 @@
             "href": "/blog/ses-nrua-taxa-turistica-guia"
           },
           {
-            "label": "Registre de viatgers als Mossos d'Esquadra",
-            "href": "/blog/registro-viajeros-mossos-esquadra-cataluna"
+            "label": "Si l'hoste no fa el check-in",
+            "href": "/blog/huesped-no-responde-checkin-online"
           },
           {
             "label": "Sancions per no complir el registre",

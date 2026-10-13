@@ -35,18 +35,17 @@
       "gratis_items": [
         "El check-in de l'hoste, des del seu mòbil",
         "Hostly ho envia a la policia",
-        "La taxa turística, calculada",
-        "L'hoste paga la taxa online"
+        "La taxa turística, calculada"
       ],
       "completo_nombre": "Hostly Complet",
-      "completo_precio": "40 € al mes per pis · el primer mes, gratis",
+      "completo_precio": "40 € + IVA al mes per pis · el primer mes, gratis",
       "completo_items": [
         "Tot el del pla Gratis",
-        "Airbnb i Booking, sempre quadrats",
-        "Contesta els hostes en el seu idioma",
-        "Avisa la neteja",
-        "Preus que s'ajusten sols",
-        "Ven extres i fa els comptes"
+        "Contesta els teus hostes automàticament, 24/7",
+        "Airbnb i Booking en un sol calendari, sempre quadrats",
+        "Cada sortida crea la seva neteja i avisa l'equip",
+        "Puja i baixa els preus cada dia, segons la demanda",
+        "Ven sortides tardanes i extres, i fa els comptes"
       ],
       "elegir": "Triar"
     },
@@ -79,7 +78,7 @@
         },
         {
           "titulo": "Tries el pla",
-          "texto": "Gratis: el check-in i la policia, per sempre. Complet: 40 € al mes per pis, el primer mes gratis."
+          "texto": "Gratis: el check-in i la policia, per sempre. Complet: 40 € + IVA al mes per pis, el primer mes gratis."
         },
         {
           "titulo": "Comences",
@@ -113,6 +112,11 @@
     "q_donde": "On són?",
     "o_donde": [
       "Catalunya",
+      "Balears",
+      "Comunitat Valenciana",
+      "Andalusia",
+      "Madrid",
+      "Canàries",
       "Una altra comunitat"
     ],
     "q_usas": "Què fas servir avui?",
@@ -142,13 +146,12 @@
       "eyebrow": "El teu resultat",
       "hoy": "Avui: {{euros}} al mes en apps i {{horas}} a la setmana.",
       "hoy_sin_apps": "Avui no pagues apps, però se te'n van {{horas}} a la setmana.",
-      "hostly": "Amb Hostly: {{euros}} al mes, tot en una app, i bona part d'aquesta feina, feta sola.",
-      "hostly_medida": "Amb Hostly: 35 € al mes per pis, tot en una app, i bona part d'aquesta feina, feta sola.",
+      "hostly": "Amb Hostly: {{euros}} + IVA al mes, tot en una app, i bona part d'aquesta feina, feta sola.",
+      "hostly_medida": "Amb Hostly: 35 € + IVA al mes per pis, tot en una app, i bona part d'aquesta feina, feta sola.",
       "calculado_para": "Calculat per a {{n}} pisos, el punt mitjà de la teva resposta.",
       "calculado_para_mes": "Calculat per a {{n}} pisos; amb més, suma-hi el de cada pis.",
       "horas_ano": "Això són {{ano}} del teu temps.",
       "registro_cat": "I el registre a la policia el fa Hostly, gratis.",
-      "registro_otra": "I el registre a la policia l'activem amb tu, gratis.",
       "gate_titulo": "Veure el detall",
       "gate_texto": "Deixa'ns el teu telèfon i t'ensenyem el detall, eina per eina. Si vols, et truquem per ajudar-te a decidir.",
       "gate_boton": "Veure el detall",
@@ -162,11 +165,9 @@
       "detalle_excel_hostly": "Finances i liquidacions, dins de Hostly",
       "detalle_gestoria": "Gestoria",
       "detalle_gestoria_hostly": "La taxa turística, calculada i llesta per a la teva gestoria",
-      "detalle_gestoria_otra": "La part fiscal, amb la teva gestoria com fins ara",
       "detalle_por_piso": "{{euros}} €/mes per pis",
       "detalle_horas": "Missatges, neteges i registres",
       "detalle_horas_hostly": "La IA contesta, les neteges s'avisen i els registres surten sols",
-      "detalle_horas_hostly_otra": "La IA contesta, les neteges s'avisen i els registres surten sols tan bon punt activem amb tu la connexió amb la policia",
       "nota": "Preus orientatius que publica cada eina (octubre de 2026), per pis i mes.",
       "otra_vez": "Tornar a calcular",
       "horas_frase": [
@@ -197,7 +198,7 @@
         },
         {
           "titulo": "Amb Hostly",
-          "texto": "40 € al mes per pis; 35 € des de 5 pisos. El check-in i la policia, gratis."
+          "texto": "40 € + IVA al mes per pis; 35 € des de 5 pisos. El check-in i la policia, gratis."
         }
       ]
     }

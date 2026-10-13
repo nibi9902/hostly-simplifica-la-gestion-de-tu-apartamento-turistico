@@ -65,7 +65,7 @@ Dos claves para que esto funcione sin parecer un bot:
 
 ### 2. Check-in online + registro a la policía
 
-El huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; en el resto de España, a la policía que te toque, cuando lo activemos contigo). Tú no mueves un dedo.
+El huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly, cada día). Tú no mueves un dedo.
 
 Ventaja adicional: el huésped ya ha llegado **antes de llegar**. Cuando se presenta, tiene el código, las instrucciones y ya te ha dejado los datos legales. Reduce tensión al check-in real y elimina totalmente la necesidad de quedar en persona.
 
@@ -119,7 +119,7 @@ Si tu operativa actual funciona y solo te ahoga la mensajería, hay herramientas
 
 Sustituyes tu sistema actual (Excel, calendario de Airbnb, grupos de WhatsApp) por una app de gestión completa que incluye mensajería con IA + check-in + registro de viajeros + limpiezas + precios. Por ejemplo: **Hostly** (hecho en Cataluña, con WhatsApp y registro de viajeros a la policía). **Hospitable** y **Prohost AI** cubren la IA, pero no el registro de viajeros en España.
 
-Inversión: en Hostly, el check-in y el registro son gratis, y Hostly Completo cuesta 40 €/mes por piso (35 € desde 5); en las demás, según el plan. Pro: lo tienes integrado en un solo sitio y el ahorro de tiempo es real. Contra: supone una migración inicial de 1‑2 semanas.
+Inversión: en Hostly, el check-in y el registro son gratis, y Hostly Completo cuesta 40 €/mes por piso + IVA (35 € desde 5); en las demás, según el plan. Pro: lo tienes integrado en un solo sitio y el ahorro de tiempo es real. Contra: supone una migración inicial de 1‑2 semanas.
 
 ### Opción 3: stack de herramientas conectadas (avanzado)
 

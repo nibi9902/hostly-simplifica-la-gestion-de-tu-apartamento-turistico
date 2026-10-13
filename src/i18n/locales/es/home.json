@@ -43,21 +43,21 @@
   },
   "precios_page": {
     "meta_title": "Precios · Hostly",
-    "meta_description": "Un plan gratis para siempre con el check-in y el registro a la policía. Un plan completo de 40 € al mes por piso, el primer mes gratis.",
+    "meta_description": "Un plan gratis para siempre con el check-in y el registro a la policía. Un plan completo de 40 € + IVA al mes por piso, el primer mes gratis.",
     "faq_heading": "Preguntas sobre el precio",
     "faq_subheading": "Lo que nos preguntan casi todos antes de empezar.",
     "faqs": [
       {
         "q": "¿El plan Gratis es realmente gratis para siempre?",
-        "a": "Sí. El check-in online, el registro a la policía y la tasa turística de Cataluña son gratis para siempre, sin tarjeta y sin límite de pisos. Fuera de Cataluña, la conexión con la policía la activamos contigo."
+        "a": "Sí. El check-in online, el envío a la policía y el cálculo de la tasa turística son gratis para siempre, sin tarjeta y sin límite de pisos. Si quieres, el huésped también puede pagar la tasa turística online al hacer el check-in: ese cobro lleva una comisión del 5 %, y tú decides si la pagas tú o el huésped."
       },
       {
         "q": "¿Puedo empezar gratis y pasarme a Hostly Completo más adelante?",
         "a": "Sí, así está pensado. Cuando quieras el resto de Hostly, nos lo dices (desde «Empezar» o escribiéndonos), hacemos una demo de 20 minutos y lo activamos ese mismo día, con el primer mes gratis."
       },
       {
-        "q": "¿Qué incluye exactamente el plan de 40 € al mes?",
-        "a": "Todo lo del plan Gratis y, además: Airbnb y Booking siempre cuadrados, las respuestas a los huéspedes en su idioma, los avisos a la limpieza, precios que se ajustan solos, los extras y las cuentas. El primer mes lo configuramos contigo. Lo único aparte son las automatizaciones a medida, si algún día las quieres."
+        "q": "¿Qué incluye exactamente el plan de 40 € + IVA al mes?",
+        "a": "Todo lo del plan Gratis y, además: las respuestas automáticas a tus huéspedes, a cualquier hora; Airbnb y Booking en un solo calendario; la limpieza, que se crea sola con cada salida; precios que suben y bajan cada día según la demanda, y los extras y las cuentas. El primer mes lo configuramos contigo. Lo único aparte son las automatizaciones a medida, si algún día las quieres."
       },
       {
         "q": "¿Hay permanencia?",
@@ -65,7 +65,7 @@
       },
       {
         "q": "¿Y si tengo 5 pisos o más?",
-        "a": "Desde 5 pisos, cada uno pasa a 35 € al mes en lugar de 40 €. Con 10 pisos, 350 € al mes."
+        "a": "Desde 5 pisos, cada uno pasa a 35 € + IVA al mes en lugar de 40 €. Con 10 pisos, 350 € + IVA al mes."
       },
       {
         "q": "¿Cómo funciona el programa de referidos?",
@@ -138,8 +138,8 @@
           "detall": "Hay mucha demanda."
         },
         {
-          "titol": "Cobró la tasa turística",
-          "detall": "Con el check-in."
+          "titol": "Cerró las fechas en Booking",
+          "detall": "Tras una reserva de Airbnb."
         },
         {
           "titol": "Vendió una salida más tarde",
@@ -243,15 +243,6 @@
         "nits": "Pernoctaciones",
         "preu": "Por noche y persona",
         "total": "Te toca pagar"
-      },
-      "pagament": {
-        "titol": "La tasa, pagada online",
-        "text": "El huésped la paga al hacer el check-in.",
-        "concepte": "Tasa turística",
-        "detall": "2 personas · 4 noches",
-        "pagar": "Pagar 14,00 €",
-        "pagada": "Pagada",
-        "cobrat": "+14,00 € en tu cuenta"
       }
     },
     "passos": {
@@ -285,8 +276,7 @@
         "inclou": [
           "El check-in del huésped, desde su móvil",
           "Hostly lo envía a la policía",
-          "La tasa turística, calculada",
-          "El huésped paga la tasa online"
+          "La tasa turística, calculada"
         ],
         "boto": "Empezar",
         "peu": "Sin tarjeta"
@@ -295,15 +285,15 @@
         "nom": "Hostly Completo",
         "recomanat": "Recomendado",
         "preu": "40 €",
-        "periode": "al mes por piso",
-        "nota": "35 € desde 5 pisos · el primer mes, gratis",
+        "periode": "+ IVA al mes por piso",
+        "nota": "35 € + IVA desde 5 pisos · el primer mes, gratis",
         "inclou": [
           "Todo lo del plan Gratis",
-          "Airbnb y Booking, siempre cuadrados",
-          "Contesta a los huéspedes en su idioma",
-          "Avisa a la limpieza",
-          "Precios que se ajustan solos",
-          "Vende extras y hace las cuentas"
+          "Contesta a tus huéspedes automáticamente, 24/7",
+          "Airbnb y Booking en un solo calendario, siempre cuadrados",
+          "Cada salida crea su limpieza y avisa al equipo",
+          "Sube y baja los precios cada día, según la demanda",
+          "Vende salidas tardías y extras, y hace las cuentas"
         ],
         "boto": "Empezar",
         "peu": "Sin permanencia · Lo dejamos listo contigo"

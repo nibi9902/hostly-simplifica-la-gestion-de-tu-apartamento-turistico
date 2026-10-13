@@ -20,7 +20,7 @@ const fontFamily = 'Inter, -apple-system, sans-serif';
 /* ─────────────────────────────────────────────────────────────
    TEXTS — mateix contingut que SceneChatDavid.tsx de Remotion
 ───────────────────────────────────────────────────────────── */
-const WELCOME_TEXT = `¡Bienvenido a tu alojamiento en Figueres!
+const WELCOME_TEXT = `¡Bienvenido a Cala Moreta!
 
 Hola David 😊
 ¡Estamos encantados de recibiros y esperamos que disfrutéis mucho de la estancia!
@@ -467,7 +467,7 @@ const IAWhatsAppDemo: React.FC<IAWhatsAppDemoProps> = ({ loop = false, staticMod
             <MessageBubble
               frame={frame} fps={FPS}
               enterFrame={263} side="left"
-              text="¡Hola! ¿Nos podéis recomendar algún sitio para cenar esta noche en Figueres?"
+              text="¡Hola! ¿Nos podéis recomendar algún sitio para cenar esta noche por aquí?"
               time="19:14"
               typingSpeed={1.1}
             />

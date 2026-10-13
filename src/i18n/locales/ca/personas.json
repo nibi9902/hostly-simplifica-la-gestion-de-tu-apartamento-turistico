@@ -63,7 +63,7 @@
     "h1": "Portes 8 pisos.\nAmb quantes apps?",
     "intro": "El channel manager per aquí. Chekin per allà. Excel per als cobraments. Un WhatsApp amb els hostes i un altre amb les netejadores. Hostly ho ajunta tot en una sola app.",
     "cta_primary": "Començar",
-    "cta_sub": "Sense permanència. 35 € al mes per pis des de 5 pisos.",
+    "cta_sub": "Sense permanència. 35 € + IVA al mes per pis des de 5 pisos.",
     "section2_h2": "Les eines del gestor petit, avui.",
     "section2_sub": "Cadascuna amb la seva factura.",
     "tools": [
@@ -112,8 +112,8 @@
     "hostly": {
       "retol": "Amb Hostly",
       "xifra": "35 €",
-      "unitat": "al mes per pis, des de 5 pisos",
-      "text": "Amb 8 pisos, 280 € al mes. La IA, les neteges i els preus, a dins. Una app i una sola factura."
+      "unitat": "+ IVA al mes per pis, des de 5 pisos",
+      "text": "Amb 8 pisos, 280 € + IVA al mes. La IA, les neteges i els preus, a dins. Una app i una sola factura."
     }
   },
   "segunda_residencia": {
@@ -141,7 +141,7 @@
       },
       {
         "title": "Registre i taxa, sense pensar-hi",
-        "desc": "Hostly envia el registre de viatgers a la policia i, si el pis és a Catalunya, et deixa calculada la taxa turística. Sense haver-te'n de recordar."
+        "desc": "Hostly envia el registre de viatgers a la policia i et deixa calculada la taxa turística. Sense haver-te'n de recordar."
       }
     ],
     "dia": {

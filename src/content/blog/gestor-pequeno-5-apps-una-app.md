@@ -89,17 +89,17 @@ No es que el trabajo desaparezca. Es que el trabajo repetitivo y el trabajo de "
 
 ---
 
-## Hostly para gestores pequeños: 35 €/mes por piso desde 5
+## Hostly para gestores pequeños: 35 €/mes + IVA por piso desde 5
 
 Hostly está diseñado exactamente para el perfil del gestor pequeño: alguien que lleva varios pisos (Hostly está pensado para 1 a 15), que hace demasiadas cosas a mano o con herramientas que no se comunican entre sí, y que no necesita la complejidad de un PMS para grandes operadores.
 
-Con Hostly Completo, el precio para 8 apartamentos es de **35 € por apartamento al mes** (baja de 40 € a 35 € a partir de 5 apartamentos). Para 8 pisos, eso son 280 € al mes.
+Con Hostly Completo, el precio para 8 apartamentos es de **35 € + IVA por apartamento al mes** (baja de 40 € a 35 € a partir de 5 apartamentos). Para 8 pisos, eso son 280 € + IVA al mes.
 
 Comparado con el stack fragmentado habitual (unos 120‑265 € al mes, más gestoría y más tiempo), el precio queda en la misma franja o algo por encima, pero incluye también los mensajes con IA, las limpiezas y los precios, que en ese stack no están. Y el cambio más importante no es el dinero: es dejar de tener cinco apps abiertas y empezar a tener una.
 
 Lo que incluye Hostly Completo:
 
-- Check-in online y registro de viajeros a la policía (con los Mossos d'Esquadra, automático cada día; en el resto de España, activamos contigo la conexión con la policía que te toque)
+- Check-in online y registro de viajeros a la policía, automático cada día
 - Precios al día, según la demanda
 - Tasa turística de Cataluña calculada por estancia, lista para declarar cada semestre
 - Airbnb y Booking.com conectados en un solo calendario

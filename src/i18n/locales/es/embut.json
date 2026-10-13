@@ -35,18 +35,17 @@
       "gratis_items": [
         "El check-in del huésped, desde su móvil",
         "Hostly lo envía a la policía",
-        "La tasa turística, calculada",
-        "El huésped paga la tasa online"
+        "La tasa turística, calculada"
       ],
       "completo_nombre": "Hostly Completo",
-      "completo_precio": "40 € al mes por piso · el primer mes, gratis",
+      "completo_precio": "40 € + IVA al mes por piso · el primer mes, gratis",
       "completo_items": [
         "Todo lo del plan Gratis",
-        "Airbnb y Booking, siempre cuadrados",
-        "Contesta a los huéspedes en su idioma",
-        "Avisa a la limpieza",
-        "Precios que se ajustan solos",
-        "Vende extras y hace las cuentas"
+        "Contesta a tus huéspedes automáticamente, 24/7",
+        "Airbnb y Booking en un solo calendario, siempre cuadrados",
+        "Cada salida crea su limpieza y avisa al equipo",
+        "Sube y baja los precios cada día, según la demanda",
+        "Vende salidas tardías y extras, y hace las cuentas"
       ],
       "elegir": "Elegir"
     },
@@ -79,7 +78,7 @@
         },
         {
           "titulo": "Eliges plan",
-          "texto": "Gratis: el check-in y la policía, para siempre. Completo: 40 € al mes por piso, el primer mes gratis."
+          "texto": "Gratis: el check-in y la policía, para siempre. Completo: 40 € + IVA al mes por piso, el primer mes gratis."
         },
         {
           "titulo": "Empiezas",
@@ -113,6 +112,11 @@
     "q_donde": "¿Dónde están?",
     "o_donde": [
       "Cataluña",
+      "Baleares",
+      "Comunidad Valenciana",
+      "Andalucía",
+      "Madrid",
+      "Canarias",
       "Otra comunidad"
     ],
     "q_usas": "¿Qué usas hoy?",
@@ -142,13 +146,12 @@
       "eyebrow": "Tu resultado",
       "hoy": "Hoy: {{euros}} al mes en apps y {{horas}} a la semana.",
       "hoy_sin_apps": "Hoy no pagas apps, pero se te van {{horas}} a la semana.",
-      "hostly": "Con Hostly: {{euros}} al mes, todo en una app, y buena parte de ese trabajo, hecho solo.",
-      "hostly_medida": "Con Hostly: 35 € al mes por piso, todo en una app, y buena parte de ese trabajo, hecho solo.",
+      "hostly": "Con Hostly: {{euros}} + IVA al mes, todo en una app, y buena parte de ese trabajo, hecho solo.",
+      "hostly_medida": "Con Hostly: 35 € + IVA al mes por piso, todo en una app, y buena parte de ese trabajo, hecho solo.",
       "calculado_para": "Calculado para {{n}} pisos, el punto medio de tu respuesta.",
       "calculado_para_mes": "Calculado para {{n}} pisos; con más, súmale lo de cada piso.",
       "horas_ano": "Eso son {{ano}} de tu tiempo.",
       "registro_cat": "Y el registro a la policía lo hace Hostly, gratis.",
-      "registro_otra": "Y el registro a la policía lo activamos contigo, gratis.",
       "gate_titulo": "Ver el detalle",
       "gate_texto": "Déjanos tu teléfono y te enseñamos el detalle, herramienta por herramienta. Si quieres, te llamamos para ayudarte a decidir.",
       "gate_boton": "Ver el detalle",
@@ -162,11 +165,9 @@
       "detalle_excel_hostly": "Finanzas y liquidaciones, dentro de Hostly",
       "detalle_gestoria": "Gestoría",
       "detalle_gestoria_hostly": "La tasa turística, calculada y lista para tu gestoría",
-      "detalle_gestoria_otra": "Lo fiscal, con tu gestoría como hasta ahora",
       "detalle_por_piso": "{{euros}} €/mes por piso",
       "detalle_horas": "Mensajes, limpiezas y registros",
       "detalle_horas_hostly": "La IA contesta, las limpiezas se avisan y los registros salen solos",
-      "detalle_horas_hostly_otra": "La IA contesta, las limpiezas se avisan y los registros salen solos en cuanto activamos contigo la conexión con la policía",
       "nota": "Precios orientativos que publica cada herramienta (octubre de 2026), por piso y mes.",
       "otra_vez": "Volver a calcular",
       "horas_frase": [
@@ -197,7 +198,7 @@
         },
         {
           "titulo": "Con Hostly",
-          "texto": "40 € al mes por piso; 35 € desde 5 pisos. El check-in y la policía, gratis."
+          "texto": "40 € + IVA al mes por piso; 35 € desde 5 pisos. El check-in y la policía, gratis."
         }
       ]
     }

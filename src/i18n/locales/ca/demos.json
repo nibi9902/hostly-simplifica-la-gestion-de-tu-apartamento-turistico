@@ -23,7 +23,8 @@
     "checkOutShort": "Sortida 10 abr.",
     "validatLabel": "Dades de l'hoste validades",
     "validatSubtitle": "Document, naixement i nacionalitat revisats",
-    "taxLabel": "Taxa turística"
+    "taxLabel": "Taxa turística",
+    "policiaLabel": "Policia"
   },
   "mensajeria": {
     "automaticBadge": "Automàtic",
@@ -189,7 +190,7 @@
     "step3Badge": "Avui 11:30",
     "step4Event": "Registre enviat",
     "step4Detail": "Registre de viatgers · enviat",
-    "step4Badge": "Mossos OK",
+    "step4Badge": "Policia OK",
     "step5Event": "Missatge respost",
     "step5Detail": "Missatge hoste · resolt",
     "step5Badge": "Auto-reply · 3 idiomes"

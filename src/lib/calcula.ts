@@ -14,7 +14,8 @@
  */
 
 export const OPCIONS_PISOS = ["1", "2-4", "5-15", "15+"] as const;
-export const OPCIONS_DONDE = ["catalunya", "altra"] as const;
+// la comunitat només diu d'on és el contacte (es desa amb les respostes); el resultat és el mateix per a totes
+export const OPCIONS_DONDE = ["catalunya", "balears", "valencia", "andalucia", "madrid", "canarias", "altra"] as const;
 export const OPCIONS_USAS = ["checkin", "canales", "precios", "excel", "gestoria", "nada"] as const;
 export const OPCIONS_HORAS = ["<2", "2-5", "5-10", "10+"] as const;
 export const OPCIONS_QUIEN = ["jo", "familia", "contractada"] as const;

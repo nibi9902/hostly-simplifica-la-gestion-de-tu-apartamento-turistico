@@ -19,7 +19,7 @@ faqs:
   - question: "¿Si envío a Mossos también tengo que enviar a SES.Hospedajes?"
     answer: "No. Los apartamentos en Cataluña cumplen enviando a Mossos d'Esquadra. SES.Hospedajes no aplica si ya has registrado al huésped en el sistema de Mossos."
   - question: "¿Qué pasa si tengo apartamentos en Cataluña y en Madrid?"
-    answer: "Necesitas cubrir ambos canales: los de Cataluña van a Mossos y los de Madrid, a SES.Hospedajes. Con Hostly, el envío a los Mossos es automático, y la conexión con SES.Hospedajes para los pisos de Madrid la activamos contigo."
+    answer: "Necesitas cubrir ambos canales: los de Cataluña van a Mossos y los de Madrid, a SES.Hospedajes. Con Hostly, cada piso queda configurado con su sistema desde el alta y el envío es automático."
   - question: "¿El plazo para enviar a Mossos es el mismo que SES?"
     answer: "Sí, 24 horas desde el check-in del huésped. Mossos aplica el mismo criterio temporal que el Real Decreto 933/2021."
 ---
@@ -82,7 +82,7 @@ Si gestionas apartamentos en Cataluña y fuera (Baleares, Madrid, Valencia, Anda
 - **Enviar a SES** los del resto del Estado.
 - **Enviar a Ertzaintza** si tienes en Euskadi.
 
-Hacerlo a mano acaba, tarde o temprano, en un error. Lo práctico es dejar configurado desde el alta a qué sistema envía cada piso. En Hostly, los pisos de Cataluña envían a los Mossos de forma automática; para los del resto de España, activamos contigo la conexión con la policía que toque.
+Hacerlo a mano acaba, tarde o temprano, en un error. Lo práctico es dejar configurado desde el alta a qué sistema envía cada piso. En Hostly, cada piso envía el registro de forma automática, cada día.
 
 ## Cómo automatizarlo completamente
 
@@ -95,7 +95,7 @@ El flujo óptimo:
 5. Lo envía a los Mossos cada día y guarda el comprobante.
 6. Tú ves en el panel "Registrado ✓" sin haber hecho nada. Si algo falla, te avisa.
 
-Es lo que hace Hostly con los pisos de Cataluña, de forma nativa. Otras herramientas lo resuelven con una integración propia o a través de partners: antes de elegir, comprueba que la tuya cubre Mossos y no solo SES.
+Es lo que hace Hostly, de forma nativa. Otras herramientas lo resuelven con una integración propia o a través de partners: antes de elegir, comprueba que la tuya cubre Mossos y no solo SES.
 
 ## Resumen
 

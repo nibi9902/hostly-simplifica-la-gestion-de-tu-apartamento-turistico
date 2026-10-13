@@ -67,7 +67,7 @@ Imprescindible. Con 3 limpiadoras y 10 apartamentos, la asignación manual se ro
 
 Con 40‑60 registros al mes, hacerlo manual es inviable y peligroso (errores = sanciones). Debe enviarse desde el check-in online directamente.
 
-**Cómo**: un PMS que lo envíe desde el check-in online, Chekin integrado o Hostify. Hostly envía el registro de viajeros a los Mossos d'Esquadra cada día y guarda el comprobante; en el resto de España, activamos contigo la conexión con la policía que te toque.
+**Cómo**: un PMS que lo envíe desde el check-in online, Chekin integrado o Hostify. Hostly envía el registro de viajeros a la policía cada día y guarda el comprobante.
 
 ### 5. Precios dinámicos
 

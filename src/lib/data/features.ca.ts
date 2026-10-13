@@ -101,7 +101,7 @@ export const FEATURES_CA: Feature[] = [
       'L\'hoste omple les seves dades des del mòbil i Hostly envia el registre a la policia. Gratis per sempre.',
     hero: {
       h1: 'El registre a la policia, sense copiar ni una dada a mà',
-      sub: 'L\'hoste omple les seves dades des del mòbil i Hostly les valida i les envia a la policia cada dia. Fora de Catalunya, la connexió l\'activem amb tu quan et dones d\'alta.',
+      sub: 'L\'hoste omple les seves dades des del mòbil i Hostly les valida i les envia a la policia cada dia.',
       primaryCta: 'Començar',
       secondaryCta: 'Veure preus',
     },
@@ -128,7 +128,7 @@ export const FEATURES_CA: Feature[] = [
       {
         step: 4,
         title: 'Hostly ho envia a la policia',
-        body: 'Cada dia puja el fitxer al portal de la policia (a Catalunya, el dels Mossos d\'Esquadra) i n\'arxiva el comprovant. Si alguna línia falla, t\'avisa i et diu quina.',
+        body: 'Cada dia puja el fitxer al portal de la policia i n\'arxiva el comprovant. Si alguna línia falla, t\'avisa i et diu quina.',
       },
     ],
     advantages: [
@@ -145,8 +145,8 @@ export const FEATURES_CA: Feature[] = [
         body: 'Un adult registra els quatre amb el mateix enllaç. Si una dada no és vàlida, ho veu abans d\'enviar, no quan ja és tard.',
       },
       {
-        title: 'Pisos a Catalunya',
-        body: 'Cada dia, Hostly puja al portal dels Mossos els check-ins pendents i en guarda el comprovant. Tu no entres a cap portal.',
+        title: 'Diversos pisos, un sol enviament',
+        body: 'Cada dia, Hostly puja al portal de la policia els check-ins pendents de tots els teus pisos i en guarda el comprovant. Tu no entres a cap portal.',
       },
       {
         title: 'Arribada a mitjanit',
@@ -158,12 +158,12 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Substitueix Chekin?',
         answer:
-          'Si els teus pisos són a Catalunya, sí: el check-in i l\'enviament als Mossos funcionen sols, sense cap altra app pel mig. A la resta d\'Espanya, activem la connexió amb la policia amb tu quan et dones d\'alta.',
+          'Sí: el check-in i l\'enviament a la policia funcionen sols, sense cap altra app pel mig.',
       },
       {
         question: 'Què passa si un registre falla?',
         answer:
-          'Hostly llegeix la resposta del portal dels Mossos línia a línia. Si alguna falla, t\'avisa i et diu quina, perquè la corregeixis.',
+          'Hostly llegeix la resposta del portal de la policia línia a línia. Si alguna falla, t\'avisa i et diu quina, perquè la corregeixis.',
       },
       {
         question: 'L\'hoste ha de pujar una foto del document?',
@@ -173,7 +173,7 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Quant costa?',
         answer:
-          'Res. El check-in online i el registre a la policia són gratis per sempre, sense targeta. A Catalunya, també la taxa turística.',
+          'Res. El check-in online i el registre a la policia són gratis per sempre, sense targeta. També el càlcul de la taxa turística.',
       },
     ],
   },
@@ -726,7 +726,7 @@ export const FEATURES_CA: Feature[] = [
     advantages: [
       'Ingressos per pis, per canal i per període',
       'Comissions d\'Airbnb i Booking calculades soles',
-      'Taxa turística de Catalunya calculada a cada reserva',
+      'Taxa turística calculada a cada reserva',
       'Liquidació al propietari amb un assistent de quatre passos',
       'El propietari veu la seva liquidació a la seva app',
       'Liquidacions en CSV o PDF, i taxa turística en Excel o CSV',
@@ -771,16 +771,16 @@ export const FEATURES_CA: Feature[] = [
     name: 'Taxa turística',
     iconName: 'Receipt',
     shortDescription:
-      'La taxa turística de Catalunya, calculada sola: tarifa segons la llei i el teu municipi, import per pis i l\'Excel a punt per presentar.',
+      'La taxa turística, calculada sola: tarifa segons la llei i el teu municipi, import per pis i l\'Excel a punt per presentar.',
     hero: {
       h1: 'La taxa turística, calculada i a punt per presentar.',
-      sub: 'Hostly calcula la tarifa amb la llei i el municipi de cada pis, suma l\'import de cada semestre i et prepara l\'Excel per a l\'Agència Tributària de Catalunya. Tu la presentes i la marques com a feta.',
+      sub: 'Hostly calcula la tarifa amb la llei i el municipi de cada pis, suma l\'import de cada període i et prepara l\'Excel per presentar-la. Tu la presentes i la marques com a feta.',
       primaryCta: 'Començar',
       secondaryCta: 'Veure preus',
     },
     problem: {
-      title: 'Cada semestre, la mateixa tarda de comptes',
-      body: 'A Catalunya, la taxa turística es presenta dues vegades l\'any, i cada vegada toca buscar la tarifa del teu municipi, comptar persones i nits de cada estada i passar-ho tot al format que demana l\'ATC. I el termini no espera.',
+      title: 'Cada vegada, la mateixa tarda de comptes',
+      body: 'Cada vegada que toca presentar la taxa turística s\'ha de buscar la tarifa del teu municipi, comptar persones i nits de cada estada i passar-ho tot al format que demana l\'agència tributària. I el termini no espera.',
     },
     howItWorks: [
       {
@@ -791,7 +791,7 @@ export const FEATURES_CA: Feature[] = [
       {
         step: 2,
         title: 'Calcula cada estada',
-        body: 'Amb les dades de cada reserva, calcula l\'import de la taxa i el total per pis de cada semestre.',
+        body: 'Amb les dades de cada reserva, calcula l\'import de la taxa i el total per pis de cada període.',
       },
       {
         step: 3,
@@ -801,21 +801,21 @@ export const FEATURES_CA: Feature[] = [
       {
         step: 4,
         title: 'Exportes, presentes i ho marques',
-        body: 'Descarregues l\'Excel o el CSV a punt per presentar a l\'ATC. Quan l\'has presentada, prems «ja l\'he presentada».',
+        body: 'Descarregues l\'Excel o el CSV a punt per presentar. Quan l\'has presentada, prems «ja l\'he presentada».',
       },
     ],
     advantages: [
       'Tarifa segons la llei i el municipi de cada pis',
-      'Import de cada reserva i total per pis, cada semestre',
+      'Import de cada reserva i total per pis, de cada període',
       'Avís a l\'app mentre el termini és obert',
-      'Excel o CSV a punt per presentar a l\'ATC',
+      'Excel o CSV a punt per presentar',
       'Inclosa al pla Gratis, per sempre',
       'Si vols, l\'hoste la paga amb targeta en fer el check-in',
     ],
     usage: [
       {
-        title: 'Presentar el semestre d\'estiu',
-        body: 'A l\'octubre, Hostly t\'avisa. Descarregues l\'Excel amb les estades d\'abril a setembre, el presentes a l\'ATC i la marques com a presentada.',
+        title: 'Quan arriba el termini',
+        body: 'Hostly t\'avisa. Descarregues l\'Excel amb les estades del període, el presentes i la marques com a presentada.',
       },
       {
         title: 'Pisos en municipis diferents',
@@ -823,7 +823,7 @@ export const FEATURES_CA: Feature[] = [
       },
       {
         title: 'Cobrar-la a l\'hoste',
-        body: 'Actives el cobrament i l\'hoste paga la taxa amb targeta en fer el check-in, a través de Stripe. El cobrament porta una petita comissió, que pots fer pagar a l\'hoste. Tu no has de perseguir ningú.',
+        body: 'Actives el cobrament i l\'hoste paga la taxa amb targeta en fer el check-in, a través de Stripe. El cobrament porta una comissió del 5 %, que pots fer pagar a l\'hoste. Tu no has de perseguir ningú.',
       },
     ],
     relatedFeatures: ['check-in-online', 'finanzas', 'conecta-todo'],
@@ -831,22 +831,17 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Hostly presenta la taxa per mi?',
         answer:
-          'No. La presentes tu a l\'Agència Tributària de Catalunya, amb l\'Excel que et prepara Hostly. Després la marques com a presentada a l\'app.',
+          'No. La presentes tu, amb l\'Excel que et prepara Hostly. Després la marques com a presentada a l\'app.',
       },
       {
         question: 'Quan s\'ha de presentar?',
         answer:
-          'Dues vegades l\'any: de l\'1 al 20 d\'abril, per les estades d\'octubre a març, i de l\'1 al 20 d\'octubre, per les d\'abril a setembre. Hostly t\'avisa a l\'app mentre el termini és obert.',
-      },
-      {
-        question: 'Funciona fora de Catalunya?',
-        answer:
-          'Avui, la taxa que calcula Hostly és la de Catalunya. Si els teus pisos són en una altra comunitat, Hostly et serveix igual per a tota la resta.',
+          'Quan s\'obre el termini, Hostly t\'avisa a l\'app i et deixa l\'Excel preparat.',
       },
       {
         question: 'Puc cobrar-la a l\'hoste?',
         answer:
-          'Sí. Si ho actives, l\'hoste la paga amb targeta en fer el check-in, a través de Stripe. El cobrament porta una petita comissió; tu decideixes si la paga l\'hoste.',
+          'Sí. Si ho actives, l\'hoste la paga amb targeta en fer el check-in, a través de Stripe. El cobrament porta una comissió del 5 %; tu decideixes si la paga l\'hoste.',
       },
     ],
   },

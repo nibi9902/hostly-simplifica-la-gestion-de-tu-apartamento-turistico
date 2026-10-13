@@ -20,7 +20,7 @@ faqs:
   - question: "¿Qué es lo que más tiempo consume?"
     answer: "Por orden: mensajería con huéspedes (35‑45 %), coordinación de limpiezas (15‑25 %), registro SES y cumplimiento legal (15 %), gestión de precios y disponibilidad (10‑15 %), incidencias puntuales (10 %), el resto en tareas administrativas."
   - question: "¿Me compensa pagar por recuperar esas 5 horas?"
-    answer: "Sí. Con Hostly, el check-in y el registro a la policía son gratis, y Hostly Completo, con los mensajes con IA y las limpiezas, cuesta 40 €/mes por piso. Cinco horas a la semana son unas 20 al mes: compensa si valoras tu hora a más de 2 €. Para casi cualquier adulto empleado o autónomo, es positivo desde el primer mes."
+    answer: "Sí. Con Hostly, el check-in y el registro a la policía son gratis, y Hostly Completo, con los mensajes con IA y las limpiezas, cuesta 40 €/mes por piso + IVA. Cinco horas a la semana son unas 20 al mes: compensa si valoras tu hora a más de 2 €. Para casi cualquier adulto empleado o autónomo, es positivo desde el primer mes."
 ---
 
 Gestionar un apartamento turístico "por tu cuenta" suena a ingreso pasivo. En la práctica, el tiempo que consume se oculta en microtareas que no ves hasta que sumas. **Esta guía desglosa dónde se va exactamente el tiempo y cómo recuperar 4‑5 horas a la semana** con las acciones correctas.
@@ -70,14 +70,14 @@ El mayor consumidor. Automatizando la mayoría de mensajes rutinarios con una IA
 - Recordatorio de checkout → automático.
 - Petición de reseña → automático tras checkout.
 
-**Inversión**: 40 €/mes por piso con Hostly Completo (35 € desde 5).
+**Inversión**: 40 €/mes por piso + IVA con Hostly Completo (35 € desde 5).
 **Ahorro**: 2‑3 h/semana.
 
 ### 2. Check-in online + registro a la policía (ahorra 1 h/semana)
 
 Sin check-in online: el huésped llega, tú le abres, pides el DNI, haces foto, entras manualmente al portal y rellenas los 14 datos. Por reserva, son 15‑20 minutos.
 
-Con check-in online: el huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly: a los Mossos, cada día; en el resto de España, a la policía que te toque, cuando lo activemos contigo). Tú solo intervienes si falta algún check-in: Hostly te avisa.
+Con check-in online: el huésped rellena sus datos desde el móvil y se envían a la policía (en Hostly, cada día). Tú solo intervienes si falta algún check-in: Hostly te avisa.
 
 **Inversión**: 0 € con el plan Gratis de Hostly. Las herramientas dedicadas, como Chekin, empiezan en 3,95 €/mes por propiedad.
 **Ahorro**: 1 h/semana para 6‑8 reservas.
@@ -129,7 +129,7 @@ Si tu apartamento tiene algo especial (una nota escrita a mano, una botella de v
 
 Si valoras tu hora libre a:
 
-- **5 €**: 5 h ahorradas = 25 €/semana = **100 €/mes**. La herramienta cuesta 40 €/mes. Positivo.
+- **5 €**: 5 h ahorradas = 25 €/semana = **100 €/mes**. La herramienta cuesta 40 €/mes + IVA. Positivo.
 - **10 €**: 50 €/semana = **200 €/mes**. Positivo claro.
 - **20 €**: 100 €/semana = **400 €/mes**. Obviamente positivo.
 

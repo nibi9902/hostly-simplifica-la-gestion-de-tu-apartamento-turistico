@@ -63,7 +63,7 @@
     "h1": "Llevas 8 pisos.\n¿Con cuántas apps?",
     "intro": "El channel manager por aquí. Chekin por allá. Excel para los cobros. Un WhatsApp con los huéspedes y otro con las limpiadoras. Hostly lo junta todo en una sola app.",
     "cta_primary": "Empezar",
-    "cta_sub": "Sin permanencia. 35 € al mes por piso desde 5 pisos.",
+    "cta_sub": "Sin permanencia. 35 € + IVA al mes por piso desde 5 pisos.",
     "section2_h2": "Las herramientas del gestor pequeño, hoy.",
     "section2_sub": "Cada una con su factura.",
     "tools": [
@@ -112,8 +112,8 @@
     "hostly": {
       "retol": "Con Hostly",
       "xifra": "35 €",
-      "unitat": "al mes por piso, desde 5 pisos",
-      "text": "Con 8 pisos, 280 € al mes. La IA, las limpiezas y los precios, dentro. Una app y una sola factura."
+      "unitat": "+ IVA al mes por piso, desde 5 pisos",
+      "text": "Con 8 pisos, 280 € + IVA al mes. La IA, las limpiezas y los precios, dentro. Una app y una sola factura."
     }
   },
   "segunda_residencia": {
@@ -141,7 +141,7 @@
       },
       {
         "title": "Registro y tasa, sin pensarlo",
-        "desc": "Hostly envía el registro de viajeros a la policía y, si el piso está en Cataluña, te deja calculada la tasa turística. Sin acordarte de hacerlo tú."
+        "desc": "Hostly envía el registro de viajeros a la policía y te deja calculada la tasa turística. Sin acordarte de hacerlo tú."
       }
     ],
     "dia": {

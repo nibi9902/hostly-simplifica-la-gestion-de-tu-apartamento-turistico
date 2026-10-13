@@ -62,7 +62,7 @@
     "hero_heading": "Nació de vivirlo.",
     "hero_body": "Hostly no surgió en una oficina ni de un estudio de mercado. Surgió de la frustración de gestionar apartamentos turísticos con cinco herramientas distintas y no poder desconectar nunca.",
     "story_p1": "Tenía mis propios apartamentos en Airbnb y Booking. El channel manager aquí, Chekin allá, las plantillas de mensajes en otro sitio, el Excel de cobros abierto siempre, el grupo de WhatsApp con la limpiadora.",
-    "story_p2": "Cada reserva implicaba tocar cinco herramientas distintas. Cada check-in, entrar a mano en el portal de los Mossos. Cada fin de mes, una tarde de Excel. Y la sensación constante de que si me despistaba, algo se rompía.",
+    "story_p2": "Cada reserva implicaba tocar cinco herramientas distintas. Cada check-in, entrar a mano en el portal de la policía. Cada fin de mes, una tarde de Excel. Y la sensación constante de que si me despistaba, algo se rompía.",
     "story_p3": "No encontré ninguna herramienta que lo hiciera todo de forma sencilla para el mercado español. Las que existían eran complejas, caras, o no entendían la burocracia española.",
     "story_p4": "Así que lo construí yo. Primero para mí. Luego, cuando funcionó, para todos los que estaban en la misma situación.",
     "founder_name": "Biel Alsina",
@@ -85,7 +85,7 @@
       },
       {
         "title": "Pensado para España",
-        "body": "El registro en los Mossos, SES.Hospedajes, la tasa turística catalana. No es la traducción de un producto americano. Está construido para el mercado español desde el primer día."
+        "body": "El registro de viajeros, SES.Hospedajes, la tasa turística. No es la traducción de un producto americano. Está construido para el mercado español desde el primer día."
       }
     ],
     "contact_heading": "¿Hablamos?",
@@ -157,8 +157,8 @@
             "href": "/blog/ses-nrua-taxa-turistica-guia"
           },
           {
-            "label": "Registro de viajeros en Mossos d'Esquadra",
-            "href": "/blog/registro-viajeros-mossos-esquadra-cataluna"
+            "label": "Si el huésped no hace el check-in",
+            "href": "/blog/huesped-no-responde-checkin-online"
           },
           {
             "label": "Sanciones por no cumplir el registro",

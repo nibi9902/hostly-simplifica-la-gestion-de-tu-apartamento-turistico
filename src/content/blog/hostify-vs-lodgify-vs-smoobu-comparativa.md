@@ -109,7 +109,7 @@ Tres de los PMS más usados por propietarios y pequeños gestores en España. Ca
 - Necesita SES/Mossos + channel manager + algo de automatización.
 - Presupuesto: hasta 60 €/mes en total.
 
-**Mejor opción**: **Hostly** (no está en esta comparativa). Con el plan Gratis, el check-in y el registro a los Mossos le cuestan 0 €. Si además quiere channel manager, IA en WhatsApp y limpiezas, Hostly Completo cuesta 80 €/mes por los dos pisos: algo más que ese presupuesto, pero sin sumar otras herramientas. Si solo busca un channel manager, **Smoobu** empieza en 29 €/mes por alojamiento. **Hostify** encaja mejor a partir de 5 pisos, que es donde empiezan sus tramos de precio.
+**Mejor opción**: **Hostly** (no está en esta comparativa). Con el plan Gratis, el check-in y el registro a la policía le cuestan 0 €. Si además quiere channel manager, IA en WhatsApp y limpiezas, Hostly Completo cuesta 80 €/mes por los dos pisos: algo más que ese presupuesto, pero sin sumar otras herramientas. Si solo busca un channel manager, **Smoobu** empieza en 29 €/mes por alojamiento. **Hostify** encaja mejor a partir de 5 pisos, que es donde empiezan sus tramos de precio.
 
 ### Caso 2: Villa de lujo en Ibiza con web propia
 
@@ -140,7 +140,7 @@ Tres aspectos importantes para un gestor en España:
 - **Catalán**: ninguno lo trabaja como prioridad, aunque Lodgify tenga sede en Barcelona.
 - **Mossos d'Esquadra**: conviene preguntar cómo resuelven el registro en Cataluña antes de contratar.
 
-Por eso existen PMS españoles de segunda generación, como Hostly, que suman a lo básico el registro automático en los Mossos, la IA en WhatsApp y la atención en catalán.
+Por eso existen PMS españoles de segunda generación, como Hostly, que suman a lo básico el registro automático a la policía, la IA en WhatsApp y la atención en catalán.
 
 ## Resumen y recomendación
 
@@ -150,6 +150,6 @@ Si tuviera que elegir hoy entre **solo** estos tres:
 - **Quiero muchas OTAs y SES integrado, y tengo 5 pisos o más** → Hostify.
 - **Empiezo con 1 apartamento y quiero simple y barato** → Smoobu.
 
-Pero si el criterio es "el más apropiado para un propietario o gestor en España en 2026 con 1 a 15 pisos y foco en IA, cumplimiento legal local y operativa integrada", ninguno de los tres es óptimo. Para ese perfil encaja mejor un PMS español de nueva generación como Hostly: IA en WhatsApp, registro automático en los Mossos d'Esquadra y atención en castellano y catalán.
+Pero si el criterio es "el más apropiado para un propietario o gestor en España en 2026 con 1 a 15 pisos y foco en IA, cumplimiento legal local y operativa integrada", ninguno de los tres es óptimo. Para ese perfil encaja mejor un PMS español de nueva generación como Hostly: IA en WhatsApp, registro automático a la policía y atención en castellano y catalán.
 
 Pero esa ya es otra comparativa.

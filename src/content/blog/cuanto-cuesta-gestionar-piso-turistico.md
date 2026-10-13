@@ -91,16 +91,16 @@ Hostly no es otra herramienta que añadir a la lista. Es la app que junta en una
 **Plan Gratis, para siempre:**
 
 - **Check-in online**: el huésped rellena sus datos desde el móvil y Hostly valida cada campo
-- **Registro de viajeros**: Hostly lo envía a los Mossos d'Esquadra cada día, de forma automática, y guarda el comprobante. En el resto de España, activamos contigo la conexión con la policía que te toque
+- **Registro de viajeros**: Hostly lo envía a la policía cada día, de forma automática, y guarda el comprobante
 - **Tasa turística de Cataluña** calculada por estancia, lista para declarar cada semestre
 
-**Hostly Completo, a 40 € al mes por piso** (35 € desde 5): lo del plan Gratis, más channel manager con Airbnb y Booking, mensajes con IA en el idioma del huésped, limpiezas, precios dinámicos y finanzas, en una sola pantalla.
+**Hostly Completo, a 40 € + IVA al mes por piso** (35 € desde 5): lo del plan Gratis, más channel manager con Airbnb y Booking, mensajes con IA en el idioma del huésped, limpiezas, precios dinámicos y finanzas, en una sola pantalla.
 
 El resultado: una sola app en lugar de varias herramientas sueltas, y el registro de viajeros, que quizá ahora pagas a la gestoría, gratis.
 
 Con los rangos de la tabla, las herramientas sueltas cuestan entre 468 y 1.416 € al año por piso, y Hostly Completo, 480 €. Si te sale más caro o más barato que ahora depende de lo que pagues hoy: haz números con la [calculadora](/calcula). Lo que sí cambia seguro es el tiempo que recuperas al no tener que hacer malabarismos entre apps.
 
-El check-in online, el registro a la policía y la tasa turística de Cataluña son **gratis para siempre** en Hostly, con el plan Gratis o con Hostly Completo.
+El check-in online, el registro a la policía y la tasa turística son **gratis para siempre** en Hostly, con el plan Gratis o con Hostly Completo.
 
 ---
 

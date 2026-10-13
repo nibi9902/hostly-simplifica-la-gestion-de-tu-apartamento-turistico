@@ -82,14 +82,14 @@ Hostly está diseñado para ser la app del día a día de un propietario o gesto
 | Herramienta actual | Lo que hace Hostly |
 |---|---|
 | Channel manager (Smoobu, Lodgify...) | Airbnb y Booking.com sincronizados: reservas, disponibilidad y precios en un solo calendario |
-| Chekin (check-in digital + SES) | Check-in online y registro de viajeros, gratis para siempre. Con los Mossos d'Esquadra va solo cada día; en el resto de España, activamos contigo la conexión con la policía que te toque |
+| Chekin (check-in digital + SES) | Check-in online y registro de viajeros, gratis para siempre. El registro va solo a la policía cada día |
 | WhatsApp con huéspedes | IA que contesta la mayoría de mensajes al momento, en el idioma del huésped, y mensajes automáticos por plantilla |
 | Excel de control | Panel de reservas, ingresos y ocupación en una sola pantalla |
 | Dropbox / almacenamiento | Los comprobantes del registro de viajeros quedan archivados en la app |
 | Gestión de la tasa turística | Tasa turística de Cataluña calculada por estancia, lista para declarar cada semestre, gratis para siempre |
 | WhatsApp con la limpiadora | Limpiezas asignadas solas en cada salida, con fotos e incidencias |
 
-**Precio:** Hostly Completo, 40 € al mes por piso (35 € desde 5), con el primer mes gratis. El check-in, el registro a la policía y la tasa turística de Cataluña, gratis para siempre con el plan Gratis.
+**Precio:** Hostly Completo, 40 € + IVA al mes por piso (35 € desde 5), con el primer mes gratis. El check-in, el registro a la policía y la tasa turística, gratis para siempre con el plan Gratis.
 
 La diferencia no está en el precio, sino en tenerlo todo en un solo lugar: no tienes que mantener la coherencia entre sistemas. Una reserva entra, el calendario se actualiza, el huésped recibe el enlace del check-in y el registro llega a la policía. Sin copiar datos de una app a otra.
 

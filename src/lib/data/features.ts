@@ -141,7 +141,7 @@ export const FEATURES: Feature[] = [
       'El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. Gratis para siempre.',
     hero: {
       h1: 'El registro a la policía, sin copiar ni un dato a mano',
-      sub: 'El huésped rellena sus datos desde el móvil y Hostly los valida y los envía a la policía cada día. Fuera de Cataluña, la conexión la activamos contigo al darte de alta.',
+      sub: 'El huésped rellena sus datos desde el móvil y Hostly los valida y los envía a la policía cada día.',
       primaryCta: 'Empezar',
       secondaryCta: 'Ver precios',
     },
@@ -168,7 +168,7 @@ export const FEATURES: Feature[] = [
       {
         step: 4,
         title: 'Hostly lo envía a la policía',
-        body: 'Cada día sube el fichero al portal de la policía (en Cataluña, el de los Mossos d\'Esquadra) y archiva el comprobante. Si alguna línea falla, te avisa y te dice cuál.',
+        body: 'Cada día sube el fichero al portal de la policía y archiva el comprobante. Si alguna línea falla, te avisa y te dice cuál.',
       },
     ],
     advantages: [
@@ -185,8 +185,8 @@ export const FEATURES: Feature[] = [
         body: 'Un adulto registra a los cuatro con el mismo enlace. Si un dato no es válido, lo ve antes de enviar, no cuando ya es tarde.',
       },
       {
-        title: 'Pisos en Cataluña',
-        body: 'Cada día, Hostly sube al portal de los Mossos los check-ins pendientes y guarda el comprobante. Tú no entras en ningún portal.',
+        title: 'Varios pisos, un solo envío',
+        body: 'Cada día, Hostly sube al portal de la policía los check-ins pendientes de todos tus pisos y guarda el comprobante. Tú no entras en ningún portal.',
       },
       {
         title: 'Llegada a medianoche',
@@ -198,12 +198,12 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Sustituye a Chekin?',
         answer:
-          'Si tus pisos están en Cataluña, sí: el check-in y el envío a los Mossos funcionan solos, sin otra app en medio. En el resto de España, activamos la conexión con la policía contigo al darte de alta.',
+          'Sí: el check-in y el envío a la policía funcionan solos, sin otra app en medio.',
       },
       {
         question: '¿Qué pasa si un registro falla?',
         answer:
-          'Hostly lee la respuesta del portal de los Mossos línea a línea. Si alguna falla, te avisa y te dice cuál, para que la corrijas.',
+          'Hostly lee la respuesta del portal de la policía línea a línea. Si alguna falla, te avisa y te dice cuál, para que la corrijas.',
       },
       {
         question: '¿El huésped tiene que subir una foto del documento?',
@@ -213,7 +213,7 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Cuánto cuesta?',
         answer:
-          'Nada. El check-in online y el registro a la policía son gratis para siempre, sin tarjeta. En Cataluña, también la tasa turística.',
+          'Nada. El check-in online y el registro a la policía son gratis para siempre, sin tarjeta. También el cálculo de la tasa turística.',
       },
     ],
   },
@@ -766,7 +766,7 @@ export const FEATURES: Feature[] = [
     advantages: [
       'Ingresos por piso, por canal y por periodo',
       'Comisiones de Airbnb y Booking calculadas solas',
-      'Tasa turística de Cataluña calculada en cada reserva',
+      'Tasa turística calculada en cada reserva',
       'Liquidación al propietario con un asistente de cuatro pasos',
       'El propietario ve su liquidación en su app',
       'Liquidaciones en CSV o PDF, y tasa turística en Excel o CSV',
@@ -811,16 +811,16 @@ export const FEATURES: Feature[] = [
     name: 'Tasa turística',
     iconName: 'Receipt',
     shortDescription:
-      'La tasa turística de Cataluña, calculada sola: tarifa según la ley y tu municipio, importe por piso y el Excel listo para presentar.',
+      'La tasa turística, calculada sola: tarifa según la ley y tu municipio, importe por piso y el Excel listo para presentar.',
     hero: {
       h1: 'La tasa turística, calculada y lista para presentar.',
-      sub: 'Hostly calcula la tarifa con la ley y el municipio de cada piso, suma el importe de cada semestre y te prepara el Excel para la Agència Tributària de Catalunya. Tú la presentas y la marcas como hecha.',
+      sub: 'Hostly calcula la tarifa con la ley y el municipio de cada piso, suma el importe de cada periodo y te prepara el Excel para presentarla. Tú la presentas y la marcas como hecha.',
       primaryCta: 'Empezar',
       secondaryCta: 'Ver precios',
     },
     problem: {
-      title: 'Cada semestre, la misma tarde de cuentas',
-      body: 'En Cataluña, la tasa turística se presenta dos veces al año, y cada vez toca buscar la tarifa de tu municipio, contar personas y noches de cada estancia y pasarlo todo al formato que pide la ATC. Y el plazo no espera.',
+      title: 'Cada vez, la misma tarde de cuentas',
+      body: 'Cada vez que toca presentar la tasa turística hay que buscar la tarifa de tu municipio, contar personas y noches de cada estancia y pasarlo todo al formato que pide la agencia tributaria. Y el plazo no espera.',
     },
     howItWorks: [
       {
@@ -831,7 +831,7 @@ export const FEATURES: Feature[] = [
       {
         step: 2,
         title: 'Calcula cada estancia',
-        body: 'Con los datos de cada reserva, calcula el importe de la tasa y el total por piso de cada semestre.',
+        body: 'Con los datos de cada reserva, calcula el importe de la tasa y el total por piso de cada periodo.',
       },
       {
         step: 3,
@@ -841,21 +841,21 @@ export const FEATURES: Feature[] = [
       {
         step: 4,
         title: 'Exportas, presentas y lo marcas',
-        body: 'Descargas el Excel o el CSV listo para presentar en la ATC. Cuando la has presentado, pulsas «ya la he presentado».',
+        body: 'Descargas el Excel o el CSV listo para presentar. Cuando la has presentado, pulsas «ya la he presentado».',
       },
     ],
     advantages: [
       'Tarifa según la ley y el municipio de cada piso',
-      'Importe de cada reserva y total por piso, cada semestre',
+      'Importe de cada reserva y total por piso, de cada periodo',
       'Aviso en la app mientras el plazo está abierto',
-      'Excel o CSV listo para presentar en la ATC',
+      'Excel o CSV listo para presentar',
       'Incluida en el plan Gratis, para siempre',
       'Si quieres, el huésped la paga con tarjeta al hacer el check-in',
     ],
     usage: [
       {
-        title: 'Presentar el semestre de verano',
-        body: 'En octubre, Hostly te avisa. Descargas el Excel con las estancias de abril a septiembre, lo presentas en la ATC y lo marcas como presentado.',
+        title: 'Cuando llega el plazo',
+        body: 'Hostly te avisa. Descargas el Excel con las estancias del periodo, lo presentas y lo marcas como presentado.',
       },
       {
         title: 'Pisos en municipios distintos',
@@ -863,7 +863,7 @@ export const FEATURES: Feature[] = [
       },
       {
         title: 'Cobrarla al huésped',
-        body: 'Activas el cobro y el huésped paga la tasa con tarjeta al hacer el check-in, a través de Stripe. El cobro lleva una pequeña comisión, que puedes hacer pagar al huésped. Tú no persigues a nadie.',
+        body: 'Activas el cobro y el huésped paga la tasa con tarjeta al hacer el check-in, a través de Stripe. El cobro lleva una comisión del 5 %, que puedes hacer pagar al huésped. Tú no persigues a nadie.',
       },
     ],
     relatedFeatures: ['check-in-online', 'finanzas', 'conecta-todo'],
@@ -871,22 +871,17 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Hostly presenta la tasa por mí?',
         answer:
-          'No. La presentas tú en la Agència Tributària de Catalunya, con el Excel que te prepara Hostly. Después la marcas como presentada en la app.',
+          'No. La presentas tú, con el Excel que te prepara Hostly. Después la marcas como presentada en la app.',
       },
       {
         question: '¿Cuándo hay que presentarla?',
         answer:
-          'Dos veces al año: del 1 al 20 de abril, por las estancias de octubre a marzo, y del 1 al 20 de octubre, por las de abril a septiembre. Hostly te avisa en la app mientras el plazo está abierto.',
-      },
-      {
-        question: '¿Funciona fuera de Cataluña?',
-        answer:
-          'Hoy, la tasa que calcula Hostly es la de Cataluña. Si tus pisos están en otra comunidad, Hostly te sirve igual para todo lo demás.',
+          'Cuando se abre el plazo, Hostly te avisa en la app y te deja el Excel preparado.',
       },
       {
         question: '¿Puedo cobrársela al huésped?',
         answer:
-          'Sí. Si lo activas, el huésped la paga con tarjeta al hacer el check-in, a través de Stripe. El cobro lleva una pequeña comisión; tú decides si la paga el huésped.',
+          'Sí. Si lo activas, el huésped la paga con tarjeta al hacer el check-in, a través de Stripe. El cobro lleva una comisión del 5 %; tú decides si la paga el huésped.',
       },
     ],
   },
