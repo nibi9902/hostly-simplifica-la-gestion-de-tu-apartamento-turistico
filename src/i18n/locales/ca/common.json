@@ -13,7 +13,8 @@
     "menu": {
       "totes": "Veure totes les funcionalitats",
       "videos": "Veure els vídeos"
-    }
+    },
+    "app": "App"
   },
   "footer": {
     "tagline": "L'app que simplifica tot el que implica tenir un pis turístic.",

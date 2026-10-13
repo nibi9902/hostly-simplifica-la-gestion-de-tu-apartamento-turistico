@@ -44,8 +44,13 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
   | Acaba la calculadora | `Calculadora` (propi) | — |
   | Mira un vídeo de `/demo` (13-10-2026) | `VerVideo` (propi) | — |
 
-- El píxel va **sense «configuració automàtica»** (`autoConfig` apagat): no llegeix sol els
-  botons ni els formularis.
+- El píxel va **sense «configuració automàtica»** (`autoConfig` apagat): no compta sol els clics
+  dels botons; els esdeveniments són els de la taula.
+- **Coincidència avançada automàtica, encesa** (decisió del Biel, 13-10-2026: «volem el millor
+  píxel possible»): si qui ha acceptat la publicitat escriu el telèfon o el correu en un
+  formulari, Meta els rep codificats i reconeix més visites. Les polítiques de galetes i de
+  privacitat ho diuen (només quan el píxel és actiu). Camps: correu, nom, cognoms, telèfon,
+  població, província, codi postal, país i identificador extern.
 - **Les pàgines vistes les compta el web**, una per canvi de pàgina, igual a Meta que a Google Ads.
   Al píxel s'hi posa `disablePushState` i `allowDuplicatePageViews`; sense, el píxel mirava sol
   l'historial del navegador i comptava també cada clic a l'índex dels articles (comprovat al
@@ -70,11 +75,10 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
 ## El que has de fer tu (Biel)
 
 1. **Meta**
-   1. business.facebook.com → **Events Manager** → **Connecta dades** → **Web** → nom
-      «hostlylabs.com» → copia l'**identificador del conjunt de dades** (15–16 xifres).
-   2. A la configuració del conjunt de dades, **apaga la «coincidència avançada automàtica»**
-      (*Automatic advanced matching*). Si queda encesa, el píxel podria enviar a Meta el telèfon i
-      el correu dels formularis, i la política diu que no.
+   1. ✅ Fet el 13-10-2026: el píxel «hostlylabs pixel» (`1924919248483047`), al portfoli de Hostly.
+      `VITE_META_PIXEL_ID` és a Vercel només per a la previsualització de la branca
+      `redisseny-2026-10`; en publicar, cal afegir-lo a *Production*.
+   2. ✅ La «coincidència avançada automàtica», **encesa** (vegeu més amunt).
    3. **Verifica el domini** hostlylabs.com (Configuració del negoci → Seguretat de la marca →
       Dominis). Cal per a les campanyes i per mesurar els iPhone.
 2. **Google Ads**
@@ -82,8 +86,8 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
       (categoria *Envia un formulari de contacte*) → configurar **amb l'etiqueta de Google**.
    2. Copia l'**identificador** (`AW-…`) i l'**etiqueta de la conversió** (el tros després de la
       barra a `send_to: 'AW-…/…'`).
-   3. Deixa **apagades les «conversions millorades»** (*enhanced conversions*), pel mateix motiu
-      que la coincidència avançada de Meta.
+   3. Les **«conversions millorades»** (*enhanced conversions*) són l'equivalent de la coincidència
+      avançada de Meta: per tenir-les, cal dir-ho a les polítiques com s'ha fet amb Meta.
 3. **Passa'm els identificadors** (o posa'ls tu a Vercel → Settings → Environment Variables,
    entorn *Production* i *Preview*):
    `VITE_META_PIXEL_ID` · `VITE_GOOGLE_ADS_ID` · `VITE_GOOGLE_ADS_LEAD_LABEL`.

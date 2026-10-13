@@ -50,10 +50,9 @@ export const NAV: NavConfig = {
     {
       label: 'Para quién',
       dropdown: [
-        { label: 'Propietarios',       href: '/propietarios',       description: '1-3 pisos sin que te consuman el día.', icon: 'Home' },
-        { label: 'Gestores pequeños',  href: '/gestores-pequenos',  description: '5-15 pisos. Una app, una factura.', icon: 'Building2' },
-        { label: 'Segunda residencia', href: '/segunda-residencia', description: 'Que el verano vuelva a ser verano.', icon: 'Sun' },
-        { label: 'Pisos heredados',   href: '/hereus',             description: 'Lo heredaste y no quieres venderlo.', icon: 'KeyRound' },
+        { label: 'Propietarios',          href: '/propietarios',       description: 'Tu piso, sin que te consuma el día.', icon: 'Home' },
+        { label: 'Gestores',              href: '/gestores-pequenos',  description: 'Todos tus pisos, en una app y una factura.', icon: 'Building2' },
+        { label: 'Segundas residencias',  href: '/segunda-residencia', description: 'Que el verano vuelva a ser verano.', icon: 'Sun' },
       ],
     },
     {

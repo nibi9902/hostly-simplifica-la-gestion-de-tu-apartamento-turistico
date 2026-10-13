@@ -13,7 +13,8 @@
     "menu": {
       "totes": "Ver todas las funcionalidades",
       "videos": "Ver los vídeos"
-    }
+    },
+    "app": "App"
   },
   "footer": {
     "tagline": "La app que simplifica todo lo que implica tener un piso turístico.",

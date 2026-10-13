@@ -21,10 +21,9 @@ export const NAV_CA: NavConfig = {
     {
       label: 'Per a qui',
       dropdown: [
-        { label: 'Propietaris',         href: '/propietarios',       description: '1-3 pisos sense que et consumeixin el dia.', icon: 'Home' },
-        { label: 'Gestors petits',      href: '/gestores-pequenos',  description: '5-15 pisos. Una app, una factura.', icon: 'Building2' },
-        { label: 'Segona residència',   href: '/segunda-residencia', description: 'Que l\'estiu torni a ser estiu.', icon: 'Sun' },
-        { label: 'Pisos heretats',      href: '/hereus',             description: 'L\'has heretat i no el vols vendre.', icon: 'KeyRound' },
+        { label: 'Propietaris',           href: '/propietarios',       description: 'El teu pis, sense que et consumeixi el dia.', icon: 'Home' },
+        { label: 'Gestors',               href: '/gestores-pequenos',  description: 'Tots els teus pisos, en una app i una factura.', icon: 'Building2' },
+        { label: 'Segones residències',   href: '/segunda-residencia', description: 'Que l\'estiu torni a ser estiu.', icon: 'Sun' },
       ],
     },
     {

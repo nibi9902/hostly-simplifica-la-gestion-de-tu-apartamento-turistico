@@ -129,10 +129,10 @@ function Contingut({ item, onTria }: { item: NavMainItem; onTria: () => void }) 
       </div>
     );
   }
-  // Per a qui: les quatre peces en una fila (13-10: «per què tenim dues files? per què no ho podem fer tot en una?»)
+  // Per a qui: les peces en una fila (13-10: «per què tenim dues files?»); sense números de pisos ni «Pisos heredados»
   if (item.dropdown) {
     return (
-      <ul className="grid grid-cols-4 gap-0.5">
+      <ul className="grid grid-cols-3 gap-0.5">
         {item.dropdown.map((sub) => <li key={sub.href}><Peca item={sub} onTria={onTria} /></li>)}
       </ul>
     );
@@ -371,7 +371,7 @@ export function HeaderNav({ nav }: Props) {
         })}
       </nav>
 
-      {/* A la dreta: l'idioma, «Iniciar sesión» i «Empezar»; al mòbil, l'idioma i el menú */}
+      {/* A la dreta: l'idioma, «App» (abans «Iniciar sesión»; el Biel, 13-10) i «Empezar»; al mòbil, l'idioma i el menú */}
       <div className="flex items-center justify-end gap-5 justify-self-end">
         <div className="hidden sm:flex"><SelectorIdioma lang={lang} setLang={setLang} /></div>
         <a
@@ -380,7 +380,7 @@ export function HeaderNav({ nav }: Props) {
           rel="noopener noreferrer"
           className="hidden lg:inline-flex text-sm font-medium text-foreground hover:text-primary transition-colors"
         >
-          {t('nav.login')}
+          {t('nav.app')}
         </a>
         <LangLink to="/empezar" state={{ desde: pathname }}
           className="hidden lg:inline-flex items-center justify-center h-11 px-5 rounded-full bg-primary text-primary-foreground text-[15px] font-medium shadow-[0_1px_3px_rgba(0,0,0,0.08)] hover:bg-[#1d4ed8] transition-colors">
@@ -444,7 +444,7 @@ export function HeaderNav({ nav }: Props) {
               <div className="flex justify-center pb-3"><SelectorIdioma lang={lang} setLang={setLang} gran /></div>
               <a href={nav.ctas.secondary.href} target="_blank" rel="noopener noreferrer"
                 className="block w-full text-center py-3 rounded-full border border-slate-200 text-foreground font-semibold">
-                {t('nav.login')}
+                {t('nav.app')}
               </a>
               <LangLink to="/empezar" state={{ desde: pathname }} onClick={() => setMobileOpen(false)}
                 className="block w-full text-center py-3 rounded-full bg-primary text-primary-foreground font-semibold">

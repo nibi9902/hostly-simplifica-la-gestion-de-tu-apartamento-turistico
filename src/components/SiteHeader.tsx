@@ -8,7 +8,7 @@ import { LangLink } from '@/i18n/LangLink';
 
 /**
  * El capçal, com el de la portada aprovada (13-10-2026): la marca a l'esquerra, els apartats en una
- * píndola grisa al mig i, a la dreta, l'idioma, «Iniciar sesión» i «Empezar» (`HeaderNav`).
+ * píndola grisa al mig i, a la dreta, l'idioma, «App» i «Empezar» (`HeaderNav`).
  */
 export function SiteHeader() {
   const { pathname } = useLocation();

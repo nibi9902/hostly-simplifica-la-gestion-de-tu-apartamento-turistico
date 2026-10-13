@@ -58,7 +58,8 @@
     "p_cookies_pre_publicitat": "Usamos cookies técnicas y, solo si las aceptas, analíticas y de publicidad. Consulta nuestra",
     "empresa_meta": "Meta Platforms Ireland Ltd.",
     "empresa_google": "Google Ireland Ltd.",
-    "i": " y "
+    "i": " y ",
+    "p_coincidencia_meta": "Meta recibe también, codificados, el teléfono o el correo que escribas en nuestros formularios, para reconocer tu visita y medir sus anuncios. Solo si has aceptado las cookies de publicidad."
   },
   "cookies": {
     "title": "Política de cookies | Hostly",
@@ -135,11 +136,12 @@
       }
     },
     "h2_publicitat": "Cookies de publicidad",
-    "p_publicitat": "Si las aceptas, usamos {{eines}} para enseñar anuncios de Hostly en otras webs y apps a quien ya nos ha visitado (retargeting) y para saber qué anuncios traen contactos. A Meta y a Google les llega que has visitado la web y, si es el caso, que has dejado tu teléfono o pedido una demo; nunca tu teléfono, tu correo ni tus respuestas. Si las rechazas, no se carga nada de Meta ni de Google Ads.",
+    "p_publicitat": "Si las aceptas, usamos {{eines}} para enseñar anuncios de Hostly en otras webs y apps a quien ya nos ha visitado (retargeting) y para saber qué anuncios traen contactos. Les llega que has visitado la web y, si es el caso, que has dejado tu teléfono o pedido una demo. Si las rechazas, no se carga nada de Meta ni de Google Ads.",
     "p_publicitat_control": "También puedes decidir qué anuncios ves desde tus preferencias de anuncios de",
     "eina_meta": "el píxel de Meta",
     "eina_google": "la etiqueta de Google Ads",
-    "i": " y "
+    "i": " y ",
+    "p_coincidencia_meta": "Con el píxel de Meta, si escribes tu teléfono o tu correo en un formulario de la web, Meta los recibe codificados (no los puede leer tal cual) para reconocer tu visita y medir sus anuncios. Solo pasa si has aceptado las cookies de publicidad."
   },
   "terminos": {
     "title": "Términos y condiciones | Hostly",

@@ -58,7 +58,8 @@
     "p_cookies_pre_publicitat": "Fem servir galetes tècniques i, només si les acceptes, analítiques i de publicitat. Consulta la nostra",
     "empresa_meta": "Meta Platforms Ireland Ltd.",
     "empresa_google": "Google Ireland Ltd.",
-    "i": " i "
+    "i": " i ",
+    "p_coincidencia_meta": "Meta rep també, codificats, el telèfon o el correu que escriguis als nostres formularis, per reconèixer la teva visita i mesurar els seus anuncis. Només si has acceptat les galetes de publicitat."
   },
   "cookies": {
     "title": "Política de galetes | Hostly",
@@ -135,11 +136,12 @@
       }
     },
     "h2_publicitat": "Galetes de publicitat",
-    "p_publicitat": "Si les acceptes, fem servir {{eines}} per ensenyar anuncis de Hostly en altres webs i apps a qui ja ens ha visitat (retargeting) i per saber quins anuncis porten contactes. A Meta i a Google els arriba que has visitat el web i, si és el cas, que has deixat el teu telèfon o demanat una demo; mai el teu telèfon, el teu correu ni les teves respostes. Si les rebutges, no es carrega res de Meta ni de Google Ads.",
+    "p_publicitat": "Si les acceptes, fem servir {{eines}} per ensenyar anuncis de Hostly en altres webs i apps a qui ja ens ha visitat (retargeting) i per saber quins anuncis porten contactes. Els arriba que has visitat el web i, si és el cas, que has deixat el teu telèfon o has demanat una demo. Si les rebutges, no es carrega res de Meta ni de Google Ads.",
     "p_publicitat_control": "També pots decidir quins anuncis veus des de les teves preferències d'anuncis de",
     "eina_meta": "el píxel de Meta",
     "eina_google": "l'etiqueta de Google Ads",
-    "i": " i "
+    "i": " i ",
+    "p_coincidencia_meta": "Amb el píxel de Meta, si escrius el teu telèfon o el teu correu en un formulari del web, Meta els rep codificats (no els pot llegir tal qual) per reconèixer la teva visita i mesurar els seus anuncis. Només passa si has acceptat les galetes de publicitat."
   },
   "terminos": {
     "title": "Termes i condicions | Hostly",

@@ -80,6 +80,8 @@ export default function Cookies() {
             <>
               <h2>{t("cookies.h2_publicitat")}</h2>
               <p>{t("cookies.p_publicitat", { eines })}</p>
+              {/* la coincidència avançada del píxel (el Biel, 13-10: «volem el millor píxel possible») */}
+              {EINES_PUBLICITAT.meta && <p>{t("cookies.p_coincidencia_meta")}</p>}
               <p>
                 {t("cookies.p_publicitat_control")}{" "}
                 {EINES_PUBLICITAT.meta && <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noreferrer">Meta</a>}

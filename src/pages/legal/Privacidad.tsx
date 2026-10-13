@@ -63,6 +63,7 @@ export default function Privacidad() {
           <h2>{t("privacidad.h2_destinatarios")}</h2>
           <p>{t("privacidad.p_destinatarios")}</p>
           {hiHaPublicitat() && <p>{t("privacidad.p_destinatarios_publicitat", { empreses })}</p>}
+          {EINES_PUBLICITAT.meta && <p>{t("privacidad.p_coincidencia_meta")}</p>}
 
           <h2>{t("privacidad.h2_transferencias")}</h2>
           <p>{t("privacidad.p_transferencias")}</p>
