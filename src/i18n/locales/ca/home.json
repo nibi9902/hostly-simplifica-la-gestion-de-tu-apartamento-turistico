@@ -215,8 +215,11 @@
     "gratis": {
       "retol": "Per què començar avui",
       "titol": "Gratis per sempre: el check-in i la policia.",
+      "pla": "Pla Gratis",
+      "zero": "0 €",
+      "sempre": "Per sempre. Sense targeta.",
+      "text": "L'hoste fa el check-in des del mòbil. Cada dia, Hostly ho envia a la policia i et guarda el comprovant.",
       "boto": "Començar",
-      "sense_targeta": "Sense targeta.",
       "checkin": {
         "titol": "El check-in, des del seu mòbil",
         "text": "L'hoste el fa sol, en tres pantalles.",
