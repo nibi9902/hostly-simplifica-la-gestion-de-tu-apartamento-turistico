@@ -15,6 +15,9 @@ interface UrlEntry {
   lastmod?: string;
   changefreq: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
   priority: number;
+  /** Només en castellà: els articles del blog. A /ca surten en castellà amb un avís i la canònica és la
+   *  castellana; posar-los al mapa amb hreflang «ca» contradiria la canònica (13-10-2026). */
+  nomesEs?: boolean;
 }
 
 // Llegeix els slugs dels articles del blog
@@ -92,14 +95,15 @@ const basePaths: UrlEntry[] = [
     lastmod: getPublishedAt(slug),
     changefreq: 'monthly' as const,
     priority: 0.7,
+    nomesEs: true,
   })),
 ];
 
 // XML serializer amb hreflang per a cada path en cada idioma
-const xmlEntries = basePaths.flatMap((u) =>
-  LANGS.map((lang) => {
+const xmlEntries = basePaths.flatMap((u: UrlEntry) =>
+  (u.nomesEs ? (['es'] as const) : LANGS).map((lang) => {
     const localizedPath = u.loc === '/' ? `/${lang}` : `/${lang}${u.loc}`;
-    const alternates = LANGS.map(
+    const alternates = (u.nomesEs ? (['es'] as const) : LANGS).map(
       (alt) => `    <xhtml:link rel="alternate" hreflang="${alt === 'ca' ? 'ca-ES' : 'es-ES'}" href="${BASE}${alt === 'es' && u.loc === '/' ? '/es' : `/${alt}${u.loc === '/' ? '' : u.loc}`}"/>`,
     ).join('\n');
     const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE}/es${u.loc === '/' ? '' : u.loc}"/>`;

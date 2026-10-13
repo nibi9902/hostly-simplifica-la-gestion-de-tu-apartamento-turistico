@@ -7,11 +7,36 @@ import type { NavConfig } from '@/lib/data/nav';
 import { cn } from '@/lib/utils';
 import { LangLink } from '@/i18n/LangLink';
 import { useLang } from '@/i18n/useLang';
+import hostlyMarca from '@/assets/hostly-marca.webp';
 
 /** Un apartat de la píndola del mig (enllaç o botó que obre el desplegable). */
 const PINDOLA = 'h-9 px-4 rounded-full inline-flex items-center gap-1 text-sm font-medium text-[hsl(220_14%_20%)] transition-colors duration-150 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary';
 
 type MegaState = 'closed' | 'opening' | 'open' | 'closing';
+
+/** ES / CA: al capçal (des de 640 px) i, al mòbil, dins del menú (abans no hi era: al mòbil no es podia canviar). */
+function SelectorIdioma({ lang, setLang, gran = false }: { lang: string; setLang: (l: 'es' | 'ca') => void; gran?: boolean }) {
+  return (
+    <div className={cn('flex items-center gap-0.5 p-0.5 rounded-full bg-[hsl(210_20%_94%)] font-semibold', gran ? 'text-sm' : 'text-[11px]')} role="group" aria-label="Idioma">
+      {(['es', 'ca'] as const).map((l) => (
+        <button
+          key={l}
+          type="button"
+          onClick={() => setLang(l)}
+          aria-pressed={lang === l}
+          aria-label={l === 'es' ? 'Español' : 'Català'}
+          className={cn(
+            'rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
+            gran ? 'h-10 min-w-[64px] px-4' : 'h-7 min-w-[34px] px-2.5',
+            lang === l ? 'bg-white text-foreground shadow-[0_1px_2px_rgba(0,0,0,0.06)]' : 'text-slate-500 hover:text-foreground',
+          )}
+        >
+          {l.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  );
+}
 type Props = { nav: NavConfig };
 
 export function HeaderNav({ nav }: Props) {
@@ -101,23 +126,7 @@ export function HeaderNav({ nav }: Props) {
 
       {/* A la dreta: l'idioma, «Iniciar sesión» i «Empezar»; al mòbil, l'idioma i el menú */}
       <div className="flex items-center justify-end gap-5 justify-self-end">
-        <div className="hidden sm:flex items-center gap-0.5 p-0.5 rounded-full bg-[hsl(210_20%_94%)] text-[11px] font-semibold" role="group" aria-label="Idioma">
-          {(['es', 'ca'] as const).map((l) => (
-            <button
-              key={l}
-              type="button"
-              onClick={() => setLang(l)}
-              aria-pressed={lang === l}
-              aria-label={l === 'es' ? 'Español' : 'Català'}
-              className={cn(
-                'h-7 min-w-[34px] px-2.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-                lang === l ? 'bg-white text-foreground shadow-[0_1px_2px_rgba(0,0,0,0.06)]' : 'text-slate-500 hover:text-foreground',
-              )}
-            >
-              {l.toUpperCase()}
-            </button>
-          ))}
-        </div>
+        <div className="hidden sm:flex"><SelectorIdioma lang={lang} setLang={setLang} /></div>
         <a
           href={nav.ctas.secondary.href}
           target="_blank"
@@ -215,7 +224,9 @@ export function HeaderNav({ nav }: Props) {
       {mobileOpen && createPortal(
         <div style={{ position: 'fixed', inset: 0, zIndex: 9999 }} className="lg:hidden bg-white overflow-y-auto">
           <div className="contenidor flex items-center justify-between h-20 border-b border-slate-100">
-            <LangLink to="/" onClick={() => setMobileOpen(false)} className="font-semibold text-lg text-foreground">Hostly</LangLink>
+            <LangLink to="/" onClick={() => setMobileOpen(false)} className="inline-flex items-center" aria-label="Hostly">
+              <img src={hostlyMarca} alt="" width={160} height={24} className="h-6 w-auto" />
+            </LangLink>
             <button type="button" onClick={() => setMobileOpen(false)}
               className="inline-flex items-center justify-center w-10 h-10 rounded-md text-foreground hover:bg-muted transition-colors" aria-label={t('nav.aria_close_menu')}>
               <X className="w-5 h-5" />
@@ -269,9 +280,10 @@ export function HeaderNav({ nav }: Props) {
               ))}
             </ul>
             <div className="mt-8 pt-6 border-t border-slate-100 space-y-3">
+              <div className="flex justify-center pb-3"><SelectorIdioma lang={lang} setLang={setLang} gran /></div>
               <a href={nav.ctas.secondary.href} target="_blank" rel="noopener noreferrer"
                 className="block w-full text-center py-3 rounded-full border border-slate-200 text-foreground font-semibold">
-                {nav.ctas.secondary.label}
+                {t('nav.login')}
               </a>
               <LangLink to="/empezar" state={{ desde: pathname }} onClick={() => setMobileOpen(false)}
                 className="block w-full text-center py-3 rounded-full bg-primary text-primary-foreground font-semibold">
