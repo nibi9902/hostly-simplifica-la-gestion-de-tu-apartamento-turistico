@@ -1,71 +1,67 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import MiniDemo from "@/pages/funcionalidades/MiniDemo";
+import { Check } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { LangLink } from "@/i18n/LangLink";
+import iconaApp from "@/assets/portada/icona-app.webp";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
+export type ClauPersona = "propietarios" | "gestores" | "segunda_residencia" | "hereus";
+type Fila = { quan: string; titol: string; detall: string };
+type Dia = { titol: string; files: Fila[] };
+
 /**
- * L'entrada de les pàgines «Para quién» (10-10-2026). Abans era només text i, a l'ordinador, la
- * meitat dreta de la pantalla quedava buida. Ara, com a les funcionalitats: el text a l'esquerra i,
- * a la dreta, la demo de la funció que més li toca a cada perfil. Al mòbil, només el text (com abans).
+ * L'entrada de les pàgines «Para quién», amb les peces de la portada (13-10-2026): el text a l'esquerra
+ * i, a la dreta, la targeta «Hoy, en …», el que Hostly ha fet avui en un pis d'aquest perfil (com la llista
+ * de «Hostly está pendiente»). Abans: un degradat blau i, a la dreta, la demo animada de l'app d'abril,
+ * amagada al mòbil. Els pisos i els hostes són inventats (comprovat a la BD que no hi són).
  */
-export default function HeroPersona({
-  badge,
-  h1,
-  intro,
-  cta,
-  ctaSub,
-  demo,
-  onEmpezar,
-}: {
-  badge: string;
-  /** Línies separades amb «\n» */
-  h1: string;
-  intro: string;
-  cta: string;
-  ctaSub?: string;
-  /** Slug de la funcionalitat de la demo (`MiniDemo`) */
-  demo: string;
-  onEmpezar: () => void;
-}) {
+export default function HeroPersona({ clau, onEmpezar }: { clau: ClauPersona; onEmpezar: () => void }) {
+  const { t } = useTranslation("personas");
+  const dia = t(`${clau}.dia`, { returnObjects: true }) as Dia;
+
   return (
-    <section className="pt-32 pb-20 bg-gradient-to-b from-[#f0f6ff] to-white overflow-hidden">
-      <div className="contenidor grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center [&>*]:min-w-0">
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">{badge}</p>
-          <h1 className="text-4xl md:text-6xl font-bold text-[#0f172a] tracking-tight mb-6 leading-tight">
-            {h1.split("\n").map((line, i) => (
-              <span key={i} className="block">{line}</span>
-            ))}
+    <section className="pt-seccio pt-fp-entrada">
+      <div className="contenidor pt-fp-entrada-graella">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
+          <p className="pt-retol">{t(`${clau}.badge`)}</p>
+          <h1 className="pt-fp-h1">
+            {t(`${clau}.h1`).split("\n").map((linia, i) => <span key={i} className="pt-pp-linia">{linia}</span>)}
           </h1>
-          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mb-10 leading-relaxed">{intro}</p>
-          <button
-            type="button"
-            onClick={onEmpezar}
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"
-          >
-            {cta}
-            <ArrowRight className="w-4 h-4" />
-          </button>
-          {ctaSub && <p className="text-sm text-slate-500 mt-3">{ctaSub}</p>}
+          <p className="pt-lead">{t(`${clau}.intro`)}</p>
+          <div className="pt-fp-botons">
+            <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t(`${clau}.cta_primary`)}</button>
+            <LangLink to="/demo" className="pt-pill pt-pill-sec">{t("comu.com_funciona")}</LangLink>
+          </div>
+          <p className="pt-pp-nota">{t(`${clau}.cta_sub`)}</p>
         </motion.div>
 
-        {/* La demo és una il·lustració: el text de la pàgina ja ho explica */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
+        <motion.figure
+          className="pt-pp-dia"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease }}
-          className="relative hidden lg:block"
-          aria-hidden="true"
         >
-          <div
-            className="pointer-events-none absolute -inset-[10%]"
-            style={{ background: "radial-gradient(circle at center, rgba(37,99,235,0.15) 0%, transparent 65%)", filter: "blur(40px)" }}
-          />
-          <div className="relative">
-            <MiniDemo slug={demo} iconName="" />
-          </div>
-        </motion.div>
+          <figcaption className="pt-pp-dia-cap">
+            <img src={iconaApp} alt="" width={28} height={28} />
+            {dia.titol}
+          </figcaption>
+          <ul>
+            {dia.files.map((f, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.45 + i * 0.12, ease }}
+              >
+                <span className="pt-pp-marca" aria-hidden="true"><Check className="pt-ic" strokeWidth={2.8} /></span>
+                <p><b>{f.titol}</b><span>{f.detall}</span></p>
+                <small>{f.quan}</small>
+              </motion.li>
+            ))}
+          </ul>
+          <p className="pt-pp-dia-peu"><b>{t("comu.marxa")}</b> {t("comu.res")}</p>
+        </motion.figure>
       </div>
     </section>
   );

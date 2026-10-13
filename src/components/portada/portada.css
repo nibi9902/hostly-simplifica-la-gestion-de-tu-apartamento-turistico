@@ -411,6 +411,52 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-fp-mes .pt-ic { width: 15px; height: 15px; }
 .pt-preguntes-cap .pt-retol + h2 { margin-top: 12px; }
 
+/* ── Per a qui (propietaris, gestors petits, segona residència, hereus) ──
+   L'entrada de les funcionalitats amb la targeta «Hoy, en …» (el que Hostly ha fet avui en un pis) i, a
+   sota, cada pàgina amb les seves peces. Després, les seccions de la portada. */
+.pt-pp-linia { display: block; }
+.pt-pp-nota { margin-top: 14px; font-size: 14px; line-height: 1.45; color: var(--pt-gris); }
+.pt-pp-dia { justify-self: end; width: 100%; max-width: 500px; margin: 0; border-radius: 28px; background: var(--pt-blanc); padding: 24px 28px 22px; box-shadow: 0 40px 90px -24px rgba(15, 23, 42, .22), 0 10px 30px rgba(15, 23, 42, .06), inset 0 0 0 1px var(--pt-linia); }
+.pt-pp-dia-cap { display: flex; align-items: center; gap: 12px; padding-bottom: 16px; border-bottom: 1px solid var(--pt-linia); font-size: 17px; line-height: 1.3; font-weight: 600; }
+.pt-pp-dia-cap img { width: 28px; height: 28px; border-radius: 8px; }
+.pt-pp-dia ul { margin: 0; padding: 0; list-style: none; }
+.pt-pp-dia li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding-block: 15px; border-bottom: 1px solid var(--pt-linia); }
+.pt-pp-marca { width: 32px; height: 32px; border-radius: 9999px; background: hsl(138 76% 93%); color: var(--pt-verd); display: grid; place-items: center; }
+.pt-pp-marca .pt-ic { width: 16px; height: 16px; }
+.pt-pp-dia li p { min-width: 0; padding-top: 1px; }
+.pt-pp-dia li b { display: block; font-size: 16px; line-height: 1.3; font-weight: 600; }
+.pt-pp-dia li p span { display: block; margin-top: 2px; font-size: 14px; line-height: 1.4; color: var(--pt-gris); }
+.pt-pp-dia li small { padding-top: 3px; font-size: 12px; font-weight: 500; color: var(--pt-gris); white-space: nowrap; }
+.pt-pp-dia-peu { padding-top: 16px; font-size: 14px; line-height: 1.4; color: var(--pt-gris); }
+.pt-pp-dia-peu b { margin-right: 6px; font-weight: 600; color: hsl(142 76% 30%); }
+/* el títol de l'esquerra es queda a la vista mentre passa la llista (com a les preguntes) */
+.pt-pp-enganxat { position: sticky; top: 112px; }
+.pt-pp-sub { margin-top: 14px; font-size: 19px; line-height: 1.55; color: var(--pt-gris); }
+/* propietaris: cada maldecap i la seva solució, en una fila */
+.pt-pp-parells { margin: 0; padding: 0; list-style: none; }
+.pt-pp-parells li { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px; padding-block: 26px; border-top: 1px solid var(--pt-linia); }
+.pt-pp-parells li:first-child { border-top: 0; padding-top: 8px; }
+.pt-pp-parells .pt-retol { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+.pt-pp-ara .pt-retol { color: hsl(142 76% 30%); }
+.pt-pp-ara .pt-ic { width: 14px; height: 14px; }
+.pt-pp-abans .pt-retol + p { font-size: 17px; line-height: 1.45; color: var(--pt-gris); }
+.pt-pp-ara .pt-retol + p { font-size: 17px; line-height: 1.5; }
+/* gestors petits: el que es paga avui, com una factura, i la targeta fosca amb el preu de Hostly */
+.pt-pp-factura { margin: 0; padding: 6px 28px; list-style: none; border-radius: 24px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); }
+.pt-pp-factura li { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-block: 18px; border-top: 1px solid var(--pt-linia); font-size: 17px; line-height: 1.4; }
+.pt-pp-factura li:first-child { border-top: 0; }
+.pt-pp-factura b { font-weight: 500; color: var(--pt-gris); text-align: right; }
+.pt-pp-fosca { margin-top: 16px; border-radius: 28px; background: var(--pt-fosc); color: #fff; padding: 32px 36px; }
+.pt-pp-fosca .pt-retol { color: rgba(255, 255, 255, .6); }
+.pt-pp-xifra { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-top: 14px; }
+.pt-pp-xifra b { font-size: 72px; line-height: .9; font-weight: 700; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+.pt-pp-xifra span { font-size: 18px; font-weight: 600; }
+.pt-pp-fosca-txt { margin-top: 14px; max-width: 40em; font-size: 16px; line-height: 1.55; color: rgba(255, 255, 255, .82); }
+/* segona residència i hereus: les peces de les funcionalitats, amb la icona en un quadradet blanc */
+.pt-pp-quatre { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.pt-pp-icona { width: 44px; height: 44px; margin-bottom: 6px; border-radius: 14px; background: var(--pt-blanc); box-shadow: inset 0 0 0 1px var(--pt-linia); display: grid; place-items: center; color: var(--pt-text); }
+.pt-pp-icona .pt-ic { width: 20px; height: 20px; }
+
 /* ── /demo: els cinc vídeos de la sèrie «Todo va solo» ──
    A l'ordinador, en fila; al mòbil, una tira que llisca amb el dit (fins a la vora, com .fins-a-la-vora). */
 .pt-demo { padding-block: 136px 88px; background: var(--pt-blanc); }
@@ -499,6 +545,12 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-fp-bloc { padding-block: 56px; }
   .pt-fp-passos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
   .pt-fp-checks, .pt-fp-peces { grid-template-columns: minmax(0, 1fr); }
+  .pt-pp-quatre { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pt-pp-dia { justify-self: stretch; max-width: none; }
+  .pt-pp-enganxat { position: static; }
+  .pt-pp-sub { font-size: 17px; }
+  .pt-pp-parells li { grid-template-columns: minmax(0, 1fr); gap: 12px; padding-block: 22px; }
+  .pt-pp-xifra b { font-size: 56px; }
   .pt-videos { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-top: 32px; margin-inline: calc(-1 * var(--web-marge)); padding-inline: var(--web-marge); scroll-padding-inline: var(--web-marge); padding-bottom: 6px; }
   .pt-video { flex: 0 0 min(62vw, 240px); scroll-snap-align: start; }
   .pt-referits-fila { flex-wrap: wrap; padding: 12px; }
@@ -522,6 +574,19 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-bento { grid-template-columns: minmax(0, 1fr); }
   .pt-zero { font-size: 120px; }
   .pt-fp-passos { grid-template-columns: minmax(0, 1fr); }
+  /* la targeta «Hoy, en …»: el moment (o el pis) a sobre del títol, perquè el text tingui tota l'amplada */
+  .pt-pp-dia { padding: 20px 20px 18px; border-radius: 24px; }
+  .pt-pp-dia li { grid-template-columns: 28px minmax(0, 1fr); grid-template-areas: "m q" "m t"; column-gap: 12px; row-gap: 2px; padding-block: 13px; }
+  .pt-pp-marca { grid-area: m; width: 28px; height: 28px; }
+  .pt-pp-marca .pt-ic { width: 14px; height: 14px; }
+  .pt-pp-dia li small { grid-area: q; padding-top: 0; }
+  .pt-pp-dia li p { grid-area: t; padding-top: 0; }
+  .pt-pp-quatre { grid-template-columns: minmax(0, 1fr); }
+  .pt-pp-factura { padding: 4px 20px; }
+  .pt-pp-factura li { flex-direction: column; align-items: flex-start; gap: 2px; font-size: 16px; }
+  .pt-pp-factura b { text-align: left; }
+  .pt-pp-fosca { padding: 24px; border-radius: 24px; }
+  .pt-pp-xifra b { font-size: 48px; }
   .pt-zf { padding: 28px 24px; }
   .pt-zf-zero { font-size: 120px; }
   .pt-zf-sempre { font-size: 22px; margin-top: 16px; }

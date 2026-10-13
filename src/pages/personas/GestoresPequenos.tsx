@@ -1,12 +1,19 @@
-import { X } from "lucide-react";
+/**
+ * /gestores-pequenos, amb les peces de la portada (13-10-2026). «¿Con cuántas apps?»: les eines d'avui com
+ * una factura (cadascuna amb el seu cost) i, a sota, la targeta fosca amb el preu de Hostly per a qui en porta
+ * vuit. Abans: files vermelles amb una creu i un requadre verd. Després, «Así se empieza», els preus i el
+ * «Te llamo» de la portada.
+ */
 import PageShell from "@/components/PageShell";
 import HeroPersona from "./HeroPersona";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { useTranslation } from 'react-i18next';
 import { useEmpezar } from "@/lib/empezar";
-
+import Passos from "@/components/portada/Passos";
+import Preus from "@/components/portada/Preus";
 import Truca from "@/components/portada/Truca";
 import "@/components/portada/portada.css";
+
 type Tool = { name: string; cost: string };
 
 export default function GestoresPequenos() {
@@ -20,43 +27,32 @@ export default function GestoresPequenos() {
       path="/gestores-pequenos"
       schemas={[breadcrumbSchema([{ name: 'Hostly', url: '/' }, { name: t("gestores.breadcrumb_label"), url: '/gestores-pequenos' }])]}
     >
-      <HeroPersona
-        badge={t("gestores.badge")}
-        h1={t("gestores.h1")}
-        intro={t("gestores.intro")}
-        cta={t("gestores.cta_primary")}
-        ctaSub={t("gestores.cta_sub")}
-        demo="channel-manager"
-        onEmpezar={empezar}
-      />
+      <HeroPersona clau="gestores" onEmpezar={empezar} />
 
-      {/* A l'ordinador: el títol a l'esquerra i, a la dreta, les eines que es paguen avui i el resum */}
-      <section className="py-20">
-        <div className="contenidor grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5 lg:self-start lg:sticky lg:top-28">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-4">
-              {t("gestores.section2_h2")}
-            </h2>
-            <p className="text-slate-500 text-lg">{t("gestores.section2_sub")}</p>
+      {/* El títol a l'esquerra; a la dreta, el que es paga avui i el que costa amb Hostly */}
+      <section className="pt-seccio pt-fp-bloc">
+        <div className="contenidor pt-fp-dues">
+          <div className="pt-pp-enganxat">
+            <h2 className="pt-fp-h2">{t("gestores.section2_h2")}</h2>
+            <p className="pt-pp-sub">{t("gestores.section2_sub")}</p>
           </div>
-          <div className="lg:col-span-7">
-          <div className="space-y-3 mb-8">
-            {tools.map((item) => (
-              // Al mòbil, el cost a sota del nom (al costat, els textos llargs aixafaven el nom en una columna)
-              <div key={item.name} className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between p-4 rounded-xl bg-[#fff7f7] border border-red-100 text-sm">
-                <span className="inline-flex items-center gap-2 text-slate-700"><X className="w-4 h-4 text-red-600 flex-shrink-0" strokeWidth={2.6} aria-hidden="true" />{item.name}</span>
-                <span className="font-semibold text-red-700 pl-6 sm:pl-0 sm:flex-shrink-0 sm:ml-4 sm:text-right">{item.cost}</span>
-              </div>
-            ))}
-          </div>
-          <div className="p-5 rounded-2xl bg-[#f0fdf4] border border-[#bbf7d0]">
-            <p className="font-bold text-[#15803d]">{t("gestores.hostly_summary")}</p>
-          </div>
+          <div>
+            <ul className="pt-pp-factura">
+              {tools.map((item) => (
+                <li key={item.name}><span>{item.name}</span><b>{item.cost}</b></li>
+              ))}
+            </ul>
+            <div className="pt-pp-fosca">
+              <p className="pt-retol">{t("gestores.hostly.retol")}</p>
+              <p className="pt-pp-xifra"><b>{t("gestores.hostly.xifra")}</b><span>{t("gestores.hostly.unitat")}</span></p>
+              <p className="pt-pp-fosca-txt">{t("gestores.hostly.text")}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Al final, el «Te llamo» de la portada (13-10-2026: abans, una franja blava fosca) */}
+      <Passos />
+      <Preus onEmpezar={empezar} />
       <Truca />
     </PageShell>
   );
