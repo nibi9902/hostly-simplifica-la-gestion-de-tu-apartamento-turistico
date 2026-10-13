@@ -42,6 +42,7 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
   | Tria hora per a la demo | `Schedule` | — |
   | Va a crear el compte gratis | `EmpezarGratis` (propi) | — |
   | Acaba la calculadora | `Calculadora` (propi) | — |
+  | Mira un vídeo de `/demo` (13-10-2026) | `VerVideo` (propi) | — |
 
 - El píxel va **sense «configuració automàtica»** (`autoConfig` apagat): no llegeix sol els
   botons ni els formularis.
