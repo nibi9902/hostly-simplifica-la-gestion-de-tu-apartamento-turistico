@@ -18,34 +18,34 @@ const colors = {
 const fontFamily = 'Inter, -apple-system, sans-serif';
 
 /* ─────────────────────────────────────────────────────────────
-   TEXTS — mateix contingut que SceneChatDavid.tsx de Remotion
+   TEXTS — mateix contingut que SceneChatDavid.tsx del vídeo de /demo (~/hostly-videos/demo-60s)
 ───────────────────────────────────────────────────────────── */
-const WELCOME_TEXT = `¡Bienvenido a Cala Moreta!
+const WELCOME_TEXT = `¡Bienvenidos a Cala Moreta!
 
-Hola David 😊
+Hola, Nora 😊
 ¡Estamos encantados de recibiros y esperamos que disfrutéis mucho de la estancia!
 
 **Check-in online (obligatorio)**
-hostlylabs.com/i/k7q2
+hostlylabs.com/i/m7dq4
 (Al completarlo recibiréis los códigos de acceso)
 
 **Horarios**
-Check-in: desde 15:00 h
-Check-out: antes de 11:00 h
+Check-in: desde las 15:00
+Check-out: antes de las 11:00
 
 Cualquier duda, estamos disponibles 😊
-Biel`;
+Clara`;
 
-const IA_DINNER_REPLY = `¡Hola David! 😊
+const IA_DINNER_REPLY = `¡Hola, Nora! 😊
 
-Para cenar esta noche os recomiendo 2 sitios que me encantan:
+Para cenar esta noche os recomiendo dos sitios que nos encantan:
 
-🍽️ **El Motel** – cocina ampurdanesa, a 8 min en coche. El arroz con gambas es imprescindible.
+🍽️ **La Barca** – pescado y arroces, a 5 min a pie. El arroz negro es imprescindible.
 
-🥩 **Sidrería Txot's** – carne a la brasa y sidra, a 5 min andando del piso. La chuleta no os la podéis perder.
+🥩 **Casa Lola** – brasa y buen vino, a 8 min en coche. No os perdáis la chuleta.
 
-Si queréis os hago yo la reserva, solo decidme hora 🍷
-Biel`;
+Si queréis, os hago yo la reserva: decidme la hora 🍷
+Clara`;
 
 /* ─────────────────────────────────────────────────────────────
    RENDER RICH — markdown bold inline
@@ -416,7 +416,7 @@ const IAWhatsAppDemo: React.FC<IAWhatsAppDemoProps> = ({ loop = false, staticMod
         }}>
           {/* Header — Tom Becker */}
           <div style={{ fontSize: 13, fontWeight: 600, color: colors.foreground }}>
-            Tom Becker · Apartamento Cala Moreta
+            Nora Vidal · Apartamento Cala Moreta
           </div>
           <div style={{ fontSize: 10, color: colors.meta, marginBottom: 12 }}>
             {t('iaWhatsapp.header')}
@@ -442,7 +442,7 @@ const IAWhatsAppDemo: React.FC<IAWhatsAppDemoProps> = ({ loop = false, staticMod
             <MessageBubble
               frame={frame} fps={FPS}
               enterFrame={65} side="left"
-              text="Hola! Hi ha pàrquing a prop per aparcar durant la nostra estada?"
+              text="¡Hola! ¿Hay algún parking cerca para dejar el coche durante la estancia?"
               time="09:41"
               typingSpeed={1.1}
             />
@@ -455,7 +455,7 @@ const IAWhatsAppDemo: React.FC<IAWhatsAppDemoProps> = ({ loop = false, staticMod
             <MessageBubble
               frame={frame} fps={FPS}
               enterFrame={148} side="right" variant="ai"
-              text="Sí! A 120 m teniu el pàrquing Passeig del Mar (8 €/dia) i un altre privat a 200 m per 15 €/dia. Us envio la ubicació del més proper: maps.app.goo.gl/xk3M9"
+              text="¡Sí! A 120 m tenéis el parking del paseo (8 €/día) y otro privado a 200 m por 15 €/día. Os paso la ubicación del más cercano 📍"
               time="09:42"
             />
 
@@ -467,7 +467,7 @@ const IAWhatsAppDemo: React.FC<IAWhatsAppDemoProps> = ({ loop = false, staticMod
             <MessageBubble
               frame={frame} fps={FPS}
               enterFrame={263} side="left"
-              text="¡Hola! ¿Nos podéis recomendar algún sitio para cenar esta noche por aquí?"
+              text="¡Hola! ¿Nos recomendáis algún sitio para cenar esta noche?"
               time="19:14"
               typingSpeed={1.1}
             />

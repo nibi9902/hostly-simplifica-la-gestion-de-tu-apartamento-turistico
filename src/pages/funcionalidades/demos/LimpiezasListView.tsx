@@ -142,7 +142,7 @@ const Row: React.FC<RowProps> = ({
       45 → row 2 (Marc)
       55 → row 3 (Elena)
       62 → day2 header (Diumenge 26)
-      70 → row 4 (David — amb glow verd NOU)
+      70 → row 4 (Nora — amb glow verd NOU)
 ─────────────────────────────────────────────────────────────── */
 
 export default function LimpiezasListView({ frame, fps }: { frame: number; fps: number }) {
@@ -210,24 +210,24 @@ export default function LimpiezasListView({ frame, fps }: { frame: number; fps: 
         <DayHeader label={t('limpiezas.dayMonday21')} />
         <Row
           progress={row1P}
-          host="Clara Puig" refCode="HMX4K9B2TP" cleaner="Eva"
-          apartment="Apartamento Cala Moreta"
+          host="Olivia Bennett" refCode="HMZ8Q2LK4V" cleaner="Carmen"
+          apartment="Casa del Puerto"
           statusLabel={statusT > 0 ? t('limpiezas.statusConfirmed') : t('limpiezas.statusPending')}
           statusColor={statusT > 0.1 ? colors.primary : colors.meta}
           statusT={statusT}
         />
         <Row
           progress={row2P}
-          host="Marc Rovira" refCode="HMQ7N3D5WR" cleaner="Eva"
-          apartment="Apartamento Cala Moreta"
+          host="Giulia Romano" refCode="HM4TR7XWQ9" cleaner="Pilar"
+          apartment="Ático del Mar"
           statusLabel={t('limpiezas.statusConfirmed')}
           statusColor={colors.primary}
           statusT={1}
         />
         <Row
           progress={row3P}
-          host="Elena Soler" refCode="8831920455" cleaner="Eva"
-          apartment="Apartamento Cala Moreta"
+          host="Jonas Keller" refCode="4409158263" cleaner="Carmen"
+          apartment="Estudio La Caleta"
           statusLabel={t('limpiezas.statusConfirmed')}
           statusColor={colors.primary}
           statusT={1}
@@ -237,7 +237,7 @@ export default function LimpiezasListView({ frame, fps }: { frame: number; fps: 
         </div>
         <Row
           progress={row4P}
-          host="Tom Becker" refCode="4419302858" cleaner="Eva"
+          host="Nora Vidal" refCode="4419302858" cleaner="Pilar"
           apartment="Apartamento Cala Moreta"
           statusLabel={t('limpiezas.statusConfirmed')}
           statusColor={colors.success}

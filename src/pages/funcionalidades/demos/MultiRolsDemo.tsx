@@ -358,10 +358,10 @@ function NetejadoraView({ frame, fps }: { frame: number; fps: number }) {
     // Avui: neteja urgent
     22: { bg:'#FFF7ED', border:colors.orange, nameColor:colors.orange, clean:'today' },
     // Tom Becker (Booking)
-    23: { bg:'rgba(0,53,128,0.08)',   border:'rgba(0,53,128,0.2)',    nameColor:'#1E3A8A', name:'David' },
+    23: { bg:'rgba(0,53,128,0.08)',   border:'rgba(0,53,128,0.2)',    nameColor:'#1E3A8A', name:'Nora' },
     24: { bg:'rgba(0,53,128,0.08)',   border:'rgba(0,53,128,0.2)',    nameColor:'#1E3A8A' },
     25: { bg:'rgba(0,53,128,0.08)',   border:'rgba(0,53,128,0.2)',    nameColor:'#1E3A8A' },
-    // Neteja David
+    // Neteja Nora
     26: { bg:'#F0FDF4', border:'#86EFAC', nameColor:colors.green, clean:'conf' },
     // Marc Rovira (Airbnb)
     27: { bg:'rgba(255,90,95,0.09)',  border:'rgba(255,90,95,0.2)',   nameColor:'#9B2335', name:'Marc' },
@@ -472,7 +472,7 @@ function NetejadoraView({ frame, fps }: { frame: number; fps: number }) {
                 <span style={{ fontSize:9, fontWeight:700, padding:'2px 8px', borderRadius:999, background:colors.orangeSoft, color:colors.orange }}>{t('limpiezas.urgentBadge')}</span>
               </div>
               <div style={{ fontSize:13, fontWeight:700, color:colors.foreground }}>Cala Moreta</div>
-              <div style={{ fontSize:10, color:colors.meta, marginTop:2 }}>Judit sale 11:00 · David entra 15:00 · 2 adultos + 1 niño</div>
+              <div style={{ fontSize:10, color:colors.meta, marginTop:2 }}>Judit sale 11:00 · Nora entra 15:00 · 2 adultos + 1 niño</div>
             </div>
           )}
         </div>
@@ -493,7 +493,7 @@ function NetejadoraView({ frame, fps }: { frame: number; fps: number }) {
                 <div style={{ padding: '3px 9px', borderRadius: 999, background: colors.orangeSoft, fontSize: 9, fontWeight: 700, color: colors.orange }}>{t('limpiezas.todayBadge')}</div>
               </div>
               <div style={{ display: 'flex', gap: 5, marginBottom: 12, flexWrap: 'wrap' }}>
-                {['2 adultos','1 niño','David entra 15:00'].map(t => (
+                {['2 adultos','1 niño','Nora entra 15:00'].map(t => (
                   <div key={t} style={{ fontSize: 8, fontWeight: 500, padding: '2px 6px', borderRadius: 999, background: colors.bg, border: `1px solid ${colors.border}`, color: colors.mutedFg }}>{t}</div>
                 ))}
               </div>

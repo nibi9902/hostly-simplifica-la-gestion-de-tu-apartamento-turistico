@@ -157,7 +157,7 @@ const TypingIndicator: React.FC<{
   );
 };
 
-/* ─── Chat view (Eva) ─── */
+/* ─── Chat view (Pilar) ─── */
 function ChatView({ frame, fps }: { frame: number; fps: number }) {
   const { t } = useTranslation('demos');
   return (
@@ -169,7 +169,7 @@ function ChatView({ frame, fps }: { frame: number; fps: number }) {
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
         <div style={{ fontSize: 13, fontWeight: 600, color: colors.foreground }}>
-          Eva · Apartamento Cala Moreta
+          Pilar · Apartamento Cala Moreta
         </div>
         <div style={{
           display: 'flex', alignItems: 'center', gap: 4,
@@ -211,7 +211,7 @@ function ChatView({ frame, fps }: { frame: number; fps: number }) {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   MAIN — alterna entre CHAT (Eva) i LLISTA
+   MAIN — alterna entre CHAT (Pilar) i LLISTA
    Cada vista té la seva pròpia playback timeline (reinicia en canviar)
    Transició: crossfade 400ms
 ─────────────────────────────────────────────────────────────── */

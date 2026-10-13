@@ -49,7 +49,7 @@ const HISTORY = [
 ];
 
 /* ─────────────────────────────────────────────────────────────
-   MAIN — perfil Eva amb stats + historial
+   MAIN — perfil Pilar amb stats + historial
    Timeline:
       5  → header (back, name, phone, + Neteja)
       18 → month pill ("Abril 2026")
@@ -103,7 +103,7 @@ export default function LimpiezasProfileView({ frame, fps }: { frame: number; fp
             fontSize: 15, fontWeight: 700, color: colors.foreground,
             textTransform: 'capitalize', lineHeight: 1.1,
           }}>
-            Eva
+            Pilar
           </div>
           <div style={{
             display: 'flex', alignItems: 'center', gap: 3,
