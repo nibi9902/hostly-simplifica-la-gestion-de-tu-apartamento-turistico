@@ -2,6 +2,8 @@ import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 import { LangLink } from "@/i18n/LangLink";
 import { ArrowLeft, Home } from "lucide-react";
+import { SiteHeader } from "@/components/SiteHeader";
+import Footer from "@/components/Footer";
 
 const NotFound = () => {
   const { t } = useTranslation("common");
@@ -12,7 +14,9 @@ const NotFound = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div data-sense-caixa className="flex min-h-screen items-center justify-center bg-background px-6 py-12">
+      {/* Amb el capçal i el peu de la web: qui hi arriba (un enllaç vell, un anunci) veu on és i pot seguir (13-10-2026) */}
+      <SiteHeader />
+      <main data-sense-caixa className="flex min-h-[80vh] items-center justify-center bg-background px-6 pt-28 pb-16">
         <div className="text-center max-w-md mx-auto">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
             {t("not_found.badge")}
@@ -41,7 +45,8 @@ const NotFound = () => {
             </button>
           </div>
         </div>
-      </div>
+      </main>
+      <Footer />
     </>
   );
 };

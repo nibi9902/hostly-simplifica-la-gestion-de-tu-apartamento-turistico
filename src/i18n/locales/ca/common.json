@@ -46,8 +46,8 @@
   "not_found": {
     "title": "Pàgina no trobada · Hostly",
     "badge": "404",
-    "heading": "Aquesta pàgina no és al sistema.",
-    "body": "Potser s'ha mogut. Potser no va existir mai. La resta sí és on toca: torna a l'inici i continua.",
+    "heading": "Aquesta pàgina no existeix.",
+    "body": "Potser l'enllaç està malament o l'hem moguda.",
     "go_home": "Tornar a l'inici",
     "go_back": "Pàgina anterior"
   },

@@ -46,8 +46,8 @@
   "not_found": {
     "title": "Página no encontrada · Hostly",
     "badge": "404",
-    "heading": "Esta página no está en el sistema.",
-    "body": "Quizás se ha mudado. Quizás nunca existió. El resto sí está donde toca: vuelve al inicio y sigue.",
+    "heading": "Esta página no existe.",
+    "body": "Puede que el enlace esté mal o que la hayamos movido.",
     "go_home": "Volver al inicio",
     "go_back": "Página anterior"
   },

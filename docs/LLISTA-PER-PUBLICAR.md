@@ -36,7 +36,7 @@ Abans de donar un punt per fet, ha de complir tot això:
 | 9 | El blog (l'índex i la plantilla dels articles) i la guia | |
 | 10 | «Sobre Hostly» i les pàgines legals | |
 | 11 | El català, sencer | |
-| 12 | Tècnic: velocitat de càrrega, SEO, redireccions i la pàgina 404 | En curs: mapa del web sense els articles en català (canònica castellana), capçaleres de seguretat a `vercel.json`. Falta: carregar només l'idioma de la pàgina (−50 KB comprimits) i la 404 |
+| 12 | Tècnic: velocitat de càrrega, SEO, redireccions i la pàgina 404 | En curs: mapa del web sense els articles en català (canònica castellana), capçaleres de seguretat a `vercel.json`. Velocitat mesurada (mòbil, 4G lenta, CPU 4×, web construïda): LCP portada 2,5 s · preus 2,3 · empezar 2,6 · demo 2,8 · funcionalitat 3,0; 330–420 KB per pàgina. Carregar només l'idioma estalviaria unes dècimes: no ara. Falta la 404 |
 | 13 | Revisió final i previsualització a Vercel, amb l'OK del Biel abans de pujar res | |
 
 ## El que ha de decidir o passar el Biel
