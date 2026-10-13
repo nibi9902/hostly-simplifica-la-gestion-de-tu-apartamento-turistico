@@ -82,29 +82,46 @@ function Enllac({ item, onTria }: { item: NavDropdownItem; onTria: () => void })
   );
 }
 
+/** Les peces per grups (`grup` a nav.ts), en l'ordre en què surten. */
+function perGrups(items: NavDropdownItem[]): Array<{ grup: string; items: NavDropdownItem[] }> {
+  const grups: Array<{ grup: string; items: NavDropdownItem[] }> = [];
+  for (const it of items) {
+    const g = it.grup ?? '';
+    const ja = grups.find((x) => x.grup === g);
+    if (ja) ja.items.push(it);
+    else grups.push({ grup: g, items: [it] });
+  }
+  return grups;
+}
+
 /** El contingut de cada desplegable. */
 function Contingut({ item, onTria }: { item: NavMainItem; onTria: () => void }) {
   const { t } = useTranslation('common');
-  // Funcionalitats: les deu en dues columnes i, al costat, els vídeos de /demo
+  // Funcionalitats: una columna per grup, com a Recursos (13-10: «hauria de ser més ampli»), i al costat
+  // «Cómo funciona», amb la pantalla de Hostly (abans, la caràtula d'un dels vídeos: «aquest no és el vídeo»)
   if (item.dropdown && item.href) {
     return (
-      <div className="grid grid-cols-[minmax(0,1fr)_264px] gap-2">
-        <div className="flex flex-col">
-          <ul className="grid grid-cols-2 gap-0.5">
-            {item.dropdown.map((sub) => <li key={sub.href}><Peca item={sub} onTria={onTria} /></li>)}
-          </ul>
-          <LangLink to={item.href} onClick={onTria} className="mt-1 mx-3 mb-1 self-start inline-flex items-center gap-1.5 h-9 text-sm font-medium text-[hsl(220_14%_11%)] hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full">
-            {t('nav.menu.totes')} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-          </LangLink>
-        </div>
-        {/* de fons, la caràtula d'un dels vídeos («Los mensajes»: les 23:47 i el wifi); el text, a sota */}
-        <LangLink to="/demo" onClick={onTria} className="relative isolate flex flex-col overflow-hidden rounded-[22px] bg-[hsl(220_14%_11%)] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
-          <img src="/assets/funciona/mensajes.webp" alt="" width={480} height={854} loading="lazy" decoding="async" className="absolute inset-0 -z-10 w-full h-full object-cover object-[50%_18%]" />
-          <span className="absolute inset-0 -z-10 bg-gradient-to-t from-[hsl(220_14%_11%)] from-35% via-[hsl(220_14%_11%/0.7)] to-transparent" aria-hidden="true" />
-          <span className="mt-auto flex flex-col gap-3 p-6 pt-24">
+      <div className="grid grid-cols-[repeat(3,minmax(0,1fr))_272px] gap-2">
+        {perGrups(item.dropdown).map((g, i) => (
+          <div key={g.grup} className="flex flex-col">
+            <p className={cn(RETOL, 'px-3 pt-2 pb-1')}>{g.grup}</p>
+            <ul className="flex flex-col">
+              {g.items.map((sub) => <li key={sub.href}><Peca item={sub} onTria={onTria} /></li>)}
+            </ul>
+            {/* «Veure-les totes», a sota de la primera columna */}
+            {i === 0 && (
+              <LangLink to={item.href!} onClick={onTria} className="mt-auto mx-3 mb-1 pt-2 self-start inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(220_14%_11%)] hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full">
+                {t('nav.menu.totes')} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+              </LangLink>
+            )}
+          </div>
+        ))}
+        <LangLink to="/demo" onClick={onTria} className="flex flex-col gap-3 overflow-hidden rounded-[22px] bg-[hsl(220_14%_11%)] p-3 pb-5 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+          <img src="/assets/menu/app-resumen.webp" alt="" width={560} height={425} loading="lazy" decoding="async" className="w-full rounded-[14px] bg-white/5" />
+          <span className="flex flex-col gap-2 px-2.5">
             <span className="text-[12px] leading-4 font-semibold uppercase tracking-[0.08em] text-white/60">{t('demo.eyebrow')}</span>
-            <span className="text-[19px] leading-snug font-semibold tracking-[-0.01em]">{t('demo.subheading')}</span>
-            <span className="mt-1 self-start inline-flex items-center gap-2 h-10 px-4 rounded-full bg-white text-[hsl(220_14%_11%)] text-sm font-medium">
+            <span className="text-[17px] leading-snug font-semibold tracking-[-0.01em]">{t('demo.subheading')}</span>
+            <span className="mt-1 self-start inline-flex items-center gap-2 h-9 px-4 rounded-full bg-white text-[hsl(220_14%_11%)] text-sm font-medium">
               <Play className="w-3.5 h-3.5" fill="currentColor" aria-hidden="true" />{t('nav.menu.videos')}
             </span>
           </span>
@@ -147,9 +164,14 @@ function ContingutMobil({ item, onTria }: { item: NavMainItem; onTria: () => voi
   if (item.dropdown) {
     return (
       <div className="flex flex-col">
-        <ul className="flex flex-col">
-          {item.dropdown.map((sub) => <li key={sub.href}><Peca item={sub} onTria={onTria} mobil /></li>)}
-        </ul>
+        {perGrups(item.dropdown).map((g) => (
+          <div key={g.grup} className="flex flex-col">
+            {g.grup && <p className={cn(RETOL, 'pt-2 pb-1')}>{g.grup}</p>}
+            <ul className="flex flex-col">
+              {g.items.map((sub) => <li key={sub.href}><Peca item={sub} onTria={onTria} mobil /></li>)}
+            </ul>
+          </div>
+        ))}
         {item.href && (
           <div className="flex flex-col mt-2">
             <LangLink to={item.href} onClick={onTria} className={peu}>{t('nav.menu.totes')} <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" /></LangLink>
@@ -333,7 +355,7 @@ export function HeaderNav({ nav }: Props) {
                       'transition-[opacity,transform] motion-reduce:transition-opacity',
                       visible ? 'duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] opacity-100 translate-y-0 scale-100'
                         : 'duration-150 ease-in opacity-0 -translate-y-1.5 scale-[0.985] motion-reduce:translate-y-0 motion-reduce:scale-100',
-                      item.groups || item.href ? 'w-[min(1000px,calc(100vw_-_2*var(--web-marge)))]' : 'w-[min(680px,calc(100vw_-_2*var(--web-marge)))]',
+                      item.groups || item.href ? 'w-[min(1240px,calc(100vw_-_2*var(--web-marge)))]' : 'w-[min(680px,calc(100vw_-_2*var(--web-marge)))]',
                     )}
                   >
                     <div className="rounded-[28px] bg-white p-2 shadow-[0_24px_64px_-24px_rgba(15,23,42,0.28),0_2px_8px_rgba(15,23,42,0.04)] ring-1 ring-[hsl(220_13%_91%)]">

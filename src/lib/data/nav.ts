@@ -5,6 +5,8 @@ export type NavDropdownItem = {
   badge?: string;
   /** La icona de lucide, pel nom (la mateixa que la pàgina de la funcionalitat; `HeaderNav` la resol) */
   icon?: string;
+  /** El grup del desplegable (Funcionalidades): les peces es posen en columnes per grup, com a Recursos */
+  grup?: string;
 };
 
 export type NavDropdownGroup = {
@@ -33,16 +35,16 @@ export const NAV: NavConfig = {
       label: 'Funcionalidades',
       href: '/funcionalidades',
       dropdown: [
-        { label: 'IA en WhatsApp',         href: '/funcionalidades/ia-whatsapp',           description: 'Contesta a tus huéspedes al momento, 24/7.', icon: 'MessageCircle' },
-        { label: 'Check-in online',        href: '/funcionalidades/check-in-online',       description: 'Datos del huésped y registro a la policía.', badge: 'Gratis', icon: 'ShieldCheck' },
-        { label: 'Reservas y calendarios', href: '/funcionalidades/channel-manager',       description: 'Airbnb y Booking en un solo calendario.', icon: 'Calendar' },
-        { label: 'Precios dinámicos',      href: '/funcionalidades/precios-dinamicos',     description: 'Se ajustan a la demanda y se publican cada día.', icon: 'TrendingUp' },
-        { label: 'Gestión de limpiezas',   href: '/funcionalidades/gestion-de-limpiezas',  description: 'Cada salida crea su limpieza y avisa al equipo.', icon: 'Sparkles' },
-        { label: 'Mensajería programada',  href: '/funcionalidades/mensajeria-programada', description: 'Mensajes automáticos en el idioma del huésped.', icon: 'Send' },
-        { label: 'Roles y permisos',       href: '/funcionalidades/multi-rol',             description: 'Gestor, limpieza y propietario, cada uno lo suyo.', icon: 'Users' },
-        { label: 'Finanzas en orden',      href: '/funcionalidades/finanzas',              description: 'Ingresos, comisiones y liquidaciones a propietarios.', icon: 'BarChart3' },
-        { label: 'Tasa turística',         href: '/funcionalidades/burocracia',            description: 'Calculada y lista para presentar.', icon: 'Receipt' },
-        { label: 'Conéctalo todo',         href: '/funcionalidades/conecta-todo',          description: 'Automatizaciones a medida, con cuota mensual.', icon: 'Plug' },
+        { label: 'IA en WhatsApp',         href: '/funcionalidades/ia-whatsapp',           description: 'Contesta a tus huéspedes al momento, 24/7.', icon: 'MessageCircle', grup: 'Huéspedes' },
+        { label: 'Check-in online',        href: '/funcionalidades/check-in-online',       description: 'Datos del huésped y registro a la policía.', badge: 'Gratis', icon: 'ShieldCheck', grup: 'Huéspedes' },
+        { label: 'Reservas y calendarios', href: '/funcionalidades/channel-manager',       description: 'Airbnb y Booking en un solo calendario.', icon: 'Calendar', grup: 'Reservas y precios' },
+        { label: 'Precios dinámicos',      href: '/funcionalidades/precios-dinamicos',     description: 'Se ajustan a la demanda y se publican cada día.', icon: 'TrendingUp', grup: 'Reservas y precios' },
+        { label: 'Gestión de limpiezas',   href: '/funcionalidades/gestion-de-limpiezas',  description: 'Cada salida crea su limpieza y avisa al equipo.', icon: 'Sparkles', grup: 'Equipo y cuentas' },
+        { label: 'Mensajería programada',  href: '/funcionalidades/mensajeria-programada', description: 'Mensajes automáticos en el idioma del huésped.', icon: 'Send', grup: 'Huéspedes' },
+        { label: 'Roles y permisos',       href: '/funcionalidades/multi-rol',             description: 'Gestor, limpieza y propietario, cada uno lo suyo.', icon: 'Users', grup: 'Equipo y cuentas' },
+        { label: 'Finanzas en orden',      href: '/funcionalidades/finanzas',              description: 'Ingresos, comisiones y liquidaciones a propietarios.', icon: 'BarChart3', grup: 'Equipo y cuentas' },
+        { label: 'Tasa turística',         href: '/funcionalidades/burocracia',            description: 'Calculada y lista para presentar.', icon: 'Receipt', grup: 'Reservas y precios' },
+        { label: 'Conéctalo todo',         href: '/funcionalidades/conecta-todo',          description: 'Automatizaciones a medida, con cuota mensual.', icon: 'Plug', grup: 'Equipo y cuentas' },
       ],
     },
     {
