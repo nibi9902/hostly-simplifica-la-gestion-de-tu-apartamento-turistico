@@ -24,7 +24,9 @@ export default function Entrada() {
     const q = (c: string) => s.querySelector(c) as HTMLElement;
     const l1 = q(".pt-lema-1"), l2 = q(".pt-lema-2"), sub = q(".pt-entrada-sub"), cue = q(".pt-cue");
     const mm = gsap.matchMedia();
-    mm.add({ redueix: "(prefers-reduced-motion: reduce)" }, (ctx) => {
+    // Les dues condicions: GSAP només crida la funció si se'n compleix alguna. Amb només «reduce»,
+    // l'animació no corria mai (fins al 13-10 el lema sortia quiet per a tothom).
+    mm.add({ mou: "(prefers-reduced-motion: no-preference)", redueix: "(prefers-reduced-motion: reduce)" }, (ctx) => {
       if ((ctx.conditions as { redueix: boolean }).redueix) { avisa(); return; }
       gsap.set(l1, { autoAlpha: 0, y: 60, scale: 0.85, filter: "blur(20px)", rotationX: -20 });
       gsap.set(l2, { clipPath: "inset(0 100% 0 0)" });
