@@ -1,3 +1,12 @@
+/**
+ * La pàgina de cada funcionalitat (/funcionalidades/<slug>), amb les peces de la portada (13-10-2026):
+ * el retol i els títols de la casa, els passos amb el número gran en gris (com «Así se empieza»), els
+ * avantatges com una llista amb el tic (com als preus), els exemples i les relacionades en peces com
+ * les de «Gratis para siempre», les preguntes obertes (com a /precios) i, al final, el «Te llamo».
+ * Abans: fons blau clar amb lluïssor, números en quadrats amb degradat, caixes verdes i preguntes
+ * desplegables. Els textos són a `src/lib/data/features.ts` (i `.ca.ts`).
+ */
+import type { CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import { iconaFuncio } from '@/lib/data/iconesFuncions';
 import { ArrowRight, Check } from 'lucide-react';
@@ -8,11 +17,18 @@ import PageShell from '@/components/PageShell';
 import MiniDemo from './MiniDemo';
 import { faqPageSchema, breadcrumbSchema, howToSchema } from '@/lib/seo/schemas';
 import { LangLink } from '@/i18n/LangLink';
-
 import { useEmpezar } from "@/lib/empezar";
 import Truca from "@/components/portada/Truca";
 import "@/components/portada/portada.css";
+
 const ease = [0.22, 1, 0.36, 1] as const;
+// Cada bloc entra una sola vegada, en arribar-hi (sense rebot)
+const entra = {
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, ease },
+};
 
 interface Props {
   feature: Feature;
@@ -23,7 +39,6 @@ export default function FeaturePage({ feature }: Props) {
   const { t } = useTranslation('funcionalidades');
   const { t: tEmbut } = useTranslation('embut');
   const allFeatures = useFeatures();
-  const Icon = iconaFuncio(feature.iconName);
   const related = feature.relatedFeatures
     .map((s) => allFeatures.find((f) => f.slug === s))
     .filter((f): f is Feature => Boolean(f));
@@ -49,248 +64,112 @@ export default function FeaturePage({ feature }: Props) {
         ]),
       ]}
     >
-      {/* ── HERO ── (2 columnes en desktop: text + mini-demo animada) */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-[#f0f6ff] to-white overflow-hidden">
-        <div className="contenidor">
-          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center [&>*]:min-w-0">
-
-            {/* Left — text */}
-            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-              {/* Breadcrumb */}
-              <nav aria-label="breadcrumb" className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-                <LangLink to="/" className="hover:text-slate-600 transition-colors">{t('page.breadcrumb_home')}</LangLink>
-                <span>/</span>
-                <LangLink to="/funcionalidades" className="hover:text-slate-600 transition-colors">{t('page.breadcrumb_features')}</LangLink>
-                <span>/</span>
-                <span className="text-slate-600">{feature.name}</span>
-              </nav>
-
-              {/* Icon + eyebrow */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-11 h-11 rounded-2xl bg-[#eff6ff] flex items-center justify-center">
-                  <Icon className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} />
-                </div>
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
-                  {feature.name}
-                </span>
-              </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#0f172a] tracking-tight mb-6 leading-[1.08]">
-                {feature.hero.h1}
-              </h1>
-              <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10">
-                {feature.hero.sub}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button type="button" onClick={empezar} className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-base hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  {tEmbut('cta')}
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-                <LangLink
-                  to="/precios"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-slate-200 text-slate-700 font-semibold text-base hover:bg-slate-50 transition-all duration-300"
-                >
-                  {t('page.ver_precios')}
-                </LangLink>
-              </div>
-            </motion.div>
-
-            {/* Right — mini-demo animada */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.94 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.15, ease }}
-              className="relative"
-            >
-              {/* Glow subtil darrere */}
-              <div style={{
-                position: 'absolute',
-                inset: '-10%',
-                background: 'radial-gradient(circle at center, rgba(37,99,235,0.15) 0%, transparent 65%)',
-                filter: 'blur(40px)',
-                zIndex: 0,
-                pointerEvents: 'none',
-              }} />
-              {/* La demo és una il·lustració: el text de la pàgina ja ho explica */}
-              <div className="relative z-10" aria-hidden="true">
-                <MiniDemo slug={feature.slug} iconName={feature.iconName} />
-              </div>
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ── PROBLEMA ── */}
-      <section className="py-20">
-        <div className="contenidor">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }} className="grid gap-x-16 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
-                {t('page.problem_eyebrow')}
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-6 lg:mb-0 leading-tight">
-                {feature.problem.title}
-              </h2>
+      {/* ── L'entrada: el text a l'esquerra i la demo a la dreta ── */}
+      <section className="pt-seccio pt-fp-entrada">
+        <div className="contenidor pt-fp-entrada-graella">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }} className="pt-fp-entrada-text">
+            <nav aria-label="breadcrumb" className="pt-molles">
+              <LangLink to="/">{t('page.breadcrumb_home')}</LangLink>
+              <span aria-hidden="true">/</span>
+              <LangLink to="/funcionalidades">{t('page.breadcrumb_features')}</LangLink>
+              <span aria-hidden="true">/</span>
+              <span>{feature.name}</span>
+            </nav>
+            <p className="pt-retol">{feature.name}</p>
+            <h1 className="pt-fp-h1">{feature.hero.h1}</h1>
+            <p className="pt-lead">{feature.hero.sub}</p>
+            <div className="pt-fp-botons">
+              <button type="button" onClick={empezar} className="pt-pill pt-pill-pri">{tEmbut('cta')}</button>
+              <LangLink to="/precios" className="pt-pill pt-pill-sec">{t('page.ver_precios')}</LangLink>
             </div>
-            <p className="text-slate-500 text-lg lg:text-xl leading-relaxed lg:col-span-7 lg:pt-9 max-w-[68ch]">
-              {feature.problem.body}
-            </p>
+          </motion.div>
+          {/* La demo és una il·lustració: el text de la pàgina ja ho explica */}
+          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease }} className="pt-fp-demo" aria-hidden="true">
+            <MiniDemo slug={feature.slug} iconName={feature.iconName} />
           </motion.div>
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ── */}
-      <section className="py-20 bg-[#f8fafc]">
-        <div className="contenidor">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease }}
-            className="mb-12"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
-              {t('page.how_eyebrow')}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight leading-tight">
-              {t('page.how_title', { count: feature.howItWorks.length })}
-            </h2>
-          </motion.div>
+      {/* ── El problema ── */}
+      <section className="pt-seccio pt-fp-bloc">
+        <motion.div {...entra} className="contenidor pt-fp-dues">
+          <div>
+            <p className="pt-retol">{t('page.problem_eyebrow')}</p>
+            <h2 className="pt-fp-h2">{feature.problem.title}</h2>
+          </div>
+          <p className="pt-fp-text">{feature.problem.body}</p>
+        </motion.div>
+      </section>
 
-          {/* A l'ordinador, un pas per columna (es llegeixen d'esquerra a dreta); al mòbil, un sota l'altre */}
-          <ol className={`grid gap-5 sm:grid-cols-2 ${feature.howItWorks.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'}`}>
+      {/* ── Com funciona: el número gran en gris, com «Así se empieza» ── */}
+      <section className="pt-seccio pt-fp-bloc pt-fp-gris">
+        <div className="contenidor">
+          <motion.div {...entra}>
+            <p className="pt-retol">{t('page.how_eyebrow')}</p>
+            <h2 className="pt-fp-h2">{t('page.how_title', { count: feature.howItWorks.length })}</h2>
+          </motion.div>
+          <ol className="pt-fp-passos" style={{ '--n': feature.howItWorks.length } as CSSProperties}>
             {feature.howItWorks.map((step, i) => (
-              <motion.li
-                key={step.step}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.07, ease }}
-                className="flex gap-5 lg:flex-col lg:gap-4 bg-white rounded-2xl border border-slate-100 p-6 shadow-[0_1px_3px_rgba(15,23,42,0.04)]"
-              >
-                <div
-                  className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center font-bold text-sm text-white"
-                  style={{ background: 'linear-gradient(135deg, #1a3a8f 0%, #2563EB 100%)' }}
-                >
-                  {step.step}
-                </div>
-                <div>
-                  <h3 className="font-bold text-[#0f172a] mb-2 leading-snug">{step.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{step.body}</p>
-                </div>
+              <motion.li key={step.step} {...entra} transition={{ ...entra.transition, delay: i * 0.06 }} className="pt-pas">
+                <small aria-hidden="true">{String(step.step).padStart(2, '0')}</small>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
               </motion.li>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* ── ADVANTAGES ── */}
-      <section className="py-20">
+      {/* ── El que notaràs: una llista amb el tic, com als preus ── */}
+      <section className="pt-seccio pt-fp-bloc">
         <div className="contenidor">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease }}
-            className="mb-12"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
-              {t('page.advantages_eyebrow')}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight leading-tight">
-              {t('page.advantages_title')}
-            </h2>
+          <motion.div {...entra}>
+            <p className="pt-retol">{t('page.advantages_eyebrow')}</p>
+            <h2 className="pt-fp-h2">{t('page.advantages_title')}</h2>
           </motion.div>
-
-          <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {feature.advantages.map((adv, i) => (
-              <motion.li
-                key={adv}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05, ease }}
-                className="flex gap-3 p-5 rounded-2xl bg-[#f0fdf4] border border-[#bbf7d0]"
-              >
-                <Check className="w-5 h-5 text-[#16a34a] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span className="text-sm text-slate-700 leading-relaxed font-medium">{adv}</span>
-              </motion.li>
+          <motion.ul {...entra} className="pt-fp-checks">
+            {feature.advantages.map((adv) => (
+              <li key={adv}><Check className="pt-ic" strokeWidth={2.6} aria-hidden="true" />{adv}</li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       </section>
 
-      {/* ── USAGE SCENARIOS ── */}
-      <section className="py-20 bg-[#f8fafc]">
+      {/* ── A la pràctica ── */}
+      <section className="pt-seccio pt-fp-bloc pt-fp-gris">
         <div className="contenidor">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease }}
-            className="mb-12"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
-              {t('page.usage_eyebrow')}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight leading-tight">
-              {t('page.usage_title')}
-            </h2>
+          <motion.div {...entra}>
+            <p className="pt-retol">{t('page.usage_eyebrow')}</p>
+            <h2 className="pt-fp-h2">{t('page.usage_title')}</h2>
           </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="pt-fp-peces">
             {feature.usage.map((u, i) => (
-              <motion.div
-                key={u.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.08, ease }}
-                className="bg-white rounded-2xl border border-slate-100 p-6 flex flex-col gap-3"
-              >
-                <p className="font-bold text-[#0f172a] leading-snug">{u.title}</p>
-                <p className="text-sm text-slate-500 leading-relaxed">{u.body}</p>
+              <motion.div key={u.title} {...entra} transition={{ ...entra.transition, delay: i * 0.06 }} className="pt-fp-peca">
+                <h3>{u.title}</h3>
+                <p>{u.body}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── RELATED FEATURES ── */}
+      {/* ── Les relacionades ── */}
       {related.length > 0 && (
-        <section className="py-20">
+        <section className="pt-seccio pt-fp-bloc">
           <div className="contenidor">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }} className="mb-10">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
-                {t('page.related_eyebrow')}
-              </p>
-              <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight">
-                {t('page.related_title')}
-              </h2>
+            <motion.div {...entra}>
+              <p className="pt-retol">{t('page.related_eyebrow')}</p>
+              <h2 className="pt-fp-h2">{t('page.related_title')}</h2>
             </motion.div>
-
-            <div className={`grid gap-5 md:grid-cols-2 ${related.length >= 3 ? 'lg:grid-cols-3' : ''}`}>
+            <div className="pt-fp-peces">
               {related.map((rf) => {
                 const RIcon = iconaFuncio(rf.iconName);
                 return (
-                  <LangLink
-                    key={rf.slug}
-                    to={`/funcionalidades/${rf.slug}`}
-                    className="group flex flex-col gap-3 p-6 rounded-2xl border border-slate-100 bg-white hover:border-primary/20 hover:shadow-md transition-all duration-200"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-[#eff6ff] flex items-center justify-center">
-                      <RIcon className="w-4 h-4" style={{ color: 'hsl(var(--primary))' }} />
-                    </div>
-                    <h3 className="font-bold text-[#0f172a] text-base leading-snug group-hover:text-primary transition-colors">
-                      {rf.name}
-                    </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">{rf.shortDescription}</p>
-                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-auto">
-                      {t('page.related_cta')} <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
+                  <LangLink key={rf.slug} to={`/funcionalidades/${rf.slug}`} className="pt-fp-peca pt-fp-enllac">
+                    <RIcon className="pt-ic" aria-hidden="true" />
+                    <h3>{rf.name}</h3>
+                    <p>{rf.shortDescription}</p>
+                    <span className="pt-fp-mes">{t('page.related_cta')} <ArrowRight className="pt-ic" aria-hidden="true" /></span>
                   </LangLink>
                 );
               })}
@@ -299,34 +178,25 @@ export default function FeaturePage({ feature }: Props) {
         </section>
       )}
 
-      {/* ── FAQs ── */}
-      <section className="py-20 bg-[#f8fafc]">
-        <div className="contenidor grid gap-x-16 lg:grid-cols-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease }} className="mb-10 lg:col-span-4 lg:self-start lg:sticky lg:top-28">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">{t('page.faqs_eyebrow')}</p>
-            <h2 className="text-3xl font-bold text-[#0f172a] tracking-tight">
-              {t('page.faqs_title')}
-            </h2>
-          </motion.div>
-
-          <div className="space-y-4 lg:col-span-8">
-            {feature.faqs.map((faq) => (
-              <details key={faq.question} className="group bg-white rounded-2xl border border-slate-100 p-6">
-                <summary className="cursor-pointer list-none flex items-start justify-between gap-4 font-bold text-[#0f172a]">
-                  <span className="leading-snug">{faq.question}</span>
-                  <span className="flex-shrink-0 text-slate-400 group-open:rotate-45 transition-transform duration-200 text-2xl leading-none">+</span>
-                </summary>
-                <p className="text-slate-500 text-sm leading-relaxed mt-4 pt-4 border-t border-slate-100">
-                  {faq.answer}
-                </p>
-              </details>
-            ))}
+      {/* ── Les preguntes, obertes (com a /precios) ── */}
+      <section className="pt-seccio pt-preguntes" aria-labelledby="pt-fp-preguntes">
+        <div className="contenidor pt-preguntes-graella">
+          <div className="pt-preguntes-cap">
+            <p className="pt-retol">{t('page.faqs_eyebrow')}</p>
+            <h2 id="pt-fp-preguntes">{t('page.faqs_title')}</h2>
           </div>
+          <dl className="pt-preguntes-llista">
+            {feature.faqs.map((faq) => (
+              <div key={faq.question}>
+                <dt>{faq.question}</dt>
+                <dd>{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
-      {/* ── FINAL CTA ── */}
-      {/* Al final, el «Te llamo» de la portada (13-10-2026: abans, una franja blava fosca) */}
+      {/* Al final, el «Te llamo» de la portada */}
       <Truca />
     </PageShell>
   );

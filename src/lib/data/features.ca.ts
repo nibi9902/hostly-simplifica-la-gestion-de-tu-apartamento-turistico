@@ -72,7 +72,7 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Puc revisar el que respon abans que s\'enviï?',
         answer:
-          'No hi ha revisió prèvia: la IA contesta sola. El que sí que pots fer és activar-la o apagar-la a cada pis i prendre el control de qualsevol conversa quan vulguis.',
+          'No. La IA contesta sola, sense passar abans per tu. El que sí que pots fer és activar-la o apagar-la a cada pis i prendre el control de qualsevol conversa quan vulguis.',
       },
       {
         question: 'Què passa si un hoste pregunta una cosa que la IA no sap?',

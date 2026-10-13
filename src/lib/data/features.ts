@@ -112,7 +112,7 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Puedo revisar lo que responde antes de que se envíe?',
         answer:
-          'No hay revisión previa: la IA contesta sola. Lo que sí puedes es activarla o apagarla en cada piso y tomar el control de cualquier conversación cuando quieras.',
+          'No. La IA contesta sola, sin pasar antes por ti. Lo que sí puedes es activarla o apagarla en cada piso y tomar el control de cualquier conversación cuando quieras.',
       },
       {
         question: '¿Qué pasa si un huésped pregunta algo que la IA no sabe?',

@@ -367,12 +367,45 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-preguntes-graella { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 64px; align-items: start; }
 .pt-preguntes-cap { position: sticky; top: 112px; }
 .pt-preguntes-cap h2 { font-size: 36px; line-height: 1.1; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
-.pt-preguntes-cap p { font-size: 16px; line-height: 1.5; color: var(--pt-gris); margin-top: 12px; }
+.pt-preguntes-cap p:not(.pt-retol) { font-size: 16px; line-height: 1.5; color: var(--pt-gris); margin-top: 12px; }
 .pt-preguntes-llista { margin: 0; }
 .pt-preguntes-llista > div { padding-block: 22px; border-top: 1px solid var(--pt-linia); }
 .pt-preguntes-llista > div:first-child { border-top: 0; padding-top: 0; }
 .pt-preguntes-llista dt { font-size: 17px; line-height: 1.35; font-weight: 600; }
 .pt-preguntes-llista dd { margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: var(--pt-gris); max-width: 62ch; }
+
+/* ── Les pàgines de funcionalitats (/funcionalidades/<slug>), amb les peces de la portada ── */
+.pt-fp-entrada { padding-block: 136px 72px; background: var(--pt-fons); overflow: hidden; }
+.pt-fp-entrada-graella { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+.pt-molles { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 22px; font-size: 13px; color: var(--pt-gris); }
+.pt-molles a:hover { color: var(--pt-text); }
+.pt-fp-h1 { margin-top: 14px; font-size: 52px; line-height: 1.06; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
+.pt-fp-entrada .pt-lead { margin-top: 18px; max-width: 36em; }
+.pt-fp-botons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.pt-fp-botons .pt-pill { height: 48px; padding: 0 26px; font-size: 16px; }
+.pt-fp-demo { min-width: 0; }
+.pt-fp-bloc { padding-block: 88px; background: var(--pt-blanc); }
+.pt-fp-gris { background: var(--pt-fons); }
+.pt-fp-h2 { margin-top: 12px; max-width: 22em; font-size: 40px; line-height: 1.1; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
+.pt-fp-dues { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: start; }
+.pt-fp-text { padding-top: 30px; max-width: 62ch; font-size: 19px; line-height: 1.6; color: var(--pt-gris); }
+.pt-fp-passos { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 40px; margin-top: 40px; }
+.pt-fp-passos .pt-pas h3 { font-size: 22px; }
+.pt-fp-passos .pt-pas p { font-size: 16px; }
+.pt-fp-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 48px; max-width: 1040px; margin-top: 36px; }
+.pt-fp-checks li { display: flex; gap: 12px; font-size: 17px; line-height: 1.45; }
+.pt-fp-checks .pt-ic { width: 20px; height: 20px; margin-top: 2px; color: var(--pt-verd); }
+.pt-fp-peces { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 36px; }
+.pt-fp-peca { border-radius: 24px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+.pt-fp-gris .pt-fp-peca { background: var(--pt-blanc); }
+.pt-fp-peca h3 { font-size: 18px; line-height: 1.3; font-weight: 600; }
+.pt-fp-peca p { font-size: 15px; line-height: 1.55; color: var(--pt-gris); }
+.pt-fp-enllac { transition: box-shadow .2s ease; }
+.pt-fp-enllac:hover { box-shadow: inset 0 0 0 1px hsl(var(--primary) / .4); }
+.pt-fp-enllac > .pt-ic { width: 22px; height: 22px; color: var(--pt-text); }
+.pt-fp-mes { margin-top: auto; padding-top: 6px; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--pt-blau); }
+.pt-fp-mes .pt-ic { width: 15px; height: 15px; }
+.pt-preguntes-cap .pt-retol + h2 { margin-top: 12px; }
 
 /* ── /demo: els cinc vídeos de la sèrie «Todo va solo» ──
    A l'ordinador, en fila; al mòbil, una tira que llisca amb el dit (fins a la vora, com .fins-a-la-vora). */
@@ -452,6 +485,14 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-preguntes-cap { position: static; }
   .pt-preguntes-cap h2 { font-size: 28px; }
   .pt-demo { padding-block: 112px 56px; }
+  .pt-fp-entrada { padding-block: 112px 48px; }
+  .pt-fp-entrada-graella, .pt-fp-dues { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .pt-fp-h1 { font-size: 34px; }
+  .pt-fp-h2 { font-size: 28px; }
+  .pt-fp-text { padding-top: 0; font-size: 17px; }
+  .pt-fp-bloc { padding-block: 56px; }
+  .pt-fp-passos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  .pt-fp-checks, .pt-fp-peces { grid-template-columns: minmax(0, 1fr); }
   .pt-videos { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-top: 32px; margin-inline: calc(-1 * var(--web-marge)); padding-inline: var(--web-marge); scroll-padding-inline: var(--web-marge); padding-bottom: 6px; }
   .pt-video { flex: 0 0 min(62vw, 240px); scroll-snap-align: start; }
   .pt-referits-fila { flex-wrap: wrap; padding: 12px; }
@@ -474,6 +515,7 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-pantalla .pt-tira div:nth-child(3) { border-left: 0; }
   /* al mòbil, cada peça fa l'alçada del que porta (sense el forat de l'ordinador) */
   .pt-bento { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; gap: 12px; margin-top: 28px; }
+  .pt-fp-passos { grid-template-columns: minmax(0, 1fr); }
   .pt-mostra { margin-top: 14px; }
   .pt-zf { padding: 28px 24px; }
   .pt-zf-zero { font-size: 120px; }
