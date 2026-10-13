@@ -3,6 +3,8 @@ export type NavDropdownItem = {
   href: string;
   description?: string;
   badge?: string;
+  /** La icona de lucide, pel nom (la mateixa que la pàgina de la funcionalitat; `HeaderNav` la resol) */
+  icon?: string;
 };
 
 export type NavDropdownGroup = {
@@ -31,31 +33,32 @@ export const NAV: NavConfig = {
       label: 'Funcionalidades',
       href: '/funcionalidades',
       dropdown: [
-        { label: 'IA en WhatsApp',         href: '/funcionalidades/ia-whatsapp',           description: 'Contesta a tus huéspedes al momento, 24/7.' },
-        { label: 'Check-in online',        href: '/funcionalidades/check-in-online',       description: 'Datos del huésped y registro a la policía.', badge: 'Gratis' },
-        { label: 'Reservas y calendarios', href: '/funcionalidades/channel-manager',       description: 'Airbnb y Booking en un solo calendario.' },
-        { label: 'Precios dinámicos',      href: '/funcionalidades/precios-dinamicos',     description: 'Se ajustan a la demanda y se publican cada día.' },
-        { label: 'Gestión de limpiezas',   href: '/funcionalidades/gestion-de-limpiezas',  description: 'Cada salida crea su limpieza y avisa al equipo.' },
-        { label: 'Mensajería programada',  href: '/funcionalidades/mensajeria-programada', description: 'Mensajes automáticos en el idioma del huésped.' },
-        { label: 'Roles y permisos',       href: '/funcionalidades/multi-rol',             description: 'Gestor, limpieza y propietario, cada uno lo suyo.' },
-        { label: 'Finanzas en orden',      href: '/funcionalidades/finanzas',              description: 'Ingresos, comisiones y liquidaciones a propietarios.' },
-        { label: 'Tasa turística',         href: '/funcionalidades/burocracia',            description: 'La de Cataluña, calculada y lista para presentar.' },
-        { label: 'Conéctalo todo',         href: '/funcionalidades/conecta-todo',          description: 'Automatizaciones a medida, con cuota mensual.' },
+        { label: 'IA en WhatsApp',         href: '/funcionalidades/ia-whatsapp',           description: 'Contesta a tus huéspedes al momento, 24/7.', icon: 'MessageCircle' },
+        { label: 'Check-in online',        href: '/funcionalidades/check-in-online',       description: 'Datos del huésped y registro a la policía.', badge: 'Gratis', icon: 'ShieldCheck' },
+        { label: 'Reservas y calendarios', href: '/funcionalidades/channel-manager',       description: 'Airbnb y Booking en un solo calendario.', icon: 'Calendar' },
+        { label: 'Precios dinámicos',      href: '/funcionalidades/precios-dinamicos',     description: 'Se ajustan a la demanda y se publican cada día.', icon: 'TrendingUp' },
+        { label: 'Gestión de limpiezas',   href: '/funcionalidades/gestion-de-limpiezas',  description: 'Cada salida crea su limpieza y avisa al equipo.', icon: 'Sparkles' },
+        { label: 'Mensajería programada',  href: '/funcionalidades/mensajeria-programada', description: 'Mensajes automáticos en el idioma del huésped.', icon: 'Send' },
+        { label: 'Roles y permisos',       href: '/funcionalidades/multi-rol',             description: 'Gestor, limpieza y propietario, cada uno lo suyo.', icon: 'Users' },
+        { label: 'Finanzas en orden',      href: '/funcionalidades/finanzas',              description: 'Ingresos, comisiones y liquidaciones a propietarios.', icon: 'BarChart3' },
+        { label: 'Tasa turística',         href: '/funcionalidades/burocracia',            description: 'La de Cataluña, calculada y lista para presentar.', icon: 'Receipt' },
+        { label: 'Conéctalo todo',         href: '/funcionalidades/conecta-todo',          description: 'Automatizaciones a medida, con cuota mensual.', icon: 'Plug' },
       ],
     },
     {
       label: 'Para quién',
       dropdown: [
-        { label: 'Propietarios',       href: '/propietarios',       description: '1-3 pisos sin que te consuman el día.' },
-        { label: 'Gestores pequeños',  href: '/gestores-pequenos',  description: '5-15 pisos. Una app, una factura.' },
-        { label: 'Segunda residencia', href: '/segunda-residencia', description: 'Que el verano vuelva a ser verano.' },
+        { label: 'Propietarios',       href: '/propietarios',       description: '1-3 pisos sin que te consuman el día.', icon: 'Home' },
+        { label: 'Gestores pequeños',  href: '/gestores-pequenos',  description: '5-15 pisos. Una app, una factura.', icon: 'Building2' },
+        { label: 'Segunda residencia', href: '/segunda-residencia', description: 'Que el verano vuelva a ser verano.', icon: 'Sun' },
+        { label: 'Pisos heredados',   href: '/hereus',             description: 'Lo heredaste y no quieres venderlo.', icon: 'KeyRound' },
       ],
     },
     {
       label: 'Recursos',
       groups: [
         {
-          groupLabel: 'Guías y compliance',
+          groupLabel: 'Guías y obligaciones',
           footerHref: '/blog',
           footerLabel: 'Ver todas las guías',
           items: [
@@ -64,13 +67,10 @@ export const NAV: NavConfig = {
             { label: 'SES + NRUA + tasa turística',  href: '/blog/ses-nrua-taxa-turistica-guia',               description: 'Las 3 obligaciones legales del propietario.' },
             { label: 'Mossos d\'Esquadra: registro', href: '/blog/registro-viajeros-mossos-esquadra-cataluna',  description: 'Guía práctica para Cataluña.' },
             { label: 'Sanciones por no registrar',   href: '/blog/sanciones-por-no-cumplir-registro-viajeros', description: 'Cuánto te puede costar no cumplir.' },
-            { label: 'Guía: piso heredado en Airbnb',href: '/hereus',                                          description: 'Heredaste un piso. Ponlo a trabajar.' },
           ],
         },
         {
           groupLabel: 'Gestión y herramientas',
-          footerHref: '/blog',
-          footerLabel: 'Ver todas las guías',
           items: [
             { label: 'Las 5 horas que te come un piso',  href: '/blog/5-horas-semana-recuperar-apartamento-turistico', description: 'Dónde va el tiempo y cómo recuperarlo.' },
             { label: 'Automatizar con IA: qué funciona', href: '/blog/automatizar-alquiler-vacacional-con-ia',          description: 'Guía honesta de lo que hace y no hace la IA.' },

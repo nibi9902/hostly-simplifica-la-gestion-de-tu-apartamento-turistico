@@ -9,7 +9,11 @@
     "demo": "Demanar demo",
     "login": "Iniciar sessió",
     "aria_open_menu": "Obrir menú",
-    "aria_close_menu": "Tancar menú"
+    "aria_close_menu": "Tancar menú",
+    "menu": {
+      "totes": "Veure totes les funcionalitats",
+      "videos": "Veure els vídeos"
+    }
   },
   "footer": {
     "tagline": "L'app que simplifica tot el que implica tenir un pis turístic.",

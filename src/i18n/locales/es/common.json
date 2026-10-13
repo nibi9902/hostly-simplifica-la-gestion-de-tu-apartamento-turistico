@@ -9,7 +9,11 @@
     "demo": "Solicitar demo",
     "login": "Iniciar sesión",
     "aria_open_menu": "Abrir menú",
-    "aria_close_menu": "Cerrar menú"
+    "aria_close_menu": "Cerrar menú",
+    "menu": {
+      "totes": "Ver todas las funcionalidades",
+      "videos": "Ver los vídeos"
+    }
   },
   "footer": {
     "tagline": "La app que simplifica todo lo que implica tener un piso turístico.",
