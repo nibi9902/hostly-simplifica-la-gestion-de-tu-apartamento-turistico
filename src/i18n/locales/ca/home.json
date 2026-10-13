@@ -116,7 +116,8 @@
           "frase": "No sabria dir-te què és. Només sé que, des que el tinc, em preocupo molt menys de la gestió del meu apartament.",
           "nom": "Àngel",
           "detall": "Gestor de pisos turístics",
-          "video": "Veure el vídeo de l'Àngel"
+          "video": "Veure el vídeo de l'Àngel",
+          "src": "/assets/funciona/mensajes.mp4"
         }
       ],
       "anterior": "Gestor anterior",

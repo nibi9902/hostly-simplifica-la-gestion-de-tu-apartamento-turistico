@@ -44,7 +44,9 @@ Abans de donar un punt per fet, ha de complir tot això:
 
 Mentre no hi sigui, es treballa amb marcadors i no bloqueja la resta.
 
-- **Gestors 2 i 3.** Les frases i els vídeos. També el vídeo vertical de l'Àngel i el seu permís.
+- **Gestors 2 i 3.** Les frases i els vídeos. També el vídeo vertical de l'Àngel i el seu permís. De
+  moment (el Biel, 13-10: «posarem algun vídeo que tinguem de mentres»), la bombolla de l'Àngel porta el
+  vídeo dels missatges (`/assets/funciona/mensajes.mp4`): s'ha de canviar abans de publicar.
 - **Preus.**
   - Si els 40 € porten l'IVA inclòs.
   - Si la comissió del pla gratis surt a la targeta.
