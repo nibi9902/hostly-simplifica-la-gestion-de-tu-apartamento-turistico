@@ -36,7 +36,7 @@ faqs:
     answer: "Los 14 datos incluyen: nombre completo, documento de identidad (tipo y número), fecha de expedición, fecha de nacimiento, nacionalidad, sexo, domicilio, teléfono, email, fecha de check-in y check-out, relación entre adultos, número de habitación y datos del pago. Para menores se añade el parentesco con el adulto responsable."
 ---
 
-SES.Hospedajes es el nuevo sistema del Ministerio del Interior que desde el **2 de diciembre de 2024** obliga a todos los establecimientos de hospedaje en España a registrar a sus huéspedes. Afecta igual a un hotel de 200 habitaciones que a un apartamento turístico de 45 metros cuadrados en Figueres.
+SES.Hospedajes es el nuevo sistema del Ministerio del Interior que desde el **2 de diciembre de 2024** obliga a todos los establecimientos de hospedaje en España a registrar a sus huéspedes. Afecta igual a un hotel de 200 habitaciones que a un apartamento turístico de 45 metros cuadrados en Cádiz.
 
 Esta guía cubre todo lo que necesitas saber para cumplir sin volverte loco: **qué es SES, cómo darte de alta, qué datos recoger, los plazos, las sanciones reales y cómo automatizar el proceso** para no volver a pensar en ello.
 
