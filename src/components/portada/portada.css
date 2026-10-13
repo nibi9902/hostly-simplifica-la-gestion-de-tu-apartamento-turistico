@@ -97,7 +97,7 @@
 .pt-zc { flex: 0 1 620px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .pt-cinta { width: 100%; overflow: hidden; padding-block: 10px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
 .pt-cinta-pista { display: flex; width: max-content; animation: pt-cinta 30s linear infinite; }
-.pt-cinta.espera .pt-cinta-pista, .pt-cinta:hover .pt-cinta-pista { animation-play-state: paused; }
+.pt-cinta:hover .pt-cinta-pista { animation-play-state: paused; }
 @keyframes pt-cinta { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .pt-tanda { display: flex; gap: 22px; padding-right: 22px; }
 /* cada marca, com una icona d'app, amb el tic verd */

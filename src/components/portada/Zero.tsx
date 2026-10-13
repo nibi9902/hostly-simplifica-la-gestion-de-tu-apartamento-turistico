@@ -9,20 +9,17 @@
  *  - a sota, les xifres i la cinta de logotips (la 4B): passen a poc a poc, sense parar i amb el tic,
  *    sense el nom a sota (surt si hi passes el ratolí, que també atura la cinta). SES.Hospedajes en lloc
  *    de la policía.
- * Sense JavaScript, tot es veu com queda al final; amb «reduir moviment», a més, la cinta no es mou.
+ * Sense animació d'entrada (el Biel, 13-10: «no m'agrada que porti animació»): abans la targeta
+ * apareixia, el preu es ratllava, el 0 € es desenfocava i les xifres comptaven. Només es mou la cinta;
+ * amb «reduir moviment», tampoc.
  */
-import { useLayoutEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Check } from "lucide-react";
 import { LangLink } from "@/i18n/LangLink";
 import airbnb from "@/assets/connexions/airbnb.webp";
 import booking from "@/assets/connexions/booking.webp";
 import whatsapp from "@/assets/connexions/whatsapp.webp";
 import ses from "@/assets/connexions/ses-hospedajes.webp";
-
-gsap.registerPlugin(ScrollTrigger);
 
 /** 7983 → «7.983», com a la franja d'abans (en castellà, Intl no posa el punt als nombres de quatre xifres). */
 const punts = (n: number) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -87,48 +84,10 @@ type Xifra = { n: number; text: string };
 
 export default function Zero({ onEmpezar }: { onEmpezar: () => void }) {
   const { t } = useTranslation("home");
-  const ref = useRef<HTMLElement>(null);
   const xifres = t("portada.zero.xifres", { returnObjects: true }) as Xifra[];
 
-  // Abans de pintar, perquè res no aparegui un instant i després s'amagui
-  useLayoutEffect(() => {
-    const s = ref.current;
-    if (!s) return;
-    const q = (c: string) => s.querySelector(c) as HTMLElement;
-    const tots = (c: string) => Array.from(s.querySelectorAll<HTMLElement>(c));
-    const cinta = q(".pt-cinta");
-    const mm = gsap.matchMedia();
-    mm.add("(prefers-reduced-motion: no-preference)", () => {
-      const nums = tots(".pt-zx b");
-      const fins = nums.map((b) => Number(b.dataset.n));
-      cinta.classList.add("espera"); // la cinta es posa en marxa quan surt
-      const tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out", duration: 0.7 } });
-      tl.from(q(".pt-zf"), { autoAlpha: 0, y: 30, duration: 1 }, 0)
-        .from(tots(".pt-zf-dreta > *"), { autoAlpha: 0, y: 14, stagger: 0.12 }, 0.35)
-        // el preu de les altres es ratlla i, al costat, surt el 0 €
-        .fromTo(q(".pt-zf-tatxa"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.inOut" }, 0.95)
-        .from(q(".pt-zf-zero"), { autoAlpha: 0, scale: 0.92, filter: "blur(10px)", transformOrigin: "0% 80%", duration: 1.1 }, 1.2)
-        .from(q(".pt-zf-sempre"), { autoAlpha: 0, y: 10 }, 1.65);
-      nums.forEach((b, i) => {
-        const o = { v: 0 };
-        b.textContent = "0";
-        tl.from(b.parentElement as HTMLElement, { autoAlpha: 0, y: 12, duration: 0.6 }, 1.7 + i * 0.1)
-          .fromTo(o, { v: 0 }, { v: fins[i], duration: 1.4, ease: "power2.out", onUpdate: () => { b.textContent = punts(o.v); } }, 1.7 + i * 0.1);
-      });
-      tl.from(q(".pt-zc"), { autoAlpha: 0, y: 12 }, 1.9)
-        .call(() => cinta.classList.remove("espera"), undefined, 2.1);
-      ScrollTrigger.create({ trigger: s, start: "top 70%", once: true, onEnter: () => { tl.play(0); } });
-      return () => {
-        tl.kill();
-        cinta.classList.remove("espera");
-        nums.forEach((b, i) => { b.textContent = punts(fins[i]); });
-      };
-    });
-    return () => mm.revert();
-  }, []);
-
   return (
-    <section ref={ref} id="cero" className="pt-seccio pt-zero-s" aria-labelledby="pt-zero-titol">
+    <section id="cero" className="pt-seccio pt-zero-s" aria-labelledby="pt-zero-titol">
       <div className="contenidor">
         <div className="pt-zf">
           <div className="pt-zf-graella">
@@ -158,7 +117,7 @@ export default function Zero({ onEmpezar }: { onEmpezar: () => void }) {
         <div className="pt-zb">
           <ul className="pt-zx">
             {xifres.map((x) => (
-              <li key={x.text}><b data-n={x.n}>{punts(x.n)}</b><span>{x.text}</span></li>
+              <li key={x.text}><b>{punts(x.n)}</b><span>{x.text}</span></li>
             ))}
           </ul>
           <div className="pt-zc">
