@@ -74,6 +74,8 @@
 .pt-zf-esq { margin: 0; font-weight: 700; }
 .pt-zf-zero { display: block; font-size: 260px; line-height: .8; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; }
 .pt-zf-sempre { display: block; font-size: 28px; line-height: 1.2; font-weight: 600; letter-spacing: -0.02em; margin-top: 24px; }
+/* «Para siempre», amb el blau de l'app (sobre el fosc es llegeix millor que el del web) */
+.pt-zf-marca { font-style: normal; color: var(--pt-blau-app); }
 .pt-zf-dreta { min-width: 0; }
 .pt-zf .pt-retol { color: rgba(255, 255, 255, .6); }
 .pt-zf-cap { display: flex; align-items: center; gap: 36px; margin-top: 14px; }
@@ -95,7 +97,8 @@
 .pt-zx b { font-size: 40px; line-height: 1; font-weight: 700; letter-spacing: -0.035em; font-variant-numeric: tabular-nums; }
 .pt-zx span { font-size: 14px; color: var(--pt-gris); white-space: nowrap; }
 .pt-zc { flex: 0 1 620px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
-.pt-cinta { width: 100%; overflow: hidden; padding-block: 10px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+/* el marge de dalt i de baix deixa lloc al tic i a l'ombra de cada logotip: amb 10 px, l'ombra quedava tallada */
+.pt-cinta { width: 100%; overflow: hidden; padding-block: 14px 28px; margin-bottom: -18px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
 .pt-cinta-pista { display: flex; width: max-content; animation: pt-cinta 30s linear infinite; }
 .pt-cinta:hover .pt-cinta-pista { animation-play-state: paused; }
 @keyframes pt-cinta { from { transform: translateX(0); } to { transform: translateX(-50%); } }

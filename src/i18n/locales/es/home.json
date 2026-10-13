@@ -84,7 +84,8 @@
     "zero": {
       "retol": "Check-in + registro a la policía",
       "zero": "0 €",
-      "sempre": "en Hostly. Para siempre.",
+      "sempre_1": "en Hostly.",
+      "sempre_2": "Para siempre.",
       "altres": "Otras apps te lo cobran cada mes.",
       "fins": "hasta",
       "preu": "95 €",

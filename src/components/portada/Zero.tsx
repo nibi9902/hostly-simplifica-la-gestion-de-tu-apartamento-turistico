@@ -10,9 +10,11 @@
  *    sense el nom a sota (surt si hi passes el ratolí, que també atura la cinta). SES.Hospedajes en lloc
  *    de la policía.
  * Sense animació d'entrada (el Biel, 13-10: «no m'agrada que porti animació»): abans la targeta
- * apareixia, el preu es ratllava, el 0 € es desenfocava i les xifres comptaven. Només es mou la cinta;
- * amb «reduir moviment», tampoc.
+ * apareixia, el preu es ratllava i el 0 € es desenfocava. El mateix vespre: «Para siempre», amb el
+ * color de la casa, i les xifres de sota, que sí que es moguin («m'agradaria que es mogués»): compten
+ * quan arribes a veure-les. La cinta passa sola. Amb «reduir moviment», res no es mou.
  */
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Check } from "lucide-react";
 import { LangLink } from "@/i18n/LangLink";
@@ -82,9 +84,43 @@ function Tanda({ copia = false }: { copia?: boolean }) {
 
 type Xifra = { n: number; text: string };
 
+/** Les xifres compten de 0 al seu valor quan surten a la pantalla (una sola vegada). */
+function useCompten(llista: React.RefObject<HTMLUListElement>, valors: number[]) {
+  useEffect(() => {
+    const ul = llista.current;
+    if (!ul || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const bs = Array.from(ul.querySelectorAll("b"));
+    bs.forEach((b) => { b.textContent = "0"; });
+    let rafs: number[] = [];
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      io.disconnect();
+      const t0 = performance.now();
+      bs.forEach((b, i) => {
+        const pas = (ara: number) => {
+          const p = Math.min(1, Math.max(0, (ara - t0 - i * 120) / 1400));
+          b.textContent = punts(valors[i] * (1 - Math.pow(1 - p, 3)));
+          if (p < 1) rafs[i] = requestAnimationFrame(pas);
+        };
+        rafs[i] = requestAnimationFrame(pas);
+      });
+    }, { threshold: 0.6 });
+    io.observe(ul);
+    return () => {
+      io.disconnect();
+      rafs.forEach((r) => cancelAnimationFrame(r));
+      rafs = [];
+      bs.forEach((b, i) => { b.textContent = punts(valors[i]); });
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [valors.join(",")]);
+}
+
 export default function Zero({ onEmpezar }: { onEmpezar: () => void }) {
   const { t } = useTranslation("home");
   const xifres = t("portada.zero.xifres", { returnObjects: true }) as Xifra[];
+  const llista = useRef<HTMLUListElement>(null);
+  useCompten(llista, xifres.map((x) => x.n));
 
   return (
     <section id="cero" className="pt-seccio pt-zero-s" aria-labelledby="pt-zero-titol">
@@ -93,7 +129,7 @@ export default function Zero({ onEmpezar }: { onEmpezar: () => void }) {
           <div className="pt-zf-graella">
             <h2 id="pt-zero-titol" className="pt-zf-esq">
               <span className="pt-zf-zero">{t("portada.zero.zero")}</span>{" "}
-              <span className="pt-zf-sempre">{t("portada.zero.sempre")}</span>
+              <span className="pt-zf-sempre">{t("portada.zero.sempre_1")} <em className="pt-zf-marca">{t("portada.zero.sempre_2")}</em></span>
             </h2>
             <div className="pt-zf-dreta">
               <p className="pt-retol">{t("portada.zero.retol")}</p>
@@ -115,7 +151,7 @@ export default function Zero({ onEmpezar }: { onEmpezar: () => void }) {
         </div>
 
         <div className="pt-zb">
-          <ul className="pt-zx">
+          <ul ref={llista} className="pt-zx">
             {xifres.map((x) => (
               <li key={x.text}><b>{punts(x.n)}</b><span>{x.text}</span></li>
             ))}
