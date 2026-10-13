@@ -25,19 +25,20 @@ Abans de donar un punt per fet, ha de complir tot això:
 
 | # | Punt | Estat |
 |---|---|---|
-| 1 | Portada: el 0 € amb la cinta de logotips (la 4B), just després del lema | Fet (13-10, 9901cf1) |
+| 1 | Portada: el 0 € amb la cinta de logotips (la 4B), just després del lema | Fet (13-10, 9901cf1). Vespre: sense animació d'entrada (el Biel: «no m'agrada que porti animació»); només es mou la cinta |
 | 2 | Portada al mòbil, secció per secció (el trànsit dels anuncis arriba pel mòbil) | Fet (13-10): el 0 €, la pantalla de Hostly estreta i llegible, «Gratis» sense forats, gestors sense marcadors |
 | 3 | El recorregut de qui ve d'un anunci: `/empezar`, la calculadora, `/demo` i `/precios` | Fet (13-10): `/precios` i `/demo` refetes; textos de l'embut iguals que la portada |
 | 4 | Seguiment: Analytics, el píxel de Meta i Google Ads, provats de cap a peus | Codi a punt (prova-publicitat 42/42, `VerVideo` nou). Falten els identificadors (Biel) |
-| 5 | Portada a l'ordinador: el 0 € repetit a «Gratis para siempre», les pantalles de 1280 px i els textos | Fet (13-10) |
-| 6 | Funcionalitats: l'índex i les deu pàgines | Plantilla nova i textos repassats (13-10). Falta: les demos animades ensenyen l'app d'abril |
-| 7 | Per a qui és: propietaris, gestors petits, segona residència i hereus | Textos repassats, sense emojis; acaben amb «Te llamo» (13-10). Falta l'estil de les seccions |
+| 5 | Portada a l'ordinador: el 0 € repetit a «Gratis para siempre», les pantalles de 1280 px i els textos | Fet (13-10). Vespre: la targeta fosca del 0 € torna a «Gratis para siempre» (la vaig treure sense que el Biel ho decidís); el lema torna a animar-se (no corria per a ningú); «Hostly está pendiente» amb la pantalla sempre al mig (la «1 · Amb la pantalla») |
+| 6 | Funcionalitats: l'índex i les deu pàgines | Plantilla nova i textos repassats (13-10). Vespre: d'una funcionalitat a una altra, la pàgina nova comença a dalt, i passar a «Burocracia» ja no la deixa en blanc. Falta: les demos animades ensenyen l'app d'abril |
+| 7 | Per a qui és: propietaris, gestors petits, segona residència i hereus | Fet (13-10, vespre): l'entrada amb la targeta «Hoy, en …», la secció de cada perfil amb les peces de la portada, i després «Así se empieza», els preus i «Te llamo» |
 | 8 | Alternatives (l'índex i les set) i la comparativa amb Chekin | Fet (13-10): textos repassats, acaben amb «Te llamo»; l'estil (taules, targetes) es queda |
 | 9 | El blog (l'índex i la plantilla dels articles) i la guia | Fet (13-10): la targeta dels articles al fosc de la casa, la guia sense emojis. Els 40 articles no s'han reescrit |
 | 10 | «Sobre Hostly» i les pàgines legals | Textos repassats. Falta: la foto del Biel (ara una «B») i, a l'avís legal, el segon cognom i l'adreça fiscal |
 | 11 | El català, sencer | Les proves automàtiques passen (cap paraula castellana a les pàgines en català). Convé que el Biel en llegeixi la portada i l'embut |
 | 12 | Tècnic: velocitat de càrrega, SEO, redireccions i la pàgina 404 | En curs: mapa del web sense els articles en català (canònica castellana), capçaleres de seguretat a `vercel.json`. Velocitat mesurada (mòbil, 4G lenta, CPU 4×, web construïda): LCP portada 2,5 s · preus 2,3 · empezar 2,6 · demo 2,8 · funcionalitat 3,0; 330–420 KB per pàgina. Carregar només l'idioma estalviaria unes dècimes: no ara. Falta la 404 |
 | 13 | Revisió final i previsualització a Vercel, amb l'OK del Biel abans de pujar res | Proves (13-10, vespre): revisio-web 224/224, prova-amplada 155/155, prova-embut 44/44, prova-galetes i prova-publicitat 42/42, tsc i build. Falta l'OK per pujar la branca (previsualització) |
+| 14 | El capçal: els desplegables i el menú del mòbil | Fet (13-10, vespre): targeta flotant amb icona, títol i una línia (abans un tauler d'una vora a l'altra sobre la pàgina desenfocada), amb teclat i Esc; al mòbil, les mateixes peces |
 
 ## El que ha de decidir o passar el Biel
 
