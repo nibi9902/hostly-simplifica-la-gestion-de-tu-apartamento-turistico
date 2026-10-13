@@ -3,7 +3,8 @@
  *
  * La frase a l'esquerra i, al costat, la boleta amb el vídeo ja en marxa (sense so; l'anell de fora
  * avança com el vídeo). Quan fa 4,5 s que la frase es veu sencera, la boleta s'obre cap amunt i el
- * vídeo passa al davant; les lletres es queden darrere, esvaïdes. ← → passen al gestor següent.
+ * vídeo passa al davant, centrat amb la frase; les lletres es queden darrere, esvaïdes. ← → passen al
+ * gestor següent.
  * Decisions del Biel (12-10-2026): «s'obri cap adalt i que tapi les lletres», «hi ha d'haver més
  * d'una review», «cadascú té una pantalla», «la boleta a un costat».
  *
@@ -121,14 +122,19 @@ export default function Gestors() {
     function geometria(i: number) {
       const s = seccio!.getBoundingClientRect();
       const b = forats[i].getBoundingClientRect();
+      const frase = (seccio!.querySelector(".pt-cites") as HTMLElement).getBoundingClientRect();
       const capcal = document.querySelector("header");
       const sostre = capcal ? Math.max(0, capcal.getBoundingClientRect().bottom) : 0;
-      const baix = b.bottom - s.top;
-      const alt = Math.round(Math.min(533, Math.max(240, Math.min(baix - 32, b.bottom - sostre - 16))));
+      // tan alt com hi càpiga entre el capçal i la vora de baix de la pantalla (fins a 533)
+      const alt = Math.round(Math.min(533, Math.max(240, window.innerHeight - sostre - 32)));
       const ample = Math.round((alt * 9) / 16);
-      const dalt = Math.max(16, baix - alt);
-      const centre = s.width > 1100 ? s.width * 0.6 : s.width / 2;
-      const esq = Math.round(Math.max(16, Math.min(s.width - ample - 76, centre - ample / 2)));
+      // centrat amb la frase (el Biel, 13-10: «hauria d'estar centrat amb la frase; ara surt com per
+      // sobre»), sense passar per sota del capçal ni sortir per baix de la pantalla
+      const centre = frase.top + frase.height / 2;
+      const daltPantalla = Math.max(sostre + 16, Math.min(window.innerHeight - 16 - alt, centre - alt / 2));
+      const dalt = daltPantalla - s.top;
+      const centreX = s.width > 1100 ? s.width * 0.6 : s.width / 2;
+      const esq = Math.round(Math.max(16, Math.min(s.width - ample - 76, centreX - ample / 2)));
       return {
         boleta: { left: esq - (b.left - s.left), top: dalt - (b.top - s.top), width: ample, height: alt },
         torna: { left: esq + ample + 16, top: dalt },
