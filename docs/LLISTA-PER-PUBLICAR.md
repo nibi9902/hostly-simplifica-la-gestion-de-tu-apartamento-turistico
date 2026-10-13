@@ -32,12 +32,12 @@ Abans de donar un punt per fet, ha de complir tot això:
 | 5 | Portada a l'ordinador: el 0 € repetit a «Gratis para siempre», les pantalles de 1280 px i els textos | Fet (13-10) |
 | 6 | Funcionalitats: l'índex i les deu pàgines | Plantilla nova i textos repassats (13-10). Falta: les demos animades ensenyen l'app d'abril |
 | 7 | Per a qui és: propietaris, gestors petits, segona residència i hereus | Textos repassats, sense emojis; acaben amb «Te llamo» (13-10). Falta l'estil de les seccions |
-| 8 | Alternatives (l'índex i les set) i la comparativa amb Chekin | |
-| 9 | El blog (l'índex i la plantilla dels articles) i la guia | |
-| 10 | «Sobre Hostly» i les pàgines legals | |
-| 11 | El català, sencer | |
+| 8 | Alternatives (l'índex i les set) i la comparativa amb Chekin | Fet (13-10): textos repassats, acaben amb «Te llamo»; l'estil (taules, targetes) es queda |
+| 9 | El blog (l'índex i la plantilla dels articles) i la guia | Fet (13-10): la targeta dels articles al fosc de la casa, la guia sense emojis. Els 40 articles no s'han reescrit |
+| 10 | «Sobre Hostly» i les pàgines legals | Textos repassats. Falta: la foto del Biel (ara una «B») i, a l'avís legal, el segon cognom i l'adreça fiscal |
+| 11 | El català, sencer | Les proves automàtiques passen (cap paraula castellana a les pàgines en català). Convé que el Biel en llegeixi la portada i l'embut |
 | 12 | Tècnic: velocitat de càrrega, SEO, redireccions i la pàgina 404 | En curs: mapa del web sense els articles en català (canònica castellana), capçaleres de seguretat a `vercel.json`. Velocitat mesurada (mòbil, 4G lenta, CPU 4×, web construïda): LCP portada 2,5 s · preus 2,3 · empezar 2,6 · demo 2,8 · funcionalitat 3,0; 330–420 KB per pàgina. Carregar només l'idioma estalviaria unes dècimes: no ara. Falta la 404 |
-| 13 | Revisió final i previsualització a Vercel, amb l'OK del Biel abans de pujar res | |
+| 13 | Revisió final i previsualització a Vercel, amb l'OK del Biel abans de pujar res | Proves (13-10, vespre): revisio-web 224/224, prova-amplada 155/155, prova-embut 44/44, prova-galetes i prova-publicitat 42/42, tsc i build. Falta l'OK per pujar la branca (previsualització) |
 
 ## El que ha de decidir o passar el Biel
 
