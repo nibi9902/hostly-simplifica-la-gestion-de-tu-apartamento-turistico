@@ -386,7 +386,7 @@ El Biel: després de «Hostly está pendiente de ti», el mòdul del 0 € («m'
 gran») i, per a la resta de funcions, «o diferents mòduls amb la mateixa idea, o un mòdul gegant… que tu puguis
 anar clicant per anar veient informació de cada una. Fes-me algun mockup».
 
-A `modul-gegant-dues-maneres.html`: el mateix bento que el Gratis (targeta fosca amb el número gegant i quatre
+A `modul-gegant-dues-maneres.html` (https://claude.ai/artifact/TTcV4yUD5ARg8ouL92FnQi, privada): el mateix bento que el Gratis (targeta fosca amb el número gegant i quatre
 peces clares), un cop per cada funció del Completo, i es passa d'una a l'altra clicant. Passa sol cada vuit
 segons fins que s'hi toca.
 
