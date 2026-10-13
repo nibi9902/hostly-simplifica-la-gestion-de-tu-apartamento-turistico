@@ -343,6 +343,19 @@ A `zero-insignies-segona-volta.html`, al mateix enllaç (https://claude.ai/artif
 - 4A · les icones que es connecten, amb la casella «Y más»;
 - 4B · la cinta d'icones que no s'atura.
 
+**Les insígnies, tercera volta (13-10):** «intenta que no surti el nom de cada plataforma, és més
+informació innecessària» i, en lloc de la policía, SES.Hospedajes amb el seu logotip.
+- Cap nom a sota dels logotips. El nom només hi és per als lectors de pantalla i com a rètol en passar-hi
+  el ratolí.
+- SES.Hospedajes no té logotip propi. Al seu portal (hospedajes.ses.mir.es) hi ha el del Ministerio del
+  Interior, amb l'escut d'Espanya, que no farem servir, i un dibuix: un edifici, un cotxe, un full i un
+  policia. Fem servir el dibuix, que és el que el gestor veu cada vegada que hi entra.
+- Sense noms, la 3 ocupa menys: la 3A fa 64 px d'alt i la 3B, 110. Totes dues tenen quatre bombolles a
+  cada costat de Hostly, i l'última és la «més».
+- La casella de la 4A diu «y más» a dins.
+
+A `zero-insignies-tercera-volta.html`, al mateix enllaç (https://claude.ai/artifact/MQZvXD8A4HZbpKNFSNUoJF).
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
