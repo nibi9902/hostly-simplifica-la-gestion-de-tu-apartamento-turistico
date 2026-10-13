@@ -312,6 +312,23 @@ a https://claude.ai/artifact/2tV8XqvKXSA6iCvtdLtzdZ, totes amb les xifres, els b
 - **Les insígnies, soles.** Ja són targetes (fons beix i vora pròpia); dins de la bombolla grisa feien
   de caixa dins d'una caixa. A: a baix de tot de la targeta fosca. B: a sota, al costat de les xifres.
 
+**La 3B, i les insígnies de quatre maneres (13-10):** el Biel tria la 3B (insígnies a sota). Ha decidit:
+- cap nom de competidors, enlloc; només el que costa a l'any, sense «4 pisos» ni res semblant;
+- el preu, al costat del 0 € i no a sota;
+- insígnies diferents, amb més colors i amb moviment, «com alguna vegada havíem fet amb la portada».
+
+La xifra és «hasta 95 € al año». És el pla més car que tenim documentat per al check-in i el registre:
+7,95 € al mes per pis (`comparativa.json`, preus publicats a l'octubre de 2026). Sense dir pisos,
+190 € no es pot defensar.
+
+Fitxer: `zero-insignies-quatre-opcions.html` (https://claude.ai/artifact/hNzQWGLQ4wbo1wRdHCPA61). Hi ha
+els logotips d'Airbnb, Booking.com, Google i WhatsApp, amb el seu color, de quatre maneres:
+1. Bombolles que suren, com les de l'entrada d'abans.
+2. Fitxes del color de cada marca, amb una llum que les travessa.
+3. Tot connectat a Hostly: la icona de Hostly al mig, fils cap a les quatre i un punt de color que hi
+   viatja.
+4. Icones d'app que es connecten una a una i reben el tic verd.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
