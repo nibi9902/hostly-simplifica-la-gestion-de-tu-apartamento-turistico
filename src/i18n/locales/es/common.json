@@ -89,32 +89,42 @@
     "contact_cta_start": "Empezar"
   },
   "demo": {
-    "meta_title": "Vídeo: así funciona Hostly",
-    "meta_description": "Mira cómo funciona Hostly en 1 minuto. Check-in automático, limpiezas coordinadas, mensajes con IA y finanzas desde una sola app.",
-    "eyebrow": "Vídeo · 1 minuto",
+    "meta_title": "Así funciona Hostly, en vídeo",
+    "meta_description": "Cinco vídeos cortos con la app de verdad: el registro a la policía, los mensajes, el calendario, la limpieza y las cuentas.",
+    "eyebrow": "Cómo funciona",
     "heading": "Así funciona Hostly.",
-    "subheading": "Check-in automático, limpiezas coordinadas, mensajes con IA y finanzas en un solo lugar. Sin cinco apps distintas.",
+    "subheading": "Cinco vídeos de menos de un minuto, con la app de verdad.",
+    "videos": [
+      {
+        "id": "policia",
+        "titol": "El registro a la policía",
+        "text": "El huésped rellena sus datos y Hostly los envía."
+      },
+      {
+        "id": "mensajes",
+        "titol": "Los mensajes",
+        "text": "La IA contesta lo de siempre y te avisa de lo tuyo."
+      },
+      {
+        "id": "calendario",
+        "titol": "Un solo calendario",
+        "text": "Bloqueas una vez y se cierra en todos los canales."
+      },
+      {
+        "id": "limpieza",
+        "titol": "La limpieza",
+        "text": "Cada reserva crea su limpieza y le llega a tu equipo."
+      },
+      {
+        "id": "cuentas",
+        "titol": "Las cuentas",
+        "text": "Lo que te ha llegado de verdad, y la liquidación hecha."
+      }
+    ],
+    "veure": "Ver el vídeo: {{titol}}",
     "cta_start": "Empezar",
     "cta_pricing": "Ver precios",
-    "disclaimer": "Sin permanencia · El primer mes, gratis",
-    "video_section_eyebrow": "Lo que ves en el vídeo",
-    "features": [
-      {
-        "icon": "🛡️",
-        "title": "Check-in y registro de viajeros",
-        "desc": "El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. Gratis para siempre."
-      },
-      {
-        "icon": "🤖",
-        "title": "Mensajes con IA",
-        "desc": "La IA contesta al momento la mayoría de mensajes de WhatsApp, en el idioma del huésped. Tú solo entras cuando hace falta."
-      },
-      {
-        "icon": "📊",
-        "title": "Todo en un solo panel",
-        "desc": "Reservas, limpiezas, precios y finanzas. Sin saltar entre cinco apps ni recordar cinco contraseñas."
-      }
-    ]
+    "disclaimer": "Sin permanencia · El primer mes, gratis"
   },
   "guia": {
     "meta_title": "Superguía de gestión de apartamentos turísticos 2026 | Hostly",

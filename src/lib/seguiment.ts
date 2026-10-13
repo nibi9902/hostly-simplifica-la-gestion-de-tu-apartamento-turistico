@@ -184,6 +184,7 @@ const META: Record<string, { estandard?: string; propi?: string }> = {
   demo_solicitada: { estandard: "Schedule" },
   empezar_cuenta: { propi: "EmpezarGratis" },
   calcula_resultado: { propi: "Calculadora" },
+  video_play: { propi: "VerVideo" },
 };
 const LEADS = new Set(["empezar_datos", "calcula_telefono", "llamame_enviado"]);
 

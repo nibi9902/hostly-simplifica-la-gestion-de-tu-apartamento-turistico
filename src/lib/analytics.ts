@@ -29,7 +29,8 @@ type EventName =
   | 'demo_solicitada'        // Pas 3 complet: ha triat dia i hora
   | 'calcula_resultado'      // Ha acabat les preguntes de /calcula
   | 'calcula_telefono'       // Ha deixat el telèfon per veure el detall
-  | 'llamame_enviado';       // «Te llamo» de preus
+  | 'llamame_enviado'        // «Te llamo» de preus
+  | 'video_play';            // Mira un dels vídeos de /demo
 
 interface EventParams {
   location?: string;   // 'hero' | 'pricing' | 'final-cta' | 'navbar' | 'article' ...

@@ -89,32 +89,43 @@
     "contact_cta_start": "Començar"
   },
   "demo": {
-    "meta_title": "Vídeo: així funciona Hostly",
-    "meta_description": "Mira com funciona Hostly en 1 minut. Check-in automàtic, neteges coordinades, missatges amb IA i finances des d'una sola app.",
-    "eyebrow": "Vídeo · 1 minut",
+    "meta_title": "Així funciona Hostly, en vídeo",
+    "meta_description": "Cinc vídeos curts amb l'app de debò: el registre a la policia, els missatges, el calendari, la neteja i els comptes.",
+    "eyebrow": "Com funciona",
     "heading": "Així funciona Hostly.",
-    "subheading": "Check-in automàtic, neteges coordinades, missatges amb IA i finances en un sol lloc. Sense cinc apps diferents.",
+    "subheading": "Cinc vídeos de menys d'un minut, amb l'app de debò.",
+    "videos": [
+      {
+        "id": "policia",
+        "titol": "El registre a la policia",
+        "text": "L'hoste omple les seves dades i Hostly les envia."
+      },
+      {
+        "id": "mensajes",
+        "titol": "Els missatges",
+        "text": "La IA contesta el de sempre i t'avisa del que és teu."
+      },
+      {
+        "id": "calendario",
+        "titol": "Un sol calendari",
+        "text": "Bloqueges una vegada i es tanca a tots els canals."
+      },
+      {
+        "id": "limpieza",
+        "titol": "La neteja",
+        "text": "Cada reserva crea la seva neteja i li arriba al teu equip."
+      },
+      {
+        "id": "cuentas",
+        "titol": "Els comptes",
+        "text": "El que t'ha arribat de debò, i la liquidació feta."
+      }
+    ],
+    "nota_idioma": "Els vídeos són en castellà.",
+    "veure": "Veure el vídeo: {{titol}}",
     "cta_start": "Començar",
     "cta_pricing": "Veure preus",
-    "disclaimer": "Sense permanència · El primer mes, gratis",
-    "video_section_eyebrow": "El que veus al vídeo",
-    "features": [
-      {
-        "icon": "🛡️",
-        "title": "Check-in i registre de viatgers",
-        "desc": "L'hoste omple les seves dades des del mòbil i Hostly envia el registre a la policia. Gratis per sempre."
-      },
-      {
-        "icon": "🤖",
-        "title": "Missatges amb IA",
-        "desc": "La IA contesta al moment la majoria de missatges de WhatsApp, en l'idioma de l'hoste. Tu només entres quan cal."
-      },
-      {
-        "icon": "📊",
-        "title": "Tot en un sol panell",
-        "desc": "Reserves, neteges, preus i finances. Sense saltar entre cinc apps ni recordar cinc contrasenyes."
-      }
-    ]
+    "disclaimer": "Sense permanència · El primer mes, gratis"
   },
   "guia": {
     "meta_title": "Superguia de gestió d'apartaments turístics 2026 | Hostly",
