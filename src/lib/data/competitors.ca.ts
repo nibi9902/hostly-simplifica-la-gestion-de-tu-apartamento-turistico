@@ -6,7 +6,7 @@ import type { Competitor } from './competitors';
 
 // El que fa Hostly amb el registre de viatgers, dit igual a totes les comparatives.
 const registreGratis =
-  "Check-in online, registre de viatgers i taxa turística de Catalunya, gratis per sempre. Allà, Hostly envia el registre als Mossos cada dia, sense que hagis de fer res. A la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui.";
+  "Check-in online, registre de viatgers i taxa turística de Catalunya, gratis per sempre. Allà, Hostly l'envia a la policia cada dia, sense que hagis de fer res. A la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui.";
 
 // Quan no tenim una dada pública fiable d'una funció del competidor, no marquem ✗.
 const consultar = 'Consultar';
@@ -15,7 +15,7 @@ export const competitorsCa: Competitor[] = [
   {
     slug: 'icnea',
     name: 'Icnea',
-    tagline: "Hostly vs Icnea — L'alternativa moderna al PMS espanyol clàssic",
+    tagline: "Hostly vs Icnea: l'alternativa moderna al PMS espanyol clàssic",
     target: 'Gestors de 5‑200 unitats a Espanya i Portugal',
     priceNote: "Icnea: des de 150 €/mes, fins a 10 propietats (preu publicat l'octubre del 2026) · Hostly: 40 €/mes per pis, 35 € a partir de 5",
     advantages: [
@@ -41,7 +41,7 @@ export const competitorsCa: Competitor[] = [
   {
     slug: 'hostify',
     name: 'Hostify',
-    tagline: 'Hostly vs Hostify — Què canvia per a un gestor petit a Espanya',
+    tagline: 'Hostly vs Hostify: què canvia per a un gestor petit a Espanya',
     target: 'Gestors petits i mitjans (5‑70 allotjaments) a Espanya',
     priceNote: "Hostify: des de 20 $ per allotjament al mes, amb trams a partir de 5 allotjaments (preu publicat l'octubre del 2026) · Hostly: 40 €/mes per pis, 35 € a partir de 5",
     advantages: [
@@ -60,14 +60,14 @@ export const competitorsCa: Competitor[] = [
       { feature: 'Preu en euros', hostly: true, them: false },
     ],
     faqs: [
-      { q: 'Per què Hostly si Hostify ja té WhatsApp?', a: "Hostly fa servir l'API oficial de WhatsApp amb un número gestionat per Hostly, així que no has d'instal·lar ni configurar res. La IA contesta amb la informació de cada pis i de la reserva, en l'idioma de l'hoste, i t'avisa quan cal una persona. L'actives o la desactives per apartament i pots prendre el control de qualsevol conversa." },
+      { q: 'Per què Hostly si Hostify ja té WhatsApp?', a: "Hostly fa servir l'API oficial de WhatsApp amb un número gestionat per Hostly, així que no has d'instal·lar ni configurar res. La IA contesta amb la informació de cada pis i de la reserva, en l'idioma de l'hoste, i t'avisa quan cal una persona. L'actives o la desactives a cada pis i pots prendre el control de qualsevol conversa." },
       { q: 'Són comparables en funcionalitats?', a: "En el bàsic, sí: reserves, check-in i channel manager (Hostly connecta Airbnb i Booking.com; Hostify, molts més canals). La diferència és l'enfocament: a Hostly, la IA contesta per WhatsApp, els preus dinàmics van inclosos i el check-in amb el registre a la policia és gratis, també si només tens un pis." },
     ],
   },
   {
     slug: 'lodgify',
     name: 'Lodgify',
-    tagline: 'Hostly vs Lodgify — Gestió completa vs focus en les reserves directes',
+    tagline: 'Hostly vs Lodgify: gestió completa vs focus en les reserves directes',
     target: 'Amfitrions amb 1‑15 allotjaments que volen web propi i reserves directes',
     priceNote: "Lodgify: preu segons el pla i el nombre d'allotjaments; consulta el seu web · Hostly: 40 €/mes per pis, 35 € a partir de 5",
     advantages: [
@@ -93,7 +93,7 @@ export const competitorsCa: Competitor[] = [
   {
     slug: 'smoobu',
     name: 'Smoobu',
-    tagline: 'Hostly vs Smoobu — Què inclou cadascun per a un pis a Espanya',
+    tagline: 'Hostly vs Smoobu: què inclou cadascun per a un pis a Espanya',
     target: 'Amfitrió particular i gestor petit (1‑15 allotjaments), fort a Alemanya, Àustria i Suïssa',
     priceNote: "Smoobu: des de 29 €/mes per un allotjament, més un 0,9 % per reserva (pla Profesional Flex; preu publicat l'octubre del 2026) · Hostly: 40 €/mes per pis, sense comissions",
     advantages: [
@@ -119,11 +119,11 @@ export const competitorsCa: Competitor[] = [
   {
     slug: 'hospitable',
     name: 'Hospitable',
-    tagline: "Hostly vs Hospitable — L'alternativa pensada per a Espanya, amb el registre de viatgers inclòs",
+    tagline: "Hostly vs Hospitable: l'alternativa pensada per a Espanya, amb el registre de viatgers inclòs",
     target: 'Amfitrions particulars exigents (1‑30 propietats); molt fort als EUA i al Regne Unit',
     priceNote: "Hospitable: pla Essentials gratis; de pagament, des de 29 €/mes + IVA per a 1 propietat (preu publicat l'octubre del 2026) · Hostly: check-in gratis i 40 €/mes per pis amb Hostly Complet",
     advantages: [
-      { title: 'Registre de viatgers a Espanya', body: "Hospitable és fort als EUA i al Regne Unit. A Hostly, el check-in online, el registre de viatgers i la taxa turística de Catalunya són gratis per sempre. Allà, el registre va als Mossos cada dia; a la resta d'Espanya, activem amb tu la connexió amb la policia que et toqui." },
+      { title: 'Registre de viatgers a Espanya', body: "Hospitable és fort als EUA i al Regne Unit. A Hostly, el check-in online, el registre de viatgers i la taxa turística de Catalunya són gratis per sempre. Allà, Hostly l'envia a la policia cada dia; a la resta d'Espanya, activem amb tu aquesta connexió." },
       { title: 'WhatsApp com a canal principal', body: 'Hostly està pensat per a WhatsApp: API oficial de Meta, un número gestionat per Hostly i la IA que hi contesta.' },
       { title: 'Suport en català i castellà', body: "Amb Hostly Complet, t'atén una persona en català o castellà, no un xatbot. Amb el pla Gratis, ens escrius a hola@hostlylabs.com." },
       { title: 'Configuració amb tu', body: 'A Hostly Complet, el primer mes ho configurem tot amb tu en una videotrucada 1 a 1: pisos, canals i missatges.' },
@@ -145,7 +145,7 @@ export const competitorsCa: Competitor[] = [
   {
     slug: 'guesty',
     name: 'Guesty',
-    tagline: 'Hostly vs Guesty — Pensat per al gestor petit',
+    tagline: 'Hostly vs Guesty: pensat per al gestor petit',
     target: "D'1 anunci (Lite) a milers d'unitats; el seu fort, les empreses de gestió mitjanes i grans",
     priceNote: "Guesty: pla Lite (1‑3 anuncis) des de 9 $ per anunci al mes; Pro i Enterprise, pressupost a mida (preu publicat l'octubre del 2026) · Hostly: 40 €/mes per pis, 35 € a partir de 5",
     advantages: [
@@ -171,7 +171,7 @@ export const competitorsCa: Competitor[] = [
   {
     slug: 'avantio',
     name: 'Avantio',
-    tagline: 'Hostly vs Avantio — Modernitat i IA vs PMS tradicional espanyol',
+    tagline: 'Hostly vs Avantio: modernitat i IA vs PMS tradicional espanyol',
     target: 'Agències de gestió professional (20 o més propietats) a Espanya',
     priceNote: "Avantio: quota mínima de 295 €/mes + IVA, fins a 20 propietats (preu publicat l'octubre del 2026) · Hostly: 40 €/mes per pis, 35 € a partir de 5",
     advantages: [

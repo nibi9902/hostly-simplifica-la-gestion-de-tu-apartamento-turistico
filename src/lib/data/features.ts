@@ -138,10 +138,10 @@ export const FEATURES: Feature[] = [
     name: 'Check-in online y registro a la policía',
     iconName: 'ShieldCheck',
     shortDescription:
-      'El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. En Cataluña, a los Mossos d\'Esquadra. Gratis para siempre.',
+      'El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. Gratis para siempre.',
     hero: {
       h1: 'El registro a la policía, sin copiar ni un dato a mano',
-      sub: 'El huésped rellena sus datos desde el móvil y Hostly los valida. En Cataluña, los envía cada día a los Mossos d\'Esquadra. En el resto de España, la conexión la activamos contigo al darte de alta.',
+      sub: 'El huésped rellena sus datos desde el móvil y Hostly los valida y los envía a la policía cada día. Fuera de Cataluña, la conexión la activamos contigo al darte de alta.',
       primaryCta: 'Empezar',
       secondaryCta: 'Ver precios',
     },
@@ -168,7 +168,7 @@ export const FEATURES: Feature[] = [
       {
         step: 4,
         title: 'Hostly lo envía a la policía',
-        body: 'En Cataluña, cada día a las 15:00 sube el fichero al portal de los Mossos d\'Esquadra y archiva el comprobante. Si alguna línea falla, te avisa y te dice cuál.',
+        body: 'Cada día sube el fichero al portal de la policía (en Cataluña, el de los Mossos d\'Esquadra) y archiva el comprobante. Si alguna línea falla, te avisa y te dice cuál.',
       },
     ],
     advantages: [
@@ -176,7 +176,7 @@ export const FEATURES: Feature[] = [
       'Cada dato se valida antes de enviarlo',
       'Un adulto registra a todo el grupo con el mismo enlace',
       'El código de acceso, solo cuando el check-in está hecho',
-      'Envío diario a los Mossos d\'Esquadra, con el comprobante archivado',
+      'Envío diario a la policía, con el comprobante archivado',
       'Aviso si falta un check-in o si un registro falla',
     ],
     usage: [
@@ -186,7 +186,7 @@ export const FEATURES: Feature[] = [
       },
       {
         title: 'Pisos en Cataluña',
-        body: 'Cada día a las 15:00, Hostly sube a los Mossos los check-ins pendientes y guarda el comprobante. Tú no entras en ningún portal.',
+        body: 'Cada día, Hostly sube al portal de los Mossos los check-ins pendientes y guarda el comprobante. Tú no entras en ningún portal.',
       },
       {
         title: 'Llegada a medianoche',
@@ -318,7 +318,7 @@ export const FEATURES: Feature[] = [
       secondaryCta: 'Ver precios',
     },
     problem: {
-      title: 'Los grupos de WhatsApp con el equipo de limpieza no escalan',
+      title: 'Con más de dos pisos, el grupo de WhatsApp de la limpieza no da abasto',
       body: 'Cuando pasas de dos a cinco pisos, coordinar limpiezas por WhatsApp se vuelve un caos. Mensajes perdidos, horarios que no cuadran, incidencias sin foto y nadie sabe quién va el sábado. Al final eres tú quien lo coordina todo a mano.',
     },
     howItWorks: [
@@ -820,7 +820,7 @@ export const FEATURES: Feature[] = [
     },
     problem: {
       title: 'Cada semestre, la misma tarde de cuentas',
-      body: 'En Cataluña, la tasa turística se presenta dos veces al año: del 1 al 20 de abril y del 1 al 20 de octubre. Toca buscar la tarifa de tu municipio, contar personas y noches de cada estancia y pasarlo todo al formato que pide la ATC. Y el plazo no espera.',
+      body: 'En Cataluña, la tasa turística se presenta dos veces al año, y cada vez toca buscar la tarifa de tu municipio, contar personas y noches de cada estancia y pasarlo todo al formato que pide la ATC. Y el plazo no espera.',
     },
     howItWorks: [
       {
@@ -836,7 +836,7 @@ export const FEATURES: Feature[] = [
       {
         step: 3,
         title: 'Te avisa cuando toca presentarla',
-        body: 'Mientras el plazo está abierto, del 1 al 20 de abril y del 1 al 20 de octubre, ves un aviso en la app.',
+        body: 'Cuando toca presentarla, ves un aviso en la app.',
       },
       {
         step: 4,

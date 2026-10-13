@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { KeyRound, MessageCircle, ShieldCheck, Sparkles } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import HeroPersona from "./HeroPersona";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
@@ -8,7 +9,10 @@ import Truca from "@/components/portada/Truca";
 import "@/components/portada/portada.css";
 const ease = [0.22, 1, 0.36, 1] as const;
 
-type Feature = { icon: string; title: string; desc: string };
+// Les icones de la casa (abans, emojis): les mateixes que fa servir l'app
+const ICONES = [KeyRound, Sparkles, MessageCircle, ShieldCheck];
+
+type Feature = { title: string; desc: string };
 
 export default function SegundaResidencia() {
   const empezar = useEmpezar();
@@ -47,7 +51,7 @@ export default function SegundaResidencia() {
                 transition={{ duration: 0.45, delay: i * 0.08, ease }}
                 className="bg-white rounded-2xl border border-slate-100 p-6 flex gap-4 lg:flex-col lg:gap-3 shadow-sm"
               >
-                <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                {(() => { const Icona = ICONES[i % ICONES.length]; return <Icona className="w-6 h-6 flex-shrink-0 text-foreground" strokeWidth={1.8} aria-hidden="true" />; })()}
                 <div>
                   <p className="font-bold text-[#0f172a] mb-1">{item.title}</p>
                   <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>

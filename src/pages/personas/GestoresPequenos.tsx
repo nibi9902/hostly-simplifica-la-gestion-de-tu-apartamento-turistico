@@ -1,3 +1,4 @@
+import { X } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import HeroPersona from "./HeroPersona";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
@@ -43,7 +44,7 @@ export default function GestoresPequenos() {
             {tools.map((item) => (
               // Al mòbil, el cost a sota del nom (al costat, els textos llargs aixafaven el nom en una columna)
               <div key={item.name} className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between p-4 rounded-xl bg-[#fff7f7] border border-red-100 text-sm">
-                <span className="text-slate-700">❌ {item.name}</span>
+                <span className="inline-flex items-center gap-2 text-slate-700"><X className="w-4 h-4 text-red-600 flex-shrink-0" strokeWidth={2.6} aria-hidden="true" />{item.name}</span>
                 <span className="font-semibold text-red-700 pl-6 sm:pl-0 sm:flex-shrink-0 sm:ml-4 sm:text-right">{item.cost}</span>
               </div>
             ))}

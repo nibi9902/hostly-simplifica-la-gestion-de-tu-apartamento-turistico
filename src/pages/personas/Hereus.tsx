@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { CheckCheck, UserRound, Video } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import HeroPersona from "./HeroPersona";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
@@ -8,7 +9,10 @@ import Truca from "@/components/portada/Truca";
 import "@/components/portada/portada.css";
 const ease = [0.22, 1, 0.36, 1] as const;
 
-type Feature = { icon: string; title: string; desc: string };
+// Les icones de la casa (abans, emojis)
+const ICONES = [Video, CheckCheck, UserRound];
+
+type Feature = { title: string; desc: string };
 
 export default function Hereus() {
   const empezar = useEmpezar();
@@ -52,7 +56,7 @@ export default function Hereus() {
                 transition={{ duration: 0.45, delay: i * 0.08, ease }}
                 className="bg-white rounded-2xl border border-slate-100 p-6 text-center shadow-sm"
               >
-                <span className="text-3xl block mb-3">{item.icon}</span>
+                {(() => { const Icona = ICONES[i % ICONES.length]; return <Icona className="w-7 h-7 mx-auto mb-3 text-foreground" strokeWidth={1.8} aria-hidden="true" />; })()}
                 <p className="font-bold text-[#0f172a] mb-2">{item.title}</p>
                 <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
               </motion.div>

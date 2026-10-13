@@ -98,10 +98,10 @@ export const FEATURES_CA: Feature[] = [
     name: 'Check-in online i registre a la policia',
     iconName: 'ShieldCheck',
     shortDescription:
-      'L\'hoste omple les seves dades des del mòbil i Hostly envia el registre a la policia. A Catalunya, als Mossos d\'Esquadra. Gratis per sempre.',
+      'L\'hoste omple les seves dades des del mòbil i Hostly envia el registre a la policia. Gratis per sempre.',
     hero: {
       h1: 'El registre a la policia, sense copiar ni una dada a mà',
-      sub: 'L\'hoste omple les seves dades des del mòbil i Hostly les valida. A Catalunya, les envia cada dia als Mossos d\'Esquadra. A la resta d\'Espanya, la connexió l\'activem amb tu quan et dones d\'alta.',
+      sub: 'L\'hoste omple les seves dades des del mòbil i Hostly les valida i les envia a la policia cada dia. Fora de Catalunya, la connexió l\'activem amb tu quan et dones d\'alta.',
       primaryCta: 'Començar',
       secondaryCta: 'Veure preus',
     },
@@ -128,7 +128,7 @@ export const FEATURES_CA: Feature[] = [
       {
         step: 4,
         title: 'Hostly ho envia a la policia',
-        body: 'A Catalunya, cada dia a les 15:00 puja el fitxer al portal dels Mossos d\'Esquadra i n\'arxiva el comprovant. Si alguna línia falla, t\'avisa i et diu quina.',
+        body: 'Cada dia puja el fitxer al portal de la policia (a Catalunya, el dels Mossos d\'Esquadra) i n\'arxiva el comprovant. Si alguna línia falla, t\'avisa i et diu quina.',
       },
     ],
     advantages: [
@@ -136,7 +136,7 @@ export const FEATURES_CA: Feature[] = [
       'Cada dada es valida abans d\'enviar-la',
       'Un adult registra tot el grup amb el mateix enllaç',
       'El codi d\'accés, només quan el check-in està fet',
-      'Enviament diari als Mossos d\'Esquadra, amb el comprovant arxivat',
+      'Enviament diari a la policia, amb el comprovant arxivat',
       'Avís si falta un check-in o si un registre falla',
     ],
     usage: [
@@ -146,7 +146,7 @@ export const FEATURES_CA: Feature[] = [
       },
       {
         title: 'Pisos a Catalunya',
-        body: 'Cada dia a les 15:00, Hostly puja als Mossos els check-ins pendents i en guarda el comprovant. Tu no entres a cap portal.',
+        body: 'Cada dia, Hostly puja al portal dels Mossos els check-ins pendents i en guarda el comprovant. Tu no entres a cap portal.',
       },
       {
         title: 'Arribada a mitjanit',
@@ -278,7 +278,7 @@ export const FEATURES_CA: Feature[] = [
       secondaryCta: 'Veure preus',
     },
     problem: {
-      title: 'Els grups de WhatsApp amb l\'equip de neteja no escalen',
+      title: 'Amb més de dos pisos, el grup de WhatsApp de la neteja no dona l\'abast',
       body: 'Quan passes de dos a cinc pisos, coordinar neteges per WhatsApp es torna un caos. Missatges perduts, horaris que no quadren, incidències sense foto i ningú no sap qui hi va dissabte. Al final ets tu qui ho coordina tot a mà.',
     },
     howItWorks: [
@@ -780,7 +780,7 @@ export const FEATURES_CA: Feature[] = [
     },
     problem: {
       title: 'Cada semestre, la mateixa tarda de comptes',
-      body: 'A Catalunya, la taxa turística es presenta dues vegades l\'any: de l\'1 al 20 d\'abril i de l\'1 al 20 d\'octubre. Toca buscar la tarifa del teu municipi, comptar persones i nits de cada estada i passar-ho tot al format que demana l\'ATC. I el termini no espera.',
+      body: 'A Catalunya, la taxa turística es presenta dues vegades l\'any, i cada vegada toca buscar la tarifa del teu municipi, comptar persones i nits de cada estada i passar-ho tot al format que demana l\'ATC. I el termini no espera.',
     },
     howItWorks: [
       {
@@ -796,7 +796,7 @@ export const FEATURES_CA: Feature[] = [
       {
         step: 3,
         title: 'T\'avisa quan toca presentar-la',
-        body: 'Mentre el termini és obert, de l\'1 al 20 d\'abril i de l\'1 al 20 d\'octubre, veus un avís a l\'app.',
+        body: 'Quan toca presentar-la, veus un avís a l\'app.',
       },
       {
         step: 4,

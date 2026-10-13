@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen, Link2, RefreshCw } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { LangLink } from "@/i18n/LangLink";
 import PageShell from "@/components/PageShell";
@@ -45,12 +45,11 @@ export default function Guia() {
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl leading-relaxed mb-8">
               {t("guia.intro")}
             </p>
-            <div className="flex flex-wrap gap-4 text-sm text-slate-500">
-              <span>📖 {t("guia.stats_chapters")}</span>
-              <span>·</span>
-              <span>🔗 {t("guia.stats_resources", { count: chapters.reduce((acc, c) => acc + c.links.length, 0) })}</span>
-              <span>·</span>
-              <span>🔄 {t("guia.stats_updated")}</span>
+            {/* amb les icones de la casa (abans, emojis) */}
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-500">
+              <span className="inline-flex items-center gap-1.5"><BookOpen className="w-4 h-4" aria-hidden="true" />{t("guia.stats_chapters")}</span>
+              <span className="inline-flex items-center gap-1.5"><Link2 className="w-4 h-4" aria-hidden="true" />{t("guia.stats_resources", { count: chapters.reduce((acc, c) => acc + c.links.length, 0) })}</span>
+              <span className="inline-flex items-center gap-1.5"><RefreshCw className="w-4 h-4" aria-hidden="true" />{t("guia.stats_updated")}</span>
             </div>
           </motion.div>
         </div>
