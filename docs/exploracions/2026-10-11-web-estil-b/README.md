@@ -289,6 +289,18 @@ Fet, a la portada (la pàgina de les opcions es queda com estava):
   1383 px d'amplada es fa una mica més petita. Per sota de 1296, la secció va tota en una columna:
   el mòbil encara es farà a part.
 
+**El 0 €, de quatre maneres (13-10):** amb la web nova al davant, el Biel va dir que l'entrada només
+havia de ser el lema («¿Gestionas apartamentos en Airbnb? ¿O te gestionan ellos a ti?») i que el menú
+de dalt no era com el dels mockups. Totes dues coses ja són a la web (branca, commit bf86f9f). De la
+franja que tancava l'entrada d'abans, «Otras apps te lo cobran cada mes. 0 € en Hostly. Para siempre.»,
+va dir que li agrada però que s'ha d'adaptar al redisseny. Quatre maneres a `zero-quatre-opcions.html` i
+a https://claude.ai/artifact/2tV8XqvKXSA6iCvtdLtzdZ, totes amb les xifres, els botons i les insígnies:
+1. La frase, gran: com ara, amb l'estil nou.
+2. Cara a cara: dues targetes com les dels preus; a Hostly, el check-in i el registre passen a «Gratis».
+3. La targeta fosca, d'una vora a l'altra, amb el 0 € gegant.
+4. Dins de «Gratis para siempre»: la frase passa a ser el títol d'aquella secció i el 0 € només surt
+   una vegada.
+
 ## Per provar més endavant (A/B)
 
 - **La B del 10-10** (`../2026-10-10-web-minimal/project/B-inici.dc.html`, i aquí
