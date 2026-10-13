@@ -32,7 +32,10 @@ const OUT = process.argv[2] || require('fs').mkdtempSync(require('path').join(re
   const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
   await p.goto((process.env.REVISIO_BASE || 'http://127.0.0.1:8094') + '/es/aviso-legal', { waitUntil: 'networkidle' });
   const txt = await p.locator('main').innerText();
-  ok(`avís legal amb titular i NIF`, txt.includes('Biel Alsina') && txt.includes('40456798M'));
+  // les dades del titular, de src/lib/titular.ts (així no es repeteixen aquí)
+  const titular = require('fs').readFileSync(require('path').join(__dirname, '../../src/lib/titular.ts'), 'utf8');
+  const camp = (nom) => (titular.match(new RegExp(`${nom}: "([^"]*)"`)) || [])[1] || '';
+  ok(`avís legal amb titular, NIF i domicili`, ['nom', 'nif', 'domicili'].every((c) => camp(c) && txt.includes(camp(c))));
   await p.goto((process.env.REVISIO_BASE || 'http://127.0.0.1:8094') + '/es/terminos', { waitUntil: 'networkidle' });
   const tt = await p.locator('main').innerText();
   // Les xifres porten un espai que no parteix línia («35\u00a0€»): es compara amb espais normals
