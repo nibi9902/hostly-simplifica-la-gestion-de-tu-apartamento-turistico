@@ -116,6 +116,10 @@
    s'obre cap amunt i el vídeo passa al davant; les lletres es queden darrere, esvaïdes. */
 .pt-angel { position: relative; min-height: 800px; display: flex; align-items: center; padding-block: 72px; background: var(--pt-blanc); overflow: hidden; }
 .pt-angel .pt-graella { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 64px; align-items: end; }
+/* sense vídeos (encara no n'hi ha): la frase sola, a la línia del contingut (centrada faria una franja
+   estreta al mig, i a l'ordinador no se'n fan: docs/MAQUETACIO.md, R4) */
+.pt-angel.sense-video { min-height: 0; padding-block: 120px; }
+.pt-angel.sense-video .pt-graella { grid-template-columns: minmax(0, 1fr); }
 .pt-columna-text { min-width: 0; transform-origin: 30% 60%; }
 .pt-cites { display: grid; margin-top: 22px; }
 .pt-cita { grid-area: 1 / 1; align-self: start; margin: 0; display: flex; flex-direction: column; gap: 20px; opacity: 0; visibility: hidden; }
@@ -143,6 +147,7 @@
    la dreta del centre); aquí només es posa al davant */
 .pt-boleta.es-gran { z-index: 10; }
 .pt-foto { position: absolute; inset: 0; background-position: center; background-size: cover; background-repeat: no-repeat; transform-origin: 50% 40%; animation: pt-roda 16s ease-in-out infinite alternate; }
+video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-lloc:nth-child(2) .pt-foto { animation-delay: -5s; }
 .pt-lloc:nth-child(3) .pt-foto { animation-delay: -11s; }
 .pt-ombra-v { position: absolute; inset: 0; background: linear-gradient(to top, rgba(9, 12, 18, .5), rgba(9, 12, 18, 0) 50%); }
@@ -201,7 +206,7 @@
 .pt-e3-fila p { position: relative; min-width: 0; }
 .pt-e3-fila b { display: block; font-size: 16px; line-height: 1.3; font-weight: 600; }
 .pt-e3-det { display: block; font-size: 13.5px; line-height: 1.4; color: var(--pt-gris); margin-top: 1px; }
-@media (min-width: 1296px) {
+@media (min-width: 1280px) {
   .pt-e3.fase-dia .pt-e3-esq { grid-column: 1 / 3; justify-self: start; width: auto; }
   .pt-e3.fase-dia .pt-e3-llista { display: grid; grid-template-columns: repeat(2, 292px); grid-template-rows: repeat(4, auto); grid-auto-flow: column; gap: 2px 40px; width: auto; }
 }
@@ -245,12 +250,21 @@
 .pt-pantalla .pt-tira div:first-child { border-left: 0; }
 .pt-pantalla .pt-tira b { display: block; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .pt-pantalla .pt-tira small { font-size: 11px; color: var(--pt-gris); }
-/* on no hi cap la de 640, una mica més petita; i més estret, tot un sota l'altre */
+/* on no hi cap la de 640, una mica més petita; i més estret, tot un sota l'altre.
+   A 1280 px (64 de marge, 1.152 de caixa) les tres columnes hi caben si els costats fan 272 i la pantalla 520. */
+@media (min-width: 1280px) and (max-width: 1295px) {
+  .pt-e3 { grid-template-columns: 272px minmax(0, 1fr) 272px; }
+  .pt-e3-esq { width: 272px; }
+  .pt-e3-dreta { width: 252px; }
+  .pt-e3.fase-dia .pt-e3-llista { grid-template-columns: repeat(2, 272px); }
+  .pt-pantalla { width: 520px; height: 274px; }
+  .pt-pantalla .pt-fin { transform: scale(.4727); }
+}
 @media (min-width: 1296px) and (max-width: 1383px) {
   .pt-pantalla { width: 550px; height: 290px; }
   .pt-pantalla .pt-fin { transform: scale(.5); }
 }
-@media (max-width: 1295px) {
+@media (max-width: 1279px) {
   .pt-e3 { grid-template-columns: minmax(0, 1fr); row-gap: 40px; justify-items: center; }
   .pt-e3-esq, .pt-e3-pant, .pt-e3-dreta { grid-column: 1; grid-row: auto; justify-self: center; }
   .pt-e3-pant { width: 550px; max-width: 100%; }
@@ -259,15 +273,11 @@
 }
 
 /* ── 4 · Gratis per sempre: la taxa que es calcula i el pagament online ── */
-.pt-gratis { min-height: 790px; padding-block: 72px; background: var(--pt-blanc); }
+.pt-gratis { padding-block: 72px 80px; background: var(--pt-blanc); }
 .pt-gratis .pt-h2 { font-size: 52px; }
-.pt-bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(250px, auto)); gap: 20px; margin-top: 40px; }
-.pt-fosca { grid-column: 1 / 3; grid-row: 1 / 3; border-radius: 28px; background: var(--pt-fosc); color: #fff; padding: 36px; display: flex; flex-direction: column; gap: 12px; }
-.pt-fosca .pt-retol { color: rgba(255, 255, 255, .65); }
-.pt-zero { margin-top: auto; font-size: 230px; line-height: .82; font-weight: 700; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; }
-.pt-sempre { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
-.pt-txt { font-size: 16px; line-height: 1.5; color: rgba(255, 255, 255, .82); max-width: 34em; }
-.pt-fosca .pt-pill { align-self: flex-start; margin-top: 6px; height: 48px; padding: 0 24px; font-size: 16px; }
+.pt-bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: minmax(250px, auto); gap: 20px; margin-top: 40px; }
+.pt-gratis-peu { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 16px; margin-top: 36px; font-size: 15px; color: var(--pt-gris); }
+.pt-gratis-peu .pt-pill { height: 48px; padding: 0 28px; font-size: 16px; }
 .pt-tile { min-width: 0; border-radius: 24px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); padding: 20px; display: flex; flex-direction: column; gap: 6px; }
 .pt-tile h3 { font-size: 17px; line-height: 1.3; font-weight: 600; }
 .pt-tile > p { font-size: 14px; line-height: 1.45; color: var(--pt-gris); }
@@ -392,8 +402,6 @@
   .pt-h2, .pt-pend .pt-h2, .pt-gratis .pt-h2 { font-size: 34px; }
   .pt-num { font-size: 88px; }
   .pt-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; }
-  .pt-fosca { grid-column: 1 / -1; grid-row: auto; }
-  .pt-zero { font-size: 140px; }
   .pt-passos .pt-cap { flex-direction: column; align-items: flex-start; gap: 12px; }
   .pt-passos .pt-cap h2 { font-size: 32px; }
   .pt-pas small { font-size: 64px; }
@@ -418,8 +426,9 @@
   .pt-pantalla .pt-cos { left: 20px; right: 20px; width: auto; top: 72px; }
   .pt-pantalla .pt-tira { left: 16px; right: 16px; height: auto; padding-block: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 12px; }
   .pt-pantalla .pt-tira div:nth-child(3) { border-left: 0; }
-  .pt-bento { grid-template-columns: minmax(0, 1fr); }
-  .pt-zero { font-size: 120px; }
+  /* al mòbil, cada peça fa l'alçada del que porta (sense el forat de l'ordinador) */
+  .pt-bento { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; gap: 12px; margin-top: 28px; }
+  .pt-mostra { margin-top: 14px; }
   .pt-zf { padding: 28px 24px; }
   .pt-zf-zero { font-size: 120px; }
   .pt-zf-sempre { font-size: 22px; margin-top: 16px; }

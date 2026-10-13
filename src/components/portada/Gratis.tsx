@@ -1,7 +1,7 @@
 /**
- * «Gratis para siempre: el check-in y la policía.» — el bloc gran del pla gratis (la targeta fosca
- * amb el 0 €) i, al costat, quatre peces: el check-in, la policia, la taxa que es calcula i la taxa
- * pagada online.
+ * «Gratis para siempre: el check-in y la policía.» Quatre peces: el check-in, la policia, la taxa que es
+ * calcula i la taxa pagada online; a sota, un sol botó. La targeta fosca amb el 0 € que hi havia ja no hi
+ * és: el 0 € ja surt a dalt de tot, just després del lema (13-10-2026), i no cal dir-ho dues vegades.
  *
  * La taxa: es compta de nou cada vegada (hostes × pernoctacions × preu per nit = el que toca pagar) i
  * es declara per SEMESTRES («De abril a septiembre»), encara que el Biel en digués «trimestre». La
@@ -140,14 +140,6 @@ export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
           <h2 id="pt-gratis-titol" className="pt-h2">{t("portada.gratis.titol")}</h2>
         </div>
         <div className="pt-bento">
-          <div className="pt-fosca">
-            <p className="pt-retol">{t("portada.gratis.pla")}</p>
-            <p className="pt-zero">{t("portada.gratis.zero")}</p>
-            <p className="pt-sempre">{t("portada.gratis.sempre")}</p>
-            <p className="pt-txt">{t("portada.gratis.text")}</p>
-            <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-blanc">{t("portada.gratis.boto")}</button>
-          </div>
-
           <div className="pt-tile">
             <h3>{t("portada.gratis.checkin.titol")}</h3>
             <p>{t("portada.gratis.checkin.text")}</p>
@@ -202,6 +194,10 @@ export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
               <span className="pt-cobrat" aria-hidden="true">{t("portada.gratis.pagament.cobrat")}</span>
             </div>
           </div>
+        </div>
+        <div className="pt-gratis-peu">
+          <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t("portada.gratis.boto")}</button>
+          <span>{t("portada.gratis.sense_targeta")}</span>
         </div>
       </div>
     </section>

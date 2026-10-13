@@ -127,12 +127,18 @@ const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
     ok(`${nom} · /funciones/check-in → ${new URL(p.url()).pathname}`, p.url().endsWith('/es/funcionalidades/check-in-online'));
     await p.goto(`${BASE}/es/pms-con-ia`, { waitUntil: 'networkidle' });
     ok(`${nom} · /pms-con-ia → ${new URL(p.url()).pathname}`, p.url().endsWith('/es/funcionalidades/ia-whatsapp'));
-    // 10. Portada: els gestors. Des de la portada nova (13-10-2026) ja no hi ha els tres vídeos marcats
-    // «Ejemplo»: hi ha una pantalla per gestor (l'Àngel i dos marcadors fins que hi hagi les frases reals).
+    // 10. Portada: els gestors. Una pantalla per gestor de home.json (13-10-2026: només l'Àngel, fins que hi
+    // hagi les frases i els vídeos dels altres); cap marcador «[…]», i sense vídeo no hi ha la boleta que fa
+    // veure que parla.
     await p.goto(`${BASE}/es`, { waitUntil: 'networkidle' });
     await p.waitForTimeout(1500);
+    const gestors = require('../../src/i18n/locales/es/home.json').portada.gestors.llista;
     const cites = await p.locator('#gestores .pt-cita').count();
-    ok(`${nom} · la portada té una pantalla per gestor (${cites})`, cites === 3);
+    ok(`${nom} · la portada té una pantalla per gestor (${cites} de ${gestors.length})`, cites === gestors.length);
+    const textGestors = await p.locator('#gestores').innerText();
+    ok(`${nom} · els gestors no porten cap marcador «[…]»`, !/\[[^\]]{2,}\]/.test(textGestors));
+    const ambVideo = gestors.every((g) => g.src);
+    ok(`${nom} · la boleta del vídeo només hi és si hi ha vídeos (${ambVideo ? 'n\'hi ha' : 'no n\'hi ha'})`, (await p.locator('#gestores .pt-boleta').count() > 0) === ambVideo);
     const v = p.locator('#gestores').first();
     await v.scrollIntoViewIfNeeded(); await p.waitForTimeout(900);
     await p.screenshot({ path: `${OUT}/${nom}-videos.png` });

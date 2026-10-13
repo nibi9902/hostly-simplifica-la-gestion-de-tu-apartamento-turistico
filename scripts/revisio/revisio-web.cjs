@@ -49,7 +49,9 @@ const PROHIBITS = {
     /motor de reservas con|motor de reserves amb/i, /Setup guia|Onboarding/i, /ibéric|ibèric/i,
     /Cumples con la normativa sin|Compleixes la normativa sense/i, /te llamo hoy\.|et truco avui\./i,
     // Noms d'eines de tercers que la web no ha de lligar a Hostly, ni al blog (13-10-2026)
-    /Hostly[^.\n]{0,80}PriceLabs|PriceLabs[^.\n]{0,50}(?:en|a|dins de|dentro de) Hostly|PriceLabs,? integrad/i],
+    /Hostly[^.\n]{0,80}PriceLabs|PriceLabs[^.\n]{0,50}(?:en|a|dins de|dentro de) Hostly|PriceLabs,? integrad/i,
+    // Marcadors que no poden arribar a la web («[Nombre]», «[pisos y lugar]», «[Aquí, la frase…]»)
+    /\[(?:Nombre|Nom|Aquí|Y aquí|I aquí|pisos)[^\]]*\]/i],
   // Afirmacions que només són correctes com a informació general (blog, guia, comparatives)
   hostly: [/Ertzaintza/i, /parte de viajeros|part de viatgers/i, /SES enviado|SES enviat/i, /trimestr/i, /Sin burocracia|Sense burocràcia/i, /NRUA/i, /Beds24/i, /\bStarter\b|\bAgency\b/, /PriceLabs/i],
   // Paraules que només existeixen en l'altra llengua (amb límits Unicode: \b de JS no entén «ò»)

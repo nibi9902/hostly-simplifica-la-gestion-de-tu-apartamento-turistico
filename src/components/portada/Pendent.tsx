@@ -46,7 +46,7 @@ function liniaMinima(tl: gsap.core.Timeline, lm: Element, quantes: number): numb
   return Array.from({ length: quantes }, (_, i) => T0 + ((i + 0.5) / quantes) * DIA);
 }
 
-/* A l'ordinador ample (≥ 1296 px), durant el dia la llista va a dues columnes. L'alçada del final es
+/* A l'ordinador (≥ 1280 px), durant el dia la llista va a dues columnes. L'alçada del final es
    reserva des del principi: la línia de sota no es mou quan la llista canvia. */
 function fase(e3: HTMLElement, f: "dia" | "final") {
   e3.classList.toggle("fase-dia", f === "dia");
@@ -140,7 +140,7 @@ export default function Pendent() {
     const lm = s.querySelector(".pt-lm") as HTMLElement;
     const quantes = tots(s, ".pt-e3-fila").length;
     const mm = gsap.matchMedia();
-    mm.add({ ample: "(min-width: 1296px)", redueix: "(prefers-reduced-motion: reduce)" }, (ctx) => {
+    mm.add({ ample: "(min-width: 1280px)", redueix: "(prefers-reduced-motion: reduce)" }, (ctx) => {
       const { ample, redueix } = ctx.conditions as { ample: boolean; redueix: boolean };
       if (redueix) return;
       const tl = construeix(s, e3, ample);

@@ -154,20 +154,8 @@
         {
           "frase": "No sabria dir-te què és. Només sé que, des que el tinc, em preocupo molt menys de la gestió del meu apartament.",
           "nom": "Àngel",
-          "detall": "Gestor de pisos turístics · [pisos i lloc]",
+          "detall": "Gestor de pisos turístics",
           "video": "Veure el vídeo de l'Àngel"
-        },
-        {
-          "frase": "[Aquí, la frase del segon gestor, amb les seves paraules.]",
-          "nom": "[Nom]",
-          "detall": "[pisos i lloc]",
-          "video": "Veure el vídeo del segon gestor"
-        },
-        {
-          "frase": "[I aquí, la del tercer.]",
-          "nom": "[Nom]",
-          "detall": "[pisos i lloc]",
-          "video": "Veure el vídeo del tercer gestor"
         }
       ],
       "anterior": "Gestor anterior",
@@ -267,11 +255,8 @@
     "gratis": {
       "retol": "Per què començar avui",
       "titol": "Gratis per sempre: el check-in i la policia.",
-      "pla": "Pla Gratis",
-      "zero": "0 €",
-      "sempre": "Per sempre. Sense targeta.",
-      "text": "L'hoste fa el check-in des del mòbil. Cada dia, Hostly ho envia a la policia i et guarda el comprovant.",
       "boto": "Començar",
+      "sense_targeta": "Sense targeta.",
       "checkin": {
         "titol": "El check-in, des del seu mòbil",
         "text": "L'hoste el fa sol, en tres pantalles.",
