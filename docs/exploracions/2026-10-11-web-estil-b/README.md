@@ -333,8 +333,8 @@ els logotips d'Airbnb, Booking.com, Google i WhatsApp, amb el seu color, de quat
 - El 95 € va a la dreta, al costat de «Otras apps te lo cobran cada mes.», i el 0 € es queda sol.
 - De les quatre maneres, al Biel li agraden la 3 (tot connectat) i la 4 (icones d'app). La 3, però, és
   massa gran, i a la 4 s'ha d'entendre que Hostly es connecta a més llocs.
-- Les marques són Airbnb, Booking.com, Vrbo, Google, WhatsApp, Stripe i la policía. PriceLabs no hi surt
-  mai: el Biel no vol que se sàpiga que el fem servir.
+- Les marques són Airbnb, Booking.com, Vrbo, Google, WhatsApp, Stripe i la policía. Cap més: les eines que
+  Hostly fa servir per darrere no surten mai a la web.
 - Stripe i Vrbo porten el nom amb el seu color fins que tinguem els logotips oficials.
 
 A `zero-insignies-segona-volta.html`, al mateix enllaç (https://claude.ai/artifact/MQZvXD8A4HZbpKNFSNUoJF):

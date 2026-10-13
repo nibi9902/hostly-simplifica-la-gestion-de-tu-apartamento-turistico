@@ -34,7 +34,7 @@ export const NAV: NavConfig = {
         { label: 'IA en WhatsApp',         href: '/funcionalidades/ia-whatsapp',           description: 'Contesta a tus huéspedes al momento, 24/7.' },
         { label: 'Check-in online',        href: '/funcionalidades/check-in-online',       description: 'Datos del huésped y registro a la policía.', badge: 'Gratis' },
         { label: 'Reservas y calendarios', href: '/funcionalidades/channel-manager',       description: 'Airbnb y Booking en un solo calendario.' },
-        { label: 'Precios dinámicos',      href: '/funcionalidades/precios-dinamicos',     description: 'Recomendados por PriceLabs, publicados cada día.' },
+        { label: 'Precios dinámicos',      href: '/funcionalidades/precios-dinamicos',     description: 'Se ajustan a la demanda y se publican cada día.' },
         { label: 'Gestión de limpiezas',   href: '/funcionalidades/gestion-de-limpiezas',  description: 'Cada salida crea su limpieza y avisa al equipo.' },
         { label: 'Mensajería programada',  href: '/funcionalidades/mensajeria-programada', description: 'Mensajes automáticos en el idioma del huésped.' },
         { label: 'Roles y permisos',       href: '/funcionalidades/multi-rol',             description: 'Gestor, limpieza y propietario, cada uno lo suyo.' },

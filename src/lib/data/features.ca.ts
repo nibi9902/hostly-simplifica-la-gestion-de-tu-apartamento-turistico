@@ -353,13 +353,13 @@ export const FEATURES_CA: Feature[] = [
   // ─────────────────────────────── PREUS DINÀMICS ───────────────────────────────
   {
     slug: 'precios-dinamicos',
-    name: 'Preus dinàmics amb PriceLabs',
+    name: 'Preus dinàmics',
     iconName: 'TrendingUp',
     shortDescription:
-      'Les recomanacions de PriceLabs, dins de Hostly. Tu poses els límits i Hostly publica el preu a Airbnb i Booking cada dia.',
+      'Un preu recomanat per a cada dia, segons la demanda. Tu poses els límits i Hostly publica el preu a Airbnb i Booking cada dia.',
     hero: {
       h1: 'Preus que segueixen la demanda, sense sortir de Hostly',
-      sub: 'PriceLabs recomana un preu per a cada dia. Tu poses els límits, veus per què surt cada preu i Hostly el publica a Airbnb i Booking.',
+      sub: 'Cada dia té un preu recomanat segons la demanda. Tu poses els límits, veus per què surt cada preu i Hostly el publica a Airbnb i Booking.',
       primaryCta: 'Començar',
       secondaryCta: 'Veure preus',
     },
@@ -375,8 +375,8 @@ export const FEATURES_CA: Feature[] = [
       },
       {
         step: 2,
-        title: 'PriceLabs recomana',
-        body: 'Analitza la demanda, la temporada i els esdeveniments de la teva zona, i proposa un preu per a cada dia.',
+        title: 'Un preu per a cada dia',
+        body: 'Segons la demanda, la temporada i els esdeveniments de la teva zona, cada dia té un preu recomanat.',
       },
       {
         step: 3,
@@ -390,7 +390,7 @@ export const FEATURES_CA: Feature[] = [
       },
     ],
     advantages: [
-      'Les recomanacions de PriceLabs, dins de Hostly',
+      'Un preu recomanat per a cada dia, dins de Hostly',
       'Mínims, màxims, temporades i dies amb preu fix',
       'Nits mínimes i descomptes per setmana o per mes',
       'Preu recomanat, acceptat amb un clic',
@@ -400,7 +400,7 @@ export const FEATURES_CA: Feature[] = [
     usage: [
       {
         title: 'Un concert gran a la ciutat',
-        body: 'PriceLabs detecta la demanda d\'aquells dies i recomana apujar el preu. Ho veus al calendari de Hostly i ho acceptes amb un clic.',
+        body: 'Aquells dies hi ha més demanda i el preu recomanat puja. Ho veus al calendari de Hostly i ho acceptes amb un clic.',
       },
       {
         title: 'La temporada d\'estiu',
@@ -414,11 +414,6 @@ export const FEATURES_CA: Feature[] = [
     relatedFeatures: ['channel-manager', 'conecta-todo'],
     faqs: [
       {
-        question: 'Hostly fa servir PriceLabs?',
-        answer:
-          'Sí. Les recomanacions venen de PriceLabs, que analitza la demanda, la temporada i els esdeveniments de la teva zona. Tu ho veus i ho decideixes tot des de Hostly.',
-      },
-      {
         question: 'Puc aprovar els preus a mà?',
         answer:
           'Sí. En mode manual veus el preu recomanat i l\'acceptes amb un clic. En mode automàtic s\'aplica sol, sempre dins dels teus mínims i màxims.',
@@ -426,7 +421,7 @@ export const FEATURES_CA: Feature[] = [
       {
         question: 'Puc fixar el preu d\'un dia concret?',
         answer:
-          'Sí. Un dia amb preu fix es respecta tal com el poses, encara que PriceLabs en recomani un altre.',
+          'Sí. Un dia amb preu fix es respecta tal com el poses, encara que el recomanat sigui un altre.',
       },
       {
         question: 'Cada quant s\'actualitzen els preus a Airbnb i Booking?',

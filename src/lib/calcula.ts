@@ -9,7 +9,7 @@
  * Preus orientatius per apartament i mes (els mateixos que diu la resta del web):
  *   · App de check-in (Chekin…)        15 €  → «180 € al año en otras apps»
  *   · Channel manager (Smoobu…)        20 €
- *   · App de preus (PriceLabs…)        20 €
+ *   · App de preus dinàmics           20 €
  * Hostly: 40 € per apartament, 35 € des de 5. Més de 15 pisos: preu a mida.
  */
 
@@ -39,7 +39,7 @@ export const HORES_SETMANA: Record<Horas, number> = { "<2": 1.5, "2-5": 3.5, "5-
 /** El nombre de pisos amb què es fa el compte, per a cada resposta. */
 const PISOS_COMPTE: Record<Pisos, number> = { "1": 1, "2-4": 3, "5-15": 8, "15+": 16 };
 // Preus per pis i mes, a la baixa: Chekin des de 3,95 € (web de Chekin, octubre 2026), un channel
-// manager ~20 € (Smoobu, 29 € per a 1 pis, baixa amb volum), PriceLabs ~20 €.
+// manager ~20 € (Smoobu, 29 € per a 1 pis, baixa amb volum), app de preus ~20 €.
 export const PREU_EINA: Partial<Record<Eina, number>> = { checkin: 4, canales: 20, precios: 20 };
 export const PREU_HOSTLY = 40;
 export const PREU_HOSTLY_VOLUM = 35;

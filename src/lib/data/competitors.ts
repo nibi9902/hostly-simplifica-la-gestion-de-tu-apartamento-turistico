@@ -29,7 +29,7 @@ export const competitors: Competitor[] = [
     priceNote: 'Icnea: desde 150 €/mes, hasta 10 propiedades (precio publicado en octubre de 2026) · Hostly: 40 €/mes por piso, 35 € desde 5',
     advantages: [
       { title: 'IA en WhatsApp', body: 'La IA de Hostly contesta la mayoría de mensajes al momento, en el idioma del huésped y 24/7, por la API oficial de WhatsApp. Cuando hace falta una persona, te avisa.' },
-      { title: 'Precios con PriceLabs integrado', body: 'PriceLabs recomienda el precio de cada noche, tú pones mínimos y temporadas, y Hostly lo publica en Airbnb y Booking cada día.' },
+      { title: 'Precios que siguen a la demanda', body: 'Cada noche tiene un precio recomendado, tú pones mínimos y temporadas, y Hostly lo publica en Airbnb y Booking cada día.' },
       { title: 'App moderna y configuración contigo', body: 'En Hostly Completo, el primer mes lo configuramos todo contigo en una videollamada 1 a 1: pisos, canales y reservas.' },
       { title: 'Check-in y registro gratis', body: registroGratis },
       { title: 'Pagas por piso', body: '40 €/mes por piso, 35 € desde 5, sin comisiones por reserva: con uno o dos pisos, pagas solo por esos. El primer mes, gratis.' },
@@ -37,14 +37,14 @@ export const competitors: Competitor[] = [
     comparison: [
       { feature: 'IA en WhatsApp', hostly: true, them: consultar },
       { feature: 'Check-in y registro policial', hostly: 'Gratis para siempre', them: 'Sí' },
-      { feature: 'Precios dinámicos', hostly: 'PriceLabs integrado', them: 'Vía integración' },
+      { feature: 'Precios dinámicos', hostly: 'Incluidos', them: 'Vía integración' },
       { feature: 'Configuración 1 a 1 incluida', hostly: 'Con Hostly Completo', them: consultar },
       { feature: 'Precio con 1 piso', hostly: '40 €/mes', them: '150 €/mes (hasta 10)' },
       { feature: 'Catalán nativo', hostly: true, them: true },
     ],
     faqs: [
       { q: '¿Cuánto tarda la migración desde Icnea?', a: 'Depende de cuántos pisos tengas. En Hostly Completo, el cambio lo hacemos contigo durante el primer mes, en una configuración 1 a 1: pisos, canales y reservas.' },
-      { q: '¿Es Hostly más caro que Icnea?', a: 'Depende de cuántos pisos tengas y de lo que necesites. Hostly cuesta 40 €/mes por piso, 35 € desde 5, con la IA en WhatsApp y los precios con PriceLabs integrado; el check-in y el registro a la policía son gratis. Icnea publica una cuota desde 150 €/mes para hasta 10 propiedades (precio de octubre de 2026). Haz números con tus pisos y compara lo que incluye cada uno.' },
+      { q: '¿Es Hostly más caro que Icnea?', a: 'Depende de cuántos pisos tengas y de lo que necesites. Hostly cuesta 40 €/mes por piso, 35 € desde 5, con la IA en WhatsApp y los precios dinámicos incluidos; el check-in y el registro a la policía son gratis. Icnea publica una cuota desde 150 €/mes para hasta 10 propiedades (precio de octubre de 2026). Haz números con tus pisos y compara lo que incluye cada uno.' },
     ],
   },
   {
@@ -63,14 +63,14 @@ export const competitors: Competitor[] = [
     comparison: [
       { feature: 'IA en WhatsApp', hostly: true, them: consultar },
       { feature: 'WhatsApp como canal principal', hostly: true, them: 'Parcial' },
-      { feature: 'Precios dinámicos', hostly: 'PriceLabs integrado', them: 'Vía PriceLabs o Beyond' },
+      { feature: 'Precios dinámicos', hostly: 'Incluidos', them: 'Con una herramienta aparte' },
       { feature: 'Check-in y registro policial gratis', hostly: true, them: consultar },
       { feature: 'Catalán nativo', hostly: true, them: consultar },
       { feature: 'Precio en euros', hostly: true, them: false },
     ],
     faqs: [
       { q: '¿Por qué Hostly si Hostify ya tiene WhatsApp?', a: 'Hostly usa la API oficial de WhatsApp con un número gestionado por Hostly, así que no instalas ni configuras nada. La IA contesta con la información de cada piso y de la reserva, en el idioma del huésped, y te avisa cuando hace falta una persona. La activas o la desactivas por apartamento y puedes tomar el control de cualquier conversación.' },
-      { q: '¿Son comparables en funcionalidades?', a: 'En lo básico, sí: reservas, check-in y channel manager (Hostly conecta Airbnb y Booking.com; Hostify, muchos más canales). La diferencia está en el enfoque: en Hostly, la IA contesta por WhatsApp, los precios van con PriceLabs integrado y el check-in con el registro a la policía es gratis, también si tienes un solo piso.' },
+      { q: '¿Son comparables en funcionalidades?', a: 'En lo básico, sí: reservas, check-in y channel manager (Hostly conecta Airbnb y Booking.com; Hostify, muchos más canales). La diferencia está en el enfoque: en Hostly, la IA contesta por WhatsApp, los precios dinámicos van incluidos y el check-in con el registro a la policía es gratis, también si tienes un solo piso.' },
     ],
   },
   {
@@ -118,7 +118,7 @@ export const competitors: Competitor[] = [
     advantages: [
       { title: 'IA en WhatsApp', body: 'La IA de Hostly contesta la mayoría de mensajes al momento, en el idioma del huésped y 24/7, y te avisa cuando hace falta una persona.' },
       { title: 'Check-in y registro gratis', body: registroGratis },
-      { title: 'Precios con PriceLabs integrado', body: 'En Hostly, PriceLabs recomienda el precio de cada noche, tú pones los límites y Hostly lo publica en Airbnb y Booking cada día.' },
+      { title: 'Precios que siguen a la demanda', body: 'En Hostly, cada noche tiene un precio recomendado, tú pones los límites y Hostly lo publica en Airbnb y Booking cada día.' },
       { title: 'WhatsApp como canal principal', body: 'Hostly usa la API oficial de WhatsApp con un número gestionado por Hostly. Tus huéspedes escriben por WhatsApp y tú no instalas ni configuras nada.' },
       { title: 'Soporte en castellano y catalán', body: 'Smoobu da soporte en varios idiomas. En Hostly Completo, el primer mes lo configuramos contigo en una videollamada y después te atiende una persona, en castellano o catalán.' },
     ],
@@ -127,11 +127,11 @@ export const competitors: Competitor[] = [
       { feature: 'WhatsApp nativo', hostly: true, them: consultar },
       { feature: 'Check-in y registro policial sin complementos', hostly: true, them: 'Vía integración' },
       { feature: 'Channel manager', hostly: true, them: true },
-      { feature: 'Precios dinámicos', hostly: 'PriceLabs integrado', them: 'Propios' },
+      { feature: 'Precios dinámicos', hostly: 'Incluidos', them: 'Propios' },
       { feature: 'Precio con 1 piso', hostly: '40 €/mes', them: 'Desde 29 €/mes + 0,9 %' },
     ],
     faqs: [
-      { q: '¿Por qué Hostly si Smoobu es más barato?', a: 'Smoobu empieza en 29 €/mes por un alojamiento con el plan Profesional Flex, que además cobra un 0,9 % por reserva, o en 35 €/mes en prepago (31,50 €/mes con pago anual). Si necesitas una herramienta aparte para el check-in y el registro a la policía, súmala al coste. En Hostly, el check-in y el registro son gratis, y Hostly Completo, a 40 €/mes por piso, junta la IA en WhatsApp, las limpiezas y los precios con PriceLabs integrado.' },
+      { q: '¿Por qué Hostly si Smoobu es más barato?', a: 'Smoobu empieza en 29 €/mes por un alojamiento con el plan Profesional Flex, que además cobra un 0,9 % por reserva, o en 35 €/mes en prepago (31,50 €/mes con pago anual). Si necesitas una herramienta aparte para el check-in y el registro a la policía, súmala al coste. En Hostly, el check-in y el registro son gratis, y Hostly Completo, a 40 €/mes por piso, junta la IA en WhatsApp, las limpiezas y los precios dinámicos.' },
       { q: '¿Smoobu tiene integración con el mercado español?', a: 'Tiene channel manager para las OTAs principales y se integra con herramientas externas para el registro de viajeros. Hostly está hecho para gestionar en España: registro automático a los Mossos en Cataluña (en el resto de España, activamos contigo la conexión con la policía que te toque), tasa turística de Cataluña lista para declarar y soporte en castellano y catalán.' },
     ],
   },
@@ -210,7 +210,7 @@ export const competitors: Competitor[] = [
     ],
     faqs: [
       { q: '¿Para qué perfil es Avantio?', a: 'Avantio recomienda su uso a partir de 20 propiedades y está pensado para agencias con equipo que necesitan integraciones complejas. Para un gestor pequeño, puede quedarse grande en coste y en complejidad.' },
-      { q: '¿Hostly es tan completo como Avantio?', a: 'No en todo. Avantio tiene funciones avanzadas de gestión de ingresos y de informes para grandes volúmenes, y conecta más canales. Hostly se centra en Airbnb y Booking.com y en lo que un gestor de 1 a 15 pisos usa cada día: mensajes, limpiezas, registro de viajeros, precios con PriceLabs integrado y finanzas.' },
+      { q: '¿Hostly es tan completo como Avantio?', a: 'No en todo. Avantio tiene funciones avanzadas de gestión de ingresos y de informes para grandes volúmenes, y conecta más canales. Hostly se centra en Airbnb y Booking.com y en lo que un gestor de 1 a 15 pisos usa cada día: mensajes, limpiezas, registro de viajeros, precios dinámicos y finanzas.' },
     ],
   },
 ];

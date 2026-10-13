@@ -28,7 +28,7 @@
         },
         {
           "titol": "Una sola app",
-          "text": "Reserves d'Airbnb i Booking, missatges, neteges, preus amb PriceLabs integrat i finances, en un sol lloc."
+          "text": "Reserves d'Airbnb i Booking, missatges, neteges, preus dinàmics i finances, en un sol lloc."
         },
         {
           "titol": "A Hostly Complet, ho configurem amb tu",
@@ -54,7 +54,7 @@
     "iaWhatsapp": "IA a WhatsApp nativa",
     "checkinSes": "Check-in i registre policial gratis",
     "complianceSes": "Registre de viatgers a la policia",
-    "preciosDinamicos": "Preus amb PriceLabs integrat",
+    "preciosDinamicos": "Preus dinàmics inclosos",
     "channelManager": "Channel manager",
     "limpiezas": "Coordinació de neteges",
     "soporteEs": "Suport en català i castellà",

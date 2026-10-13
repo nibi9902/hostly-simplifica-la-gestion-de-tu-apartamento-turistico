@@ -103,7 +103,7 @@
     "paid_price_per": "/mes por apt.",
     "paid_price_bulk_prefix": "35 €/mes",
     "paid_price_bulk_suffix": "por apartamento desde 5 apt.",
-    "paid_desc": "Hostly gestiona. Tú, menos. Reemplaza Chekin, Smoobu y el Excel; PriceLabs, integrado.",
+    "paid_desc": "Hostly gestiona. Tú, menos. Reemplaza Chekin, Smoobu y el Excel.",
     "paid_cta": "Empezar",
     "paid_fine": "El primer mes, gratis · Sin permanencia",
     "paid_features": [
@@ -111,7 +111,7 @@
       "Airbnb y Booking sincronizados en tiempo real",
       "Mensajes con huéspedes contestados por IA, en su idioma",
       "Limpiezas asignadas y avisadas solas",
-      "Precios al día con PriceLabs",
+      "Precios al día, según la demanda",
       "Finanzas y liquidaciones al propietario",
       "Configuración 1 a 1 el primer mes",
       "Soporte humano. No un chatbot."
@@ -175,7 +175,7 @@
       },
       {
         "q": "¿Qué incluye exactamente el plan de 40 €/mes?",
-        "a": "Todo lo de la lista: Airbnb y Booking sincronizados, mensajes con huéspedes contestados por IA, limpiezas avisadas solas, precios al día con PriceLabs, finanzas y liquidaciones, y la configuración 1 a 1 el primer mes. Lo único aparte son las automatizaciones a medida, si algún día las quieres."
+        "a": "Todo lo de la lista: Airbnb y Booking sincronizados, mensajes con huéspedes contestados por IA, limpiezas avisadas solas, precios al día según la demanda, finanzas y liquidaciones, y la configuración 1 a 1 el primer mes. Lo único aparte son las automatizaciones a medida, si algún día las quieres."
       },
       {
         "q": "¿Hay permanencia?",

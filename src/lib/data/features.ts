@@ -393,13 +393,13 @@ export const FEATURES: Feature[] = [
   // ─────────────────────────────── PRECIOS DINÁMICOS ───────────────────────────────
   {
     slug: 'precios-dinamicos',
-    name: 'Precios dinámicos con PriceLabs',
+    name: 'Precios dinámicos',
     iconName: 'TrendingUp',
     shortDescription:
-      'Las recomendaciones de PriceLabs, dentro de Hostly. Tú pones los límites y Hostly publica el precio en Airbnb y Booking cada día.',
+      'Un precio recomendado para cada día, según la demanda. Tú pones los límites y Hostly publica el precio en Airbnb y Booking cada día.',
     hero: {
       h1: 'Precios que siguen a la demanda, sin salir de Hostly',
-      sub: 'PriceLabs recomienda un precio para cada día. Tú pones los límites, ves por qué sale cada precio y Hostly lo publica en Airbnb y Booking.',
+      sub: 'Cada día tiene un precio recomendado según la demanda. Tú pones los límites, ves por qué sale cada precio y Hostly lo publica en Airbnb y Booking.',
       primaryCta: 'Empezar',
       secondaryCta: 'Ver precios',
     },
@@ -415,8 +415,8 @@ export const FEATURES: Feature[] = [
       },
       {
         step: 2,
-        title: 'PriceLabs recomienda',
-        body: 'Analiza la demanda, la temporada y los eventos de tu zona, y propone un precio para cada día.',
+        title: 'Un precio para cada día',
+        body: 'Según la demanda, la temporada y los eventos de tu zona, cada día tiene un precio recomendado.',
       },
       {
         step: 3,
@@ -430,7 +430,7 @@ export const FEATURES: Feature[] = [
       },
     ],
     advantages: [
-      'Las recomendaciones de PriceLabs, dentro de Hostly',
+      'Un precio recomendado para cada día, dentro de Hostly',
       'Mínimos, máximos, temporadas y días con precio fijo',
       'Noches mínimas y descuentos por semana o por mes',
       'Precio recomendado, aceptado con un clic',
@@ -440,7 +440,7 @@ export const FEATURES: Feature[] = [
     usage: [
       {
         title: 'Un concierto grande en la ciudad',
-        body: 'PriceLabs detecta la demanda de esos días y recomienda subir el precio. Lo ves en el calendario de Hostly y lo aceptas con un clic.',
+        body: 'Esos días hay más demanda y el precio recomendado sube. Lo ves en el calendario de Hostly y lo aceptas con un clic.',
       },
       {
         title: 'La temporada de verano',
@@ -454,11 +454,6 @@ export const FEATURES: Feature[] = [
     relatedFeatures: ['channel-manager', 'conecta-todo'],
     faqs: [
       {
-        question: '¿Hostly usa PriceLabs?',
-        answer:
-          'Sí. Las recomendaciones vienen de PriceLabs, que analiza la demanda, la temporada y los eventos de tu zona. Tú lo ves y lo decides todo desde Hostly.',
-      },
-      {
         question: '¿Puedo aprobar los precios a mano?',
         answer:
           'Sí. En modo manual ves el precio recomendado y lo aceptas con un clic. En modo automático se aplica solo, siempre dentro de tus mínimos y máximos.',
@@ -466,7 +461,7 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Puedo fijar el precio de un día concreto?',
         answer:
-          'Sí. Un día con precio fijo se respeta tal cual, aunque PriceLabs recomiende otro.',
+          'Sí. Un día con precio fijo se respeta tal cual, aunque el recomendado sea otro.',
       },
       {
         question: '¿Cada cuánto se actualizan los precios en Airbnb y Booking?',

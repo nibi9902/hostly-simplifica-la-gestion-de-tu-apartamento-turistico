@@ -9,7 +9,7 @@ export const NAV_CA: NavConfig = {
         { label: 'IA a WhatsApp',          href: '/funcionalidades/ia-whatsapp',           description: 'Contesta els teus hostes al moment, 24/7.' },
         { label: 'Check-in online',        href: '/funcionalidades/check-in-online',       description: 'Dades de l\'hoste i registre a la policia.', badge: 'Gratis' },
         { label: 'Reserves i calendaris',  href: '/funcionalidades/channel-manager',       description: 'Airbnb i Booking en un sol calendari.' },
-        { label: 'Preus dinàmics',         href: '/funcionalidades/precios-dinamicos',     description: 'Recomanats per PriceLabs, publicats cada dia.' },
+        { label: 'Preus dinàmics',         href: '/funcionalidades/precios-dinamicos',     description: "S'ajusten a la demanda i es publiquen cada dia." },
         { label: 'Gestió de neteges',      href: '/funcionalidades/gestion-de-limpiezas',  description: 'Cada sortida crea la seva neteja i avisa l\'equip.' },
         { label: 'Missatgeria programada', href: '/funcionalidades/mensajeria-programada', description: 'Missatges automàtics en l\'idioma de l\'hoste.' },
         { label: 'Rols i permisos',        href: '/funcionalidades/multi-rol',             description: 'Gestor, neteja i propietari, cadascú el seu.' },

@@ -1,6 +1,6 @@
 # Hostly
 
-> Hostly es la app que simplifica todo lo que implica tener un piso turístico en España: el check-in online del huésped, el registro a la policía, la tasa turística, las reservas de Airbnb y Booking, los mensajes con huéspedes (con IA), las limpiezas, los precios dinámicos con PriceLabs y las finanzas, en un solo sitio.
+> Hostly es la app que simplifica todo lo que implica tener un piso turístico en España: el check-in online del huésped, el registro a la policía, la tasa turística, las reservas de Airbnb y Booking, los mensajes con huéspedes (con IA), las limpiezas, los precios dinámicos y las finanzas, en un solo sitio.
 
 Hostly no se presenta como un PMS, sino como la app del día a día del piso turístico. Está pensada para propietarios con pocos pisos (1 a 3), gestores pequeños (5 a 15 pisos), segundas residencias y pisos heredados en España: gente que hoy lo lleva todo con varias apps, Excel y grupos de WhatsApp.
 
@@ -17,7 +17,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 - **Check-in online:** el huésped rellena desde el móvil su nombre, documento (tipo y número), fecha de nacimiento, nacionalidad y dirección, en castellano, inglés o francés. Los datos se validan antes de enviarse. Un adulto puede registrar a todo el grupo con el mismo enlace. Los códigos de acceso solo se muestran cuando el check-in está hecho. En el plan gratis, cada piso tiene un enlace de check-in fijo.
 - **Mensajes con huéspedes e IA:** WhatsApp con la API oficial de Meta y un número gestionado por Hostly; el gestor no configura nada. La IA contesta 24/7 en el idioma del huésped con la ficha y la guía de cada piso y los datos de la reserva. Contesta la mayoría de las preguntas y, cuando hace falta una persona, avisa al gestor con el piso y las primeras palabras del mensaje. Aprende de las correcciones del gestor (las lecciones se ven en el chat) y cada respuesta queda marcada como de la IA. Se activa o se desactiva por piso, y el gestor puede tomar el control de cualquier conversación. Bandeja única con WhatsApp y los mensajes de Airbnb y Booking.
 - **Reservas y calendarios:** Airbnb (se conecta con la cuenta) y Booking.com (con el ID de la propiedad), a través del channel manager que Hostly usa por detrás. Cada reserva entra al momento, con una comprobación cada 20 minutos. Dentro de Hostly no se pueden solapar reservas, los bloqueos llegan a los canales al instante y el histórico se importa. Reservas directas con el motor de reservas propio de Hostly y pago por Stripe.
-- **Precios dinámicos:** el motor es PriceLabs, integrado en Hostly. El gestor pone mínimos y máximos, temporadas, días con precio fijo, noches mínimas y descuentos semanales o mensuales. Hostly muestra el precio recomendado (se acepta con un clic) y explica de dónde sale («¿por qué este precio?»). Publica los precios en Airbnb y Booking cada mañana y cada vez que se cambia algo. Modo manual o automático.
+- **Precios dinámicos:** cada día tiene un precio recomendado según la demanda. El gestor pone mínimos y máximos, temporadas, días con precio fijo, noches mínimas y descuentos semanales o mensuales. Hostly muestra el precio recomendado (se acepta con un clic) y explica de dónde sale («¿por qué este precio?»). Publica los precios en Airbnb y Booking cada mañana y cada vez que se cambia algo. Modo manual o automático.
 - **Limpiezas:** equipo por piso con orden de turno. Cada salida crea su limpieza. Si alguien dice «no puedo», la limpieza pasa a la siguiente persona del turno, que recibe el aviso por WhatsApp. Se marca como hecha con fotos de salida. Incidencias con fecha, piso y persona, historial y lo que se debe a cada persona cada mes (Hostly no hace los pagos). App propia para el equipo, en catalán, castellano e inglés, y asistente opcional por WhatsApp. Si se cancela la reserva, se cancela la limpieza y se avisa; si cambian las fechas, se avisa del cambio.
 - **Mensajes automáticos:** plantillas por momento (bienvenida, check-in, check-out, limpieza, entrada anticipada, salida tardía y cuatro libres), por piso y traducidas solas, con variables (enlace de check-in, códigos, fechas). Salen por WhatsApp si hay número y, si no, por Airbnb o Booking. Historial por reserva; un mensaje en cola se puede cancelar. Funcionan sin la IA.
 - **Roles y permisos:** gestor (por piso), limpieza y propietario en solo lectura (calendario y finanzas). Invitaciones y permisos por piso. Sin límite de usuarios. El huésped no necesita cuenta: recibe un enlace de su estancia.
@@ -42,7 +42,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 - [Check-in online y registro a la policía](https://hostlylabs.com/es/funcionalidades/check-in-online): el huésped rellena sus datos desde el móvil; en Cataluña, Hostly los envía cada día a los Mossos d'Esquadra. Gratis para siempre.
 - [Reservas y calendarios](https://hostlylabs.com/es/funcionalidades/channel-manager): Airbnb y Booking.com en un solo calendario, más reservas directas con motor propio y pago por Stripe.
 - [Gestión de limpiezas](https://hostlylabs.com/es/funcionalidades/gestion-de-limpiezas): una limpieza por cada salida, turno por piso, fotos de salida, incidencias y lo que se debe a cada persona.
-- [Precios dinámicos con PriceLabs](https://hostlylabs.com/es/funcionalidades/precios-dinamicos): recomendaciones de PriceLabs dentro de Hostly, con los límites del gestor, publicadas en Airbnb y Booking cada día.
+- [Precios dinámicos](https://hostlylabs.com/es/funcionalidades/precios-dinamicos): un precio recomendado para cada día, con los límites del gestor, publicado en Airbnb y Booking cada día.
 - [Mensajería programada](https://hostlylabs.com/es/funcionalidades/mensajeria-programada): plantillas por momento de la reserva, por piso y traducidas, por WhatsApp o por Airbnb y Booking.
 - [Roles y permisos](https://hostlylabs.com/es/funcionalidades/multi-rol): gestores por piso, equipo de limpieza y propietarios en solo lectura. Sin límite de usuarios.
 - [Finanzas en orden](https://hostlylabs.com/es/funcionalidades/finanzas): ingresos por piso, canal y periodo, comisiones calculadas y liquidaciones a propietarios en cuatro pasos.
@@ -106,7 +106,7 @@ Qué cubre cada herramienta y para quién encaja.
 - **Precio:** plan gratis para siempre; Hostly completo a 40 €/mes por apartamento (35 € desde 5), primer mes gratis, sin permanencia.
 - **Canales:** Airbnb y Booking.com; reservas directas con motor propio y pago por Stripe.
 - **WhatsApp:** API oficial de WhatsApp (Meta), con un número gestionado por Hostly.
-- **Precios dinámicos:** PriceLabs, integrado en Hostly.
+- **Precios dinámicos:** incluidos en Hostly Completo.
 - **Registro a la policía:** automático a los Mossos d'Esquadra en Cataluña; fuera de Cataluña, la conexión con SES.Hospedajes se activa con el cliente al darse de alta.
 
 ## Marco conceptual

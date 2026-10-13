@@ -159,8 +159,8 @@ Falta per **publicar-la** (mentrestant, marcadors):
 1. **Segon cognom i adreça fiscal** per a l'avís legal (LSSI art. 10): `src/lib/titular.ts`.
 2. **IVA**: els termes diuen que els preus l'inclouen; les targetes no ho diuen. ¿40 € IVA
    inclòs o + IVA?
-3. **PriceLabs**: ¿la subscripció de PriceLabs va inclosa en els 40 €? El web diu «con PriceLabs
-   integrado» i no promet res més.
+3. **Preus dinàmics**: ¿el cost de l'eina de preus va inclòs en els 40 €? El web només diu «precios
+   dinámicos» i no promet res més. El nom de l'eina no surt enlloc (13-10).
 4. **Referits**: he posat que compten els propietaris que entren a **Hostly Completo** (amb el
    pla gratis, 5 altes gratuïtes regalarien un pis per sempre). ¿Correcte?
 5. **Reserves directes amb Stripe**: el web deia que Hostly té motor de reserves propi amb
@@ -216,7 +216,7 @@ Falta per **publicar-la** (mentrestant, marcadors):
    taxa).
 6. **El vídeo de /demo** (`public/assets/demos/hostly-demo.mp4`, 60 s, fet amb Remotion) mostra
    l'app d'abans i diu «Taxa turística · 1r trimestre 2026», quan la taxa de Catalunya es
-   presenta per semestres; i atribueix l'ajust de preus a «Hostly Automàtic» (el fa PriceLabs).
+   presenta per semestres.
    Cal tornar-lo a renderitzar amb l'app d'ara.
 7. **Detalls de disseny** que va trobar la revisió visual i no s'han tocat (són de criteri):
    hi ha tres estils de preguntes freqüents (portada, funcionalitats i preus) i la secció del
