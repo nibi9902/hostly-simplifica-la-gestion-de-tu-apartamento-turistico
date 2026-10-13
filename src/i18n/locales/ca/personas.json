@@ -30,9 +30,7 @@
       }
     ],
     "section3_h2": "40 € al mes per pis. Una sola factura.",
-    "section3_body": "Reserves, check-in, missatges, neteges i registre a la policia, en una sola app. I el check-in, gratis per sempre.",
-    "cta_h2": "Comença avui.",
-    "cta_sub2": "El pla Gratis, sense targeta. Sense permanència."
+    "section3_body": "Reserves, check-in, missatges, neteges i registre a la policia, en una sola app. I el check-in, gratis per sempre."
   },
   "gestores": {
     "meta_title": "Hostly per a gestors petits d'apartaments",
@@ -63,9 +61,7 @@
         "cost": "Gratis en diners, caríssim en temps"
       }
     ],
-    "hostly_summary": "✅ Amb Hostly: 35 € per pis al mes des de 5 pisos (280 € al mes amb 8), amb la IA, les neteges i els preus a dins. Una app i una sola factura.",
-    "cta_h2": "Comença avui.",
-    "cta_sub2": "35 €/apartament des de 5 pisos. El primer mes, gratis."
+    "hostly_summary": "✅ Amb Hostly: 35 € per pis al mes des de 5 pisos (280 € al mes amb 8), amb la IA, les neteges i els preus a dins. Una app i una sola factura."
   },
   "segunda_residencia": {
     "meta_title": "Hostly per a segona residència a Airbnb",
@@ -98,9 +94,7 @@
         "title": "Registre i taxa, sense pensar-hi",
         "desc": "Hostly envia el registre de viatgers a la policia i, si el pis és a Catalunya, et deixa calculada la taxa turística. Sense haver-te'n de recordar."
       }
-    ],
-    "cta_h2": "Comença avui.",
-    "cta_sub2": "40 € al mes per pis. El primer mes, gratis. Sense permanència."
+    ]
   },
   "hereus": {
     "meta_title": "Vas heretar un pis turístic. Hostly ho simplifica.",
@@ -129,8 +123,6 @@
         "title": "Suport humà real",
         "desc": "Si tens dubtes, l'equip de Hostly t'ajuda en castellà i català. Sense bots."
       }
-    ],
-    "cta_h2": "Comença avui.",
-    "cta_sub2": "40 € al mes per pis. El primer mes, gratis."
+    ]
   }
 }

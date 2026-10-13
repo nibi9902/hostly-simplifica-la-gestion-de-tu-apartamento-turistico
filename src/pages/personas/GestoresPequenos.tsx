@@ -1,10 +1,11 @@
-import { ArrowRight } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import HeroPersona from "./HeroPersona";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 import { useTranslation } from 'react-i18next';
 import { useEmpezar } from "@/lib/empezar";
 
+import Truca from "@/components/portada/Truca";
+import "@/components/portada/portada.css";
 type Tool = { name: string; cost: string };
 
 export default function GestoresPequenos() {
@@ -54,19 +55,8 @@ export default function GestoresPequenos() {
         </div>
       </section>
 
-      <section className="py-24 text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
-        <div className="contenidor">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-            {t("gestores.cta_h2")}
-          </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-lg mx-auto">{t("gestores.cta_sub2")}</p>
-          <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
-          >
-            {t("gestores.cta_primary")}
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-      </section>
+      {/* Al final, el «Te llamo» de la portada (13-10-2026: abans, una franja blava fosca) */}
+      <Truca />
     </PageShell>
   );
 }

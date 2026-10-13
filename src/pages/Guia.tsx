@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 import { LangLink } from "@/i18n/LangLink";
 import PageShell from "@/components/PageShell";
 
-import { useEmpezar } from "@/lib/empezar";
+import Truca from "@/components/portada/Truca";
+import "@/components/portada/portada.css";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 type ChapterLink = { label: string; href: string };
@@ -17,7 +18,6 @@ type Chapter = {
 };
 
 export default function Guia() {
-  const empezar = useEmpezar();
   const { t } = useTranslation("common");
 
   const chapters = t("guia.chapters", { returnObjects: true }) as Chapter[];
@@ -120,22 +120,8 @@ export default function Guia() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 text-center" style={{ background: "linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)" }}>
-        <div className="contenidor">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70 mb-4">{t("guia.cta_eyebrow")}</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 whitespace-pre-line">
-            {t("guia.cta_heading")}
-          </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-            {t("guia.cta_body")}
-          </p>
-          <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
-          >
-            {t("guia.cta_button")}
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-      </section>
+      {/* Al final, el «Te llamo» de la portada (13-10-2026: abans, una franja blava fosca) */}
+      <Truca />
     </PageShell>
   );
 }

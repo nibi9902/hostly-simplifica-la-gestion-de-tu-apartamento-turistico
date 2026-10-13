@@ -6,8 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { LangLink } from '@/i18n/LangLink';
 import PageShell from '@/components/PageShell';
 import { breadcrumbSchema } from '@/lib/seo/schemas';
-import { useEmpezar } from "@/lib/empezar";
 
+import Truca from "@/components/portada/Truca";
+import "@/components/portada/portada.css";
 const ease = [0.22, 1, 0.36, 1] as const;
 // El pla de cada funcionalitat (la resta, Hostly Completo)
 const PLA_DE_LA_FUNCIO: Record<string, string> = {
@@ -17,7 +18,6 @@ const PLA_DE_LA_FUNCIO: Record<string, string> = {
 };
 
 export default function FuncionalidadesIndex() {
-  const empezar = useEmpezar();
   const features = useFeatures();
   const { t } = useTranslation('funcionalidades');
   const { t: tSeo } = useTranslation('seo');
@@ -102,20 +102,8 @@ export default function FuncionalidadesIndex() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 text-center" style={{ background: 'linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)' }}>
-        <div className="contenidor">
-        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-          {t('index.final_title')}
-        </h2>
-        <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-          {t('index.final_subtitle')}
-        </p>
-        <button type="button" onClick={empezar} className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-[#0f1f5c] font-semibold text-base hover:shadow-[0_8px_40px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 transition-all duration-300"
-        >
-          {t('index.final_cta')} <ArrowRight className="w-4 h-4" />
-        </button>
-        </div>
-      </section>
+      {/* Al final, el «Te llamo» de la portada (13-10-2026: abans, una franja blava fosca) */}
+      <Truca />
     </PageShell>
   );
 }

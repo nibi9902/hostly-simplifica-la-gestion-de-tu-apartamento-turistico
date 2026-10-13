@@ -69,7 +69,8 @@ export default function ArticleLayout({ post }: Props) {
   const cta = (costat: boolean) => (
     <div
       className={costat ? 'rounded-3xl p-7 flex flex-col gap-5' : 'rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-6'}
-      style={{ background: 'linear-gradient(135deg, #0f1f5c 0%, #1a3a8f 100%)' }}
+      // el fosc llis de la targeta del 0 € de la portada (abans, un degradat blau)
+      style={{ background: 'hsl(var(--foreground))' }}
     >
       <div className={costat ? '' : 'flex-1 text-center md:text-left'}>
         <p className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 mb-2">{t('article.cta_eyebrow')}</p>
@@ -86,7 +87,7 @@ export default function ArticleLayout({ post }: Props) {
           track('cta_primary_click', { location: costat ? 'article-costat' : 'article', slug: post.slug });
           empezar();
         }}
-        className={`${costat ? 'self-start' : 'flex-shrink-0'} inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#0f1f5c] font-semibold text-sm hover:shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap`}
+        className={`${costat ? 'self-start' : 'flex-shrink-0'} inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-foreground font-semibold text-sm hover:bg-slate-100 transition-colors duration-200 whitespace-nowrap`}
       >
         {t('article.cta_button')} <ArrowRight className="w-4 h-4" />
       </button>
@@ -100,7 +101,6 @@ export default function ArticleLayout({ post }: Props) {
       className="flex items-center justify-between gap-4 p-5 rounded-2xl border border-primary/15 bg-[#eff6ff] hover:border-primary/30 hover:bg-[#e0eeff] transition-all duration-200 group"
     >
       <div className="flex items-center gap-3">
-        <span className="text-primary text-lg">⚡</span>
         <p className="text-sm font-semibold text-primary">{lang === 'ca' ? relatedFeature.labelCa : relatedFeature.label}</p>
       </div>
       <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />

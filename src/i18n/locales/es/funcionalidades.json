@@ -7,10 +7,7 @@
     "card_plan_gratis": "Gratis, para siempre",
     "card_plan_completo": "Hostly Completo",
     "card_plan_aparte": "Aparte, a medida",
-    "card_cta": "Ver funcionalidad",
-    "final_title": "Hostly Completo, 40 €/mes por apartamento.",
-    "final_subtitle": "El primer mes, gratis. El check-in y el registro a la policía, gratis para siempre.",
-    "final_cta": "Empezar"
+    "card_cta": "Ver funcionalidad"
   },
   "page": {
     "breadcrumb_home": "Hostly",
@@ -27,9 +24,6 @@
     "related_cta": "Ver más",
     "faqs_eyebrow": "Preguntas frecuentes",
     "faqs_title": "Lo que quizá te estás preguntando.",
-    "final_subtitle": "El primer mes, gratis. El check-in y el registro a la policía, gratis para siempre.",
-    "final_cta": "Empezar",
-    "ver_precios": "Ver precios",
-    "final_title": "Gestiona menos. Empieza hoy."
+    "ver_precios": "Ver precios"
   }
 }
