@@ -30,13 +30,13 @@ Abans de donar un punt per fet, ha de complir tot això:
 | 3 | El recorregut de qui ve d'un anunci: `/empezar`, la calculadora, `/demo` i `/precios` | Fet (13-10): `/precios` i `/demo` refetes; textos de l'embut iguals que la portada |
 | 4 | Seguiment: Analytics, el píxel de Meta i Google Ads, provats de cap a peus | Codi a punt (prova-publicitat 42/42, `VerVideo` nou). Falten els identificadors (Biel) |
 | 5 | Portada a l'ordinador: el 0 € repetit a «Gratis para siempre», les pantalles de 1280 px i els textos | Fet (13-10) |
-| 6 | Funcionalitats: l'índex i les deu pàgines | |
-| 7 | Per a qui és: propietaris, gestors petits, segona residència i hereus | |
+| 6 | Funcionalitats: l'índex i les deu pàgines | Plantilla nova i textos repassats (13-10). Falta: les demos animades ensenyen l'app d'abril |
+| 7 | Per a qui és: propietaris, gestors petits, segona residència i hereus | Textos repassats, sense emojis; acaben amb «Te llamo» (13-10). Falta l'estil de les seccions |
 | 8 | Alternatives (l'índex i les set) i la comparativa amb Chekin | |
 | 9 | El blog (l'índex i la plantilla dels articles) i la guia | |
 | 10 | «Sobre Hostly» i les pàgines legals | |
 | 11 | El català, sencer | |
-| 12 | Tècnic: velocitat de càrrega, SEO, redireccions i la pàgina 404 | |
+| 12 | Tècnic: velocitat de càrrega, SEO, redireccions i la pàgina 404 | En curs: mapa del web sense els articles en català (canònica castellana), capçaleres de seguretat a `vercel.json`. Falta: carregar només l'idioma de la pàgina (−50 KB comprimits) i la 404 |
 | 13 | Revisió final i previsualització a Vercel, amb l'OK del Biel abans de pujar res | |
 
 ## El que ha de decidir o passar el Biel
