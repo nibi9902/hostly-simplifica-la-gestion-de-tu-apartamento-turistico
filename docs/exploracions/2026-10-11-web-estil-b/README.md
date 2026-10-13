@@ -321,7 +321,7 @@ La xifra és «hasta 95 € al año». És el pla més car que tenim documentat 
 7,95 € al mes per pis (`comparativa.json`, preus publicats a l'octubre de 2026). Sense dir pisos,
 190 € no es pot defensar.
 
-Fitxer: `zero-insignies-quatre-opcions.html` (https://claude.ai/artifact/hNzQWGLQ4wbo1wRdHCPA61). Hi ha
+Fitxer: `zero-insignies-quatre-opcions.html` (https://claude.ai/artifact/MQZvXD8A4HZbpKNFSNUoJF). Hi ha
 els logotips d'Airbnb, Booking.com, Google i WhatsApp, amb el seu color, de quatre maneres:
 1. Bombolles que suren, com les de l'entrada d'abans.
 2. Fitxes del color de cada marca, amb una llum que les travessa.
