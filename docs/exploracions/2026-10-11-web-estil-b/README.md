@@ -408,7 +408,7 @@ Les dades són les del vídeo de /demo (la Nora, la Pilar, la Carmen, Cala Moret
 ### Quatre maneres més (14-10)
 
 El Biel: «del mòdul gegant no hi trobo cap que m'agradi al 100%… fes-ne 4 més». A
-`modul-gegant-quatre-mes.html` (https://claude.ai/artifact/ENoGCvcbbN6w8bpGkBNNH3, privada), totes amb el
+`modul-gegant-quatre-mes.html` (https://claude.ai/artifact/ENoGCvcbbN6w8bpGkBNNH3, privada; el 14-10 a la tarda, tornada a publicar al compte d'ara: https://claude.ai/artifact/FHPoNUMcREzTKGbv9NYasC), totes amb el
 llenguatge del Gratis i diferents de l'A i la B:
 
 - **C · Cinc targetes que s'obren:** les cinc fosques en fila, amb el número dret; la que toques s'obre (número,
@@ -419,4 +419,21 @@ llenguatge del Gratis i diferents de l'A i la B:
   canviar (47 → 3 missatges, 6 → 0 trucades a la neteja…). Cada fila s'obre.
 - **F · Una darrere l'altra:** cada funció té la seva targeta gegant, com el 0 €, i en baixar es posen una sobre
   l'altra; uns botons a dalt hi porten i marquen per on vas.
+
+### Quatre idees noves, a partir de cinc referències (14-10, tarda)
+
+El Biel va passar cinc imatges (Nestify, Luxura, Compatto, Nenya i «Made to Belong»): «pensa de manera
+creativa per poder-los fer per Hostly i que siguin coherents i correctes». A `modul-gegant-idees-noves.html`
+(https://claude.ai/artifact/6c4kwTphb8vrGV78Bn3pBT), amb les mateixes cinc funcions i números i les fotos del
+menjador de la portada i dels pisos de la demo:
+
+- **G · El taulell:** rajoles de mides diferents amb fotos i targetes de vidre a sobre (Mensajes amb la
+  conversa que canvia d'idioma, Precios amb +16 % i Semana Santa), rodones amb fletxa que obren el detall i
+  la frase a dos tons «Con el Completo, todo lo demás.».
+- **H · Por qué el Completo:** dues rajoles clares amb un objecte de vidre, una de fosca i alta amb una llum
+  blava (limpieza i extras), una foto ampla de nit (precios) i la frase «Todo lo demás, hecho.» que passa.
+- **I · La foto i la pestanya:** foto gran amb «Empezar» encaixat en una osca, pestanyes que canvien la foto i
+  la frase, i sis xifres en caselles de línia discontínua (24/7, 1, 0, +16 %, +25 €, 40 € al mes per piso).
+- **J · Els punts sobre la foto:** un aparador amb els tres pisos, «Tus pisos, atendidos.» i la foto del pis
+  amb etiquetes que assenyalen el que fa Hostly (01–05 canvien de funció).
 
