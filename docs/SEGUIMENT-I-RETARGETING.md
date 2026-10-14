@@ -94,7 +94,10 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
    2. ✅ La «coincidència avançada automàtica», **encesa** (vegeu més amunt).
    3. **Verifica el domini** hostlylabs.com (Configuració del negoci → Seguretat de la marca →
       Dominis). Cal per a les campanyes i per mesurar els iPhone.
-   4. **El testimoni de l'API de conversions** (5 minuts):
+   4. ✅ **El testimoni de l'API de conversions.** Fet el 14-10: és a Vercel com a `META_CAPI_TOKEN`
+      (*Sensitive*, *Preview* i *Production*) i a `~/.config/hostly/meta_capi_token`. Meta l'accepta per
+      al píxel; la previsualització s'ha tornat a desplegar i hi han passat dos `Lead` de prova
+      (`prova-capi-14-10-001` i `-002`). Si mai s'ha de tornar a generar:
       1. Events Manager → «hostlylabs pixel» → **Configuració** → apartat *API de conversions* →
          **«Generar identificador de acceso»** (o *Generate access token*). Copia'l.
       2. Desa'l a `~/.config/hostly/meta_capi_token` (com la clau d'n8n: `chmod 600`) i digues-m'ho:

@@ -28,7 +28,7 @@ Abans de donar un punt per fet, ha de complir tot això:
 | 1 | Portada: el 0 € amb la cinta de logotips (la 4B), just després del lema | Fet (13-10, 9901cf1). Vespre: sense animació d'entrada (el Biel: «no m'agrada que porti animació»); només es mou la cinta. Nit: el capçal surt quan acaba el subtítol del lema i, en acabar l'entrada, la pàgina baixa una mica sola (un cop per sessió) |
 | 2 | Portada al mòbil, secció per secció (el trànsit dels anuncis arriba pel mòbil) | Fet (13-10): el 0 €, la pantalla de Hostly estreta i llegible, «Gratis» sense forats, gestors sense marcadors |
 | 3 | El recorregut de qui ve d'un anunci: `/empezar`, la calculadora, `/demo` i `/precios` | Fet (13-10): `/precios` i `/demo` refetes; textos de l'embut iguals que la portada. Nit: `/demo` torna a tenir a dalt el vídeo d'un minut (refet, amb l'app en castellà; projecte a `~/hostly-videos/demo-60s`) i a sota els cinc curts; el pas del Completo de `/empezar` ja no parla de «demo de 20 minutos»: «Llamadme ahora» o triar dia, i es pot desfer fins a triar el pla |
-| 4 | Seguiment: Analytics, el píxel de Meta i Google Ads, provats de cap a peus | Codi a punt (prova-publicitat 42/42, `VerVideo` nou). Falten els identificadors (Biel) |
+| 4 | Seguiment: Analytics, el píxel de Meta i Google Ads, provats de cap a peus | Meta, fet: el píxel (a la previsualització) i l'API de conversions, amb el testimoni a Vercel des del 14-10 (prova-publicitat 46/46). En publicar, posar `VITE_META_PIXEL_ID` també a *Production*. Falten els identificadors de Google Ads (Biel) |
 | 5 | Portada a l'ordinador: el 0 € repetit a «Gratis para siempre», les pantalles de 1280 px i els textos | Fet (13-10). Vespre: la targeta fosca del 0 € torna a «Gratis para siempre» (la vaig treure sense que el Biel ho decidís); el lema torna a animar-se (no corria per a ningú); «Hostly está pendiente» amb la pantalla sempre al mig (la «1 · Amb la pantalla») |
 | 6 | Funcionalitats: l'índex i les deu pàgines | Plantilla nova i textos repassats (13-10). Vespre: d'una funcionalitat a una altra, la pàgina nova comença a dalt, i passar a «Burocracia» ja no la deixa en blanc. Falta: les demos animades ensenyen l'app d'abril |
 | 7 | Per a qui és: propietaris, gestors petits, segona residència i hereus | Fet (13-10, vespre): l'entrada amb la targeta «Hoy, en …», la secció de cada perfil amb les peces de la portada, i després «Así se empieza», els preus i «Te llamo» |
@@ -52,7 +52,7 @@ Mentre no hi sigui, es treballa amb marcadors i no bloqueja la resta.
   - Si la comissió del pla gratis surt a la targeta.
   - Si es pot dir «partner oficial».
 - **Seguiment.**
-  - El píxel de Meta: es pot crear amb el token de l'«hostlyadsbot».
+  - Meta: fet (píxel i API de conversions). Queda posar el píxel a *Production* el dia de publicar.
   - La conversió de Google Ads: la crea ell i en passa els identificadors.
 - **GitHub.** Si el repo passa a privat.
 
