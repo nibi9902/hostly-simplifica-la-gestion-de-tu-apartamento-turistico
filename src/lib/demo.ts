@@ -33,6 +33,10 @@ function desfasMadrid(ymd: string): string {
   return "+01:00";
 }
 
+/** «Llamadme ahora» només de 9 a 21, hora de Madrid; fora d'aquestes hores no hi ha ningú per trucar. */
+const OBRE = 9;
+const TANCA = 21;
+
 /** L'instant exacte (ISO amb zona) d'una hora de Madrid. */
 export function isoDemo(ymd: string, hora: string): string {
   return `${ymd}T${hora}:00${desfasMadrid(ymd)}`;
@@ -45,6 +49,22 @@ function ymdMadrid(d: Date): { ymd: string; diaSetmana: number } {
   const v = (t: string) => parts.find((p) => p.type === t)?.value ?? "";
   const dies: Record<string, number> = { Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6, Sun: 7 };
   return { ymd: `${v("year")}-${v("month")}-${v("day")}`, diaSetmana: dies[v("weekday")] ?? 0 };
+}
+
+/** L'hora de Madrid (0–23) d'un instant. */
+function horaMadrid(d: Date): number {
+  return Number(new Intl.DateTimeFormat("en-GB", { timeZone: ZONA, hour: "2-digit", hourCycle: "h23" }).format(d));
+}
+
+/**
+ * Fora d'hores, el botó diu «Llamadme mañana» (el Biel, 14-10) i la trucada es desa per a les 9 del matí
+ * següent: aquest instant, o `null` si ara sí que es pot trucar.
+ */
+export function trucadaDema(ara: Date = new Date()): string | null {
+  const h = horaMadrid(ara);
+  if (h >= OBRE && h < TANCA) return null;
+  const dia = h >= TANCA ? new Date(ara.getTime() + 24 * 60 * 60 * 1000) : ara;
+  return isoDemo(ymdMadrid(dia).ymd, "09:00");
 }
 
 /** Els propers dies laborables amb alguna hora lliure (de dilluns a divendres). */

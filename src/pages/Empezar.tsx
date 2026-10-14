@@ -27,7 +27,7 @@ import hostlyMarca from "@/assets/hostly-marca.webp";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/analytics";
 import { correuValid, dadesRecordades, desaLead, recordaDades, telefonPerBD } from "@/lib/leads";
-import { diaLlarg, diesDemo, etiquetaDia, isoDemo } from "@/lib/demo";
+import { diaLlarg, diesDemo, etiquetaDia, isoDemo, trucadaDema } from "@/lib/demo";
 import { URL_ALTA_GRATUITA, type EstatEmpezar } from "@/lib/empezar";
 
 type Pas = "datos" | "plan" | "gratis" | "demo" | "demo_hecha" | "trucant";
@@ -79,6 +79,9 @@ export default function Empezar() {
   const [desant, setDesant] = useState(false);
 
   const dies = useMemo(() => diesDemo(), []);
+  // De 21:00 a 9:00 (Madrid), «Llamadme mañana»: es torna a mirar a cada pas
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const dema = useMemo(() => trucadaDema(), [pas]);
   // «O elige un día»: el calendari, plegat fins que el demana
   const [veureDies, setVeureDies] = useState(false);
   const [dia, setDia] = useState<string | null>(null);
@@ -144,17 +147,22 @@ export default function Empezar() {
     setPas("demo_hecha");
   }
 
-  // «Ara et truquem»: es desa com una trucada per ara mateix, i la BD avisa per Telegram com una demo
+  // «Ara et truquem»: es desa com una trucada per ara mateix (o, fora d'hores, per a les 9 del matí), i la
+  // BD avisa per Telegram com una demo
   async function trucaAra() {
     setDesant(true);
-    const r = await desaLead({ plan: "completo", demo_slot: new Date().toISOString(), answers: { trucar: "ara" } }, lang, desde);
+    const r = await desaLead(
+      { plan: "completo", demo_slot: dema ?? new Date().toISOString(), answers: { trucar: dema ? "demà" : "ara" } },
+      lang,
+      desde,
+    );
     setDesant(false);
     if (!r.ok) {
       setErrors({ general: t("empezar.error.guardar") });
       return;
     }
     setErrors({});
-    track("demo_solicitada", { variant: "ara" });
+    track("demo_solicitada", { variant: dema ? "dema" : "ara" });
     setPas("trucant");
   }
 
@@ -394,15 +402,15 @@ export default function Empezar() {
 
               <button type="button" onClick={trucaAra} disabled={desant} className={cn(botoPrimari, "w-full")}>
                 {desant && !veureDies ? (
-                  <span className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" aria-label={t("empezar.demo.ara")} />
+                  <span className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" aria-label={t(dema ? "empezar.demo.dema" : "empezar.demo.ara")} />
                 ) : (
                   <>
                     <Phone className="w-5 h-5" />
-                    {t("empezar.demo.ara")}
+                    {t(dema ? "empezar.demo.dema" : "empezar.demo.ara")}
                   </>
                 )}
               </button>
-              <p className="mt-3 text-sm text-muted-foreground text-center">{t("empezar.demo.ara_nota", { telefon: telefonVisible(telefon) })}</p>
+              <p className="mt-3 text-sm text-muted-foreground text-center">{t(dema ? "empezar.demo.dema_nota" : "empezar.demo.ara_nota", { telefon: telefonVisible(telefon) })}</p>
 
               {!veureDies && (
                 <button
@@ -508,9 +516,11 @@ export default function Empezar() {
                 <Phone className="w-7 h-7 text-primary" strokeWidth={2.2} />
               </div>
               <h1 ref={titolRef} tabIndex={-1} className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 focus:outline-none">
-                {primerNom ? t("empezar.trucant.titulo", { nombre: primerNom }) : t("empezar.trucant.titulo_sense_nom")}
+                {primerNom
+                  ? t(dema ? "empezar.trucant.titulo_dema" : "empezar.trucant.titulo", { nombre: primerNom })
+                  : t(dema ? "empezar.trucant.titulo_dema_sense_nom" : "empezar.trucant.titulo_sense_nom")}
               </h1>
-              <p className="text-lg text-muted-foreground mb-10">{t("empezar.trucant.texto", { telefon: telefonVisible(telefon) })}</p>
+              <p className="text-lg text-muted-foreground mb-10">{t(dema ? "empezar.trucant.texto_dema" : "empezar.trucant.texto", { telefon: telefonVisible(telefon) })}</p>
 
               <div className="rounded-3xl bg-white border border-slate-200 p-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
                 <div className="flex items-start gap-3">

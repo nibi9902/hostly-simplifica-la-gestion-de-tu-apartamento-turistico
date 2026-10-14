@@ -72,7 +72,9 @@
       "titulo_sense_nom": "Genial. Te ayudamos a conectarlo todo.",
       "ara": "Llamadme ahora",
       "ara_nota": "Te llamamos en unos minutos al {{telefon}}.",
-      "o_dia": "Prefiero elegir un día"
+      "o_dia": "Prefiero elegir un día",
+      "dema": "Llamadme mañana",
+      "dema_nota": "Ahora no estamos. Te llamamos mañana por la mañana al {{telefon}}."
     },
     "costat": {
       "titulo": "Cómo funciona",
@@ -100,7 +102,10 @@
       "titulo": "Te llamamos ahora, {{nombre}}.",
       "titulo_sense_nom": "Te llamamos ahora.",
       "texto": "En unos minutos, al {{telefon}}. Si no es buen momento, elige otro.",
-      "cambiar": "Elegir otro momento"
+      "cambiar": "Elegir otro momento",
+      "titulo_dema": "Te llamamos mañana, {{nombre}}.",
+      "titulo_dema_sense_nom": "Te llamamos mañana.",
+      "texto_dema": "Por la mañana, al {{telefon}}. Si te va mejor otro momento, elígelo."
     }
   },
   "calcula": {

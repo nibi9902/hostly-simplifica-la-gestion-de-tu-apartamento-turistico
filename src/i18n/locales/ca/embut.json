@@ -72,7 +72,9 @@
       "titulo_sense_nom": "Genial. T'ajudem a connectar-ho tot.",
       "ara": "Truqueu-me ara",
       "ara_nota": "Et truquem d'aquí a uns minuts al {{telefon}}.",
-      "o_dia": "Prefereixo triar un dia"
+      "o_dia": "Prefereixo triar un dia",
+      "dema": "Truqueu-me demà",
+      "dema_nota": "Ara no hi som. Et truquem demà al matí al {{telefon}}."
     },
     "costat": {
       "titulo": "Com funciona",
@@ -100,7 +102,10 @@
       "titulo": "Et truquem ara, {{nombre}}.",
       "titulo_sense_nom": "Et truquem ara.",
       "texto": "D'aquí a uns minuts, al {{telefon}}. Si no és bon moment, tria'n un altre.",
-      "cambiar": "Triar un altre moment"
+      "cambiar": "Triar un altre moment",
+      "titulo_dema": "Et truquem demà, {{nombre}}.",
+      "titulo_dema_sense_nom": "Et truquem demà.",
+      "texto_dema": "Al matí, al {{telefon}}. Si et va millor un altre moment, tria'l."
     }
   },
   "calcula": {

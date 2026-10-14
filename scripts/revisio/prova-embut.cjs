@@ -57,10 +57,11 @@ const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
     ok(`${nom} · el pas 2 desa el pla`, crides.some((c) => c.p_dades?.plan === 'completo'));
     ok(`${nom} · el pas de la trucada no parla de cap «demo»`, !/demo/i.test(await p.locator('main').innerText()));
     await p.screenshot({ path: `${OUT}/${nom}-empezar-3-demo.png`, fullPage: true });
-    await p.click('text=Llamadme ahora');
-    await p.waitForSelector('text=Te llamamos ahora,');
-    const ara = crides.find((c) => c.p_dades?.answers?.trucar === 'ara');
-    ok(`${nom} · «Llamadme ahora» desa la trucada (${ara?.p_dades?.demo_slot ?? '—'})`, !!ara?.p_dades?.demo_slot && ara.p_dades.plan === 'completo');
+    // De 9 a 21 (Madrid) diu «Llamadme ahora»; de nit, «Llamadme mañana» (els dos casos, amb l'hora fixada, al final)
+    await p.click('text=/Llamadme (ahora|mañana)/');
+    await p.waitForSelector('text=/Te llamamos (ahora|mañana),/');
+    const ara = crides.find((c) => ['ara', 'demà'].includes(c.p_dades?.answers?.trucar));
+    ok(`${nom} · «Llamadme» desa la trucada (${ara?.p_dades?.answers?.trucar} · ${ara?.p_dades?.demo_slot ?? '—'})`, !!ara?.p_dades?.demo_slot && ara.p_dades.plan === 'completo');
     ok(`${nom} · el número es llegeix bé (612 34 56 78)`, (await p.locator('main').innerText()).includes('612 34 56 78'));
     await p.screenshot({ path: `${OUT}/${nom}-empezar-3-ara.png`, fullPage: true });
     await p.click('text=Atrás');
@@ -178,6 +179,37 @@ const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
     await p.screenshot({ path: `${OUT}/${nom}-portada-truca.png` });
     ok(`${nom} · sense errors a la consola (${errors.length})`, errors.length === 0);
     if (errors.length) resultats.push('   ' + errors.slice(0, 5).join('\n   '));
+    await ctx.close();
+  }
+  // «Llamadme ahora» de 9 a 21 (Madrid) i «Llamadme mañana» de nit. El rellotge es fixa ABANS d'obrir la pàgina:
+  // canviar-lo a mitja prova deixa aturades les animacions entre passos.
+  for (const [quan, hora, boto, titol, slot] of [
+    ['dia (11:00)', '2026-10-15T11:00:00+02:00', 'Llamadme ahora', 'Te llamamos ahora,', null],
+    ['nit (22:30)', '2026-10-15T22:30:00+02:00', 'Llamadme mañana', 'Te llamamos mañana,', '2026-10-16T09:00:00+02:00'],
+  ]) {
+    const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
+    await ctx.clock.setFixedTime(new Date(hora));
+    await ctx.addInitScript(() => { try { localStorage.setItem('hostly_galetes', JSON.stringify({ analitiques: false, data: Date.now() })); } catch (e) {} });
+    const p = await ctx.newPage();
+    const crides = [];
+    await p.route('**/rest/v1/rpc/web_lead_desa', async (route) => {
+      crides.push(JSON.parse(route.request().postData() || '{}'));
+      await route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok": true}' });
+    });
+    await p.goto(`${BASE}/es/empezar`, { waitUntil: 'networkidle' });
+    await p.fill('#emp-tel', '612 345 678');
+    await p.fill('#emp-nom', 'Marta Puig');
+    await p.fill('#emp-correu', 'marta@exemple.com');
+    await p.click('button[type=submit]');
+    await p.waitForSelector('text=¿Qué quieres que haga Hostly por ti?');
+    await p.click('text=Hostly completo');
+    await p.waitForSelector(`text=${boto}`);
+    ok(`${quan} · el botó diu «${boto}»`, (await p.getByRole('button', { name: boto }).count()) === 1);
+    await p.click(`text=${boto}`);
+    await p.waitForSelector(`text=${titol}`);
+    const desat = crides.filter((c) => c.p_dades?.answers?.trucar).pop()?.p_dades;
+    ok(`${quan} · es desa la trucada (${desat?.answers?.trucar} · ${desat?.demo_slot})`, slot ? desat?.demo_slot === slot && desat?.answers?.trucar === 'demà' : desat?.answers?.trucar === 'ara' && new Date(desat?.demo_slot).getTime() === new Date(hora).getTime());
+    await p.screenshot({ path: `${OUT}/hora-${slot ? 'nit' : 'dia'}.png` });
     await ctx.close();
   }
   await b.close();
