@@ -326,11 +326,19 @@
       "neteja": {
         "titol": "0 trucades",
         "titol_gris": "per quadrar la neteja.",
-        "text": "Cada sortida crea la seva neteja i avisa l'equip per WhatsApp.",
-        "pis": "Cala Moreta · avui",
+        "text": "Cada sortida crea la seva neteja i Hostly la confirma amb el teu equip per WhatsApp.",
+        "rol": "Neteja",
+        "avui": "Avui",
+        "dema": "Demà",
+        "hostly": "Hola, Pilar. Demà hi ha sortida a Cala Moreta a les 11:00. Et va bé?",
+        "resposta": "Sí, hi seré 👍",
         "coordinada": "Coordinada",
+        "sola": "sense que facis res",
+        "fotos": "Fet. Et deixo les fotos.",
         "feta": "Feta",
-        "equip": "El teu equip"
+        "llesta": "a punt per entrar",
+        "seguent": "Si no pot, passa a la Carmen, la següent del torn.",
+        "aria": "Hostly escriu a la Pilar per WhatsApp per a la neteja de demà, ella confirma i, en acabar, envia les fotos. La neteja passa a Coordinada i després a Feta."
       },
       "calendari": {
         "titol": "Un sol calendari",
@@ -340,19 +348,44 @@
       "extres": {
         "titol": "+25 €",
         "titol_gris": "per cada sortida tardana que vens.",
-        "concepte": "Sortida tardana · Camille",
-        "pagat": "Pagat en línia",
-        "mes": "el que cobraràs aquest mes"
+        "text": "Un missatge automàtic l'ofereix a l'hoste, ell la paga en línia i, si hi cap al calendari, es confirma sola.",
+        "auto_et": "Automàtic · Sortida tardana",
+        "auto": "Vols sortir més tard? Fins a les 13:00 per 25 €: hostlylabs.com/i/m7dq4",
+        "pagament_et": "Pagament en línia",
+        "pagament": "Sortida tardana · 13:00",
+        "pagar": "Pagar",
+        "pagat": "Pagat",
+        "confirmat_et": "Confirmada sola",
+        "confirmat": "La Camille surt a les 13:00",
+        "neteja_avisada": "La Pilar, avisada",
+        "mes": "el que cobraràs aquest mes",
+        "mes_extres": "+150 € d'extres",
+        "pont": "Missatge automàtic → cobrament en línia",
+        "aria": "Un missatge automàtic ofereix a la Camille sortir a les 13:00 per 25 €. Ella paga en línia, la sortida tardana es confirma sola i la Pilar queda avisada."
       },
       "nom_pas": [
         "Missatges",
         "Preus",
         "Neteja",
         "Calendari",
-        "Extres i comptes"
+        "Extres i comptes",
+        "Connecta-ho tot"
       ],
       "anterior": "Anterior",
-      "seguent": "Següent"
+      "seguent": "Següent",
+      "connecta": {
+        "retol": "Connecta-ho tot",
+        "titol": "Fas servir una altra eina?",
+        "titol_gris": "La connectem amb Hostly.",
+        "text": "La teva gestoria, la web o l'ERP: ho deixem automàtic. És un servei a part, a mida.",
+        "nodes": [
+          "Gestoria",
+          "La teva web",
+          "ERP",
+          "Full de càlcul",
+          "El que facis servir"
+        ]
+      }
     },
     "passos": {
       "retol": "En tres passos",

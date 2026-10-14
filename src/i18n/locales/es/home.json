@@ -326,11 +326,19 @@
       "neteja": {
         "titol": "0 llamadas",
         "titol_gris": "para cuadrar la limpieza.",
-        "text": "Cada salida crea su limpieza y avisa al equipo por WhatsApp.",
-        "pis": "Cala Moreta · hoy",
+        "text": "Cada salida crea su limpieza y Hostly se la confirma a tu equipo por WhatsApp.",
+        "rol": "Limpieza",
+        "avui": "Hoy",
+        "dema": "Mañana",
+        "hostly": "Hola, Pilar. Mañana hay salida en Cala Moreta a las 11:00. ¿Te va bien?",
+        "resposta": "Sí, allí estaré 👍",
         "coordinada": "Coordinada",
+        "sola": "sin que hagas nada",
+        "fotos": "Hecho. Te dejo las fotos.",
         "feta": "Hecha",
-        "equip": "Tu equipo"
+        "llesta": "lista para entrar",
+        "seguent": "Si no puede, pasa a Carmen, la siguiente del turno.",
+        "aria": "Hostly escribe a Pilar por WhatsApp para la limpieza de mañana, ella confirma y, al acabar, manda las fotos. La limpieza pasa a Coordinada y después a Hecha."
       },
       "calendari": {
         "titol": "Un solo calendario",
@@ -340,19 +348,44 @@
       "extres": {
         "titol": "+25 €",
         "titol_gris": "por cada salida tardía que vendes.",
-        "concepte": "Salida tardía · Camille",
-        "pagat": "Pagado online",
-        "mes": "lo que cobrarás este mes"
+        "text": "Un mensaje automático se la ofrece al huésped, él la paga online y, si cabe en el calendario, se confirma sola.",
+        "auto_et": "Automático · Salida tardía",
+        "auto": "¿Quieres salir más tarde? Hasta las 13:00 por 25 €: hostlylabs.com/i/m7dq4",
+        "pagament_et": "Pago online",
+        "pagament": "Salida tardía · 13:00",
+        "pagar": "Pagar",
+        "pagat": "Pagado",
+        "confirmat_et": "Confirmada sola",
+        "confirmat": "Camille sale a las 13:00",
+        "neteja_avisada": "Pilar, avisada",
+        "mes": "lo que cobrarás este mes",
+        "mes_extres": "+150 € de extras",
+        "pont": "Mensaje automático → cobro online",
+        "aria": "Un mensaje automático ofrece a Camille salir a las 13:00 por 25 €. Ella paga online, la salida tardía se confirma sola y Pilar queda avisada."
       },
       "nom_pas": [
         "Mensajes",
         "Precios",
         "Limpieza",
         "Calendario",
-        "Extras y cuentas"
+        "Extras y cuentas",
+        "Conéctalo todo"
       ],
       "anterior": "Anterior",
-      "seguent": "Siguiente"
+      "seguent": "Siguiente",
+      "connecta": {
+        "retol": "Conéctalo todo",
+        "titol": "¿Usas otra herramienta?",
+        "titol_gris": "La conectamos con Hostly.",
+        "text": "Tu gestoría, tu web o tu ERP: lo dejamos automático. Es un servicio aparte, a medida.",
+        "nodes": [
+          "Gestoría",
+          "Tu web",
+          "ERP",
+          "Hoja de cálculo",
+          "Lo que uses"
+        ]
+      }
     },
     "passos": {
       "retol": "En tres pasos",

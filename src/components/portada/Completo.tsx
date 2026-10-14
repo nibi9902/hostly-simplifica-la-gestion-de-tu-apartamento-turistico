@@ -7,18 +7,29 @@
  * - Mensajes: la conversa amb la IA, amb la traducció que veu el gestor; canvia d'idioma sola (o amb la
  *   barra de sota) i la IA «escriu» abans de contestar.
  * - Precios: el detall d'un dia de Setmana Santa, amb el preu que puja, la demanda i el festiu.
- * - Limpieza: la neteja de la Pilar, que passa de «Coordinada» a «Hecha».
+ * - Limpieza (alta): el WhatsApp de Hostly amb la Pilar, amb les hores com a WhatsApp. Ella confirma, la
+ *   neteja passa a «Coordinada» sense que el gestor faci res, i l'endemà envia les fotos: «Hecha». Si no
+ *   pot, passa a la següent del torn.
  * - Calendario: les reserves de cada canal en un sol calendari, com la vista General de l'app.
- * - Extras y cuentas: la sortida tardana pagada i «lo que cobrarás este mes».
+ * - Extras y cuentas (ampla, a sota de Mensajes): el missatge automàtic que ofereix la sortida tardana
+ *   (l'enllaç és com els de l'app, hostlylabs.com/i/…), el pagament en línia i la confirmació sola, amb la
+ *   Pilar avisada; a la dreta, el que cobraràs aquest mes i quant hi posen els extres. Una píndola la
+ *   lliga amb Mensajes.
+ * - Conéctalo todo: la idea que, si fas servir una altra eina, la connectem (servei a part, a mida).
+ * El Biel (14-10, segona volta): «la neteja… com confirma automàticament la neteja amb el teu equip…
+ * els extres ha de quedar clar que automàticament es ven un late checkout i que es cobra… un enllaç
+ * entre el mòdul de missatges automàtics i els cobraments extres i apart un lloc on surti la idea de
+ * que podem connectar i automatitzar el que es necessiti». Tot el que s'hi diu és el que fa l'app: la
+ * sortida tardana l'ofereix un missatge automàtic, es paga en línia i es confirma sola si hi cap.
  * Les frases són les de la targeta del Completo als preus. La rodona amb fletxa porta a la pàgina de
  * cada funció. Al mòbil, les rajoles llisquen de costat.
- * Moviment: GSAP com la resta de la portada, només mentre es veu; amb «reduir moviment», quiet i sencer.
+ * Moviment: GSAP i estats de React, només mentre es veu; amb «reduir moviment», quiet i sencer.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, RefreshCw, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Briefcase, Check, CheckCheck, Database, Globe, Plus, RefreshCw, Sparkles, Table2, Zap } from "lucide-react";
 import { LangLink } from "@/i18n/LangLink";
 import { useLang } from "@/i18n/useLang";
 import fotoMissatges from "@/assets/portada/gestor-tarda.webp";
@@ -32,6 +43,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 type Conversa = { idioma: string; qui: string; canal: "airbnb" | "booking" | "whatsapp"; hoste: string; traduccio: string; ia: string };
 const LOGO = { airbnb, booking, whatsapp } as const;
+const ICONES_NODES = [Briefcase, Globe, Database, Table2, Plus];
+
+/** «8.549», com a l'app (amb Intl, en castellà i català el punt dels milers no surt fins a cinc xifres). */
+const milers = (n: number) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 /** La rodona amb fletxa: porta a la pàgina de la funció. */
 function Fletxa({ a, que, vidre = false }: { a: string; que: string; vidre?: boolean }) {
@@ -41,6 +56,24 @@ function Fletxa({ a, que, vidre = false }: { a: string; que: string; vidre?: boo
       <ArrowUpRight className="pt-ic" aria-hidden="true" />
     </LangLink>
   );
+}
+
+/** Un pas que avança sol mentre es veu: 0, 1, 2… fins a `fins`, s'hi queda una estona i torna a començar. */
+function usePassos(actiu: boolean, quiet: boolean, fins: number, cada = 1300, espera = 3800) {
+  const [pas, setPas] = useState(fins);
+  useEffect(() => {
+    if (!actiu || quiet) { setPas(fins); return; }
+    let viu = true;
+    let id = 0;
+    const segueix = (p: number) => {
+      if (!viu) return;
+      setPas(p);
+      id = window.setTimeout(() => segueix(p >= fins ? 0 : p + 1), p >= fins ? espera : cada);
+    };
+    segueix(0);
+    return () => { viu = false; window.clearTimeout(id); };
+  }, [actiu, quiet, fins, cada, espera]);
+  return pas;
 }
 
 function Missatges({ actiu, quiet }: { actiu: boolean; quiet: boolean }) {
@@ -100,6 +133,136 @@ function Missatges({ actiu, quiet }: { actiu: boolean; quiet: boolean }) {
   );
 }
 
+/** La neteja: el WhatsApp de Hostly amb la Pilar, de la sortida a «Hecha». */
+function Neteja({ actiu, quiet, nom }: { actiu: boolean; quiet: boolean; nom: string }) {
+  const { t } = useTranslation("home");
+  // 0 avui · 1 Hostly escriu · 2 la Pilar escriu · 3 «sí» i Coordinada · 4 l'endemà, les fotos · 5 Hecha
+  const pas = usePassos(actiu, quiet, 5);
+  const k = (n: number) => `pt-cmp-pas${pas >= n ? " vist" : ""}`;
+  return (
+    <article className="pt-cmp-t pt-cmp-clar pt-cmp-neteja">
+      <div className="pt-cmp-dalt">
+        <p className="pt-cmp-pindola">{nom}</p>
+        <Fletxa a="/funcionalidades/gestion-de-limpiezas" que={nom} />
+      </div>
+      <h3 className="pt-cmp-h3">{t("portada.completo.neteja.titol")} <span className="pt-cmp-gris">{t("portada.completo.neteja.titol_gris")}</span></h3>
+      <p className="pt-cmp-p">{t("portada.completo.neteja.text")}</p>
+      <div className="pt-cmp-wa" role="img" aria-label={t("portada.completo.neteja.aria")}>
+        <div className="pt-cmp-wa-cap" aria-hidden="true">
+          <span className="pt-cmp-av" style={{ background: "#0f766e" }}>P</span>
+          <span className="pt-cmp-qui"><b>Pilar</b><small>{t("portada.completo.neteja.rol")}</small></span>
+          <img src={whatsapp} alt="" width={20} height={20} />
+        </div>
+        <div className="pt-cmp-wa-cos" aria-hidden="true">
+          <p className={`pt-cmp-wa-dia ${k(0)}`}>{t("portada.completo.neteja.avui")}</p>
+          <div className={`pt-cmp-wa-b surt ${k(1)}`}>
+            {t("portada.completo.neteja.hostly")}
+            <small className="pt-cmp-wa-h">18:02<CheckCheck className="pt-ic" /></small>
+          </div>
+          {pas === 2
+            ? <div className="pt-cmp-wa-b entra pt-cmp-escriu pt-cmp-pas vist"><i /><i /><i /></div>
+            : <div className={`pt-cmp-wa-b entra ${k(3)}`}>{t("portada.completo.neteja.resposta")}<small className="pt-cmp-wa-h">18:05</small></div>}
+          <p className={`pt-cmp-wa-estat ${k(3)}`}>
+            <span className="pt-cmp-estat"><Check className="pt-ic" strokeWidth={3} />{t("portada.completo.neteja.coordinada")}</span>
+            <small>{t("portada.completo.neteja.sola")}</small>
+          </p>
+          <p className={`pt-cmp-wa-dia ${k(4)}`}>{t("portada.completo.neteja.dema")}</p>
+          <div className={`pt-cmp-wa-b entra ${k(4)}`}>
+            <span className="pt-cmp-wa-fotos">
+              {["15% 60%", "55% 70%", "90% 55%"].map((pos) => <i key={pos} style={{ backgroundImage: `url(${fotoPreus})`, backgroundPosition: pos }} />)}
+            </span>
+            {t("portada.completo.neteja.fotos")}
+            <small className="pt-cmp-wa-h">13:40</small>
+          </div>
+          <p className={`pt-cmp-wa-estat ${k(5)}`}>
+            <span className="pt-cmp-estat feta"><Check className="pt-ic" strokeWidth={3} />{t("portada.completo.neteja.feta")}</span>
+            <small>{t("portada.completo.neteja.llesta")}</small>
+          </p>
+        </div>
+      </div>
+      <p className="pt-cmp-seg">
+        <span className="pt-cmp-av" style={{ background: "#b45309" }} aria-hidden="true">C</span>
+        {t("portada.completo.neteja.seguent")}
+      </p>
+    </article>
+  );
+}
+
+/** Els extres: el missatge automàtic → el pagament → la confirmació sola. */
+function Extres({ actiu, quiet, nom }: { actiu: boolean; quiet: boolean; nom: string }) {
+  const { t } = useTranslation("home");
+  // 0 el missatge automàtic · 1 el pagament (Pagar) · 2 Pagado · 3 confirmada i la Pilar avisada
+  const pas = usePassos(actiu, quiet, 3, 1500, 4200);
+  const k = (n: number) => `pt-cmp-pas${pas >= n ? " vist" : ""}`;
+  return (
+    <article className="pt-cmp-t pt-cmp-clar pt-cmp-extres">
+      <div className="pt-cmp-dalt">
+        <p className="pt-cmp-pindola">{nom}</p>
+        <Fletxa a="/funcionalidades/finanzas" que={nom} />
+      </div>
+      <div className="pt-cmp-ext-cap">
+        <div className="pt-cmp-ext-text">
+          <h3 className="pt-cmp-h3">{t("portada.completo.extres.titol")} <span className="pt-cmp-gris">{t("portada.completo.extres.titol_gris")}</span></h3>
+          <p className="pt-cmp-p">{t("portada.completo.extres.text")}</p>
+        </div>
+        <p className="pt-cmp-mes" aria-hidden="true">
+          <b><span className="pt-cmp-mes-n">{milers(8549)}</span> €</b>
+          <small>{t("portada.completo.extres.mes")}</small>
+          <span className="pt-cmp-x pt-cmp-x-verd">{t("portada.completo.extres.mes_extres")}</span>
+        </p>
+      </div>
+      <div className="pt-cmp-ext-flux" role="img" aria-label={t("portada.completo.extres.aria")}>
+        <div className={`pt-cmp-ext-pas ${k(0)}`} aria-hidden="true">
+          <small className="pt-cmp-ext-et"><Zap className="pt-ic" />{t("portada.completo.extres.auto_et")}</small>
+          <p className="pt-cmp-ext-auto">{t("portada.completo.extres.auto")}</p>
+        </div>
+        <span className={`pt-cmp-ext-fl ${k(1)}`} aria-hidden="true"><ArrowRight className="pt-ic" /></span>
+        <div className={`pt-cmp-ext-pas ${k(1)}`} aria-hidden="true">
+          <small className="pt-cmp-ext-et">{t("portada.completo.extres.pagament_et")}</small>
+          <p className="pt-cmp-fila-p"><b>{t("portada.completo.extres.pagament")}</b><b className="pt-cmp-num">25 €</b></p>
+          {pas >= 2
+            ? <span className="pt-cmp-estat feta"><Check className="pt-ic" strokeWidth={3} />{t("portada.completo.extres.pagat")}</span>
+            : <span className="pt-cmp-ext-pagar">{t("portada.completo.extres.pagar")}</span>}
+        </div>
+        <span className={`pt-cmp-ext-fl ${k(3)}`} aria-hidden="true"><ArrowRight className="pt-ic" /></span>
+        <div className={`pt-cmp-ext-pas ${k(3)}`} aria-hidden="true">
+          <small className="pt-cmp-ext-et">{t("portada.completo.extres.confirmat_et")}</small>
+          <p className="pt-cmp-ext-conf"><b>{t("portada.completo.extres.confirmat")}</b></p>
+          <span className="pt-cmp-ext-pilar"><span className="pt-cmp-av" style={{ background: "#0f766e" }}>P</span>{t("portada.completo.extres.neteja_avisada")}<Check className="pt-ic" strokeWidth={3} /></span>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+/** «Conéctalo todo»: Hostly al mig i, al voltant, el que el gestor ja fa servir. */
+function Connecta({ nom }: { nom: string }) {
+  const { t } = useTranslation("home");
+  const nodes = t("portada.completo.connecta.nodes", { returnObjects: true }) as string[];
+  return (
+    <article className="pt-cmp-t pt-cmp-clar pt-cmp-connecta">
+      <div className="pt-cmp-dalt">
+        <p className="pt-cmp-pindola">{t("portada.completo.connecta.retol")}</p>
+        <Fletxa a="/funcionalidades/conecta-todo" que={nom} />
+      </div>
+      <h3 className="pt-cmp-h3">{t("portada.completo.connecta.titol")} <span className="pt-cmp-gris">{t("portada.completo.connecta.titol_gris")}</span></h3>
+      <div className="pt-cmp-xarxa" aria-hidden="true">
+        <svg className="pt-cmp-fils" viewBox="0 0 300 120" preserveAspectRatio="none">
+          {[[66, 19], [234, 19], [54, 98], [246, 98], [150, 115]].map(([x, y], i) => (
+            <path key={i} d={`M150 60 L${x} ${y}`} />
+          ))}
+        </svg>
+        <span className="pt-cmp-cor"><img src={iconaApp} alt="" width={30} height={30} /></span>
+        {nodes.map((n, i) => {
+          const Icona = ICONES_NODES[i] ?? Plus;
+          return <span key={n} className={`pt-cmp-node n${i}`}><Icona className="pt-ic" />{n}</span>;
+        })}
+      </div>
+      <p className="pt-cmp-p">{t("portada.completo.connecta.text")}</p>
+    </article>
+  );
+}
+
 export default function Completo() {
   const { t } = useTranslation("home");
   const { lang } = useLang();
@@ -107,36 +270,18 @@ export default function Completo() {
   const graellaRef = useRef<HTMLDivElement>(null);
   const [actiu, setActiu] = useState(false);
   const [quiet, setQuiet] = useState(false);
-  const [neteja, setNeteja] = useState<"coordinada" | "feta">("feta");
   const [pas, setPas] = useState(0);
   const noms = t("portada.completo.nom_pas", { returnObjects: true }) as string[];
-  // «8.549», com a l'app (amb Intl, en castellà i català el punt dels milers no surt fins a cinc xifres)
-  const eur = { format: (n: number) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".") };
 
   // Es mou només mentre es veu; amb «reduir moviment», quiet
   useEffect(() => {
     const s = seccioRef.current;
     if (!s) return;
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setQuiet(mq.matches);
-    const io = new IntersectionObserver(([e]) => setActiu(e.isIntersecting), { threshold: 0.15 });
+    setQuiet(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const io = new IntersectionObserver(([e]) => setActiu(e.isIntersecting), { threshold: 0.12 });
     io.observe(s);
     return () => io.disconnect();
   }, []);
-
-  // La neteja: «Coordinada» → «Hecha», i torna a començar
-  useEffect(() => {
-    if (!actiu || quiet) { setNeteja("feta"); return; }
-    let viu = true;
-    const volta = () => {
-      if (!viu) return;
-      setNeteja("coordinada");
-      window.setTimeout(() => { if (viu) setNeteja("feta"); }, 1800);
-    };
-    volta();
-    const id = window.setInterval(volta, 6000);
-    return () => { viu = false; window.clearInterval(id); };
-  }, [actiu, quiet]);
 
   // L'entrada de les rajoles, el preu que puja i el que cobraràs
   useEffect(() => {
@@ -144,19 +289,19 @@ export default function Completo() {
     if (!s) return;
     const mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
-      const rajoles = s.querySelectorAll(".pt-cmp-t");
+      const rajoles = s.querySelectorAll(".pt-cmp-t, .pt-cmp-pont");
       gsap.set(rajoles, { autoAlpha: 0, y: 18 });
       const entra = ScrollTrigger.create({
         trigger: s, start: "top 75%", once: true,
-        onEnter: () => gsap.to(rajoles, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power3.out", stagger: 0.08 }),
+        onEnter: () => gsap.to(rajoles, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power3.out", stagger: 0.07 }),
       });
       const nPreu = s.querySelector(".pt-cmp-preu-n") as HTMLElement;
       const xipsPreu = s.querySelectorAll(".pt-cmp-dia .pt-cmp-x");
       const preu = { v: 145 };
       const tlPreu = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 0.4 });
       tlPreu.set(xipsPreu, { autoAlpha: 0, y: 4 }, 0)
-        .call(() => { preu.v = 145; nPreu.textContent = eur.format(145); }, undefined, 0)
-        .to(preu, { v: 251, duration: 1.3, ease: "power3.out", onUpdate: () => { nPreu.textContent = eur.format(Math.round(preu.v)); } }, 0.5)
+        .call(() => { preu.v = 145; nPreu.textContent = milers(145); }, undefined, 0)
+        .to(preu, { v: 251, duration: 1.3, ease: "power3.out", onUpdate: () => { nPreu.textContent = milers(preu.v); } }, 0.5)
         .to(xipsPreu, { autoAlpha: 1, y: 0, duration: 0.4, ease: "power3.out", stagger: 0.12 }, 1.2)
         .to(xipsPreu, { autoAlpha: 0, duration: 0.3, ease: "power2.in" }, 6.4);
       const viu = ScrollTrigger.create({ trigger: s, start: "top 85%", end: "bottom 10%", onToggle: (st) => { if (st.isActive) tlPreu.play(); else tlPreu.pause(); } });
@@ -164,34 +309,34 @@ export default function Completo() {
       const mes = { v: 0 };
       const compta = ScrollTrigger.create({
         trigger: nMes, start: "top 90%", once: true,
-        onEnter: () => gsap.to(mes, { v: 8549, duration: 1.6, ease: "power3.out", onUpdate: () => { nMes.textContent = eur.format(Math.round(mes.v)); } }),
+        onEnter: () => gsap.to(mes, { v: 8549, duration: 1.6, ease: "power3.out", onUpdate: () => { nMes.textContent = milers(mes.v); } }),
       });
       return () => {
         entra.kill(); viu.kill(); compta.kill(); tlPreu.kill();
         gsap.set(rajoles, { clearProps: "all" });
         gsap.set(xipsPreu, { clearProps: "all" });
-        nPreu.textContent = eur.format(251);
-        nMes.textContent = eur.format(8549);
+        nPreu.textContent = milers(251);
+        nMes.textContent = milers(8549);
       };
     });
     return () => mm.revert();
-    // eur canvia amb l'idioma
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang]);
 
-  // Al mòbil, les rajoles llisquen: els botons i els punts
+  // Al mòbil, les rajoles llisquen: els botons i els punts. Les distàncies es mesuren a la pantalla (no amb
+  // offsetLeft, que canvia de referència si la graella passa a estar posicionada).
+  const rajoles = () => [...(graellaRef.current?.querySelectorAll<HTMLElement>(":scope > .pt-cmp-t") ?? [])];
+  const inici = (g: HTMLElement) => g.getBoundingClientRect().left + (parseFloat(getComputedStyle(g).scrollPaddingInlineStart) || 0);
   const vesA = useCallback((i: number) => {
     const g = graellaRef.current;
-    const fill = g?.children[i] as HTMLElement | undefined;
-    if (g && fill) g.scrollTo({ left: fill.offsetLeft - g.offsetLeft, behavior: quiet ? "auto" : "smooth" });
+    const fill = rajoles()[i];
+    if (g && fill) g.scrollTo({ left: g.scrollLeft + fill.getBoundingClientRect().left - inici(g), behavior: quiet ? "auto" : "smooth" });
   }, [quiet]);
   const enLliscar = () => {
     const g = graellaRef.current;
     if (!g) return;
-    const fills = [...g.children] as HTMLElement[];
-    let millor = 0;
-    fills.forEach((f, i) => { if (Math.abs(f.offsetLeft - g.offsetLeft - g.scrollLeft) < Math.abs(fills[millor].offsetLeft - g.offsetLeft - g.scrollLeft)) millor = i; });
-    setPas(millor);
+    const vora = inici(g);
+    const dist = rajoles().map((f) => Math.abs(f.getBoundingClientRect().left - vora));
+    setPas(dist.indexOf(Math.min(...dist)));
   };
 
   return (
@@ -220,7 +365,7 @@ export default function Completo() {
               <span className="pt-cmp-xip pt-cmp-vidre"><RefreshCw className="pt-ic" />{t("portada.completo.preus.xip")}</span>
               <div className="pt-cmp-dia pt-cmp-vidre">
                 <small>{t("portada.completo.preus.dia")}</small>
-                <p><b><span className="pt-cmp-preu-n">{eur.format(251)}</span> €</b><span>{t("portada.completo.preus.nit")}</span></p>
+                <p><b><span className="pt-cmp-preu-n">{milers(251)}</span> €</b><span>{t("portada.completo.preus.nit")}</span></p>
                 <div className="pt-cmp-xs">
                   <span className="pt-cmp-x pt-cmp-x-verd">{t("portada.completo.preus.demanda")}</span>
                   <span className="pt-cmp-x pt-cmp-x-ambre">{t("portada.completo.preus.festiu")}</span>
@@ -229,30 +374,7 @@ export default function Completo() {
             </div>
           </article>
 
-          <article className="pt-cmp-t pt-cmp-clar pt-cmp-neteja">
-            <div className="pt-cmp-dalt">
-              <p className="pt-cmp-pindola">{noms[2]}</p>
-              <Fletxa a="/funcionalidades/gestion-de-limpiezas" que={noms[2]} />
-            </div>
-            <h3 className="pt-cmp-h3">{t("portada.completo.neteja.titol")} <span className="pt-cmp-gris">{t("portada.completo.neteja.titol_gris")}</span></h3>
-            <p className="pt-cmp-p">{t("portada.completo.neteja.text")}</p>
-            <div className="pt-cmp-mostra" aria-hidden="true">
-              <div className="pt-cmp-fila">
-                <span className="pt-cmp-av" style={{ background: "#0f766e" }}>P</span>
-                <span className="pt-cmp-qui"><b>Pilar</b><small>{t("portada.completo.neteja.pis")}</small></span>
-                <span className={`pt-cmp-estat ${neteja === "feta" ? "feta" : ""}`}>
-                  {neteja === "feta" ? <><Check className="pt-ic" strokeWidth={3} />{t("portada.completo.neteja.feta")}</> : t("portada.completo.neteja.coordinada")}
-                </span>
-              </div>
-              <div className="pt-cmp-equip">
-                <span className="pt-cmp-av petit" style={{ background: "#0f766e" }}>P</span>
-                <span className="pt-cmp-av petit" style={{ background: "#b45309" }}>C</span>
-                <span className="pt-cmp-av petit" style={{ background: "#6d28d9" }}>M</span>
-                <small>{t("portada.completo.neteja.equip")}</small>
-                <img src={whatsapp} alt="" width={18} height={18} />
-              </div>
-            </div>
-          </article>
+          <Neteja actiu={actiu} quiet={quiet} nom={noms[2]} />
 
           <article className="pt-cmp-t pt-cmp-clar pt-cmp-cal">
             <div className="pt-cmp-dalt">
@@ -280,18 +402,11 @@ export default function Completo() {
             </div>
           </article>
 
-          <article className="pt-cmp-t pt-cmp-clar pt-cmp-extres">
-            <div className="pt-cmp-dalt">
-              <p className="pt-cmp-pindola">{noms[4]}</p>
-              <Fletxa a="/funcionalidades/finanzas" que={noms[4]} />
-            </div>
-            <h3 className="pt-cmp-h3">{t("portada.completo.extres.titol")} <span className="pt-cmp-gris">{t("portada.completo.extres.titol_gris")}</span></h3>
-            <div className="pt-cmp-mostra" aria-hidden="true">
-              <div className="pt-cmp-fila"><span className="pt-cmp-qui"><b>{t("portada.completo.extres.concepte")}</b></span><b className="pt-cmp-num">25 €</b></div>
-              <span className="pt-cmp-estat feta"><Check className="pt-ic" strokeWidth={3} />{t("portada.completo.extres.pagat")}</span>
-              <p className="pt-cmp-mes"><b><span className="pt-cmp-mes-n">{eur.format(8549)}</span> €</b><small>{t("portada.completo.extres.mes")}</small></p>
-            </div>
-          </article>
+          <Extres actiu={actiu} quiet={quiet} nom={noms[4]} />
+          <Connecta nom={noms[5]} />
+
+          {/* L'enllaç entre Mensajes (a dalt) i els extres (a sota): els cobra un missatge automàtic */}
+          <p className="pt-cmp-pont" aria-hidden="true"><Zap className="pt-ic" />{t("portada.completo.extres.pont")}</p>
         </div>
 
         {/* Al mòbil: per passar d'una rajola a l'altra */}
