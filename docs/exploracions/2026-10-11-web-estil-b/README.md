@@ -434,6 +434,7 @@ menjador de la portada i dels pisos de la demo:
   blava (limpieza i extras), una foto ampla de nit (precios) i la frase «Todo lo demás, hecho.» que passa.
 - **I · La foto i la pestanya:** foto gran amb «Empezar» encaixat en una osca, pestanyes que canvien la foto i
   la frase, i sis xifres en caselles de línia discontínua (24/7, 1, 0, +16 %, +25 €, 40 € al mes per piso).
+- (14-10, vespre) **El Biel tria la G** («m'agrada moltíssim la idea… personalitzem-ho per Hostly»): feta a la portada, `src/components/portada/Completo.tsx`.
 - **J · Els punts sobre la foto:** un aparador amb els tres pisos, «Tus pisos, atendidos.» i la foto del pis
   amb etiquetes que assenyalen el que fa Hostly (01–05 canvien de funció).
 

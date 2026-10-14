@@ -256,6 +256,104 @@
         "cobrat": "+14,00 € al teu compte"
       }
     },
+    "completo": {
+      "retol": "Hostly Complet",
+      "titol": "Amb el Complet,",
+      "titol_gris": "tota la resta.",
+      "veure": "Com funciona: {{que}}",
+      "missatges": {
+        "titol": "Missatges",
+        "xip": "24/7",
+        "contesta": "Contesta la IA",
+        "pis": "Apartamento Cala Moreta",
+        "traduit": "Traduït",
+        "idioma": "En el seu idioma: {{idioma}}",
+        "seguent": "Veure un altre idioma",
+        "aria": "Un hoste escriu en el seu idioma i la IA de Hostly li contesta en el mateix idioma.",
+        "converses": [
+          {
+            "idioma": "francès",
+            "qui": "Camille",
+            "canal": "airbnb",
+            "hoste": "Bonjour ! À quelle heure peut-on entrer ?",
+            "traduccio": "Hola! A quina hora podem entrar?",
+            "ia": "Bonjour Camille ! À partir de 16 h. Demain matin, vous recevrez le code de la porte."
+          },
+          {
+            "idioma": "anglès",
+            "qui": "James",
+            "canal": "booking",
+            "hoste": "Hi! Is there parking nearby?",
+            "traduccio": "Hola! Hi ha aparcament a prop?",
+            "ia": "Hi James! Yes, there's a blue zone 80 m away, free from 8 pm to 9 am."
+          },
+          {
+            "idioma": "alemany",
+            "qui": "Lukas",
+            "canal": "whatsapp",
+            "hoste": "Hallo! Gibt es ein Kinderbett?",
+            "traduccio": "Hola! Hi ha bressol?",
+            "ia": "Hallo Lukas! Ja, ein Reisebett und einen Hochstuhl. Sie stehen bereit, wenn Sie ankommen."
+          },
+          {
+            "idioma": "italià",
+            "qui": "Giulia",
+            "canal": "airbnb",
+            "hoste": "Ciao! Possiamo lasciare le valigie dopo il check-out?",
+            "traduccio": "Hola! Podem deixar les maletes després de la sortida?",
+            "ia": "Ciao Giulia! Sì, fino alle 13. Potete lasciarle nell'ingresso."
+          },
+          {
+            "idioma": "català",
+            "qui": "Nora",
+            "canal": "whatsapp",
+            "hoste": "Hola! Quina és la contrasenya del wifi?",
+            "traduccio": "",
+            "ia": "Hola, Nora! La tens a la guia que t'hem enviat: la xarxa és CalaMoreta_WiFi."
+          }
+        ]
+      },
+      "preus": {
+        "titol": "Preus",
+        "text": "Puja i baixa els preus cada dia, segons la demanda.",
+        "xip": "Cada dia",
+        "dia": "Setmana Santa",
+        "nit": "/ nit",
+        "recomanat": "Recomanat",
+        "demanda": "Demanda +70 %",
+        "festiu": "Festiu"
+      },
+      "neteja": {
+        "titol": "0 trucades",
+        "titol_gris": "per quadrar la neteja.",
+        "text": "Cada sortida crea la seva neteja i avisa l'equip per WhatsApp.",
+        "pis": "Cala Moreta · avui",
+        "coordinada": "Coordinada",
+        "feta": "Feta",
+        "equip": "El teu equip"
+      },
+      "calendari": {
+        "titol": "Un sol calendari",
+        "text": "Airbnb, Booking, Vrbo i les teves reserves, sempre quadrats.",
+        "directa": "Directa"
+      },
+      "extres": {
+        "titol": "+25 €",
+        "titol_gris": "per cada sortida tardana que vens.",
+        "concepte": "Sortida tardana · Camille",
+        "pagat": "Pagat en línia",
+        "mes": "el que cobraràs aquest mes"
+      },
+      "nom_pas": [
+        "Missatges",
+        "Preus",
+        "Neteja",
+        "Calendari",
+        "Extres i comptes"
+      ],
+      "anterior": "Anterior",
+      "seguent": "Següent"
+    },
     "passos": {
       "retol": "En tres passos",
       "titol": "Així es comença.",

@@ -5,6 +5,7 @@ import Zero from "@/components/portada/Zero";
 import Gestors from "@/components/portada/Gestors";
 import Pendent from "@/components/portada/Pendent";
 import Gratis from "@/components/portada/Gratis";
+import Completo from "@/components/portada/Completo";
 import Passos from "@/components/portada/Passos";
 import Preus from "@/components/portada/Preus";
 import Truca from "@/components/portada/Truca";
@@ -23,7 +24,7 @@ import {
  * La portada (redisseny d'octubre 2026). L'entrada és només el lema, amb l'aspecte de l'entrada d'abans
  * (decisió del Biel del 13-10), i just a sota, el 0 € amb la cinta de logotips (també del 13-10). Després,
  * la portada que va aprovar a l'exploració `docs/exploracions/2026-10-11-web-estil-b/`: «Hostly está
- * pendiente» → «Gratis para siempre» → «Así se empieza» → gestors (des del 13-10, just abans dels preus)
+ * pendiente» → «Gratis para siempre» → el Completo («Con el Completo, todo lo demás.», des del 14-10) → «Así se empieza» → gestors (des del 13-10, just abans dels preus)
  * → preus → «Te llamo».
  * La portada nova no té preguntes freqüents: per això ja no porta el marcatge FAQPage.
  */
@@ -53,6 +54,7 @@ const Index = () => {
         <Zero onEmpezar={empezar} />
         <Pendent />
         <Gratis onEmpezar={empezar} />
+        <Completo />
         <Passos />
         {/* els gestors, just abans dels preus (el Biel, 13-10: «a baix de tot, abans del pla gratis i de pagar») */}
         <Gestors />
