@@ -1,0 +1,534 @@
+<title>Mòdul gegant, quatre més</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+/* Quatre maneres més del mòdul del Completo (després de «Gratis para siempre»), totes amb el llenguatge
+   de la portada: targetes fosques, un número gegant i peces clares. C · cinc targetes que s'obren;
+   D · el mes en números (un tiquet); E · «Sin Hostly / Con Hostly» amb els números que giren;
+   F · una pila de targetes que es posen una sobre l'altra en baixar.
+   Colors i lletra: els de hostlylabs.com (una sola aparença, clara, com la web). */
+:root {
+  color-scheme: light;
+  --fons: hsl(210 20% 98%);
+  --blanc: #fff;
+  --text: hsl(220 14% 11%);
+  --gris: hsl(220 9% 46%);
+  --linia: hsl(220 13% 91%);
+  --blau: #2563EB;
+  --blau-fosc: #1D4ED8;
+  --blau-app: #3B82F6;
+  --blau-suau: hsl(214 100% 97%);
+  --verd: hsl(142 76% 36%);
+  --verd-fosc: hsl(142 76% 26%);
+  --verd-suau: hsl(138 76% 96%);
+  --verd-viu: hsl(142 70% 58%);
+  --fosc: hsl(220 14% 11%);
+  --fosc-2: hsl(220 14% 15%);
+  --fosc-3: hsl(220 13% 20%);
+  --airbnb: #FF385C;
+  --booking: #1E40AF;
+  --whatsapp: #16A34A;
+  --cos: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fons); color: var(--text); font-family: var(--cos); -webkit-font-smoothing: antialiased; font-feature-settings: "cv11" 1; }
+p, h1, h2, h3 { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; color: inherit; }
+.ic { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.pg { max-width: 1360px; margin: 0 auto; padding-inline: 24px; padding-block: 40px 96px; display: flex; flex-direction: column; gap: 44px; }
+.cap { display: flex; flex-direction: column; gap: 10px; max-width: 780px; }
+.cap small { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gris); }
+.cap h1 { font-size: 34px; line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+.cap p { font-size: 16px; line-height: 1.55; color: var(--gris); }
+.nom-opcio { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.nom-opcio b { font-size: 20px; letter-spacing: -0.01em; }
+.nom-opcio span { font-size: 15px; color: var(--gris); }
+.esc { background: var(--blanc); border-radius: 28px; box-shadow: 0 0 0 1px var(--linia); padding: 64px 40px 56px; margin-top: 14px; }
+.centre { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+.retol { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gris); }
+.h2 { font-size: 52px; line-height: 1.04; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
+.peu-op { margin-top: 18px; font-size: 14px; line-height: 1.5; color: var(--gris); text-align: center; text-wrap: balance; }
+
+/* peces comunes */
+.pill { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 9999px; background: var(--blanc); color: var(--text); font-size: 15px; font-weight: 500; }
+.pill:hover { background: hsl(210 20% 94%); }
+.pill .ic { width: 16px; height: 16px; }
+.fosc-retol { color: rgba(255, 255, 255, .62); }
+.gran { font-weight: 700; letter-spacing: -0.06em; line-height: .82; padding-bottom: .09em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.frase { font-size: 23px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance; }
+.txt { font-size: 15.5px; line-height: 1.5; color: rgba(255, 255, 255, .78); max-width: 34em; }
+.peca { min-width: 0; border-radius: 20px; background: rgba(255, 255, 255, .06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+.peca h3 { font-size: 15px; line-height: 1.3; font-weight: 600; color: #fff; }
+.peca > p { font-size: 13px; line-height: 1.4; color: rgba(255, 255, 255, .6); }
+.mostra { margin-top: 10px; border-radius: 13px; background: var(--blanc); color: var(--text); box-shadow: 0 1px 3px rgba(0, 0, 0, .06); padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; font-size: 12px; line-height: 16px; }
+.fila { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.fila b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.et { color: var(--gris); }
+.xip-verd, .xip-gris, .xip-blau { display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 9px; border-radius: 9999px; font-weight: 600; white-space: nowrap; align-self: flex-start; }
+.fila .xip-verd, .fila .xip-gris, .fila .xip-blau { align-self: center; }
+.xip-verd { background: var(--verd-suau); color: var(--verd-fosc); }
+.xip-gris { background: hsl(210 20% 95%); color: hsl(220 9% 40%); }
+.xip-blau { background: var(--blau-suau); color: var(--blau-fosc); }
+.xip-verd .ic, .xip-gris .ic, .xip-blau .ic { width: 12px; height: 12px; stroke-width: 3; }
+.bom { max-width: 92%; padding: 7px 10px; border-radius: 12px; line-height: 1.35; }
+.bom-hu { align-self: flex-start; background: var(--fons); box-shadow: inset 0 0 0 1px var(--linia); border-bottom-left-radius: 4px; }
+.bom-ia { align-self: flex-end; background: var(--blau-suau); border-bottom-right-radius: 4px; }
+.bom-ia small { display: block; font-size: 9px; font-weight: 700; letter-spacing: .06em; color: var(--blau); margin-bottom: 2px; }
+.botons { display: flex; gap: 6px; }
+.boto { flex: 1; display: inline-flex; align-items: center; justify-content: center; height: 28px; border-radius: 9999px; font-weight: 600; background: var(--blau); color: #fff; }
+.boto-sec { background: var(--blanc); color: var(--text); box-shadow: inset 0 0 0 1px var(--linia); }
+.av { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 9999px; background: var(--blau-suau); color: var(--blau-fosc); font-size: 10px; font-weight: 700; flex-shrink: 0; }
+.setm, .barres { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.setm { gap: 3px; font-size: 10px; color: var(--gris); text-align: center; }
+.barres { row-gap: 4px; }
+.barra { height: 18px; border-radius: 9999px; font-size: 10px; font-weight: 600; line-height: 18px; padding-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.b-air { background: hsl(350 100% 96%); color: hsl(350 70% 38%); }
+.b-boo { background: hsl(222 90% 95%); color: var(--booking); }
+.b-dir { background: hsl(220 14% 93%); color: hsl(220 9% 30%); }
+.preus { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); align-items: end; gap: 5px; height: 70px; }
+.preus span { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 3px; height: 100%; font-size: 9px; color: var(--gris); }
+.preus i { width: 100%; border-radius: 5px 5px 2px 2px; background: hsl(214 95% 90%); }
+.preus span.alt i { background: var(--blau-app); }
+.preus span b { font-size: 9px; color: var(--text); font-weight: 600; }
+.pdf { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 9px; border-radius: 9999px; background: hsl(210 20% 96%); font-weight: 500; }
+.pdf .ic { width: 13px; height: 13px; color: hsl(0 72% 51%); }
+
+/* ── C · cinc targetes que s'obren ── */
+.cc { display: flex; gap: 14px; height: 560px; margin-top: 36px; }
+.cc-carta { position: relative; flex: 1 1 0; min-width: 0; border-radius: 28px; background: var(--fosc); color: #fff; overflow: hidden; transition: flex-grow .7s cubic-bezier(.22, 1, .36, 1), background-color .25s ease; }
+.cc-carta.obert { flex-grow: 4.6; }
+.cc-carta:not(.obert):hover { background: var(--fosc-2); }
+.cc-obre { position: absolute; inset: 0; z-index: 2; width: 100%; border: 0; background: none; cursor: pointer; border-radius: inherit; }
+.cc-carta.obert .cc-obre { display: none; }
+.cc-cap { position: absolute; left: 22px; top: 22px; right: 22px; display: flex; align-items: flex-start; gap: 9px; font-size: 15px; line-height: 1.25; font-weight: 600; color: rgba(255, 255, 255, .72); }
+.cc-cap .ic { margin-top: 1px; }
+.cc-carta.obert .cc-cap { color: #fff; }
+.cc-vert { position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%) rotate(180deg); writing-mode: vertical-rl; font-size: 104px; font-weight: 700; letter-spacing: -0.05em; line-height: 1; color: rgba(255, 255, 255, .26); white-space: nowrap; transition: opacity .3s ease; }
+.cc-carta:not(.obert):hover .cc-vert { color: rgba(255, 255, 255, .42); }
+.cc-carta.obert .cc-vert { opacity: 0; }
+.cc-dins { position: absolute; inset: 0; padding: 70px 30px 30px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; opacity: 0; visibility: hidden; transition: opacity .35s ease .2s, visibility 0s linear .55s; }
+.cc-carta.obert .cc-dins { opacity: 1; visibility: visible; transition: opacity .4s ease .25s, visibility 0s; }
+.cc-text { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.cc-text .gran { margin-top: auto; font-size: 140px; }
+.cc-text .gran[data-mida="m"] { font-size: 108px; }
+.cc-peces { display: flex; flex-direction: column; gap: 12px; justify-content: flex-end; min-width: 0; }
+
+/* ── D · el mes en números ── */
+.dd { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; margin-top: 36px; align-items: stretch; }
+.dd-fosca { border-radius: 28px; background: var(--fosc); color: #fff; padding: 36px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.dd-dalt { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.seg { display: inline-flex; gap: 2px; padding: 3px; border-radius: 9999px; background: rgba(255, 255, 255, .08); }
+.seg button { height: 32px; padding: 0 14px; border: 0; border-radius: 9999px; background: none; color: rgba(255, 255, 255, .7); font-size: 13px; font-weight: 600; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: #fff; color: var(--text); }
+.dd-fosca .gran { margin-top: auto; font-size: 210px; }
+.tiquet { position: relative; border-radius: 22px 22px 0 0; background: var(--blanc); box-shadow: 0 0 0 1px var(--linia), 0 24px 50px -30px rgba(15, 23, 42, .35); padding: 28px 28px 34px; display: flex; flex-direction: column; min-width: 0;
+  -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / 18px 9px repeat-x, linear-gradient(#000 0 0) top / 100% calc(100% - 9px) no-repeat;
+          mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / 18px 9px repeat-x, linear-gradient(#000 0 0) top / 100% calc(100% - 9px) no-repeat; }
+.tiquet-cap { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 14px; border-bottom: 1px dashed var(--linia); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--gris); }
+.linia-t { border-bottom: 1px dashed var(--linia); }
+.linia-t > button { width: 100%; display: flex; align-items: baseline; gap: 10px; padding: 13px 2px; border: 0; background: none; cursor: pointer; text-align: left; font-size: 15px; }
+.linia-t > button:hover .lt-nom { color: var(--blau); }
+.lt-nom { font-weight: 500; white-space: nowrap; }
+.lt-punts { flex: 1; min-width: 12px; border-bottom: 2px dotted hsl(220 13% 82%); transform: translateY(-4px); }
+.lt-n { font-variant-numeric: tabular-nums; color: var(--gris); min-width: 3ch; text-align: right; }
+.lt-h { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 5ch; text-align: right; }
+.lt-mes { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s cubic-bezier(.22, 1, .36, 1); }
+.linia-t.obert .lt-mes { grid-template-rows: 1fr; }
+.lt-mes > div { overflow: hidden; }
+.lt-mes p { font-size: 14px; line-height: 1.5; color: var(--gris); padding: 0 2px 14px; }
+.tiquet-total { margin-top: 16px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 17px; font-weight: 700; }
+.tiquet-total b { font-size: 28px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tiquet-extra { margin-top: 6px; display: flex; justify-content: space-between; font-size: 14px; color: var(--gris); }
+.tiquet-extra b { color: var(--verd-fosc); font-variant-numeric: tabular-nums; }
+
+/* ── E · Sin Hostly / Con Hostly ── */
+.ee { margin-top: 36px; border-radius: 32px; background: var(--fosc); color: #fff; padding: 40px 48px 28px; }
+.ee-dalt { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-bottom: 18px; }
+.ee-dalt p { font-size: 15px; color: rgba(255, 255, 255, .62); }
+.ee .seg button { height: 40px; padding: 0 20px; font-size: 15px; }
+.ee-fila { border-top: 1px solid rgba(255, 255, 255, .1); }
+.ee-fila > button { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; padding: 16px 0; border: 0; background: none; cursor: pointer; text-align: left; color: #fff; }
+.ee-qui { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ee-qui b { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
+.ee-qui span { font-size: 14.5px; color: rgba(255, 255, 255, .6); }
+.ee-num { display: flex; align-items: baseline; justify-content: flex-end; gap: 14px; perspective: 600px; }
+.ee-num small { font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, .55); white-space: nowrap; }
+.ee.amb .ee-num small { color: var(--verd-viu); }
+.ee-xifra { display: inline-block; font-size: 92px; line-height: .9; font-weight: 700; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; min-width: 2.2ch; text-align: right; transform-origin: 50% 60%; }
+.ee-xifra.gira { animation: gira .5s cubic-bezier(.45, 0, .2, 1); }
+@keyframes gira { 0% { transform: rotateX(0); } 45% { transform: rotateX(-90deg); opacity: .2; } 55% { transform: rotateX(90deg); opacity: .2; } 100% { transform: rotateX(0); } }
+.ee-mes { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s cubic-bezier(.22, 1, .36, 1); }
+.ee-fila.obert .ee-mes { grid-template-rows: 1fr; }
+.ee-mes > div { overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.ee-mes p { font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, .75); padding-bottom: 16px; max-width: 46em; }
+.ee-mes a { flex-shrink: 0; margin-bottom: 16px; font-size: 14px; font-weight: 600; color: #fff; display: inline-flex; align-items: center; gap: 6px; }
+
+/* ── F · una pila de targetes ── */
+.ff { position: relative; margin-top: 28px; }
+.ff-index { position: sticky; top: 14px; z-index: 20; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; padding-block: 8px 18px; }
+.ff-index button { display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 16px; border: 0; border-radius: 9999px; background: var(--blanc); color: var(--text); font-size: 14px; font-weight: 500; cursor: pointer; box-shadow: inset 0 0 0 1px var(--linia), 0 4px 14px rgba(15, 23, 42, .06); }
+.ff-index button[aria-current="true"] { background: var(--fosc); color: #fff; box-shadow: none; }
+.ff-index .ic { width: 15px; height: 15px; }
+/* entre targeta i targeta, prou recorregut perquè cada una es llegeixi sencera abans que arribi la següent */
+.ff-carta { position: sticky; top: calc(76px + var(--i) * 18px); min-height: 470px; margin-bottom: max(220px, 40vh); border-radius: 30px; background: var(--fosc); color: #fff; padding: 40px 44px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; transform-origin: 50% 0; box-shadow: 0 -1px 0 rgba(255, 255, 255, .06) inset, 0 -18px 40px -24px rgba(0, 0, 0, .55); }
+.ff-carta:last-child { margin-bottom: 0; }
+.ff-esq { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.ff-esq .gran { margin-top: auto; font-size: 190px; }
+.ff-esq .gran[data-mida="m"] { font-size: 140px; }
+.ff-dre { display: flex; flex-direction: column; gap: 14px; justify-content: flex-end; min-width: 0; }
+.ff-dre .txt { margin-bottom: 4px; }
+.ff-peces { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+
+@media (max-width: 1100px) {
+  .cc { flex-direction: column; height: auto; }
+  .cc-carta { flex: none; min-height: 76px; transition: background-color .25s ease; }
+  .cc-carta.obert { min-height: 0; }
+  .cc-vert { writing-mode: horizontal-tb; transform: none; left: auto; right: 22px; top: 14px; bottom: auto; font-size: 44px; }
+  .cc-dins { position: relative; inset: auto; display: none; grid-template-columns: minmax(0, 1fr); padding: 70px 24px 24px; }
+  .cc-carta.obert .cc-dins { display: grid; }
+  .cc-text .gran { font-size: 120px; } .cc-text .gran[data-mida="m"] { font-size: 92px; }
+  .dd { grid-template-columns: minmax(0, 1fr); }
+  .ff-carta { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+}
+@media (max-width: 640px) {
+  .esc { padding: 40px 16px 32px; border-radius: 20px; }
+  .h2 { font-size: 34px; }
+  .dd-fosca { padding: 26px 22px; } .dd-fosca .gran { font-size: 120px; }
+  .tiquet { padding: 22px 18px 30px; }
+  .linia-t > button { font-size: 14px; gap: 8px; align-items: flex-start; }
+  .lt-nom { flex: 1; min-width: 0; white-space: normal; }
+  .lt-punts { display: none; }
+  .ee { padding: 26px 20px 16px; border-radius: 24px; }
+  .ee-qui b { font-size: 17px; } .ee-qui span { font-size: 13.5px; }
+  .ee-xifra { font-size: 56px; }
+  .ee-mes > div { flex-direction: column; align-items: flex-start; gap: 0; }
+  .ee-mes p { padding-bottom: 8px; }
+  .ee-num small { display: none; }
+  .ff-index { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin-inline: -16px; padding-inline: 16px; scrollbar-width: none; }
+  .ff-index button { flex-shrink: 0; }
+  .ff-carta { padding: 26px 22px; top: calc(70px + var(--i) * 12px); min-height: 0; }
+  .ff-esq .gran { font-size: 112px; } .ff-esq .gran[data-mida="m"] { font-size: 84px; }
+  .ff-peces { grid-template-columns: minmax(0, 1fr); }
+  .frase { font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cc-carta, .cc-dins, .cc-vert, .lt-mes, .ee-mes { transition: none !important; }
+  .ee-xifra.gira { animation: none; }
+}
+</style>
+
+<div class="pg">
+  <header class="cap">
+    <small>Exploració · 14-10-2026</small>
+    <h1>El mòdul gegant, quatre maneres més</h1>
+    <p>Totes amb el llenguatge del «Gratis para siempre»: targeta fosca, un número gegant i poques coses al voltant. Cada una ensenya les funcions del Completo d'una manera diferent: obrint-les, comptant el que fa en un mes, comparant amb i sense Hostly, o una darrere l'altra en baixar. Les dades són d'exemple.</p>
+  </header>
+
+  <section aria-labelledby="t-c">
+    <div class="nom-opcio"><b id="t-c">C · Cinc targetes que s'obren</b><span>Es veuen les cinc alhora, amb el número dret. La que toques s'obre i les altres s'encongeixen.</span></div>
+    <div class="esc">
+      <div class="centre"><p class="retol">Hostly Completo</p><h2 class="h2">Con el Completo, todo lo demás.</h2></div>
+      <div class="cc" id="cc"></div>
+      <p class="peu-op">Passa sola cada vuit segons fins que hi toques. Al mòbil, una sota l'altra.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-d">
+    <div class="nom-opcio"><b id="t-d">D · El mes, en números</b><span>No parla de funcions sinó del que ha fet Hostly en un mes, com un tiquet. Cada línia s'obre.</span></div>
+    <div class="esc">
+      <div class="centre"><p class="retol">Hostly Completo</p><h2 class="h2">Lo que hace Hostly en un mes.</h2></div>
+      <div class="dd" id="dd"></div>
+      <p class="peu-op">Les hores són una estimació d'exemple: el que costaria fer-ho a mà.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-e">
+    <div class="nom-opcio"><b id="t-e">E · Sin Hostly / Con Hostly</b><span>Primer el dolor, després el canvi. Els números giren quan canvies; cada fila s'obre.</span></div>
+    <div class="esc">
+      <div class="centre"><p class="retol">Hostly Completo</p><h2 class="h2">Lo mismo, sin hacerlo tú.</h2></div>
+      <div class="ee" id="ee"></div>
+      <p class="peu-op">Canvia sol cada quatre segons fins que hi toques.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-f">
+    <div class="nom-opcio"><b id="t-f">F · Una darrere l'altra</b><span>Cada funció té la seva targeta gegant, com el 0 €. En baixar, es posen una sobre l'altra.</span></div>
+    <div class="esc">
+      <div class="centre"><p class="retol">Hostly Completo</p><h2 class="h2">El Completo, cosa por cosa.</h2></div>
+      <div class="ff" id="ff"></div>
+      <p class="peu-op">Els botons de dalt porten a cada targeta i marquen per on vas.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+const IC = {
+  missatges: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+  calendari: '<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+  neteja: '<path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>',
+  preus: '<path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/>',
+  comptes: '<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>',
+  policia: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+  tic: '<path d="M20 6 9 17l-5-5"/>',
+  rellotge: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+  pdf: '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8"/>',
+  fletxa: '<path d="M5 12h14M12 5l7 7-7 7"/>',
+};
+const ic = (n, cls = "ic") => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
+const verd = (t) => `<span class="xip-verd">${ic("tic")}${t}</span>`;
+const gris = (t, i = "rellotge") => `<span class="xip-gris">${ic(i)}${t}</span>`;
+const peca = (h, p, mostra) => `<div class="peca"><h3>${h}</h3><p>${p}</p><div class="mostra" aria-hidden="true">${mostra}</div></div>`;
+const redueix = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ample = () => window.matchMedia("(min-width: 1101px)").matches;
+
+// Les cinc funcions del Completo, amb dues peces cadascuna
+const F = [
+  { id: "missatges", nom: "Mensajes", gran: "24/7", frase: "Contesta a tus huéspedes automáticamente.",
+    txt: "Con lo que sabe de cada piso: el wifi, las normas, cómo llegar. Lo que no sabe, te lo pasa a ti.",
+    peces: [
+      peca("Contesta al momento", "Por WhatsApp, Airbnb o Booking.",
+        `<p class="bom bom-hu">¿Cuál es la clave del wifi?</p><p class="bom bom-ia"><small>HOSTLY IA</small>Red «CalaMoreta», clave mar-azul-26 🙂</p>`),
+      peca("Lo que no sabe, te lo pasa", "Y decides tú.",
+        `<p class="fila" style="justify-content:flex-start"><span class="av">NV</span><span>Nora pregunta si pueden entrar a las 12.</span></p><div class="botons"><span class="boto">Sí, que entren</span><span class="boto boto-sec">No</span></div>`),
+    ] },
+  { id: "calendari", nom: "Calendario", gran: "1", frase: "Un solo calendario para Airbnb, Booking y tus reservas.",
+    txt: "Cuando entra una reserva, esas noches se cierran en los demás canales. Sin dobles reservas.",
+    peces: [
+      peca("Todas las reservas, juntas", "Cada canal, con su color.",
+        `<div class="setm"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div><div class="barres"><span class="barra b-air" style="grid-column:1 / 4">Camille</span><span class="barra b-boo" style="grid-column:3 / 7">Nora</span><span class="barra b-dir" style="grid-column:6 / 8">Lukas</span></div>`),
+      peca("Se cierra solo en los demás", "En cuanto entra la reserva.",
+        `<p class="fila"><span class="et">Booking · Nora Vidal</span><b>22–26 abr</b></p><p class="fila"><span>Airbnb</span>${verd("Cerrado")}</p>`),
+    ] },
+  { id: "neteja", nom: "Limpieza", gran: "0", frase: "llamadas para cuadrar la limpieza.",
+    txt: "Cada salida crea su limpieza y Hostly avisa al equipo por WhatsApp. Si alguien no puede, se lo pide a la siguiente.",
+    peces: [
+      peca("Avisa al equipo", "Por WhatsApp, con la hora de salida.",
+        `<p class="bom bom-ia"><small>HOSTLY</small>Pilar, ¿puedes el domingo 26 a las 11?</p><p class="bom bom-hu">Sí, la hago 👍</p>`),
+      peca("Si no puede, la siguiente", "Por orden, hasta que alguien diga que sí.",
+        `<p class="fila"><span>1 · Pilar</span><span class="et" style="text-decoration:line-through">No puede</span></p><p class="fila"><span>2 · Carmen</span>${verd("Confirmada")}</p>`),
+    ] },
+  { id: "preus", nom: "Precios", gran: "+16 %", mida: "m", frase: "Sube y baja los precios cada día, según la demanda.",
+    txt: "Tú pones el mínimo y el máximo. Hostly ajusta cada noche y lo manda a Airbnb y Booking.",
+    peces: [
+      peca("Cada noche, su precio", "Más caro cuando hay demanda.",
+        `<div class="preus"><span><b>118</b><i style="height:40%"></i>L</span><span><b>118</b><i style="height:40%"></i>M</span><span><b>125</b><i style="height:46%"></i>X</span><span><b>140</b><i style="height:58%"></i>J</span><span class="alt"><b>172</b><i style="height:84%"></i>V</span><span class="alt"><b>189</b><i style="height:100%"></i>S</span><span><b>150</b><i style="height:66%"></i>D</span></div>`),
+      peca("En todos los canales", "Sin que toques nada.",
+        `<p class="fila"><span>Airbnb</span>${verd("Actualizado")}</p><p class="fila"><span>Booking</span>${verd("Actualizado")}</p>`),
+    ] },
+  { id: "comptes", nom: "Extras y cuentas", gran: "+25 €", mida: "m", frase: "por cada salida tardía que vendes.",
+    txt: "Ofrece llegar antes, salir más tarde o extras. El huésped paga online y Hostly hace las cuentas, también las del propietario.",
+    peces: [
+      peca("Salida tardía", "El huésped la pide y la paga.",
+        `<p class="fila"><b>Salir a las 14:00</b><b>25,00 €</b></p><p class="fila"><span class="et">Nora Vidal · domingo 26</span>${verd("Pagada")}</p>`),
+      peca("Para el propietario", "La liquidación, en un PDF.",
+        `<p class="fila"><span>Propietario · 80 %</span><b>7.836 €</b></p><span class="pdf">${ic("pdf")}Liquidación de abril</span>`),
+    ] },
+];
+
+// Passa sol fins que la persona hi toca
+function sol(cada, pas) {
+  if (redueix) return { atura() {} };
+  let t = setInterval(pas, cada);
+  return { atura() { clearInterval(t); t = null; } };
+}
+
+/* ── C ── */
+(function () {
+  const el = document.getElementById("cc");
+  el.innerHTML = F.map((f, k) => `
+    <article class="cc-carta${k === 0 ? " obert" : ""}" data-k="${k}">
+      <button type="button" class="cc-obre" aria-label="Abrir: ${f.nom}" aria-expanded="${k === 0}"></button>
+      <p class="cc-cap">${ic(f.id)}${f.nom}</p>
+      <p class="cc-vert" aria-hidden="true">${f.gran}</p>
+      <div class="cc-dins">
+        <div class="cc-text">
+          <p class="gran"${f.mida ? ` data-mida="${f.mida}"` : ""}>${f.gran}</p>
+          <p class="frase">${f.frase}</p>
+          <p class="txt">${f.txt}</p>
+          <a class="pill" href="#" tabindex="${k === 0 ? 0 : -1}">Ver cómo funciona ${ic("fletxa")}</a>
+        </div>
+        <div class="cc-peces">${f.peces.join("")}</div>
+      </div>
+    </article>`).join("");
+  const cartes = [...el.querySelectorAll(".cc-carta")];
+  let i = 0;
+  const obre = (k) => {
+    i = k;
+    cartes.forEach((c, n) => {
+      c.classList.toggle("obert", n === k);
+      c.querySelector(".cc-obre").setAttribute("aria-expanded", String(n === k));
+      c.querySelector(".pill").tabIndex = n === k ? 0 : -1;
+    });
+  };
+  const r = sol(8000, () => obre((i + 1) % F.length));
+  cartes.forEach((c, k) => c.querySelector(".cc-obre").addEventListener("click", () => { r.atura(); obre(k); }));
+  el.addEventListener("pointerenter", r.atura, { once: true });
+})();
+
+/* ── D ── */
+(function () {
+  const el = document.getElementById("dd");
+  // Abril, un piso: el que ha fet Hostly i el temps que hauria costat a mà (exemple)
+  const L = [
+    { nom: "Mensajes contestados", n: 86, h: 4.5, txt: "La IA contesta con lo que sabe del piso. Lo que no sabe, te lo pasa y decides tú." },
+    { nom: "Limpiezas coordinadas", n: 8, h: 3, txt: "Cada salida crea su limpieza; Hostly avisa al equipo por WhatsApp y, si alguien no puede, a la siguiente." },
+    { nom: "Huéspedes registrados en la policía", n: 21, h: 3.5, txt: "El huésped hace el check-in online y Hostly lo envía. Esto también va en el plan Gratis." },
+    { nom: "Noches con el precio ajustado", n: 30, h: 2.5, txt: "Cada noche, según la demanda y dentro de tus límites, en Airbnb y Booking a la vez." },
+    { nom: "Reservas sin tocar el calendario", n: 8, h: 2, txt: "Entran solas y cierran esas noches en los demás canales." },
+    { nom: "Liquidación al propietario", n: 1, h: 2.5, txt: "Lo que ha ganado cada uno, en un PDF, sin Excel." },
+  ];
+  const EXTRA = 75;
+  let pisos = 1;
+  const h = (v) => (Number.isInteger(v) ? String(v) : v.toFixed(1).replace(".", ","));
+  el.innerHTML = `
+    <div class="dd-fosca">
+      <div class="dd-dalt">
+        <p class="retol fosc-retol">Abril · ejemplo</p>
+        <div class="seg" role="group" aria-label="Pisos">
+          ${[1, 3, 5].map((n) => `<button type="button" aria-pressed="${n === 1}" data-n="${n}">${n} ${n === 1 ? "piso" : "pisos"}</button>`).join("")}
+        </div>
+      </div>
+      <p class="gran"><span class="dd-h">18</span> h</p>
+      <p class="frase">que no has dedicado al piso este mes.</p>
+      <p class="txt">Lo ha hecho Hostly. Es lo que costaría hacer a mano lo de la lista, con un piso de dos habitaciones.</p>
+      <a class="pill" href="#">Ver cómo funciona ${ic("fletxa")}</a>
+    </div>
+    <div class="tiquet">
+      <p class="tiquet-cap"><span>Apartamento Cala Moreta</span><span>Abril 2026</span></p>
+      ${L.map((l, k) => `
+        <div class="linia-t" data-k="${k}">
+          <button type="button" aria-expanded="false">
+            <span class="lt-nom">${l.nom}</span><span class="lt-punts" aria-hidden="true"></span>
+            <span class="lt-n" data-n="${l.n}">${l.n}</span><span class="lt-h" data-h="${l.h}">${h(l.h)} h</span>
+          </button>
+          <div class="lt-mes"><div><p>${l.txt}</p></div></div>
+        </div>`).join("")}
+      <p class="tiquet-total"><span>Tiempo que no has dedicado</span><b><span class="dd-h2">18</span> h</b></p>
+      <p class="tiquet-extra"><span>Y en extras vendidos</span><b>+<span class="dd-e">${EXTRA}</span> €</b></p>
+    </div>`;
+  const total = L.reduce((s, l) => s + l.h, 0);
+  const compta = (node, de, a, fmt) => {
+    if (redueix) { node.textContent = fmt(a); return; }
+    const t0 = performance.now();
+    const pas = (t) => { const p = Math.min(1, (t - t0) / 650), e = 1 - Math.pow(1 - p, 3); node.textContent = fmt(de + (a - de) * e); if (p < 1) requestAnimationFrame(pas); };
+    requestAnimationFrame(pas);
+  };
+  const enter = (v) => String(Math.round(v));
+  el.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => {
+    const abans = pisos; pisos = Number(b.dataset.n);
+    el.querySelectorAll(".seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    compta(el.querySelector(".dd-h"), total * abans, total * pisos, enter);
+    compta(el.querySelector(".dd-h2"), total * abans, total * pisos, enter);
+    compta(el.querySelector(".dd-e"), EXTRA * abans, EXTRA * pisos, enter);
+    el.querySelectorAll(".lt-n").forEach((n) => compta(n, n.dataset.n * abans, n.dataset.n * pisos, enter));
+    el.querySelectorAll(".lt-h").forEach((n) => compta(n, n.dataset.h * abans, n.dataset.h * pisos, (v) => `${h(Math.round(v * 2) / 2)} h`));
+  }));
+  el.querySelectorAll(".linia-t > button").forEach((b) => b.addEventListener("click", () => {
+    const fila = b.parentElement, obre = !fila.classList.contains("obert");
+    el.querySelectorAll(".linia-t").forEach((x) => { x.classList.remove("obert"); x.querySelector("button").setAttribute("aria-expanded", "false"); });
+    if (obre) { fila.classList.add("obert"); b.setAttribute("aria-expanded", "true"); }
+  }));
+  el.querySelector(".linia-t").classList.add("obert");
+  el.querySelector(".linia-t > button").setAttribute("aria-expanded", "true");
+})();
+
+/* ── E ── */
+(function () {
+  const el = document.getElementById("ee");
+  // A la setmana, amb un piso
+  const R = [
+    { id: "missatges", nom: "Mensajes", sin: { n: "47", t: "mensajes que contestas tú" }, con: { n: "3", t: "solo los que la IA no sabe" }, txt: "La IA contesta con lo que sabe del piso, a cualquier hora. Lo que no sabe, te lo pasa." },
+    { id: "neteja", nom: "Limpieza", sin: { n: "6", t: "llamadas para cuadrar la limpieza" }, con: { n: "0", t: "Hostly avisa al equipo" }, txt: "Cada salida crea su limpieza y Hostly la pide por WhatsApp. Si alguien no puede, a la siguiente." },
+    { id: "calendari", nom: "Calendario", sin: { n: "3", t: "calendarios que tienes que mirar" }, con: { n: "1", t: "uno solo, siempre cuadrado" }, txt: "Airbnb, Booking y tus reservas en un calendario. Cuando entra una, se cierra en los demás." },
+    { id: "preus", nom: "Precios", sin: { n: "7", t: "precios que cambias a mano" }, con: { n: "0", t: "los ajusta Hostly cada noche" }, txt: "Según la demanda y dentro de tus límites, en todos los canales a la vez." },
+    { id: "comptes", nom: "Cuentas", sin: { n: "3 h", t: "con el Excel cada mes" }, con: { n: "0 h", t: "las cuentas ya están hechas" }, txt: "Lo que has ganado, de dónde viene y lo que le toca al propietario, en un PDF." },
+  ];
+  let amb = false;
+  el.innerHTML = `
+    <div class="ee-dalt">
+      <div class="seg" role="group" aria-label="Comparar">
+        <button type="button" aria-pressed="true" data-amb="0">Sin Hostly</button>
+        <button type="button" aria-pressed="false" data-amb="1">Con Hostly</button>
+      </div>
+      <p>A la semana, con un piso.</p>
+    </div>
+    ${R.map((r, k) => `
+      <div class="ee-fila" data-k="${k}">
+        <button type="button" aria-expanded="false">
+          <span class="ee-qui"><b>${ic(r.id)}${r.nom}</b><span class="ee-t">${r.sin.t}</span></span>
+          <span class="ee-num"><small class="ee-qui-fa">Lo haces tú</small><span class="ee-xifra">${r.sin.n}</span></span>
+        </button>
+        <div class="ee-mes"><div><p>${r.txt}</p><a href="#">Ver cómo funciona ${ic("fletxa")}</a></div></div>
+      </div>`).join("")}`;
+  const files = [...el.querySelectorAll(".ee-fila")];
+  const posa = (nou) => {
+    if (nou === amb) return;
+    amb = nou;
+    el.classList.toggle("amb", amb);
+    el.querySelectorAll(".seg button").forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.amb === "1") === amb)));
+    files.forEach((f, k) => {
+      const r = R[k], v = amb ? r.con : r.sin, x = f.querySelector(".ee-xifra");
+      f.querySelector(".ee-t").textContent = v.t;
+      f.querySelector(".ee-qui-fa").textContent = amb ? "Lo hace Hostly" : "Lo haces tú";
+      if (redueix) { x.textContent = v.n; return; }
+      setTimeout(() => {
+        x.classList.remove("gira"); void x.offsetWidth; x.classList.add("gira");
+        setTimeout(() => { x.textContent = v.n; }, 240);
+      }, k * 90);
+    });
+  };
+  const r = sol(4000, () => posa(!amb));
+  el.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => { r.atura(); posa(b.dataset.amb === "1"); }));
+  files.forEach((f) => f.querySelector("button").addEventListener("click", () => {
+    r.atura();
+    const obre = !f.classList.contains("obert");
+    files.forEach((x) => { x.classList.remove("obert"); x.querySelector("button").setAttribute("aria-expanded", "false"); });
+    if (obre) { f.classList.add("obert"); f.querySelector("button").setAttribute("aria-expanded", "true"); }
+  }));
+})();
+
+/* ── F ── */
+(function () {
+  const el = document.getElementById("ff");
+  el.innerHTML = `
+    <nav class="ff-index" aria-label="Funciones">${F.map((f, k) => `<button type="button" data-k="${k}" aria-current="${k === 0}">${ic(f.id)}${f.nom}</button>`).join("")}</nav>
+    <div class="ff-pila">${F.map((f, k) => `
+      <article class="ff-carta" style="--i:${k}" id="ff-${f.id}">
+        <div class="ff-esq">
+          <p class="retol fosc-retol">${f.nom}</p>
+          <p class="gran"${f.mida ? ` data-mida="${f.mida}"` : ""}>${f.gran}</p>
+          <p class="frase">${f.frase}</p>
+        </div>
+        <div class="ff-dre">
+          <p class="txt">${f.txt}</p>
+          <div class="ff-peces">${f.peces.join("")}</div>
+          <a class="pill" href="#">Ver cómo funciona ${ic("fletxa")}</a>
+        </div>
+      </article>`).join("")}</div>`;
+  const cartes = [...el.querySelectorAll(".ff-carta")], botons = [...el.querySelectorAll(".ff-index button")];
+  botons.forEach((b, k) => b.addEventListener("click", () => {
+    const y = cartes[k].getBoundingClientRect().top + window.scrollY - (k === 0 ? 90 : 60);
+    window.scrollTo({ top: y + (k === 0 ? 0 : 0), behavior: redueix ? "auto" : "smooth" });
+  }));
+  // la que és a sobre de la pila marca el botó; les de sota s'encongeixen una mica
+  const pinta = () => {
+    let actual = 0;
+    cartes.forEach((c, k) => {
+      const top = c.getBoundingClientRect().top;
+      if (top <= parseFloat(getComputedStyle(c).top) + 4) actual = k;
+    });
+    botons.forEach((b, k) => b.setAttribute("aria-current", String(k === actual)));
+    if (redueix) return;
+    cartes.forEach((c, k) => {
+      const sota = actual - k;
+      c.style.transform = sota > 0 ? `scale(${1 - Math.min(sota, 3) * 0.035})` : "";
+      c.style.filter = sota > 0 ? `brightness(${1 - Math.min(sota, 3) * 0.12})` : "";
+    });
+  };
+  window.addEventListener("scroll", () => requestAnimationFrame(pinta), { passive: true });
+  pinta();
+})();
+</script>

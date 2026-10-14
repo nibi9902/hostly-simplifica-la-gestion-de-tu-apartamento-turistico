@@ -386,7 +386,7 @@ El Biel: després de «Hostly está pendiente de ti», el mòdul del 0 € («m'
 gran») i, per a la resta de funcions, «o diferents mòduls amb la mateixa idea, o un mòdul gegant… que tu puguis
 anar clicant per anar veient informació de cada una. Fes-me algun mockup».
 
-A `modul-gegant-dues-maneres.html` (https://claude.ai/artifact/TTcV4yUD5ARg8ouL92FnQi, privada): el mateix bento que el Gratis (targeta fosca amb el número gegant i quatre
+A `modul-gegant-dues-maneres.html` (la pàgina publicada, el Biel l'ha esborrada): el mateix bento que el Gratis (targeta fosca amb el número gegant i quatre
 peces clares), un cop per cada funció del Completo, i es passa d'una a l'altra clicant. Passa sol cada vuit
 segons fins que s'hi toca.
 
@@ -404,3 +404,19 @@ segons fins que s'hi toca.
 
 Les dades són les del vídeo de /demo (la Nora, la Pilar, la Carmen, Cala Moreta). El títol, provisional:
 «Con el Completo, todo lo demás.»
+
+### Quatre maneres més (14-10)
+
+El Biel: «del mòdul gegant no hi trobo cap que m'agradi al 100%… fes-ne 4 més». A
+`modul-gegant-quatre-mes.html` (https://claude.ai/artifact/ENoGCvcbbN6w8bpGkBNNH3, privada), totes amb el
+llenguatge del Gratis i diferents de l'A i la B:
+
+- **C · Cinc targetes que s'obren:** les cinc fosques en fila, amb el número dret; la que toques s'obre (número,
+  frase i dues peces) i les altres s'encongeixen. Al mòbil, una sota l'altra.
+- **D · El mes, en números:** no parla de funcions sinó del que ha fet Hostly en un mes («18 h que no has
+  dedicado al piso»), amb un tiquet on cada línia s'obre i un selector d'1, 3 o 5 pisos que ho multiplica.
+- **E · Sin Hostly / Con Hostly:** primer el dolor i després el canvi; cinc files amb un número gros que gira en
+  canviar (47 → 3 missatges, 6 → 0 trucades a la neteja…). Cada fila s'obre.
+- **F · Una darrere l'altra:** cada funció té la seva targeta gegant, com el 0 €, i en baixar es posen una sobre
+  l'altra; uns botons a dalt hi porten i marquen per on vas.
+

@@ -34,7 +34,7 @@ Abans de donar un punt per fet, ha de complir tot això:
 | 7 | Per a qui és: propietaris, gestors petits, segona residència i hereus | Fet (13-10, vespre): l'entrada amb la targeta «Hoy, en …», la secció de cada perfil amb les peces de la portada, i després «Así se empieza», els preus i «Te llamo» |
 | 8 | Alternatives (l'índex i les set) i la comparativa amb Chekin | Fet (13-10): textos repassats, acaben amb «Te llamo»; l'estil (taules, targetes) es queda |
 | 9 | El blog (l'índex i la plantilla dels articles) i la guia | Fet (13-10): la targeta dels articles al fosc de la casa, la guia sense emojis. Els 40 articles no s'han reescrit |
-| 10 | «Sobre Hostly» i les pàgines legals | Textos repassats. Falta: la foto del Biel (ara una «B») i, a l'avís legal, el segon cognom i l'adreça fiscal |
+| 10 | «Sobre Hostly» i les pàgines legals | Textos repassats. L'avís legal ja porta el nom sencer i l'adreça amb «17002 Girona» (14-10). Falta la foto del Biel (ara una «B») |
 | 11 | El català, sencer | Les proves automàtiques passen (cap paraula castellana a les pàgines en català). Convé que el Biel en llegeixi la portada i l'embut |
 | 12 | Tècnic: velocitat de càrrega, SEO, redireccions i la pàgina 404 | En curs: mapa del web sense els articles en català (canònica castellana), capçaleres de seguretat a `vercel.json`. Velocitat mesurada (mòbil, 4G lenta, CPU 4×, web construïda): LCP portada 2,5 s · preus 2,3 · empezar 2,6 · demo 2,8 · funcionalitat 3,0; 330–420 KB per pàgina. Carregar només l'idioma estalviaria unes dècimes: no ara. Falta la 404 |
 | 13 | Revisió final i previsualització a Vercel, amb l'OK del Biel abans de pujar res | Proves (13-10, vespre): revisio-web 224/224, prova-amplada 155/155, prova-embut 44/44, prova-galetes i prova-publicitat 42/42, tsc i build. Falta l'OK per pujar la branca (previsualització). Repetides a la nit, després de la segona ronda: revisio-web 224/224, prova-amplada 155/155, prova-embut 44/44, prova-galetes, prova-publicitat 42/42, tsc i build |
@@ -51,7 +51,6 @@ Mentre no hi sigui, es treballa amb marcadors i no bloqueja la resta.
   - Si els 40 € porten l'IVA inclòs.
   - Si la comissió del pla gratis surt a la targeta.
   - Si es pot dir «partner oficial».
-- **Avís legal.** El segon cognom i l'adreça fiscal (`src/lib/titular.ts`).
 - **Seguiment.**
   - El píxel de Meta: es pot crear amb el token de l'«hostlyadsbot».
   - La conversió de Google Ads: la crea ell i en passa els identificadors.
@@ -63,9 +62,8 @@ Mentre no hi sigui, es treballa amb marcadors i no bloqueja la resta.
   publicació també ho diu. Ja no és l'oferta: el check-in i la policia són gratis per sempre, i el
   Completo té el primer mes gratis. A `/demo` es fan servir còpies tallades abans d'aquesta píndola.
   Abans d'usar-los en anuncis, cal canviar la targeta final. El de la policia diu també «Mossos».
-- **Trucar «ara».** A `/empezar`, «Llamadme ahora» promet una trucada «en unos minutos» a qualsevol hora.
-  Si de nit no hi ha ningú, caldria un horari (fora d'hores: «te llamamos mañana a primera hora»). Ho
-  decideix el Biel.
+- **Trucar «ara».** Fet (14-10, el Biel: «Llamadme mañana»): de 21:00 a 9:00 el botó diu «Llamadme mañana» i la
+  trucada es desa per a les 9 del matí següent.
 - **Seguiment de tothom.** Analytics, Meta i Google Ads només compten qui accepta les galetes (sovint la
   meitat o menys). Els contactes sí que es desen tots, amb la font: UTM, `gclid`, `fbclid`, la pàgina
   d'entrada i la web d'on venen. Per comptar totes les visites sense galetes, una opció és Vercel Web
