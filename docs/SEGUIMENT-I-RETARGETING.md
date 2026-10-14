@@ -33,7 +33,8 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
   acceptat i després ho rebutja («Cambiar mis preferencias»), es tanca l'aixeta i s'esborren les
   galetes `_fbp`, `_fbc` i `_gcl_*` (`src/lib/seguiment.ts`, `src/lib/galetes.ts`).
 - **Mode de consentiment v2 de Google**: tot denegat per defecte; s'obre només el que s'accepta.
-- **Què s'envia** (només el nom de l'esdeveniment, mai el telèfon, el correu ni les respostes):
+- **Què s'envia** al píxel (el nom de l'esdeveniment, mai les respostes de la calculadora; el
+  telèfon, el correu i el nom només xifrats, vegeu la coincidència avançada i l'API de conversions):
 
   | Al web | Meta | Google Ads |
   |---|---|---|
@@ -51,6 +52,16 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
   formulari, Meta els rep codificats i reconeix més visites. Les polítiques de galetes i de
   privacitat ho diuen (només quan el píxel és actiu). Camps: correu, nom, cognoms, telèfon,
   població, província, codi postal, país i identificador extern.
+- **API de conversions, feta** (el Biel, 14-10-2026: «sí, fes l'API de conversions»). El `Lead` i el
+  `Schedule` surten del navegador cap al píxel i, a la vegada, cap al nostre servidor
+  (`api/esdeveniment.js`, una funció de Vercel), que els passa a Meta. Porten el **mateix identificador**
+  (`eventID` al píxel, `event_id` a l'API), i així Meta no els compta dues vegades. Del navegador
+  surten ja **xifrats** (SHA-256): el telèfon amb el prefix i només xifres, el correu i el nom en
+  minúscules, i l'identificador del visitant. El servidor hi afegeix l'adreça IP i el navegador, i les
+  galetes `_fbp`/`_fbc`. Tot plegat **només amb la publicitat acceptada**. Sense el testimoni
+  (`META_CAPI_TOKEN`), la funció no fa res. Les polítiques ho diuen.
+  *Per què:* Meta compta els contactes que el píxel perd (bloquejadors, Safari) i aprèn millor a qui
+  ensenyar els anuncis. Segons Meta, de mitjana, un 17,8 % menys de cost per resultat que sense.
 - **Les pàgines vistes les compta el web**, una per canvi de pàgina, igual a Meta que a Google Ads.
   Al píxel s'hi posa `disablePushState` i `allowDuplicatePageViews`; sense, el píxel mirava sol
   l'historial del navegador i comptava també cada clic a l'índex dels articles (comprovat al
@@ -68,7 +79,9 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
 - **Les polítiques** de galetes i de privacitat expliquen la publicitat, les galetes i qui rep les
   dades (Meta Platforms Ireland i Google Ireland) **només quan està activa**. Sense
   identificadors, no en diuen res (seria fals).
-- **La prova**: `scripts/revisio/prova-publicitat.cjs` (42 comprovacions, amb un segon servidor
+- **La prova**: `scripts/revisio/prova-publicitat.cjs` (46 comprovacions; quatre són de l'API de
+  conversions: mateix identificador, dades xifrades com demana Meta, res en clar i res sense
+  publicitat acceptada; amb un segon servidor
   amb identificadors de prova, millor el web construït; res surt cap a Meta ni Google de debò).
   Amb el codi de la versió 16 en falla 5: les de les tres esmenes de dalt.
 
@@ -81,6 +94,16 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
    2. ✅ La «coincidència avançada automàtica», **encesa** (vegeu més amunt).
    3. **Verifica el domini** hostlylabs.com (Configuració del negoci → Seguretat de la marca →
       Dominis). Cal per a les campanyes i per mesurar els iPhone.
+   4. **El testimoni de l'API de conversions** (5 minuts):
+      1. Events Manager → «hostlylabs pixel» → **Configuració** → apartat *API de conversions* →
+         **«Generar identificador de acceso»** (o *Generate access token*). Copia'l.
+      2. Desa'l a `~/.config/hostly/meta_capi_token` (com la clau d'n8n: `chmod 600`) i digues-m'ho:
+         el poso a Vercel com a `META_CAPI_TOKEN` (*Sensitive*, *Preview* i *Production*). O posa'l tu
+         directament a Vercel → Settings → Environment Variables. No me'l enganxis al xat.
+      3. Per veure-ho arribar sense comptar-ho: Events Manager → **Probar eventos** → copia el codi
+         (`TEST…`). Va a `META_CAPI_TEST_CODE`, només a *Preview*.
+      4. Després, cal tornar a desplegar. A l'Events Manager, els `Lead` sortiran «Navegador y servidor»
+         i «Desduplicado».
 2. **Google Ads**
    1. ads.google.com → **Objectius → Conversions** → nova → **Lloc web** → «Contacto»
       (categoria *Envia un formulari de contacte*) → configurar **amb l'etiqueta de Google**.

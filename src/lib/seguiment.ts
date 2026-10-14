@@ -15,12 +15,18 @@
  *       VITE_GOOGLE_ADS_ID           l'etiqueta de Google Ads («AW-…»)
  *       VITE_GOOGLE_ADS_LEAD_LABEL   l'etiqueta de la conversió «Contacto» (opcional)
  *   · Mode de consentiment v2 de Google: tot denegat per defecte; només s'obre el que s'accepta.
- *   · Res de dades personals cap a Meta ni Google: només el nom de l'esdeveniment (cap telèfon,
- *     cap correu, cap resposta de la calculadora).
+ *   · Al píxel, només el nom de l'esdeveniment (cap resposta de la calculadora). El telèfon i el
+ *     correu hi arriben xifrats per dues vies, totes dues només amb la publicitat acceptada: la
+ *     coincidència avançada automàtica de Meta (el Biel, 13-10: «volem el millor píxel possible») i
+ *     l'API de conversions (14-10, «sí, fes l'API de conversions»): el «Lead» i el «Schedule» surten
+ *     també del nostre servidor (`api/esdeveniment.js`), amb el mateix identificador que al píxel
+ *     perquè Meta no els compti dues vegades. El xifratge (SHA-256) es fa aquí, al navegador.
  *   · Una sola porta per als esdeveniments: `track()` de `analytics.ts` crida `conversio()`.
  *
  * El detall, les opcions i el que ha de fer el Biel: docs/SEGUIMENT-I-RETARGETING.md
  */
+
+import { dadesRecordades, idVisitant } from "@/lib/leads";
 
 const net = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : null);
 const META_PIXEL = net(import.meta.env.VITE_META_PIXEL_ID);
@@ -188,13 +194,70 @@ const META: Record<string, { estandard?: string; propi?: string }> = {
 };
 const LEADS = new Set(["empezar_datos", "calcula_telefono", "llamame_enviado"]);
 
+/* ─── L'API de conversions: el mateix esdeveniment, també des del servidor ─── */
+
+const AL_SERVIDOR = new Set(["Lead", "Schedule"]);
+
+function idEsdeveniment(): string {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") return crypto.randomUUID();
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
+}
+
+function galeta(nom: string): string | undefined {
+  const m = document.cookie.match(new RegExp(`(?:^|; )${nom}=([^;]*)`));
+  return m ? decodeURIComponent(m[1]) : undefined;
+}
+
+/** SHA-256 en hexadecimal, com el demana Meta; res si no hi ha valor. */
+async function xifra(valor: string | undefined): Promise<string | undefined> {
+  if (!valor) return undefined;
+  const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(valor));
+  return Array.from(new Uint8Array(bytes), (b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+/**
+ * El «Lead» o el «Schedule», cap al nostre servidor, que el passa a Meta. Les dades de contacte surten
+ * d'aquí ja xifrades, en el format que demana Meta: el telèfon amb el prefix i només xifres, el correu i
+ * el nom en minúscules.
+ */
+async function alServidor(esdeveniment: string, eventID: string): Promise<void> {
+  try {
+    const d = dadesRecordades();
+    const [nom, ...cognoms] = (d.name ?? "").trim().toLowerCase().split(/\s+/);
+    const fbclid = new URLSearchParams(window.location.search).get("fbclid");
+    const cos = {
+      event_name: esdeveniment,
+      event_id: eventID,
+      url: window.location.href,
+      fbp: galeta("_fbp"),
+      fbc: galeta("_fbc") ?? (fbclid ? `fb.1.${Date.now()}.${fbclid}` : undefined),
+      ph: await xifra(d.phone?.replace(/\D/g, "")),
+      em: await xifra(d.email?.trim().toLowerCase()),
+      fn: await xifra(nom),
+      ln: await xifra(cognoms.join(" ")),
+      external_id: await xifra(idVisitant()),
+    };
+    await fetch("/api/esdeveniment", {
+      method: "POST",
+      keepalive: true,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(cos),
+    });
+  } catch {
+    /* sense xarxa o sense xifratge al navegador: ja l'ha comptat el píxel */
+  }
+}
+
 export function conversio(nom: string): void {
   if (!activa) return;
   const w = window as Finestra;
   const m = META[nom];
   if (META_PIXEL && w.fbq && m) {
-    if (m.estandard) w.fbq("track", m.estandard);
-    else if (m.propi) w.fbq("trackCustom", m.propi);
+    if (m.estandard) {
+      const eventID = idEsdeveniment();
+      w.fbq("track", m.estandard, {}, { eventID });
+      if (AL_SERVIDOR.has(m.estandard)) void alServidor(m.estandard, eventID);
+    } else if (m.propi) w.fbq("trackCustom", m.propi);
   }
   if (GOOGLE_ADS && GOOGLE_ADS_LEAD && w.gtag && LEADS.has(nom)) {
     w.gtag("event", "conversion", { send_to: `${GOOGLE_ADS}/${GOOGLE_ADS_LEAD}` });

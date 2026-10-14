@@ -29,8 +29,10 @@ const prova = (cond, text) => { if (cond) { ok++; console.log('ok  ' + text); } 
 
 async function context(b) {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
-  const peticions = { meta: [], google: [] };
+  const peticions = { meta: [], google: [], servidor: [] };
   await ctx.route('**/rest/v1/rpc/**', (r) => r.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' }));
+  // L'API de conversions: el que el web envia al nostre servidor (es contesta aquí mateix)
+  await ctx.route('**/api/esdeveniment', (r) => { try { peticions.servidor.push(JSON.parse(r.request().postData() || '{}')); } catch (e) { peticions.servidor.push({}); } r.fulfill({ status: 204, body: '' }); });
   await ctx.route(/connect\.facebook\.net|facebook\.com\/tr/, (r) => { peticions.meta.push(r.request().url()); r.fulfill({ status: 200, contentType: 'application/javascript', body: FB_STUB }); });
   await ctx.route(/googletagmanager\.com|google-analytics\.com|googleadservices\.com|doubleclick\.net/, (r) => { peticions.google.push(r.request().url()); r.fulfill({ status: 200, contentType: 'application/javascript', body: '' }); });
   return { ctx, peticions };
@@ -107,6 +109,14 @@ const te = (llista, pred) => llista.some(pred);
     prova(te(dl, (a) => a[0] === 'consent' && a[1] === 'update' && a[2] && a[2].analytics_storage === 'granted'), 'mode de consentiment: analytics_storage obert');
     prova(!te(dl, (a) => a[0] === 'consent' && a[1] === 'update' && a[2] && a[2].ad_storage === 'granted'), 'mode de consentiment: ad_storage tancat');
     prova(!te(dl, (a) => a[0] === 'config' && a[1] === ADS), 'Google Ads no es configura');
+    await p.goto(PUBLI + '/es/empezar', { waitUntil: 'load' });
+    await p.waitForTimeout(1200);
+    await p.fill('#emp-tel', '612345678');
+    await p.fill('#emp-nom', 'Prova');
+    await p.fill('#emp-correu', 'prova@example.com');
+    await p.getByRole('button', { name: /Continuar/ }).click();
+    await p.waitForTimeout(2000);
+    prova(peticions.servidor.length === 0, `només analítica: deixar el telèfon no envia res a l'API de conversions (${peticions.servidor.length})`);
     await ctx.close();
   }
 
@@ -151,6 +161,14 @@ const te = (llista, pred) => llista.some(pred);
     prova(te(dl, (a) => a[0] === 'event' && a[1] === 'conversion' && a[2] && a[2].send_to === `${ADS}/prova`), 'i conversió «Contacto» a Google Ads');
     const tot = JSON.stringify(crides) + JSON.stringify(dl);
     prova(!/612345678|prova@example\.com|Prova"/.test(tot), 'cap dada personal cap a Meta ni Google');
+    // L'API de conversions: el mateix «Lead», amb el mateix identificador, i les dades xifrades al navegador
+    const lead = crides.find((c) => c[0] === 'track' && c[1] === 'Lead');
+    const idLead = lead && lead[3] && lead[3].eventID;
+    const leadServidor = peticions.servidor.find((x) => x.event_name === 'Lead');
+    prova(!!idLead && !!leadServidor && leadServidor.event_id === idLead, `el «Lead» surt també cap a l'API de conversions, amb el mateix identificador (${idLead ? idLead.slice(0, 8) : '—'})`);
+    const sha = (v) => require('crypto').createHash('sha256').update(v).digest('hex');
+    prova(!!leadServidor && leadServidor.ph === sha('34612345678') && leadServidor.em === sha('prova@example.com') && leadServidor.fn === sha('prova'), 'el telèfon (amb el prefix), el correu i el nom hi van xifrats com demana Meta');
+    prova(!/612345678|prova@example\.com|"Prova"/.test(JSON.stringify(peticions.servidor)), 'cap dada en clar cap al nostre servidor');
     // Sense `send_to`, gtag envia l'esdeveniment a tots els destinataris: també a Google Ads,
     // amb els seus paràmetres (el resultat de la calculadora, el dia de la demo)
     const sense = dl.filter((a) => a[0] === 'event' && !(a[2] && a[2].send_to));

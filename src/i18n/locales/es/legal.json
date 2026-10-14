@@ -59,7 +59,7 @@
     "empresa_meta": "Meta Platforms Ireland Ltd.",
     "empresa_google": "Google Ireland Ltd.",
     "i": " y ",
-    "p_coincidencia_meta": "Meta recibe también, codificados, el teléfono o el correo que escribas en nuestros formularios, para reconocer tu visita y medir sus anuncios. Solo si has aceptado las cookies de publicidad."
+    "p_coincidencia_meta": "Meta recibe también, codificados, el teléfono, el correo y el nombre que escribas en nuestros formularios, para reconocer tu visita y medir sus anuncios. Le llegan desde tu navegador y, cuando nos dejas tu teléfono o pides una llamada, también desde nuestro servidor, con la dirección IP y el navegador que usas. Solo si has aceptado las cookies de publicidad."
   },
   "cookies": {
     "title": "Política de cookies | Hostly",
@@ -141,7 +141,7 @@
     "eina_meta": "el píxel de Meta",
     "eina_google": "la etiqueta de Google Ads",
     "i": " y ",
-    "p_coincidencia_meta": "Con el píxel de Meta, si escribes tu teléfono o tu correo en un formulario de la web, Meta los recibe codificados (no los puede leer tal cual) para reconocer tu visita y medir sus anuncios. Solo pasa si has aceptado las cookies de publicidad."
+    "p_coincidencia_meta": "Con el píxel de Meta, si escribes tu teléfono, tu correo o tu nombre en un formulario de la web, Meta los recibe codificados (no los puede leer tal cual) para reconocer tu visita y medir sus anuncios. Cuando nos dejas tu teléfono o pides una llamada, se lo enviamos también desde nuestro servidor. Solo pasa si has aceptado las cookies de publicidad."
   },
   "terminos": {
     "title": "Términos y condiciones | Hostly",
