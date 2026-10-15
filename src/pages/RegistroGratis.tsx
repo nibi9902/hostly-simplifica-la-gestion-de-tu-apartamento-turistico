@@ -7,7 +7,8 @@
  * ni enllaços cap a fora (només els legals, al peu). Mockup aprovat pel Biel:
  * `docs/exploracions/2026-10-15-portada-arreglada/`.
  * No s'indexa (noindex): és per al trànsit dels anuncis i diria el mateix que la fitxa del check-in.
- * No diu a quin sistema s'envia (SES.Hospedajes, Mossos…): només «a la policía», com la resta de la web.
+ * Diu a quins sistemes s'envia (SES.Hospedajes, Mossos d'Esquadra o Ertzaintza): decisió del Biel (15-10); si arriba
+ * algú d'un sistema que encara no està connectat, es connecta el mateix dia.
  */
 import { useTranslation } from "react-i18next";
 import { Check } from "lucide-react";
@@ -16,6 +17,7 @@ import { LangLink } from "@/i18n/LangLink";
 import { useEmpezar } from "@/lib/empezar";
 import BarraMobil from "@/components/portada/BarraMobil";
 import hostlyMarca from "@/assets/hostly-marca.webp";
+import ses from "@/assets/connexions/ses-hospedajes.webp";
 import "@/components/portada/portada.css";
 
 type Pas = { titol: string; text: string };
@@ -59,6 +61,9 @@ export default function RegistroGratis() {
                 <p className="pt-ad-ok"><Check className="pt-ic" strokeWidth={3} />{t("anunci_registre.mobil.ok")}</p>
               </div>
             </div>
+          </div>
+          <div className="contenidor">
+            <p className="pt-ad-sistemes"><img src={ses} alt="" width={200} height={144} loading="lazy" decoding="async" />{t("anunci_registre.sistemes")}</p>
           </div>
         </section>
 

@@ -21,7 +21,9 @@ export default function Truca() {
             <h2 id="pt-truca-titol">
               {t("portada.truca.titol")} <span>{t("portada.truca.titol_gris")}</span>
             </h2>
-            <small className="pt-signa">{t("portada.truca.signa")}</small>
+            {/* Fins que hi hagi la foto del Biel, les seves inicials (una foto d'estoc d'una altra persona
+                amb el seu nom faria passar algú altre per ell) */}
+            <p className="pt-signa-fila"><span className="pt-signa-av" aria-hidden="true">BA</span><small className="pt-signa">{t("portada.truca.signa")}</small></p>
           </div>
           <div>
             {fet ? (
