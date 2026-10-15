@@ -320,11 +320,15 @@ button { font-family: inherit; color: inherit; }
 /* B · l'equip del torn: les rodones, i la que toca s'encén; en acabar, les fotos i el preu */
 .torn { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
 .torn .caixa { border-radius: 14px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0,0,0,.05); padding: 8px 12px; display: flex; flex-direction: column; gap: 8px; }
-.torn .fotos { display: flex; gap: 5px; }
-.torn .fotos i { width: 54px; height: 40px; border-radius: 7px; background: var(--gris-1) center / cover no-repeat; }
-.torn .fotos i:nth-child(1) { background-image: var(--f-cala-moreta); }
-.torn .fotos i:nth-child(2) { background-image: var(--f-menjador-dia); background-position: 60% 70%; }
-.torn .fotos i:nth-child(3) { background-image: var(--f-atico-del-mar); background-position: 40% 60%; }
+.torn .fila-fotos { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.torn .fotos { display: flex; gap: 6px; }
+.torn .fotos i { position: relative; overflow: hidden; width: 54px; height: 40px; border-radius: 8px; background: var(--gris-1) center / cover no-repeat; --flash: 0; }
+.torn .fotos i::after { content: ""; position: absolute; inset: 0; background: #fff; opacity: var(--flash); }
+.torn .fotos i:nth-child(1) { background-image: var(--p-sofa); }
+.torn .fotos i:nth-child(2) { background-image: var(--p-taula); }
+.torn .fotos i:nth-child(3) { background-image: var(--p-sala); }
+.torn .preu-n { height: 40px; justify-content: center; }
+.torn .preu-n b { font-size: 18px; letter-spacing: -0.02em; }
 .torn .preu { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 8px; border-top: 1px dashed var(--linia-2); font-size: 12.5px; color: var(--gris); }
 .torn .preu b { font-size: 15px; color: var(--text); }
 /* «Late checkout», el terme: cursiva, només a Extras y cuentas (a la resta, text normal, per no fer soroll) */
@@ -359,9 +363,9 @@ button { font-family: inherit; color: inherit; }
   </div>
 
   <div class="bloc">
-    <div class="nom"><b>La pantalla sencera</b><span>Rajoles: Mensajes (alta), Precios, Limpieza (la 1, «El hueco»), Calendario i Extras y cuentas; a sota a la dreta, «Y además» amb les altres funcions en rodones (el nom surt en passar-hi el ratolí; en clicar, un mini pop-up).</span></div>
+    <div class="nom"><b>La pantalla sencera</b><span>Rajoles: Mensajes (alta), Precios, Limpieza (el torn), Calendario i Extras y cuentas; a sota a la dreta, «Y además» amb les altres funcions en rodones (el nom surt en passar-hi el ratolí; en clicar, un mini pop-up).</span></div>
     <div class="eines">
-      <small>Res es mou sol: cada mòdul es mou només mentre hi tens el ratolí a sobre. Mensajes comença pel late checkout, que vola fins a Extras (l'únic moviment que passa d'un mòdul a l'altre), i després va canviant de conversa; Precios: primer puja la demanda, després surt «Festivo» i després puja el preu; Limpieza: la Carmen va de la sortida a l'entrada, surten les fotos una per una i, a la dreta, el preu; Extras torna a sumar la fila. Al mòbil seria tocant el mòdul. Les rodones de sota obren un mini pop-up.</small>
+      <small>Res es mou sol: cada mòdul es mou només mentre hi tens el ratolí a sobre. Mensajes comença pel late checkout, que vola fins a Extras (l'únic moviment que passa d'un mòdul a l'altre), i després va canviant de conversa; Precios: primer puja la demanda, després surt «Festivo» i després puja el preu; Limpieza: el torn (la Pilar no pot, passa a la Carmen, Coordinada) i, en acabar, les fotos una per una i el preu a la dreta; Extras torna a sumar la fila. Al mòbil seria tocant el mòdul. Les rodones de sota obren un mini pop-up.</small>
     </div>
     <div class="pantalla-marc">
       <div class="pantalla" id="pantalla">
@@ -561,8 +565,8 @@ button { font-family: inherit; color: inherit; }
     { qui: 0, html: `<div class="frase"><span><b>Pilar</b> · mañana 11:00</span><span class="estat">Preguntando…</span></div>` },
     { qui: 0, no: true, html: `<div class="frase"><span><b>Pilar</b> no puede</span><span class="estat" style="background:var(--ambre-suau);color:var(--ambre-text)">Pasa a Carmen</span></div>` },
     { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · mañana 11:00</span><span class="estat">${CHECK}Coordinada</span></div>` },
-    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fotos"><i></i><i></i><i></i></div>` },
-    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fotos"><i></i><i></i><i></i></div><div class="preu"><span>Limpieza · en las cuentas del mes</span><b class="num">45 €</b></div>`, nomesPreu: true },
+    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fila-fotos"><div class="fotos"><i></i><i></i><i></i></div></div>` },
+    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fila-fotos"><div class="fotos"><i></i><i></i><i></i></div><span class="preu-n"><small>a tus cuentas</small><b class="num">45 €</b></span></div>`, nomesPreu: true },
   ];
   function pintaTorn(torn, i, viu) {
     const e = ESTATS_B[i], avs = [...torn.querySelectorAll('.av')], caixa = torn.querySelector('.caixa');
@@ -574,10 +578,12 @@ button { font-family: inherit; color: inherit; }
   function animaTorn(caixa, i, e) {
     // el que és nou entra: la frase; les fotos d'una en una; el preu, pujant
     if (!e.nomesPreu) gsap.from(caixa.querySelector('.frase'), { y: 6, duration: .6, ease: 'sine.out' });
-    if (i === 3) gsap.from(caixa.querySelectorAll('.fotos i'), { scale: .7, opacity: 0, y: 8, duration: .8, ease: 'sine.out', stagger: .3, delay: .2 });
+    // cada foto entra com si es fes en aquell moment: un flaix, una mica girada, i es posa al seu lloc
+    if (i === 3) gsap.fromTo(caixa.querySelectorAll('.fotos i'), { opacity: 0, scale: 1.3, rotation: (k) => [-7, 5, -4][k], y: -6, '--flash': 1 },
+      { opacity: 1, scale: 1, rotation: 0, y: 0, '--flash': 0, duration: .9, ease: 'sine.out', stagger: .5, delay: .3 });
     if (i === 4) {
-      const preu = caixa.querySelector('.preu'), n = preu.querySelector('b'), v = { x: 0 };
-      gsap.from(preu, { y: 8, opacity: 0, duration: .7, ease: 'sine.out' });
+      const preu = caixa.querySelector('.preu-n'), n = preu.querySelector('b'), v = { x: 0 };
+      gsap.from(preu, { x: 10, opacity: 0, duration: .7, ease: 'sine.out' });
       gsap.to(v, { x: 45, duration: 1.3, ease: 'sine.out', onUpdate: () => { n.textContent = Math.round(v.x) + ' €'; } });
     }
   }
@@ -617,6 +623,7 @@ button { font-family: inherit; color: inherit; }
     // Mensajes: comença pel late checkout (que vola cap a Extras) i, mentre hi siguis, va canviant de conversa
     missatges: () => { lateCheckout(); programa(); },
     preus: () => { if (!(tlPreu && tlPreu.isActive())) preuPuja(); },
+    neteja: () => { if (tornI === ESTATS_B.length - 1) tornSegueix(); else { clearTimeout(tornT); tornT = setTimeout(tornSegueix, 400); } },
     // Extras: només ell; la fila del late checkout torna a entrar i el total torna a sumar
     extres: () => { gsap.killTweensOf([comptador, fila]); fila.classList.remove('hi'); mesN.textContent = milers(8524); setTimeout(() => { if (!fila.classList.contains('hi')) aterra(false); }, 350); },
   };
@@ -627,7 +634,7 @@ button { font-family: inherit; color: inherit; }
     t.addEventListener('touchstart', () => { if (!quiet) QUAN_HI_ENTRES[k](); }, { passive: true });
   });
   // en entrar, res es mou: cada mòdul ja ensenya el seu estat final i es mou només quan hi passes el ratolí
-  n = 1; pinta(CONV[1], true);
+  n = 1; pinta(CONV[1], true); pintaTorn(torn, 4); tornI = 4;
 
   // ── Les píndoles de sota: un mini pop-up per funció (textos de les fitxes de la web) ──
   const FUNCIONS = {
@@ -809,11 +816,6 @@ button { font-family: inherit; color: inherit; }
     el.addEventListener('touchstart', () => { if (!quiet && !(tl && tl.isActive())) volta(); }, { passive: true });
     return el;
   }
-  // a la pantalla, la 1 (El hueco), al lloc de la neteja
-  const tornEl = document.querySelector('[data-nv="torn"]');
-  const hueco = creaNeteja('hueco', true); tornEl.after(hueco); tornEl.remove();
-  hueco.addEventListener('mouseenter', () => { sobre.neteja = true; });
-  hueco.addEventListener('mouseleave', () => { sobre.neteja = false; });
 
   // l'alçada real de la secció, al regle
   const mesura = () => { const r = sec.getBoundingClientRect(); $('regle-alcada').textContent = `el capçal + la secció fan ${Math.round(80 + r.height)} px d'alt`; };
