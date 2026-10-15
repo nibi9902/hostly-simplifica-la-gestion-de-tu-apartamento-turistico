@@ -352,8 +352,8 @@ button { font-family: inherit; color: inherit; }
 .torn .preu { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 8px; border-top: 1px dashed var(--linia-2); font-size: 12.5px; color: var(--gris); }
 .torn .preu b { font-size: 15px; color: var(--text); }
 /* «Late checkout», el terme: cursiva, només a Extras y cuentas (a la resta, text normal, per no fer soroll) */
-.extres .terme { font-style: italic; font-weight: 600; letter-spacing: -0.01em; }
-.extres .h3 .terme { color: var(--text); }
+.extres .terme { font-style: italic; font-weight: 500; letter-spacing: -0.01em; }
+.extres .h3 .terme { color: inherit; font-weight: 400; }
 .ext-p { font-size: 13.5px; }
 .torn .qui { display: flex; align-items: center; gap: 6px; }
 .torn .av { width: 40px; height: 40px; font-size: 13px; box-shadow: 0 0 0 3px var(--gris-0); opacity: .45; transition: opacity .6s ease, box-shadow .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
@@ -454,7 +454,7 @@ button { font-family: inherit; color: inherit; }
             <article class="t clar extres" id="extres" data-viu="extres">
               <div class="dalt"><span class="pindola">Extras y cuentas</span><button class="rodo" type="button" aria-label="Ver Extras y cuentas"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
               <h3 class="h3">+25 € <span class="tenue">por <span class="terme">Late checkout</span>.</span></h3>
-              <p class="p ext-p">Lo ofrece un mensaje automático, el huésped lo paga online y se suma a tus cuentas.</p>
+              <p class="p ext-p">Crea extras a medida para tus huéspedes. Hostly se los ofrece y los cobra online.</p>
               <div class="mostra">
                 <div class="fila nova hi" id="fila-nova"><span class="av" style="background:#be123c">C</span><span class="q"><b><span class="terme">Late checkout</span></b><small>Camille · hasta las 13:00 · online</small></span><b class="num">25 €</b><span class="estat feta"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Pagado</span></div>
                 <p class="mes"><b class="num"><span id="mes-n">8.549</span> €</b><small>lo que cobrarás este mes</small></p>
@@ -493,7 +493,7 @@ button { font-family: inherit; color: inherit; }
       <div><small>Precios</small><p class="abans">Sube y baja los precios cada día, según la demanda.</p><p class="ara">Hostly ajusta el precio cada día y lo publica en Airbnb y Booking.</p></div>
       <div><small>Limpieza</small><p class="abans">Tu equipo, sin llamadas.</p><p class="ara">Hostly avisa a tu equipo. Si alguien no puede, a la siguiente.</p></div>
       <div><small>Calendario</small><p class="abans">Airbnb, Booking, Vrbo y tus reservas, siempre cuadrados.</p><p class="ara">Las reservas entran solas y no se pueden solapar.</p></div>
-      <div><small>Extras y cuentas</small><p class="abans">+25 € por cada Late checkout que vendes.</p><p class="ara">+25 € por Late checkout.</p><p class="ara">Lo ofrece un mensaje automático, el huésped lo paga online y se suma a tus cuentas.</p></div>
+      <div><small>Extras y cuentas</small><p class="abans">+25 € por cada Late checkout que vendes.</p><p class="ara">+25 € por Late checkout.</p><p class="ara">Crea extras a medida para tus huéspedes. Hostly se los ofrece y los cobra online.</p></div>
     </div>
   </div>
 </div>
