@@ -208,9 +208,10 @@ button { font-family: inherit; color: inherit; }
 .vol .num { opacity: .85; }
 
 /* A sota, a la dreta: les altres funcions de Hostly en rodones petites; cada una diu el seu nom i obre un mini pop-up */
-.funcions { margin-top: 12px; margin-left: auto; width: max-content; display: flex; align-items: center; gap: 6px; padding: 5px 5px 5px 14px; border-radius: 999px; background: var(--gris-0); box-shadow: inset 0 0 0 1px var(--linia); position: relative; }
-.funcions > b { font-size: 12.5px; font-weight: 600; color: var(--gris); white-space: nowrap; margin-right: 4px; }
-.funcions .pills { display: flex; gap: 5px; }
+.funcions { margin-top: 12px; display: flex; align-items: center; gap: 6px; padding: 5px 5px 5px 18px; border-radius: 999px; background: var(--gris-0); box-shadow: inset 0 0 0 1px var(--linia); position: relative; }
+.funcions > b { font-size: 13.5px; font-weight: 600; white-space: nowrap; }
+.funcions > span { font-size: 13.5px; color: var(--gris); white-space: nowrap; }
+.funcions .pills { display: flex; gap: 5px; margin-left: auto; }
 .fn { all: unset; cursor: pointer; position: relative; width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center; background: var(--blanc); box-shadow: inset 0 0 0 1px var(--linia-2); transition: background .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.2,.7,.2,1); }
 .fn .ic { width: 15px; height: 15px; color: var(--text); transition: color .35s ease; }
 .fn:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px var(--text); }
@@ -252,12 +253,17 @@ button { font-family: inherit; color: inherit; }
 .v1-ple { position: absolute; inset: 0 auto 0 0; width: 100%; border-radius: 99px; background: var(--verd); }
 .v1-av { position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%); width: 30px; height: 30px; box-shadow: 0 0 0 3px var(--gris-0); }
 .v1-estat { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--gris); }
-.v1-peu { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px; border-radius: 14px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+.v1-peu { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 12px 8px 8px; border-radius: 14px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+.v1-peu .mini-fotos { gap: 6px; }
+.v1-peu .mini-fotos i { width: 54px; height: 40px; border-radius: 8px; }
+.v1-peu .preu-n { height: 40px; justify-content: center; }
+.v1-peu .preu-n b { font-size: 18px; letter-spacing: -0.02em; }
 .mini-fotos { display: flex; gap: 4px; }
-.mini-fotos i { width: 40px; height: 30px; border-radius: 6px; background: var(--gris-1) center / cover no-repeat; }
-.mini-fotos i:nth-child(1) { background-image: var(--f-cala-moreta); }
-.mini-fotos i:nth-child(2) { background-image: var(--f-menjador-dia); background-position: 60% 70%; }
-.mini-fotos i:nth-child(3) { background-image: var(--f-atico-del-mar); background-position: 40% 60%; }
+.mini-fotos i { position: relative; overflow: hidden; width: 40px; height: 30px; border-radius: 6px; background: var(--gris-1) center / cover no-repeat; --flash: 0; }
+.mini-fotos i::after { content: ""; position: absolute; inset: 0; background: #fff; opacity: var(--flash); }
+.mini-fotos i:nth-child(1) { background-image: var(--p-sofa); }
+.mini-fotos i:nth-child(2) { background-image: var(--p-taula); }
+.mini-fotos i:nth-child(3) { background-image: var(--p-sala); }
 .preu-n { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.1; }
 .preu-n small { font-size: 11px; color: var(--gris); }
 .preu-n b { font-size: 16px; }
@@ -353,11 +359,10 @@ button { font-family: inherit; color: inherit; }
   </div>
 
   <div class="bloc">
-    <div class="nom"><b>La pantalla sencera</b><span>Rajoles: Mensajes (alta), Precios, Limpieza, Calendario i Extras y cuentas; a sota a la dreta, «Y además» amb les altres funcions en rodones (el nom surt en passar-hi el ratolí; en clicar, un mini pop-up).</span></div>
+    <div class="nom"><b>La pantalla sencera</b><span>Rajoles: Mensajes (alta), Precios, Limpieza (la 1, «El hueco»), Calendario i Extras y cuentas; a sota a la dreta, «Y además» amb les altres funcions en rodones (el nom surt en passar-hi el ratolí; en clicar, un mini pop-up).</span></div>
     <div class="eines">
-      <small>Res es mou sol: cada mòdul es mou només mentre hi tens el ratolí a sobre. Mensajes comença pel late checkout, que vola fins a Extras (l'únic moviment que passa d'un mòdul a l'altre), i després va canviant de conversa; Precios torna a pujar; Limpieza fa el torn sencer; Extras torna a sumar la fila. Al mòbil seria tocant el mòdul. Les rodones de sota obren un mini pop-up.</small>
+      <small>Res es mou sol: cada mòdul es mou només mentre hi tens el ratolí a sobre. Mensajes comença pel late checkout, que vola fins a Extras (l'únic moviment que passa d'un mòdul a l'altre), i després va canviant de conversa; Precios: primer puja la demanda, després surt «Festivo» i després puja el preu; Limpieza: la Carmen va de la sortida a l'entrada, surten les fotos una per una i, a la dreta, el preu; Extras torna a sumar la fila. Al mòbil seria tocant el mòdul. Les rodones de sota obren un mini pop-up.</small>
     </div>
-    <div class="selector" id="selector"><small>Limpieza a la pantalla:</small><button type="button" data-n="torn" aria-pressed="true">El torn (la d'ara)</button><button type="button" data-n="hueco" aria-pressed="false">1 · El hueco</button><button type="button" data-n="semana" aria-pressed="false">2 · La semana</button><button type="button" data-n="antes" aria-pressed="false">3 · Antes y después</button><button type="button" data-n="avisos" aria-pressed="false">4 · Avisos</button></div>
     <div class="pantalla-marc">
       <div class="pantalla" id="pantalla">
         <div class="capcal">
@@ -394,7 +399,7 @@ button { font-family: inherit; color: inherit; }
               </div>
               <div class="preus-baix">
                 <span class="xip vidre"><svg class="ic" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>Cada día</span>
-                <div class="dia vidre"><small>Semana Santa</small><p><b class="num"><span id="preu-n">251</span> €</b><span>/ noche</span></p><div class="xs"><span class="x x-verd">Demanda +70 %</span><span class="x x-ambre">Festivo</span></div></div>
+                <div class="dia vidre"><small>Semana Santa</small><p><b class="num"><span id="preu-n">251</span> €</b><span>/ noche</span></p><div class="xs"><span class="x x-verd" id="dem">Demanda +<span id="dem-n">70</span> %</span><span class="x x-ambre" id="festiu">Festivo</span></div></div>
               </div>
             </article>
 
@@ -435,7 +440,7 @@ button { font-family: inherit; color: inherit; }
           <div class="vol" id="vol" aria-hidden="true"><span class="av" style="background:#be123c">C</span>Late checkout <span class="num">· 25 €</span></div>
 
           <div class="funcions" id="funcions">
-            <b>Y además</b>
+            <b>Y además,</b><span>todo lo que también hace Hostly.</span>
             <div class="pills">
               <button class="fn" type="button" data-f="checkin" data-nom="Check-in y policía" aria-label="Check-in y policía"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10h8M8 14h5"/></svg></button>
               <button class="fn" type="button" data-f="programats" data-nom="Mensajes programados" aria-label="Mensajes programados"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></button>
@@ -454,10 +459,6 @@ button { font-family: inherit; color: inherit; }
     <p class="peu"><b>Què hi ha dins.</b> Mensajes: tres converses que roden (Camille en francès amb la IA; la sortida tardana, que és un missatge automàtic de Hostly amb l'enllaç, i la Camille l'accepta; Thomas en alemany). Limpieza: tres passos que s'encenen sols (salida → Pilar confirmada, «Coordinada» → amb fotos, «Hecha»), sense ensenyar cap WhatsApp. Extras: el format de la primera versió; la fila de la sortida tardana hi aterra volant i els 8.524 € passen a 8.549 €. Les xifres són d'exemple.</p>
   </div>
 
-  <div class="bloc">
-    <div class="nom"><b>Limpieza, quatre maneres</b><span>Totes de la mida de la rajola. Quietes ensenyen el final; amb el ratolí a sobre fan el seu moviment (i el repeteixen mentre hi siguis). Amb el selector de dalt les pots posar dins de la pantalla.</span></div>
-    <div class="alts" id="galeria"></div>
-  </div>
 </div>
 
 <script>
@@ -594,14 +595,28 @@ button { font-family: inherit; color: inherit; }
 
   // ── el preu de Precios puja ──
   const preuEl = $('preu-n'), preuV = { v: 145 };
-  function preuPuja() { gsap.killTweensOf(preuV); gsap.fromTo(preuV, { v: 145 }, { v: 251, duration: 1.9, ease: 'sine.inOut', delay: .3, onUpdate: () => { preuEl.textContent = milers(preuV.v); }, onComplete: () => { if (sobre.preus) gsap.delayedCall(2.2, () => { if (sobre.preus) preuPuja(); }); } }); }
+  const demEl = $('dem'), demN = $('dem-n'), festiu = $('festiu'), demV = { v: 70 };
+  let tlPreu = null;
+  function preuPuja() {
+    if (tlPreu) tlPreu.kill();
+    tlPreu = gsap.timeline({ onComplete: () => { if (sobre.preus) gsap.delayedCall(2.4, () => { if (sobre.preus) preuPuja(); }); } });
+    tlPreu.to([festiu, preuEl], { opacity: .25, duration: .35, ease: 'sine.in' })
+      .call(() => { demV.v = 0; demN.textContent = '0'; preuV.v = 145; preuEl.textContent = milers(145); })
+      .to(preuEl, { opacity: 1, duration: .4 })
+      // 1 · la demanda puja
+      .to(demV, { v: 70, duration: 1.4, ease: 'sine.inOut', onUpdate: () => { demN.textContent = Math.round(demV.v); } })
+      .fromTo(demEl, { scale: 1 }, { scale: 1.08, duration: .35, yoyo: true, repeat: 1, ease: 'sine.inOut' }, '-=.35')
+      // 2 · és festiu
+      .to(festiu, { opacity: 1, duration: .5, ease: 'sine.out' })
+      // 3 · i el preu puja
+      .to(preuV, { v: 251, duration: 1.9, ease: 'sine.inOut', onUpdate: () => { preuEl.textContent = milers(preuV.v); } }, '+=.2');
+  }
 
   // ── Moviment: un sol cop en entrar; després, només amb el ratolí a sobre (o tocant, al mòbil) ──
   const QUAN_HI_ENTRES = {
     // Mensajes: comença pel late checkout (que vola cap a Extras) i, mentre hi siguis, va canviant de conversa
     missatges: () => { lateCheckout(); programa(); },
-    preus: () => { if (!gsap.isTweening(preuV)) preuPuja(); },
-    neteja: () => { if (tornI === ESTATS_B.length - 1) tornSegueix(); else { clearTimeout(tornT); tornT = setTimeout(tornSegueix, 400); } },
+    preus: () => { if (!(tlPreu && tlPreu.isActive())) preuPuja(); },
     // Extras: només ell; la fila del late checkout torna a entrar i el total torna a sumar
     extres: () => { gsap.killTweensOf([comptador, fila]); fila.classList.remove('hi'); mesN.textContent = milers(8524); setTimeout(() => { if (!fila.classList.contains('hi')) aterra(false); }, 350); },
   };
@@ -612,7 +627,7 @@ button { font-family: inherit; color: inherit; }
     t.addEventListener('touchstart', () => { if (!quiet) QUAN_HI_ENTRES[k](); }, { passive: true });
   });
   // en entrar, res es mou: cada mòdul ja ensenya el seu estat final i es mou només quan hi passes el ratolí
-  n = 1; pinta(CONV[1], true); pintaTorn(torn, 4); tornI = 4;
+  n = 1; pinta(CONV[1], true);
 
   // ── Les píndoles de sota: un mini pop-up per funció (textos de les fitxes de la web) ──
   const FUNCIONS = {
@@ -669,10 +684,10 @@ button { font-family: inherit; color: inherit; }
         <div class="v1-peu"><span class="mini-fotos"><i></i><i></i><i></i></span><span class="preu-n"><small>a tus cuentas</small><b class="num v1-preu">45 €</b></span></div>
       </div>`,
       play(el) {
-        const ple = el.querySelector('.v1-ple'), av = el.querySelector('.v1-av'), xip = el.querySelector('.v1-xip'), qui = el.querySelector('.v1-qui'), fotos = el.querySelectorAll('.mini-fotos i'), preu = el.querySelector('.v1-preu'), peu = el.querySelector('.v1-peu');
+        const preuBloc = el.querySelector('.v1-peu .preu-n'), ple = el.querySelector('.v1-ple'), av = el.querySelector('.v1-av'), xip = el.querySelector('.v1-xip'), qui = el.querySelector('.v1-qui'), fotos = el.querySelectorAll('.mini-fotos i'), preu = el.querySelector('.v1-preu'), peu = el.querySelector('.v1-peu');
         const tl = gsap.timeline();
         tl.to([ple, av, xip, qui, peu], { opacity: 0, duration: .35, ease: 'sine.in' })
-          .call(() => { gsap.set(ple, { width: '0%', background: 'var(--blau)' }); gsap.set(av, { left: '0%' }); xip.className = 'estat v1-xip'; xip.innerHTML = CHK + 'Coordinada'; qui.textContent = 'Carmen · mañana'; gsap.set(fotos, { opacity: 0, scale: .7 }); preu.textContent = '0 €'; })
+          .call(() => { gsap.set(ple, { width: '0%', background: 'var(--blau)' }); gsap.set(av, { left: '0%' }); xip.className = 'estat v1-xip'; xip.innerHTML = CHK + 'Coordinada'; qui.textContent = 'Carmen · mañana'; gsap.set(fotos, { opacity: 0 }); gsap.set(preuBloc, { opacity: 0, x: 10 }); preu.textContent = '0 €'; })
           .to([av, xip, qui], { opacity: 1, duration: .6, ease: 'sine.out', stagger: .12 })
           .to(ple, { opacity: 1, duration: .3 }, '<')
           .to(ple, { width: '100%', duration: 2.4, ease: 'sine.inOut' }, '+=.4')
@@ -681,8 +696,12 @@ button { font-family: inherit; color: inherit; }
           .call(() => { xip.className = 'estat feta v1-xip'; xip.innerHTML = CHK + 'Hecha'; qui.textContent = 'Carmen · 13:40'; })
           .fromTo(xip, { opacity: .3 }, { opacity: 1, duration: .5 })
           .to(peu, { opacity: 1, duration: .5, ease: 'sine.out' }, '-=.2')
-          .to(fotos, { opacity: 1, scale: 1, duration: .7, ease: 'sine.out', stagger: .25 }, '-=.2')
-          .add(compta(preu, 0, 45, 1.2), '-=.3');
+          // cada foto entra com si es fes en aquell moment: un flaix, una mica girada, i es posa al seu lloc
+          .fromTo(fotos, { opacity: 0, scale: 1.3, rotation: (k) => [-7, 5, -4][k], y: -6, '--flash': 1 },
+                         { opacity: 1, scale: 1, rotation: 0, y: 0, '--flash': 0, duration: .9, ease: 'sine.out', stagger: .5 }, '-=.1')
+          // i després, el preu, a la dreta
+          .to(preuBloc, { opacity: 1, x: 0, duration: .7, ease: 'sine.out' }, '+=.1')
+          .add(compta(preu, 0, 45, 1.3), '<');
         return tl;
       },
     },
@@ -790,21 +809,11 @@ button { font-family: inherit; color: inherit; }
     el.addEventListener('touchstart', () => { if (!quiet && !(tl && tl.isActive())) volta(); }, { passive: true });
     return el;
   }
-  // la galeria
-  const galeria = $('galeria');
-  Object.keys(NETEJES).forEach((k) => {
-    const a = document.createElement('div'); a.className = 'alt';
-    a.appendChild(creaNeteja(k, false));
-    a.insertAdjacentHTML('beforeend', `<p class="nom-alt"><b>${NETEJES[k].nom}.</b> ${NETEJES[k].desc}</p>`);
-    galeria.appendChild(a);
-  });
-  // dins de la pantalla: totes al mateix lloc, i el selector n'ensenya una
+  // a la pantalla, la 1 (El hueco), al lloc de la neteja
   const tornEl = document.querySelector('[data-nv="torn"]');
-  Object.keys(NETEJES).forEach((k) => { const el = creaNeteja(k, true); el.dataset.nv = k; el.hidden = true; tornEl.after(el); });
-  document.querySelectorAll('#selector button').forEach((b) => b.addEventListener('click', () => {
-    document.querySelectorAll('#selector button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
-    document.querySelectorAll('[data-nv]').forEach((el) => { const vist = el.dataset.nv === b.dataset.n; if (vist && el.hidden) { el.hidden = false; gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: .5, ease: 'sine.out' }); } else if (!vist) el.hidden = true; });
-  }));
+  const hueco = creaNeteja('hueco', true); tornEl.after(hueco); tornEl.remove();
+  hueco.addEventListener('mouseenter', () => { sobre.neteja = true; });
+  hueco.addEventListener('mouseleave', () => { sobre.neteja = false; });
 
   // l'alçada real de la secció, al regle
   const mesura = () => { const r = sec.getBoundingClientRect(); $('regle-alcada').textContent = `el capçal + la secció fan ${Math.round(80 + r.height)} px d'alt`; };
