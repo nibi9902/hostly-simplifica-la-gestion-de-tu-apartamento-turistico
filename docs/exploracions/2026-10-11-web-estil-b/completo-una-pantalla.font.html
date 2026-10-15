@@ -236,6 +236,13 @@ button { font-family: inherit; color: inherit; }
 .pop a .ic { width: 14px; height: 14px; }
 .pop::after { content: ""; position: absolute; left: var(--fletxa, 24px); bottom: -6px; width: 12px; height: 12px; background: var(--blanc); transform: rotate(45deg); box-shadow: 1px 1px 0 var(--linia); }
 
+/* abans i ara */
+.compara { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.compara > div { padding: 14px 16px; border-radius: 16px; background: var(--blanc); box-shadow: inset 0 0 0 1px var(--linia); display: flex; flex-direction: column; gap: 6px; }
+.compara small { font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--gris); }
+.compara .abans { font-size: 13.5px; color: var(--tenue); text-decoration: line-through; text-decoration-color: var(--linia-2); }
+.compara .ara { font-size: 15px; line-height: 1.45; color: var(--text); }
+
 /* ── Tres maneres de dir «tot és automàtic» (A, B, C), commutables ── */
 .va, .vb, .vc { display: none; }
 #pantalla[data-auto="a"] .va { display: inline-flex; }
@@ -347,6 +354,7 @@ button { font-family: inherit; color: inherit; }
 /* «Late checkout», el terme: cursiva, només a Extras y cuentas (a la resta, text normal, per no fer soroll) */
 .extres .terme { font-style: italic; font-weight: 600; letter-spacing: -0.01em; }
 .extres .h3 .terme { color: var(--text); }
+.ext-p { font-size: 13.5px; }
 .torn .qui { display: flex; align-items: center; gap: 6px; }
 .torn .av { width: 40px; height: 40px; font-size: 13px; box-shadow: 0 0 0 3px var(--gris-0); opacity: .45; transition: opacity .6s ease, box-shadow .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
 .torn .av.ara { opacity: 1; box-shadow: 0 0 0 3px var(--gris-0), 0 0 0 5px var(--blau); transform: scale(1.06); }
@@ -380,9 +388,8 @@ button { font-family: inherit; color: inherit; }
     <div class="eines">
       <small>Res es mou sol: cada mòdul es mou només mentre hi tens el ratolí a sobre. Mensajes comença pel late checkout, que vola fins a Extras (l'únic moviment que passa d'un mòdul a l'altre), i després va canviant de conversa; Precios: primer puja la demanda, després surt «Festivo» i després puja el preu; Limpieza: el torn (la Pilar no pot, passa a la Carmen, Coordinada) i, en acabar, les fotos una per una i el preu a la dreta; Extras torna a sumar la fila. Al mòbil seria tocant el mòdul. Les rodones de sota obren un mini pop-up.</small>
     </div>
-    <div class="selector" id="sel-auto"><small>Com es veu que tot és automàtic:</small><button type="button" data-v="a" aria-pressed="true">A · «Automático» a cada mòdul</button><button type="button" data-v="b" aria-pressed="false">B · Ho diu el títol</button><button type="button" data-v="c" aria-pressed="false">C · «Solo» dins de cada mòdul</button></div>
     <div class="pantalla-marc">
-      <div class="pantalla" id="pantalla" data-auto="a">
+      <div class="pantalla" id="pantalla">
         <div class="capcal">
           <span class="logo"><svg class="ic" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-6h6v6"/></svg>HOSTLY</span>
           <div class="nav"><span>Funcionalidades <svg class="ic" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span><span>Para quién <svg class="ic" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span><span>Recursos <svg class="ic" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span><span>Precios</span></div>
@@ -392,15 +399,15 @@ button { font-family: inherit; color: inherit; }
         <section class="sec" id="sec">
           <div class="sec-cap">
             <span class="pindola">Hostly Completo</span>
-            <h2 class="h2">Con el Completo, <span class="tenue">todo lo demás<span class="no-b">.</span><span class="vb">, en automático.</span></span></h2>
+            <h2 class="h2">Con el Completo, <span class="tenue">todo lo demás.</span></h2>
           </div>
 
           <div class="graella">
             <!-- Mensajes -->
             <article class="t foto missatges" data-viu="missatges" style="background-image:var(--f-gestor-tarda)">
               <div class="dalt">
-                <div><p class="gros">Mensajes</p><p class="sub vc">Contesta sola, 24/7 y en su idioma.</p></div>
-                <span class="auto-xip va vidre"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Automático</span><button class="rodo vidre" type="button" aria-label="Ver Mensajes"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
+                <div><p class="gros">Mensajes</p><p class="sub">La IA contesta a cada huésped en su idioma, también a las tres de la mañana.</p></div>
+                <button class="rodo vidre" type="button" aria-label="Ver Mensajes"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
               </div>
               <div class="xat vidre">
                 <div class="xat-cap"><i class="logo-canal airbnb" id="x-logo"></i><span><b id="x-qui">Camille</b><small>Apartamento Cala Moreta</small></span><em>24/7</em></div>
@@ -412,19 +419,19 @@ button { font-family: inherit; color: inherit; }
             <!-- Precios -->
             <article class="t foto preus" data-viu="preus" style="background-image:var(--f-menjador-dia)">
               <div class="dalt">
-                <div><p class="gros">Precios</p><p class="sub">Sube y baja los precios cada día, según la demanda.</p></div>
-                <span class="auto-xip va vidre"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Automático</span><button class="rodo vidre" type="button" aria-label="Ver Precios"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
+                <div><p class="gros">Precios</p><p class="sub">Hostly ajusta el precio cada día y lo publica en Airbnb y Booking.</p></div>
+                <button class="rodo vidre" type="button" aria-label="Ver Precios"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
               </div>
               <div class="preus-baix">
-                <span class="xip vidre"><svg class="ic" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg><span class="no-c">Cada día</span><span class="vc">Cada día, solos</span></span>
+                <span class="xip vidre"><svg class="ic" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>Cada día</span>
                 <div class="dia vidre"><small>Semana Santa</small><p><b class="num"><span id="preu-n">251</span> €</b><span>/ noche</span></p><div class="xs"><span class="x x-verd" id="dem">Demanda +<span id="dem-n">70</span> %</span><span class="x x-ambre" id="festiu">Festivo</span></div></div>
               </div>
             </article>
 
             <!-- Limpieza: el torn -->
             <article class="t clar neteja" data-viu="neteja" data-nv="torn">
-              <div class="dalt"><span class="pindola">Limpieza</span><span class="auto-xip va"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Automático</span><button class="rodo" type="button" aria-label="Ver Limpieza"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-              <h3 class="h3">Tu equipo, <span class="tenue"><span class="no-c">sin llamadas.</span><span class="vc">se coordina solo.</span></span></h3>
+              <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver Limpieza"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
+              <h3 class="h3">Hostly avisa a tu equipo. <span class="tenue">Si alguien no puede, a la siguiente.</span></h3>
               <div class="torn" id="torn">
                 <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
                 <div class="caixa" id="torn-caixa"></div>
@@ -433,8 +440,8 @@ button { font-family: inherit; color: inherit; }
 
             <!-- Calendario -->
             <article class="t clar cal">
-              <div class="dalt"><span class="pindola">Calendario</span><span class="auto-xip va"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Automático</span><button class="rodo" type="button" aria-label="Ver Calendario"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-              <div class="cal-text"><h3 class="h3">Un solo calendario</h3><p class="p">Airbnb, Booking, Vrbo y tus reservas, <span class="no-c">siempre cuadrados.</span><span class="vc">se cuadran solos.</span></p></div>
+              <div class="dalt"><span class="pindola">Calendario</span><button class="rodo" type="button" aria-label="Ver Calendario"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
+              <div class="cal-text"><h3 class="h3">Un solo calendario</h3><p class="p">Las reservas entran solas y no se pueden solapar.</p></div>
               <div class="mini">
                 <div class="mini-cap"><span></span><b>Lu</b><b>Ma</b><b>Mi</b><b>Ju</b><b>Vi</b><b>Sá</b><b>Do</b></div>
                 <div class="mini-f"><span>Cala Moreta</span><i class="r airbnb" style="grid-column:2/5"><i></i>Camille <small>435 €</small></i><em style="grid-column:6/7">145 €</em><em style="grid-column:7/8">145 €</em></div>
@@ -445,10 +452,11 @@ button { font-family: inherit; color: inherit; }
 
             <!-- Extras y cuentas -->
             <article class="t clar extres" id="extres" data-viu="extres">
-              <div class="dalt"><span class="pindola">Extras y cuentas</span><span class="auto-xip va"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Automático</span><button class="rodo" type="button" aria-label="Ver Extras y cuentas"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-              <h3 class="h3">+25 € <span class="tenue">por cada <span class="terme">Late checkout</span> que vendes.</span></h3>
+              <div class="dalt"><span class="pindola">Extras y cuentas</span><button class="rodo" type="button" aria-label="Ver Extras y cuentas"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
+              <h3 class="h3">+25 € <span class="tenue">por <span class="terme">Late checkout</span>.</span></h3>
+              <p class="p ext-p">Lo ofrece un mensaje automático, el huésped lo paga online y se suma a tus cuentas.</p>
               <div class="mostra">
-                <div class="fila nova hi" id="fila-nova"><span class="av" style="background:#be123c">C</span><span class="q"><b><span class="terme">Late checkout</span></b><small>Camille · hasta las 13:00 · online</small></span><b class="num">25 €</b><span class="estat feta"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span class="no-c">Pagado</span><span class="vc">Cobrado solo</span></span></div>
+                <div class="fila nova hi" id="fila-nova"><span class="av" style="background:#be123c">C</span><span class="q"><b><span class="terme">Late checkout</span></b><small>Camille · hasta las 13:00 · online</small></span><b class="num">25 €</b><span class="estat feta"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Pagado</span></div>
                 <p class="mes"><b class="num"><span id="mes-n">8.549</span> €</b><small>lo que cobrarás este mes</small></p>
               </div>
             </article>
@@ -478,6 +486,16 @@ button { font-family: inherit; color: inherit; }
     <p class="peu"><b>Què hi ha dins.</b> Mensajes: tres converses que roden (Camille en francès amb la IA; la sortida tardana, que és un missatge automàtic de Hostly amb l'enllaç, i la Camille l'accepta; Thomas en alemany). Limpieza: tres passos que s'encenen sols (salida → Pilar confirmada, «Coordinada» → amb fotos, «Hecha»), sense ensenyar cap WhatsApp. Extras: el format de la primera versió; la fila de la sortida tardana hi aterra volant i els 8.524 € passen a 8.549 €. Les xifres són d'exemple.</p>
   </div>
 
+  <div class="bloc">
+    <div class="nom"><b>Els textos, abans i ara</b><span>La idea: que cada mòdul digui què fa Hostly per tu, amb frases literals, sense etiquetes ni promeses.</span></div>
+    <div class="compara">
+      <div><small>Mensajes</small><p class="abans">(sense text)</p><p class="ara">La IA contesta a cada huésped en su idioma, también a las tres de la mañana.</p></div>
+      <div><small>Precios</small><p class="abans">Sube y baja los precios cada día, según la demanda.</p><p class="ara">Hostly ajusta el precio cada día y lo publica en Airbnb y Booking.</p></div>
+      <div><small>Limpieza</small><p class="abans">Tu equipo, sin llamadas.</p><p class="ara">Hostly avisa a tu equipo. Si alguien no puede, a la siguiente.</p></div>
+      <div><small>Calendario</small><p class="abans">Airbnb, Booking, Vrbo y tus reservas, siempre cuadrados.</p><p class="ara">Las reservas entran solas y no se pueden solapar.</p></div>
+      <div><small>Extras y cuentas</small><p class="abans">+25 € por cada Late checkout que vendes.</p><p class="ara">+25 € por Late checkout.</p><p class="ara">Lo ofrece un mensaje automático, el huésped lo paga online y se suma a tus cuentas.</p></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -579,7 +597,7 @@ button { font-family: inherit; color: inherit; }
   const ESTATS_B = [
     { qui: 0, html: `<div class="frase"><span><b>Pilar</b> · mañana 11:00</span><span class="estat">Preguntando…</span></div>` },
     { qui: 0, no: true, html: `<div class="frase"><span><b>Pilar</b> no puede</span><span class="estat" style="background:var(--ambre-suau);color:var(--ambre-text)">Pasa a Carmen</span></div>` },
-    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · mañana 11:00</span><span class="estat">${CHECK}<span class="no-c">Coordinada</span><span class="vc">Coordinada sola</span></span></div>` },
+    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · mañana 11:00</span><span class="estat">${CHECK}Coordinada</span></div>` },
     { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fila-fotos"><div class="fotos"><i></i><i></i><i></i></div></div>` },
     { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fila-fotos"><div class="fotos"><i></i><i></i><i></i></div><span class="preu-n"><small>a tus cuentas</small><b class="num">45 €</b></span></div>`, nomesPreu: true },
   ];
