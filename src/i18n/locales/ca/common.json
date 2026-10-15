@@ -116,7 +116,7 @@
     "meta_description": "Un dia amb Hostly en un minut i cinc vídeos curts amb l'app de debò: el registre a la policia, els missatges, el calendari, la neteja i els comptes.",
     "eyebrow": "Com funciona",
     "heading": "Així funciona Hostly.",
-    "subheading": "Un dia qualsevol amb Hostly, en un minut. A sota, cada cosa per separat.",
+    "subheading": "Un dia qualsevol amb Hostly, en un minut.",
     "videos": [
       {
         "id": "policia",
@@ -144,7 +144,7 @@
         "text": "El que t'ha arribat de debò, i la liquidació feta."
       }
     ],
-    "nota_idioma": "Els vídeos són en castellà.",
+    "nota_idioma": "El vídeo és en castellà.",
     "veure": "Veure el vídeo: {{titol}}",
     "cta_start": "Començar",
     "cta_pricing": "Veure preus",
