@@ -216,18 +216,32 @@ button { font-family: inherit; color: inherit; }
 .connecta .rodo { width: 36px; height: 36px; }
 
 /* ── Les alternatives de la neteja, a sota de la pantalla ── */
-.alts { display: grid; grid-template-columns: repeat(3, 380px); gap: 20px; }
+.alts { display: flex; flex-wrap: wrap; gap: 16px; }
+.alts .alt { width: 340px; }
+.alts .t { height: 300px; }
+.alts .h3 { font-size: 19px; }
 .alt { display: flex; flex-direction: column; gap: 10px; }
 .alt .t { height: 300px; }
 .alt .nom-alt { font-size: 14px; line-height: 1.5; color: var(--gris); }
 .alt .nom-alt b { color: var(--text); font-weight: 600; }
-/* B · l'equip del torn: les rodones, i la que toca s'encén */
+/* B · l'equip del torn: les rodones, i la que toca s'encén; en acabar, les fotos i el preu */
 .torn { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
+.torn .caixa { border-radius: 14px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0,0,0,.05); padding: 8px 12px; display: flex; flex-direction: column; gap: 8px; }
+.torn .fotos { display: flex; gap: 5px; }
+.torn .fotos i { width: 54px; height: 40px; border-radius: 7px; background: var(--gris-1) center / cover no-repeat; }
+.torn .fotos i:nth-child(1) { background-image: var(--f-cala-moreta); }
+.torn .fotos i:nth-child(2) { background-image: var(--f-menjador-dia); background-position: 60% 70%; }
+.torn .fotos i:nth-child(3) { background-image: var(--f-atico-del-mar); background-position: 40% 60%; }
+.torn .preu { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 8px; border-top: 1px dashed var(--linia-2); font-size: 12.5px; color: var(--gris); }
+.torn .preu b { font-size: 15px; color: var(--text); }
+.terme { font-weight: 700; font-style: italic; letter-spacing: -0.01em; padding: 0 .3em; margin: 0 -.1em; border-radius: 6px; background: var(--ambre-suau); color: var(--ambre-text); font-style: normal; }
+.bi.auto .terme, .vol .terme { background: rgba(255,255,255,.16); color: #fff; }
+.h3 .terme { font-size: .9em; vertical-align: 1px; }
 .torn .qui { display: flex; align-items: center; gap: 6px; }
 .torn .av { width: 40px; height: 40px; font-size: 13px; box-shadow: 0 0 0 3px var(--gris-0); opacity: .45; transition: opacity .3s ease, box-shadow .3s ease, transform .3s ease; }
 .torn .av.ara { opacity: 1; box-shadow: 0 0 0 3px var(--gris-0), 0 0 0 5px var(--blau); transform: scale(1.06); }
 .torn .av.no { opacity: .45; }
-.torn .frase { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 40px; padding: 8px 12px; border-radius: 14px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0,0,0,.05); font-size: 13px; }
+.torn .frase { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 24px; font-size: 13px; }
 .torn .frase b { font-weight: 600; }
 /* C · un sol estat que canvia */
 .estat-gran { margin-top: auto; border-radius: 18px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0,0,0,.06); padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
@@ -297,16 +311,14 @@ button { font-family: inherit; color: inherit; }
               </div>
             </article>
 
-            <!-- Limpieza, conceptual -->
+            <!-- Limpieza: el torn -->
             <article class="t clar neteja">
               <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver Limpieza"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-              <h3 class="h3">0 llamadas <span class="tenue">para cuadrar la limpieza.</span></h3>
-              <div class="passos" id="passos">
-                <div class="pas"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg></span><span class="q"><b>Salida de Camille</b><small>Cala Moreta · mañana 11:00</small></span><span class="estat">Limpieza creada</span></div>
-                <div class="pas"><span class="av" style="background:#0f766e">P</span><span class="q"><b>Pilar, confirmada</b><small>sin que hagas nada</small></span><span class="estat"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Coordinada</span></div>
-                <div class="pas"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span><span class="q"><b>Con fotos</b><small>lista para entrar</small></span><span class="estat feta"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Hecha</span></div>
+              <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
+              <div class="torn" id="torn">
+                <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
+                <div class="caixa" id="torn-caixa"></div>
               </div>
-              <p class="nota"><span class="av" style="background:#b45309">C</span>Si Pilar no puede, pasa a Carmen, la siguiente.</p>
             </article>
 
             <!-- Calendario -->
@@ -324,16 +336,16 @@ button { font-family: inherit; color: inherit; }
             <!-- Extras y cuentas -->
             <article class="t clar extres" id="extres">
               <div class="dalt"><span class="pindola">Extras y cuentas</span><button class="rodo" type="button" aria-label="Ver Extras y cuentas"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-              <h3 class="h3">+25 € <span class="tenue">por cada salida tardía que vendes.</span></h3>
+              <h3 class="h3">+25 € <span class="tenue">por cada <span class="terme">Late checkout</span> que vendes.</span></h3>
               <div class="mostra">
-                <div class="fila nova hi" id="fila-nova"><span class="av" style="background:#be123c">C</span><span class="q"><b>Salida tardía · Camille</b><small>hasta las 13:00 · online</small></span><b class="num">25 €</b><span class="estat feta"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Pagado</span></div>
+                <div class="fila nova hi" id="fila-nova"><span class="av" style="background:#be123c">C</span><span class="q"><b><span class="terme">Late checkout</span></b><small>Camille · hasta las 13:00 · online</small></span><b class="num">25 €</b><span class="estat feta"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Pagado</span></div>
                 <p class="mes"><b class="num"><span id="mes-n">8.549</span> €</b><small>lo que cobrarás este mes</small></p>
               </div>
             </article>
           </div>
 
           <!-- la bombolla que vola -->
-          <div class="vol" id="vol" aria-hidden="true"><span class="av" style="background:#be123c">C</span>Salida tardía <span class="num">· 25 €</span></div>
+          <div class="vol" id="vol" aria-hidden="true"><span class="av" style="background:#be123c">C</span><span class="terme">Late checkout</span> <span class="num">· 25 €</span></div>
 
           <div class="connecta">
             <b>¿Usas otra herramienta?</b><span>La conectamos con Hostly. Es un servicio aparte, a medida.</span>
@@ -348,51 +360,66 @@ button { font-family: inherit; color: inherit; }
   </div>
 
   <div class="bloc">
-    <div class="nom"><b>Limpieza, tres maneres de dir «es coordina sola»</b><span>La A és la de la pantalla. Totes tres fan la mateixa mida que la rajola de dalt.</span></div>
+    <div class="nom"><b>Limpieza, la B pas a pas</b><span>Els cinc moments congelats. A la pantalla de dalt van rodant sols (uns 2 s cadascun i 4 s al final).</span></div>
     <div class="alts">
       <div class="alt">
         <article class="t clar">
           <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-          <h3 class="h3">0 llamadas <span class="tenue">para cuadrar la limpieza.</span></h3>
-          <div class="passos" id="passos-a">
-            <div class="pas"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg></span><span class="q"><b>Salida de Camille</b><small>Cala Moreta · mañana 11:00</small></span><span class="estat">Limpieza creada</span></div>
-            <div class="pas"><span class="av" style="background:#0f766e">P</span><span class="q"><b>Pilar, confirmada</b><small>sin que hagas nada</small></span><span class="estat"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Coordinada</span></div>
-            <div class="pas"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span><span class="q"><b>Con fotos</b><small>lista para entrar</small></span><span class="estat feta"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Hecha</span></div>
-          </div>
-          <p class="nota"><span class="av" style="background:#b45309">C</span>Si Pilar no puede, pasa a Carmen, la siguiente.</p>
-        </article>
-        <p class="nom-alt"><b>A · Els tres passos.</b> El procés sencer d'una ullada: la sortida crea la neteja, la Pilar la confirma, i acaba feta amb fotos. És la més «procés».</p>
-      </div>
-
-      <div class="alt">
-        <article class="t clar">
-          <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-          <h3 class="h3">Tu equipo, <span class="tenue">por turnos y sin llamadas.</span></h3>
-          <div class="torn" id="torn">
+          <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
+          <div class="torn" data-estat="0">
             <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
-            <div class="frase" id="torn-frase"><span><b>Pilar</b> · mañana 11:00</span><span class="estat"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Coordinada</span></div>
-            <p class="nota" style="font-size:12px;color:var(--gris)">Si no puede, Hostly se lo pide a la siguiente.</p>
+            <div class="caixa"></div>
           </div>
         </article>
-        <p class="nom-alt"><b>B · El torn.</b> L'equip com a rodones; la que toca s'encén. Quan una «no puede», el focus passa a la següent i la frase canvia. És la més «equip».</p>
+        <p class="nom-alt"><b>1 · Hostly li pregunta a la Pilar</b></p>
       </div>
-
       <div class="alt">
         <article class="t clar">
           <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-          <h3 class="h3">Cada salida, <span class="tenue">una limpieza ya cuadrada.</span></h3>
-          <div class="estat-gran" id="estat-gran">
-            <div class="on"><span>Cala Moreta</span><small>mañana 11:00</small></div>
-            <div class="xifra"><span id="eg-text">Pendiente</span><span class="estat" id="eg-xip">Hostly la cuadra</span></div>
-            <div class="tira"><i id="eg-1"></i><i id="eg-2"></i><i id="eg-3"></i></div>
-            <p class="pista" id="eg-pista"><span class="av" style="background:#0f766e">P</span>Pilar, avisada</p>
+          <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
+          <div class="torn" data-estat="1">
+            <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
+            <div class="caixa"></div>
           </div>
         </article>
-        <p class="nom-alt"><b>C · L'estat que canvia.</b> Una sola targeta, com la fitxa de l'app: Pendiente → Coordinada → Hecha, amb la barra que s'omple. És la més «resultat»: tu només veus «hecha».</p>
+        <p class="nom-alt"><b>2 · La Pilar no pot: passa a la Carmen</b></p>
+      </div>
+      <div class="alt">
+        <article class="t clar">
+          <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
+          <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
+          <div class="torn" data-estat="2">
+            <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
+            <div class="caixa"></div>
+          </div>
+        </article>
+        <p class="nom-alt"><b>3 · La Carmen diu que sí: Coordinada</b></p>
+      </div>
+      <div class="alt">
+        <article class="t clar">
+          <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
+          <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
+          <div class="torn" data-estat="3">
+            <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
+            <div class="caixa"></div>
+          </div>
+        </article>
+        <p class="nom-alt"><b>4 · Feta, amb les fotos</b></p>
+      </div>
+      <div class="alt">
+        <article class="t clar">
+          <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
+          <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
+          <div class="torn" data-estat="4">
+            <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
+            <div class="caixa"></div>
+          </div>
+        </article>
+        <p class="nom-alt"><b>5 · I el preu, a les comptes del mes</b></p>
       </div>
     </div>
+    <p class="peu"><b>Què diu.</b> L'equip són les rodones; la que toca s'encén. Hostly li pregunta a la Pilar; si no pot, passa a la Carmen sense que facis res. Quan la Carmen l'acaba, arriben les fotos i, a sota, el preu de la neteja, que ja va a les comptes del mes.</p>
   </div>
-</div>
 
 <script>
 (() => {
@@ -406,7 +433,7 @@ button { font-family: inherit; color: inherit; }
   // ── Mensajes: tres converses; la segona és la sortida tardana ──
   const CONV = [
     { qui: 'Camille', canal: 'airbnb', idioma: 'francés', hoste: 'Bonjour ! À quelle heure peut-on entrer ?', trad: '¡Hola! ¿A qué hora podemos entrar?', ia: 'Bonjour Camille ! À partir de 16 h. Demain matin, vous recevrez le code de la porte.' },
-    { qui: 'Camille', canal: 'airbnb', idioma: 'francés', upsell: true, auto: 'Envie de partir plus tard ? Jusqu’à 13 h pour 25 €.', autoTrad: '¿Quieres salir más tarde? Hasta las 13:00 por 25 €.', resposta: 'Oui, je prends !', respostaTrad: '¡Sí, me lo quedo!' },
+    { qui: 'Camille', canal: 'airbnb', idioma: 'francés', upsell: true, auto: 'Envie d’un <span class="terme">Late checkout</span> ? Jusqu’à 13 h pour 25 €.', autoTrad: '¿Quieres un late checkout? Hasta las 13:00 por 25 €.', resposta: 'Oui, je prends !', respostaTrad: '¡Sí, me lo quedo!' },
     { qui: 'Thomas', canal: 'booking', idioma: 'alemán', hoste: 'Gibt es einen Parkplatz in der Nähe?', trad: '¿Hay aparcamiento cerca?', ia: 'Ja, direkt vor dem Haus. Kostenlos, ohne Reservierung.' },
   ];
   let n = 0, temps = [], tocat = false;
@@ -481,49 +508,27 @@ button { font-family: inherit; color: inherit; }
     };
     tic();
   }
-  cicle('#passos .pas', 1300, 3600);
-  cicle('#passos-a .pas', 1300, 3600);
 
-  // ── B · el torn: la Pilar, després «no puede» → la Carmen ──
+  // ── B · el torn: la Pilar, «no puede» → la Carmen → Coordinada → fotos → preu ──
+  const CHECK = svg('<path d="M20 6L9 17l-5-5"/>');
+  const ESTATS_B = [
+    { qui: 0, html: `<div class="frase"><span><b>Pilar</b> · mañana 11:00</span><span class="estat">Preguntando…</span></div>` },
+    { qui: 0, no: true, html: `<div class="frase"><span><b>Pilar</b> no puede</span><span class="estat" style="background:var(--ambre-suau);color:var(--ambre-text)">Pasa a Carmen</span></div>` },
+    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · mañana 11:00</span><span class="estat">${CHECK}Coordinada</span></div>` },
+    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fotos"><i></i><i></i><i></i></div>` },
+    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fotos"><i></i><i></i><i></i></div><div class="preu"><span>Limpieza · en las cuentas del mes</span><b class="num">45 €</b></div>` },
+  ];
+  function pintaTorn(torn, i) {
+    const e = ESTATS_B[i], avs = [...torn.querySelectorAll('.av')];
+    torn.querySelector('.caixa').innerHTML = e.html;
+    avs.forEach((a, k) => { a.classList.toggle('ara', k === e.qui && !e.no); a.classList.toggle('no', k === 0 && i >= 1); });
+  }
+  document.querySelectorAll('.torn[data-estat]').forEach((t) => pintaTorn(t, Number(t.dataset.estat)));
   (() => {
-    const avs = [...document.querySelectorAll('#torn .av')], frase = $('torn-frase');
-    const estats = [
-      ['<span><b>Pilar</b> · mañana 11:00</span><span class="estat">Preguntando…</span>', 0],
-      ['<span><b>Pilar</b> no puede</span><span class="estat" style="background:var(--ambre-suau);color:var(--ambre-text)">Pasa a Carmen</span>', 0, true],
-      ['<span><b>Carmen</b> · mañana 11:00</span><span class="estat">Preguntando…</span>', 1],
-      ['<span><b>Carmen</b> · mañana 11:00</span><span class="estat"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Coordinada</span>', 1],
-      ['<span><b>Carmen</b> · hecha con fotos</span><span class="estat feta"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Hecha</span>', 1],
-    ];
-    if (quiet) { avs[0].classList.add('ara'); return; }
+    const torn = $('torn');
+    if (quiet) { pintaTorn(torn, 4); return; }
     let i = 0;
-    const tic = () => {
-      const [html, qui, no] = estats[i];
-      frase.innerHTML = html;
-      avs.forEach((a, k) => { a.classList.toggle('ara', k === qui && !no); a.classList.toggle('no', k === 0 && i >= 1); });
-      i = (i + 1) % estats.length;
-      setTimeout(tic, i === 0 ? 3600 : 1500);
-    };
-    tic();
-  })();
-
-  // ── C · l'estat que canvia ──
-  (() => {
-    const text = $('eg-text'), xip = $('eg-xip'), pista = $('eg-pista'), barres = [1, 2, 3].map((k) => $('eg-' + k));
-    const estats = [
-      ['Pendiente', 'Hostly la cuadra', '', 0, '<span class="av" style="background:#0f766e">P</span>Pilar, avisada'],
-      ['Coordinada', 'sin que hagas nada', '', 1, '<span class="av" style="background:#0f766e">P</span>Pilar · mañana 11:00'],
-      ['Coordinada', 'en marcha', '', 2, '<span class="av" style="background:#0f766e">P</span>Pilar está en el piso'],
-      ['Hecha', 'con fotos', 'feta', 3, '<span class="av" style="background:#0f766e">P</span>Lista para entrar'],
-    ];
-    let i = quiet ? 3 : 0;
-    const tic = () => {
-      const [t, x, cls, ple, p] = estats[i];
-      text.textContent = t; xip.textContent = x; xip.className = 'estat ' + cls; pista.innerHTML = p;
-      barres.forEach((b, k) => b.classList.toggle('ple', k < ple));
-      if (quiet) return;
-      i = (i + 1) % estats.length;
-      setTimeout(tic, i === 0 ? 3600 : 1500);
-    };
+    const tic = () => { pintaTorn(torn, i); i = (i + 1) % ESTATS_B.length; setTimeout(tic, i === 0 ? 4200 : 2000); };
     tic();
   })();
 
