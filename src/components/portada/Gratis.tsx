@@ -101,7 +101,7 @@ function construeixPagament(m: HTMLElement): gsap.core.Timeline {
   return tl;
 }
 
-export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
+export default function Gratis({ onEmpezar, nou = false }: { onEmpezar: () => void; nou?: boolean }) {
   const { t } = useTranslation("home");
   const { lang } = useLang();
   const seccioRef = useRef<HTMLElement>(null);
@@ -133,20 +133,22 @@ export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
   }, [lang]);
 
   return (
-    <section ref={seccioRef} id="gratis" className="pt-seccio pt-gratis" aria-labelledby="pt-gratis-titol">
+    <section ref={seccioRef} id="gratis" className={`pt-seccio pt-gratis${nou ? " pt-gratis-nou" : ""}`} aria-labelledby="pt-gratis-titol">
       <div className="contenidor">
         <div className="pt-centre">
-          <p className="pt-retol">{t("portada.gratis.retol")}</p>
+          <p className="pt-retol">{nou ? t("portada.gratis.pla") : t("portada.gratis.retol")}</p>
           <h2 id="pt-gratis-titol" className="pt-h2">{t("portada.gratis.titol")}</h2>
         </div>
         <div className="pt-bento">
-          <div className="pt-fosca">
+          {/* La versió «nova» (?gratis=nou, 15-10, per comparar): sense la segona targeta fosca del 0 €, que
+              ja és al Zero; els quatre passos numerats i, a sota, el 0 € i el botó. Quan el Biel triï, se'n queda una. */}
+          {!nou && <div className="pt-fosca">
             <p className="pt-retol">{t("portada.gratis.pla")}</p>
             <p className="pt-zero">{t("portada.gratis.zero")}</p>
             <p className="pt-sempre">{t("portada.gratis.sempre")}</p>
             <p className="pt-txt">{t("portada.gratis.text")}</p>
             <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-blanc">{t("portada.gratis.boto")}</button>
-          </div>
+          </div>}
 
           <div className="pt-tile">
             <h3>{t("portada.gratis.checkin.titol")}</h3>
@@ -203,6 +205,12 @@ export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
             </div>
           </div>
         </div>
+        {nou && (
+          <div className="pt-gratis-peu">
+            <p><b>{t("portada.gratis.zero")}</b> · {t("portada.gratis.peu_nou")}</p>
+            <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t("portada.gratis.boto")}</button>
+          </div>
+        )}
       </div>
     </section>
   );

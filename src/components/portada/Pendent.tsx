@@ -184,7 +184,8 @@ export default function Pendent() {
               <span className="pt-num-t">{t("portada.pendent.tu_1")}<br />{t("portada.pendent.tu_2")}</span>
             </p>
             <p className="pt-u-perti">{t("portada.pendent.incidencia")}</p>
-            <span className="pt-boto-blau" aria-hidden="true">{t("portada.pendent.veure")}</span>
+            {/* abans semblava un botó blau i no feia res (revisió del 15-10): ara és una etiqueta */}
+            <span className="pt-u-etiqueta">{t("portada.pendent.veure")}</span>
           </div>
         </div>
       </div>

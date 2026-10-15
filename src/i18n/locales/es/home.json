@@ -2,7 +2,7 @@
   "hero": {
     "h1_line1": "¿Gestionas apartamentos en Airbnb?",
     "h1_line2": "¿O te gestionan ellos a ti?",
-    "subtitle": "Hostly simplifica todo lo que implica tener un apartamento turístico."
+    "subtitle": "Hostly contesta a tus huéspedes, envía el registro de viajeros a la policía y avisa a la limpieza. El check-in y la policía, gratis para siempre."
   },
   "pricing": {
     "subtitle": "El check-in y la policía, gratis para siempre. El resto, en un solo precio por piso.",
@@ -79,17 +79,18 @@
   },
   "portada": {
     "entrada": {
-      "baixa": "Seguir bajando"
+      "empezar": "Empezar",
+      "sense_targeta": "Sin tarjeta."
     },
     "zero": {
       "retol": "Check-in + registro a la policía",
       "zero": "0 €",
       "sempre_1": "en Hostly.",
       "sempre_2": "Para siempre.",
-      "altres": "Otras apps te lo cobran cada mes.",
+      "altres": "Otras apps lo cobran cada mes:",
       "fins": "hasta",
       "preu": "95 €",
-      "any": "al año",
+      "any": "al año por piso",
       "text": "El huésped hace el check-in desde su móvil. Cada día, Hostly lo envía a la policía y te guarda el comprobante.",
       "empezar": "Empezar",
       "com": "Ver cómo funciona",
@@ -110,14 +111,13 @@
       ]
     },
     "gestors": {
-      "retol": "Les preguntamos a gestores qué es Hostly",
+      "retol": "Le preguntamos a un gestor qué es Hostly",
       "llista": [
         {
           "frase": "No sabría decirte qué es. Solo sé que, desde que lo tengo, me preocupo mucho menos de la gestión de mi apartamento.",
           "nom": "Àngel",
           "detall": "Gestor de pisos turísticos",
-          "video": "Ver el vídeo de Àngel",
-          "src": "/assets/funciona/mensajes.mp4"
+          "video": "Ver el vídeo de Àngel"
         }
       ],
       "anterior": "Gestor anterior",
@@ -127,7 +127,7 @@
       "torna": "Volver a la frase"
     },
     "pendent": {
-      "retol": "Con Hostly",
+      "retol": "Con Hostly Completo",
       "titol": "Hostly está pendiente. Tú, ya no.",
       "lead": "Contesta, avisa, envía y cobra por ti. Solo te escribe cuando de verdad haces falta.",
       "fet_1": "cosas que hizo",
@@ -174,7 +174,7 @@
         "Noche"
       ],
       "incidencia": "No funciona el aire acondicionado en Cala Moreta. Lo ha avisado Pieter.",
-      "veure": "Ver incidencia →",
+      "veure": "Incidencia · en tu app",
       "pantalla": {
         "aria": "La pantalla de Hostly: el resumen dice que Hostly lo está haciendo por ti y, al final, enseña lo único que es para ti.",
         "tots": "Todos",
@@ -254,12 +254,16 @@
         "pagar": "Pagar 14,00 €",
         "pagada": "Pagada",
         "cobrat": "+14,00 € en tu cuenta"
-      }
+      },
+      "peu_nou": "para siempre, sin tarjeta y sin límite de pisos"
     },
     "completo": {
       "retol": "Hostly Completo",
       "titol": "Con el Completo,",
       "titol_gris": "todo lo demás.",
+      "preu": "40 € + IVA al mes por piso.",
+      "preu_resta": "El primer mes, gratis. Sin permanencia.",
+      "empezar": "Empezar",
       "veure": "Ver cómo funciona: {{que}}",
       "missatges": {
         "titol": "Mensajes",
@@ -500,6 +504,102 @@
       "telefon": "Tu teléfono",
       "boto": "Llámame",
       "nota": "Solo para hablar de tus pisos."
+    },
+    "preguntes": {
+      "titol": "Lo que quizá te estás preguntando.",
+      "sub": "Y si queda algo, te llamo yo.",
+      "llista": [
+        {
+          "q": "¿Hay permanencia?",
+          "a": "No. Si no te simplifica la vida, lo dejas cuando quieras, sin penalización."
+        },
+        {
+          "q": "¿El plan Gratis es gratis de verdad?",
+          "a": "Sí. El check-in online, el envío a la policía y el cálculo de la tasa turística son gratis para siempre, sin tarjeta y sin límite de pisos."
+        },
+        {
+          "q": "¿Quién envía el registro a la policía?",
+          "a": "Hostly, cada día, y te guarda el comprobante."
+        },
+        {
+          "q": "¿Puedo empezar gratis y pasarme al Completo más adelante?",
+          "a": "Sí. Nos lo dices, te llamamos, lo dejamos listo contigo y lo activamos ese mismo día, con el primer mes gratis."
+        },
+        {
+          "q": "¿Cuánto tarda en estar funcionando?",
+          "a": "El primer piso, en unos minutos. En el Completo, las conexiones con Airbnb y Booking las hacemos contigo."
+        }
+      ]
+    }
+  },
+  "anunci_registre": {
+    "seo_titol": "El registro de viajeros, gratis | Hostly",
+    "retol": "Para pisos turísticos",
+    "titol": "El registro de viajeros.",
+    "titol_gris": "Gratis.",
+    "lead": "El huésped hace el check-in desde su móvil y Hostly envía el registro a la policía cada día. Para siempre, sin tarjeta y sin límite de pisos.",
+    "boto": "Empezar",
+    "peu_boto": "Sin tarjeta · Te creas la cuenta en cinco minutos.",
+    "mobil": {
+      "titol": "Check-in · Cala Moreta",
+      "camps": [
+        {
+          "nom": "Nombre",
+          "valor": "Camille Durand"
+        },
+        {
+          "nom": "Documento",
+          "valor": "Pasaporte"
+        },
+        {
+          "nom": "Número",
+          "valor": "C01X 4417"
+        },
+        {
+          "nom": "Llegada",
+          "valor": "14 abr · 16:00"
+        }
+      ],
+      "ok": "Enviado a la policía"
+    },
+    "passos_retol": "Así funciona",
+    "passos_titol": "Tres pasos.",
+    "passos_titol_gris": "Tú, ninguno.",
+    "passos": [
+      {
+        "titol": "Te creas la cuenta",
+        "text": "Con tu piso y tus datos para la policía. En cinco minutos."
+      },
+      {
+        "titol": "El huésped hace el check-in",
+        "text": "Le llega el enlace y lo rellena desde su móvil, en tres pantallas."
+      },
+      {
+        "titol": "Hostly lo envía cada día",
+        "text": "A la policía, y te guarda el comprobante. También calcula la tasa turística."
+      }
+    ],
+    "preguntes_titol": "Lo que quizá te estás preguntando.",
+    "preguntes": [
+      {
+        "q": "¿De verdad es gratis?",
+        "a": "Sí. El check-in online, el envío a la policía y el cálculo de la tasa turística son gratis para siempre, sin tarjeta y sin límite de pisos."
+      },
+      {
+        "q": "¿Quién envía el registro a la policía?",
+        "a": "Hostly, cada día, y te guarda el comprobante."
+      },
+      {
+        "q": "¿Y si quiero que Hostly haga más?",
+        "a": "Con Hostly Completo, también contesta a tus huéspedes, ajusta los precios y avisa a la limpieza. 40 € + IVA al mes por piso, el primer mes gratis y sin permanencia."
+      }
+    ],
+    "final_titol": "El registro de viajeros, gratis para siempre.",
+    "final_text": "Empieza ahora y el próximo huésped ya hace el check-in desde su móvil.",
+    "legal": {
+      "privacitat": "Privacidad",
+      "galetes": "Cookies",
+      "avis": "Aviso legal"
     }
   }
 }

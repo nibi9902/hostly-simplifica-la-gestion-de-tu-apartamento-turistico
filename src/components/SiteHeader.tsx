@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNav } from '@/lib/data/useNav';
 import { HeaderNav } from './HeaderNav';
@@ -16,33 +15,10 @@ export function SiteHeader() {
   // Home: tant `/` com `/es` o `/ca`
   const segments = pathname.split('/').filter(Boolean);
   const isHome = segments.length === 0 || (segments.length === 1 && (segments[0] === 'es' || segments[0] === 'ca'));
-  const [visible, setVisible] = useState(!isHome);
-
-  useEffect(() => {
-    if (!isHome) {
-      setVisible(true);
-      return;
-    }
-    // A la home el menú espera l'avís de l'ENTRADA, que arriba quan el subtítol
-    // («…apartamento turístico.») ja s'hi veu (~2,6 s, s'acaba sola). L'avís
-    // que s'escoltava abans —`hero-cta-visible`— surt de la seqüència lligada
-    // al scroll, així que qui entrava i no baixava es quedava sense menú.
-    // Amb «reduir moviment» l'entrada no s'anima i avisa abans que aquí s'escolti: no hi ha res a esperar.
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setVisible(true);
-      return;
-    }
-    setVisible(false);
-    const show = () => setVisible(true);
-    window.addEventListener('hostly:hero-intro-done', show);
-    // Xarxa de seguretat: si l'entrada no arriba a acabar (pestanya en segon
-    // pla, animacions reduïdes, GSAP que falla), el menú surt igualment.
-    const tard = setTimeout(show, 4500);
-    return () => {
-      window.removeEventListener('hostly:hero-intro-done', show);
-      clearTimeout(tard);
-    };
-  }, [isHome]);
+  // Des del 15-10 el capçal surt de seguida també a la portada (revisió de màrqueting: qui ve d'un anunci
+  // ha de tenir «Empezar» a mà des del primer moment). Abans esperava que acabés l'entrada (~2,6 s).
+  const visible = true;
+  void isHome;
 
   return (
     <header
@@ -54,7 +30,7 @@ export function SiteHeader() {
       )}
     >
       {/* A l'ordinador, tres columnes: la píndola dels apartats queda al mig de la pàgina */}
-      <div className="contenidor h-20 flex items-center justify-between gap-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+      <div className="contenidor h-20 flex items-center justify-between gap-3 sm:gap-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
         <LangLink to="/" className="flex items-center shrink-0 justify-self-start" aria-label="Hostly">
           <img src={hostlyMarca} alt="" width={160} height={24} className="h-6 w-auto" />
         </LangLink>

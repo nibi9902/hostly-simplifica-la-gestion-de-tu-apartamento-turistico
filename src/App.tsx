@@ -30,6 +30,7 @@ const FuncionalidadesIndex = lazy(() => import("./pages/funcionalidades/index"))
 const FeatureRoute = lazy(() => import("./pages/funcionalidades/FeatureRoute"));
 const PreciosPage = lazy(() => import("./pages/Precios"));
 const Demo = lazy(() => import("./pages/Demo"));
+const RegistroGratis = lazy(() => import("./pages/RegistroGratis"));
 const SobreHostly = lazy(() => import("./pages/SobreHostly"));
 const Privacidad = lazy(() => import("./pages/legal/Privacidad"));
 const Cookies = lazy(() => import("./pages/legal/Cookies"));
@@ -144,6 +145,14 @@ function SeguimentPagines() {
   return null;
 }
 
+/* ─── L'arrel, a l'idioma detectat, sense perdre res del que hi ha després del «?» ───
+ * Fins al 15-10, «/» anava a «/es» i es perdien els paràmetres dels anuncis (utm_*, fbclid, gclid): el
+ * píxel de Meta i Google Analytics es carreguen després del consentiment, quan l'adreça ja no els porta. */
+function ArrelIdioma() {
+  const { search, hash } = useLocation();
+  return <Navigate to={`/${detectInitialLang()}${search}${hash}`} replace />;
+}
+
 /* ─── Redirect per rutes legacy (sense prefix d'idioma) ─── */
 function LegacyRedirect() {
   const location = useLocation();
@@ -160,7 +169,7 @@ const App = () => (
         <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* Arrel → idioma detectat */}
-            <Route path="/" element={<Navigate to={`/${detectInitialLang()}`} replace />} />
+            <Route path="/" element={<ArrelIdioma />} />
 
             {/* Rutes amb prefix d'idioma */}
             <Route path="/:lang" element={<LangLayout />}>
@@ -168,6 +177,8 @@ const App = () => (
 
               {/* L'única porta del web i la calculadora (octubre 2026) */}
               <Route path="empezar" element={<Empezar />} />
+              {/* la pàgina dels anuncis del registre de viatgers (15-10) */}
+              <Route path="registro-de-viajeros-gratis" element={<RegistroGratis />} />
               <Route path="calcula" element={<Calcula />} />
 
               {/* Funciones (velles) → Funcionalidades */}

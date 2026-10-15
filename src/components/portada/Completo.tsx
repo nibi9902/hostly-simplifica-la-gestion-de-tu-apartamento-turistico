@@ -23,7 +23,7 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, ClipboardList, Clock, Globe, Link2, LineChart, Plus, Receipt, RefreshCw, Sparkles, Users, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, CalendarDays, Check, ClipboardList, Clock, Globe, Link2, LineChart, MessageCircle, Plus, Receipt, RefreshCw, Sparkles, TrendingUp, Users, Zap } from "lucide-react";
 import { LangLink } from "@/i18n/LangLink";
 import { useLang } from "@/i18n/useLang";
 import fotoMissatges from "@/assets/portada/gestor-tarda.webp";
@@ -422,7 +422,7 @@ function Funcions() {
 }
 
 // ─────────────────────────── El mòdul ───────────────────────────
-export default function Completo() {
+export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
   const { t } = useTranslation("home");
   const { lang } = useLang();
   const seccioRef = useRef<HTMLElement>(null);
@@ -510,7 +510,21 @@ export default function Completo() {
           <h2 id="pt-cmp-titol" className="pt-h2">
             {t("portada.completo.titol")} <span className="pt-cmp-gris">{t("portada.completo.titol_gris")}</span>
           </h2>
+          {/* el preu i el botó, aquí mateix (revisió de màrqueting del 15-10: el Completo no tancava) */}
+          <div className="pt-cmp-preu">
+            <p><b>{t("portada.completo.preu")}</b> {t("portada.completo.preu_resta")}</p>
+            <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t("portada.completo.empezar")}</button>
+          </div>
         </div>
+
+        {/* Al mòbil, les cinc coses en llista (es veuen totes sense lliscar); les rajoles, a l'ordinador i a la tauleta */}
+        <ul className="pt-cmp-llista">
+          <li><MessageCircle className="pt-ic" aria-hidden="true" /><span><b>{t("portada.completo.missatges.titol")}</b>{t("portada.completo.missatges.text")}</span></li>
+          <li><TrendingUp className="pt-ic" aria-hidden="true" /><span><b>{t("portada.completo.preus.titol")}</b>{t("portada.completo.preus.text")}</span></li>
+          <li><Users className="pt-ic" aria-hidden="true" /><span><b>{noms[2]}</b>{t("portada.completo.neteja.titol")} {t("portada.completo.neteja.titol_gris")}</span></li>
+          <li><CalendarDays className="pt-ic" aria-hidden="true" /><span><b>{noms[3]}</b>{t("portada.completo.calendari.text")}</span></li>
+          <li><Receipt className="pt-ic" aria-hidden="true" /><span><b>{noms[4]}</b>{t("portada.completo.extres.titol")} {t("portada.completo.extres.titol_a")} <em className="pt-cmp-terme">{t("portada.completo.extres.terme")}</em>{t("portada.completo.extres.titol_b")} {t("portada.completo.extres.text")}</span></li>
+        </ul>
 
         <div ref={graellaRef} className="pt-cmp-graella" onScroll={enLliscar}>
           <Missatges quiet={quiet} enOferir={treu} enAcceptar={vola} />

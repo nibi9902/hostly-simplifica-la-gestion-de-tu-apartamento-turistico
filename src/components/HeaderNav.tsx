@@ -371,8 +371,8 @@ export function HeaderNav({ nav }: Props) {
         })}
       </nav>
 
-      {/* A la dreta: l'idioma, «App» (abans «Iniciar sesión»; el Biel, 13-10) i «Empezar»; al mòbil, l'idioma i el menú */}
-      <div className="flex items-center justify-end gap-5 justify-self-end">
+      {/* A la dreta: l'idioma, «App» (abans «Iniciar sesión»; el Biel, 13-10) i «Empezar»; al mòbil, «Empezar» i el menú (15-10) */}
+      <div className="flex items-center justify-end gap-2 sm:gap-5 justify-self-end">
         <div className="hidden sm:flex"><SelectorIdioma lang={lang} setLang={setLang} /></div>
         <a
           href={nav.ctas.secondary.href}
@@ -383,11 +383,11 @@ export function HeaderNav({ nav }: Props) {
           {t('nav.app')}
         </a>
         <LangLink to="/empezar" state={{ desde: pathname }}
-          className="hidden lg:inline-flex items-center justify-center h-11 px-5 rounded-full bg-primary text-primary-foreground text-[15px] font-medium shadow-[0_1px_3px_rgba(0,0,0,0.08)] hover:bg-[#1d4ed8] transition-colors">
+          className="inline-flex items-center justify-center h-9 px-3 text-[13.5px] min-[400px]:px-4 min-[400px]:text-[14px] lg:h-11 lg:px-5 lg:text-[15px] rounded-full bg-primary text-primary-foreground font-medium shadow-[0_1px_3px_rgba(0,0,0,0.08)] hover:bg-[#1d4ed8] transition-colors">
           {nav.ctas.primary.label}
         </LangLink>
         <button type="button" onClick={() => setMobileOpen(true)}
-          className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-foreground hover:bg-muted transition-colors" aria-label={t('nav.aria_open_menu')}>
+          className="lg:hidden inline-flex items-center justify-center w-9 h-9 min-[400px]:w-10 min-[400px]:h-10 rounded-md text-foreground hover:bg-muted transition-colors" aria-label={t('nav.aria_open_menu')}>
           <Menu className="w-5 h-5" />
         </button>
       </div>

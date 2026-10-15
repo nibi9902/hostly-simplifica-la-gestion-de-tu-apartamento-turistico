@@ -45,13 +45,26 @@
 
 /* ── 1 · L'entrada: només el lema, amb l'aspecte de l'entrada d'abans (CinematicHero) ──
    La reixa i el gra de fons, la primera línia amb relleu i la segona amb el degradat platejat. */
-.pt-entrada { position: relative; height: 100vh; min-height: 560px; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--pt-fons); perspective: 1500px; }
+.pt-entrada { position: relative; height: auto; min-height: 0; padding-block: 136px 56px; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--pt-fons); perspective: 1500px; }
 .pt-reixa { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .6; background-size: 60px 60px; background-image: linear-gradient(to right, rgba(0, 0, 0, .04) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, .04) 1px, transparent 1px); -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%); mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%); }
 .pt-gra { position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: .04; mix-blend-mode: overlay; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>'); }
 .pt-entrada-in { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding-inline: 16px; will-change: transform; }
 .pt-lema-1 { font-size: 2.25rem; line-height: 1.05; font-weight: 700; letter-spacing: -0.025em; color: #0f172a; margin-bottom: 8px; text-shadow: 0 10px 30px rgba(15, 23, 42, .12), 0 2px 4px rgba(15, 23, 42, .06); }
 .pt-lema-2 { font-size: 2.25rem; line-height: 1.05; font-weight: 800; letter-spacing: -0.05em; background: linear-gradient(180deg, #0f172a 0%, rgba(15, 23, 42, .4) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; transform: translateZ(0); filter: drop-shadow(0 10px 20px rgba(15, 23, 42, .10)) drop-shadow(0 2px 4px rgba(15, 23, 42, .06)); padding: 0.12em 0.04em 0.24em; margin: -0.12em -0.04em -0.24em; }
 .pt-entrada-sub { margin-top: 24px; max-width: 42rem; font-size: 16px; line-height: 1.625; color: #64748b; }
+.pt-entrada-accio { margin-top: 28px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.pt-entrada-accio span { font-size: 14px; color: var(--pt-gris); }
+.pt-entrada-boto { height: 50px; padding-inline: 28px; font-size: 16px; }
+/* la barra fixa del mòbil (BarraMobil): surt en passar l'entrada, s'amaga als preus */
+.pt-barra-mobil { display: none; }
+@media (max-width: 767px) {
+  .pt-entrada { padding-block: 104px 32px; }
+  .pt-barra-mobil { position: fixed; z-index: 40; left: 0; right: 0; bottom: 0; display: flex; gap: 8px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: rgba(255, 255, 255, .94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 -1px 0 var(--pt-linia); transform: translateY(110%); opacity: 0; pointer-events: none; transition: transform .45s cubic-bezier(.2, .7, .2, 1), opacity .35s ease; }
+  .pt-barra-mobil.vista { transform: none; opacity: 1; pointer-events: auto; }
+  .pt-barra-mobil .pt-pill { height: 46px; font-size: 15.5px; }
+  .pt-barra-mobil .pt-pill-pri { flex: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .pt-barra-mobil { transition: none; } }
 .pt-cue { position: absolute; z-index: 3; left: 50%; bottom: 40px; margin-left: -22px; width: 44px; height: 44px; border-radius: 9999px; display: grid; place-items: center; color: var(--pt-gris); box-shadow: inset 0 0 0 1px hsl(220 13% 86%); }
 .pt-cue:hover { color: var(--pt-text); }
 .pt-cue svg { animation: pt-flota 2.4s ease-in-out infinite; }
@@ -187,6 +200,12 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-compte { display: flex; align-items: flex-end; gap: 14px; }
 .pt-u-perti { font-size: 16px; line-height: 1.45; font-weight: 500; margin: 16px 0 14px; }
 .pt-pend .pt-boto-blau { align-self: flex-start; }
+/* la incidència: una etiqueta, no un botó (15-10) */
+.pt-u-etiqueta { align-self: flex-start; display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 9999px; background: hsl(220 14% 93%); color: var(--pt-gris); font-size: 13px; font-weight: 600; }
+@media (max-width: 767px) {
+  /* al mòbil, 4 de les 8 coses (15-10): la llista era massa llarga */
+  .pt-u-totes li:nth-child(n+5) { display: none; }
+}
 /* la línia del dia, supermínima: un fil gris, un sol punt blau que avança, i els trams en gris */
 .pt-lm { position: relative; width: 100%; height: 44px; margin-top: 30px; }
 .pt-lm-pista { position: absolute; left: 0; right: 0; top: 8px; height: 2px; margin-top: -1px; border-radius: 9999px; background: hsl(220 13% 89%); }
@@ -285,6 +304,13 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-sempre { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
 .pt-txt { font-size: 16px; line-height: 1.5; color: rgba(255, 255, 255, .82); max-width: 34em; }
 .pt-fosca .pt-pill { align-self: flex-start; margin-top: 6px; height: 48px; padding: 0 24px; font-size: 16px; }
+/* la versió «nova» del Gratis (?gratis=nou): quatre passos numerats en una fila i, a sota, el 0 € i el botó */
+.pt-gratis-nou { min-height: 0; counter-reset: pas; }
+.pt-gratis-nou .pt-bento { grid-template-rows: none; }
+.pt-gratis-nou .pt-tile h3::before { counter-increment: pas; content: counter(pas); display: grid; place-items: center; width: 28px; height: 28px; margin-bottom: 10px; border-radius: 9999px; background: var(--pt-fosc); color: #fff; font-size: 13px; font-weight: 700; }
+.pt-gratis-peu { margin-top: 28px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; text-align: center; }
+.pt-gratis-peu p { margin: 0; font-size: 16px; color: var(--pt-gris); }
+.pt-gratis-peu p b { font-size: 22px; color: var(--pt-text); letter-spacing: -0.02em; }
 .pt-tile { min-width: 0; border-radius: 24px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); padding: 20px; display: flex; flex-direction: column; gap: 6px; }
 .pt-tile h3 { font-size: 17px; line-height: 1.3; font-weight: 600; }
 .pt-tile > p { font-size: 14px; line-height: 1.45; color: var(--pt-gris); }
@@ -335,10 +361,10 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
    «Y además» amb les altres funcions en rodones. Cada mòdul es mou només amb el ratolí a sobre, sempre suau
    (corbes sine, fosos). A la tauleta, dues columnes; al mòbil, les rajoles llisquen de costat. */
 .pt-cmp { padding-block: 56px 64px; background: var(--pt-blanc); }
-.pt-cmp .pt-h2 { font-size: 46px; }
+.pt-cmp .pt-h2 { font-size: 44px; }
 .pt-cmp-gris { color: hsl(220 9% 68%); }
 .pt-cmp-pindola { display: inline-flex; align-items: center; height: 30px; padding: 0 14px; border-radius: 9999px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--pt-gris); background: var(--pt-blanc); box-shadow: inset 0 0 0 1px hsl(220 11% 85%); margin: 0; white-space: nowrap; }
-.pt-cmp-graella { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.35fr) minmax(0, 1fr); grid-template-rows: 300px 276px; gap: 12px; margin-top: 28px; }
+.pt-cmp-graella { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.35fr) minmax(0, 1fr); grid-template-rows: 300px 276px; gap: 12px; margin-top: 20px; }
 .pt-cmp-t { position: relative; min-width: 0; border-radius: 26px; overflow: hidden; }
 .pt-cmp-foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .pt-cmp-vidre { background: rgba(255, 255, 255, .64); -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .72); }
@@ -496,7 +522,15 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-cmp-pop a .pt-ic { width: 14px; height: 14px; }
 .pt-cmp-pop::after { content: ""; position: absolute; left: var(--fletxa, 24px); bottom: -6px; width: 12px; height: 12px; background: var(--pt-blanc); transform: rotate(45deg); box-shadow: 1px 1px 0 var(--pt-linia); }
 
-/* Les fletxes i els punts: només al mòbil */
+/* el preu i el botó, sota el títol */
+.pt-cmp-preu { margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.pt-cmp-preu p { margin: 0; font-size: 16px; color: var(--pt-gris); }
+.pt-cmp-preu p b { color: var(--pt-text); font-weight: 600; }
+.pt-cmp-preu .pt-pill { height: 40px; }
+/* al mòbil, la llista (en lloc de les rajoles) */
+.pt-cmp-llista { display: none; }
+
+/* Les fletxes i els punts: ja no es fan servir (al mòbil hi ha la llista) */
 .pt-cmp-control { display: none; }
 
 @media (max-width: 1100px) {
@@ -513,7 +547,14 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-cmp-gros { font-size: 36px; }
 }
 @media (max-width: 640px) {
-  .pt-cmp-graella { display: flex; gap: 12px; margin-inline: -20px; padding-inline: 20px; scroll-padding-inline: 20px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .pt-cmp-graella, .pt-cmp .pt-cmp-control { display: none !important; }
+  .pt-cmp-llista { display: flex; flex-direction: column; gap: 8px; list-style: none; margin: 24px 0 0; padding: 0; }
+  .pt-cmp-llista li { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 18px; background: hsl(220 14% 96%); box-shadow: inset 0 0 0 1px var(--pt-linia); font-size: 14px; line-height: 1.45; color: var(--pt-gris); }
+  .pt-cmp-llista li > .pt-ic { width: 36px; height: 36px; padding: 9px; border-radius: 12px; background: var(--pt-blanc); color: var(--pt-blau); box-shadow: inset 0 0 0 1px var(--pt-linia); flex-shrink: 0; }
+  .pt-cmp-llista b { display: block; font-size: 16px; font-weight: 600; color: var(--pt-text); margin-bottom: 2px; }
+  .pt-cmp-preu { flex-direction: column; gap: 10px; }
+  .pt-cmp-preu p { font-size: 15px; text-align: center; }
+  .pt-cmp-graella-vell { display: flex; gap: 12px; margin-inline: -20px; padding-inline: 20px; scroll-padding-inline: 20px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
   .pt-cmp-graella::-webkit-scrollbar { display: none; }
   .pt-cmp-t { flex: 0 0 86%; min-height: 470px; scroll-snap-align: start; }
   .pt-cmp-missatges { min-height: 540px; padding: 22px; }
@@ -548,6 +589,52 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 @media (prefers-reduced-motion: reduce) {
   .pt-cmp-entra, .pt-cmp-escriu i { animation: none; }
   .pt-cmp-fletxa, .pt-cmp-nova, .pt-cmp-nova.hi, .pt-cmp-equip .pt-cmp-av, .pt-cmp-fn, .pt-cmp-pop { transition: none; }
+}
+
+/* ── La pàgina dels anuncis: /registro-de-viajeros-gratis (15-10) ── */
+.pt-ad-capcal { position: sticky; top: 0; z-index: 30; background: rgba(255, 255, 255, .94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--pt-linia); }
+.pt-ad-capcal-in { height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.pt-ad-capcal-boto { height: 40px; padding-inline: 18px; }
+.pt-ad-hero { padding-block: 56px 48px; background: var(--pt-fons); }
+.pt-ad-dues { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.pt-ad-h1 { margin: 12px 0 0; font-size: 60px; line-height: 1.02; font-weight: 700; letter-spacing: -0.035em; text-wrap: balance; }
+.pt-ad-h1 span { color: hsl(220 9% 62%); }
+.pt-ad-lead { margin-top: 18px; max-width: 34rem; }
+.pt-ad-accio { margin-top: 26px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.pt-ad-accio span { font-size: 14px; color: var(--pt-gris); }
+.pt-ad-mobil { justify-self: center; width: 270px; border-radius: 40px; padding: 9px; background: #111; box-shadow: 0 24px 60px rgba(17, 24, 39, .18); }
+.pt-ad-mobil > div { border-radius: 32px; background: var(--pt-blanc); padding: 22px 16px; display: flex; flex-direction: column; gap: 10px; min-height: 400px; }
+.pt-ad-mobil-t { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+.pt-ad-camp { margin: 0; height: 42px; border-radius: 12px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 12px; font-size: 13px; color: var(--pt-gris); }
+.pt-ad-camp b { color: var(--pt-text); font-weight: 600; }
+.pt-ad-ok { margin: auto 0 0; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 14px; background: hsl(138 76% 94%); color: hsl(142 76% 26%); padding: 12px; font-size: 13.5px; font-weight: 600; }
+.pt-ad-ok .pt-ic { width: 15px; height: 15px; }
+.pt-ad-passos-s { padding-block: 64px 32px; background: var(--pt-blanc); }
+.pt-ad-h2 { margin-top: 10px; font-size: 44px; }
+.pt-ad-passos { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.pt-ad-passos li { border-radius: 22px; background: hsl(220 14% 96%); box-shadow: inset 0 0 0 1px var(--pt-linia); padding: 22px; display: flex; flex-direction: column; gap: 8px; }
+.pt-ad-passos b { width: 30px; height: 30px; border-radius: 9999px; display: grid; place-items: center; background: var(--pt-fosc); color: #fff; font-size: 13px; }
+.pt-ad-passos h3 { margin: 4px 0 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+.pt-ad-passos p { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--pt-gris); }
+.pt-ad-preguntes { background: var(--pt-blanc); padding-block: 40px; }
+.pt-ad-final-s { padding-block: 24px 72px; background: var(--pt-blanc); }
+.pt-ad-final { border-radius: 28px; background: var(--pt-fosc); color: #fff; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.pt-ad-final-t { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+.pt-ad-final p:not(.pt-ad-final-t) { margin: 6px 0 0; font-size: 15px; color: hsl(220 9% 76%); max-width: 34rem; }
+.pt-ad-peu { padding-block: 24px; background: var(--pt-fons); box-shadow: inset 0 1px 0 var(--pt-linia); }
+.pt-ad-peu-in { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13.5px; color: var(--pt-gris); }
+.pt-ad-peu-in a:hover { color: var(--pt-text); }
+@media (max-width: 767px) {
+  .pt-ad-capcal-in { height: 60px; }
+  .pt-ad-hero { padding-block: 32px 40px; }
+  .pt-ad-dues { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .pt-ad-h1 { font-size: 40px; }
+  .pt-ad-mobil { width: 230px; }
+  .pt-ad-mobil > div { min-height: 340px; }
+  .pt-ad-h2 { font-size: 32px; }
+  .pt-ad-passos { grid-template-columns: minmax(0, 1fr); }
+  .pt-ad-final { padding: 26px 22px; }
+  .pt-ad-peu { padding-bottom: 88px; }
 }
 
 /* ── 5 · Així es comença ── */
