@@ -519,7 +519,7 @@
         },
         {
           "q": "Qui envia el registre a la policia?",
-          "a": "Hostly, cada dia, a la policia que et toca (SES.Hospedajes, Mossos d’Esquadra o Ertzaintza), i et guarda el comprovant."
+          "a": "Hostly, cada dia, a la policia que et toca (SES.Hospedajes o Mossos d’Esquadra), i et guarda el comprovant."
         },
         {
           "q": "Puc començar gratis i passar-me al Complet més endavant?",
@@ -540,7 +540,7 @@
     "lead": "L’hoste fa el check-in des del mòbil i Hostly envia el registre a la policia cada dia. Per sempre, sense targeta i sense límit de pisos.",
     "boto": "Començar",
     "peu_boto": "Sense targeta · Et crees el compte en cinc minuts.",
-    "sistemes": "L’envia a la policia que et toca: SES.Hospedajes, Mossos d’Esquadra o Ertzaintza.",
+    "sistemes": "L’envia a la policia que et toca: SES.Hospedajes o Mossos d’Esquadra.",
     "mobil": {
       "titol": "Check-in · Cala Moreta",
       "camps": [
@@ -588,7 +588,7 @@
       },
       {
         "q": "Qui envia el registre a la policia?",
-        "a": "Hostly, cada dia, a la policia que et toca (SES.Hospedajes, Mossos d’Esquadra o Ertzaintza), i et guarda el comprovant."
+        "a": "Hostly, cada dia, a la policia que et toca (SES.Hospedajes o Mossos d’Esquadra), i et guarda el comprovant."
       },
       {
         "q": "I si vull que Hostly faci més?",

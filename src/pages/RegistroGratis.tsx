@@ -7,7 +7,7 @@
  * ni enllaços cap a fora (només els legals, al peu). Mockup aprovat pel Biel:
  * `docs/exploracions/2026-10-15-portada-arreglada/`.
  * No s'indexa (noindex): és per al trànsit dels anuncis i diria el mateix que la fitxa del check-in.
- * Diu a quins sistemes s'envia (SES.Hospedajes, Mossos d'Esquadra o Ertzaintza): decisió del Biel (15-10); si arriba
+ * Diu a quins sistemes s'envia (SES.Hospedajes o Mossos d'Esquadra; l'Ertzaintza no, perquè no s'hi envia): decisió del Biel (15-10); si arriba
  * algú d'un sistema que encara no està connectat, es connecta el mateix dia.
  */
 import { useTranslation } from "react-i18next";
