@@ -41,6 +41,7 @@
 
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html, body { background: var(--fons); }
 body { margin: 0; color: var(--text); font-family: var(--cos); -webkit-font-smoothing: antialiased; font-feature-settings: "cv11" 1; }
 p, h1, h2, h3 { margin: 0; }
@@ -136,8 +137,8 @@ button { font-family: inherit; color: inherit; }
 .escriu i { width: 6px; height: 6px; border-radius: 999px; background: currentColor; opacity: .35; animation: punt 1s ease-in-out infinite; }
 .escriu i:nth-child(2) { animation-delay: .15s; } .escriu i:nth-child(3) { animation-delay: .3s; }
 @keyframes punt { 0%,100% { opacity: .35; transform: none; } 50% { opacity: 1; transform: translateY(-2px); } }
-.entra { animation: entra .35s ease both; }
-@keyframes entra { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.entra { animation: entra .55s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes entra { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .barra { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 52px; border-radius: 999px; padding: 0 6px 0 20px; color: var(--text); font-size: 14px; font-weight: 500; }
 .barra button { all: unset; cursor: pointer; width: 40px; height: 40px; border-radius: 999px; background: var(--fosc); color: #fff; display: grid; place-items: center; }
 
@@ -151,7 +152,7 @@ button { font-family: inherit; color: inherit; }
 .dia small { font-size: 12px; font-weight: 500; color: var(--gris); }
 .dia p { display: flex; align-items: baseline; gap: 6px; }
 .dia p b { font-size: 26px; letter-spacing: -0.03em; }
-.dia p span { font-size: 13px; color: var(--gris); }
+.dia p > span { font-size: 13px; color: var(--gris); }
 .xs { display: flex; gap: 6px; margin-top: 6px; }
 .x { font-size: 11.5px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
 .x-verd { background: var(--verd-suau); color: var(--verd-text); }
@@ -199,8 +200,8 @@ button { font-family: inherit; color: inherit; }
 .fila .q b { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .fila .q small { font-size: 11.5px; color: var(--gris); }
 .fila > b { font-size: 14px; }
-.fila.nova { opacity: 0; transform: translateY(6px); }
-.fila.nova.hi { opacity: 1; transform: none; transition: opacity .3s ease, transform .3s ease; }
+.fila.nova { opacity: 0; transform: translateY(8px); transition: opacity .45s ease, transform .55s cubic-bezier(.2,.7,.2,1); }
+.fila.nova.hi { opacity: 1; transform: none; transition: opacity .6s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
 .mes { margin-top: 2px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; }
 .mes b { font-size: 26px; letter-spacing: -0.03em; }
 .mes small { font-size: 12.5px; color: var(--gris); }
@@ -210,22 +211,24 @@ button { font-family: inherit; color: inherit; }
 .vol .av { width: 24px; height: 24px; font-size: 10px; }
 .vol .num { opacity: .85; }
 
-/* La línia de sota: les altres funcions de Hostly, en píndoles; cada una obre un mini pop-up */
-.funcions { margin-top: 12px; display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 6px 8px 6px 18px; border-radius: 999px; background: var(--gris-0); box-shadow: inset 0 0 0 1px var(--linia); position: relative; }
-.funcions > b { font-size: 14px; font-weight: 600; white-space: nowrap; margin-right: 6px; }
-.funcions .pills { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
-.fn { all: unset; cursor: pointer; position: relative; display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 999px; background: var(--blanc); box-shadow: inset 0 0 0 1px var(--linia-2); font-size: 12.5px; font-weight: 600; white-space: nowrap; transition: background .2s ease, box-shadow .2s ease, color .2s ease; }
-.fn .ic { width: 14px; height: 14px; color: var(--blau); }
-.fn:hover { box-shadow: inset 0 0 0 1px var(--text); }
+/* A sota, a la dreta: les altres funcions de Hostly en rodones petites; cada una diu el seu nom i obre un mini pop-up */
+.funcions { margin-top: 12px; margin-left: auto; width: max-content; display: flex; align-items: center; gap: 6px; padding: 5px 5px 5px 14px; border-radius: 999px; background: var(--gris-0); box-shadow: inset 0 0 0 1px var(--linia); position: relative; }
+.funcions > b { font-size: 12.5px; font-weight: 600; color: var(--gris); white-space: nowrap; margin-right: 4px; }
+.funcions .pills { display: flex; gap: 5px; }
+.fn { all: unset; cursor: pointer; position: relative; width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center; background: var(--blanc); box-shadow: inset 0 0 0 1px var(--linia-2); transition: background .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.2,.7,.2,1); }
+.fn .ic { width: 15px; height: 15px; color: var(--text); transition: color .35s ease; }
+.fn:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px var(--text); }
 .fn:focus-visible { outline: 2px solid var(--blau); outline-offset: 2px; }
-.fn[aria-expanded="true"] { background: var(--fosc); color: #fff; box-shadow: none; }
+.fn[aria-expanded="true"] { background: var(--fosc); box-shadow: none; }
 .fn[aria-expanded="true"] .ic { color: #fff; }
-.fn.aparte { background: transparent; }
-.fn.aparte::after { content: "aparte"; font-size: 10.5px; font-weight: 600; color: var(--gris); margin-left: 2px; }
-.fn.aparte[aria-expanded="true"] { background: var(--fosc); }
-.fn.aparte[aria-expanded="true"]::after { color: rgba(255,255,255,.7); }
-.funcions .rodo { width: 36px; height: 36px; }
-.pop { position: absolute; z-index: 30; bottom: calc(100% + 10px); width: 300px; padding: 16px 16px 14px; border-radius: 20px; background: var(--blanc); box-shadow: 0 0 0 1px var(--linia), 0 18px 40px rgba(17,24,39,.16); display: flex; flex-direction: column; gap: 8px; opacity: 0; transform: translateY(6px) scale(.98); transform-origin: bottom left; pointer-events: none; transition: opacity .2s ease, transform .25s cubic-bezier(.2,.7,.2,1); }
+.fn.aparte { background: transparent; box-shadow: inset 0 0 0 1px var(--linia-2); }
+.fn.aparte .ic { color: var(--gris); }
+/* el nom, a sobre, en passar-hi el ratolí */
+.fn::after { content: attr(data-nom); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translate(-50%, 4px); white-space: nowrap; font-size: 11.5px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: var(--fosc); color: #fff; opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .3s cubic-bezier(.2,.7,.2,1); }
+.fn:hover::after { opacity: 1; transform: translate(-50%, 0); }
+.fn[aria-expanded="true"]::after { opacity: 0; }
+.funcions .rodo { width: 34px; height: 34px; }
+.pop { position: absolute; z-index: 30; bottom: calc(100% + 12px); width: 300px; padding: 16px 16px 14px; border-radius: 20px; background: var(--blanc); box-shadow: 0 0 0 1px var(--linia), 0 18px 40px rgba(17,24,39,.16); display: flex; flex-direction: column; gap: 8px; opacity: 0; transform: translateY(6px) scale(.98); transform-origin: bottom left; pointer-events: none; transition: opacity .3s ease, transform .4s cubic-bezier(.2,.7,.2,1); }
 .pop.obert { opacity: 1; transform: none; pointer-events: auto; }
 .pop .dalt-pop { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .pop h4 { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
@@ -236,9 +239,76 @@ button { font-family: inherit; color: inherit; }
 .pop a .ic { width: 14px; height: 14px; }
 .pop::after { content: ""; position: absolute; left: var(--fletxa, 24px); bottom: -6px; width: 12px; height: 12px; background: var(--blanc); transform: rotate(45deg); box-shadow: 1px 1px 0 var(--linia); }
 
+/* ── Quatre netejes, molt diferents entre elles ── */
+.selector { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.selector small { font-size: 13px; color: var(--gris); margin-right: 4px; }
+.selector button { all: unset; cursor: pointer; height: 34px; padding: 0 14px; border-radius: 999px; background: var(--blanc); box-shadow: inset 0 0 0 1px var(--linia-2); font-size: 13px; font-weight: 600; transition: background .3s ease, color .3s ease; }
+.selector button[aria-pressed="true"] { background: var(--fosc); color: #fff; box-shadow: none; }
+.nv-cos { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: flex-end; }
+.nv .h3 { font-size: 21px; }
+/* 1 · El hueco: entre la salida i l'entrada */
+.v1 { display: flex; flex-direction: column; gap: 12px; }
+.v1-caps { display: flex; justify-content: space-between; font-size: 12px; color: var(--gris); }
+.v1-caps span { display: inline-flex; align-items: center; gap: 5px; }
+.v1-caps b { color: var(--text); font-weight: 600; }
+.v1-caps .ic { width: 13px; height: 13px; }
+.v1-pista { position: relative; height: 8px; border-radius: 99px; background: var(--gris-1); margin: 12px 13px 0; }
+.v1-ple { position: absolute; inset: 0 auto 0 0; width: 100%; border-radius: 99px; background: var(--verd); }
+.v1-av { position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%); width: 30px; height: 30px; box-shadow: 0 0 0 3px var(--gris-0); }
+.v1-estat { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--gris); }
+.v1-peu { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px; border-radius: 14px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+.mini-fotos { display: flex; gap: 4px; }
+.mini-fotos i { width: 40px; height: 30px; border-radius: 6px; background: var(--gris-1) center / cover no-repeat; }
+.mini-fotos i:nth-child(1) { background-image: var(--f-cala-moreta); }
+.mini-fotos i:nth-child(2) { background-image: var(--f-menjador-dia); background-position: 60% 70%; }
+.mini-fotos i:nth-child(3) { background-image: var(--f-atico-del-mar); background-position: 40% 60%; }
+.preu-n { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.1; }
+.preu-n small { font-size: 11px; color: var(--gris); }
+.preu-n b { font-size: 16px; }
+/* 2 · La semana: cada salida, con quien le toca */
+.v2 { display: flex; flex-direction: column; gap: 10px; }
+.v2-dies { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; padding: 10px 8px; border-radius: 16px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+.v2-d { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.v2-d small { font-size: 10.5px; font-weight: 600; color: var(--tenue); }
+.v2-slot { width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center; position: relative; }
+.v2-slot.buit { background: transparent; }
+.v2-slot.buit::before { content: ""; width: 5px; height: 5px; border-radius: 9px; background: var(--linia-2); }
+.v2-slot.sortida { background: var(--gris-0); box-shadow: inset 0 0 0 1.5px var(--linia); }
+.v2-slot .av { width: 32px; height: 32px; font-size: 11.5px; }
+.v2-slot .ok { position: absolute; right: -3px; bottom: -3px; width: 14px; height: 14px; border-radius: 99px; background: var(--verd); color: #fff; display: grid; place-items: center; box-shadow: 0 0 0 2px var(--blanc); }
+.v2-slot .ok .ic { width: 9px; height: 9px; stroke-width: 3.5; }
+.v2-peu { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12.5px; color: var(--gris); }
+.v2-peu b { color: var(--text); font-weight: 600; }
+.v2-peu .preu-n b { font-size: 16px; }
+.v2-nota { font-size: 11.5px; color: var(--ambre-text); background: var(--ambre-suau); padding: 2px 8px; border-radius: 99px; align-self: center; white-space: nowrap; }
+/* 3 · Antes y después: la foto del piso, que queda neta */
+.v3-foto { position: relative; flex: 1; min-height: 150px; border-radius: 18px; overflow: hidden; }
+.v3-foto > i { position: absolute; inset: 0; background: var(--f-cala-moreta) center / cover no-repeat; }
+.v3-bruta { filter: grayscale(.85) brightness(.82) contrast(.9) blur(1.6px); transform: scale(1.03); }
+.v3-neta { clip-path: inset(0 0 0 0); }
+.v3-linia { position: absolute; top: 0; bottom: 0; left: 100%; width: 2px; background: rgba(255,255,255,.95); box-shadow: 0 0 14px rgba(255,255,255,.9); opacity: 0; }
+.v3-xip { position: absolute; top: 10px; left: 10px; }
+.v3-xip.estat { height: 26px; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
+.v3-baix { position: absolute; left: 10px; right: 10px; bottom: 10px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.v3-qui { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px 0 3px; border-radius: 99px; font-size: 12px; font-weight: 600; color: var(--text); }
+.v3-qui .av { width: 24px; height: 24px; font-size: 10px; }
+.v3-preu { height: 30px; padding: 0 12px; border-radius: 99px; display: grid; place-items: center; font-size: 14px; font-weight: 700; color: var(--text); }
+/* 4 · Avisos: tú solo recibes lo que ha pasado */
+.v4 { display: flex; flex-direction: column; gap: 6px; }
+.v4-av { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 14px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.v4-av .ico { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; flex-shrink: 0; background: var(--gris-0); color: var(--gris); }
+.v4-av .ico.app { background: var(--blanc) var(--l-app) center / 70% no-repeat; box-shadow: 0 0 0 1px var(--linia); }
+.v4-av .ico .ic { width: 14px; height: 14px; }
+.v4-av .q { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.25; }
+.v4-av .q b { font-size: 12.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.v4-av .q small { font-size: 11.5px; color: var(--gris); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.v4-av time { font-size: 10.5px; color: var(--tenue); align-self: flex-start; white-space: nowrap; }
+.v4-av .mini-fotos i { width: 26px; height: 20px; border-radius: 4px; }
+.v4-av.vell { opacity: .55; }
+
 /* ── Les alternatives de la neteja, a sota de la pantalla ── */
-.alts { display: flex; flex-wrap: wrap; gap: 16px; }
-.alts .alt { width: 340px; }
+.alts { display: flex; flex-wrap: wrap; gap: 20px; }
+.alts .alt { width: 375px; }
 .alts .t { height: 300px; }
 .alts .h3 { font-size: 19px; }
 .alt { display: flex; flex-direction: column; gap: 10px; }
@@ -259,7 +329,7 @@ button { font-family: inherit; color: inherit; }
 .extres .terme { font-style: italic; font-weight: 600; letter-spacing: -0.01em; }
 .extres .h3 .terme { color: var(--text); }
 .torn .qui { display: flex; align-items: center; gap: 6px; }
-.torn .av { width: 40px; height: 40px; font-size: 13px; box-shadow: 0 0 0 3px var(--gris-0); opacity: .45; transition: opacity .3s ease, box-shadow .3s ease, transform .3s ease; }
+.torn .av { width: 40px; height: 40px; font-size: 13px; box-shadow: 0 0 0 3px var(--gris-0); opacity: .45; transition: opacity .6s ease, box-shadow .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
 .torn .av.ara { opacity: 1; box-shadow: 0 0 0 3px var(--gris-0), 0 0 0 5px var(--blau); transform: scale(1.06); }
 .torn .av.no { opacity: .45; }
 .torn .frase { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 24px; font-size: 13px; }
@@ -288,10 +358,11 @@ button { font-family: inherit; color: inherit; }
   </div>
 
   <div class="bloc">
-    <div class="nom"><b>La pantalla sencera</b><span>Rajoles: Mensajes (alta, com ara), Precios, Limpieza (conceptual), Calendario, Extras y cuentas, i «Conéctalo todo» com una sola línia a sota.</span></div>
+    <div class="nom"><b>La pantalla sencera</b><span>Rajoles: Mensajes (alta), Precios, Limpieza, Calendario i Extras y cuentas; a sota a la dreta, «Y además» amb les altres funcions en rodones (el nom surt en passar-hi el ratolí; en clicar, un mini pop-up).</span></div>
     <div class="eines">
-      <small>Res es mou sol: cada mòdul es mou només mentre hi tens el ratolí a sobre. Mensajes comença pel late checkout, que vola fins a Extras (l'únic moviment que passa d'un mòdul a l'altre), i després va canviant de conversa; Precios torna a pujar; Limpieza fa el torn sencer; Extras torna a sumar la fila. Al mòbil seria tocant el mòdul. Les píndoles de sota obren un mini pop-up.</small>
+      <small>Res es mou sol: cada mòdul es mou només mentre hi tens el ratolí a sobre. Mensajes comença pel late checkout, que vola fins a Extras (l'únic moviment que passa d'un mòdul a l'altre), i després va canviant de conversa; Precios torna a pujar; Limpieza fa el torn sencer; Extras torna a sumar la fila. Al mòbil seria tocant el mòdul. Les rodones de sota obren un mini pop-up.</small>
     </div>
+    <div class="selector" id="selector"><small>Limpieza a la pantalla:</small><button type="button" data-n="torn" aria-pressed="true">El torn (la d'ara)</button><button type="button" data-n="hueco" aria-pressed="false">1 · El hueco</button><button type="button" data-n="semana" aria-pressed="false">2 · La semana</button><button type="button" data-n="antes" aria-pressed="false">3 · Antes y después</button><button type="button" data-n="avisos" aria-pressed="false">4 · Avisos</button></div>
     <div class="pantalla-marc">
       <div class="pantalla" id="pantalla">
         <div class="capcal">
@@ -333,7 +404,7 @@ button { font-family: inherit; color: inherit; }
             </article>
 
             <!-- Limpieza: el torn -->
-            <article class="t clar neteja" data-viu="neteja">
+            <article class="t clar neteja" data-viu="neteja" data-nv="torn">
               <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver Limpieza"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
               <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
               <div class="torn" id="torn">
@@ -371,12 +442,12 @@ button { font-family: inherit; color: inherit; }
           <div class="funcions" id="funcions">
             <b>Y además</b>
             <div class="pills">
-              <button class="fn" type="button" data-f="checkin"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10h8M8 14h5"/></svg>Check-in y policía</button>
-              <button class="fn" type="button" data-f="programats"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mensajes programados</button>
-              <button class="fn" type="button" data-f="taxa"><svg class="ic" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>Tasa turística</button>
-              <button class="fn" type="button" data-f="finances"><svg class="ic" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Finanzas por piso</button>
-              <button class="fn" type="button" data-f="rols"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg>Equipo y propietarios</button>
-              <button class="fn aparte" type="button" data-f="connecta"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Conéctalo todo</button>
+              <button class="fn" type="button" data-f="checkin" data-nom="Check-in y policía" aria-label="Check-in y policía"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10h8M8 14h5"/></svg></button>
+              <button class="fn" type="button" data-f="programats" data-nom="Mensajes programados" aria-label="Mensajes programados"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></button>
+              <button class="fn" type="button" data-f="taxa" data-nom="Tasa turística" aria-label="Tasa turística"><svg class="ic" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg></button>
+              <button class="fn" type="button" data-f="finances" data-nom="Finanzas por piso" aria-label="Finanzas por piso"><svg class="ic" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></button>
+              <button class="fn" type="button" data-f="rols" data-nom="Equipo y propietarios" aria-label="Equipo y propietarios"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg></button>
+              <button class="fn aparte" type="button" data-f="connecta" data-nom="Conéctalo todo" aria-label="Conéctalo todo"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
             </div>
             <button class="rodo" type="button" aria-label="Ver todas las funcionalidades"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
             <div class="pop" id="pop" role="dialog" aria-live="polite"><div class="dalt-pop"><h4 id="pop-t"></h4><span class="pla" id="pop-pla"></span></div><p id="pop-p"></p><a href="#" id="pop-a">Ver funcionalidad <svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
@@ -389,66 +460,10 @@ button { font-family: inherit; color: inherit; }
   </div>
 
   <div class="bloc">
-    <div class="nom"><b>Limpieza, la B pas a pas</b><span>Els cinc moments congelats. A la pantalla de dalt van rodant sols (uns 2 s cadascun i 4 s al final).</span></div>
-    <div class="alts">
-      <div class="alt">
-        <article class="t clar">
-          <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-          <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
-          <div class="torn" data-estat="0">
-            <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
-            <div class="caixa"></div>
-          </div>
-        </article>
-        <p class="nom-alt"><b>1 · Hostly li pregunta a la Pilar</b></p>
-      </div>
-      <div class="alt">
-        <article class="t clar">
-          <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-          <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
-          <div class="torn" data-estat="1">
-            <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
-            <div class="caixa"></div>
-          </div>
-        </article>
-        <p class="nom-alt"><b>2 · La Pilar no pot: passa a la Carmen</b></p>
-      </div>
-      <div class="alt">
-        <article class="t clar">
-          <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-          <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
-          <div class="torn" data-estat="2">
-            <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
-            <div class="caixa"></div>
-          </div>
-        </article>
-        <p class="nom-alt"><b>3 · La Carmen diu que sí: Coordinada</b></p>
-      </div>
-      <div class="alt">
-        <article class="t clar">
-          <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-          <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
-          <div class="torn" data-estat="3">
-            <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
-            <div class="caixa"></div>
-          </div>
-        </article>
-        <p class="nom-alt"><b>4 · Feta, amb les fotos</b></p>
-      </div>
-      <div class="alt">
-        <article class="t clar">
-          <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
-          <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
-          <div class="torn" data-estat="4">
-            <div class="qui"><span class="av" style="background:#0f766e">P</span><span class="av" style="background:#b45309">C</span><span class="av" style="background:#6d28d9">M</span><span class="av" style="background:#be123c">L</span></div>
-            <div class="caixa"></div>
-          </div>
-        </article>
-        <p class="nom-alt"><b>5 · I el preu, a les comptes del mes</b></p>
-      </div>
-    </div>
-    <p class="peu"><b>Què diu.</b> L'equip són les rodones; la que toca s'encén. Hostly li pregunta a la Pilar; si no pot, passa a la Carmen sense que facis res. Quan la Carmen l'acaba, arriben les fotos i, a sota, el preu de la neteja, que ja va a les comptes del mes.</p>
+    <div class="nom"><b>Limpieza, quatre maneres</b><span>Totes de la mida de la rajola. Quietes ensenyen el final; amb el ratolí a sobre fan el seu moviment (i el repeteixen mentre hi siguis). Amb el selector de dalt les pots posar dins de la pantalla.</span></div>
+    <div class="alts" id="galeria"></div>
   </div>
+</div>
 
 <script>
 (() => {
@@ -498,8 +513,8 @@ button { font-family: inherit; color: inherit; }
   function aterra(directe) {
     fila.classList.add('hi');
     if (directe) { mesN.textContent = milers(8549); return; }
-    gsap.fromTo(comptador, { v: 8524 }, { v: 8549, duration: .9, ease: 'power2.out', onUpdate: () => { mesN.textContent = milers(comptador.v); } });
-    gsap.fromTo(fila, { scale: .96 }, { scale: 1, duration: .5, ease: 'back.out(2)' });
+    gsap.fromTo(comptador, { v: 8524 }, { v: 8549, duration: 1.4, ease: 'sine.out', onUpdate: () => { mesN.textContent = milers(comptador.v); } });
+    gsap.fromTo(fila, { scale: .97 }, { scale: 1, duration: .8, ease: 'sine.out' });
   }
   function vola() {
     const si = $('x-si');
@@ -510,18 +525,24 @@ button { font-family: inherit; color: inherit; }
     const x1 = b.left - S.left + 12, y1 = b.top - S.top + b.height / 2 - 18;
     gsap.set(vol, { x: x0, y: y0, scale: .6, opacity: 0 });
     const tl = (tlVol = gsap.timeline());
-    tl.to(vol, { opacity: 1, scale: 1, duration: .3, ease: 'power2.out' })
+    tl.to(vol, { opacity: 1, scale: 1, duration: .45, ease: 'sine.out' })
       // en arc: la x va seguida, la y puja primer i després baixa
-      .to(vol, { x: x1, duration: 1.15, ease: 'power2.inOut' }, 0.25)
-      .to(vol, { y: y0 - 70, duration: .5, ease: 'power2.out' }, 0.25)
-      .to(vol, { y: y1, duration: .65, ease: 'power2.in' }, 0.75)
-      .to(vol, { opacity: 0, scale: .85, duration: .22, ease: 'power2.in' }, 1.3)
-      .call(() => aterra(false), null, 1.32);
+      .to(vol, { x: x1, duration: 1.7, ease: 'sine.inOut' }, 0.3)
+      .to(vol, { y: y0 - 70, duration: .8, ease: 'sine.out' }, 0.3)
+      .to(vol, { y: y1, duration: .9, ease: 'sine.in' }, 1.1)
+      .to(vol, { opacity: 0, scale: .9, duration: .4, ease: 'sine.in' }, 1.85)
+      .call(() => aterra(false), null, 1.9);
   }
 
-  function seguent() { neteja(); n = (n + 1) % CONV.length; pinta(CONV[n]); if (sobre.missatges) programa(); }
+  const xat = document.querySelector('.missatges .xat');
+  function suau(f) {
+    if (quiet) return f();
+    gsap.killTweensOf(xat);
+    gsap.to(xat, { opacity: 0, y: -4, duration: .3, ease: 'sine.in', onComplete: () => { f(); gsap.fromTo(xat, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: .6, ease: 'sine.out' }); } });
+  }
+  function seguent() { neteja(); suau(() => { n = (n + 1) % CONV.length; pinta(CONV[n]); if (sobre.missatges) programa(); }); }
   function programa() { if (quiet) return; mes(CONV[n].upsell ? 8000 : 6000, () => { if (sobre.missatges) seguent(); }); }
-  function lateCheckout() { neteja(); n = 1; pinta(CONV[1]); }
+  function lateCheckout() { neteja(); suau(() => { n = 1; pinta(CONV[1]); }); }
   $('x-seg').addEventListener('click', seguent);
 
   // ── Limpieza: els passos s'encenen un darrere l'altre ──
@@ -549,16 +570,19 @@ button { font-family: inherit; color: inherit; }
   ];
   function pintaTorn(torn, i, viu) {
     const e = ESTATS_B[i], avs = [...torn.querySelectorAll('.av')], caixa = torn.querySelector('.caixa');
-    caixa.innerHTML = e.html;
     avs.forEach((a, k) => { a.classList.toggle('ara', k === e.qui && !e.no); a.classList.toggle('no', k === 0 && i >= 1); });
-    if (!viu || quiet) return;
+    if (!viu || quiet || e.nomesPreu) { caixa.innerHTML = e.html; if (!viu || quiet) return; return animaTorn(caixa, i, e); }
+    gsap.killTweensOf(caixa);
+    gsap.to(caixa, { opacity: 0, duration: .28, ease: 'sine.in', onComplete: () => { caixa.innerHTML = e.html; gsap.to(caixa, { opacity: 1, duration: .5, ease: 'sine.out' }); animaTorn(caixa, i, e); } });
+  }
+  function animaTorn(caixa, i, e) {
     // el que és nou entra: la frase; les fotos d'una en una; el preu, pujant
-    if (!e.nomesPreu) gsap.from(caixa.querySelector('.frase'), { y: 6, opacity: 0, duration: .35, ease: 'power2.out' });
-    if (i === 3) gsap.from(caixa.querySelectorAll('.fotos i'), { scale: .4, opacity: 0, y: 10, duration: .55, ease: 'back.out(1.8)', stagger: .22, delay: .25 });
+    if (!e.nomesPreu) gsap.from(caixa.querySelector('.frase'), { y: 6, duration: .6, ease: 'sine.out' });
+    if (i === 3) gsap.from(caixa.querySelectorAll('.fotos i'), { scale: .7, opacity: 0, y: 8, duration: .8, ease: 'sine.out', stagger: .3, delay: .2 });
     if (i === 4) {
       const preu = caixa.querySelector('.preu'), n = preu.querySelector('b'), v = { x: 0 };
-      gsap.from(preu, { y: 8, opacity: 0, duration: .4, ease: 'power2.out' });
-      gsap.to(v, { x: 45, duration: .8, ease: 'power2.out', onUpdate: () => { n.textContent = Math.round(v.x) + ' €'; } });
+      gsap.from(preu, { y: 8, opacity: 0, duration: .7, ease: 'sine.out' });
+      gsap.to(v, { x: 45, duration: 1.3, ease: 'sine.out', onUpdate: () => { n.textContent = Math.round(v.x) + ' €'; } });
     }
   }
   document.querySelectorAll('.torn[data-estat]').forEach((t) => pintaTorn(t, Number(t.dataset.estat)));
@@ -569,13 +593,13 @@ button { font-family: inherit; color: inherit; }
     tornI = (tornI + 1) % ESTATS_B.length;
     pintaTorn(torn, tornI, true);
     // amb el ratolí a sobre continua; si no, acaba fins a «Hecha» i el preu, i s'atura
-    if (sobre.neteja || tornI < ESTATS_B.length - 1) tornT = setTimeout(tornSegueix, tornI === ESTATS_B.length - 1 ? 3600 : tornI === 3 ? 2400 : 1800);
+    if (sobre.neteja || tornI < ESTATS_B.length - 1) tornT = setTimeout(tornSegueix, tornI === ESTATS_B.length - 1 ? 4000 : tornI === 3 ? 2800 : 2300);
   }
   function tornEntrada() { clearTimeout(tornT); tornI = 2; pintaTorn(torn, 2, false); tornT = setTimeout(tornSegueix, 700); }
 
   // ── el preu de Precios puja ──
   const preuEl = $('preu-n'), preuV = { v: 145 };
-  function preuPuja() { gsap.killTweensOf(preuV); gsap.fromTo(preuV, { v: 145 }, { v: 251, duration: 1.3, ease: 'power3.out', delay: .3, onUpdate: () => { preuEl.textContent = milers(preuV.v); }, onComplete: () => { if (sobre.preus) gsap.delayedCall(2.2, () => { if (sobre.preus) preuPuja(); }); } }); }
+  function preuPuja() { gsap.killTweensOf(preuV); gsap.fromTo(preuV, { v: 145 }, { v: 251, duration: 1.9, ease: 'sine.inOut', delay: .3, onUpdate: () => { preuEl.textContent = milers(preuV.v); }, onComplete: () => { if (sobre.preus) gsap.delayedCall(2.2, () => { if (sobre.preus) preuPuja(); }); } }); }
 
   // ── Moviment: un sol cop en entrar; després, només amb el ratolí a sobre (o tocant, al mòbil) ──
   const QUAN_HI_ENTRES = {
@@ -617,15 +641,175 @@ button { font-family: inherit; color: inherit; }
       $('pop-t').textContent = f.t; $('pop-p').textContent = f.p; $('pop-a').setAttribute('href', 'https://hostlylabs.com' + f.a);
       const pla = $('pop-pla'); pla.textContent = f.pla; pla.className = 'pla' + (f.gratis ? ' gratis' : '');
       const L = linia.getBoundingClientRect(), B = b.getBoundingClientRect();
-      const esq = Math.min(Math.max(B.left - L.left + B.width / 2 - 40, 0), L.width - 300);
+      const esq = Math.min(Math.max(B.left - L.left + B.width / 2 - 150, L.width - 300), 0);
       pop.style.left = esq + 'px';
-      pop.style.setProperty('--fletxa', Math.max(14, B.left - L.left + B.width / 2 - esq - 6) + 'px');
+      pop.style.setProperty('--fletxa', Math.min(282, Math.max(14, B.left - L.left + B.width / 2 - esq - 6)) + 'px');
       b.setAttribute('aria-expanded', 'true'); pop.classList.add('obert'); obert = b;
     });
   });
   pop.addEventListener('click', (ev) => ev.stopPropagation());
   document.addEventListener('click', tanca);
   document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') tanca(); });
+
+
+  // ════════ Les quatre netejes ════════
+  const CHK = svg('<path d="M20 6L9 17l-5-5"/>');
+  const SURT = svg('<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/>');
+  const ENTRA = svg('<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/>');
+  const CAMERA = svg('<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>');
+  const EURO = svg('<path d="M17 6.5A7 7 0 1 0 17 17.5"/><path d="M4 10h9M4 14h9"/>');
+  const AV = (l, c, cls = '') => `<span class="av ${cls}" style="background:${c}">${l}</span>`;
+  const COL = { P: '#0f766e', C: '#b45309', M: '#6d28d9' };
+  const compta = (el, a, b, d, suf = ' €') => { const v = { x: a }; return gsap.to(v, { x: b, duration: d, ease: 'sine.out', onUpdate: () => { el.textContent = Math.round(v.x) + suf; } }); };
+
+  const NETEJES = {
+    hueco: {
+      nom: '1 · El hueco',
+      desc: 'Entre la salida (11:00) y la entrada (16:00), la limpieza ya está. La Carmen avanza por la barra, se pone verde y salen las fotos y el precio. Habla del tiempo: «esto pasa solo entre dos huéspedes».',
+      titol: 'Entre salida y entrada, <span class="tenue">limpio.</span>',
+      html: `<div class="v1">
+        <div class="v1-caps"><span>${SURT}Salida <b>11:00</b></span><span>Entrada <b>16:00</b>${ENTRA}</span></div>
+        <div class="v1-pista"><i class="v1-ple"></i>${AV('C', COL.C, 'v1-av')}</div>
+        <div class="v1-estat"><span class="estat feta v1-xip">${CHK}Hecha</span><span class="v1-qui">Carmen · 13:40</span></div>
+        <div class="v1-peu"><span class="mini-fotos"><i></i><i></i><i></i></span><span class="preu-n"><small>a tus cuentas</small><b class="num v1-preu">45 €</b></span></div>
+      </div>`,
+      play(el) {
+        const ple = el.querySelector('.v1-ple'), av = el.querySelector('.v1-av'), xip = el.querySelector('.v1-xip'), qui = el.querySelector('.v1-qui'), fotos = el.querySelectorAll('.mini-fotos i'), preu = el.querySelector('.v1-preu'), peu = el.querySelector('.v1-peu');
+        const tl = gsap.timeline();
+        tl.to([ple, av, xip, qui, peu], { opacity: 0, duration: .35, ease: 'sine.in' })
+          .call(() => { gsap.set(ple, { width: '0%', background: 'var(--blau)' }); gsap.set(av, { left: '0%' }); xip.className = 'estat v1-xip'; xip.innerHTML = CHK + 'Coordinada'; qui.textContent = 'Carmen · mañana'; gsap.set(fotos, { opacity: 0, scale: .7 }); preu.textContent = '0 €'; })
+          .to([av, xip, qui], { opacity: 1, duration: .6, ease: 'sine.out', stagger: .12 })
+          .to(ple, { opacity: 1, duration: .3 }, '<')
+          .to(ple, { width: '100%', duration: 2.4, ease: 'sine.inOut' }, '+=.4')
+          .to(av, { left: '100%', duration: 2.4, ease: 'sine.inOut' }, '<')
+          .to(ple, { background: 'var(--verd)', duration: .6 }, '-=.5')
+          .call(() => { xip.className = 'estat feta v1-xip'; xip.innerHTML = CHK + 'Hecha'; qui.textContent = 'Carmen · 13:40'; })
+          .fromTo(xip, { opacity: .3 }, { opacity: 1, duration: .5 })
+          .to(peu, { opacity: 1, duration: .5, ease: 'sine.out' }, '-=.2')
+          .to(fotos, { opacity: 1, scale: 1, duration: .7, ease: 'sine.out', stagger: .25 }, '-=.2')
+          .add(compta(preu, 0, 45, 1.2), '-=.3');
+        return tl;
+      },
+    },
+    semana: {
+      nom: '2 · La semana',
+      desc: 'Una semana del piso: cada día con salida tiene su hueco y se llena solo con quien le toca. El miércoles Pilar no puede y el hueco pasa a Carmen. Habla de reparto: «tu equipo se organiza sin ti».',
+      titol: 'Cada salida, <span class="tenue">con quien le toca.</span>',
+      html: `<div class="v2">
+        <div class="v2-dies">${[['Lu', 'P'], ['Ma', ''], ['Mi', 'C'], ['Ju', ''], ['Vi', 'M'], ['Sá', ''], ['Do', 'P']].map(([d, q]) => `<div class="v2-d"><small>${d}</small><span class="v2-slot ${q ? 'sortida' : 'buit'}" data-q="${q}">${q ? AV(q, COL[q]) + `<i class="ok">${CHK}</i>` : ''}</span></div>`).join('')}</div>
+        <div class="v2-peu"><span><b class="v2-n">4 limpiezas</b> · 0 llamadas</span><span class="preu-n"><small>este mes</small><b class="num v2-preu">180 €</b></span></div>
+      </div>`,
+      play(el) {
+        const slots = [...el.querySelectorAll('.v2-slot.sortida')], preu = el.querySelector('.v2-preu'), n = el.querySelector('.v2-n');
+        const tl = gsap.timeline();
+        tl.to(slots.map((x) => x.querySelector('.av')), { opacity: 0, scale: .6, duration: .4, ease: 'sine.in' })
+          .to(slots.map((x) => x.querySelector('.ok')), { opacity: 0, duration: .3 }, '<')
+          .call(() => { preu.textContent = '0 €'; n.textContent = '0 limpiezas'; });
+        slots.forEach((sl, k) => {
+          const av = sl.querySelector('.av'), ok = sl.querySelector('.ok');
+          if (sl.dataset.q === 'C') {
+            // el dimecres: primer la Pilar, que no pot; passa a la Carmen
+            tl.call(() => { av.textContent = 'P'; av.style.background = COL.P; }, null, '+=.35')
+              .fromTo(av, { opacity: 0, y: -12, scale: .8 }, { opacity: 1, y: 0, scale: 1, duration: .6, ease: 'sine.out' })
+              .to(av, { opacity: .35, duration: .4 }, '+=.35')
+              .to(av, { rotationY: 90, duration: .3, ease: 'sine.in' })
+              .call(() => { av.textContent = 'C'; av.style.background = COL.C; })
+              .to(av, { rotationY: 0, opacity: 1, duration: .45, ease: 'sine.out' });
+          } else {
+            tl.fromTo(av, { opacity: 0, y: -12, scale: .8 }, { opacity: 1, y: 0, scale: 1, duration: .6, ease: 'sine.out' }, '+=.3');
+          }
+          tl.to(ok, { opacity: 1, duration: .35 }, '-=.15').call(() => { n.textContent = (k + 1) + (k ? ' limpiezas' : ' limpieza'); });
+        });
+        tl.add(compta(preu, 0, 180, 1.3), '+=.1');
+        return tl;
+      },
+    },
+    antes: {
+      nom: '3 · Antes y después',
+      desc: 'La foto del piso: sale el huésped (gris), Carmen está coordinada y la foto se limpia de izquierda a derecha hasta «Hecha», con el precio. Habla del resultado: «tú solo ves el piso listo».',
+      titol: 'Tú solo ves <span class="tenue">el piso listo.</span>',
+      html: `<div class="v3-foto"><i class="v3-bruta"></i><i class="v3-neta"></i><span class="v3-linia"></span>
+        <span class="estat feta v3-xip">${CHK}Hecha · con fotos</span>
+        <div class="v3-baix"><span class="v3-qui vidre">${AV('C', COL.C)}Carmen · 13:40</span><span class="v3-preu vidre num">45 €</span></div></div>`,
+      play(el) {
+        const neta = el.querySelector('.v3-neta'), linia = el.querySelector('.v3-linia'), xip = el.querySelector('.v3-xip'), qui = el.querySelector('.v3-qui'), preu = el.querySelector('.v3-preu');
+        const tl = gsap.timeline();
+        tl.to([xip, qui, preu], { opacity: 0, duration: .35, ease: 'sine.in' })
+          .to(neta, { opacity: 0, duration: .6, ease: 'sine.inOut' }, '<')
+          .call(() => { gsap.set(neta, { clipPath: 'inset(0 100% 0 0)', opacity: 1 }); xip.className = 'estat v3-xip'; xip.style.background = 'var(--blanc)'; xip.style.color = 'var(--gris)'; xip.innerHTML = SURT + 'Salida · 11:00'; qui.lastChild.textContent = 'Carmen · mañana'; preu.textContent = '0 €'; })
+          .to(xip, { opacity: 1, duration: .5, ease: 'sine.out' })
+          .call(() => { xip.style.background = ''; xip.style.color = ''; xip.innerHTML = CHK + 'Coordinada'; }, null, '+=.8')
+          .to(qui, { opacity: 1, duration: .6, ease: 'sine.out' })
+          .set(linia, { left: '0%', opacity: 1 }, '+=.5')
+          .to(neta, { clipPath: 'inset(0 0% 0 0)', duration: 2.2, ease: 'sine.inOut' })
+          .to(linia, { left: '100%', duration: 2.2, ease: 'sine.inOut' }, '<')
+          .to(linia, { opacity: 0, duration: .3 })
+          .call(() => { xip.className = 'estat feta v3-xip'; xip.innerHTML = CHK + 'Hecha · con fotos'; qui.lastChild.textContent = 'Carmen · 13:40'; })
+          .to(preu, { opacity: 1, duration: .5, ease: 'sine.out' })
+          .add(compta(preu, 0, 45, 1.1), '<');
+        return tl;
+      },
+    },
+    avisos: {
+      nom: '4 · Avisos',
+      desc: 'No ves el proceso, solo te llegan los avisos de Hostly, uno encima del otro: limpieza creada, Carmen la hace (Pilar no podía), hecha con fotos y 45 € a tus cuentas. Habla de tranquilidad: «te enteras, no la organizas».',
+      titol: 'Tú no la organizas, <span class="tenue">te enteras.</span>',
+      html: `<div class="v4"></div>`,
+      avisos: [
+        `<div class="v4-av"><span class="ico">${SURT}</span><span class="q"><b>Limpieza creada</b><small>Salida de Camille · mañana 11:00</small></span><time>18:02</time></div>`,
+        `<div class="v4-av"><span class="ico" style="background:${COL.C};color:#fff;font-size:11px;font-weight:700">C</span><span class="q"><b>Carmen la hace</b><small>Pilar no podía · Coordinada</small></span><time>18:09</time></div>`,
+        `<div class="v4-av"><span class="ico">${CAMERA}</span><span class="q"><b>Hecha, con fotos</b><small>Cala Moreta, lista para entrar</small></span><span class="mini-fotos"><i></i><i></i><i></i></span></div>`,
+        `<div class="v4-av"><span class="ico">${EURO}</span><span class="q"><b><span class="v4-n">45 €</span> a tus cuentas</b><small>Limpieza de Carmen · octubre</small></span><time>13:41</time></div>`,
+      ],
+      inici(el) { const c = el.querySelector('.v4'); c.innerHTML = this.avisos.slice(1).reverse().join(''); },
+      play(el) {
+        const c = el.querySelector('.v4'), avisos = this.avisos;
+        const tl = gsap.timeline();
+        tl.to(c, { opacity: 0, duration: .35, ease: 'sine.in' })
+          .call(() => { c.innerHTML = ''; gsap.set(c, { opacity: 1 }); });
+        avisos.forEach((h, k) => {
+          tl.call(() => {
+            c.insertAdjacentHTML('afterbegin', h);
+            const nou = c.firstElementChild;
+            [...c.children].forEach((x, j) => x.classList.toggle('vell', j > 0));
+            gsap.from(nou, { height: 0, opacity: 0, y: -10, paddingTop: 0, paddingBottom: 0, duration: .7, ease: 'sine.out' });
+            if (k === 3) compta(nou.querySelector('.v4-n'), 0, 45, 1.1);
+            while (c.children.length > 3) { const v = c.lastElementChild; gsap.to(v, { opacity: 0, height: 0, paddingTop: 0, paddingBottom: 0, duration: .5, ease: 'sine.in', onComplete: () => v.remove() }); break; }
+          }, null, k ? '+=1.5' : '+=.2');
+        });
+        tl.to({}, { duration: .8 });
+        return tl;
+      },
+    },
+  };
+
+  function creaNeteja(k, perPantalla) {
+    const v = NETEJES[k], el = document.createElement('article');
+    el.className = 't clar nv nv-' + k + (perPantalla ? ' neteja' : '');
+    el.innerHTML = `<div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver Limpieza"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div><h3 class="h3">${v.titol}</h3><div class="nv-cos">${v.html}</div>`;
+    if (v.inici) v.inici(el);
+    let sobre = false, tl = null;
+    const volta = () => { tl = v.play(el); tl.eventCallback('onComplete', () => { if (sobre) gsap.delayedCall(2, () => { if (sobre && !tl.isActive()) volta(); }); }); };
+    el.addEventListener('mouseenter', () => { sobre = true; if (!quiet && !(tl && tl.isActive())) volta(); });
+    el.addEventListener('mouseleave', () => { sobre = false; });
+    el.addEventListener('touchstart', () => { if (!quiet && !(tl && tl.isActive())) volta(); }, { passive: true });
+    return el;
+  }
+  // la galeria
+  const galeria = $('galeria');
+  Object.keys(NETEJES).forEach((k) => {
+    const a = document.createElement('div'); a.className = 'alt';
+    a.appendChild(creaNeteja(k, false));
+    a.insertAdjacentHTML('beforeend', `<p class="nom-alt"><b>${NETEJES[k].nom}.</b> ${NETEJES[k].desc}</p>`);
+    galeria.appendChild(a);
+  });
+  // dins de la pantalla: totes al mateix lloc, i el selector n'ensenya una
+  const tornEl = document.querySelector('[data-nv="torn"]');
+  Object.keys(NETEJES).forEach((k) => { const el = creaNeteja(k, true); el.dataset.nv = k; el.hidden = true; tornEl.after(el); });
+  document.querySelectorAll('#selector button').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('#selector button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    document.querySelectorAll('[data-nv]').forEach((el) => { const vist = el.dataset.nv === b.dataset.n; if (vist && el.hidden) { el.hidden = false; gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: .5, ease: 'sine.out' }); } else if (!vist) el.hidden = true; });
+  }));
 
   // l'alçada real de la secció, al regle
   const mesura = () => { const r = sec.getBoundingClientRect(); $('regle-alcada').textContent = `el capçal + la secció fan ${Math.round(80 + r.height)} px d'alt`; };
