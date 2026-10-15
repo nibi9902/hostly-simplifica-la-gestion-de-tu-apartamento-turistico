@@ -290,8 +290,7 @@ button { font-family: inherit; color: inherit; }
   <div class="bloc">
     <div class="nom"><b>La pantalla sencera</b><span>Rajoles: Mensajes (alta, com ara), Precios, Limpieza (conceptual), Calendario, Extras y cuentas, i «Conéctalo todo» com una sola línia a sota.</span></div>
     <div class="eines">
-      <button type="button" id="replay"><svg class="ic" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v6h6"/></svg>Torna a fer l'entrada</button>
-      <small>En entrar, cada rajola fa un sol moviment curt i s'atura. Per veure'n més, passa-hi el ratolí per sobre: Mensajes canvia de conversa, Precios torna a pujar, Limpieza fa el torn sencer i Extras torna a fer volar el late checkout. Al mòbil (sense ratolí) seria tocant la rajola. Les píndoles de sota obren un mini pop-up.</small>
+      <small>Res es mou sol: cada mòdul es mou només mentre hi tens el ratolí a sobre. Mensajes comença pel late checkout, que vola fins a Extras (l'únic moviment que passa d'un mòdul a l'altre), i després va canviant de conversa; Precios torna a pujar; Limpieza fa el torn sencer; Extras torna a sumar la fila. Al mòbil seria tocant el mòdul. Les píndoles de sota obren un mini pop-up.</small>
     </div>
     <div class="pantalla-marc">
       <div class="pantalla" id="pantalla">
@@ -472,20 +471,21 @@ button { font-family: inherit; color: inherit; }
   const neteja = () => { temps.forEach(clearTimeout); temps = []; };
   const mes = (ms, f) => temps.push(setTimeout(f, ms));
 
-  function pinta(c) {
+  function pinta(c, estatic) {
+    const quiet_ = quiet || estatic;
     $('x-qui').textContent = c.qui;
     $('x-logo').className = 'logo-canal ' + c.canal;
     $('x-idioma').textContent = 'En su idioma: ' + c.idioma;
     cos.innerHTML = '';
     if (!c.upsell) {
       cos.innerHTML = `<div class="bh entra"><p>${c.hoste}</p><small>Traducido · ${c.trad}</small></div><p class="et">${ESPURNA}Contesta la IA</p><div class="bi escriu entra" id="x-escriu"><i></i><i></i><i></i></div>`;
-      mes(quiet ? 0 : 1100, () => { const e = $('x-escriu'); if (e) e.outerHTML = `<div class="bi entra"><p>${c.ia}</p></div>`; });
+      mes(quiet_ ? 0 : 1100, () => { const e = $('x-escriu'); if (e) e.outerHTML = `<div class="bi entra"><p>${c.ia}</p></div>`; });
       return;
     }
-    if (!quiet) { if (tlVol) tlVol.kill(); gsap.killTweensOf([vol, comptador, fila]); gsap.set(vol, { opacity: 0 }); fila.classList.remove('hi'); mesN.textContent = milers(8524); }
+    if (!quiet_) { if (tlVol) tlVol.kill(); gsap.killTweensOf([vol, comptador, fila]); gsap.set(vol, { opacity: 0 }); fila.classList.remove('hi'); mesN.textContent = milers(8524); }
     cos.innerHTML = `<p class="et auto">${LLAMP}Automático · Hostly</p><div class="bi auto entra"><p>${c.auto}</p><span class="enllac">${ENLLAC}hostlylabs.com/i/m7dq4</span></div>`;
     const resposta = () => { cos.insertAdjacentHTML('beforeend', `<div class="bh entra" id="x-si"><p>${c.resposta}</p><small>Traducido · ${c.respostaTrad}</small></div>`); };
-    if (quiet) { resposta(); aterra(true); return; }
+    if (quiet_) { resposta(); aterra(true); return; }
     mes(1500, () => cos.insertAdjacentHTML('beforeend', `<div class="bh escriu entra" id="x-escriu" style="color:var(--gris)"><i></i><i></i><i></i></div>`));
     mes(2500, () => { const e = $('x-escriu'); if (e) e.remove(); resposta(); });
     mes(3200, vola);
@@ -579,10 +579,12 @@ button { font-family: inherit; color: inherit; }
 
   // ── Moviment: un sol cop en entrar; després, només amb el ratolí a sobre (o tocant, al mòbil) ──
   const QUAN_HI_ENTRES = {
-    missatges: () => { if (!$('x-escriu')) seguent(); },
+    // Mensajes: comença pel late checkout (que vola cap a Extras) i, mentre hi siguis, va canviant de conversa
+    missatges: () => { lateCheckout(); programa(); },
     preus: () => { if (!gsap.isTweening(preuV)) preuPuja(); },
     neteja: () => { if (tornI === ESTATS_B.length - 1) tornSegueix(); else { clearTimeout(tornT); tornT = setTimeout(tornSegueix, 400); } },
-    extres: () => lateCheckout(),
+    // Extras: només ell; la fila del late checkout torna a entrar i el total torna a sumar
+    extres: () => { gsap.killTweensOf([comptador, fila]); fila.classList.remove('hi'); mesN.textContent = milers(8524); setTimeout(() => { if (!fila.classList.contains('hi')) aterra(false); }, 350); },
   };
   document.querySelectorAll('[data-viu]').forEach((t) => {
     const k = t.dataset.viu;
@@ -590,14 +592,8 @@ button { font-family: inherit; color: inherit; }
     t.addEventListener('mouseleave', () => { sobre[k] = false; });
     t.addEventListener('touchstart', () => { if (!quiet) QUAN_HI_ENTRES[k](); }, { passive: true });
   });
-  function entrada() {
-    if (quiet) { n = 1; pinta(CONV[1]); pintaTorn(torn, 4); return; }
-    lateCheckout();
-    preuPuja();
-    tornEntrada();
-  }
-  entrada();
-  $('replay').addEventListener('click', entrada);
+  // en entrar, res es mou: cada mòdul ja ensenya el seu estat final i es mou només quan hi passes el ratolí
+  n = 1; pinta(CONV[1], true); pintaTorn(torn, 4); tornI = 4;
 
   // ── Les píndoles de sota: un mini pop-up per funció (textos de les fitxes de la web) ──
   const FUNCIONS = {
