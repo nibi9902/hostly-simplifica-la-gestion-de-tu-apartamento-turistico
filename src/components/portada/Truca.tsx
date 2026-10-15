@@ -23,7 +23,7 @@ export default function Truca() {
               {t("portada.truca.titol")} <span>{t("portada.truca.titol_gris")}</span>
             </h2>
             {/* la foto del Biel (15-10), al costat de la firma */}
-            <p className="pt-signa-fila"><img className="pt-signa-av" src={fotoBiel} alt="" width={88} height={88} loading="lazy" decoding="async" /><small className="pt-signa">{t("portada.truca.signa")}</small></p>
+            <p className="pt-signa-fila"><img className="pt-signa-av" src={fotoBiel} alt="" width={104} height={104} loading="lazy" decoding="async" /><small className="pt-signa">{t("portada.truca.signa")}</small></p>
           </div>
           <div>
             {fet ? (
