@@ -210,14 +210,31 @@ button { font-family: inherit; color: inherit; }
 .vol .av { width: 24px; height: 24px; font-size: 10px; }
 .vol .num { opacity: .85; }
 
-/* Conéctalo todo: una línia a sota de la graella */
-.connecta { margin-top: 12px; display: flex; align-items: center; gap: 14px; height: 48px; padding: 0 8px 0 18px; border-radius: 999px; background: var(--gris-0); box-shadow: inset 0 0 0 1px var(--linia); font-size: 14px; }
-.connecta b { font-weight: 600; }
-.connecta span { color: var(--gris); }
-.connecta .nodes { display: flex; gap: 6px; margin-left: auto; }
-.connecta .nodes i { font-style: normal; font-size: 12px; font-weight: 600; height: 28px; padding: 0 10px; border-radius: 999px; background: var(--blanc); box-shadow: inset 0 0 0 1px var(--linia-2); display: inline-flex; align-items: center; gap: 5px; }
-.connecta .nodes i .ic { width: 12px; height: 12px; color: var(--blau); }
-.connecta .rodo { width: 36px; height: 36px; }
+/* La línia de sota: les altres funcions de Hostly, en píndoles; cada una obre un mini pop-up */
+.funcions { margin-top: 12px; display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 6px 8px 6px 18px; border-radius: 999px; background: var(--gris-0); box-shadow: inset 0 0 0 1px var(--linia); position: relative; }
+.funcions > b { font-size: 14px; font-weight: 600; white-space: nowrap; margin-right: 6px; }
+.funcions .pills { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
+.fn { all: unset; cursor: pointer; position: relative; display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 999px; background: var(--blanc); box-shadow: inset 0 0 0 1px var(--linia-2); font-size: 12.5px; font-weight: 600; white-space: nowrap; transition: background .2s ease, box-shadow .2s ease, color .2s ease; }
+.fn .ic { width: 14px; height: 14px; color: var(--blau); }
+.fn:hover { box-shadow: inset 0 0 0 1px var(--text); }
+.fn:focus-visible { outline: 2px solid var(--blau); outline-offset: 2px; }
+.fn[aria-expanded="true"] { background: var(--fosc); color: #fff; box-shadow: none; }
+.fn[aria-expanded="true"] .ic { color: #fff; }
+.fn.aparte { background: transparent; }
+.fn.aparte::after { content: "aparte"; font-size: 10.5px; font-weight: 600; color: var(--gris); margin-left: 2px; }
+.fn.aparte[aria-expanded="true"] { background: var(--fosc); }
+.fn.aparte[aria-expanded="true"]::after { color: rgba(255,255,255,.7); }
+.funcions .rodo { width: 36px; height: 36px; }
+.pop { position: absolute; z-index: 30; bottom: calc(100% + 10px); width: 300px; padding: 16px 16px 14px; border-radius: 20px; background: var(--blanc); box-shadow: 0 0 0 1px var(--linia), 0 18px 40px rgba(17,24,39,.16); display: flex; flex-direction: column; gap: 8px; opacity: 0; transform: translateY(6px) scale(.98); transform-origin: bottom left; pointer-events: none; transition: opacity .2s ease, transform .25s cubic-bezier(.2,.7,.2,1); }
+.pop.obert { opacity: 1; transform: none; pointer-events: auto; }
+.pop .dalt-pop { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pop h4 { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+.pop .pla { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--gris); }
+.pop .pla.gratis { color: var(--verd-text); }
+.pop p { font-size: 13.5px; line-height: 1.45; color: var(--gris); }
+.pop a { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; margin-top: 2px; font-size: 13px; font-weight: 600; color: var(--text); text-decoration: none; }
+.pop a .ic { width: 14px; height: 14px; }
+.pop::after { content: ""; position: absolute; left: var(--fletxa, 24px); bottom: -6px; width: 12px; height: 12px; background: var(--blanc); transform: rotate(45deg); box-shadow: 1px 1px 0 var(--linia); }
 
 /* ── Les alternatives de la neteja, a sota de la pantalla ── */
 .alts { display: flex; flex-wrap: wrap; gap: 16px; }
@@ -273,8 +290,8 @@ button { font-family: inherit; color: inherit; }
   <div class="bloc">
     <div class="nom"><b>La pantalla sencera</b><span>Rajoles: Mensajes (alta, com ara), Precios, Limpieza (conceptual), Calendario, Extras y cuentas, i «Conéctalo todo» com una sola línia a sota.</span></div>
     <div class="eines">
-      <button type="button" id="replay"><svg class="ic" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v6h6"/></svg>Torna a fer volar la bombolla</button>
-      <small>La bombolla vola sola cada cop que toca la conversa de la sortida tardana (cada ~20 s); amb «reduir moviment», la fila ja hi és.</small>
+      <button type="button" id="replay"><svg class="ic" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v6h6"/></svg>Torna a fer l'entrada</button>
+      <small>En entrar, cada rajola fa un sol moviment curt i s'atura. Per veure'n més, passa-hi el ratolí per sobre: Mensajes canvia de conversa, Precios torna a pujar, Limpieza fa el torn sencer i Extras torna a fer volar el late checkout. Al mòbil (sense ratolí) seria tocant la rajola. Les píndoles de sota obren un mini pop-up.</small>
     </div>
     <div class="pantalla-marc">
       <div class="pantalla" id="pantalla">
@@ -292,7 +309,7 @@ button { font-family: inherit; color: inherit; }
 
           <div class="graella">
             <!-- Mensajes -->
-            <article class="t foto missatges" style="background-image:var(--f-gestor-tarda)">
+            <article class="t foto missatges" data-viu="missatges" style="background-image:var(--f-gestor-tarda)">
               <div class="dalt">
                 <p class="gros">Mensajes</p>
                 <button class="rodo vidre" type="button" aria-label="Ver Mensajes"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
@@ -305,7 +322,7 @@ button { font-family: inherit; color: inherit; }
             </article>
 
             <!-- Precios -->
-            <article class="t foto preus" style="background-image:var(--f-menjador-dia)">
+            <article class="t foto preus" data-viu="preus" style="background-image:var(--f-menjador-dia)">
               <div class="dalt">
                 <div><p class="gros">Precios</p><p class="sub">Sube y baja los precios cada día, según la demanda.</p></div>
                 <button class="rodo vidre" type="button" aria-label="Ver Precios"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
@@ -317,7 +334,7 @@ button { font-family: inherit; color: inherit; }
             </article>
 
             <!-- Limpieza: el torn -->
-            <article class="t clar neteja">
+            <article class="t clar neteja" data-viu="neteja">
               <div class="dalt"><span class="pindola">Limpieza</span><button class="rodo" type="button" aria-label="Ver Limpieza"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
               <h3 class="h3">Tu equipo, <span class="tenue">sin llamadas.</span></h3>
               <div class="torn" id="torn">
@@ -339,7 +356,7 @@ button { font-family: inherit; color: inherit; }
             </article>
 
             <!-- Extras y cuentas -->
-            <article class="t clar extres" id="extres">
+            <article class="t clar extres" id="extres" data-viu="extres">
               <div class="dalt"><span class="pindola">Extras y cuentas</span><button class="rodo" type="button" aria-label="Ver Extras y cuentas"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button></div>
               <h3 class="h3">+25 € <span class="tenue">por cada <span class="terme">Late checkout</span> que vendes.</span></h3>
               <div class="mostra">
@@ -352,10 +369,18 @@ button { font-family: inherit; color: inherit; }
           <!-- la bombolla que vola -->
           <div class="vol" id="vol" aria-hidden="true"><span class="av" style="background:#be123c">C</span>Late checkout <span class="num">· 25 €</span></div>
 
-          <div class="connecta">
-            <b>¿Usas otra herramienta?</b><span>La conectamos con Hostly. Es un servicio aparte, a medida.</span>
-            <span class="nodes"><i><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Gestoría</i><i><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>Tu web</i><i><svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></svg>ERP</i><i><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Lo que uses</i></span>
-            <button class="rodo" type="button" aria-label="Ver Conéctalo todo"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
+          <div class="funcions" id="funcions">
+            <b>Y además</b>
+            <div class="pills">
+              <button class="fn" type="button" data-f="checkin"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10h8M8 14h5"/></svg>Check-in y policía</button>
+              <button class="fn" type="button" data-f="programats"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mensajes programados</button>
+              <button class="fn" type="button" data-f="taxa"><svg class="ic" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>Tasa turística</button>
+              <button class="fn" type="button" data-f="finances"><svg class="ic" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Finanzas por piso</button>
+              <button class="fn" type="button" data-f="rols"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg>Equipo y propietarios</button>
+              <button class="fn aparte" type="button" data-f="connecta"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Conéctalo todo</button>
+            </div>
+            <button class="rodo" type="button" aria-label="Ver todas las funcionalidades"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
+            <div class="pop" id="pop" role="dialog" aria-live="polite"><div class="dalt-pop"><h4 id="pop-t"></h4><span class="pla" id="pop-pla"></span></div><p id="pop-p"></p><a href="#" id="pop-a">Ver funcionalidad <svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
           </div>
         </section>
       </div>
@@ -441,7 +466,8 @@ button { font-family: inherit; color: inherit; }
     { qui: 'Camille', canal: 'airbnb', idioma: 'francés', upsell: true, auto: 'Envie d’un late checkout ? Jusqu’à 13 h pour 25 €.', autoTrad: '¿Quieres un late checkout? Hasta las 13:00 por 25 €.', resposta: 'Oui, je prends !', respostaTrad: '¡Sí, me lo quedo!' },
     { qui: 'Thomas', canal: 'booking', idioma: 'alemán', hoste: 'Gibt es einen Parkplatz in der Nähe?', trad: '¿Hay aparcamiento cerca?', ia: 'Ja, direkt vor dem Haus. Kostenlos, ohne Reservierung.' },
   ];
-  let n = 0, temps = [], tocat = false;
+  let n = 0, temps = [];
+  const sobre = { missatges: false, preus: false, neteja: false, extres: false };
   const cos = $('x-cos');
   const neteja = () => { temps.forEach(clearTimeout); temps = []; };
   const mes = (ms, f) => temps.push(setTimeout(f, ms));
@@ -493,12 +519,10 @@ button { font-family: inherit; color: inherit; }
       .call(() => aterra(false), null, 1.32);
   }
 
-  function seguent() { neteja(); n = (n + 1) % CONV.length; pinta(CONV[n]); programa(); }
-  function programa() { if (quiet) return; mes(CONV[n].upsell ? 8500 : 6500, () => { if (!tocat) seguent(); else { tocat = false; seguent(); } }); }
-  $('x-seg').addEventListener('click', () => { tocat = true; seguent(); });
-  $('replay').addEventListener('click', () => { neteja(); n = 1; pinta(CONV[1]); programa(); });
-  // comença: si no hi ha moviment, s'ensenya la de la sortida tardana amb tot aterrat
-  n = quiet ? 1 : 0; pinta(CONV[n]); programa();
+  function seguent() { neteja(); n = (n + 1) % CONV.length; pinta(CONV[n]); if (sobre.missatges) programa(); }
+  function programa() { if (quiet) return; mes(CONV[n].upsell ? 8000 : 6000, () => { if (sobre.missatges) seguent(); }); }
+  function lateCheckout() { neteja(); n = 1; pinta(CONV[1]); }
+  $('x-seg').addEventListener('click', seguent);
 
   // ── Limpieza: els passos s'encenen un darrere l'altre ──
   function cicle(ids, cada, espera) {
@@ -538,19 +562,74 @@ button { font-family: inherit; color: inherit; }
     }
   }
   document.querySelectorAll('.torn[data-estat]').forEach((t) => pintaTorn(t, Number(t.dataset.estat)));
-  (() => {
-    const torn = $('torn');
-    if (quiet) { pintaTorn(torn, 4); return; }
-    let i = 0;
-    const tic = () => { pintaTorn(torn, i, true); i = (i + 1) % ESTATS_B.length; setTimeout(tic, i === 0 ? 4500 : i === 4 ? 2400 : 2000); };
-    tic();
-  })();
+  const torn = $('torn');
+  let tornI = 4, tornT = 0;
+  function tornSegueix() {
+    clearTimeout(tornT);
+    tornI = (tornI + 1) % ESTATS_B.length;
+    pintaTorn(torn, tornI, true);
+    // amb el ratolí a sobre continua; si no, acaba fins a «Hecha» i el preu, i s'atura
+    if (sobre.neteja || tornI < ESTATS_B.length - 1) tornT = setTimeout(tornSegueix, tornI === ESTATS_B.length - 1 ? 3600 : tornI === 3 ? 2400 : 1800);
+  }
+  function tornEntrada() { clearTimeout(tornT); tornI = 2; pintaTorn(torn, 2, false); tornT = setTimeout(tornSegueix, 700); }
 
   // ── el preu de Precios puja ──
-  if (!quiet) {
-    const preu = { v: 145 }, el = $('preu-n');
-    gsap.timeline({ repeat: -1, repeatDelay: 4 }).fromTo(preu, { v: 145 }, { v: 251, duration: 1.3, ease: 'power3.out', onUpdate: () => { el.textContent = milers(preu.v); } }, 0.6);
+  const preuEl = $('preu-n'), preuV = { v: 145 };
+  function preuPuja() { gsap.killTweensOf(preuV); gsap.fromTo(preuV, { v: 145 }, { v: 251, duration: 1.3, ease: 'power3.out', delay: .3, onUpdate: () => { preuEl.textContent = milers(preuV.v); }, onComplete: () => { if (sobre.preus) gsap.delayedCall(2.2, () => { if (sobre.preus) preuPuja(); }); } }); }
+
+  // ── Moviment: un sol cop en entrar; després, només amb el ratolí a sobre (o tocant, al mòbil) ──
+  const QUAN_HI_ENTRES = {
+    missatges: () => { if (!$('x-escriu')) seguent(); },
+    preus: () => { if (!gsap.isTweening(preuV)) preuPuja(); },
+    neteja: () => { if (tornI === ESTATS_B.length - 1) tornSegueix(); else { clearTimeout(tornT); tornT = setTimeout(tornSegueix, 400); } },
+    extres: () => lateCheckout(),
+  };
+  document.querySelectorAll('[data-viu]').forEach((t) => {
+    const k = t.dataset.viu;
+    t.addEventListener('mouseenter', () => { sobre[k] = true; if (!quiet) QUAN_HI_ENTRES[k](); });
+    t.addEventListener('mouseleave', () => { sobre[k] = false; });
+    t.addEventListener('touchstart', () => { if (!quiet) QUAN_HI_ENTRES[k](); }, { passive: true });
+  });
+  function entrada() {
+    if (quiet) { n = 1; pinta(CONV[1]); pintaTorn(torn, 4); return; }
+    lateCheckout();
+    preuPuja();
+    tornEntrada();
   }
+  entrada();
+  $('replay').addEventListener('click', entrada);
+
+  // ── Les píndoles de sota: un mini pop-up per funció (textos de les fitxes de la web) ──
+  const FUNCIONS = {
+    checkin: { t: 'Check-in y policía', pla: 'Gratis', gratis: true, p: 'El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. Gratis para siempre.', a: '/funcionalidades/check-in-online' },
+    programats: { t: 'Mensajes programados', pla: 'Completo', p: 'Bienvenida, check-in, check-out y más, enviados solos en cada reserva. Una versión por piso, traducida al idioma del huésped.', a: '/funcionalidades/mensajeria-programada' },
+    taxa: { t: 'Tasa turística', pla: 'Completo', p: 'Calculada sola: tarifa según la ley y tu municipio, importe por piso y el Excel listo para presentar.', a: '/funcionalidades/burocracia' },
+    finances: { t: 'Finanzas por piso', pla: 'Completo', p: 'Ingresos por piso, canal y periodo, con las comisiones de Airbnb y Booking ya calculadas. Y la liquidación de cada propietario.', a: '/funcionalidades/finanzas' },
+    rols: { t: 'Equipo y propietarios', pla: 'Completo', p: 'Cada persona ve lo suyo: gestores por piso, equipo de limpieza y propietarios en solo lectura. Sin límite de usuarios.', a: '/funcionalidades/multi-rol' },
+    connecta: { t: 'Conéctalo todo', pla: 'Aparte', p: 'Conectamos Hostly con tu gestoría, tu web, tu ERP o lo que uses. Es un servicio aparte, a medida.', a: '/funcionalidades/conecta-todo' },
+  };
+  const pop = $('pop'), linia = $('funcions');
+  let obert = null;
+  function tanca() { if (!obert) return; obert.setAttribute('aria-expanded', 'false'); pop.classList.remove('obert'); obert = null; }
+  document.querySelectorAll('.fn').forEach((b) => {
+    b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      if (obert === b) { tanca(); return; }
+      tanca();
+      const f = FUNCIONS[b.dataset.f];
+      $('pop-t').textContent = f.t; $('pop-p').textContent = f.p; $('pop-a').setAttribute('href', 'https://hostlylabs.com' + f.a);
+      const pla = $('pop-pla'); pla.textContent = f.pla; pla.className = 'pla' + (f.gratis ? ' gratis' : '');
+      const L = linia.getBoundingClientRect(), B = b.getBoundingClientRect();
+      const esq = Math.min(Math.max(B.left - L.left + B.width / 2 - 40, 0), L.width - 300);
+      pop.style.left = esq + 'px';
+      pop.style.setProperty('--fletxa', Math.max(14, B.left - L.left + B.width / 2 - esq - 6) + 'px');
+      b.setAttribute('aria-expanded', 'true'); pop.classList.add('obert'); obert = b;
+    });
+  });
+  pop.addEventListener('click', (ev) => ev.stopPropagation());
+  document.addEventListener('click', tanca);
+  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') tanca(); });
 
   // l'alçada real de la secció, al regle
   const mesura = () => { const r = sec.getBoundingClientRect(); $('regle-alcada').textContent = `el capçal + la secció fan ${Math.round(80 + r.height)} px d'alt`; };
