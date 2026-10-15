@@ -269,7 +269,7 @@
         "traduit": "Traduït",
         "idioma": "En el seu idioma: {{idioma}}",
         "seguent": "Veure un altre idioma",
-        "aria": "Un hoste escriu en el seu idioma i la IA de Hostly li contesta en el mateix idioma.",
+        "aria": "Un hoste escriu en el seu idioma i la IA de Hostly li contesta en el mateix idioma. Un missatge automàtic li ofereix un late checkout i l’accepta.",
         "converses": [
           {
             "idioma": "francès",
@@ -311,7 +311,16 @@
             "traduccio": "",
             "ia": "Hola, Nora! La tens a la guia que t'hem enviat: la xarxa és CalaMoreta_WiFi."
           }
-        ]
+        ],
+        "upsell": {
+          "et": "Automàtic · Hostly",
+          "auto": "Envie d’un late checkout ? Jusqu’à 13 h pour 25 €.",
+          "auto_trad": "Vols un late checkout? Fins a les 13:00 per 25 €.",
+          "enllac": "hostlylabs.com/i/m7dq4",
+          "resposta": "Oui, je prends !",
+          "resposta_trad": "Sí, me’l quedo!",
+          "idioma": "francès"
+        }
       },
       "preus": {
         "titol": "Preus",
@@ -319,26 +328,21 @@
         "xip": "Cada dia",
         "dia": "Setmana Santa",
         "nit": "/ nit",
-        "recomanat": "Recomanat",
-        "demanda": "Demanda +70 %",
+        "demanda": "Demanda +{{n}} %",
         "festiu": "Festiu"
       },
       "neteja": {
-        "titol": "0 trucades",
-        "titol_gris": "per quadrar la neteja.",
-        "text": "Cada sortida crea la seva neteja i Hostly la confirma amb el teu equip per WhatsApp.",
-        "rol": "Neteja",
-        "avui": "Avui",
-        "dema": "Demà",
-        "hostly": "Hola, Pilar. Demà hi ha sortida a Cala Moreta a les 11:00. Et va bé?",
-        "resposta": "Sí, hi seré 👍",
+        "titol": "El teu equip,",
+        "titol_gris": "sense trucades.",
+        "dema": "demà 11:00",
+        "preguntant": "Preguntant…",
+        "no_pot": "no pot",
+        "passa": "Passa a la {{qui}}",
         "coordinada": "Coordinada",
-        "sola": "sense que facis res",
-        "fotos": "Fet. Et deixo les fotos.",
+        "feta_frase": "feta",
         "feta": "Feta",
-        "llesta": "a punt per entrar",
-        "seguent": "Si no pot, passa a la Carmen, la següent del torn.",
-        "aria": "Hostly escriu a la Pilar per WhatsApp per a la neteja de demà, ella confirma i, en acabar, envia les fotos. La neteja passa a Coordinada i després a Feta."
+        "comptes": "als teus comptes",
+        "aria": "Hostly li pregunta a la Pilar per la neteja de demà. No pot, i passa a la Carmen, que la confirma. En acabar, arriben les fotos del pis i els 45 € de la neteja van als teus comptes."
       },
       "calendari": {
         "titol": "Un sol calendari",
@@ -347,43 +351,79 @@
       },
       "extres": {
         "titol": "+25 €",
-        "titol_gris": "per cada sortida tardana que vens.",
-        "text": "Un missatge automàtic l'ofereix a l'hoste, ell la paga en línia i, si hi cap al calendari, es confirma sola.",
-        "auto_et": "Automàtic · Sortida tardana",
-        "auto": "Vols sortir més tard? Fins a les 13:00 per 25 €: hostlylabs.com/i/m7dq4",
-        "pagament_et": "Pagament en línia",
-        "pagament": "Sortida tardana · 13:00",
-        "pagar": "Pagar",
+        "titol_a": "per cada",
+        "terme": "Late checkout",
+        "titol_b": "que vens.",
+        "detall": "Camille · fins a les 13:00 · en línia",
         "pagat": "Pagat",
-        "confirmat_et": "Confirmada sola",
-        "confirmat": "La Camille surt a les 13:00",
-        "neteja_avisada": "La Pilar, avisada",
         "mes": "el que cobraràs aquest mes",
-        "mes_extres": "+150 € d'extres",
-        "pont": "Missatge automàtic → cobrament en línia",
-        "aria": "Un missatge automàtic ofereix a la Camille sortir a les 13:00 per 25 €. Ella paga en línia, la sortida tardana es confirma sola i la Pilar queda avisada."
+        "vol": "Late checkout",
+        "aria": "La Camille paga en línia un late checkout de 25 €, que se suma al que cobraràs aquest mes."
       },
       "nom_pas": [
         "Missatges",
         "Preus",
         "Neteja",
         "Calendari",
-        "Extres i comptes",
-        "Connecta-ho tot"
+        "Extres i comptes"
       ],
       "anterior": "Anterior",
       "seguent": "Següent",
-      "connecta": {
-        "retol": "Connecta-ho tot",
-        "titol": "Fas servir una altra eina?",
-        "titol_gris": "La connectem amb Hostly.",
-        "text": "La teva gestoria, la web o l'ERP: ho deixem automàtic. És un servei a part, a mida.",
-        "nodes": [
-          "Gestoria",
-          "La teva web",
-          "ERP",
-          "Full de càlcul",
-          "El que facis servir"
+      "funcions": {
+        "retol": "I a més,",
+        "text": "tot el que també fa Hostly.",
+        "totes": "Veure totes les funcionalitats",
+        "veure": "Veure la funcionalitat",
+        "items": [
+          {
+            "id": "checkin",
+            "nom": "Check-in i policia",
+            "pla": "Gratis",
+            "text": "L’hoste omple les seves dades des del mòbil i Hostly envia el registre a la policia. Gratis per sempre.",
+            "a": "/funcionalidades/check-in-online"
+          },
+          {
+            "id": "programats",
+            "nom": "Missatges programats",
+            "pla": "Complet",
+            "text": "Benvinguda, check-in, check-out i més, enviats sols a cada reserva. Una versió per pis, traduïda a l’idioma de l’hoste.",
+            "a": "/funcionalidades/mensajeria-programada"
+          },
+          {
+            "id": "taxa",
+            "nom": "Taxa turística",
+            "pla": "Complet",
+            "text": "Calculada sola: tarifa segons la llei i el teu municipi, import per pis i l’Excel a punt per presentar.",
+            "a": "/funcionalidades/burocracia"
+          },
+          {
+            "id": "finances",
+            "nom": "Finances per pis",
+            "pla": "Complet",
+            "text": "Ingressos per pis, canal i període, amb les comissions d’Airbnb i Booking ja calculades. I la liquidació de cada propietari.",
+            "a": "/funcionalidades/finanzas"
+          },
+          {
+            "id": "rols",
+            "nom": "Equip i propietaris",
+            "pla": "Complet",
+            "text": "Cada persona veu el que és seu: gestors per pis, equip de neteja i propietaris només de lectura. Sense límit d’usuaris.",
+            "a": "/funcionalidades/multi-rol"
+          },
+          {
+            "id": "web",
+            "nom": "El teu web propi",
+            "pla": "A part",
+            "text": "Et fem el teu propi web amb reserves directes, sense comissions, i entren al mateix calendari. A mida, com a servei a part.",
+            "a": "/funcionalidades/channel-manager"
+          },
+          {
+            "id": "connecta",
+            "nom": "Connecta-ho tot",
+            "pla": "A part",
+            "text": "Connectem Hostly amb la teva gestoria, el teu web, el teu ERP o el que facis servir. És un servei a part, a mida.",
+            "a": "/funcionalidades/conecta-todo"
+          }
         ]
       }
     },
