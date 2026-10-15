@@ -450,8 +450,9 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-cmp-r.directa { background: hsl(204 94% 94%); color: hsl(201 90% 27%); box-shadow: inset 0 0 0 1px hsl(204 85% 84%); }
 
 /* Extras y cuentas: el late checkout (en cursiva, només aquí), la fila i el total del mes */
-.pt-cmp-terme { font-style: italic; font-weight: 600; letter-spacing: -0.01em; }
-.pt-cmp-extres .pt-cmp-h3 .pt-cmp-terme { color: var(--pt-text); }
+.pt-cmp-terme { font-style: italic; font-weight: 500; letter-spacing: -0.01em; }
+.pt-cmp-extres .pt-cmp-h3 .pt-cmp-terme { color: inherit; font-weight: 400; }
+.pt-cmp-ext-p { font-size: 13.5px; }
 .pt-cmp-mostra { margin-top: auto; display: flex; flex-direction: column; gap: 8px; }
 .pt-cmp-fila { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 14px; background: var(--pt-blanc); box-shadow: 0 1px 3px rgba(0, 0, 0, .06); }
 .pt-cmp-fila > b { font-size: 14px; }

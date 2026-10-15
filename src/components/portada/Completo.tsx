@@ -13,7 +13,8 @@
  * - Limpieza: el torn (la Pilar no pot → passa a la Carmen → Coordinada → feta), i en acabar les fotos
  *   de dins del pis, d'una en una amb un flaix, i el preu a la dreta. Les fotos són retalls de la
  *   portada d'un pis de l'app (amb el permís del Biel, 15-10).
- * - «Late checkout» en cursiva, només a Extras y cuentas.
+ * - «late checkout» en cursiva fina i en minúscula, només a Extras y cuentas (al títol, gris com la resta).
+ * - Els textos diuen què fa Hostly per tu, literal (15-10: «falta que es vegi que tot és automàtic»).
  * Tot el que s'hi diu és el que fa l'app: el late checkout l'ofereix un missatge automàtic amb l'enllaç
  * de l'app (hostlylabs.com/i/…) i es paga en línia; la web pròpia i «Conéctalo todo» són a part.
  * Amb «reduir moviment», tot quiet en l'estat final.
@@ -123,7 +124,10 @@ function Missatges({ quiet, enOferir, enAcceptar }: { quiet: boolean; enOferir: 
     <article className="pt-cmp-t pt-cmp-missatges" {...props}>
       <img className="pt-cmp-foto" src={fotoMissatges} alt="" width={720} height={1280} loading="lazy" decoding="async" />
       <div className="pt-cmp-dalt">
-        <h3 className="pt-cmp-gros">{t("portada.completo.missatges.titol")}</h3>
+        <div>
+          <h3 className="pt-cmp-gros">{t("portada.completo.missatges.titol")}</h3>
+          <p className="pt-cmp-sub">{t("portada.completo.missatges.text")}</p>
+        </div>
         <Fletxa a="/funcionalidades/ia-whatsapp" que={t("portada.completo.missatges.titol")} vidre />
       </div>
       <div ref={xatRef} className="pt-cmp-xat pt-cmp-vidre" role="img" aria-label={t("portada.completo.missatges.aria")}>
@@ -342,8 +346,9 @@ function Extres({ quiet, nom, aterrat, filaRef, totalRef, enEntrar }: {
       </div>
       <h3 className="pt-cmp-h3">
         {t("portada.completo.extres.titol")}{" "}
-        <span className="pt-cmp-gris">{t("portada.completo.extres.titol_a")} <em className="pt-cmp-terme">{t("portada.completo.extres.terme")}</em> {t("portada.completo.extres.titol_b")}</span>
+        <span className="pt-cmp-gris">{t("portada.completo.extres.titol_a")} <em className="pt-cmp-terme">{t("portada.completo.extres.terme")}</em>{t("portada.completo.extres.titol_b")}</span>
       </h3>
+      <p className="pt-cmp-p pt-cmp-ext-p">{t("portada.completo.extres.text")}</p>
       <div className="pt-cmp-mostra" role="img" aria-label={t("portada.completo.extres.aria")}>
         <div ref={filaRef} className={`pt-cmp-fila pt-cmp-nova${aterrat ? " hi" : ""}`} aria-hidden="true">
           <span className="pt-cmp-av" style={{ background: "#be123c" }}>C</span>

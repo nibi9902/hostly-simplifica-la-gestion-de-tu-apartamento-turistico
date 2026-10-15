@@ -263,6 +263,7 @@
       "veure": "Com funciona: {{que}}",
       "missatges": {
         "titol": "Missatges",
+        "text": "La IA contesta cada hoste en el seu idioma, també a les tres de la matinada.",
         "xip": "24/7",
         "contesta": "Contesta la IA",
         "pis": "Apartamento Cala Moreta",
@@ -324,7 +325,7 @@
       },
       "preus": {
         "titol": "Preus",
-        "text": "Puja i baixa els preus cada dia, segons la demanda.",
+        "text": "Hostly ajusta el preu cada dia i el publica a Airbnb i Booking.",
         "xip": "Cada dia",
         "dia": "Setmana Santa",
         "nit": "/ nit",
@@ -332,8 +333,8 @@
         "festiu": "Festiu"
       },
       "neteja": {
-        "titol": "El teu equip,",
-        "titol_gris": "sense trucades.",
+        "titol": "Hostly avisa el teu equip.",
+        "titol_gris": "Si algú no pot, a la següent.",
         "dema": "demà 11:00",
         "preguntant": "Preguntant…",
         "no_pot": "no pot",
@@ -346,14 +347,15 @@
       },
       "calendari": {
         "titol": "Un sol calendari",
-        "text": "Airbnb, Booking, Vrbo i les teves reserves, sempre quadrats.",
+        "text": "Les reserves entren soles i no es poden solapar.",
         "directa": "Directa"
       },
       "extres": {
         "titol": "+25 €",
-        "titol_a": "per cada",
-        "terme": "Late checkout",
-        "titol_b": "que vens.",
+        "titol_a": "per",
+        "terme": "late checkout",
+        "titol_b": ".",
+        "text": "Crea extres, automatitza’ls i cobra’ls en línia.",
         "detall": "Camille · fins a les 13:00 · en línia",
         "pagat": "Pagat",
         "mes": "el que cobraràs aquest mes",
