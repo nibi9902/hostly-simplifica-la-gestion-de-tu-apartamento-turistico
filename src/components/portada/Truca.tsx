@@ -7,6 +7,7 @@ import { Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { LangLink } from "@/i18n/LangLink";
 import { useLlamame } from "@/lib/useLlamame";
+import fotoBiel from "@/assets/portada/biel.webp";
 
 export default function Truca() {
   const { t } = useTranslation("home");
@@ -21,9 +22,8 @@ export default function Truca() {
             <h2 id="pt-truca-titol">
               {t("portada.truca.titol")} <span>{t("portada.truca.titol_gris")}</span>
             </h2>
-            {/* Fins que hi hagi la foto del Biel, les seves inicials (una foto d'estoc d'una altra persona
-                amb el seu nom faria passar algú altre per ell) */}
-            <p className="pt-signa-fila"><span className="pt-signa-av" aria-hidden="true">BA</span><small className="pt-signa">{t("portada.truca.signa")}</small></p>
+            {/* la foto del Biel (15-10), al costat de la firma */}
+            <p className="pt-signa-fila"><img className="pt-signa-av" src={fotoBiel} alt="" width={88} height={88} loading="lazy" decoding="async" /><small className="pt-signa">{t("portada.truca.signa")}</small></p>
           </div>
           <div>
             {fet ? (
