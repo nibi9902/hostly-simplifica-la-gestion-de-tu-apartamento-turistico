@@ -1,7 +1,7 @@
 <title>Completo en una pantalla</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700&amp;display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <style>
 /* El mòdul del Completo, segona volta (14-10, vespre). El Biel: «és molt i molt gran: amb la pantalla
@@ -234,9 +234,9 @@ button { font-family: inherit; color: inherit; }
 .torn .fotos i:nth-child(3) { background-image: var(--f-atico-del-mar); background-position: 40% 60%; }
 .torn .preu { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 8px; border-top: 1px dashed var(--linia-2); font-size: 12.5px; color: var(--gris); }
 .torn .preu b { font-size: 15px; color: var(--text); }
-.terme { font-weight: 700; font-style: italic; letter-spacing: -0.01em; padding: 0 .3em; margin: 0 -.1em; border-radius: 6px; background: var(--ambre-suau); color: var(--ambre-text); font-style: normal; }
-.bi.auto .terme, .vol .terme { background: rgba(255,255,255,.16); color: #fff; }
-.h3 .terme { font-size: .9em; vertical-align: 1px; }
+/* «Late checkout», el terme: cursiva, només a Extras y cuentas (a la resta, text normal, per no fer soroll) */
+.extres .terme { font-style: italic; font-weight: 600; letter-spacing: -0.01em; }
+.extres .h3 .terme { color: var(--text); }
 .torn .qui { display: flex; align-items: center; gap: 6px; }
 .torn .av { width: 40px; height: 40px; font-size: 13px; box-shadow: 0 0 0 3px var(--gris-0); opacity: .45; transition: opacity .3s ease, box-shadow .3s ease, transform .3s ease; }
 .torn .av.ara { opacity: 1; box-shadow: 0 0 0 3px var(--gris-0), 0 0 0 5px var(--blau); transform: scale(1.06); }
@@ -345,7 +345,7 @@ button { font-family: inherit; color: inherit; }
           </div>
 
           <!-- la bombolla que vola -->
-          <div class="vol" id="vol" aria-hidden="true"><span class="av" style="background:#be123c">C</span><span class="terme">Late checkout</span> <span class="num">· 25 €</span></div>
+          <div class="vol" id="vol" aria-hidden="true"><span class="av" style="background:#be123c">C</span>Late checkout <span class="num">· 25 €</span></div>
 
           <div class="connecta">
             <b>¿Usas otra herramienta?</b><span>La conectamos con Hostly. Es un servicio aparte, a medida.</span>
@@ -433,7 +433,7 @@ button { font-family: inherit; color: inherit; }
   // ── Mensajes: tres converses; la segona és la sortida tardana ──
   const CONV = [
     { qui: 'Camille', canal: 'airbnb', idioma: 'francés', hoste: 'Bonjour ! À quelle heure peut-on entrer ?', trad: '¡Hola! ¿A qué hora podemos entrar?', ia: 'Bonjour Camille ! À partir de 16 h. Demain matin, vous recevrez le code de la porte.' },
-    { qui: 'Camille', canal: 'airbnb', idioma: 'francés', upsell: true, auto: 'Envie d’un <span class="terme">Late checkout</span> ? Jusqu’à 13 h pour 25 €.', autoTrad: '¿Quieres un late checkout? Hasta las 13:00 por 25 €.', resposta: 'Oui, je prends !', respostaTrad: '¡Sí, me lo quedo!' },
+    { qui: 'Camille', canal: 'airbnb', idioma: 'francés', upsell: true, auto: 'Envie d’un late checkout ? Jusqu’à 13 h pour 25 €.', autoTrad: '¿Quieres un late checkout? Hasta las 13:00 por 25 €.', resposta: 'Oui, je prends !', respostaTrad: '¡Sí, me lo quedo!' },
     { qui: 'Thomas', canal: 'booking', idioma: 'alemán', hoste: 'Gibt es einen Parkplatz in der Nähe?', trad: '¿Hay aparcamiento cerca?', ia: 'Ja, direkt vor dem Haus. Kostenlos, ohne Reservierung.' },
   ];
   let n = 0, temps = [], tocat = false;
@@ -451,7 +451,7 @@ button { font-family: inherit; color: inherit; }
       mes(quiet ? 0 : 1100, () => { const e = $('x-escriu'); if (e) e.outerHTML = `<div class="bi entra"><p>${c.ia}</p></div>`; });
       return;
     }
-    if (!quiet) { fila.classList.remove('hi'); mesN.textContent = milers(8524); }
+    if (!quiet) { if (tlVol) tlVol.kill(); gsap.killTweensOf([vol, comptador, fila]); gsap.set(vol, { opacity: 0 }); fila.classList.remove('hi'); mesN.textContent = milers(8524); }
     cos.innerHTML = `<p class="et auto">${LLAMP}Automático · Hostly</p><div class="bi auto entra"><p>${c.auto}</p><span class="enllac">${ENLLAC}hostlylabs.com/i/m7dq4</span></div>`;
     const resposta = () => { cos.insertAdjacentHTML('beforeend', `<div class="bh entra" id="x-si"><p>${c.resposta}</p><small>Traducido · ${c.respostaTrad}</small></div>`); };
     if (quiet) { resposta(); aterra(true); return; }
@@ -463,7 +463,7 @@ button { font-family: inherit; color: inherit; }
   // ── La bombolla que vola: del «sí» de la Camille a la fila d'Extras y cuentas ──
   const sec = $('sec'), vol = $('vol'), fila = $('fila-nova'), mesN = $('mes-n');
   const milers = (x) => String(Math.round(x)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-  let comptador = { v: 8524 };
+  let comptador = { v: 8524 }, tlVol = null;
   function aterra(directe) {
     fila.classList.add('hi');
     if (directe) { mesN.textContent = milers(8549); return; }
@@ -478,7 +478,7 @@ button { font-family: inherit; color: inherit; }
     const x0 = a.right - S.left - 20, y0 = a.top - S.top + a.height / 2 - 18;
     const x1 = b.left - S.left + 12, y1 = b.top - S.top + b.height / 2 - 18;
     gsap.set(vol, { x: x0, y: y0, scale: .6, opacity: 0 });
-    const tl = gsap.timeline();
+    const tl = (tlVol = gsap.timeline());
     tl.to(vol, { opacity: 1, scale: 1, duration: .3, ease: 'power2.out' })
       // en arc: la x va seguida, la y puja primer i després baixa
       .to(vol, { x: x1, duration: 1.15, ease: 'power2.inOut' }, 0.25)
@@ -516,19 +516,28 @@ button { font-family: inherit; color: inherit; }
     { qui: 0, no: true, html: `<div class="frase"><span><b>Pilar</b> no puede</span><span class="estat" style="background:var(--ambre-suau);color:var(--ambre-text)">Pasa a Carmen</span></div>` },
     { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · mañana 11:00</span><span class="estat">${CHECK}Coordinada</span></div>` },
     { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fotos"><i></i><i></i><i></i></div>` },
-    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fotos"><i></i><i></i><i></i></div><div class="preu"><span>Limpieza · en las cuentas del mes</span><b class="num">45 €</b></div>` },
+    { qui: 1, html: `<div class="frase"><span><b>Carmen</b> · hecha</span><span class="estat feta">${CHECK}Hecha</span></div><div class="fotos"><i></i><i></i><i></i></div><div class="preu"><span>Limpieza · en las cuentas del mes</span><b class="num">45 €</b></div>`, nomesPreu: true },
   ];
-  function pintaTorn(torn, i) {
-    const e = ESTATS_B[i], avs = [...torn.querySelectorAll('.av')];
-    torn.querySelector('.caixa').innerHTML = e.html;
+  function pintaTorn(torn, i, viu) {
+    const e = ESTATS_B[i], avs = [...torn.querySelectorAll('.av')], caixa = torn.querySelector('.caixa');
+    caixa.innerHTML = e.html;
     avs.forEach((a, k) => { a.classList.toggle('ara', k === e.qui && !e.no); a.classList.toggle('no', k === 0 && i >= 1); });
+    if (!viu || quiet) return;
+    // el que és nou entra: la frase; les fotos d'una en una; el preu, pujant
+    if (!e.nomesPreu) gsap.from(caixa.querySelector('.frase'), { y: 6, opacity: 0, duration: .35, ease: 'power2.out' });
+    if (i === 3) gsap.from(caixa.querySelectorAll('.fotos i'), { scale: .4, opacity: 0, y: 10, duration: .55, ease: 'back.out(1.8)', stagger: .22, delay: .25 });
+    if (i === 4) {
+      const preu = caixa.querySelector('.preu'), n = preu.querySelector('b'), v = { x: 0 };
+      gsap.from(preu, { y: 8, opacity: 0, duration: .4, ease: 'power2.out' });
+      gsap.to(v, { x: 45, duration: .8, ease: 'power2.out', onUpdate: () => { n.textContent = Math.round(v.x) + ' €'; } });
+    }
   }
   document.querySelectorAll('.torn[data-estat]').forEach((t) => pintaTorn(t, Number(t.dataset.estat)));
   (() => {
     const torn = $('torn');
     if (quiet) { pintaTorn(torn, 4); return; }
     let i = 0;
-    const tic = () => { pintaTorn(torn, i); i = (i + 1) % ESTATS_B.length; setTimeout(tic, i === 0 ? 4200 : 2000); };
+    const tic = () => { pintaTorn(torn, i, true); i = (i + 1) % ESTATS_B.length; setTimeout(tic, i === 0 ? 4500 : i === 4 ? 2400 : 2000); };
     tic();
   })();
 
