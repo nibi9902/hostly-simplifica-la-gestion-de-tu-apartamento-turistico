@@ -55,7 +55,6 @@ export default function Entrada({ onEmpezar }: { onEmpezar: () => void }) {
         <p className="pt-entrada-sub">{t("hero.subtitle")}</p>
         <div className="pt-entrada-accio">
           <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri pt-entrada-boto">{t("portada.entrada.empezar")}</button>
-          <span>{t("portada.entrada.sense_targeta")}</span>
         </div>
       </div>
     </section>
