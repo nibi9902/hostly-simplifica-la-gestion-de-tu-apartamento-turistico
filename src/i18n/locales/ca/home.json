@@ -53,7 +53,7 @@
       },
       {
         "q": "Puc començar gratis i passar-me a Hostly Complet més endavant?",
-        "a": "Sí, així està pensat. Quan vulguis la resta de Hostly, ens ho dius (des de «Començar» o escrivint-nos), et truquem, ho deixem a punt amb tu i l'activem aquell mateix dia, amb el primer mes gratis."
+        "a": "Sí, així està pensat. Quan vulguis la resta de Hostly, ens ho dius (des de «Començar» o escrivint-nos), et truquem, ho deixem a punt amb tu i l'activem aquell mateix dia, amb el primer mes gratis (amb targeta i sense permanència)."
       },
       {
         "q": "Què inclou exactament el pla de 40 € + IVA al mes?",
@@ -265,7 +265,7 @@
       "titol": "Amb el Complet,",
       "titol_gris": "tota la resta.",
       "primer_mes": "El primer mes, gratis.",
-      "sense_permanencia": "Sense permanència.",
+      "sense_permanencia": "Amb targeta i sense permanència.",
       "empezar": "Començar",
       "veure": "Com funciona: {{que}}",
       "missatges": {
@@ -453,7 +453,12 @@
           "titol": "Hostly s'hi queda pendent.",
           "text": "Tu només t'assabentes del que importa."
         }
-      ]
+      ],
+      "checkin": "Només vols el check-in?",
+      "empieza": "Comença ja",
+      "parlar": "Prefereixes parlar-ne?",
+      "truquem": "Et truquem",
+      "fet": "Fet. Et truquem en un moment."
     },
     "preus": {
       "retol": "Preus",
@@ -478,7 +483,7 @@
         "recomanat": "Recomanat",
         "preu": "40 €",
         "periode": "+ IVA al mes per pis",
-        "nota": "35 € + IVA a partir de 5 pisos · el primer mes, gratis",
+        "nota": "35 € + IVA a partir de 5 pisos · el primer mes, gratis (amb targeta)",
         "inclou": [
           "Tot el del pla Gratis",
           "Contesta els teus hostes automàticament, 24/7",
@@ -526,7 +531,7 @@
         },
         {
           "q": "Puc començar gratis i passar-me al Complet més endavant?",
-          "a": "Sí. Ens ho dius, et truquem, ho deixem a punt amb tu i ho activem el mateix dia, amb el primer mes gratis."
+          "a": "Sí. Ens ho dius, et truquem, ho deixem a punt amb tu i ho activem el mateix dia, amb el primer mes gratis (amb targeta i sense permanència)."
         },
         {
           "q": "Quant triga a funcionar?",
@@ -595,7 +600,7 @@
       },
       {
         "q": "I si vull que Hostly faci més?",
-        "a": "Amb Hostly Complet, també contesta els teus hostes, ajusta els preus i avisa la neteja. 40 € + IVA al mes per pis, el primer mes gratis i sense permanència."
+        "a": "Amb Hostly Complet, també contesta els teus hostes, ajusta els preus i avisa la neteja. 40 € + IVA al mes per pis, el primer mes gratis (amb targeta) i sense permanència."
       }
     ],
     "final_titol": "El registre de viatgers, gratis per sempre.",

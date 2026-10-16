@@ -53,7 +53,7 @@
       },
       {
         "q": "¿Puedo empezar gratis y pasarme a Hostly Completo más adelante?",
-        "a": "Sí, así está pensado. Cuando quieras el resto de Hostly, nos lo dices (desde «Empezar» o escribiéndonos), te llamamos, lo dejamos listo contigo y lo activamos ese mismo día, con el primer mes gratis."
+        "a": "Sí, así está pensado. Cuando quieras el resto de Hostly, nos lo dices (desde «Empezar» o escribiéndonos), te llamamos, lo dejamos listo contigo y lo activamos ese mismo día, con el primer mes gratis (con tarjeta y sin permanencia)."
       },
       {
         "q": "¿Qué incluye exactamente el plan de 40 € + IVA al mes?",
@@ -265,7 +265,7 @@
       "titol": "Con el Completo,",
       "titol_gris": "todo lo demás.",
       "primer_mes": "El primer mes, gratis.",
-      "sense_permanencia": "Sin permanencia.",
+      "sense_permanencia": "Con tarjeta y sin permanencia.",
       "empezar": "Empezar",
       "veure": "Ver cómo funciona: {{que}}",
       "missatges": {
@@ -453,7 +453,12 @@
           "titol": "Hostly se queda pendiente.",
           "text": "Tú solo te enteras de lo que importa."
         }
-      ]
+      ],
+      "checkin": "¿Solo quieres el check-in?",
+      "empieza": "Empieza ya",
+      "parlar": "¿Prefieres hablarlo?",
+      "truquem": "Te llamamos",
+      "fet": "Hecho. Te llamamos en un momento."
     },
     "preus": {
       "retol": "Precios",
@@ -478,7 +483,7 @@
         "recomanat": "Recomendado",
         "preu": "40 €",
         "periode": "+ IVA al mes por piso",
-        "nota": "35 € + IVA desde 5 pisos · el primer mes, gratis",
+        "nota": "35 € + IVA desde 5 pisos · el primer mes, gratis (con tarjeta)",
         "inclou": [
           "Todo lo del plan Gratis",
           "Contesta a tus huéspedes automáticamente, 24/7",
@@ -526,7 +531,7 @@
         },
         {
           "q": "¿Puedo empezar gratis y pasarme al Completo más adelante?",
-          "a": "Sí. Nos lo dices, te llamamos, lo dejamos listo contigo y lo activamos ese mismo día, con el primer mes gratis."
+          "a": "Sí. Nos lo dices, te llamamos, lo dejamos listo contigo y lo activamos ese mismo día, con el primer mes gratis (con tarjeta y sin permanencia)."
         },
         {
           "q": "¿Cuánto tarda en estar funcionando?",
@@ -595,7 +600,7 @@
       },
       {
         "q": "¿Y si quiero que Hostly haga más?",
-        "a": "Con Hostly Completo, también contesta a tus huéspedes, ajusta los precios y avisa a la limpieza. 40 € + IVA al mes por piso, el primer mes gratis y sin permanencia."
+        "a": "Con Hostly Completo, también contesta a tus huéspedes, ajusta los precios y avisa a la limpieza. 40 € + IVA al mes por piso, el primer mes gratis (con tarjeta) y sin permanencia."
       }
     ],
     "final_titol": "El registro de viajeros, gratis para siempre.",

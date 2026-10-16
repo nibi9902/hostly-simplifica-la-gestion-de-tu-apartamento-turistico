@@ -507,8 +507,6 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-cmp-fn .pt-ic { width: 18px; height: 18px; transition: color .35s ease; }
 .pt-cmp-fn:hover { transform: translateY(-2px); background: hsl(214 100% 93%); box-shadow: inset 0 0 0 1px var(--pt-blau), 0 4px 10px rgba(37, 99, 235, .14); }
 .pt-cmp-fn[aria-expanded="true"] { background: var(--pt-fosc); color: #fff; box-shadow: none; }
-.pt-cmp-fn.apart { background: var(--pt-blanc); color: var(--pt-gris); box-shadow: inset 0 0 0 1px hsl(220 11% 82%); }
-.pt-cmp-fn.apart[aria-expanded="true"] { background: var(--pt-fosc); color: #fff; }
 /* el nom, a sobre, en passar-hi el ratolí */
 .pt-cmp-fn::after { content: attr(data-nom); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translate(-50%, 4px); white-space: nowrap; font-size: 11.5px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: var(--pt-fosc); color: #fff; opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .3s cubic-bezier(.2, .7, .2, 1); }
 .pt-cmp-fn:hover::after { opacity: 1; transform: translate(-50%, 0); }
@@ -647,7 +645,21 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-passos { min-height: 460px; padding-block: 80px 64px; background: var(--pt-fons); }
 .pt-passos .pt-cap { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
 .pt-passos .pt-cap h2 { font-size: 48px; line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; margin-top: 12px; }
-.pt-passos .pt-nota { font-size: 16px; line-height: 1.5; color: var(--pt-gris); max-width: 26em; }
+/* les dues sortides, al costat del títol: «Empieza ya» i un camp petit per al telèfon (16-10) */
+.pt-passos-accions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; font-size: 16px; color: var(--pt-gris); }
+.pt-passos-accions p { margin: 0; }
+.pt-passos-enllac { border: 0; background: none; padding: 0; font: inherit; font-weight: 600; color: var(--pt-blau); cursor: pointer; }
+.pt-passos-enllac:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pt-passos-truca { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pt-passos-camp { display: inline-flex; align-items: center; height: 40px; padding: 3px 3px 3px 14px; border-radius: 9999px; background: var(--pt-blanc); box-shadow: inset 0 0 0 1px var(--pt-linia); }
+.pt-passos-camp.amb-error { box-shadow: inset 0 0 0 1px hsl(350 89% 56%); }
+.pt-passos-camp > span { font-size: 14px; color: var(--pt-gris); margin-right: 6px; }
+.pt-passos-camp input { width: 128px; height: 34px; border: 0; outline: 0; background: none; font: inherit; font-size: 14.5px; color: var(--pt-text); }
+.pt-passos-camp button { height: 34px; padding: 0 14px; border: 0; border-radius: 9999px; background: var(--pt-fosc); color: #fff; font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.pt-passos-camp button:disabled { opacity: .6; }
+.pt-passos-camp:focus-within { box-shadow: inset 0 0 0 2px var(--pt-blau); }
+.pt-passos-error { flex-basis: 100%; font-size: 13px; color: hsl(350 89% 46%); }
+.pt-passos-fet { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--pt-verd-fosc); }
 .pt-tres { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px; margin-top: 40px; }
 .pt-pas small { display: block; font-size: 96px; line-height: .9; font-weight: 700; letter-spacing: -0.05em; color: hsl(220 12% 85%); font-variant-numeric: tabular-nums; }
 .pt-pas h3 { font-size: 26px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; margin-top: 16px; }
