@@ -18,3 +18,8 @@ incidencia» ja no sembla un botó, 4 coses al mòbil; 5 el Gratis com a explica
 targeta); 6 el Completo amb preu i botó, i al mòbil en llista; 7 l'Àngel sense el vídeo de mostra; 8 cinc
 preguntes noves; 9 la foto del Biel al Truca; 10 al mòbil, una barra fixa amb «Empezar» i «Llámame».
 Pàgina dels anuncis: /registro-de-viajeros-gratis (proposta), una sola cosa a fer.
+
+**16-10 · el Gratis.** El Biel es queda el Gratis d'ara («m'agrada més el de 0 €») però vol que el bloc del
+0 € sigui diferent de la targeta fosca del Zero. Mockup `gratis-bloc-zero.font.html` amb quatre maneres:
+A com el Completo (foto + targeta de vidre), B el tiquet (cada línia a 0,00 € i el total 0 €), C la banda
+blava llarga a dalt de les quatre peces, D el mòbil de l'hoste dins del bloc fosc («Tú pagas 0 €»).

@@ -1,0 +1,178 @@
+<title>El bloc del 0 €</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap">
+<style>
+/* El Gratis de la portada amb el bloc del 0 € fet de quatre maneres diferents (16-10). El Biel es queda el
+   Gratis d'ara, però el 0 € no ha de semblar una còpia de la targeta fosca del Zero. Les quatre peces de
+   la dreta són les de la web. Cada opció es veu a l'ordinador i al mòbil (container queries). */
+:root {
+  color-scheme: light;
+  --fons: hsl(210 20% 98%);
+  --blanc: #fff;
+  --gris-0: hsl(220 14% 96%);
+  --gris-1: hsl(220 13% 93%);
+  --text: hsl(220 14% 11%);
+  --gris: hsl(220 9% 46%);
+  --tenue: hsl(220 9% 68%);
+  --linia: hsl(220 13% 91%);
+  --linia-2: hsl(220 11% 82%);
+  --blau: #2563EB;
+  --blau-app: #3b82f6;
+  --blau-suau: hsl(214 100% 96%);
+  --verd: hsl(142 76% 36%);
+  --verd-suau: hsl(138 76% 94%);
+  --verd-text: hsl(142 76% 26%);
+  --vermell: hsl(350 89% 56%);
+  --fosc: hsl(220 14% 11%);
+  --cos: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  /*IMATGES*/
+}
+* { box-sizing: border-box; }
+html, body { background: hsl(220 14% 94%); }
+body { margin: 0; color: var(--text); font-family: var(--cos); -webkit-font-smoothing: antialiased; font-feature-settings: "cv11" 1; }
+p, h1, h2, h3, h4 { margin: 0; }
+.ic { width: 16px; height: 16px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.num { font-variant-numeric: tabular-nums; }
+
+.pg { max-width: 1680px; margin: 0 auto; padding: 32px 24px 96px; display: flex; flex-direction: column; gap: 48px; }
+.cap { display: flex; flex-direction: column; gap: 8px; max-width: 900px; }
+.cap small { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gris); }
+.cap h1 { font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; }
+.cap p { font-size: 15.5px; line-height: 1.55; color: var(--gris); }
+.opcio { display: flex; flex-direction: column; gap: 14px; }
+.nom { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.nom b { font-size: 20px; letter-spacing: -0.01em; }
+.nom span { font-size: 15px; color: var(--gris); max-width: 90ch; }
+.marcs { display: grid; grid-template-columns: minmax(0, 1fr) 390px; gap: 24px; align-items: start; }
+.marc { background: var(--blanc); border-radius: 16px; overflow: hidden; box-shadow: 0 0 0 1px var(--linia), 0 18px 50px rgba(17, 24, 39, .08); }
+.marc.mob { border-radius: 36px; box-shadow: 0 0 0 10px #111, 0 18px 50px rgba(17, 24, 39, .2); }
+@media (max-width: 1100px) { .marcs { grid-template-columns: minmax(0, 1fr); } .marc.mob { width: 390px; } }
+
+/* ── la secció ── */
+.sec { container-type: inline-size; padding: 56px 48px 64px; }
+.centre { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.retol { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gris); }
+.h2 { font-size: 46px; line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
+.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(220px, auto)); gap: 16px; margin-top: 36px; }
+.zero-bloc { grid-column: 1 / 3; grid-row: 1 / 3; border-radius: 28px; position: relative; overflow: hidden; }
+.tile { min-width: 0; border-radius: 22px; background: var(--fons); box-shadow: inset 0 0 0 1px var(--linia); padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+.tile h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+.tile > p { font-size: 13.5px; line-height: 1.4; color: var(--gris); }
+.mostra { margin-top: auto; border-radius: 14px; background: var(--blanc); box-shadow: 0 1px 3px rgba(0,0,0,.06); padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; }
+.fila { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.et { color: var(--gris); }
+.barra { display: flex; gap: 4px; } .barra i { flex: 1; height: 4px; border-radius: 4px; background: var(--linia-2); } .barra i.fet { background: var(--blau); }
+.ok { display: inline-flex; align-items: center; gap: 5px; color: var(--verd-text); font-weight: 600; }
+.xip-verd { align-self: flex-start; display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 99px; background: var(--verd-suau); color: var(--verd-text); }
+.pdf { align-self: flex-start; font-size: 12px; padding: 3px 9px; border-radius: 8px; background: var(--gris-0); }
+.total b { font-size: 18px; letter-spacing: -0.02em; }
+.boto { display: inline-flex; align-items: center; justify-content: center; height: 46px; padding: 0 22px; border-radius: 999px; background: var(--blau); color: #fff; font-size: 15.5px; font-weight: 600; white-space: nowrap; border: 0; font-family: inherit; }
+.boto.blanc { background: #fff; color: var(--text); }
+.boto.fosc { background: var(--fosc); color: #fff; }
+
+/* A · com el Completo: la foto i una targeta de vidre */
+.a { background: var(--f-menjador-dia) center / cover no-repeat; color: #fff; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+.a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,12,20,.45), rgba(10,12,20,0) 45%, rgba(10,12,20,.15)); pointer-events: none; }
+.a > * { position: relative; z-index: 1; }
+.a .gros { font-size: 40px; font-weight: 600; letter-spacing: -0.035em; line-height: 1; }
+.a .gros small { display: block; font-size: 15px; font-weight: 500; letter-spacing: 0; margin-top: 8px; max-width: 26ch; text-shadow: 0 1px 6px rgba(0,0,0,.4); }
+.vidre { background: rgba(255,255,255,.66); -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.72); color: var(--text); }
+.a .targeta { border-radius: 22px; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.a .preu { font-size: 64px; font-weight: 700; letter-spacing: -0.05em; line-height: .9; }
+.a .preu small { display: block; font-size: 13.5px; font-weight: 500; letter-spacing: 0; color: var(--gris); margin-top: 6px; }
+
+/* B · el tiquet: la factura de Hostly és de 0 € */
+.b { background: var(--fons); box-shadow: inset 0 0 0 1px var(--linia); display: grid; place-items: center; padding: 28px; }
+.tiquet { width: min(100%, 360px); background: var(--blanc); border-radius: 18px; padding: 22px 22px 20px; box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 18px 40px rgba(17,24,39,.08); position: relative; display: flex; flex-direction: column; gap: 10px; }
+.tiquet::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: -9px; height: 18px; background: radial-gradient(circle at 9px -2px, transparent 9px, var(--blanc) 9.5px) 0 0 / 18px 18px repeat-x; }
+.tiquet .cap-t { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; color: var(--gris); letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+.tiquet .linia { border-top: 1px dashed var(--linia-2); }
+.tiquet .l { display: flex; justify-content: space-between; gap: 8px; font-size: 13.5px; }
+.tiquet .l span:last-child { color: var(--gris); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tiquet .tot { display: flex; justify-content: space-between; align-items: baseline; }
+.tiquet .tot b { font-size: 46px; letter-spacing: -0.04em; line-height: 1; }
+.tiquet .tot span { font-size: 13px; color: var(--gris); }
+.tiquet .altres { font-size: 12.5px; color: var(--gris); }
+.tiquet .altres s { color: var(--vermell); }
+.tiquet .boto { margin-top: 4px; width: 100%; }
+
+/* C · la banda: el 0 € és una línia llarga a dalt, i les quatre peces s'eixamplen */
+.c-bento { grid-template-rows: auto auto; }
+.c { grid-column: 1 / -1; grid-row: 1; border-radius: 22px; background: var(--blau-suau); box-shadow: inset 0 0 0 1px hsl(214 95% 88%); padding: 18px 18px 18px 28px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.c .preu { font-size: 54px; font-weight: 700; letter-spacing: -0.05em; line-height: 1; color: var(--blau); }
+.c .txt { flex: 1; min-width: 220px; display: flex; flex-direction: column; gap: 2px; }
+.c .txt b { font-size: 18px; letter-spacing: -0.01em; }
+.c .txt span { font-size: 14px; color: var(--gris); }
+.c-bento .tile { grid-row: 2; min-height: 230px; }
+
+/* D · dins del mòbil de l'hoste: el check-in acaba i el que paga el propietari és 0 € */
+.d { background: var(--fosc); color: #fff; padding: 28px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
+.d .esq { display: flex; flex-direction: column; gap: 10px; }
+.d .esq .retol { color: hsl(220 9% 72%); }
+.d .esq h3 { font-size: 30px; line-height: 1.1; letter-spacing: -0.02em; }
+.d .esq p { font-size: 14.5px; color: hsl(220 9% 76%); line-height: 1.5; }
+.d .esq .boto { align-self: flex-start; margin-top: 6px; }
+.mobil { width: 190px; border-radius: 30px; padding: 7px; background: #000; box-shadow: 0 0 0 1px rgba(255,255,255,.14); }
+.mobil > div { border-radius: 24px; background: var(--blanc); color: var(--text); padding: 16px 12px; display: flex; flex-direction: column; gap: 8px; min-height: 300px; }
+.mobil .t { font-size: 12.5px; font-weight: 600; }
+.mobil .c2 { font-size: 11.5px; display: flex; justify-content: space-between; padding: 8px 10px; border-radius: 10px; background: var(--fons); box-shadow: inset 0 0 0 1px var(--linia); }
+.mobil .c2 b { font-weight: 600; }
+.mobil .r { margin-top: auto; border-radius: 14px; background: var(--blau-suau); padding: 10px; text-align: center; }
+.mobil .r small { display: block; font-size: 10.5px; color: var(--gris); }
+.mobil .r b { font-size: 34px; letter-spacing: -0.04em; color: var(--blau); }
+.mobil .ok2 { border-radius: 10px; background: var(--verd-suau); color: var(--verd-text); font-size: 11.5px; font-weight: 600; text-align: center; padding: 8px; }
+
+/* ── mòbil ── */
+@container (max-width: 640px) {
+  .sec { padding: 40px 20px 48px; }
+  .h2 { font-size: 32px; }
+  .bento, .c-bento { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 12px; margin-top: 24px; }
+  .zero-bloc, .c, .c-bento .tile { grid-column: auto; grid-row: auto; }
+  .zero-bloc { min-height: 0; }
+  .a { min-height: 380px; padding: 22px; }
+  .a .preu { font-size: 52px; }
+  .b { padding: 22px 18px 30px; }
+  .c { padding: 18px; gap: 12px; }
+  .c .preu { font-size: 44px; }
+  .c-bento .tile { min-height: 0; }
+  .d { grid-template-columns: 1fr; padding: 24px 20px; }
+  .d .esq h3 { font-size: 26px; }
+  .mobil { justify-self: center; }
+}
+</style>
+
+<div class="pg">
+  <div class="cap">
+    <small>Exploració · 16-10-2026</small>
+    <h1>El Gratis, amb el 0 € d'una altra manera</h1>
+    <p>Et quedes el Gratis d'ara: el bloc gran a l'esquerra i les quatre peces a la dreta. El que canvia és el bloc del 0 €, perquè no sembli una còpia de la targeta fosca del Zero, que és just a sobre. Les quatre peces són les de la web. Cada opció es veu a l'ordinador i al mòbil.</p>
+  </div>
+  <div id="opcions"></div>
+</div>
+
+<template id="t-peces">
+  <div class="tile"><h3>El check-in, desde su móvil</h3><p>El huésped lo hace solo, en tres pantallas.</p><div class="mostra"><p class="fila"><b>Tu documento</b><span class="et">2 de 3</span></p><div class="barra"><i class="fet"></i><i class="fet"></i><i></i></div><p class="fila"><span class="et">Pasaporte · C01X 4417</span><span class="ok"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span></p></div></div>
+  <div class="tile"><h3>Cada día, a la policía</h3><p>Hostly lo envía y te guarda el comprobante.</p><div class="mostra"><p class="ok"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Registro de viajeros enviado</p><span class="pdf">Comprobante · PDF</span></div></div>
+  <div class="tile"><h3>La tasa turística, calculada</h3><p>De abril a septiembre</p><div class="mostra"><span class="xip-verd">✓ Lista para presentar</span><p class="fila"><span class="et">Huéspedes</span><b class="num">72</b></p><p class="fila"><span class="et">Pernoctaciones</span><b class="num">310</b></p><p class="fila"><span class="et">× Por noche y persona</span><b class="num">1,75 €</b></p><p class="fila total"><span>= Te toca pagar</span><b class="num">542,50 €</b></p></div></div>
+  <div class="tile"><h3>La tasa, pagada online</h3><p>El huésped la paga al hacer el check-in.</p><div class="mostra"><p class="fila"><b>Tasa turística</b><b class="num">14,00 €</b></p><p class="et">2 personas · 4 noches</p><span class="xip-verd">✓ Pagada</span></div></div>
+</template>
+
+<script>
+(() => {
+  const OPCIONS = [
+    { n: 'A · Com el Completo', d: 'La foto d\'un pis i, a sobre, una targeta de vidre amb el 0 €, com les rajoles de Mensajes i Precios. Lliga el Gratis amb el mòdul del Completo que hi ha just a sota: les dues seccions parlen igual.',
+      bloc: `<div class="zero-bloc a"><p class="gros">Plan Gratis<small>El check-in y el registro a la policía, sin pagar nada.</small></p><div class="targeta vidre"><p class="preu">0 €<small>Para siempre. Sin tarjeta.</small></p><button class="boto fosc" type="button">Empezar</button></div></div>` },
+    { n: 'B · El tiquet', d: 'Un tiquet de compra, blanc, amb el que inclou el pla (cada línia a 0 €) i el total: 0 €. A sota, «Otras apps: hasta 95 € al año por piso», ratllat. És la manera més literal de dir «no pagues res», i no s\'assembla gens a la targeta fosca del Zero.',
+      bloc: `<div class="zero-bloc b"><div class="tiquet"><p class="cap-t"><span>Plan Gratis</span><span>Hostly</span></p><div class="linia"></div><p class="l"><span>Check-in desde el móvil</span><span>0,00 €</span></p><p class="l"><span>Registro a la policía</span><span>0,00 €</span></p><p class="l"><span>Tasa turística, calculada</span><span>0,00 €</span></p><p class="l"><span>Tasa pagada online</span><span>0,00 €</span></p><div class="linia"></div><p class="tot"><span>Total, para siempre</span><b>0 €</b></p><p class="altres">Otras apps: <s>hasta 95 € al año por piso</s></p><button class="boto" type="button">Empezar</button></div></div>` },
+    { n: 'C · La banda', d: 'El 0 € deixa de ser un bloc gran: és una banda blava, llarga, a dalt de les quatre peces, amb el botó a la dreta. Les quatre peces guanyen espai i es llegeixen millor. És la més lleugera de les quatre.',
+      banda: true,
+      bloc: `<div class="c"><p class="preu">0 €</p><p class="txt"><b>Para siempre. Sin tarjeta y sin límite de pisos.</b><span>El check-in y el registro a la policía no te cuestan nada.</span></p><button class="boto" type="button">Empezar</button></div>` },
+    { n: 'D · Dins del mòbil de l\'hoste', d: 'El bloc continua sent fosc, però el protagonista és el mòbil de l\'hoste: el check-in s\'acaba i, a sota, el que pagues tu: 0 €. Explica el pla i el preu en una sola imatge.',
+      bloc: `<div class="zero-bloc d"><div class="esq"><p class="retol">Plan Gratis</p><h3>El huésped hace el check-in. Tú pagas 0 €.</h3><p>Para siempre, sin tarjeta y sin límite de pisos. Hostly lo envía a la policía cada día.</p><button class="boto blanc" type="button">Empezar</button></div><div class="mobil"><div><p class="t">Check-in · Cala Moreta</p><p class="c2"><span>Nombre</span><b>Camille Durand</b></p><p class="c2"><span>Documento</span><b>Pasaporte</b></p><p class="c2"><span>Llegada</span><b>14 abr</b></p><p class="ok2">✓ Enviado a la policía</p><p class="r"><small>Lo que pagas tú</small><b>0 €</b></p></div></div></div>` },
+  ];
+  const peces = document.getElementById('t-peces').innerHTML;
+  const seccio = (o) => `<div class="sec"><div class="centre"><p class="retol">Por qué empezar hoy</p><h2 class="h2">Gratis para siempre: el check-in y la policía.</h2></div><div class="bento${o.banda ? ' c-bento' : ''}">${o.bloc}${peces}</div></div>`;
+  document.getElementById('opcions').innerHTML = OPCIONS.map((o) => `<section class="opcio"><div class="nom"><b>${o.n}</b><span>${o.d}</span></div><div class="marcs"><div class="marc">${seccio(o)}</div><div class="marc mob">${seccio(o)}</div></div></section>`).join('');
+})();
+</script>
