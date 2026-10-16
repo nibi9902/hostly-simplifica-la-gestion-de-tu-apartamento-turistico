@@ -4,7 +4,7 @@ import Entrada from "@/components/portada/Entrada";
 import Zero from "@/components/portada/Zero";
 import Gestors from "@/components/portada/Gestors";
 import Pendent from "@/components/portada/Pendent";
-import Gratis from "@/components/portada/Gratis";
+import Gratis, { type VariantGratis } from "@/components/portada/Gratis";
 import Completo from "@/components/portada/Completo";
 import Passos from "@/components/portada/Passos";
 import Preus from "@/components/portada/Preus";
@@ -35,8 +35,10 @@ import {
  */
 const Index = () => {
   const empezar = useEmpezar();
-  // ?gratis=nou: la versió nova del Gratis, per comparar-la amb la d'ara (15-10). Quan el Biel triï, es treu.
-  const gratisNou = new URLSearchParams(useLocation().search).get("gratis") === "nou";
+  // ?gratis=nou|a|b|c|d: les maneres del bloc del 0 € del Gratis, per comparar-les a la preview (15–16-10).
+  // Sense res, la d'ara. Quan el Biel triï, es treu.
+  const g = new URLSearchParams(useLocation().search).get("gratis");
+  const gratis: VariantGratis = g === "nou" || g === "a" || g === "b" || g === "c" || g === "d" ? g : "ara";
   const { t: tSeo } = useTranslation("seo");
   const { t: tHome } = useTranslation("home");
 
@@ -61,7 +63,7 @@ const Index = () => {
         <Entrada onEmpezar={empezar} />
         <Zero onEmpezar={empezar} />
         <Pendent />
-        <Gratis onEmpezar={empezar} nou={gratisNou} />
+        <Gratis onEmpezar={empezar} variant={gratis} />
         <Completo onEmpezar={empezar} />
         <Passos />
         {/* els gestors, just abans dels preus (el Biel, 13-10: «a baix de tot, abans del pla gratis i de pagar») */}

@@ -15,6 +15,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Check, FileText } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
+import fotoPis from "@/assets/portada/menjador-dia.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,7 +102,15 @@ function construeixPagament(m: HTMLElement): gsap.core.Timeline {
   return tl;
 }
 
-export default function Gratis({ onEmpezar, nou = false }: { onEmpezar: () => void; nou?: boolean }) {
+/**
+ * Les maneres del bloc del 0 € (16-10, per comparar a la preview amb `?gratis=…`): «ara» és el d'ara (la targeta
+ * fosca); «nou», sense bloc (els quatre passos numerats); A com el Completo (foto i vidre), B el tiquet,
+ * C la banda blava a dalt, D el mòbil de l'hoste. Quan el Biel en triï una, les altres es treuen.
+ */
+export type VariantGratis = "ara" | "nou" | "a" | "b" | "c" | "d";
+
+export default function Gratis({ onEmpezar, variant = "ara" }: { onEmpezar: () => void; variant?: VariantGratis }) {
+  const nou = variant === "nou";
   const { t } = useTranslation("home");
   const { lang } = useLang();
   const seccioRef = useRef<HTMLElement>(null);
@@ -133,7 +142,7 @@ export default function Gratis({ onEmpezar, nou = false }: { onEmpezar: () => vo
   }, [lang]);
 
   return (
-    <section ref={seccioRef} id="gratis" className={`pt-seccio pt-gratis${nou ? " pt-gratis-nou" : ""}`} aria-labelledby="pt-gratis-titol">
+    <section ref={seccioRef} id="gratis" className={`pt-seccio pt-gratis${nou ? " pt-gratis-nou" : ""} pt-gratis-v-${variant}`} aria-labelledby="pt-gratis-titol">
       <div className="contenidor">
         <div className="pt-centre">
           <p className="pt-retol">{nou ? t("portada.gratis.pla") : t("portada.gratis.retol")}</p>
@@ -142,12 +151,62 @@ export default function Gratis({ onEmpezar, nou = false }: { onEmpezar: () => vo
         <div className="pt-bento">
           {/* La versió «nova» (?gratis=nou, 15-10, per comparar): sense la segona targeta fosca del 0 €, que
               ja és al Zero; els quatre passos numerats i, a sota, el 0 € i el botó. Quan el Biel triï, se'n queda una. */}
-          {!nou && <div className="pt-fosca">
+          {variant === "ara" && <div className="pt-fosca">
             <p className="pt-retol">{t("portada.gratis.pla")}</p>
             <p className="pt-zero">{t("portada.gratis.zero")}</p>
             <p className="pt-sempre">{t("portada.gratis.sempre")}</p>
             <p className="pt-txt">{t("portada.gratis.text")}</p>
             <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-blanc">{t("portada.gratis.boto")}</button>
+          </div>}
+
+          {/* A · com el Completo: la foto d'un pis i una targeta de vidre */}
+          {variant === "a" && <div className="pt-gz pt-gz-a">
+            <img className="pt-gz-foto" src={fotoPis} alt="" width={1200} height={675} loading="lazy" decoding="async" />
+            <p className="pt-gz-a-gros">{t("portada.gratis.pla")}<small>{t("portada.gratis.v.a_text")}</small></p>
+            <div className="pt-gz-a-vidre">
+              <p className="pt-gz-a-preu">{t("portada.gratis.zero")}<small>{t("portada.gratis.sempre")}</small></p>
+              <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-fosc">{t("portada.gratis.boto")}</button>
+            </div>
+          </div>}
+
+          {/* B · el tiquet: cada cosa a 0,00 € i el total, 0 € */}
+          {variant === "b" && <div className="pt-gz pt-gz-b">
+            <div className="pt-tiquet">
+              <p className="pt-tiquet-cap"><span>{t("portada.gratis.pla")}</span><span>Hostly</span></p>
+              <span className="pt-tiquet-linia" />
+              {(t("portada.gratis.v.b_linies", { returnObjects: true }) as string[]).map((l) => (
+                <p key={l} className="pt-tiquet-l"><span>{l}</span><span>{eur.format(0)} €</span></p>
+              ))}
+              <span className="pt-tiquet-linia" />
+              <p className="pt-tiquet-tot"><span>{t("portada.gratis.v.b_total")}</span><b>{t("portada.gratis.zero")}</b></p>
+              <p className="pt-tiquet-altres">{t("portada.gratis.v.b_altres")} <s>{t("portada.gratis.v.b_altres_preu")}</s></p>
+              <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t("portada.gratis.boto")}</button>
+            </div>
+          </div>}
+
+          {/* C · la banda: el 0 € en una línia llarga a dalt de les quatre peces */}
+          {variant === "c" && <div className="pt-gz-c">
+            <p className="pt-gz-c-preu">{t("portada.gratis.zero")}</p>
+            <p className="pt-gz-c-txt"><b>{t("portada.gratis.v.c_titol")}</b><span>{t("portada.gratis.v.c_text")}</span></p>
+            <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t("portada.gratis.boto")}</button>
+          </div>}
+
+          {/* D · el mòbil de l'hoste dins del bloc fosc: el check-in s'acaba i el que pagues tu és 0 € */}
+          {variant === "d" && <div className="pt-gz pt-gz-d">
+            <div className="pt-gz-d-esq">
+              <p className="pt-retol">{t("portada.gratis.pla")}</p>
+              <p className="pt-gz-d-titol">{t("portada.gratis.v.d_titol")}</p>
+              <p className="pt-gz-d-txt">{t("portada.gratis.v.d_text")}</p>
+              <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-blanc">{t("portada.gratis.boto")}</button>
+            </div>
+            <div className="pt-gz-mobil" aria-hidden="true"><div>
+              <p className="pt-gz-mobil-t">{t("portada.gratis.v.d_mobil")}</p>
+              {(t("portada.gratis.v.d_camps", { returnObjects: true }) as Array<{ nom: string; valor: string }>).map((c) => (
+                <p key={c.nom} className="pt-gz-mobil-c"><span>{c.nom}</span><b>{c.valor}</b></p>
+              ))}
+              <p className="pt-gz-mobil-ok">✓ {t("portada.gratis.v.d_ok")}</p>
+              <p className="pt-gz-mobil-r"><small>{t("portada.gratis.v.d_pagues")}</small><b>{t("portada.gratis.zero")}</b></p>
+            </div></div>
           </div>}
 
           <div className="pt-tile">
