@@ -264,8 +264,8 @@
       "retol": "Hostly Completo",
       "titol": "Con el Completo,",
       "titol_gris": "todo lo demás.",
-      "preu": "40 € + IVA al mes por piso.",
-      "preu_resta": "El primer mes, gratis. Sin permanencia.",
+      "primer_mes": "El primer mes, gratis.",
+      "sense_permanencia": "Sin permanencia.",
       "empezar": "Empezar",
       "veure": "Ver cómo funciona: {{que}}",
       "missatges": {

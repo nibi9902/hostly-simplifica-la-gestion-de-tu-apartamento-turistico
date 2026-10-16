@@ -264,8 +264,8 @@
       "retol": "Hostly Complet",
       "titol": "Amb el Complet,",
       "titol_gris": "tota la resta.",
-      "preu": "40 € + IVA al mes per pis.",
-      "preu_resta": "El primer mes, gratis. Sense permanència.",
+      "primer_mes": "El primer mes, gratis.",
+      "sense_permanencia": "Sense permanència.",
       "empezar": "Començar",
       "veure": "Com funciona: {{que}}",
       "missatges": {

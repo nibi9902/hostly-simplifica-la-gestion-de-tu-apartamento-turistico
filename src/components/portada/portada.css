@@ -368,7 +368,7 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-cmp .pt-h2 { font-size: 44px; }
 .pt-cmp-gris { color: hsl(220 9% 68%); }
 .pt-cmp-pindola { display: inline-flex; align-items: center; height: 30px; padding: 0 14px; border-radius: 9999px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--pt-gris); background: var(--pt-blanc); box-shadow: inset 0 0 0 1px hsl(220 11% 85%); margin: 0; white-space: nowrap; }
-.pt-cmp-graella { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.35fr) minmax(0, 1fr); grid-template-rows: 300px 276px; gap: 12px; margin-top: 20px; }
+.pt-cmp-graella { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.35fr) minmax(0, 1fr); grid-template-rows: 300px 276px; gap: 12px; margin-top: 16px; }
 .pt-cmp-t { position: relative; min-width: 0; border-radius: 26px; overflow: hidden; }
 .pt-cmp-foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .pt-cmp-vidre { background: rgba(255, 255, 255, .64); -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .72); }
@@ -498,22 +498,22 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-cmp-vol .pt-cmp-num { opacity: .85; }
 
 /* Y además: les altres funcions de Hostly en rodones, a la dreta d'una barra llarga */
-.pt-cmp-funcions { position: relative; margin-top: 12px; display: flex; align-items: center; gap: 12px; padding: 5px 5px 5px 18px; border-radius: 9999px; background: hsl(220 14% 96%); box-shadow: inset 0 0 0 1px var(--pt-linia); }
-.pt-cmp-funcions > p { margin: 0; flex: 1; min-width: 0; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pt-cmp-funcions { position: relative; margin-top: 12px; display: flex; align-items: center; gap: 12px; padding: 6px 6px 6px 20px; border-radius: 9999px; background: hsl(220 14% 96%); box-shadow: inset 0 0 0 1px var(--pt-linia); }
+.pt-cmp-funcions > p { margin: 0; flex: 1; min-width: 0; font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pt-cmp-funcions > p b { font-weight: 600; }
 .pt-cmp-funcions > p span { color: var(--pt-gris); }
-.pt-cmp-rodones { display: flex; gap: 5px; flex-shrink: 0; }
-.pt-cmp-fn { position: relative; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 9999px; display: grid; place-items: center; cursor: pointer; background: var(--pt-blanc); color: var(--pt-text); box-shadow: inset 0 0 0 1px hsl(220 11% 82%); transition: background .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.2, .7, .2, 1); }
-.pt-cmp-fn .pt-ic { width: 15px; height: 15px; transition: color .35s ease; }
-.pt-cmp-fn:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px var(--pt-text); }
+.pt-cmp-rodones { display: flex; gap: 6px; flex-shrink: 0; }
+.pt-cmp-fn { position: relative; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 9999px; display: grid; place-items: center; cursor: pointer; background: hsl(214 100% 96%); color: var(--pt-blau); box-shadow: inset 0 0 0 1px hsl(214 95% 88%), 0 1px 2px rgba(37, 99, 235, .08); transition: background .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.2, .7, .2, 1); }
+.pt-cmp-fn .pt-ic { width: 18px; height: 18px; transition: color .35s ease; }
+.pt-cmp-fn:hover { transform: translateY(-2px); background: hsl(214 100% 93%); box-shadow: inset 0 0 0 1px var(--pt-blau), 0 4px 10px rgba(37, 99, 235, .14); }
 .pt-cmp-fn[aria-expanded="true"] { background: var(--pt-fosc); color: #fff; box-shadow: none; }
-.pt-cmp-fn.apart { background: transparent; color: var(--pt-gris); }
+.pt-cmp-fn.apart { background: var(--pt-blanc); color: var(--pt-gris); box-shadow: inset 0 0 0 1px hsl(220 11% 82%); }
 .pt-cmp-fn.apart[aria-expanded="true"] { background: var(--pt-fosc); color: #fff; }
 /* el nom, a sobre, en passar-hi el ratolí */
 .pt-cmp-fn::after { content: attr(data-nom); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translate(-50%, 4px); white-space: nowrap; font-size: 11.5px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: var(--pt-fosc); color: #fff; opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .3s cubic-bezier(.2, .7, .2, 1); }
 .pt-cmp-fn:hover::after { opacity: 1; transform: translate(-50%, 0); }
 .pt-cmp-fn[aria-expanded="true"]::after { opacity: 0; }
-.pt-cmp-fletxa-petita { width: 34px; height: 34px; }
+.pt-cmp-fletxa-petita { width: 40px; height: 40px; }
 .pt-cmp-fletxa-petita .pt-ic { width: 15px; height: 15px; }
 .pt-cmp-pop { position: absolute; z-index: 30; bottom: calc(100% + 12px); max-width: 100%; padding: 16px 16px 14px; border-radius: 20px; background: var(--pt-blanc); box-shadow: 0 0 0 1px var(--pt-linia), 0 18px 40px rgba(17, 24, 39, .16); display: flex; flex-direction: column; gap: 8px; opacity: 0; transform: translateY(6px) scale(.98); pointer-events: none; visibility: hidden; transition: opacity .3s ease, transform .4s cubic-bezier(.2, .7, .2, 1), visibility 0s linear .4s; }
 .pt-cmp-pop.obert { opacity: 1; transform: none; pointer-events: auto; visibility: visible; transition: opacity .3s ease, transform .4s cubic-bezier(.2, .7, .2, 1); }
@@ -527,7 +527,7 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-cmp-pop::after { content: ""; position: absolute; left: var(--fletxa, 24px); bottom: -6px; width: 12px; height: 12px; background: var(--pt-blanc); transform: rotate(45deg); box-shadow: 1px 1px 0 var(--pt-linia); }
 
 /* el preu i el botó, sota el títol */
-.pt-cmp-preu { margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.pt-cmp-preu { margin-top: 6px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
 .pt-cmp-preu p { margin: 0; font-size: 16px; color: var(--pt-gris); }
 .pt-cmp-preu p b { color: var(--pt-text); font-weight: 600; }
 .pt-cmp-preu .pt-pill { height: 40px; }
