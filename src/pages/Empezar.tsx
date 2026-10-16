@@ -249,12 +249,11 @@ export default function Empezar() {
                     onChange={(e) => { setTelefon(e.target.value); setErrors((x) => ({ ...x, telefon: undefined })); }}
                     placeholder={t("empezar.datos.telefono_placeholder")}
                     aria-invalid={!!errors.telefon}
-                    aria-describedby="emp-tel-ajuda"
+                    aria-describedby={errors.telefon ? "emp-tel-error" : undefined}
                     className={cn(camp, errors.telefon ? "border-rose-300" : "border-slate-200")}
                   />
-                  <p id="emp-tel-ajuda" className={cn("mt-2 text-sm", errors.telefon ? "text-rose-600" : "text-muted-foreground")}>
-                    {errors.telefon ?? t("empezar.datos.telefono_ayuda")}
-                  </p>
+                  {/* Sense «per a què el volem» (el Biel, 16-10): explicar-ho li dona importància, i es nota. */}
+                  {errors.telefon && <p id="emp-tel-error" className="mt-2 text-sm text-rose-600">{errors.telefon}</p>}
                 </div>
 
                 <div>
