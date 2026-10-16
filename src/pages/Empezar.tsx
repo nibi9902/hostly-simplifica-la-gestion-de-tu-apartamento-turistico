@@ -16,7 +16,7 @@
  * no pot prometre «con tus pisos» (caldria connectar-los).
  */
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, CalendarCheck, Phone, ShieldCheck, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -65,8 +65,9 @@ function llegeixDesde(estat: unknown): string | undefined {
 
 export default function Empezar() {
   const { t } = useTranslation("embut");
-  const { lang } = useLang();
+  const { lang, localized } = useLang();
   const location = useLocation();
+  const navigate = useNavigate();
   const reduir = useReducedMotion();
   const desde = useMemo(() => llegeixDesde(location.state), [location.state]);
 
@@ -169,6 +170,17 @@ export default function Empezar() {
   // Tots els passos es poden desfer, també després de demanar la trucada (el Biel, 13-10)
   const enrere: Partial<Record<Pas, Pas>> = { plan: "datos", gratis: "plan", demo: "plan", demo_hecha: "demo", trucant: "demo" };
 
+  /**
+   * «Atrás» al primer pas (el Biel, 16-10-2026: s'havia de fer amb el botó del navegador). Si ve
+   * d'una pàgina de la web, hi torna de veritat (a la mateixa altura); si ha entrat directe
+   * (un anunci, un enllaç), a la pàgina d'on venia l'última vegada o a la portada.
+   */
+  function tornaDOnVenia() {
+    const ambEstat = Boolean((location.state as EstatEmpezar | null)?.desde);
+    if (ambEstat && window.history.length > 1) navigate(-1);
+    else navigate(desde ?? localized("/"));
+  }
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO title={t("empezar.meta_title")} description={t("empezar.meta_desc")} path="/empezar" noindex />
@@ -202,10 +214,10 @@ export default function Empezar() {
       {/* A l'ordinador: el pas a l'esquerra (a la línia del logotip) i, al costat, com va tot plegat */}
       <main className="flex-1 contenidor pt-10 sm:pt-16 pb-20 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-start">
         <div className="w-full max-w-xl lg:col-span-6 xl:col-span-5">
-        {enrere[pas] && (
+        {(enrere[pas] || pas === "datos") && (
           <button
             type="button"
-            onClick={() => { setErrors({}); setPas(enrere[pas]!); }}
+            onClick={() => { setErrors({}); if (pas === "datos") tornaDOnVenia(); else setPas(enrere[pas]!); }}
             className="mb-6 -ml-1 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             <ArrowLeft className="w-4 h-4" />
