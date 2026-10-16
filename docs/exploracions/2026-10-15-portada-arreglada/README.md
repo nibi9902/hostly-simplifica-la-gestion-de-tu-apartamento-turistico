@@ -23,3 +23,5 @@ Pàgina dels anuncis: /registro-de-viajeros-gratis (proposta), una sola cosa a f
 0 € sigui diferent de la targeta fosca del Zero. Mockup `gratis-bloc-zero.font.html` amb quatre maneres:
 A com el Completo (foto + targeta de vidre), B el tiquet (cada línia a 0,00 € i el total 0 €), C la banda
 blava llarga a dalt de les quatre peces, D el mòbil de l'hoste dins del bloc fosc («Tú pagas 0 €»).
+
+**16-10 · triada la C** (la banda blava), amb el text «¿Solo quieres el check-in y la policía? Es gratis, para siempre. / Sin tarjeta y sin límite de pisos. Y si un día quieres que Hostly haga más, te pasas al Completo.» (el Biel: no «no te cuesta nada», que sembla que el Completo tampoc). Les altres opcions i `?gratis=…`, fora.

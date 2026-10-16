@@ -255,39 +255,9 @@
         "pagada": "Pagada",
         "cobrat": "+14,00 € al teu compte"
       },
-      "peu_nou": "per sempre, sense targeta i sense límit de pisos",
-      "v": {
-        "a_text": "El check-in i el registre a la policia, sense pagar res.",
-        "b_linies": [
-          "Check-in des del mòbil",
-          "Registre a la policia",
-          "Taxa turística, calculada",
-          "Taxa pagada en línia"
-        ],
-        "b_total": "Total, per sempre",
-        "b_altres": "Altres apps:",
-        "b_altres_preu": "fins a 95 € l’any per pis",
-        "c_titol": "Per sempre. Sense targeta i sense límit de pisos.",
-        "c_text": "El check-in i el registre a la policia no et costen res.",
-        "d_titol": "L’hoste fa el check-in. Tu pagues 0 €.",
-        "d_text": "Per sempre, sense targeta i sense límit de pisos. Hostly l’envia a la policia cada dia.",
-        "d_mobil": "Check-in · Cala Moreta",
-        "d_camps": [
-          {
-            "nom": "Nom",
-            "valor": "Camille Durand"
-          },
-          {
-            "nom": "Document",
-            "valor": "Passaport"
-          },
-          {
-            "nom": "Arribada",
-            "valor": "14 abr"
-          }
-        ],
-        "d_ok": "Enviat a la policia",
-        "d_pagues": "El que pagues tu"
+      "banda": {
+        "titol": "Només vols el check-in i la policia? És gratis, per sempre.",
+        "text": "Sense targeta i sense límit de pisos. I si un dia vols que Hostly faci més, et passes al Complet."
       }
     },
     "completo": {

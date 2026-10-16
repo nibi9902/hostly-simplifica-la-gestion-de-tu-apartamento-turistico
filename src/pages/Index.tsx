@@ -4,7 +4,7 @@ import Entrada from "@/components/portada/Entrada";
 import Zero from "@/components/portada/Zero";
 import Gestors from "@/components/portada/Gestors";
 import Pendent from "@/components/portada/Pendent";
-import Gratis, { type VariantGratis } from "@/components/portada/Gratis";
+import Gratis from "@/components/portada/Gratis";
 import Completo from "@/components/portada/Completo";
 import Passos from "@/components/portada/Passos";
 import Preus from "@/components/portada/Preus";
@@ -15,7 +15,6 @@ import Footer from "@/components/Footer";
 import "@/components/portada/portada.css";
 
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
 import { useEmpezar } from "@/lib/empezar";
 import {
   organizationSchema,
@@ -35,10 +34,6 @@ import {
  */
 const Index = () => {
   const empezar = useEmpezar();
-  // ?gratis=nou|a|b|c|d: les maneres del bloc del 0 € del Gratis, per comparar-les a la preview (15–16-10).
-  // Sense res, la d'ara. Quan el Biel triï, es treu.
-  const g = new URLSearchParams(useLocation().search).get("gratis");
-  const gratis: VariantGratis = g === "nou" || g === "a" || g === "b" || g === "c" || g === "d" ? g : "ara";
   const { t: tSeo } = useTranslation("seo");
   const { t: tHome } = useTranslation("home");
 
@@ -63,7 +58,7 @@ const Index = () => {
         <Entrada onEmpezar={empezar} />
         <Zero onEmpezar={empezar} />
         <Pendent />
-        <Gratis onEmpezar={empezar} variant={gratis} />
+        <Gratis onEmpezar={empezar} />
         <Completo onEmpezar={empezar} />
         <Passos />
         {/* els gestors, just abans dels preus (el Biel, 13-10: «a baix de tot, abans del pla gratis i de pagar») */}

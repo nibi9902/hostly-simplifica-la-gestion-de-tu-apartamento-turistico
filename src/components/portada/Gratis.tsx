@@ -1,7 +1,7 @@
 /**
- * «Gratis para siempre: el check-in y la policía.» — el bloc gran del pla gratis (la targeta fosca
- * amb el 0 €) i, al costat, quatre peces: el check-in, la policia, la taxa que es calcula i la taxa
- * pagada online.
+ * «Gratis para siempre: el check-in y la policía.» — a dalt, una banda blava amb el 0 € («si només vols
+ * això, és gratis»; fins al 16-10 era una targeta fosca gran que repetia la del Zero) i, a sota, quatre
+ * peces: el check-in, la policia, la taxa que es calcula i la taxa pagada online.
  *
  * La taxa: es compta de nou cada vegada (hostes × pernoctacions × preu per nit = el que toca pagar) i
  * es declara per SEMESTRES («De abril a septiembre»), encara que el Biel en digués «trimestre». La
@@ -15,7 +15,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Check, FileText } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
-import fotoPis from "@/assets/portada/menjador-dia.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -102,15 +101,7 @@ function construeixPagament(m: HTMLElement): gsap.core.Timeline {
   return tl;
 }
 
-/**
- * Les maneres del bloc del 0 € (16-10, per comparar a la preview amb `?gratis=…`): «ara» és el d'ara (la targeta
- * fosca); «nou», sense bloc (els quatre passos numerats); A com el Completo (foto i vidre), B el tiquet,
- * C la banda blava a dalt, D el mòbil de l'hoste. Quan el Biel en triï una, les altres es treuen.
- */
-export type VariantGratis = "ara" | "nou" | "a" | "b" | "c" | "d";
-
-export default function Gratis({ onEmpezar, variant = "ara" }: { onEmpezar: () => void; variant?: VariantGratis }) {
-  const nou = variant === "nou";
+export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
   const { t } = useTranslation("home");
   const { lang } = useLang();
   const seccioRef = useRef<HTMLElement>(null);
@@ -142,72 +133,21 @@ export default function Gratis({ onEmpezar, variant = "ara" }: { onEmpezar: () =
   }, [lang]);
 
   return (
-    <section ref={seccioRef} id="gratis" className={`pt-seccio pt-gratis${nou ? " pt-gratis-nou" : ""} pt-gratis-v-${variant}`} aria-labelledby="pt-gratis-titol">
+    <section ref={seccioRef} id="gratis" className="pt-seccio pt-gratis pt-gratis-banda" aria-labelledby="pt-gratis-titol">
       <div className="contenidor">
         <div className="pt-centre">
-          <p className="pt-retol">{nou ? t("portada.gratis.pla") : t("portada.gratis.retol")}</p>
+          <p className="pt-retol">{t("portada.gratis.retol")}</p>
           <h2 id="pt-gratis-titol" className="pt-h2">{t("portada.gratis.titol")}</h2>
         </div>
         <div className="pt-bento">
-          {/* La versió «nova» (?gratis=nou, 15-10, per comparar): sense la segona targeta fosca del 0 €, que
-              ja és al Zero; els quatre passos numerats i, a sota, el 0 € i el botó. Quan el Biel triï, se'n queda una. */}
-          {variant === "ara" && <div className="pt-fosca">
-            <p className="pt-retol">{t("portada.gratis.pla")}</p>
-            <p className="pt-zero">{t("portada.gratis.zero")}</p>
-            <p className="pt-sempre">{t("portada.gratis.sempre")}</p>
-            <p className="pt-txt">{t("portada.gratis.text")}</p>
-            <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-blanc">{t("portada.gratis.boto")}</button>
-          </div>}
-
-          {/* A · com el Completo: la foto d'un pis i una targeta de vidre */}
-          {variant === "a" && <div className="pt-gz pt-gz-a">
-            <img className="pt-gz-foto" src={fotoPis} alt="" width={1200} height={675} loading="lazy" decoding="async" />
-            <p className="pt-gz-a-gros">{t("portada.gratis.pla")}<small>{t("portada.gratis.v.a_text")}</small></p>
-            <div className="pt-gz-a-vidre">
-              <p className="pt-gz-a-preu">{t("portada.gratis.zero")}<small>{t("portada.gratis.sempre")}</small></p>
-              <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-fosc">{t("portada.gratis.boto")}</button>
-            </div>
-          </div>}
-
-          {/* B · el tiquet: cada cosa a 0,00 € i el total, 0 € */}
-          {variant === "b" && <div className="pt-gz pt-gz-b">
-            <div className="pt-tiquet">
-              <p className="pt-tiquet-cap"><span>{t("portada.gratis.pla")}</span><span>Hostly</span></p>
-              <span className="pt-tiquet-linia" />
-              {(t("portada.gratis.v.b_linies", { returnObjects: true }) as string[]).map((l) => (
-                <p key={l} className="pt-tiquet-l"><span>{l}</span><span>{eur.format(0)} €</span></p>
-              ))}
-              <span className="pt-tiquet-linia" />
-              <p className="pt-tiquet-tot"><span>{t("portada.gratis.v.b_total")}</span><b>{t("portada.gratis.zero")}</b></p>
-              <p className="pt-tiquet-altres">{t("portada.gratis.v.b_altres")} <s>{t("portada.gratis.v.b_altres_preu")}</s></p>
-              <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t("portada.gratis.boto")}</button>
-            </div>
-          </div>}
-
-          {/* C · la banda: el 0 € en una línia llarga a dalt de les quatre peces */}
-          {variant === "c" && <div className="pt-gz-c">
+          {/* El 0 € és una banda blava a dalt de les quatre peces (el Biel, 16-10, entre quatre maneres): no
+              repeteix la targeta fosca del Zero, i diu «si només vols això, és gratis», no «no costa res». */}
+          <div className="pt-gz-c">
             <p className="pt-gz-c-preu">{t("portada.gratis.zero")}</p>
-            <p className="pt-gz-c-txt"><b>{t("portada.gratis.v.c_titol")}</b><span>{t("portada.gratis.v.c_text")}</span></p>
+            <p className="pt-gz-c-txt"><b>{t("portada.gratis.banda.titol")}</b><span>{t("portada.gratis.banda.text")}</span></p>
             <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t("portada.gratis.boto")}</button>
-          </div>}
+          </div>
 
-          {/* D · el mòbil de l'hoste dins del bloc fosc: el check-in s'acaba i el que pagues tu és 0 € */}
-          {variant === "d" && <div className="pt-gz pt-gz-d">
-            <div className="pt-gz-d-esq">
-              <p className="pt-retol">{t("portada.gratis.pla")}</p>
-              <p className="pt-gz-d-titol">{t("portada.gratis.v.d_titol")}</p>
-              <p className="pt-gz-d-txt">{t("portada.gratis.v.d_text")}</p>
-              <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-blanc">{t("portada.gratis.boto")}</button>
-            </div>
-            <div className="pt-gz-mobil" aria-hidden="true"><div>
-              <p className="pt-gz-mobil-t">{t("portada.gratis.v.d_mobil")}</p>
-              {(t("portada.gratis.v.d_camps", { returnObjects: true }) as Array<{ nom: string; valor: string }>).map((c) => (
-                <p key={c.nom} className="pt-gz-mobil-c"><span>{c.nom}</span><b>{c.valor}</b></p>
-              ))}
-              <p className="pt-gz-mobil-ok">✓ {t("portada.gratis.v.d_ok")}</p>
-              <p className="pt-gz-mobil-r"><small>{t("portada.gratis.v.d_pagues")}</small><b>{t("portada.gratis.zero")}</b></p>
-            </div></div>
-          </div>}
 
           <div className="pt-tile">
             <h3>{t("portada.gratis.checkin.titol")}</h3>
@@ -264,12 +204,6 @@ export default function Gratis({ onEmpezar, variant = "ara" }: { onEmpezar: () =
             </div>
           </div>
         </div>
-        {nou && (
-          <div className="pt-gratis-peu">
-            <p><b>{t("portada.gratis.zero")}</b> · {t("portada.gratis.peu_nou")}</p>
-            <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t("portada.gratis.boto")}</button>
-          </div>
-        )}
       </div>
     </section>
   );
