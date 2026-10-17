@@ -12,7 +12,7 @@
     "aria_close_menu": "Cerrar menú",
     "menu": {
       "totes": "Ver todas las funcionalidades",
-      "videos": "Ver los vídeos"
+      "videos": "Ver el vídeo"
     },
     "app": "App"
   },
@@ -113,10 +113,10 @@
   },
   "demo": {
     "meta_title": "Así funciona Hostly, en vídeo",
-    "meta_description": "Un día con Hostly en un minuto y cinco vídeos cortos con la app de verdad: el registro a la policía, los mensajes, el calendario, la limpieza y las cuentas.",
+    "meta_description": "Lo que hace Hostly por ti, en minuto y medio: precios, reservas, limpieza, huéspedes, policía, tasa turística, tu web de reservas y tus números.",
     "eyebrow": "Cómo funciona",
     "heading": "Así funciona Hostly.",
-    "subheading": "Un día cualquiera con Hostly, en un minuto.",
+    "subheading": "Lo que hace Hostly por ti, en minuto y medio.",
     "videos": [
       {
         "id": "policia",
@@ -151,8 +151,9 @@
     "anterior": "Vídeo anterior",
     "seguent": "Vídeo siguiente",
     "tancar": "Cerrar",
-    "principal_veure": "Ver el vídeo: un día con Hostly",
-    "curts_titol": "Cada cosa, en menos de un minuto"
+    "principal_veure": "Ver el vídeo: lo que hace Hostly por ti",
+    "curts_titol": "Cada cosa, en menos de un minuto",
+    "subtitols": "Subtítulos"
   },
   "guia": {
     "meta_title": "Superguía de gestión de apartamentos turísticos 2026 | Hostly",

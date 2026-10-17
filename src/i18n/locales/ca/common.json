@@ -12,7 +12,7 @@
     "aria_close_menu": "Tancar menú",
     "menu": {
       "totes": "Veure totes les funcionalitats",
-      "videos": "Veure els vídeos"
+      "videos": "Veure el vídeo"
     },
     "app": "App"
   },
@@ -113,10 +113,10 @@
   },
   "demo": {
     "meta_title": "Així funciona Hostly, en vídeo",
-    "meta_description": "Un dia amb Hostly en un minut i cinc vídeos curts amb l'app de debò: el registre a la policia, els missatges, el calendari, la neteja i els comptes.",
+    "meta_description": "El que fa Hostly per tu, en un minut i mig: preus, reserves, neteja, hostes, policia, taxa turística, el teu web de reserves i els teus números.",
     "eyebrow": "Com funciona",
     "heading": "Així funciona Hostly.",
-    "subheading": "Un dia qualsevol amb Hostly, en un minut.",
+    "subheading": "El que fa Hostly per tu, en un minut i mig.",
     "videos": [
       {
         "id": "policia",
@@ -152,8 +152,9 @@
     "anterior": "Vídeo anterior",
     "seguent": "Vídeo següent",
     "tancar": "Tancar",
-    "principal_veure": "Veure el vídeo: un dia amb Hostly",
-    "curts_titol": "Cada cosa, en menys d'un minut"
+    "principal_veure": "Veure el vídeo: el que fa Hostly per tu",
+    "curts_titol": "Cada cosa, en menys d'un minut",
+    "subtitols": "Subtítols (en castellà)"
   },
   "guia": {
     "meta_title": "Superguia de gestió d'apartaments turístics 2026 | Hostly",

@@ -1,7 +1,8 @@
 /**
- * /demo («Ver cómo funciona»), a l'estil de la portada (13-10-2026). A dalt, el vídeo d'un minut d'abril
- * («un día cualquiera con Hostly»): el Biel el volia tal com era, i s'ha tornat a renderitzar amb l'app
- * en castellà (projecte de Remotion a ~/hostly-videos/demo-60s).
+ * /demo («Ver cómo funciona»), a l'estil de la portada (13-10-2026). A dalt, la demo general: «Lo que
+ * hace Hostly por ti» (la v6 de la demo animada, feta amb l'app nova i aprovada pel Biel el 17-10; abans
+ * hi havia el vídeo d'un minut d'abril, «un día cualquiera con Hostly»). L'exporta
+ * `scripts/exporta-videos-funcions.py`, amb els subtítols de la veu.
  * Fins al 15-10 hi havia, a sota, els cinc vídeos curts de la sèrie «Todo va solo»: el Biel els va fer
  * treure («hem de treure els 5 vídeos»). Els fitxers continuen a /assets/funciona.
  */
@@ -38,7 +39,7 @@ export default function Demo() {
     setEnMarxa(true);
     if (comptat.current) return;
     comptat.current = true;
-    track("video_play", { location: "demo", variant: "un-dia" });
+    track("video_play", { location: "demo", variant: "lo-que-hace" });
   };
 
 
@@ -56,13 +57,15 @@ export default function Demo() {
             <div className="pt-demo-gran-marc">
               <video
                 ref={principal}
-                src="/assets/demo/un-dia-con-hostly.mp4"
-                poster="/assets/demo/un-dia-con-hostly.webp"
+                src="/assets/demo/lo-que-hace-hostly.mp4"
+                poster="/assets/demo/lo-que-hace-hostly.webp"
                 preload="none"
                 playsInline
                 controls={enMarxa}
                 onPlay={quanComenca}
-              />
+              >
+                <track kind="captions" src="/assets/demo/lo-que-hace-hostly.es.vtt" srcLang="es" label={t("demo.subtitols")} />
+              </video>
               {!enMarxa && (
                 <button type="button" className="pt-video-boto" onClick={posaEnMarxa} aria-label={t("demo.principal_veure")}>
                   <span className="pt-video-play pt-video-play-gran" aria-hidden="true"><Play className="pt-ic" fill="currentColor" /></span>

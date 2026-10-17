@@ -1134,9 +1134,10 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 }
 @media (prefers-reduced-motion: reduce) { .pt-llisca-punts i { transition: none; } }
 
-/* ── Els vídeos de les funcionalitats (17-10, idees A i C del llenç del Biel) ──
-   `VideoFuncio.tsx`: a dalt de cada funcionalitat, en lloc de la demo. Va sol i sense so; la píndola
-   «Escúchalo» el torna a començar amb veu i amb els controls del navegador, i el botó rodó l'atura.
+/* ── Els vídeos de les funcionalitats (17-10, idees B i C del llenç del Biel) ──
+   `VideoFuncio.tsx` i `PassosVideo.tsx`: a «Cómo funciona», el vídeo amb els passos com a capítols (la
+   demo es queda a dalt). Va sol i sense so; la píndola «Escúchalo» el torna a començar amb veu i amb els
+   controls del navegador, i el botó rodó l'atura.
    `MiniaturaVideo.tsx` i `VideoObert.tsx`: a /funcionalidades, cada targeta porta la miniatura del seu
    vídeo (es mou amb el ratolí a sobre) i, en tocar-la, el vídeo s'obre en gran i amb so. */
 .pt-fp-aparte { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 9999px; background: hsl(214 100% 96%); color: var(--pt-blau-fosc); font-size: 13px; font-weight: 600; white-space: nowrap; }
@@ -1197,3 +1198,51 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-dv-peu { padding: 14px 16px 16px; }
 }
 @media (prefers-reduced-motion: reduce) { .pt-fv-barra i, .pt-ix-mini video { transition: none; } }
+
+/* «Cómo funciona» amb el vídeo (PassosVideo): a l'ordinador, el vídeo i els passos com a capítols (el de
+   davant, obert i amb la barra que avança); a la tauleta, un sota l'altre; al mòbil, targetes que
+   llisquen (.pt-llisca) i segueixen el vídeo. */
+.pt-pv { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: start; margin-top: 40px; }
+.pt-pv-passos { display: flex; flex-direction: column; gap: 6px; }
+.pt-pv-pas { position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr); padding: 16px 18px 22px; border-radius: 16px; cursor: pointer; transition: background-color .35s ease, box-shadow .35s ease; }
+.pt-pv-pas:hover { background: rgb(255 255 255 / .7); }
+.pt-pv-num { font-size: 15px; line-height: 26px; font-weight: 700; color: hsl(220 10% 66%); font-variant-numeric: tabular-nums; transition: color .35s ease; }
+.pt-pv-pasde { display: none; }
+.pt-pv-pas h3 { font-size: 20px; line-height: 26px; font-weight: 600; letter-spacing: -0.015em; color: hsl(220 13% 30%); transition: color .35s ease; }
+.pt-pv-pas h3 button { display: block; width: 100%; padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-align: left; cursor: pointer; }
+.pt-pv-text { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s ease; }
+.pt-pv-text > div { min-height: 0; overflow: hidden; }
+.pt-pv-text p { padding-top: 6px; font-size: 16px; line-height: 1.5; color: var(--pt-gris); }
+.pt-pv-barra { position: absolute; left: 58px; right: 18px; bottom: 10px; height: 3px; border-radius: 9999px; background: hsl(220 20% 94%); opacity: 0; transition: opacity .35s ease; }
+.pt-pv-barra i { display: block; height: 100%; border-radius: inherit; background: var(--pt-blau); transform-origin: left; transition: transform .25s linear; }
+.pt-pv-pas.ara { background: var(--pt-blanc); box-shadow: 0 1px 2px rgba(15, 23, 42, .05), 0 14px 32px -20px rgba(15, 23, 42, .3); }
+.pt-pv-pas.ara .pt-pv-num { color: var(--pt-blau); }
+.pt-pv-pas.ara h3 { color: var(--pt-text); }
+.pt-pv-pas.ara .pt-pv-text { grid-template-rows: 1fr; }
+.pt-pv-pas.ara .pt-pv-barra { opacity: 1; }
+@media (max-width: 1023px) {
+  .pt-pv { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+}
+@media (max-width: 640px) {
+  .pt-pv { margin-top: 24px; gap: 20px; }
+  /* la tira va de costat (la regla de l'ordinador la posava en columna) */
+  .pt-pv-passos.pt-llisca { flex-direction: row; gap: 12px; }
+  .pt-pv-pas { display: flex; flex-direction: column; gap: 8px; padding: 20px 20px 26px; border-radius: 24px; background: var(--pt-blanc); }
+  .pt-pv-pas:hover { background: var(--pt-blanc); }
+  .pt-pv-num { display: none; }
+  .pt-pv-pasde { display: block; font-size: 13px; line-height: 1.3; font-weight: 600; color: var(--pt-blau); }
+  .pt-pv-cos { display: flex; flex-direction: column; gap: 8px; }
+  .pt-pv-pas h3 { font-size: 20px; line-height: 1.25; color: var(--pt-text); }
+  .pt-pv-text { grid-template-rows: 1fr; }
+  .pt-pv-text p { padding-top: 0; font-size: 15px; }
+  .pt-pv-barra { left: 20px; right: 20px; bottom: 12px; opacity: 0; }
+  .pt-pv-pas.ara { box-shadow: inset 0 0 0 2px hsl(221 83% 53% / .25), 0 14px 30px -20px rgba(15, 23, 42, .35); }
+}
+@media (prefers-reduced-motion: reduce) { .pt-pv-pas, .pt-pv-text, .pt-pv-barra, .pt-pv-barra i { transition: none; } }
+
+/* /demo (17-10): la portada del vídeo és el seu títol, «Lo que hace Hostly por ti», al mig; el botó de
+   play va a sota del títol, que si no el tapava. */
+.pt-demo-gran .pt-video-play.pt-video-play-gran { top: 72%; }
+@media (max-width: 640px) {
+  .pt-demo-gran .pt-video-play.pt-video-play-gran { top: 77%; width: 56px; height: 56px; margin: -28px 0 0 -28px; }
+}

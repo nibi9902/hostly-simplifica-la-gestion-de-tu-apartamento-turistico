@@ -164,12 +164,18 @@ Falta per **publicar-la** (mentrestant, marcadors):
 
 El Biel va triar al llenç de quatre idees (https://claude.ai/artifact/KZKCRpbPnjm8VjFLudxLtU):
 
-- **A, el vídeo a dalt de cada funcionalitat**, en lloc de la demo animada (`VideoFuncio.tsx`). Va
-  sol, sense so i en bucle quan es veu i quan la pàgina ja ha carregat; no va sol si la persona ha
-  demanat menys moviment o estalvi de dades. «Escúchalo» el torna a començar amb veu i amb els
-  controls del navegador (subtítols inclosos); el botó rodó l'atura. Les demos **no es perden**
-  («guarda-ho», el Biel): `MiniDemo` les ensenya on no hi ha vídeo en aquell idioma, avui tot el
-  català.
+- **B, el vídeo a «Cómo funciona», amb els passos com a capítols** (`PassosVideo.tsx` i
+  `VideoFuncio.tsx`). Primer es va fer la A (el vídeo a dalt, en lloc de la demo) i, en veure-la,
+  el Biel la va canviar: «la demo a l'inici, que s'entén molt més ràpid, i després tenen el vídeo
+  per si volen». A l'ordinador, el vídeo a l'esquerra i els passos a la dreta: el que surt al vídeo
+  s'obre i avança, i tocar-ne un hi fa saltar el vídeo. Al mòbil, el vídeo a dalt i les targetes dels
+  passos, que llisquen soles al compàs (si no les acabes de tocar). El vídeo va sol, sense so i en
+  bucle quan es veu i quan la pàgina ja ha carregat; no va sol si la persona ha demanat menys
+  moviment o estalvi de dades. «Escúchalo» el torna a començar amb veu i amb els controls del
+  navegador (subtítols inclosos); el botó rodó l'atura. On comença cada pas de la pàgina dins del
+  vídeo és a `videosFuncions.ts` (`capitols`; `null` si el pas no surt al vídeo, com «Y sigue como
+  todas» de la web de reserves). Sense vídeo en aquell idioma (avui, tot el català), «Cómo
+  funciona» es queda com era.
 - **C, a /funcionalidades, cada targeta amb el seu vídeo** (`MiniaturaVideo.tsx` i
   `VideoObert.tsx`): es mou amb el ratolí a sobre i, en tocar-lo, s'obre en gran i amb so, amb
   «Empezar» i l'enllaç a la funcionalitat. La resta de la targeta porta a la pàgina, com abans.
@@ -182,7 +188,13 @@ El Biel va triar al llenç de quatre idees (https://claude.ai/artifact/KZKCRpbPn
 funcionalitat, amb veu i els mateixos passos que la pàgina). S'exporten a `public/assets/funcions/`
 (720p, ~1 MB cadascun): el vídeo, la portada (el títol), la miniatura de l'índex i els subtítols
 (`.es.vtt`, de la línia de temps de la veu), amb `scripts/exporta-videos-funcions.py`. Si el kit en
-torna a renderitzar algun, es torna a passar i la durada nova va a `src/lib/data/videosFuncions.ts`.
+torna a renderitzar algun, es torna a passar i la durada i els capítols nous van a
+`src/lib/data/videosFuncions.ts` (el script imprimeix on comença cada frase).
+
+**La demo general (/demo):** ara és la v6 de la demo animada, «Lo que hace Hostly por ti» (94 s,
+aprovada pel Biel el 17-10), amb els subtítols de la veu; el mateix script l'exporta a
+`public/assets/demo/lo-que-hace-hostly.*`. Abans hi havia el vídeo d'un minut d'abril («un día
+cualquiera con Hostly»), que el Biel deia que era «només per la idea»; és a l'historial (versio-18).
 
 **Vídeos que diuen més que la seva pàgina** (renderitzats el 17-10 a la tarda amb apunts del
 Biel; cal posar d'acord la pàgina i el producte abans de publicar):

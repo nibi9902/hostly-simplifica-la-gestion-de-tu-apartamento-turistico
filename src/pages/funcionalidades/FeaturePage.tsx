@@ -8,8 +8,9 @@
  * Al mòbil (17-10, opcions 8B i 9A del Biel): els passos són targetes que llisquen, cadascuna amb la
  * seva mini pantalla (`PantallaPas`), i «En la práctica» i les relacionades també llisquen. A
  * l'ordinador no canvia res.
- * A dalt, el vídeo de la funcionalitat (idea A del llenç del 17-10, `VideoFuncio`). La demo animada
- * (`MiniDemo`) es queda per a les que no en tenen en aquest idioma: ara, totes en català.
+ * A dalt, la demo animada (`MiniDemo`), que s'entén més de pressa; el vídeo de la funcionalitat va a
+ * «Cómo funciona», amb els passos com a capítols (idea B del llenç del 17-10, `PassosVideo`). Sense
+ * vídeo en aquest idioma (ara, tot el català), «Cómo funciona» es queda com era.
  */
 import type { CSSProperties } from 'react';
 import { motion } from 'framer-motion';
@@ -22,7 +23,7 @@ import { useLang } from '@/i18n/useLang';
 import { useTranslation } from 'react-i18next';
 import PageShell from '@/components/PageShell';
 import MiniDemo from './MiniDemo';
-import VideoFuncio from './VideoFuncio';
+import PassosVideo from './PassosVideo';
 import PantallaPas from './PantallaPas';
 import PuntsLliscador from '@/components/portada/PuntsLliscador';
 import { useEsTira, useLliscador } from '@/components/portada/useLliscador';
@@ -112,17 +113,10 @@ export default function FeaturePage({ feature }: Props) {
               {!gratis && <LangLink to="/precios" className="pt-pill pt-pill-sec">{t('page.ver_precios')}</LangLink>}
             </div>
           </motion.div>
-          {video ? (
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease }} className="pt-fp-demo">
-              {/* key: d'una funcionalitat a una altra, el vídeo torna a començar de zero */}
-              <VideoFuncio key={feature.slug} video={video} nom={feature.name} />
-            </motion.div>
-          ) : (
-            /* La demo és una il·lustració: el text de la pàgina ja ho explica */
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease }} className="pt-fp-demo" aria-hidden="true">
-              <MiniDemo slug={feature.slug} iconName={feature.iconName} />
-            </motion.div>
-          )}
+          {/* La demo és una il·lustració: el text de la pàgina ja ho explica */}
+          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease }} className="pt-fp-demo" aria-hidden="true">
+            <MiniDemo slug={feature.slug} iconName={feature.iconName} />
+          </motion.div>
         </div>
       </section>
 
@@ -144,18 +138,25 @@ export default function FeaturePage({ feature }: Props) {
             <p className="pt-retol">{t('page.how_eyebrow')}</p>
             <h2 className="pt-fp-h2">{t('page.how_title', { count: feature.howItWorks.length })}</h2>
           </motion.div>
-          <ol ref={passos.ref} className="pt-fp-passos pt-llisca" onScroll={passos.enLliscar} style={{ '--n': feature.howItWorks.length } as CSSProperties}>
-            {feature.howItWorks.map((step, i) => (
-              <motion.li key={step.step} {...entraPeca(i)} className="pt-pas">
-                <small aria-hidden="true">{String(step.step).padStart(2, '0')}</small>
-                <p className="pt-fp-paso" aria-hidden="true">{t('page.step_of', { n: step.step, total: feature.howItWorks.length })}</p>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-                {step.pantalla && <PantallaPas files={step.pantalla} />}
-              </motion.li>
-            ))}
-          </ol>
-          <PuntsLliscador n={feature.howItWorks.length} pas={passos.pas} vesA={passos.vesA} />
+          {video ? (
+            // key: d'una funcionalitat a una altra, el vídeo torna a començar de zero
+            <PassosVideo key={feature.slug} feature={feature} video={video} />
+          ) : (
+            <>
+              <ol ref={passos.ref} className="pt-fp-passos pt-llisca" onScroll={passos.enLliscar} style={{ '--n': feature.howItWorks.length } as CSSProperties}>
+                {feature.howItWorks.map((step, i) => (
+                  <motion.li key={step.step} {...entraPeca(i)} className="pt-pas">
+                    <small aria-hidden="true">{String(step.step).padStart(2, '0')}</small>
+                    <p className="pt-fp-paso" aria-hidden="true">{t('page.step_of', { n: step.step, total: feature.howItWorks.length })}</p>
+                    <h3>{step.title}</h3>
+                    <p>{step.body}</p>
+                    {step.pantalla && <PantallaPas files={step.pantalla} />}
+                  </motion.li>
+                ))}
+              </ol>
+              <PuntsLliscador n={feature.howItWorks.length} pas={passos.pas} vesA={passos.vesA} />
+            </>
+          )}
         </div>
       </section>
 
