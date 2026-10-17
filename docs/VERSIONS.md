@@ -8,9 +8,10 @@
 > - **L'enllaç que es mou sol** (sempre l'última versió de la branca):
 >   https://hostly-simplifica-la-gestion-de-t-git-d0d465-nibi9902s-projects.vercel.app/es
 >
-> **Des del 17-10-2026, hostlylabs.com és la `versio-18`** (la branca `redisseny-2026-10` d'aquell dia,
-> publicada amb el vistiplau del Biel). Per tornar enrere de seguida: a Vercel, *Instant Rollback* al
-> desplegament anterior; amb git, `main` = `versio-00`.
+> **Des del 17-10-2026 (nit), hostlylabs.com és la `versio-21`** (la branca `videos-funcionalitats`,
+> publicada amb el vistiplau del Biel: «publica-ho, està tot okay»). Abans, el mateix dia, la `versio-18`.
+> Per tornar enrere de seguida: a Vercel, *Instant Rollback* al desplegament anterior; amb git, `main` =
+> `versio-18` (o `versio-00`).
 
 | Versió | Data | Què hi ha | Etiqueta · commit | Enllaç |
 |---|---|---|---|---|
@@ -35,3 +36,4 @@
 | **18** | 17-10-2026 | **Publicada.** La portada nova (13–16-10), el Completo amb les demos, el mòbil amb les opcions que va triar el Biel (capçal que marxa, Gratis i Completo que llisquen, «Hostly está pendiente» amb el 8 i l'1, preus amb commutador, passos de les funcionalitats amb mini pantalla), el check-in i la taxa com a pla Gratis (amb la taxa cobrada a l'hoste), «Empezar» amb els pisos al pas 1 i el bàner de galetes curt. Píxel de Meta a *Production*. | `versio-18` | https://hostlylabs.com |
 | **19** | 17-10-2026 | **Funcionalitats amb el seu vídeo i la web de reserves directes** (no publicada; branca `videos-funcionalitats`). A dalt de cada funcionalitat, el seu vídeo en lloc de la demo animada, que es queda on no hi ha vídeo (avui, tot el català); a /funcionalidades, cada targeta amb el seu vídeo, que s'obre en gran i amb so; funcionalitat nova «Web de reservas directas» (a part, a mida), al menú a «Reservas y precios». | `versio-19` · `a5f6348` | https://hostly-simplifica-la-gestion-de-tu-apartamento-turis-6wej5dyj5.vercel.app/es |
 | **20** | 17-10-2026 | **La B: la demo a dalt i el vídeo amb els passos** (no publicada; branca `videos-funcionalitats`). El Biel, en veure la 19: la demo a l'inici «s'entén molt més ràpid» i el vídeo, a «Cómo funciona», amb els passos com a capítols (el pas que surt s'obre i avança; tocar-ne un hi fa saltar el vídeo; al mòbil, les targetes el segueixen). /demo amb la demo nova, «Lo que hace Hostly por ti». L'índex amb els vídeos i la web de reserves, com a la 19. | `versio-20` · `d502260` | https://hostly-simplifica-la-gestion-de-tu-apartamento-turis-5o3x5x4nk.vercel.app/es |
+| **21** | 17-10-2026 | **Publicada.** La 20 i, amb el vistiplau del Biel, la pàgina de la IA ja diu que respon per WhatsApp, Airbnb i Booking («IA que responde a tus huéspedes»), i a finances, que la liquidació li arriba al propietari en PDF al correu, com diuen els vídeos. | `versio-21` | https://hostlylabs.com |

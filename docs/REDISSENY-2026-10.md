@@ -196,17 +196,15 @@ aprovada pel Biel el 17-10), amb els subtítols de la veu; el mateix script l'ex
 `public/assets/demo/lo-que-hace-hostly.*`. Abans hi havia el vídeo d'un minut d'abril («un día
 cualquiera con Hostly»), que el Biel deia que era «només per la idea»; és a l'historial (versio-18).
 
-**Vídeos que diuen més que la seva pàgina** (renderitzats el 17-10 a la tarda amb apunts del
-Biel; cal posar d'acord la pàgina i el producte abans de publicar):
-- *Finanzas*: el vídeo diu que la liquidació «le llega en PDF a su correo»; la pàgina (pregunta)
-  diu que Hostly no l'envia per correu.
-- *Tasa turística* (`burocracia`): el vídeo és «Burocracia al día» i parla també de l'informe del
-  NRUA i de l'enquesta de l'INE; la pàgina només parla de la taxa (i `revisio-web` prohibeix «NRUA»
-  a les pàgines de Hostly des de l'auditoria del 09-10).
-- *Check-in* (pla Gratis): el vídeo diu que el check-in «le ofrece extras, como entrar antes o
-  salir más tarde», que són del Completo.
-- *IA*: el vídeo es diu «IA que responde» i diu que respon per WhatsApp, Airbnb o Booking i que
-  ofereix i cobra els extres; la pàgina és «IA que responde en WhatsApp».
+**Vídeos que deien més que la seva pàgina** (renderitzats el 17-10 a la tarda amb apunts del
+Biel). Resolt el 17-10 a la nit («està tot okay; la IA és de WhatsApp i totes les plataformes»):
+- *IA*: la pàgina ara és «IA que responde a tus huéspedes» i diu que respon per WhatsApp, Airbnb o
+  Booking (el menú, «IA que responde»); l'adreça es queda `/funcionalidades/ia-whatsapp`.
+- *Finanzas*: la pregunta ara diu que la liquidació li arriba al propietari en PDF al correu, com
+  diu el vídeo.
+- *Tasa turística* (`burocracia`, vídeo «Burocracia al día», amb el NRUA i l'INE) i *Check-in* (el
+  vídeo diu que ofereix extres): bé com són. La pàgina de la taxa no parla del NRUA
+  (`revisio-web` encara el prohibeix a les pàgines de Hostly).
 
 ## Preguntes obertes per al Biel
 

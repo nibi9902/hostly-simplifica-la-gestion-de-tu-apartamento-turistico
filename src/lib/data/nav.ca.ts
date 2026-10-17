@@ -6,7 +6,7 @@ export const NAV_CA: NavConfig = {
       label: 'Funcionalitats',
       href: '/funcionalidades',
       dropdown: [
-        { label: 'IA a WhatsApp',          href: '/funcionalidades/ia-whatsapp',           description: 'Contesta els teus hostes al moment, 24/7.', icon: 'MessageCircle', grup: 'Hostes' },
+        { label: 'IA que respon',          href: '/funcionalidades/ia-whatsapp',           description: 'Contesta els teus hostes al moment, 24/7.', icon: 'MessageCircle', grup: 'Hostes' },
         { label: 'Check-in online',        href: '/funcionalidades/check-in-online',       description: 'Dades de l\'hoste i registre a la policia.', badge: 'Gratis', icon: 'ShieldCheck', grup: 'Hostes' },
         { label: 'Reserves i calendaris',  href: '/funcionalidades/channel-manager',       description: 'Airbnb i Booking en un sol calendari.', icon: 'Calendar', grup: 'Reserves i preus' },
         { label: 'Preus dinàmics',         href: '/funcionalidades/precios-dinamicos',     description: "S'ajusten a la demanda i es publiquen cada dia.", icon: 'TrendingUp', grup: 'Reserves i preus' },

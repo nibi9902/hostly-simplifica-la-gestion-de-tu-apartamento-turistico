@@ -89,13 +89,13 @@ export const FEATURES: Feature[] = [
   // ─────────────────────────────── IA WHATSAPP ───────────────────────────────
   {
     slug: 'ia-whatsapp',
-    name: 'IA que responde en WhatsApp',
+    name: 'IA que responde a tus huéspedes',
     iconName: 'MessageCircle',
     shortDescription:
-      'Contesta a tus huéspedes por WhatsApp, 24/7 y en su idioma, con la información de cada piso. Te avisa solo cuando hace falta una persona.',
+      'Contesta a tus huéspedes por WhatsApp, Airbnb o Booking, 24/7 y en su idioma, con la información de cada piso. Te avisa solo cuando hace falta una persona.',
     hero: {
-      h1: 'Un agente que responde por WhatsApp mientras tú no miras el móvil',
-      sub: 'Contesta dudas de check-in, normas, wifi o incidencias con la información de cada piso. La mayoría, al instante. El resto te lo pasa a ti.',
+      h1: 'Un agente que responde a tus huéspedes mientras tú no miras el móvil',
+      sub: 'Contesta por WhatsApp, Airbnb o Booking dudas de check-in, normas, wifi o incidencias, con la información de cada piso. La mayoría, al instante. El resto te lo pasa a ti.',
       primaryCta: 'Empezar',
       secondaryCta: 'Ver precios',
     },
@@ -107,7 +107,7 @@ export const FEATURES: Feature[] = [
       {
         step: 1,
         title: 'Conectas tus reservas, no tu WhatsApp',
-        body: 'Conectas Airbnb y Booking. Tus huéspedes escriben a un número de WhatsApp gestionado por Hostly, con la API oficial de Meta: no instalas ni configuras nada.',
+        body: 'Conectas Airbnb y Booking, y la IA contesta lo que te escriben por allí. Por WhatsApp, tus huéspedes escriben a un número gestionado por Hostly, con la API oficial de Meta: no instalas ni configuras nada.',
         pantalla: [
           { t: 'ok', text: 'Airbnb', val: 'Conectado' },
           { t: 'ok', text: 'Booking.com', val: 'Conectado' },
@@ -129,7 +129,7 @@ export const FEATURES: Feature[] = [
       {
         step: 3,
         title: 'La IA responde y te avisa cuando toca',
-        body: 'Contesta al momento, de día o de noche, en el idioma del huésped. Si algo necesita a una persona, te avisa con el piso y las primeras palabras del mensaje.',
+        body: 'Contesta al momento, de día o de noche, en el idioma del huésped, por WhatsApp, Airbnb o Booking. Si algo necesita a una persona, te avisa con el piso y las primeras palabras del mensaje.',
         pantalla: [
           { t: 'rebut', text: 'Where can we park the car?', et: 'Thomas · WhatsApp · 23:45' },
           { t: 'enviat', text: 'Space 14, level −1. The remote is in the entrance drawer.', et: 'Contesta la IA · en inglés' },
@@ -147,7 +147,7 @@ export const FEATURES: Feature[] = [
       },
     ],
     advantages: [
-      'Contesta 24/7 en el idioma del huésped, sea cual sea',
+      'Contesta 24/7 por WhatsApp, Airbnb o Booking, en el idioma del huésped, sea cual sea',
       'Responde con la ficha de cada piso y los datos de la reserva, no en genérico',
       'Te avisa cuando hace falta una persona, con el piso y las primeras palabras',
       'Aprende de tus correcciones, y cada lección se ve en el chat',
@@ -1127,7 +1127,7 @@ export const FEATURES: Feature[] = [
       {
         question: '¿Puedo hacer liquidaciones para los propietarios de los pisos que gestiono?',
         answer:
-          'Sí. Un asistente de cuatro pasos te ayuda a prepararlas, con tus honorarios y la limpieza. Cada propietario ve la suya en su app; Hostly no la envía por correo.',
+          'Sí. Un asistente de cuatro pasos te ayuda a prepararlas, con tus honorarios y la limpieza. Cada propietario la ve en su app y le llega en PDF a su correo.',
       },
       {
         question: '¿Qué puedo exportar para mi gestoría?',

@@ -39,7 +39,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 ## Funcionalidades
 
 - [Todas las funcionalidades](https://hostlylabs.com/es/funcionalidades): las 11 funcionalidades de Hostly, una a una.
-- [IA que responde en WhatsApp](https://hostlylabs.com/es/funcionalidades/ia-whatsapp): contesta a los huéspedes 24/7 en su idioma con la información de cada piso y avisa al gestor cuando hace falta una persona.
+- [IA que responde a tus huéspedes](https://hostlylabs.com/es/funcionalidades/ia-whatsapp): contesta a los huéspedes por WhatsApp, Airbnb o Booking, 24/7 y en su idioma, con la información de cada piso y avisa al gestor cuando hace falta una persona.
 - [Check-in online y registro a la policía](https://hostlylabs.com/es/funcionalidades/check-in-online): el huésped rellena sus datos desde el móvil y Hostly los envía cada día a la policía. Gratis para siempre.
 - [Reservas y calendarios](https://hostlylabs.com/es/funcionalidades/channel-manager): Airbnb y Booking.com en un solo calendario, más reservas directas con motor propio y pago por Stripe.
 - [Gestión de limpiezas](https://hostlylabs.com/es/funcionalidades/gestion-de-limpiezas): una limpieza por cada salida, turno por piso, fotos de salida, incidencias y lo que se debe a cada persona.

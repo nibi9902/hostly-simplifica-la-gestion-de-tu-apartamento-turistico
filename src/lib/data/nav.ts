@@ -35,7 +35,7 @@ export const NAV: NavConfig = {
       label: 'Funcionalidades',
       href: '/funcionalidades',
       dropdown: [
-        { label: 'IA en WhatsApp',         href: '/funcionalidades/ia-whatsapp',           description: 'Contesta a tus huéspedes al momento, 24/7.', icon: 'MessageCircle', grup: 'Huéspedes' },
+        { label: 'IA que responde',        href: '/funcionalidades/ia-whatsapp',           description: 'Contesta a tus huéspedes al momento, 24/7.', icon: 'MessageCircle', grup: 'Huéspedes' },
         { label: 'Check-in online',        href: '/funcionalidades/check-in-online',       description: 'Datos del huésped y registro a la policía.', badge: 'Gratis', icon: 'ShieldCheck', grup: 'Huéspedes' },
         { label: 'Reservas y calendarios', href: '/funcionalidades/channel-manager',       description: 'Airbnb y Booking en un solo calendario.', icon: 'Calendar', grup: 'Reservas y precios' },
         { label: 'Precios dinámicos',      href: '/funcionalidades/precios-dinamicos',     description: 'Se ajustan a la demanda y se publican cada día.', icon: 'TrendingUp', grup: 'Reservas y precios' },
