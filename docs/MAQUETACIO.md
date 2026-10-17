@@ -72,7 +72,11 @@
    `features.ts` i `PantallaPas.tsx`), i «En la práctica» i «Funciona mejor con» (9A). Una sola
    peça per a totes: la classe `.pt-llisca` (només fa res per sota de 641 px), `useLliscador` i
    `PuntsLliscador` (els punts de sota; a 9A no n'hi ha). Les rodones de «Y además» van sempre
-   en una sola fila: s'encongeixen, no salten de línia.
+   en una sola fila: s'encongeixen, no salten de línia. **Una tira només llisca de costat**: cap peça
+   hi entra d'una en una (amb l'entrada, pujaven 16 px mentre lliscaves i la tira es movia amunt i
+   avall) i porta `overflow-y: hidden` (`useEsTira` diu quan les graelles són tires).
+   Al Completo, **es mou la rajola que tens davant mentre el mòdul es veu**; el dit no la mou (a
+   l'ordinador, el ratolí a sobre, com sempre).
 9. **«Hostly está pendiente»**: en lloc de la U, dues targetes (el 8 i l'1) que canvien el que
    es veu a sota (opció 4C). La pantalla de l'app, a 320 px, no es llegia.
 10. **El dit**: tot el que es toca fa com a mínim 44 px d'alt (capçal, peu, molles de pa,
@@ -82,6 +86,9 @@
     max-md:text-xs`, no `text-xs md:text-[11px]` (`text-xs` també posa l'alçada de línia i a
     l'ordinador canviava l'alçada de la pàgina).
 12. La barra fixa de baix («Empieza gratis» i «Llámame») se'n va mentre escrius en un camp.
+13. Les tres xifres de sota el 0 € (mensajes, registros, limpiezas), en una sola fila.
+14. Un camp dins d'una píndola (el telèfon d'«Así se empieza» i el de «Llámame») no porta el
+    rectangle blau del focus: s'il·lumina la píndola sencera (també a l'ordinador).
 
 ## Excepcions volgudes
 

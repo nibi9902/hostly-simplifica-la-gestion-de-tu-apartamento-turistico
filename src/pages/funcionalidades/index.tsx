@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { iconaFuncio } from '@/lib/data/iconesFuncions';
 import { ArrowRight } from 'lucide-react';
 import { useFeatures } from '@/lib/data/useFeatures';
+import { FUNCIONS_GRATIS } from '@/lib/data/features';
 import { useTranslation } from 'react-i18next';
 import { LangLink } from '@/i18n/LangLink';
 import PageShell from '@/components/PageShell';
@@ -11,11 +12,8 @@ import Truca from "@/components/portada/Truca";
 import "@/components/portada/portada.css";
 const ease = [0.22, 1, 0.36, 1] as const;
 // El pla de cada funcionalitat (la resta, Hostly Completo)
-const PLA_DE_LA_FUNCIO: Record<string, string> = {
-  'check-in-online': 'index.card_plan_gratis',
-  burocracia: 'index.card_plan_gratis',
-  'conecta-todo': 'index.card_plan_aparte',
-};
+const plaDeLaFuncio = (slug: string) =>
+  FUNCIONS_GRATIS.has(slug) ? 'index.card_plan_gratis' : slug === 'conecta-todo' ? 'index.card_plan_aparte' : 'index.card_plan_completo';
 
 export default function FuncionalidadesIndex() {
   const features = useFeatures();
@@ -46,7 +44,7 @@ export default function FuncionalidadesIndex() {
             </div>
             <span className="text-[11px] max-md:text-xs font-bold uppercase tracking-[0.15em] text-primary">
               {/* A quin pla és: abans hi deia «Hostly ·» i res més */}
-              {t(PLA_DE_LA_FUNCIO[f.slug] ?? 'index.card_plan_completo')}
+              {t(plaDeLaFuncio(f.slug))}
             </span>
           </div>
           <div className={ampla ? 'flex flex-col gap-4 lg:flex-1 lg:gap-1' : 'contents'}>

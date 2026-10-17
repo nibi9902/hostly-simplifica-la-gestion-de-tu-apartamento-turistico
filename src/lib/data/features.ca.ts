@@ -122,7 +122,7 @@ export const FEATURES_CA: Feature[] = [
       'L\'hoste omple les seves dades des del mòbil i Hostly envia el registre a la policia. Gratis per sempre.',
     hero: {
       h1: 'El registre a la policia, sense copiar ni una dada a mà',
-      sub: 'L\'hoste omple les seves dades des del mòbil i Hostly les valida i les envia a la policia cada dia.',
+      sub: 'L\'hoste omple les seves dades des del mòbil i Hostly les valida i les envia a la policia cada dia. Si vols, també li cobra la taxa turística.',
       primaryCta: 'Començar',
       secondaryCta: 'Veure preus',
     },
@@ -162,6 +162,16 @@ export const FEATURES_CA: Feature[] = [
       },
       {
         step: 4,
+        title: 'L\'hoste paga la taxa turística',
+        body: 'Si actives el cobrament, l\'hoste paga la taxa amb targeta en fer el check-in, a través de Stripe. El cobrament porta una comissió del 5 %, que pots fer pagar a l\'hoste. Tu no has de perseguir ningú.',
+        pantalla: [
+          { t: 'cap', text: 'Taxa turística', val: '14,00 €' },
+          { t: 'nota', text: '2 persones · 4 nits' },
+          { t: 'boto', text: 'Pagar 14,00 €' },
+        ],
+      },
+      {
+        step: 5,
         title: 'Hostly ho envia a la policia',
         body: 'Cada dia puja el fitxer al portal de la policia i n\'arxiva el comprovant. Si alguna línia falla, t\'avisa i et diu quina.',
         pantalla: [
@@ -177,6 +187,7 @@ export const FEATURES_CA: Feature[] = [
       'El codi d\'accés, només quan el check-in està fet',
       'Enviament diari a la policia, amb el comprovant arxivat',
       'Avís si falta un check-in o si un registre falla',
+      'Si vols, l\'hoste paga la taxa turística amb targeta en fer el check-in',
     ],
     usage: [
       {
@@ -208,6 +219,11 @@ export const FEATURES_CA: Feature[] = [
         question: 'L\'hoste ha de pujar una foto del document?',
         answer:
           'No. Només escriu les seves dades: tipus i número de document, nom, data de naixement, nacionalitat i adreça. Hostly comprova que són vàlides abans d\'enviar-les.',
+      },
+      {
+        question: 'Puc cobrar la taxa turística a l\'hoste?',
+        answer:
+          'Sí. Si ho actives, l\'hoste la paga amb targeta en fer el check-in, a través de Stripe. El cobrament porta una comissió del 5 %; tu decideixes si la paga l\'hoste.',
       },
       {
         question: 'Quant costa?',

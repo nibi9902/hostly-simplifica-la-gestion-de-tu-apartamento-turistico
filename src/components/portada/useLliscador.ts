@@ -6,7 +6,24 @@
  * `useLliscador` diu quina peça tens davant (la més propera a la vora d'inici) i hi porta quan toques
  * un punt (`PuntsLliscador`). Les distàncies es mesuren a la pantalla, com feia el carrusel del Completo.
  */
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+/** La mateixa condició que el CSS de `.pt-llisca`: per sota de 641 px, les graelles són tires que llisquen. */
+const TIRA = "(max-width: 640px)";
+
+/** Si ara mateix les graelles són tires (mòbil). Serveix per treure el que a la tira fa nosa, com les
+ *  entrades d'una en una de cada peça (es disparaven en lliscar i la tira es movia amunt i avall). */
+export function useEsTira(): boolean {
+  const [es, setEs] = useState(() => typeof window !== "undefined" && window.matchMedia(TIRA).matches);
+  useEffect(() => {
+    const m = window.matchMedia(TIRA);
+    const canvia = () => setEs(m.matches);
+    canvia();
+    m.addEventListener("change", canvia);
+    return () => m.removeEventListener("change", canvia);
+  }, []);
+  return es;
+}
 
 export function useLliscador<T extends HTMLElement = HTMLDivElement>(peces = ":scope > *") {
   const ref = useRef<T>(null);

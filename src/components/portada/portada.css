@@ -670,6 +670,9 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-passos-camp button { height: 34px; padding: 0 14px; border: 0; border-radius: 9999px; background: var(--pt-fosc); color: #fff; font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; white-space: nowrap; }
 .pt-passos-camp button:disabled { opacity: .6; }
 .pt-passos-camp:focus-within { box-shadow: inset 0 0 0 2px var(--pt-blau); }
+/* el camp de dins no porta el rectangle blau del focus (el de `.pt-seccio :focus-visible`): ja s'il·lumina
+   la píndola sencera, i el rectangle a dins quedava lleig (el Biel, 17-10). El mateix al «Llámame». */
+.pt-seccio .pt-passos-camp input:focus-visible, .pt-seccio .pt-camp input:focus-visible { outline: none; }
 .pt-passos-error { flex-basis: 100%; font-size: 13px; color: hsl(350 89% 46%); }
 .pt-passos-fet { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--pt-verd-fosc); }
 /* al mòbil, 44 px de toc: l'enllaç creix sense moure la línia, i el telèfon i el botó es fan més alts */
@@ -767,6 +770,9 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 /* al mòbil, 44 px de toc sense moure el text */
 @media (max-width: 767px) { .pt-molles a { padding-block: 11px; margin-block: -11px; } }
 .pt-fp-h1 { margin-top: 14px; font-size: 52px; line-height: 1.06; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
+/* les funcionalitats del pla Gratis: al costat del nom, «Gratis, para siempre» (el Biel, 17-10) */
+.pt-fp-retols { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.pt-fp-gratis { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 9999px; background: hsl(142 76% 94%); color: hsl(142 72% 26%); font-size: 13px; font-weight: 600; white-space: nowrap; }
 .pt-fp-entrada .pt-lead { margin-top: 18px; max-width: 36em; }
 .pt-fp-botons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .pt-fp-botons .pt-pill { height: 48px; padding: 0 26px; font-size: 16px; }
@@ -808,7 +814,9 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-mini { display: flex; flex-direction: column; gap: 6px; margin-top: auto; padding: 12px; border-radius: 16px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); font-size: 13.5px; line-height: 1.35; color: var(--pt-text); }
   .pt-mini p { margin: 0; }
   .pt-mini .pt-ic { width: 15px; height: 15px; }
-  .pt-mini-cap { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 14px; }
+  .pt-mini-cap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 10px; font-size: 14px; }
+  /* el que va a la dreta no es parteix: si no hi cap, baixa sencer a la línia de sota */
+  .pt-mini-cap > :not(:first-child) { white-space: nowrap; }
   .pt-mini-cap span, .pt-mini-nota { color: var(--pt-gris); }
   .pt-mini-nota { font-size: 12.5px; }
   .pt-mini-barra { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 4px; }
@@ -1099,11 +1107,12 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-zf-vell { flex-direction: row; align-items: baseline; gap: 10px; }
   .pt-zf-cent { font-size: 36px; }
   .pt-zf-botons .pt-pill { flex: 1 1 100%; }
-  .pt-zx { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
-  .pt-zx li, .pt-zx li:first-child { padding: 0; }
+  /* les tres xifres, en una sola fila (el Biel, 17-10: en dues files no es llegien juntes) */
+  .pt-zx { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; width: 100%; }
+  .pt-zx li, .pt-zx li:first-child { padding: 0; gap: 6px; }
   .pt-zx li + li { box-shadow: none; }
-  .pt-zx b { font-size: 30px; }
-  .pt-zx span { white-space: normal; }
+  .pt-zx b { font-size: 24px; }
+  .pt-zx span { font-size: 13px; line-height: 1.3; white-space: normal; }
   .pt-camp { flex-wrap: wrap; }
   .pt-camp input { font-size: 18px; }
 }
@@ -1111,10 +1120,11 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 /* ── Al mòbil, les peces que llisquen amb el dit (17-10, opcions 2A, 3B, 8B i 9A del Biel) ──
    `useLliscador.ts` i `PuntsLliscador.tsx`. Cada peça fa el 86 % de l'amplada: es veu un tros de la
    següent, que diu «n'hi ha més». A l'ordinador i a la tauleta no canvia res: la classe només fa
-   alguna cosa per sota de 641 px. */
+   alguna cosa per sota de 641 px. La tira només llisca de costat (`overflow-y: hidden`): si una peça
+   sobresortia uns píxels, el dit la movia també amunt i avall (el Biel, 17-10). */
 .pt-llisca-punts { display: none; }
 @media (max-width: 640px) {
-  .pt-llisca { display: flex; gap: 12px; margin-inline: calc(-1 * var(--web-marge)); padding: 4px var(--web-marge); scroll-padding-inline: var(--web-marge); overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .pt-llisca { display: flex; gap: 12px; margin-inline: calc(-1 * var(--web-marge)); padding: 4px var(--web-marge); scroll-padding-inline: var(--web-marge); overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
   .pt-llisca::-webkit-scrollbar { display: none; }
   .pt-llisca > * { flex: 0 0 86%; min-width: 0; scroll-snap-align: start; }
   .pt-llisca-punts { display: flex; justify-content: center; margin-top: 6px; }

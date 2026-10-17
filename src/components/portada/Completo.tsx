@@ -5,7 +5,8 @@
  * (`docs/exploracions/2026-10-11-web-estil-b/completo-una-pantalla.font.html`). El que va decidir:
  * - Tot ha de cabre en una pantalla: cinc rajoles (Mensajes alta, Precios, Limpieza, Calendario, Extras
  *   y cuentas) i, a sota, una barra llarga amb les altres funcions en rodones petites a la dreta.
- * - Res es mou sol: cada mòdul es mou NOMÉS mentre hi tens el ratolí a sobre (al mòbil, tocant-lo).
+ * - Res es mou sol: cada mòdul es mou NOMÉS mentre hi tens el ratolí a sobre. Al mòbil, on les rajoles
+ *   llisquen, es mou la que tens davant mentre el mòdul es veu; tocar-la amb el dit no la mou (17-10).
  *   L'única cosa que travessa mòduls és el late checkout: a Mensajes, un missatge automàtic de Hostly
  *   l'ofereix, la Camille l'accepta i una bombolla vola fins a Extras y cuentas, on s'hi suma.
  * - Moviments suaus (corbes «sine», fosos), mai de cop.
@@ -38,7 +39,7 @@ import booking from "@/assets/connexions/booking.webp";
 import whatsapp from "@/assets/connexions/whatsapp.webp";
 import iconaApp from "@/assets/portada/icona-app.webp";
 import PuntsLliscador from "./PuntsLliscador";
-import { useLliscador } from "./useLliscador";
+import { useEsTira, useLliscador } from "./useLliscador";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,15 +66,23 @@ function Fletxa({ a, que, vidre = false }: { a: string; que: string; vidre?: boo
   );
 }
 
-/** Es mou només mentre hi ets a sobre: `sobre` diu si hi ets; `props` va a l'article. Al mòbil, tocar fa una volta. */
-function useSobre(quiet: boolean, enEntrar: () => void) {
+/**
+ * Es mou només mentre hi ets a sobre: `sobre` diu si hi ets; `props` va a l'article.
+ * A l'ordinador (`actiu` null), «a sobre» és el ratolí. Al mòbil, `actiu` diu si és la rajola que tens
+ * davant de la tira mentre el mòdul es veu: aquesta es mou sola i el dit no hi fa res (el Biel, 17-10).
+ */
+function useSobre(quiet: boolean, enEntrar: () => void, actiu: boolean | null) {
   const sobre = useRef(false);
   const entra = useRef(enEntrar);
   entra.current = enEntrar;
+  useEffect(() => {
+    if (actiu === null) return;
+    sobre.current = actiu;
+    if (actiu && !quiet) entra.current();
+  }, [actiu, quiet]);
   const props = {
-    onMouseEnter: () => { sobre.current = true; if (!quiet) entra.current(); },
-    onMouseLeave: () => { sobre.current = false; },
-    onTouchStart: () => { if (!quiet) entra.current(); },
+    onPointerEnter: (e: React.PointerEvent) => { if (e.pointerType !== "mouse" || actiu !== null) return; sobre.current = true; if (!quiet) entra.current(); },
+    onPointerLeave: (e: React.PointerEvent) => { if (e.pointerType !== "mouse" || actiu !== null) return; sobre.current = false; },
   };
   return { sobre, props };
 }
@@ -88,7 +97,7 @@ function useTemps() {
 }
 
 // ─────────────────────────── Mensajes ───────────────────────────
-function Missatges({ quiet, enOferir, enAcceptar }: { quiet: boolean; enOferir: () => void; enAcceptar: (des: HTMLElement) => void }) {
+function Missatges({ quiet, actiu, enOferir, enAcceptar }: { quiet: boolean; actiu: boolean | null; enOferir: () => void; enAcceptar: (des: HTMLElement) => void }) {
   const { t } = useTranslation("home");
   const converses = t("portada.completo.missatges.converses", { returnObjects: true }) as Conversa[];
   const up = t("portada.completo.missatges.upsell", { returnObjects: true }) as Upsell;
@@ -117,7 +126,7 @@ function Missatges({ quiet, enOferir, enAcceptar }: { quiet: boolean; enOferir: 
     gsap.killTweensOf(xat);
     gsap.to(xat, { opacity: 0, y: -4, duration: 0.3, ease: "sine.in", onComplete: () => { posa(); gsap.fromTo(xat, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.6, ease: "sine.out" }); } });
   };
-  const { sobre, props } = useSobre(quiet, () => juga(0));
+  const { sobre, props } = useSobre(quiet, () => juga(0), actiu);
 
   const c = idx === 0 ? null : converses[idx - 1];
   const qui = c ? c.qui : "Camille";
@@ -181,7 +190,7 @@ function Missatges({ quiet, enOferir, enAcceptar }: { quiet: boolean; enOferir: 
 }
 
 // ─────────────────────────── Precios ───────────────────────────
-function Preus({ quiet }: { quiet: boolean }) {
+function Preus({ quiet, actiu }: { quiet: boolean; actiu: boolean | null }) {
   const { t } = useTranslation("home");
   const demRef = useRef<HTMLSpanElement>(null);
   const demNRef = useRef<HTMLSpanElement>(null);
@@ -205,7 +214,7 @@ function Preus({ quiet }: { quiet: boolean }) {
       // 3 · i el preu puja
       .to(preu, { v: 251, duration: 1.9, ease: "sine.inOut", onUpdate: () => { if (preuRef.current) preuRef.current.textContent = milers(preu.v); } }, "+=.2");
   };
-  const { sobre, props } = useSobre(quiet, juga);
+  const { sobre, props } = useSobre(quiet, juga, actiu);
   useEffect(() => () => { tl.current?.kill(); }, []);
   const [demA, demB] = t("portada.completo.preus.demanda", { n: "§" }).split("§");
 
@@ -235,7 +244,7 @@ function Preus({ quiet }: { quiet: boolean }) {
 }
 
 // ─────────────────────────── Limpieza: el torn ───────────────────────────
-function Neteja({ quiet, nom }: { quiet: boolean; nom: string }) {
+function Neteja({ quiet, actiu, nom }: { quiet: boolean; actiu: boolean | null; nom: string }) {
   const { t } = useTranslation("home");
   // 0 Pilar, preguntant · 1 Pilar no pot · 2 Carmen, coordinada · 3 feta, amb fotos · 4 i el preu
   const [estat, setEstat] = useState(4);
@@ -254,7 +263,7 @@ function Neteja({ quiet, nom }: { quiet: boolean; nom: string }) {
     // amb el ratolí a sobre continua; si no, acaba fins al preu i s'atura
     if (sobre.current || i < 4) despres(i === 4 ? 4000 : i === 3 ? 2800 : 2300, segueix);
   };
-  const { sobre, props } = useSobre(quiet, () => { if (estatRef.current === 4) segueix(); });
+  const { sobre, props } = useSobre(quiet, () => { if (estatRef.current === 4) segueix(); }, actiu);
 
   useEffect(() => {
     if (!animat.current || quiet) return;
@@ -336,12 +345,12 @@ function Calendari({ nom }: { nom: string }) {
 }
 
 // ─────────────────────────── Extras y cuentas ───────────────────────────
-function Extres({ quiet, nom, aterrat, filaRef, totalRef, enEntrar }: {
-  quiet: boolean; nom: string; aterrat: boolean;
+function Extres({ quiet, actiu, nom, aterrat, filaRef, totalRef, enEntrar }: {
+  quiet: boolean; actiu: boolean | null; nom: string; aterrat: boolean;
   filaRef: React.RefObject<HTMLDivElement>; totalRef: React.RefObject<HTMLSpanElement>; enEntrar: () => void;
 }) {
   const { t } = useTranslation("home");
-  const { props } = useSobre(quiet, enEntrar);
+  const { props } = useSobre(quiet, enEntrar, actiu);
   return (
     <article className="pt-cmp-t pt-cmp-clar pt-cmp-extres" {...props}>
       <div className="pt-cmp-dalt">
@@ -432,6 +441,8 @@ export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
   const seccioRef = useRef<HTMLElement>(null);
   const llisca = useLliscador(":scope > .pt-cmp-t");
   const graellaRef = llisca.ref;
+  const tira = useEsTira();
+  const [enPantalla, setEnPantalla] = useState(false);
   const volRef = useRef<HTMLDivElement>(null);
   const filaRef = useRef<HTMLDivElement>(null);
   const totalRef = useRef<HTMLSpanElement>(null);
@@ -440,6 +451,17 @@ export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
   const noms = t("portada.completo.nom_pas", { returnObjects: true }) as string[];
 
   useEffect(() => { setQuiet(window.matchMedia("(prefers-reduced-motion: reduce)").matches); }, []);
+
+  // Al mòbil, la tira compta com a vista quan se'n veu la meitat
+  useEffect(() => {
+    const g = graellaRef.current;
+    if (!g || !tira) return;
+    const io = new IntersectionObserver(([e]) => setEnPantalla(e.isIntersecting), { threshold: 0.5 });
+    io.observe(g);
+    return () => io.disconnect();
+  }, [tira, graellaRef]);
+  // Al mòbil es mou la rajola que tens davant; a l'ordinador (null), la que té el ratolí a sobre
+  const actiu = (i: number) => (tira ? enPantalla && llisca.pas === i : null);
 
   // El late checkout a Extras y cuentas: se'n va (abans de l'oferta) i hi torna (quan l'accepten)
   const treu = useCallback(() => {
@@ -478,7 +500,8 @@ export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
     const s = seccioRef.current;
     if (!s) return;
     const mm = gsap.matchMedia();
-    mm.add("(prefers-reduced-motion: no-preference)", () => {
+    // al mòbil no: les rajoles de la tira entraven d'una en una mentre lliscaves
+    mm.add("(min-width: 641px) and (prefers-reduced-motion: no-preference)", () => {
       const peces = s.querySelectorAll(".pt-cmp-t, .pt-cmp-funcions");
       gsap.set(peces, { autoAlpha: 0, y: 14 });
       const entra = ScrollTrigger.create({
@@ -508,11 +531,11 @@ export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
 
         {/* A l'ordinador i a la tauleta, la graella; al mòbil, la mateixa tira de rajoles llisca amb el dit */}
         <div ref={graellaRef} className="pt-cmp-graella pt-llisca" onScroll={llisca.enLliscar}>
-          <Missatges quiet={quiet} enOferir={treu} enAcceptar={vola} />
-          <Preus quiet={quiet} />
-          <Neteja quiet={quiet} nom={noms[2]} />
+          <Missatges quiet={quiet} actiu={actiu(0)} enOferir={treu} enAcceptar={vola} />
+          <Preus quiet={quiet} actiu={actiu(1)} />
+          <Neteja quiet={quiet} actiu={actiu(2)} nom={noms[2]} />
           <Calendari nom={noms[3]} />
-          <Extres quiet={quiet} nom={noms[4]} aterrat={aterrat} filaRef={filaRef} totalRef={totalRef} enEntrar={extresEntra} />
+          <Extres quiet={quiet} actiu={actiu(4)} nom={noms[4]} aterrat={aterrat} filaRef={filaRef} totalRef={totalRef} enEntrar={extresEntra} />
           {/* la bombolla que vola de Mensajes a Extras */}
           <div ref={volRef} className="pt-cmp-vol" aria-hidden="true">
             <span className="pt-cmp-av" style={{ background: "#be123c" }}>C</span>{t("portada.completo.extres.vol")} <span className="pt-cmp-num">· 25 €</span>

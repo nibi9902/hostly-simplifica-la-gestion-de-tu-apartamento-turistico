@@ -24,7 +24,7 @@ function ambVariables(text: string) {
 function Fila({ f, n }: { f: FilaPantalla; n: number }) {
   switch (f.t) {
     case 'cap':
-      return <p className="pt-mini-cap"><b>{f.text}</b>{f.nota && <span>{f.nota}</span>}</p>;
+      return <p className="pt-mini-cap"><b>{f.text}</b>{f.nota && <span>{f.nota}</span>}{f.val && <b>{f.val}</b>}</p>;
     case 'barra':
       return <p className="pt-mini-barra">{Array.from({ length: f.de }, (_, i) => <span key={i} className={i < f.fets ? 'fet' : undefined} />)}</p>;
     case 'camp':

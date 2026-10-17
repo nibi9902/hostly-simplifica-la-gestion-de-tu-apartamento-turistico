@@ -10,7 +10,7 @@
  * Al text d'un missatge, `[[nom]]` és una variable de la plantilla (surt com un xip).
  */
 export type FilaPantalla =
-  | { t: 'cap'; text: string; nota?: string }
+  | { t: 'cap'; text: string; nota?: string; val?: string }
   | { t: 'barra'; fets: number; de: number }
   | { t: 'camp'; et: string; val: string }
   | { t: 'ok'; text: string; val?: string }
@@ -71,6 +71,13 @@ export type Feature = {
   relatedFeatures: string[];
   faqs: FeatureFAQ[];
 };
+
+/**
+ * Les funcionalitats del pla Gratis (per sempre, sense targeta). A la seva pàgina el botó diu «Empieza
+ * gratis, sin tarjeta», no hi ha «Ver precios» i, al costat del nom, «Gratis, para siempre» (el Biel,
+ * 17-10). També en treu l'etiqueta de cada targeta de /funcionalidades.
+ */
+export const FUNCIONS_GRATIS = new Set(['check-in-online', 'burocracia']);
 
 export const FEATURES: Feature[] = [
   // ─────────────────────────────── IA WHATSAPP ───────────────────────────────
@@ -189,7 +196,7 @@ export const FEATURES: Feature[] = [
       'El huésped rellena sus datos desde el móvil y Hostly envía el registro a la policía. Gratis para siempre.',
     hero: {
       h1: 'El registro a la policía, sin copiar ni un dato a mano',
-      sub: 'El huésped rellena sus datos desde el móvil y Hostly los valida y los envía a la policía cada día.',
+      sub: 'El huésped rellena sus datos desde el móvil y Hostly los valida y los envía a la policía cada día. Si quieres, también le cobra la tasa turística.',
       primaryCta: 'Empezar',
       secondaryCta: 'Ver precios',
     },
@@ -229,6 +236,16 @@ export const FEATURES: Feature[] = [
       },
       {
         step: 4,
+        title: 'El huésped paga la tasa turística',
+        body: 'Si activas el cobro, el huésped paga la tasa con tarjeta al hacer el check-in, a través de Stripe. El cobro lleva una comisión del 5 %, que puedes hacer pagar al huésped. Tú no persigues a nadie.',
+        pantalla: [
+          { t: 'cap', text: 'Tasa turística', val: '14,00 €' },
+          { t: 'nota', text: '2 personas · 4 noches' },
+          { t: 'boto', text: 'Pagar 14,00 €' },
+        ],
+      },
+      {
+        step: 5,
         title: 'Hostly lo envía a la policía',
         body: 'Cada día sube el fichero al portal de la policía y archiva el comprobante. Si alguna línea falla, te avisa y te dice cuál.',
         pantalla: [
@@ -244,6 +261,7 @@ export const FEATURES: Feature[] = [
       'El código de acceso, solo cuando el check-in está hecho',
       'Envío diario a la policía, con el comprobante archivado',
       'Aviso si falta un check-in o si un registro falla',
+      'Si quieres, el huésped paga la tasa turística con tarjeta al hacer el check-in',
     ],
     usage: [
       {
@@ -275,6 +293,11 @@ export const FEATURES: Feature[] = [
         question: '¿El huésped tiene que subir una foto del documento?',
         answer:
           'No. Solo escribe sus datos: tipo y número de documento, nombre, fecha de nacimiento, nacionalidad y dirección. Hostly comprueba que son válidos antes de enviarlos.',
+      },
+      {
+        question: '¿Puedo cobrar la tasa turística al huésped?',
+        answer:
+          'Sí. Si lo activas, el huésped la paga con tarjeta al hacer el check-in, a través de Stripe. El cobro lleva una comisión del 5 %; tú decides si la paga el huésped.',
       },
       {
         question: '¿Cuánto cuesta?',

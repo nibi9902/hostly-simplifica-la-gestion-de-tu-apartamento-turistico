@@ -37,7 +37,8 @@ const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
     // 2. Validació
     await p.click('button[type=submit]');
     await p.waitForTimeout(300);
-    const errTel = await p.locator('#emp-tel-ajuda.text-rose-600').count();
+    // des del 16-10 sota el camp només hi surt l'error (ded50b7), amb l'identificador emp-tel-error
+    const errTel = await p.locator('#emp-tel-error.text-rose-600').count();
     ok(`${nom} · sense dades surt l'error del telèfon`, errTel === 1);
     await p.screenshot({ path: `${OUT}/${nom}-empezar-1-errors.png` });
     // 3. Dades bones

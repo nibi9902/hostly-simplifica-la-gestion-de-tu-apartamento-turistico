@@ -13,14 +13,14 @@ import type { CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import { iconaFuncio } from '@/lib/data/iconesFuncions';
 import { ArrowRight, Check } from 'lucide-react';
-import type { Feature } from '@/lib/data/features';
+import { FUNCIONS_GRATIS, type Feature } from '@/lib/data/features';
 import { useFeatures } from '@/lib/data/useFeatures';
 import { useTranslation } from 'react-i18next';
 import PageShell from '@/components/PageShell';
 import MiniDemo from './MiniDemo';
 import PantallaPas from './PantallaPas';
 import PuntsLliscador from '@/components/portada/PuntsLliscador';
-import { useLliscador } from '@/components/portada/useLliscador';
+import { useEsTira, useLliscador } from '@/components/portada/useLliscador';
 import { faqPageSchema, breadcrumbSchema, howToSchema } from '@/lib/seo/schemas';
 import { LangLink } from '@/i18n/LangLink';
 import { useEmpezar } from "@/lib/empezar";
@@ -46,6 +46,10 @@ export default function FeaturePage({ feature }: Props) {
   const { t: tEmbut } = useTranslation('embut');
   const allFeatures = useFeatures();
   const passos = useLliscador<HTMLOListElement>();
+  const gratis = FUNCIONS_GRATIS.has(feature.slug);
+  // Al mòbil les peces són tires que llisquen: sense l'entrada d'una en una (pujaven en lliscar)
+  const tira = useEsTira();
+  const entraPeca = (i: number) => (tira ? {} : { ...entra, transition: { ...entra.transition, delay: i * 0.06 } });
   const related = feature.relatedFeatures
     .map((s) => allFeatures.find((f) => f.slug === s))
     .filter((f): f is Feature => Boolean(f));
@@ -82,12 +86,20 @@ export default function FeaturePage({ feature }: Props) {
               <span aria-hidden="true">/</span>
               <span>{feature.name}</span>
             </nav>
-            <p className="pt-retol">{feature.name}</p>
+            {gratis ? (
+              <div className="pt-fp-retols">
+                <p className="pt-retol">{feature.name}</p>
+                <span className="pt-fp-gratis">{t('index.card_plan_gratis')}</span>
+              </div>
+            ) : (
+              <p className="pt-retol">{feature.name}</p>
+            )}
             <h1 className="pt-fp-h1">{feature.hero.h1}</h1>
             <p className="pt-lead">{feature.hero.sub}</p>
             <div className="pt-fp-botons">
-              <button type="button" onClick={empezar} className="pt-pill pt-pill-pri">{tEmbut('cta')}</button>
-              <LangLink to="/precios" className="pt-pill pt-pill-sec">{t('page.ver_precios')}</LangLink>
+              {/* al pla Gratis, el botó diu que és gratis i no cal mirar preus (el Biel, 17-10) */}
+              <button type="button" onClick={empezar} className="pt-pill pt-pill-pri">{gratis ? t('page.cta_gratis') : tEmbut('cta')}</button>
+              {!gratis && <LangLink to="/precios" className="pt-pill pt-pill-sec">{t('page.ver_precios')}</LangLink>}
             </div>
           </motion.div>
           {/* La demo és una il·lustració: el text de la pàgina ja ho explica */}
@@ -117,7 +129,7 @@ export default function FeaturePage({ feature }: Props) {
           </motion.div>
           <ol ref={passos.ref} className="pt-fp-passos pt-llisca" onScroll={passos.enLliscar} style={{ '--n': feature.howItWorks.length } as CSSProperties}>
             {feature.howItWorks.map((step, i) => (
-              <motion.li key={step.step} {...entra} transition={{ ...entra.transition, delay: i * 0.06 }} className="pt-pas">
+              <motion.li key={step.step} {...entraPeca(i)} className="pt-pas">
                 <small aria-hidden="true">{String(step.step).padStart(2, '0')}</small>
                 <p className="pt-fp-paso" aria-hidden="true">{t('page.step_of', { n: step.step, total: feature.howItWorks.length })}</p>
                 <h3>{step.title}</h3>
@@ -154,7 +166,7 @@ export default function FeaturePage({ feature }: Props) {
           </motion.div>
           <div className="pt-fp-peces pt-llisca">
             {feature.usage.map((u, i) => (
-              <motion.div key={u.title} {...entra} transition={{ ...entra.transition, delay: i * 0.06 }} className="pt-fp-peca">
+              <motion.div key={u.title} {...entraPeca(i)} className="pt-fp-peca">
                 <h3>{u.title}</h3>
                 <p>{u.body}</p>
               </motion.div>
