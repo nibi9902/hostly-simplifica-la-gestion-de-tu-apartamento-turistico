@@ -6,12 +6,12 @@
  * 823 kB. Ara només hi van les que es fan servir; un nom desconegut cau a Sparkles.
  */
 import {
-  BarChart3, Calculator, Calendar, ClipboardCheck, FileText, Landmark, MessageCircle,
+  BarChart3, Calculator, Calendar, ClipboardCheck, FileText, Globe, Landmark, MessageCircle,
   Plug, Receipt, Send, ShieldCheck, Sparkles, TrendingUp, Users, type LucideIcon,
 } from "lucide-react";
 
 const ICONES: Record<string, LucideIcon> = {
-  BarChart3, Calculator, Calendar, ClipboardCheck, FileText, Landmark, MessageCircle,
+  BarChart3, Calculator, Calendar, ClipboardCheck, FileText, Globe, Landmark, MessageCircle,
   Plug, Receipt, Send, ShieldCheck, Sparkles, TrendingUp, Users,
 };
 

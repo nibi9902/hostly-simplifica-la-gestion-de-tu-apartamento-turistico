@@ -3,11 +3,14 @@
     "eyebrow": "Funcionalitats",
     "title_1": "Tot el que fa Hostly,",
     "title_2": "funcionalitat per funcionalitat.",
-    "subtitle_count": "{{count}} funcionalitats en una sola app. El que veus és el que tens des del primer dia; les automatitzacions a mida, a part.",
+    "subtitle_count": "{{count}} funcionalitats en una sola app. El que veus és el que tens des del primer dia; el teu web i les automatitzacions a mida, a part.",
     "card_plan_gratis": "Gratis, per sempre",
     "card_plan_completo": "Hostly Complet",
     "card_plan_aparte": "A part, a mida",
-    "card_cta": "Veure funcionalitat"
+    "card_cta": "Veure funcionalitat",
+    "video_veure": "Veure el vídeo: {{nom}} ({{durada}})",
+    "video_tancar": "Tancar el vídeo",
+    "video_ver_funcionalidad": "Veure la funcionalitat"
   },
   "page": {
     "breadcrumb_home": "Hostly",
@@ -26,6 +29,12 @@
     "faqs_eyebrow": "Preguntes freqüents",
     "faqs_title": "El que potser t'estàs preguntant.",
     "ver_precios": "Veure preus",
-    "cta_gratis": "Comença gratis, sense targeta"
+    "cta_gratis": "Comença gratis, sense targeta",
+    "video_aria": "Vídeo: {{nom}}",
+    "video_subtitols": "Subtítols",
+    "video_escuchalo": "Escolta'l",
+    "video_ver": "Veure el vídeo",
+    "video_pausa": "Pausar el vídeo",
+    "video_play": "Reproduir el vídeo"
   }
 }

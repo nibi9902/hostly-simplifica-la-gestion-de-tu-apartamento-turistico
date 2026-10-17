@@ -749,6 +749,109 @@ export const FEATURES_CA: Feature[] = [
     ],
   },
 
+  // ─────────────────────────────── WEB DE RESERVES DIRECTES ───────────────────────────────
+  {
+    slug: 'web-de-reservas-directas',
+    name: 'Web de reserves directes',
+    iconName: 'Globe',
+    shortDescription:
+      'El teu propi web, amb reserves i pagament en línia, sense comissions. Els dies es tanquen sols a Airbnb i Booking.',
+    hero: {
+      h1: 'El teu propi web de reserves, sense comissions',
+      sub: "L'hoste reserva i paga al teu web. Els dies es tanquen sols a Airbnb i Booking, i la reserva entra a Hostly com totes.",
+      primaryCta: 'Començar',
+      secondaryCta: 'Veure preus',
+    },
+    problem: {
+      title: "L'hoste que repeteix torna a reservar per Airbnb",
+      body: "Et coneix, li va agradar el pis i vol tornar. Però reserva un altre cop per la plataforma i pagues la comissió de nou. I si et reserva per WhatsApp, l'has d'apuntar a mà, tancar els dies a cada plataforma i perseguir el pagament.",
+    },
+    howItWorks: [
+      {
+        step: 1,
+        title: 'Muntem el teu web amb tu',
+        body: 'Amb les teves fotos, els teus textos i els teus colors. Els preus i els dies lliures surten de Hostly, així que sempre estan al dia.',
+        pantalla: [
+          { t: 'cap', text: 'elteuweb.cat', nota: 'Cala Moreta' },
+          { t: 'ok', text: 'Fotos i textos' },
+          { t: 'ok', text: 'Preus de Hostly' },
+          { t: 'ok', text: 'Dies lliures de Hostly' },
+        ],
+      },
+      {
+        step: 2,
+        title: "L'hoste reserva i paga",
+        body: 'Tria les dates, veu el preu i paga amb targeta, Apple Pay o Google Pay. Tot en reservar o només una paga i senyal: ho decideixes tu.',
+        pantalla: [
+          { t: 'cap', text: '12 – 15 nov.', nota: '3 nits' },
+          { t: 'xifra', et: '95 € × 3 nits', val: '285 €' },
+          { t: 'xifra', et: 'Total', val: '285 €', total: true },
+          { t: 'boto', text: 'Reserva i paga' },
+        ],
+      },
+      {
+        step: 3,
+        title: 'Els dies es tanquen sols',
+        body: "La reserva entra al teu calendari i es tanca a Airbnb i Booking al moment. No n'hi pot entrar cap altra a sobre.",
+        pantalla: [
+          { t: 'reserva', qui: 'Laura Vidal · Web', canal: 'directa', val: '12–15 nov.' },
+          { t: 'ok', text: 'Tancat a Airbnb' },
+          { t: 'ok', text: 'Tancat a Booking' },
+        ],
+      },
+      {
+        step: 4,
+        title: 'I continua com totes',
+        body: "Li arriba la benvinguda amb l'enllaç del check-in, i la neteja es crea sola.",
+        pantalla: [
+          { t: 'auto', text: 'Hola Laura, fes el check-in aquí:', et: 'Automàtic · Hostly', enllac: 'hostlylabs.com/i/k2v8r' },
+          { t: 'ok', text: 'Neteja creada', val: '15 nov.' },
+        ],
+      },
+    ],
+    advantages: [
+      "Sense la comissió d'Airbnb ni de Booking",
+      'El pagament va directe al teu compte, amb Stripe',
+      'Preus i dies lliures, sempre els de Hostly',
+      'Tot en reservar o una paga i senyal, com prefereixis',
+      'Un descompte per reservar directament, si vols',
+      "Si no vols cobrar en línia, t'arriba com a sol·licitud",
+    ],
+    usage: [
+      {
+        title: 'Un hoste que repeteix cada estiu',
+        body: "Li passes l'enllaç del teu web. Tria les dates, paga i li arriba el check-in com en qualsevol altra reserva.",
+      },
+      {
+        title: 'Agost, gairebé ple',
+        body: 'El teu web només deixa reservar els dies lliures. I el que entra pel teu web es tanca a Airbnb i Booking al moment.',
+      },
+      {
+        title: 'Una família que et truca',
+        body: "En lloc d'apuntar-la a mà, li envies l'enllaç. Reserva i paga, i tu no has de perseguir el pagament.",
+      },
+    ],
+    relatedFeatures: ['channel-manager', 'mensajeria-programada', 'check-in-online'],
+    faqs: [
+      {
+        question: 'Necessito tenir web?',
+        answer: 'No. El muntem amb tu, amb les teves fotos i els teus textos. Si ja en tens un, el connectem amb Hostly.',
+      },
+      {
+        question: 'Quant costa?',
+        answer: 'És un servei a part, a mida. Et diem el preu abans de començar.',
+      },
+      {
+        question: "A qui paga l'hoste?",
+        answer: 'A tu. El pagament va al teu compte a través de Stripe.',
+      },
+      {
+        question: 'Poden entrar dues reserves el mateix dia?',
+        answer: 'No. El teu web només deixa reservar els dies lliures, i quan entra una reserva, es tanquen a Airbnb i Booking.',
+      },
+    ],
+  },
+
   // ─────────────────────────────── CONECTA-HO TOT ───────────────────────────────
   {
     slug: 'conecta-todo',

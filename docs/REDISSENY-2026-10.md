@@ -160,6 +160,42 @@ Falta per **publicar-la** (mentrestant, marcadors):
 - **Dues vegades el 0 €:** l'entrada acaba amb «0 € en Hostly. Para siempre.» i, una mica més
   avall, «Gratis para siempre». Cal decidir si es deixen totes dues.
 
+## Els vídeos de les funcionalitats i la web de reserves (17-10-2026)
+
+El Biel va triar al llenç de quatre idees (https://claude.ai/artifact/KZKCRpbPnjm8VjFLudxLtU):
+
+- **A, el vídeo a dalt de cada funcionalitat**, en lloc de la demo animada (`VideoFuncio.tsx`). Va
+  sol, sense so i en bucle quan es veu i quan la pàgina ja ha carregat; no va sol si la persona ha
+  demanat menys moviment o estalvi de dades. «Escúchalo» el torna a començar amb veu i amb els
+  controls del navegador (subtítols inclosos); el botó rodó l'atura. Les demos **no es perden**
+  («guarda-ho», el Biel): `MiniDemo` les ensenya on no hi ha vídeo en aquell idioma, avui tot el
+  català.
+- **C, a /funcionalidades, cada targeta amb el seu vídeo** (`MiniaturaVideo.tsx` i
+  `VideoObert.tsx`): es mou amb el ratolí a sobre i, en tocar-lo, s'obre en gran i amb so, amb
+  «Empezar» i l'enllaç a la funcionalitat. La resta de la targeta porta a la pàgina, com abans.
+- **La web de reserves directes**, funcionalitat nova (`web-de-reservas-directas`): «Aparte, a
+  medida» com a la resta de la web, a sota de l'índex al costat de «Conéctalo todo»
+  (`FUNCIONS_APART`), i al menú, a «Reservas y precios». La bombolla «Tu web propia» de la portada
+  ara hi porta.
+
+**D'on surten els vídeos.** Del kit de vídeos de la demo animada (un `*-landing.mp4` per
+funcionalitat, amb veu i els mateixos passos que la pàgina). S'exporten a `public/assets/funcions/`
+(720p, ~1 MB cadascun): el vídeo, la portada (el títol), la miniatura de l'índex i els subtítols
+(`.es.vtt`, de la línia de temps de la veu), amb `scripts/exporta-videos-funcions.py`. Si el kit en
+torna a renderitzar algun, es torna a passar i la durada nova va a `src/lib/data/videosFuncions.ts`.
+
+**Vídeos que diuen més que la seva pàgina** (renderitzats el 17-10 a la tarda amb apunts del
+Biel; cal posar d'acord la pàgina i el producte abans de publicar):
+- *Finanzas*: el vídeo diu que la liquidació «le llega en PDF a su correo»; la pàgina (pregunta)
+  diu que Hostly no l'envia per correu.
+- *Tasa turística* (`burocracia`): el vídeo és «Burocracia al día» i parla també de l'informe del
+  NRUA i de l'enquesta de l'INE; la pàgina només parla de la taxa (i `revisio-web` prohibeix «NRUA»
+  a les pàgines de Hostly des de l'auditoria del 09-10).
+- *Check-in* (pla Gratis): el vídeo diu que el check-in «le ofrece extras, como entrar antes o
+  salir más tarde», que són del Completo.
+- *IA*: el vídeo es diu «IA que responde» i diu que respon per WhatsApp, Airbnb o Booking i que
+  ofereix i cobra els extres; la pàgina és «IA que responde en WhatsApp».
+
 ## Preguntes obertes per al Biel
 
 1. **Segon cognom i adreça fiscal** per a l'avís legal (LSSI art. 10): `src/lib/titular.ts`.

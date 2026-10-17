@@ -8,16 +8,21 @@
  * Al mòbil (17-10, opcions 8B i 9A del Biel): els passos són targetes que llisquen, cadascuna amb la
  * seva mini pantalla (`PantallaPas`), i «En la práctica» i les relacionades també llisquen. A
  * l'ordinador no canvia res.
+ * A dalt, el vídeo de la funcionalitat (idea A del llenç del 17-10, `VideoFuncio`). La demo animada
+ * (`MiniDemo`) es queda per a les que no en tenen en aquest idioma: ara, totes en català.
  */
 import type { CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import { iconaFuncio } from '@/lib/data/iconesFuncions';
 import { ArrowRight, Check } from 'lucide-react';
-import { FUNCIONS_GRATIS, type Feature } from '@/lib/data/features';
+import { FUNCIONS_APART, FUNCIONS_GRATIS, type Feature } from '@/lib/data/features';
 import { useFeatures } from '@/lib/data/useFeatures';
+import { videoDeLaFuncio } from '@/lib/data/videosFuncions';
+import { useLang } from '@/i18n/useLang';
 import { useTranslation } from 'react-i18next';
 import PageShell from '@/components/PageShell';
 import MiniDemo from './MiniDemo';
+import VideoFuncio from './VideoFuncio';
 import PantallaPas from './PantallaPas';
 import PuntsLliscador from '@/components/portada/PuntsLliscador';
 import { useEsTira, useLliscador } from '@/components/portada/useLliscador';
@@ -46,7 +51,10 @@ export default function FeaturePage({ feature }: Props) {
   const { t: tEmbut } = useTranslation('embut');
   const allFeatures = useFeatures();
   const passos = useLliscador<HTMLOListElement>();
+  const { lang } = useLang();
+  const video = videoDeLaFuncio(feature.slug, lang);
   const gratis = FUNCIONS_GRATIS.has(feature.slug);
+  const aparte = FUNCIONS_APART.has(feature.slug);
   // Al mòbil les peces són tires que llisquen: sense l'entrada d'una en una (pujaven en lliscar)
   const tira = useEsTira();
   const entraPeca = (i: number) => (tira ? {} : { ...entra, transition: { ...entra.transition, delay: i * 0.06 } });
@@ -86,10 +94,12 @@ export default function FeaturePage({ feature }: Props) {
               <span aria-hidden="true">/</span>
               <span>{feature.name}</span>
             </nav>
-            {gratis ? (
+            {gratis || aparte ? (
               <div className="pt-fp-retols">
                 <p className="pt-retol">{feature.name}</p>
-                <span className="pt-fp-gratis">{t('index.card_plan_gratis')}</span>
+                {gratis
+                  ? <span className="pt-fp-gratis">{t('index.card_plan_gratis')}</span>
+                  : <span className="pt-fp-aparte">{t('index.card_plan_aparte')}</span>}
               </div>
             ) : (
               <p className="pt-retol">{feature.name}</p>
@@ -102,10 +112,17 @@ export default function FeaturePage({ feature }: Props) {
               {!gratis && <LangLink to="/precios" className="pt-pill pt-pill-sec">{t('page.ver_precios')}</LangLink>}
             </div>
           </motion.div>
-          {/* La demo és una il·lustració: el text de la pàgina ja ho explica */}
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease }} className="pt-fp-demo" aria-hidden="true">
-            <MiniDemo slug={feature.slug} iconName={feature.iconName} />
-          </motion.div>
+          {video ? (
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease }} className="pt-fp-demo">
+              {/* key: d'una funcionalitat a una altra, el vídeo torna a començar de zero */}
+              <VideoFuncio key={feature.slug} video={video} nom={feature.name} />
+            </motion.div>
+          ) : (
+            /* La demo és una il·lustració: el text de la pàgina ja ho explica */
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease }} className="pt-fp-demo" aria-hidden="true">
+              <MiniDemo slug={feature.slug} iconName={feature.iconName} />
+            </motion.div>
+          )}
         </div>
       </section>
 

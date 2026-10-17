@@ -20,6 +20,7 @@ const REACT_DEMOS: Record<string, React.LazyExoticComponent<React.FC>> = {
   'multi-rol': lazy(() => import('./demos/MultiRolsDemo')),
   'finanzas':  lazy(() => import('./demos/FinanzasDemo')),
   'conecta-todo': lazy(() => import('./demos/ConectaTodoDemo')),
+  'web-de-reservas-directas': lazy(() => import('./demos/WebReservesDemo')),
 };
 
 interface Props {

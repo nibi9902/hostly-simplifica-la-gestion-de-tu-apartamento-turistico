@@ -222,5 +222,25 @@
     "erp": "Tu ERP",
     "excel": "Excel o CSV",
     "drive": "Tus carpetas"
+  },
+  "webReserves": {
+    "url": "tuweb.es/cala-moreta",
+    "nom": "Apartamento Cala Moreta",
+    "dades": "2 habitaciones · 4 huéspedes · terraza",
+    "desc": "A cinco minutos de la playa, con aire acondicionado, wifi y parking.",
+    "perNit": "/ noche",
+    "arribada": "Llegada",
+    "sortida": "Salida",
+    "dataArribada": "12 nov",
+    "dataSortida": "15 nov",
+    "linia": "95 € × 3 noches",
+    "total": "Total",
+    "boto": "Reservar y pagar",
+    "pagament": "Tarjeta, Apple Pay o Google Pay",
+    "avisTitol": "Nueva reserva · Web",
+    "avisText": "Laura Vidal · 12–15 nov · 285 €",
+    "ara": "ahora",
+    "tancatAirbnb": "Cerrado en Airbnb",
+    "tancatBooking": "Cerrado en Booking"
   }
 }

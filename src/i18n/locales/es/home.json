@@ -421,7 +421,7 @@
             "nom": "Tu web propia",
             "pla": "Aparte",
             "text": "Te hacemos tu propia web con reservas directas, sin comisiones, y entran en el mismo calendario. A medida, como servicio aparte.",
-            "a": "/funcionalidades/channel-manager"
+            "a": "/funcionalidades/web-de-reservas-directas"
           },
           {
             "id": "connecta",

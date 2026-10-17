@@ -15,7 +15,7 @@ const BASE = process.argv[4] || process.env.REVISIO_BASE || 'http://127.0.0.1:80
 
 const BLOG = ['5-horas-semana-recuperar-apartamento-turistico', 'automatizar-alquiler-vacacional-con-ia', 'channel-manager-alquiler-vacacional-guia', 'checkin-digital-comparativa-espana', 'coordinacion-limpiezas-excel-sistema', 'cuanto-cuesta-gestionar-piso-turistico', 'gestor-pequeno-5-apps-una-app', 'hostify-vs-lodgify-vs-smoobu-comparativa', 'huesped-no-responde-checkin-online', 'pasar-3-a-10-apartamentos-sin-colapsar', 'pms-apartamentos-turisticos-mejores-2026', 'precios-dinamicos-airbnb-booking', 'registro-viajeros-mossos-esquadra-cataluna', 'responder-mensajes-airbnb-automaticamente', 'sanciones-por-no-cumplir-registro-viajeros', 'ses-hospedajes-guia-completa-2026', 'ses-hospedajes-un-solo-apartamento', 'ses-nrua-taxa-turistica-guia', 'stack-completo-propietario-airbnb', 'whatsapp-business-alquiler-vacacional'];
 const ALTERNATIVES = ['icnea', 'hostify', 'lodgify', 'smoobu', 'hospitable', 'guesty', 'avantio'];
-const FUNCIONS = ['ia-whatsapp', 'check-in-online', 'channel-manager', 'gestion-de-limpiezas', 'precios-dinamicos', 'mensajeria-programada', 'multi-rol', 'conecta-todo', 'finanzas', 'burocracia'];
+const FUNCIONS = ['ia-whatsapp', 'check-in-online', 'channel-manager', 'gestion-de-limpiezas', 'precios-dinamicos', 'mensajeria-programada', 'multi-rol', 'web-de-reservas-directas', 'conecta-todo', 'finanzas', 'burocracia'];
 const RUTES = [
   '', '/empezar', '/calcula', '/precios', '/demo', '/guia', '/comparativa/chekin',
   '/propietarios', '/gestores-pequenos', '/segunda-residencia', '/hereus',

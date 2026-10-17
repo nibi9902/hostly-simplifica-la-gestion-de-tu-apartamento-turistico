@@ -89,6 +89,11 @@
 13. Les tres xifres de sota el 0 € (mensajes, registros, limpiezas), en una sola fila.
 14. Un camp dins d'una píndola (el telèfon d'«Así se empieza» i el de «Llámame») no porta el
     rectangle blau del focus: s'il·lumina la píndola sencera (també a l'ordinador).
+15. **Els vídeos de les funcionalitats** (17-10): al mòbil, el de dalt va sota els botons, a tota
+    l'amplada (16:9), i fa menys alçada que la demo d'abans. Els botons de sobre el vídeo
+    («Escúchalo» i la pausa) fan 44 px. Cap vídeo va sol si la persona ha demanat menys moviment o
+    estalvi de dades, ni abans que la pàgina hagi acabat de carregar; el que va sol sempre es pot
+    aturar. A l'índex, al mòbil no hi ha «a sobre»: la miniatura es toca i el vídeo s'obre.
 
 ## Excepcions volgudes
 

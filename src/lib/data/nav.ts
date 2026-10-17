@@ -39,6 +39,7 @@ export const NAV: NavConfig = {
         { label: 'Check-in online',        href: '/funcionalidades/check-in-online',       description: 'Datos del huésped y registro a la policía.', badge: 'Gratis', icon: 'ShieldCheck', grup: 'Huéspedes' },
         { label: 'Reservas y calendarios', href: '/funcionalidades/channel-manager',       description: 'Airbnb y Booking en un solo calendario.', icon: 'Calendar', grup: 'Reservas y precios' },
         { label: 'Precios dinámicos',      href: '/funcionalidades/precios-dinamicos',     description: 'Se ajustan a la demanda y se publican cada día.', icon: 'TrendingUp', grup: 'Reservas y precios' },
+        { label: 'Web de reservas',        href: '/funcionalidades/web-de-reservas-directas', description: 'Reservas directas, sin comisiones.', icon: 'Globe', grup: 'Reservas y precios' },
         { label: 'Gestión de limpiezas',   href: '/funcionalidades/gestion-de-limpiezas',  description: 'Cada salida crea su limpieza y avisa al equipo.', icon: 'Sparkles', grup: 'Equipo y cuentas' },
         { label: 'Mensajería programada',  href: '/funcionalidades/mensajeria-programada', description: 'Mensajes automáticos en el idioma del huésped.', icon: 'Send', grup: 'Huéspedes' },
         { label: 'Roles y permisos',       href: '/funcionalidades/multi-rol',             description: 'Gestor, limpieza y propietario, cada uno lo suyo.', icon: 'Users', grup: 'Equipo y cuentas' },

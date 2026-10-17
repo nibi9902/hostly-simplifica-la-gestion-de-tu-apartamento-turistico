@@ -47,6 +47,7 @@ const funcionalidadesSlugs = [
   'multi-rol',
   'finanzas',
   'burocracia',
+  'web-de-reservas-directas',
   'conecta-todo',
 ];
 

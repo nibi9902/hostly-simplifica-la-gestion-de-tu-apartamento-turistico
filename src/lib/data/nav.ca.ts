@@ -10,6 +10,7 @@ export const NAV_CA: NavConfig = {
         { label: 'Check-in online',        href: '/funcionalidades/check-in-online',       description: 'Dades de l\'hoste i registre a la policia.', badge: 'Gratis', icon: 'ShieldCheck', grup: 'Hostes' },
         { label: 'Reserves i calendaris',  href: '/funcionalidades/channel-manager',       description: 'Airbnb i Booking en un sol calendari.', icon: 'Calendar', grup: 'Reserves i preus' },
         { label: 'Preus dinàmics',         href: '/funcionalidades/precios-dinamicos',     description: "S'ajusten a la demanda i es publiquen cada dia.", icon: 'TrendingUp', grup: 'Reserves i preus' },
+        { label: 'Web de reserves',        href: '/funcionalidades/web-de-reservas-directas', description: 'Reserves directes, sense comissions.', icon: 'Globe', grup: 'Reserves i preus' },
         { label: 'Gestió de neteges',      href: '/funcionalidades/gestion-de-limpiezas',  description: 'Cada sortida crea la seva neteja i avisa l\'equip.', icon: 'Sparkles', grup: 'Equip i comptes' },
         { label: 'Missatgeria programada', href: '/funcionalidades/mensajeria-programada', description: 'Missatges automàtics en l\'idioma de l\'hoste.', icon: 'Send', grup: 'Hostes' },
         { label: 'Rols i permisos',        href: '/funcionalidades/multi-rol',             description: 'Gestor, neteja i propietari, cadascú el seu.', icon: 'Users', grup: 'Equip i comptes' },

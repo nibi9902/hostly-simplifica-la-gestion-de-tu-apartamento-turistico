@@ -1133,3 +1133,67 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-llisca-punts .ara i { width: 18px; background: var(--pt-blau); }
 }
 @media (prefers-reduced-motion: reduce) { .pt-llisca-punts i { transition: none; } }
+
+/* ── Els vídeos de les funcionalitats (17-10, idees A i C del llenç del Biel) ──
+   `VideoFuncio.tsx`: a dalt de cada funcionalitat, en lloc de la demo. Va sol i sense so; la píndola
+   «Escúchalo» el torna a començar amb veu i amb els controls del navegador, i el botó rodó l'atura.
+   `MiniaturaVideo.tsx` i `VideoObert.tsx`: a /funcionalidades, cada targeta porta la miniatura del seu
+   vídeo (es mou amb el ratolí a sobre) i, en tocar-la, el vídeo s'obre en gran i amb so. */
+.pt-fp-aparte { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 9999px; background: hsl(214 100% 96%); color: var(--pt-blau-fosc); font-size: 13px; font-weight: 600; white-space: nowrap; }
+.pt-fv { position: relative; border-radius: 18px; overflow: hidden; background: #f3f7fa; box-shadow: 0 0 0 1px rgba(15, 23, 42, .06), 0 30px 60px -28px rgba(15, 23, 42, .35); }
+.pt-fv video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #f3f7fa; }
+.pt-fv-so { position: absolute; left: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px 0 13px; border: 0; border-radius: 9999px; background: rgba(255, 255, 255, .95); color: var(--pt-text); font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 6px 18px -6px rgba(15, 23, 42, .3); transition: background-color .2s ease; }
+.pt-fv-so:hover { background: #fff; }
+.pt-fv-so .pt-ic { width: 18px; height: 18px; color: var(--pt-blau); }
+.pt-fv-so small { font-size: 13px; font-weight: 500; color: var(--pt-gris); }
+.pt-fv-pausa { position: absolute; right: 14px; bottom: 14px; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 9999px; background: rgba(255, 255, 255, .95); color: var(--pt-text); display: grid; place-items: center; cursor: pointer; box-shadow: 0 6px 18px -6px rgba(15, 23, 42, .3); }
+.pt-fv-pausa:hover { background: #fff; }
+.pt-fv-pausa .pt-ic { width: 16px; height: 16px; }
+.pt-fv-barra { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(15, 23, 42, .06); }
+.pt-fv-barra i { display: block; height: 100%; background: var(--pt-blau); transform-origin: left; transition: transform .25s linear; }
+
+.pt-ix-targeta { height: 100%; display: flex; flex-direction: column; padding: 10px; border-radius: 20px; background: var(--pt-blanc); box-shadow: inset 0 0 0 1px var(--pt-linia); transition: box-shadow .25s ease; }
+.pt-ix-targeta:hover { box-shadow: inset 0 0 0 1px hsl(221 83% 53% / .3), 0 18px 40px -28px rgba(37, 99, 235, .45); }
+.pt-ix-mini { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; border-radius: 12px; overflow: hidden; background: #f3f7fa; cursor: pointer; }
+.pt-ix-mini img, .pt-ix-mini video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pt-ix-mini video { opacity: 0; transition: opacity .3s ease; }
+.pt-ix-mini.mou video { opacity: 1; }
+.pt-ix-durada { position: absolute; left: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px 0 9px; border-radius: 9999px; background: rgba(255, 255, 255, .95); color: var(--pt-text); font-size: 12.5px; font-weight: 600; box-shadow: 0 4px 12px -4px rgba(15, 23, 42, .3); }
+.pt-ix-durada .pt-ic { width: 12px; height: 12px; color: var(--pt-blau); }
+.pt-ix-cos { flex: 1; min-width: 0; display: flex; flex-direction: column; padding: 18px 14px 12px; color: inherit; text-decoration: none; }
+.pt-ix-pla { display: flex; align-items: center; gap: 10px; font-size: 11px; line-height: 1.2; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pt-blau); }
+.pt-ix-ic { width: 32px; height: 32px; flex-shrink: 0; border-radius: 9px; background: #eff6ff; display: grid; place-items: center; }
+.pt-ix-ic .pt-ic { width: 16px; height: 16px; }
+.pt-ix-cos h2 { margin-top: 14px; font-size: 18px; line-height: 1.3; font-weight: 600; letter-spacing: -0.01em; color: var(--pt-text); transition: color .2s ease; }
+.pt-ix-targeta:hover .pt-ix-cos h2 { color: var(--pt-blau); }
+.pt-ix-cos p { margin-top: 8px; font-size: 14px; line-height: 1.6; color: var(--pt-gris); }
+.pt-ix-mes { margin-top: auto; padding-top: 16px; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--pt-blau); }
+.pt-ix-mes .pt-ic { width: 14px; height: 14px; }
+/* les dues que van a part, a sota: la miniatura a l'esquerra */
+@media (min-width: 1024px) {
+  .pt-ix-baix .pt-ix-targeta { flex-direction: row; align-items: center; gap: 4px; }
+  .pt-ix-baix .pt-ix-mini { flex: 0 0 46%; }
+}
+
+.pt-dialeg-video { width: min(960px, calc(100vw - 32px)); padding: 0; gap: 0; border-radius: 24px; overflow: hidden; }
+.pt-dv-cap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 10px 10px 22px; }
+.pt-dv-titol { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; font-size: 17px; line-height: 1.3; font-weight: 600; }
+.pt-dv-titol span { font-size: 14px; font-weight: 500; color: var(--pt-gris); }
+.pt-dv-x { flex-shrink: 0; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 9999px; background: var(--pt-fons); color: var(--pt-text); display: grid; place-items: center; cursor: pointer; }
+.pt-dv-x:hover { background: hsl(220 14% 93%); }
+.pt-dv-x .pt-ic { width: 20px; height: 20px; }
+.pt-dialeg-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #f3f7fa; }
+.pt-dv-peu { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 16px; padding: 16px 22px 18px; }
+.pt-dv-mes { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 15px; font-weight: 600; color: var(--pt-blau); text-decoration: none; }
+.pt-dv-mes .pt-ic { width: 16px; height: 16px; }
+
+@media (max-width: 767px) {
+  .pt-fv { border-radius: 14px; }
+  .pt-fv-so { left: 10px; bottom: 10px; font-size: 13px; }
+  .pt-fv-pausa { right: 10px; bottom: 10px; }
+  .pt-ix-pla { font-size: 12px; }
+  .pt-dialeg-video { border-radius: 20px; }
+  .pt-dv-cap { padding-left: 16px; }
+  .pt-dv-peu { padding: 14px 16px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .pt-fv-barra i, .pt-ix-mini video { transition: none; } }

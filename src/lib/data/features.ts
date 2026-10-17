@@ -79,6 +79,12 @@ export type Feature = {
  */
 export const FUNCIONS_GRATIS = new Set(['check-in-online', 'burocracia']);
 
+/**
+ * Les que es fan a mida i es paguen a part: la web de reserves directes i «Conéctalo todo». A
+ * /funcionalidades van a sota, l'una al costat de l'altra, i la seva pàgina diu «Aparte, a medida».
+ */
+export const FUNCIONS_APART = new Set(['web-de-reservas-directas', 'conecta-todo']);
+
 export const FEATURES: Feature[] = [
   // ─────────────────────────────── IA WHATSAPP ───────────────────────────────
   {
@@ -819,6 +825,111 @@ export const FEATURES: Feature[] = [
         question: '¿Los huéspedes necesitan una cuenta?',
         answer:
           'No. Cada huésped recibe un enlace de su estancia, sin registrarse en nada.',
+      },
+    ],
+  },
+
+  // ─────────────────────────────── WEB DE RESERVAS DIRECTAS ───────────────────────────────
+  // El motor de reserves (caserna13.com i les pàgines amb marca pròpia): a mida, a part, com diu la
+  // resta de la web. Textos aprovats pel Biel al llenç del 17-10.
+  {
+    slug: 'web-de-reservas-directas',
+    name: 'Web de reservas directas',
+    iconName: 'Globe',
+    shortDescription:
+      'Tu propia web, con reservas y pago online, sin comisiones. Los días se cierran solos en Airbnb y Booking.',
+    hero: {
+      h1: 'Tu propia web de reservas, sin comisiones',
+      sub: 'El huésped reserva y paga en tu web. Los días se cierran solos en Airbnb y Booking, y la reserva entra en Hostly como todas.',
+      primaryCta: 'Empezar',
+      secondaryCta: 'Ver precios',
+    },
+    problem: {
+      title: 'El huésped que repite vuelve a reservar por Airbnb',
+      body: 'Te conoce, le gustó el piso y quiere volver. Pero reserva otra vez por la plataforma y pagas la comisión de nuevo. Y si te reserva por WhatsApp, te toca apuntarla a mano, cerrar los días en cada plataforma y perseguir el pago.',
+    },
+    howItWorks: [
+      {
+        step: 1,
+        title: 'Montamos tu web contigo',
+        body: 'Con tus fotos, tus textos y tus colores. Los precios y los días libres salen de Hostly, así que siempre están al día.',
+        pantalla: [
+          { t: 'cap', text: 'tuweb.es', nota: 'Cala Moreta' },
+          { t: 'ok', text: 'Fotos y textos' },
+          { t: 'ok', text: 'Precios de Hostly' },
+          { t: 'ok', text: 'Días libres de Hostly' },
+        ],
+      },
+      {
+        step: 2,
+        title: 'El huésped reserva y paga',
+        body: 'Elige las fechas, ve el precio y paga con tarjeta, Apple Pay o Google Pay. Todo al reservar o solo una señal: lo decides tú.',
+        pantalla: [
+          { t: 'cap', text: '12 – 15 nov', nota: '3 noches' },
+          { t: 'xifra', et: '95 € × 3 noches', val: '285 €' },
+          { t: 'xifra', et: 'Total', val: '285 €', total: true },
+          { t: 'boto', text: 'Reservar y pagar' },
+        ],
+      },
+      {
+        step: 3,
+        title: 'Los días se cierran solos',
+        body: 'La reserva entra en tu calendario y se cierra en Airbnb y Booking al momento. No puede entrar otra encima.',
+        pantalla: [
+          { t: 'reserva', qui: 'Laura Vidal · Web', canal: 'directa', val: '12–15 nov' },
+          { t: 'ok', text: 'Cerrado en Airbnb' },
+          { t: 'ok', text: 'Cerrado en Booking' },
+        ],
+      },
+      {
+        step: 4,
+        title: 'Y sigue como todas',
+        body: 'Le llega la bienvenida con el enlace de check-in, y la limpieza se crea sola.',
+        pantalla: [
+          { t: 'auto', text: 'Hola Laura, haz el check-in aquí:', et: 'Automático · Hostly', enllac: 'hostlylabs.com/i/k2v8r' },
+          { t: 'ok', text: 'Limpieza creada', val: '15 nov' },
+        ],
+      },
+    ],
+    advantages: [
+      'Sin la comisión de Airbnb ni de Booking',
+      'El pago va directo a tu cuenta, con Stripe',
+      'Precios y días libres, siempre los de Hostly',
+      'Todo al reservar o una señal, como prefieras',
+      'Un descuento por reservar directo, si quieres',
+      'Si no quieres cobrar online, te llega como solicitud',
+    ],
+    usage: [
+      {
+        title: 'Un huésped que repite cada verano',
+        body: 'Le pasas el enlace de tu web. Elige sus fechas, paga y le llega el check-in como en cualquier otra reserva.',
+      },
+      {
+        title: 'Agosto, casi lleno',
+        body: 'Tu web solo deja reservar los días libres. Y lo que entra por tu web se cierra en Airbnb y Booking al momento.',
+      },
+      {
+        title: 'Una familia que te llama',
+        body: 'En vez de apuntarla a mano, le envías el enlace. Reserva y paga, y tú no persigues el pago.',
+      },
+    ],
+    relatedFeatures: ['channel-manager', 'mensajeria-programada', 'check-in-online'],
+    faqs: [
+      {
+        question: '¿Necesito tener web?',
+        answer: 'No. La montamos contigo, con tus fotos y tus textos. Si ya tienes una, la conectamos con Hostly.',
+      },
+      {
+        question: '¿Cuánto cuesta?',
+        answer: 'Es un servicio aparte, a medida. Te decimos el precio antes de empezar.',
+      },
+      {
+        question: '¿A quién paga el huésped?',
+        answer: 'A ti. El pago va a tu cuenta a través de Stripe.',
+      },
+      {
+        question: '¿Pueden entrar dos reservas el mismo día?',
+        answer: 'No. Tu web solo deja reservar los días libres, y en cuanto entra una reserva se cierran en Airbnb y Booking.',
       },
     ],
   },

@@ -8,6 +8,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 
 - **Gratis, para siempre y sin tarjeta:** check-in online del huésped, registro a la policía, cálculo de la tasa turística, lectura del calendario de Airbnb y Booking por iCal cada 30 minutos y avisos cuando falta un check-in. No incluye IA, limpiezas, mensajes automáticos ni precios dinámicos.
 - **Hostly completo:** 40 €/mes por apartamento + IVA; con 5 apartamentos o más, 35 €/mes + IVA cada uno. El primer mes es gratis. Se activa con una llamada en la que lo dejamos listo con el cliente. Sin permanencia. Durante el primer mes, la configuración se hace 1 a 1 con el equipo de Hostly.
+- **Web de reservas directas:** servicio aparte, a medida: una web propia del gestor con reservas y pago online por Stripe, sin comisiones de plataforma. Los precios y los días libres salen de Hostly, y cada reserva cierra esos días en Airbnb y Booking.
 - **Automatizaciones a medida («Conéctalo todo»):** servicio aparte para conectar Hostly con la gestoría, la web, el ERP u otras herramientas del cliente. Cuota mensual según lo que se automatice.
 - **Programa de referidos:** por cada 5 propietarios que traigas y sigan activos en Hostly, uno de tus apartamentos deja de pagar mientras sigan activos.
 
@@ -37,7 +38,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 
 ## Funcionalidades
 
-- [Todas las funcionalidades](https://hostlylabs.com/es/funcionalidades): las 10 funcionalidades de Hostly, una a una.
+- [Todas las funcionalidades](https://hostlylabs.com/es/funcionalidades): las 11 funcionalidades de Hostly, una a una.
 - [IA que responde en WhatsApp](https://hostlylabs.com/es/funcionalidades/ia-whatsapp): contesta a los huéspedes 24/7 en su idioma con la información de cada piso y avisa al gestor cuando hace falta una persona.
 - [Check-in online y registro a la policía](https://hostlylabs.com/es/funcionalidades/check-in-online): el huésped rellena sus datos desde el móvil y Hostly los envía cada día a la policía. Gratis para siempre.
 - [Reservas y calendarios](https://hostlylabs.com/es/funcionalidades/channel-manager): Airbnb y Booking.com en un solo calendario, más reservas directas con motor propio y pago por Stripe.
@@ -47,6 +48,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 - [Roles y permisos](https://hostlylabs.com/es/funcionalidades/multi-rol): gestores por piso, equipo de limpieza y propietarios en solo lectura. Sin límite de usuarios.
 - [Finanzas en orden](https://hostlylabs.com/es/funcionalidades/finanzas): ingresos por piso, canal y periodo, comisiones calculadas y liquidaciones a propietarios en cuatro pasos.
 - [Tasa turística](https://hostlylabs.com/es/funcionalidades/burocracia): la tasa turística, calculada por piso y periodo, con el Excel listo para presentar.
+- [Web de reservas directas](https://hostlylabs.com/es/funcionalidades/web-de-reservas-directas): web propia con reservas y pago online, sin comisiones; los días se cierran solos en Airbnb y Booking. A medida, servicio aparte.
 - [Conéctalo todo](https://hostlylabs.com/es/funcionalidades/conecta-todo): automatizaciones a medida; servicio aparte con cuota mensual.
 
 ## Para quién

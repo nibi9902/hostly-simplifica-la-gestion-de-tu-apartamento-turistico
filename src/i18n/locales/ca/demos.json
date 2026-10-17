@@ -222,5 +222,25 @@
     "erp": "El teu ERP",
     "excel": "Excel o CSV",
     "drive": "Les teves carpetes"
+  },
+  "webReserves": {
+    "url": "elteuweb.cat/cala-moreta",
+    "nom": "Apartament Cala Moreta",
+    "dades": "2 habitacions · 4 hostes · terrassa",
+    "desc": "A cinc minuts de la platja, amb aire condicionat, wifi i pàrquing.",
+    "perNit": "/ nit",
+    "arribada": "Arribada",
+    "sortida": "Sortida",
+    "dataArribada": "12 nov.",
+    "dataSortida": "15 nov.",
+    "linia": "95 € × 3 nits",
+    "total": "Total",
+    "boto": "Reserva i paga",
+    "pagament": "Targeta, Apple Pay o Google Pay",
+    "avisTitol": "Reserva nova · Web",
+    "avisText": "Laura Vidal · 12–15 nov. · 285 €",
+    "ara": "ara",
+    "tancatAirbnb": "Tancat a Airbnb",
+    "tancatBooking": "Tancat a Booking"
   }
 }

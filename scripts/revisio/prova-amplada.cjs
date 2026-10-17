@@ -27,7 +27,7 @@ const RUTES = (process.env.NOMES_RUTES ? process.env.NOMES_RUTES.split(',') : [
   '/es/propietarios', '/es/gestores-pequenos', '/es/segunda-residencia', '/es/hereus',
   '/es/blog', ...BLOG.map((s) => `/es/blog/${s}`),
   '/es/alternativas', '/es/alternativas/smoobu', '/es/alternativas/icnea',
-  '/es/funcionalidades', '/es/funcionalidades/check-in-online', '/es/funcionalidades/multi-rol', '/es/funcionalidades/conecta-todo',
+  '/es/funcionalidades', '/es/funcionalidades/check-in-online', '/es/funcionalidades/multi-rol', '/es/funcionalidades/conecta-todo', '/es/funcionalidades/web-de-reservas-directas',
   '/es/sobre-hostly', '/es/privacidad', '/es/cookies', '/es/terminos', '/es/aviso-legal',
   '/ca', '/ca/precios', '/ca/funcionalidades/ia-whatsapp', '/ca/propietarios',
 ]);
