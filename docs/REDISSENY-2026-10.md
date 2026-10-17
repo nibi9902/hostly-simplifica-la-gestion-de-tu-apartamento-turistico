@@ -195,6 +195,8 @@ torna a renderitzar algun, es torna a passar i la durada i els capítols nous va
 aprovada pel Biel el 17-10), amb els subtítols de la veu; el mateix script l'exporta a
 `public/assets/demo/lo-que-hace-hostly.*`. Abans hi havia el vídeo d'un minut d'abril («un día
 cualquiera con Hostly»), que el Biel deia que era «només per la idea»; és a l'historial (versio-18).
+En català, /ca/demo porta la versió catalana, «El que fa Hostly per tu» (veu de l'Anna; les pantalles
+de l'app, en castellà, com es fa servir l'app), i ja no diu «El vídeo és en castellà».
 
 **Vídeos que deien més que la seva pàgina** (renderitzats el 17-10 a la tarda amb apunts del
 Biel). Resolt el 17-10 a la nit («està tot okay; la IA és de WhatsApp i totes les plataformes»):

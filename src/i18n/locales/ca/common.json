@@ -144,7 +144,6 @@
         "text": "El que t'ha arribat de debò, i la liquidació feta."
       }
     ],
-    "nota_idioma": "El vídeo és en castellà.",
     "veure": "Veure el vídeo: {{titol}}",
     "cta_start": "Començar",
     "cta_pricing": "Veure preus",
@@ -154,7 +153,7 @@
     "tancar": "Tancar",
     "principal_veure": "Veure el vídeo: el que fa Hostly per tu",
     "curts_titol": "Cada cosa, en menys d'un minut",
-    "subtitols": "Subtítols (en castellà)"
+    "subtitols": "Subtítols"
   },
   "guia": {
     "meta_title": "Superguia de gestió d'apartaments turístics 2026 | Hostly",

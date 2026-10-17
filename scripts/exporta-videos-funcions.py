@@ -115,3 +115,13 @@ fotograma(DEMO, 1.2, 1280, f'{DEST}/lo-que-hace-hostly.webp', 82)
 subtitols([(VEU[int(k)] / 30, (VEU[int(k)] + v['fotogrames']) / 30, v['text']) for k, v in sorted(veu.items(), key=lambda kv: int(kv[0]))],
           f'{DEST}/lo-que-hace-hostly.es.vtt')
 print(f"demo\t{os.path.getsize(f'{DEST}/lo-que-hace-hostly.mp4') / 1e6:.2f} MB")
+
+# La mateixa demo en català («El que fa Hostly per tu», DemoLargaCa, veu de l'Anna, 17-10): les frases
+# surten de la seva línia de temps. Va a /ca/demo.
+DEMO_CA = f'{KIT}/renders/demo-larga-ca.mp4'
+if os.path.exists(DEMO_CA):
+    tl_ca = json.load(open(f'{KIT}/remotion/src/videos/tl/demo-larga-ca.json'))
+    run(['ffmpeg', '-v', 'error', '-y', '-i', DEMO_CA, *[x if x != '27' else '25' for x in ENC], f'{DEST}/el-que-fa-hostly.mp4'])
+    fotograma(DEMO_CA, 1.2, 1280, f'{DEST}/el-que-fa-hostly.webp', 82)
+    subtitols([(l['start'] / 30, (l['start'] + l['frames']) / 30, l['text']) for l in tl_ca['lines']], f'{DEST}/el-que-fa-hostly.ca.vtt')
+    print(f"demo ca\t{os.path.getsize(f'{DEST}/el-que-fa-hostly.mp4') / 1e6:.2f} MB")
