@@ -24,9 +24,10 @@ type EventName =
   | 'signup_start'           // Clic final al link signup
   // L'embut del redisseny d'octubre 2026 (/empezar, /calcula, «Te llamo»)
   | 'empezar_datos'          // Pas 1 de /empezar desat (telèfon, nom, correu)
-  | 'empezar_plan'           // Pas 2: tria gratis o complet
-  | 'empezar_cuenta'         // Pas 3 gratis: va a crear el compte a l'app
-  | 'demo_solicitada'        // Pas 3 complet: ha triat dia i hora
+  | 'empezar_pisos'          // Pas 2: quants pisos gestiona (17-10)
+  | 'empezar_plan'           // Pas 3: tria gratis o complet
+  | 'empezar_cuenta'         // Pas 4 gratis: va a crear el compte a l'app
+  | 'demo_solicitada'        // Pas 4 complet: ha triat dia i hora
   | 'calcula_resultado'      // Ha acabat les preguntes de /calcula
   | 'calcula_telefono'       // Ha deixat el telèfon per veure el detall
   | 'llamame_enviado'        // «Te llamo» de preus

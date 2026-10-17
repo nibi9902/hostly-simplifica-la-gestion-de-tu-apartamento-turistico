@@ -1,11 +1,13 @@
 /**
  * /empezar — l'única porta del web (redisseny d'octubre 2026).
  *
- * Tres passos, una pregunta per pantalla:
+ * Quatre passos, una pregunta per pantalla:
  *   1. Les dades: telèfon primer, nom i correu. Es desen abans de continuar: si marxa
  *      al pas 2, el Biel ja té el telèfon (avís a Telegram en menys d'un minut).
- *   2. Què necessita: «Solo el check-in y la policía» (gratis) o «Hostly completo».
- *   3. Gratis → crea el compte a l'app (`/signup?pla=gratuit`, ja existeix des del 7-10).
+ *   2. Quants pisos gestiona (el Biel, 17-10: saber-ho abans del pla). Les mateixes opcions que la
+ *      calculadora; es desa a `answers.pisos` i surt a l'avís de Telegram («pisos = 2-4»).
+ *   3. Què necessita: «Solo el check-in y la policía» (gratis) o «Hostly completo».
+ *   4. Gratis → crea el compte a l'app (`/signup?pla=gratuit`, ja existeix des del 7-10).
  *      Complet → «Genial, te ayudamos a conectarlo todo»: «Llamadme ahora» (el telèfon ja el tenim)
  *      o tria dia i hora. El Biel (13-10): «una demo de 20 minutos… és com espera un moment, encara
  *      no ho compris»; primer el sí, i després la trucada, perquè li vagi millor a ell.
@@ -29,9 +31,11 @@ import { track } from "@/lib/analytics";
 import { correuValid, dadesRecordades, desaLead, recordaDades, telefonPerBD } from "@/lib/leads";
 import { diaLlarg, diesDemo, etiquetaDia, isoDemo, trucadaDema } from "@/lib/demo";
 import { URL_ALTA_GRATUITA, type EstatEmpezar } from "@/lib/empezar";
+import { OPCIONS_PISOS, type Pisos } from "@/lib/calcula";
 
-type Pas = "datos" | "plan" | "gratis" | "demo" | "demo_hecha" | "trucant";
-const NUM_PAS: Record<Pas, number> = { datos: 1, plan: 2, gratis: 3, demo: 3, demo_hecha: 3, trucant: 3 };
+type Pas = "datos" | "pisos" | "plan" | "gratis" | "demo" | "demo_hecha" | "trucant";
+const NUM_PAS: Record<Pas, number> = { datos: 1, pisos: 2, plan: 3, gratis: 4, demo: 4, demo_hecha: 4, trucant: 4 };
+const TOTAL_PASSOS = 4;
 
 const CLAU_DESDE = "hostly_empezar_desde";
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -45,6 +49,10 @@ const botoPrimari =
   "font-semibold text-base transition-all duration-200 hover:-translate-y-0.5 " +
   "hover:shadow-[0_10px_28px_hsl(var(--primary)/0.30)] active:scale-[0.98] focus-visible:outline-none " +
   "focus-visible:ring-4 focus-visible:ring-primary/25 disabled:opacity-60 disabled:pointer-events-none";
+/** Una opció de resposta única, com les de la calculadora: es toca i passa sola al pas següent. */
+const opcio =
+  "w-full min-h-14 px-5 py-3 rounded-2xl border text-left text-base font-medium flex items-center justify-between gap-3 " +
+  "transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20";
 
 /** El telèfon, per llegir-lo: «612 34 56 78» si és d'aquí; si no, tal com l'han escrit. */
 function telefonVisible(t: string): string {
@@ -77,6 +85,7 @@ export default function Empezar() {
   const [nom, setNom] = useState(recordades.name ?? "");
   const [correu, setCorreu] = useState(recordades.email ?? "");
   const [errors, setErrors] = useState<{ telefon?: string; nom?: string; correu?: string; general?: string }>({});
+  const [pisos, setPisos] = useState<Pisos | null>(null);
   const [desant, setDesant] = useState(false);
 
   const dies = useMemo(() => diesDemo(), []);
@@ -124,7 +133,15 @@ export default function Empezar() {
     }
     recordaDades({ phone: tel!, name: nom.trim(), email: correu.trim() });
     track("empezar_datos", { location: desde ?? "directe" });
-    setPas("plan");
+    setPas("pisos");
+  }
+
+  function triaPisos(v: Pisos) {
+    setPisos(v);
+    track("empezar_pisos", { variant: v });
+    // Com el pla, no fa esperar: `desaLead` ja reintenta i les respostes s'ajunten al contacte
+    void desaLead({ answers: { pisos: v } }, lang, desde);
+    window.setTimeout(() => setPas("plan"), reduir ? 0 : 160);
   }
 
   function triaPla(pla: "gratis" | "completo") {
@@ -168,7 +185,7 @@ export default function Empezar() {
   }
 
   // Tots els passos es poden desfer, també després de demanar la trucada (el Biel, 13-10)
-  const enrere: Partial<Record<Pas, Pas>> = { plan: "datos", gratis: "plan", demo: "plan", demo_hecha: "demo", trucant: "demo" };
+  const enrere: Partial<Record<Pas, Pas>> = { pisos: "datos", plan: "pisos", gratis: "plan", demo: "plan", demo_hecha: "demo", trucant: "demo" };
 
   /**
    * «Atrás» al primer pas (el Biel, 16-10-2026: s'havia de fer amb el botó del navegador). Si ve
@@ -197,11 +214,11 @@ export default function Empezar() {
               {t("empezar.paso", { n: NUM_PAS[pas] })}
             </span>
             <div className="flex gap-1.5" aria-hidden="true">
-              {[1, 2, 3].map((n) => (
+              {Array.from({ length: TOTAL_PASSOS }, (_, i) => i + 1).map((n) => (
                 <span
                   key={n}
                   className={cn(
-                    "h-1.5 w-4 sm:w-7 rounded-full transition-colors duration-300",
+                    "h-1.5 w-3 sm:w-7 rounded-full transition-colors duration-300",
                     n <= NUM_PAS[pas] ? "bg-primary" : "bg-slate-200",
                   )}
                 />
@@ -319,7 +336,35 @@ export default function Empezar() {
             </motion.section>
           )}
 
-          {/* ── 2 · Què necessita ─────────────────────────────────────── */}
+          {/* ── 2 · Quants pisos ─────────────────────────────────────── */}
+          {pas === "pisos" && (
+            <motion.section key="pisos" {...anim} transition={{ duration: 0.25, ease }}>
+              <h1 ref={titolRef} tabIndex={-1} className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 focus:outline-none">
+                {t("empezar.pisos.titulo")}
+              </h1>
+              <p className="text-lg text-muted-foreground mb-8">{t("empezar.pisos.subtitulo")}</p>
+              <div className="flex flex-col gap-2.5" role="radiogroup" aria-label={t("empezar.pisos.titulo")}>
+                {OPCIONS_PISOS.map((o, i) => {
+                  const triada = pisos === o;
+                  return (
+                    <button
+                      key={o}
+                      type="button"
+                      role="radio"
+                      aria-checked={triada}
+                      onClick={() => triaPisos(o)}
+                      className={cn(opcio, triada ? "bg-foreground border-foreground text-white" : "bg-white border-slate-200 text-foreground hover:border-slate-300")}
+                    >
+                      {(t("calcula.o_pisos", { returnObjects: true }) as string[])[i]}
+                      {triada && <Check className="w-4 h-4 shrink-0" strokeWidth={3} />}
+                    </button>
+                  );
+                })}
+              </div>
+            </motion.section>
+          )}
+
+          {/* ── 3 · Què necessita ─────────────────────────────────────── */}
           {pas === "plan" && (
             <motion.section key="plan" {...anim} transition={{ duration: 0.25, ease }}>
               <h1 ref={titolRef} tabIndex={-1} className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 focus:outline-none">
@@ -381,7 +426,7 @@ export default function Empezar() {
             </motion.section>
           )}
 
-          {/* ── 3a · Gratis: crear el compte a l'app ─────────────────────── */}
+          {/* ── 4a · Gratis: crear el compte a l'app ─────────────────────── */}
           {pas === "gratis" && (
             <motion.section key="gratis" {...anim} transition={{ duration: 0.25, ease }} className="text-center sm:text-left">
               <div className="w-14 h-14 rounded-full bg-emerald-50 flex items-center justify-center mb-6 mx-auto sm:mx-0">
@@ -403,7 +448,7 @@ export default function Empezar() {
             </motion.section>
           )}
 
-          {/* ── 3b · Complet: la demo ─────────────────────────────────── */}
+          {/* ── 4b · Complet: la demo ─────────────────────────────────── */}
           {pas === "demo" && (
             <motion.section key="demo" {...anim} transition={{ duration: 0.25, ease }}>
               <h1 ref={titolRef} tabIndex={-1} className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 focus:outline-none">
@@ -520,7 +565,7 @@ export default function Empezar() {
             </motion.section>
           )}
 
-          {/* ── 3b · «Llamadme ahora»: et truquem ─────────────────────────── */}
+          {/* ── 4b · «Llamadme ahora»: et truquem ─────────────────────────── */}
           {pas === "trucant" && (
             <motion.section key="trucant" {...anim} transition={{ duration: 0.25, ease }}>
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
@@ -558,7 +603,7 @@ export default function Empezar() {
             </motion.section>
           )}
 
-          {/* ── 3b · Demo reservada ───────────────────────────────────── */}
+          {/* ── 4b · Demo reservada ───────────────────────────────────── */}
           {pas === "demo_hecha" && dia && hora && (
             <motion.section key="demo_hecha" {...anim} transition={{ duration: 0.25, ease }}>
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">

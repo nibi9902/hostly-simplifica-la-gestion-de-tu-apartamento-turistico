@@ -3,7 +3,7 @@
   "empezar": {
     "meta_title": "Començar amb Hostly",
     "meta_desc": "Tres dades i tries com començar: gratis amb el check-in i la policia, o Hostly Complet amb el primer mes gratis.",
-    "paso": "Pas {{n}} de 3",
+    "paso": "Pas {{n}} de 4",
     "atras": "Enrere",
     "inicio": "Tornar al web",
     "datos": {
@@ -18,6 +18,10 @@
       "continuar": "Continuar",
       "privacidad_antes": "En enviar les teves dades, acceptes que et truquem o t'escriguem sobre Hostly. Més informació a la",
       "privacidad_link": "política de privacitat"
+    },
+    "pisos": {
+      "titulo": "Quants pisos gestiones?",
+      "subtitulo": "Els teus i els que portes per a altres."
     },
     "error": {
       "telefono": "Revisa el telèfon: sembla que hi falta algun número.",
@@ -81,6 +85,10 @@
         {
           "titulo": "Les teves dades",
           "texto": "Et truquem si t'encalles i t'ajudem a posar-ho en marxa."
+        },
+        {
+          "titulo": "Els teus pisos",
+          "texto": "Quants en gestiones, teus o d'altres."
         },
         {
           "titulo": "Tries el pla",
