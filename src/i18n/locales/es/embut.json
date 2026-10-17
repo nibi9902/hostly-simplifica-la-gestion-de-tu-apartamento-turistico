@@ -2,26 +2,25 @@
   "cta": "Empezar",
   "empezar": {
     "meta_title": "Empezar con Hostly",
-    "meta_desc": "Tres datos y eliges cómo empezar: gratis con el check-in y la policía, o Hostly Completo con el primer mes gratis.",
-    "paso": "Paso {{n}} de 4",
+    "meta_desc": "Cuatro datos y eliges cómo empezar: gratis con el check-in y la policía, o Hostly Completo con el primer mes gratis.",
+    "paso": "Paso {{n}} de 3",
     "atras": "Atrás",
     "inicio": "Volver a la web",
     "datos": {
       "titulo": "Empecemos.",
-      "subtitulo": "Tres datos y eliges cómo empezar.",
+      "subtitulo": "Cuatro datos y eliges cómo empezar.",
       "telefono": "Teléfono",
       "telefono_placeholder": "612 345 678",
       "nombre": "Nombre",
       "nombre_placeholder": "Ana",
       "correo": "Correo",
       "correo_placeholder": "ana@gmail.com",
+      "pisos": "¿Cuántos pisos gestionas?",
+      "pisos_menos": "Un piso menos",
+      "pisos_mas": "Un piso más",
       "continuar": "Continuar",
       "privacidad_antes": "Al enviar tus datos, aceptas que te llamemos o te escribamos sobre Hostly. Más información en la",
       "privacidad_link": "política de privacidad"
-    },
-    "pisos": {
-      "titulo": "¿Cuántos pisos gestionas?",
-      "subtitulo": "Los tuyos y los que llevas para otros."
     },
     "error": {
       "telefono": "Revisa el teléfono: parece que le falta algún número.",
@@ -85,10 +84,6 @@
         {
           "titulo": "Tus datos",
           "texto": "Te llamamos si te atascas y te ayudamos a ponerlo en marcha."
-        },
-        {
-          "titulo": "Tus pisos",
-          "texto": "Cuántos gestionas, tuyos o de otros."
         },
         {
           "titulo": "Eliges plan",

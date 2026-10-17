@@ -41,13 +41,12 @@
 1. Qualsevol botó «Empezar» (capçal, portada, preus, funcionalitats, perfils, blog,
    comparatives) crida `useEmpezar()` (`src/lib/empezar.ts`), que porta a `/:lang/empezar`
    recordant des de quina pàgina venia.
-2. **`/empezar`** (`src/pages/Empezar.tsx`), quatre passos (des del 17-10):
-   - **Dades**: telèfon, nom i correu. El telèfon es normalitza amb la mateixa regla que
-     l'app (`libphonenumber`, E.164 sense «+»; la llibreria es carrega només en enviar).
-     Es desa abans de continuar.
-   - **Pisos** (el Biel, 17-10: saber-ho abans del pla): «¿Cuántos pisos gestionas?» amb les
-     opcions de la calculadora (1 · 2 a 4 · 5 a 15 · Más de 15). Un clic. Es desa a
-     `answers.pisos` i surt a l'avís de Telegram («Respostes: pisos = 2-4»).
+2. **`/empezar`** (`src/pages/Empezar.tsx`), tres passos:
+   - **Dades**: telèfon, nom, correu i quants pisos gestiona. El telèfon es normalitza amb la
+     mateixa regla que l'app (`libphonenumber`, E.164 sense «+»; la llibreria es carrega només
+     en enviar). Els pisos (el Biel, 17-10: saber-ho abans del pla, dins d'aquest pas): un número
+     amb − i + (d'1 a 999, també s'hi pot escriure), a `answers.pisos`; surt a l'avís de Telegram
+     («Respostes: pisos = 3») i es recorda si hi torna. Es desa abans de continuar.
    - **Pla**: «Hostly completo» (recomanat) o «Solo el check-in y la policía». Un clic.
    - **Gratis** → `https://app.hostlylabs.com/signup?pla=gratuit` (l'alta gratuïta de l'app,
      des del 07-10-2026). **Complet** → tria dia i hora (de dilluns a divendres, 10–13 h i

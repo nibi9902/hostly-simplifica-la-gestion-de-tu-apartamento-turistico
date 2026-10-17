@@ -2,26 +2,25 @@
   "cta": "Començar",
   "empezar": {
     "meta_title": "Començar amb Hostly",
-    "meta_desc": "Tres dades i tries com començar: gratis amb el check-in i la policia, o Hostly Complet amb el primer mes gratis.",
-    "paso": "Pas {{n}} de 4",
+    "meta_desc": "Quatre dades i tries com començar: gratis amb el check-in i la policia, o Hostly Complet amb el primer mes gratis.",
+    "paso": "Pas {{n}} de 3",
     "atras": "Enrere",
     "inicio": "Tornar al web",
     "datos": {
       "titulo": "Comencem.",
-      "subtitulo": "Tres dades i tries com començar.",
+      "subtitulo": "Quatre dades i tries com començar.",
       "telefono": "Telèfon",
       "telefono_placeholder": "612 345 678",
       "nombre": "Nom",
       "nombre_placeholder": "Anna",
       "correo": "Correu",
       "correo_placeholder": "anna@gmail.com",
+      "pisos": "Quants pisos gestiones?",
+      "pisos_menos": "Un pis menys",
+      "pisos_mas": "Un pis més",
       "continuar": "Continuar",
       "privacidad_antes": "En enviar les teves dades, acceptes que et truquem o t'escriguem sobre Hostly. Més informació a la",
       "privacidad_link": "política de privacitat"
-    },
-    "pisos": {
-      "titulo": "Quants pisos gestiones?",
-      "subtitulo": "Els teus i els que portes per a altres."
     },
     "error": {
       "telefono": "Revisa el telèfon: sembla que hi falta algun número.",
@@ -85,10 +84,6 @@
         {
           "titulo": "Les teves dades",
           "texto": "Et truquem si t'encalles i t'ajudem a posar-ho en marxa."
-        },
-        {
-          "titulo": "Els teus pisos",
-          "texto": "Quants en gestiones, teus o d'altres."
         },
         {
           "titulo": "Tries el pla",

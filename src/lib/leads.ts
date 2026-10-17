@@ -162,7 +162,7 @@ export async function desaLead(dades: DadesLead, lang: string, pagina?: string):
 
 const CLAU_DADES = "hostly_lead_dades";
 
-export type DadesRecordades = { phone?: string; name?: string; email?: string };
+export type DadesRecordades = { phone?: string; name?: string; email?: string; pisos?: number };
 
 export function dadesRecordades(): DadesRecordades {
   try {
