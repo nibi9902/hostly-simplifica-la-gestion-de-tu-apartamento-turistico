@@ -375,8 +375,6 @@
         "Calendario",
         "Extras y cuentas"
       ],
-      "anterior": "Anterior",
-      "seguent": "Siguiente",
       "funcions": {
         "retol": "Y además,",
         "text": "todo lo que también hace Hostly.",
@@ -463,6 +461,11 @@
       "retol": "Precios",
       "titol": "Un plan gratis. Un plan completo.",
       "titol_gris": "Nada más.",
+      "tria": {
+        "aria": "Plan",
+        "gratis": "Gratis · 0 €",
+        "complet": "Completo · 40 €"
+      },
       "gratis": {
         "nom": "Gratis",
         "preu": "0 €",

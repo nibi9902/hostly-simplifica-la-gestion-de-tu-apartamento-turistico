@@ -5,6 +5,9 @@
  * les de «Gratis para siempre», les preguntes obertes (com a /precios) i, al final, el «Te llamo».
  * Abans: fons blau clar amb lluïssor, números en quadrats amb degradat, caixes verdes i preguntes
  * desplegables. Els textos són a `src/lib/data/features.ts` (i `.ca.ts`).
+ * Al mòbil (17-10, opcions 8B i 9A del Biel): els passos són targetes que llisquen, cadascuna amb la
+ * seva mini pantalla (`PantallaPas`), i «En la práctica» i les relacionades també llisquen. A
+ * l'ordinador no canvia res.
  */
 import type { CSSProperties } from 'react';
 import { motion } from 'framer-motion';
@@ -15,6 +18,9 @@ import { useFeatures } from '@/lib/data/useFeatures';
 import { useTranslation } from 'react-i18next';
 import PageShell from '@/components/PageShell';
 import MiniDemo from './MiniDemo';
+import PantallaPas from './PantallaPas';
+import PuntsLliscador from '@/components/portada/PuntsLliscador';
+import { useLliscador } from '@/components/portada/useLliscador';
 import { faqPageSchema, breadcrumbSchema, howToSchema } from '@/lib/seo/schemas';
 import { LangLink } from '@/i18n/LangLink';
 import { useEmpezar } from "@/lib/empezar";
@@ -39,6 +45,7 @@ export default function FeaturePage({ feature }: Props) {
   const { t } = useTranslation('funcionalidades');
   const { t: tEmbut } = useTranslation('embut');
   const allFeatures = useFeatures();
+  const passos = useLliscador<HTMLOListElement>();
   const related = feature.relatedFeatures
     .map((s) => allFeatures.find((f) => f.slug === s))
     .filter((f): f is Feature => Boolean(f));
@@ -108,15 +115,18 @@ export default function FeaturePage({ feature }: Props) {
             <p className="pt-retol">{t('page.how_eyebrow')}</p>
             <h2 className="pt-fp-h2">{t('page.how_title', { count: feature.howItWorks.length })}</h2>
           </motion.div>
-          <ol className="pt-fp-passos" style={{ '--n': feature.howItWorks.length } as CSSProperties}>
+          <ol ref={passos.ref} className="pt-fp-passos pt-llisca" onScroll={passos.enLliscar} style={{ '--n': feature.howItWorks.length } as CSSProperties}>
             {feature.howItWorks.map((step, i) => (
               <motion.li key={step.step} {...entra} transition={{ ...entra.transition, delay: i * 0.06 }} className="pt-pas">
                 <small aria-hidden="true">{String(step.step).padStart(2, '0')}</small>
+                <p className="pt-fp-paso" aria-hidden="true">{t('page.step_of', { n: step.step, total: feature.howItWorks.length })}</p>
                 <h3>{step.title}</h3>
                 <p>{step.body}</p>
+                {step.pantalla && <PantallaPas files={step.pantalla} />}
               </motion.li>
             ))}
           </ol>
+          <PuntsLliscador n={feature.howItWorks.length} pas={passos.pas} vesA={passos.vesA} />
         </div>
       </section>
 
@@ -142,7 +152,7 @@ export default function FeaturePage({ feature }: Props) {
             <p className="pt-retol">{t('page.usage_eyebrow')}</p>
             <h2 className="pt-fp-h2">{t('page.usage_title')}</h2>
           </motion.div>
-          <div className="pt-fp-peces">
+          <div className="pt-fp-peces pt-llisca">
             {feature.usage.map((u, i) => (
               <motion.div key={u.title} {...entra} transition={{ ...entra.transition, delay: i * 0.06 }} className="pt-fp-peca">
                 <h3>{u.title}</h3>
@@ -161,7 +171,7 @@ export default function FeaturePage({ feature }: Props) {
               <p className="pt-retol">{t('page.related_eyebrow')}</p>
               <h2 className="pt-fp-h2">{t('page.related_title')}</h2>
             </motion.div>
-            <div className="pt-fp-peces">
+            <div className="pt-fp-peces pt-fp-relacionades pt-llisca">
               {related.map((rf) => {
                 const RIcon = iconaFuncio(rf.iconName);
                 return (

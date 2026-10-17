@@ -375,8 +375,6 @@
         "Calendari",
         "Extres i comptes"
       ],
-      "anterior": "Anterior",
-      "seguent": "Següent",
       "funcions": {
         "retol": "I a més,",
         "text": "tot el que també fa Hostly.",
@@ -463,6 +461,11 @@
       "retol": "Preus",
       "titol": "Un pla gratis. Un pla complet.",
       "titol_gris": "Res més.",
+      "tria": {
+        "aria": "Pla",
+        "gratis": "Gratis · 0 €",
+        "complet": "Complet · 40 €"
+      },
       "gratis": {
         "nom": "Gratis",
         "preu": "0 €",

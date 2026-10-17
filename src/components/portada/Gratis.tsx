@@ -8,6 +8,8 @@
  * xifra és un exemple: 310 pernoctacions × 1,75 € (pis turístic fora de Barcelona) = 542,50 €.
  * El pagament: l'hoste toca «Pagar», el botó es fa una roda, «Pagada» i els diners arriben.
  * Les dues es mouen només mentre es veuen, i tornen a començar.
+ * Al mòbil, les quatre peces llisquen amb el dit, amb els punts a sota (opció 2A del Biel, 17-10); la
+ * banda del 0 €, amb el seu botó, es queda a dalt. A l'ordinador, la mateixa graella de sempre.
  */
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -15,6 +17,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Check, FileText } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
+import PuntsLliscador from "./PuntsLliscador";
+import { useLliscador } from "./useLliscador";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,6 +109,7 @@ export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
   const { t } = useTranslation("home");
   const { lang } = useLang();
   const seccioRef = useRef<HTMLElement>(null);
+  const llisca = useLliscador();
   const eur = new Intl.NumberFormat(lang === "ca" ? "ca-ES" : "es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   useEffect(() => {
@@ -148,62 +153,65 @@ export default function Gratis({ onEmpezar }: { onEmpezar: () => void }) {
             <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t("portada.gratis.boto")}</button>
           </div>
 
-
-          <div className="pt-tile">
-            <h3>{t("portada.gratis.checkin.titol")}</h3>
-            <p>{t("portada.gratis.checkin.text")}</p>
-            <div className="pt-mostra" aria-hidden="true">
-              <p className="pt-fila"><b>{t("portada.gratis.checkin.document")}</b><span className="pt-et">{t("portada.gratis.checkin.pas")}</span></p>
-              <div className="pt-barra"><span className="fet" /><span className="fet" /><span /></div>
-              <p className="pt-fila"><span className="pt-et">{t("portada.gratis.checkin.passaport")}</span><span className="pt-ok"><Check className="pt-ic" strokeWidth={3} /></span></p>
-            </div>
-          </div>
-
-          <div className="pt-tile">
-            <h3>{t("portada.gratis.policia.titol")}</h3>
-            <p>{t("portada.gratis.policia.text")}</p>
-            <div className="pt-mostra" aria-hidden="true">
-              <p className="pt-ok"><Check className="pt-ic" strokeWidth={3} />{t("portada.gratis.policia.enviat")}</p>
-              <span className="pt-pdf"><FileText className="pt-ic" />{t("portada.gratis.policia.comprovant")}</span>
-            </div>
-          </div>
-
-          <div className="pt-tile pt-tile-taxa">
-            <h3>{t("portada.gratis.taxa.titol")}</h3>
-            <p>{t("portada.gratis.taxa.text")}</p>
-            <div className="pt-mostra pt-calc" role="group" aria-label={t("portada.gratis.taxa.aria")}>
-              <span className="pt-escaner" aria-hidden="true" />
-              <p className="pt-estat" aria-hidden="true">
-                <span className="pt-xip-gris pt-e-calc"><span className="pt-punts"><i /><i /><i /></span>{t("portada.gratis.taxa.calculant")}</span>
-                <span className="pt-xip-verd pt-e-llesta"><TicDibuixat />{t("portada.gratis.taxa.llesta")}</span>
-              </p>
-              <p className="pt-fila pt-r1" aria-hidden="true"><span className="pt-et">{t("portada.gratis.taxa.hostes")}</span><b className="pt-n pt-n-hu">72</b></p>
-              <p className="pt-fila pt-r2" aria-hidden="true"><span className="pt-et">{t("portada.gratis.taxa.nits")}</span><b className="pt-n pt-n-pe">310</b></p>
-              <p className="pt-fila pt-r3" aria-hidden="true"><span className="pt-et"><i className="pt-op">×</i>{t("portada.gratis.taxa.preu")}</span><b>{`${eur.format(1.75)} €`}</b></p>
-              <span className="pt-regla" aria-hidden="true" />
-              <p className="pt-fila pt-total" aria-hidden="true">
-                <span><i className="pt-op">=</i>{t("portada.gratis.taxa.total")}</span>
-                <b><span className="pt-n-eur">{eur.format(542.5)}</span>€</b>
-              </p>
-            </div>
-          </div>
-
-          <div className="pt-tile pt-tile-pago">
-            <h3>{t("portada.gratis.pagament.titol")}</h3>
-            <p>{t("portada.gratis.pagament.text")}</p>
-            <div className="pt-mostra pt-pago">
-              <p className="pt-fila"><b>{t("portada.gratis.pagament.concepte")}</b><b>{`${eur.format(14)} €`}</b></p>
-              <p className="pt-fila"><span className="pt-et">{t("portada.gratis.pagament.detall")}</span></p>
-              <div className="pt-accio">
-                <span className="pt-boto-pagar" aria-hidden="true">{t("portada.gratis.pagament.pagar")}</span>
-                <span className="pt-dit" aria-hidden="true" />
-                <span className="pt-spin" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /></svg></span>
-                <span className="pt-xip-verd pt-pagada"><TicDibuixat />{t("portada.gratis.pagament.pagada")}</span>
+          {/* A l'ordinador aquest embolcall no existeix (display: contents); al mòbil és la tira que llisca */}
+          <div ref={llisca.ref} className="pt-gratis-peces pt-llisca" onScroll={llisca.enLliscar}>
+            <div className="pt-tile">
+              <h3>{t("portada.gratis.checkin.titol")}</h3>
+              <p>{t("portada.gratis.checkin.text")}</p>
+              <div className="pt-mostra" aria-hidden="true">
+                <p className="pt-fila"><b>{t("portada.gratis.checkin.document")}</b><span className="pt-et">{t("portada.gratis.checkin.pas")}</span></p>
+                <div className="pt-barra"><span className="fet" /><span className="fet" /><span /></div>
+                <p className="pt-fila"><span className="pt-et">{t("portada.gratis.checkin.passaport")}</span><span className="pt-ok"><Check className="pt-ic" strokeWidth={3} /></span></p>
               </div>
-              <span className="pt-cobrat" aria-hidden="true">{t("portada.gratis.pagament.cobrat")}</span>
+            </div>
+
+            <div className="pt-tile">
+              <h3>{t("portada.gratis.policia.titol")}</h3>
+              <p>{t("portada.gratis.policia.text")}</p>
+              <div className="pt-mostra" aria-hidden="true">
+                <p className="pt-ok"><Check className="pt-ic" strokeWidth={3} />{t("portada.gratis.policia.enviat")}</p>
+                <span className="pt-pdf"><FileText className="pt-ic" />{t("portada.gratis.policia.comprovant")}</span>
+              </div>
+            </div>
+
+            <div className="pt-tile pt-tile-taxa">
+              <h3>{t("portada.gratis.taxa.titol")}</h3>
+              <p>{t("portada.gratis.taxa.text")}</p>
+              <div className="pt-mostra pt-calc" role="group" aria-label={t("portada.gratis.taxa.aria")}>
+                <span className="pt-escaner" aria-hidden="true" />
+                <p className="pt-estat" aria-hidden="true">
+                  <span className="pt-xip-gris pt-e-calc"><span className="pt-punts"><i /><i /><i /></span>{t("portada.gratis.taxa.calculant")}</span>
+                  <span className="pt-xip-verd pt-e-llesta"><TicDibuixat />{t("portada.gratis.taxa.llesta")}</span>
+                </p>
+                <p className="pt-fila pt-r1" aria-hidden="true"><span className="pt-et">{t("portada.gratis.taxa.hostes")}</span><b className="pt-n pt-n-hu">72</b></p>
+                <p className="pt-fila pt-r2" aria-hidden="true"><span className="pt-et">{t("portada.gratis.taxa.nits")}</span><b className="pt-n pt-n-pe">310</b></p>
+                <p className="pt-fila pt-r3" aria-hidden="true"><span className="pt-et"><i className="pt-op">×</i>{t("portada.gratis.taxa.preu")}</span><b>{`${eur.format(1.75)} €`}</b></p>
+                <span className="pt-regla" aria-hidden="true" />
+                <p className="pt-fila pt-total" aria-hidden="true">
+                  <span><i className="pt-op">=</i>{t("portada.gratis.taxa.total")}</span>
+                  <b><span className="pt-n-eur">{eur.format(542.5)}</span>€</b>
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-tile pt-tile-pago">
+              <h3>{t("portada.gratis.pagament.titol")}</h3>
+              <p>{t("portada.gratis.pagament.text")}</p>
+              <div className="pt-mostra pt-pago">
+                <p className="pt-fila"><b>{t("portada.gratis.pagament.concepte")}</b><b>{`${eur.format(14)} €`}</b></p>
+                <p className="pt-fila"><span className="pt-et">{t("portada.gratis.pagament.detall")}</span></p>
+                <div className="pt-accio">
+                  <span className="pt-boto-pagar" aria-hidden="true">{t("portada.gratis.pagament.pagar")}</span>
+                  <span className="pt-dit" aria-hidden="true" />
+                  <span className="pt-spin" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /></svg></span>
+                  <span className="pt-xip-verd pt-pagada"><TicDibuixat />{t("portada.gratis.pagament.pagada")}</span>
+                </div>
+                <span className="pt-cobrat" aria-hidden="true">{t("portada.gratis.pagament.cobrat")}</span>
+              </div>
             </div>
           </div>
         </div>
+        <PuntsLliscador n={4} pas={llisca.pas} vesA={llisca.vesA} />
       </div>
     </section>
   );

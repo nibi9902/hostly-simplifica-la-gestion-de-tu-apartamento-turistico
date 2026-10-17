@@ -37,9 +37,9 @@ export default function PaginaLegal({ titol, actual, children }: { titol: string
               {t("common.index")}
               <ChevronDown className="w-4 h-4 text-slate-500 transition-transform group-open:rotate-180" aria-hidden="true" />
             </summary>
-            <ol className="px-5 pb-4 space-y-2 text-sm">
+            <ol className="px-5 pb-4 space-y-2 max-md:space-y-0 text-sm">
               {titols.map((h) => (
-                <li key={h.id}><a href={`#${h.id}`} className="text-slate-600 hover:text-foreground">{h.text}</a></li>
+                <li key={h.id}><a href={`#${h.id}`} className="text-slate-600 hover:text-foreground max-md:flex max-md:min-h-11 max-md:items-center">{h.text}</a></li>
               ))}
             </ol>
           </details>

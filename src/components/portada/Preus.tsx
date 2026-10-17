@@ -5,7 +5,10 @@
  * Abans es desplegava a sota; el Biel (13-10): «hauria de sortir un pop-up, no així cap avall».
  * A /precios (`pagina`) és la primera secció: el títol és l'h1, porta una frase a sota i, al final,
  * l'enllaç a la calculadora.
+ * Al mòbil (< 768 px), un commutador «Gratis · 0 € / Completo · 40 €» i un sol pla a la vista, el
+ * Completo d'entrada (opció 6A del Biel, 17-10). A l'ordinador, els dos plans de costat, com sempre.
  */
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as Dialeg from "@radix-ui/react-dialog";
 import { ArrowRight, Check, Home, UserRound, X } from "lucide-react";
@@ -47,6 +50,7 @@ export default function Preus({ onEmpezar, pagina = false }: { onEmpezar: () => 
   const gratis = t("portada.preus.gratis.inclou", { returnObjects: true }) as string[];
   const complet = t("portada.preus.complet.inclou", { returnObjects: true }) as string[];
   const Titol = pagina ? "h1" : "h2";
+  const [pla, setPla] = useState<"gratis" | "complet">("complet");
 
   return (
     <section id="precios" className={`pt-seccio pt-preus${pagina ? " pt-pagina" : ""}`} aria-labelledby="pt-preus-titol">
@@ -59,7 +63,12 @@ export default function Preus({ onEmpezar, pagina = false }: { onEmpezar: () => 
           {pagina && <p className="pt-lead">{t("pricing.subtitle")}</p>}
         </div>
 
-        <div className="pt-plans">
+        <div className="pt-plans-tria" role="group" aria-label={t("portada.preus.tria.aria")}>
+          <button type="button" aria-pressed={pla === "gratis"} onClick={() => setPla("gratis")}>{t("portada.preus.tria.gratis")}</button>
+          <button type="button" aria-pressed={pla === "complet"} onClick={() => setPla("complet")}>{t("portada.preus.tria.complet")}</button>
+        </div>
+
+        <div className="pt-plans" data-pla={pla}>
           <article className="pt-pla">
             <p className="pt-pla-cap">{t("portada.preus.gratis.nom")}</p>
             <p className="pt-preu"><b>{t("portada.preus.gratis.preu")}</b><span>{t("portada.preus.gratis.periode")}</span></p>

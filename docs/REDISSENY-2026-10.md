@@ -106,6 +106,10 @@
 - Les demos animades tenen rètols propis: van a `demos.json` (castellà i català). Una paraula
   catalana a la versió castellana (o al revés) la detecta la revisió (`textTot`, amb les
   vistes amagades incloses).
+- **A `portada.css`, una regla de mòbil escrita abans de la regla base perd** (tenen la mateixa
+  especificitat i guanya la de més avall). El 17-10 la U de «Hostly está pendiente» encara sortia
+  al mòbil per això. Les regles de mòbil d'una peça van després de la seva regla base i dels seus
+  `@media` més amples.
 
 ## La portada nova (13-10-2026)
 

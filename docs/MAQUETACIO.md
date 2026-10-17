@@ -60,9 +60,28 @@
 4. **Files que llisquen** amb la vora de la següent a la vista, sempre començant a la línia de
    20 px.
 5. **Botons principals a tota l'amplada** del contingut (entrada, preus, franja del final).
-6. Els plans: **Hostly Completo primer** (decisió de la versió 09).
-7. Capçal: el logotip a la línia i el menú (☰) a l'altra vora; el menú obert fa servir els
-   mateixos 20 px.
+6. Els plans: **un commutador «Gratis · 0 € / Completo · 40 €» i un sol pla a la vista, el
+   Completo d'entrada** (opció 6A del Biel, 17-10; abans, els dos plans un sota l'altre amb el
+   Completo primer, decisió de la versió 09).
+7. Capçal: el logotip a la línia, «Empezar» i el menú (☰) a l'altra vora; el menú obert fa
+   servir els mateixos 20 px. **Se'n va mentre baixes i torna quan puges** (opció 1B, amb
+   «Empezar», 17-10): dalt de tot sempre hi és (`useCapcalQueMarxa`, a `SiteHeader.tsx`).
+8. **Les peces que a l'ordinador són una graella, al mòbil llisquen** (17-10): les quatre de
+   «Gratis para siempre» (2A), les cinc rajoles del Completo amb les seves demos (3B), els passos
+   de cada funcionalitat (8B, cadascun amb la seva mini pantalla: el camp `pantalla` de
+   `features.ts` i `PantallaPas.tsx`), i «En la práctica» i «Funciona mejor con» (9A). Una sola
+   peça per a totes: la classe `.pt-llisca` (només fa res per sota de 641 px), `useLliscador` i
+   `PuntsLliscador` (els punts de sota; a 9A no n'hi ha). Les rodones de «Y además» van sempre
+   en una sola fila: s'encongeixen, no salten de línia.
+9. **«Hostly está pendiente»**: en lloc de la U, dues targetes (el 8 i l'1) que canvien el que
+   es veu a sota (opció 4C). La pantalla de l'app, a 320 px, no es llegia.
+10. **El dit**: tot el que es toca fa com a mínim 44 px d'alt (capçal, peu, molles de pa,
+    «Atrás», l'índex de les legals). Quan créixer moveria el text, l'enllaç creix cap enfora
+    (`padding-block` + `margin-block` negatiu). Els enllaços dins d'una frase no es toquen.
+11. **La lletra, mai per sota de 12 px.** Per pujar-la només al mòbil: `text-[11px]
+    max-md:text-xs`, no `text-xs md:text-[11px]` (`text-xs` també posa l'alçada de línia i a
+    l'ordinador canviava l'alçada de la pàgina).
+12. La barra fixa de baix («Empieza gratis» i «Llámame») se'n va mentre escrius en un camp.
 
 ## Excepcions volgudes
 

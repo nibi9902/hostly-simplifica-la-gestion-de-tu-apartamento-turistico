@@ -12,8 +12,12 @@
  *
  * Només a l'ordinador ample (≥ 1280 px). Més estret, sense JavaScript o amb «reduir moviment», es veu tal
  * com queda al final del dia (i les fotos de dia i de tarda no es baixen).
+ *
+ * Al mòbil (< 768 px) la U no hi és: dues targetes, el 8 i l'1, que canvien el que es veu a sota (les
+ * vuit coses o la incidència). És l'opció 4C del Biel (17-10); la pantalla de l'app, a 320 px, no es
+ * llegia. La incidència hi va amb la mateixa etiqueta que a l'ordinador, no amb un botó que no fa res.
  */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -122,6 +126,7 @@ export default function Pendent() {
   const coses = t("portada.pendent.coses", { returnObjects: true }) as Cosa[];
   const nomsTrams = t("portada.pendent.trams", { returnObjects: true }) as string[];
   const seccioRef = useRef<HTMLElement>(null);
+  const [mobil, setMobil] = useState<"fet" | "tu">("fet");
 
   useEffect(() => {
     const s = seccioRef.current;
@@ -187,6 +192,33 @@ export default function Pendent() {
             {/* abans semblava un botó blau i no feia res (revisió del 15-10): ara és una etiqueta */}
             <span className="pt-u-etiqueta">{t("portada.pendent.veure")}</span>
           </div>
+        </div>
+
+        <div className="pt-u-mobil">
+          <div className="pt-u-tria">
+            <button type="button" aria-pressed={mobil === "fet"} onClick={() => setMobil("fet")}>
+              <span className="pt-u-tria-n">{String(coses.length)}</span>
+              <span>{t("portada.pendent.fet_1")} {t("portada.pendent.fet_2")}</span>
+            </button>
+            <button type="button" aria-pressed={mobil === "tu"} onClick={() => setMobil("tu")}>
+              <span className="pt-u-tria-n pt-num-blau">1</span>
+              <span>{t("portada.pendent.tu_1")} {t("portada.pendent.tu_2")}</span>
+            </button>
+          </div>
+          {mobil === "fet" ? (
+            <ul key="fet" className="pt-u-llista">
+              {coses.map((c, i) => (
+                <li key={i}><Check className="pt-ic" strokeWidth={2.6} aria-hidden="true" /><span><b>{c.titol}</b><small>{c.detall}</small></span></li>
+              ))}
+            </ul>
+          ) : (
+            <div key="tu" className="pt-u-incid">
+              <p className="pt-u-incid-que"><span>{t("portada.pendent.pantalla.urgent")}</span> · {t("portada.pendent.pantalla.tipus")}</p>
+              <p className="pt-u-incid-titol">{t("portada.pendent.pantalla.titol")}</p>
+              <p className="pt-u-incid-qui">{t("portada.pendent.pantalla.qui")}</p>
+              <span className="pt-u-etiqueta">{t("portada.pendent.veure")}</span>
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 // El peu fa tota l'amplada de la caixa del web (10-10-2026): la marca a l'esquerra i quatre
 // columnes amb les mateixes portes que el menú, perquè qui arriba al final no hagi de tornar a dalt.
+// Al mòbil, cada enllaç fa 44 px d'alt perquè el dit no falli (17-10).
 const COLUMNES: Array<{ titol: string; enllacos: Array<{ clau: string; href: string }> }> = [
   {
     titol: "producto",
@@ -55,13 +56,13 @@ const Footer = () => {
           {/* Marca i contacte */}
           <div className="lg:col-span-4">
             {/* el mateix logotip que el capçal */}
-            <LangLink to="/" className="inline-flex items-center" aria-label="Hostly">
+            <LangLink to="/" className="inline-flex items-center max-md:min-h-11" aria-label="Hostly">
               <img src={hostlyMarca} alt="" width={160} height={24} className="h-6 w-auto" loading="lazy" />
             </LangLink>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xs">{t("footer.tagline")}</p>
             <a
               href="mailto:hola@hostlylabs.com"
-              className="mt-4 inline-block text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
+              className="mt-4 inline-block max-md:mt-1 max-md:inline-flex max-md:min-h-11 max-md:items-center text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
             >
               hola@hostlylabs.com
             </a>
@@ -74,12 +75,12 @@ const Footer = () => {
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 mb-4">
                   {t(`footer.cols.${col.titol}`)}
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-3 max-md:space-y-0">
                   {col.enllacos.map((l) => (
                     <li key={l.clau}>
                       <LangLink
                         to={l.href}
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 max-md:inline-flex max-md:min-h-11 max-md:items-center"
                       >
                         {t(`footer.links.${l.clau}`)}
                       </LangLink>

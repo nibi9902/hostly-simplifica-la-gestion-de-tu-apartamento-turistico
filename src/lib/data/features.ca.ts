@@ -28,21 +28,42 @@ export const FEATURES_CA: Feature[] = [
         step: 1,
         title: 'Connectes les reserves, no el teu WhatsApp',
         body: 'Connectes Airbnb i Booking. Els teus hostes escriuen a un número de WhatsApp gestionat per Hostly, amb l\'API oficial de Meta: no instal·les ni configures res.',
+        pantalla: [
+          { t: 'ok', text: 'Airbnb', val: 'Connectat' },
+          { t: 'ok', text: 'Booking.com', val: 'Connectat' },
+          { t: 'ok', text: 'WhatsApp', val: 'Número de Hostly' },
+          { t: 'nota', text: 'Amb l\'API oficial de Meta. No instal·les res.' },
+        ],
       },
       {
         step: 2,
         title: 'Omples la fitxa de cada pis',
         body: 'El wifi, com entrar, normes, pàrquing, recomanacions. La IA respon amb això i amb les dades de la reserva: pis, dates i hostes.',
+        pantalla: [
+          { t: 'cap', text: 'Cala Moreta', nota: 'Fitxa del pis' },
+          { t: 'camp', et: 'Wifi', val: 'CalaMoreta_5G' },
+          { t: 'camp', et: 'Pàrquing', val: 'Plaça 14, planta −1' },
+          { t: 'camp', et: 'Normes', val: 'No es fuma' },
+        ],
       },
       {
         step: 3,
         title: 'La IA respon i t\'avisa quan toca',
         body: 'Contesta al moment, de dia o de nit, en l\'idioma de l\'hoste. Si alguna cosa necessita una persona, t\'avisa amb el pis i les primeres paraules del missatge.',
+        pantalla: [
+          { t: 'rebut', text: 'Where can we park the car?', et: 'Thomas · WhatsApp · 23:45' },
+          { t: 'enviat', text: 'Space 14, level −1. The remote is in the entrance drawer.', et: 'Contesta la IA · en anglès' },
+        ],
       },
       {
         step: 4,
         title: 'Tu ho veus tot en una sola safata',
         body: 'WhatsApp, Airbnb i Booking al mateix lloc. Prens el control de qualsevol conversa quan vulguis. Si corregeixes una resposta, la IA en guarda la lliçó i la veus al xat.',
+        pantalla: [
+          { t: 'conversa', qui: 'Camille', canal: 'airbnb', text: 'Merci ! À demain.' },
+          { t: 'conversa', qui: 'Thomas', canal: 'booking', text: 'What time is check-out?' },
+          { t: 'conversa', qui: 'Sophie', canal: 'whatsapp', text: 'Parfait, merci beaucoup.' },
+        ],
       },
     ],
     advantages: [
@@ -114,21 +135,39 @@ export const FEATURES_CA: Feature[] = [
         step: 1,
         title: 'L\'hoste rep el seu enllaç',
         body: 'A Hostly Complet, li arriba amb els missatges automàtics, en el seu idioma. Al pla Gratis, cada pis té el seu enllaç fix per compartir-lo amb els teus hostes.',
+        pantalla: [
+          { t: 'auto', text: 'Bonjour Camille ! Avant d’arriver, faites le check-in ici :', et: 'Automàtic · Hostly', enllac: 'hostlylabs.com/i/k7q2' },
+        ],
       },
       {
         step: 2,
         title: 'Omple les seves dades des del mòbil',
         body: 'Nom, document, data de naixement, nacionalitat i adreça, en castellà, anglès o francès. Un adult pot registrar tot el grup amb el mateix enllaç.',
+        pantalla: [
+          { t: 'cap', text: 'Votre document', nota: '2 / 3' },
+          { t: 'barra', fets: 2, de: 3 },
+          { t: 'camp', et: 'Nom', val: 'Camille Durand' },
+          { t: 'camp', et: 'Document', val: 'Passeport' },
+        ],
       },
       {
         step: 3,
         title: 'Hostly comprova cada dada',
         body: 'Abans d\'enviar res, valida cada camp. Si falta alguna cosa o no és vàlida, l\'hoste la corregeix al moment. El codi d\'accés només apareix quan el check-in està fet.',
+        pantalla: [
+          { t: 'ok', text: 'N° de document' },
+          { t: 'ok', text: 'Date de naissance' },
+          { t: 'ok', text: 'Nationalité' },
+        ],
       },
       {
         step: 4,
         title: 'Hostly ho envia a la policia',
         body: 'Cada dia puja el fitxer al portal de la policia i n\'arxiva el comprovant. Si alguna línia falla, t\'avisa i et diu quina.',
+        pantalla: [
+          { t: 'ok', text: 'Registre de viatgers enviat' },
+          { t: 'doc', text: 'Comprovant' },
+        ],
       },
     ],
     advantages: [
@@ -200,21 +239,42 @@ export const FEATURES_CA: Feature[] = [
         step: 1,
         title: 'Connectes Airbnb i Booking',
         body: 'Airbnb, amb el teu compte. Booking.com, amb l\'ID de la teva propietat. Ho fem amb tu a la configuració del primer mes.',
+        pantalla: [
+          { t: 'ok', text: 'Airbnb', val: 'Connectat' },
+          { t: 'ok', text: 'Booking.com', val: 'Connectat' },
+          { t: 'nota', text: 'Ho connectem amb tu el primer mes.' },
+        ],
       },
       {
         step: 2,
         title: 'Importem el teu històric',
         body: 'Portem les teves reserves. A partir d\'aquell moment, cada reserva nova entra sola, i cada 20 minuts Hostly ho torna a comprovar per si se n\'ha quedat alguna pel camí.',
+        pantalla: [
+          { t: 'reserva', qui: 'Camille', canal: 'airbnb', val: '435 €' },
+          { t: 'reserva', qui: 'Thomas', canal: 'booking', val: '555 €', despl: true },
+          { t: 'nota', text: 'Cada 20 minuts, Hostly ho torna a comprovar.' },
+        ],
       },
       {
         step: 3,
         title: 'Ho gestiones tot des d\'un calendari',
         body: 'Els bloquejos que poses arriben a Airbnb i Booking a l\'instant. Els preus es publiquen cada matí i cada cop que canvies alguna cosa.',
+        pantalla: [
+          { t: 'cap', text: 'Bloqueig · 12–16 nov.' },
+          { t: 'ok', text: 'Airbnb', val: 'Rebut' },
+          { t: 'ok', text: 'Booking.com', val: 'Rebut' },
+        ],
       },
       {
         step: 4,
         title: 'I les teves reserves directes, també',
         body: 'Les que t\'arriben per telèfon les apuntes en un moment. I si vols un web propi amb reserves directes, el muntem amb tu, a mida.',
+        pantalla: [
+          { t: 'cap', text: 'Reserva nova', nota: 'Directa' },
+          { t: 'camp', et: 'Hoste', val: 'Maria López' },
+          { t: 'camp', et: 'Dates', val: '8–11 des.' },
+          { t: 'boto', text: 'Desar' },
+        ],
       },
     ],
     advantages: [
@@ -286,21 +346,40 @@ export const FEATURES_CA: Feature[] = [
         step: 1,
         title: 'Muntes l\'equip de cada pis',
         body: 'Afegeixes les persones que netegen cada pis i l\'ordre del torn. Cadascuna fa servir la seva app, en català, castellà o anglès, o l\'assistent de WhatsApp.',
+        pantalla: [
+          { t: 'persona', nom: 'Pilar', nota: '1a del torn · app' },
+          { t: 'persona', nom: 'Carmen', nota: '2a · WhatsApp' },
+          { t: 'persona', nom: 'Anna', nota: '3a · app, en català' },
+        ],
       },
       {
         step: 2,
         title: 'Cada sortida crea la seva neteja',
         body: 'Per cada sortida, Hostly crea la neteja d\'aquell dia i avisa qui li toca. Si canvien les dates, avisa del canvi.',
+        pantalla: [
+          { t: 'ok', text: 'Neteja creada', val: 'ds. 11:00' },
+          { t: 'camp', et: 'Li toca a', val: 'Pilar' },
+          { t: 'nota', text: 'La Pilar ja té l\'avís.' },
+        ],
       },
       {
         step: 3,
         title: 'Si algú no pot, passa a la següent',
         body: 'Si la persona diu «no puc», la neteja passa a la següent del torn, que en rep l\'avís per WhatsApp. Tu no has de buscar ningú.',
+        pantalla: [
+          { t: 'camp', et: 'Pilar', val: 'No pot' },
+          { t: 'ok', text: 'Carmen · demà 11:00', val: 'Coordinada' },
+          { t: 'nota', text: 'La Carmen ho ha rebut per WhatsApp.' },
+        ],
       },
       {
         step: 4,
         title: 'En acabar, fotos i incidències',
         body: 'La neteja es marca com a feta amb fotos de sortida. Si hi ha alguna cosa trencada o l\'hoste s\'ha deixat alguna cosa, queda com a incidència amb data, pis i persona.',
+        pantalla: [
+          { t: 'ok', text: 'Neteja feta', val: '4 fotos' },
+          { t: 'avis', text: 'S\'han deixat una jaqueta', val: 'Incidència' },
+        ],
       },
     ],
     advantages: [
@@ -372,21 +451,42 @@ export const FEATURES_CA: Feature[] = [
         step: 1,
         title: 'Poses les teves regles',
         body: 'Preu mínim i màxim, temporades, dies amb preu fix, nits mínimes i descomptes per setmana o per mes.',
+        pantalla: [
+          { t: 'camp', et: 'Preu mínim', val: '85 €' },
+          { t: 'camp', et: 'Preu màxim', val: '260 €' },
+          { t: 'camp', et: 'Nits mínimes', val: '2' },
+          { t: 'camp', et: 'Descompte setmanal', val: '10 %' },
+        ],
       },
       {
         step: 2,
         title: 'Un preu per a cada dia',
         body: 'Segons la demanda, la temporada i els esdeveniments de la teva zona, cada dia té un preu recomanat.',
+        pantalla: [
+          { t: 'cap', text: 'Setmana Santa', nota: 'dissabte' },
+          { t: 'xips', items: [{ text: 'Demanda +70 %', to: 'blau' }, { text: 'Festiu', to: 'ambre' }] },
+          { t: 'xifra', et: 'Preu recomanat', val: '251 €', total: true },
+        ],
       },
       {
         step: 3,
         title: 'Tu decideixes',
         body: 'Al calendari de Hostly veus el preu recomanat i per què. En mode manual, l\'acceptes amb un clic. En automàtic, s\'aplica sol dins dels teus límits.',
+        pantalla: [
+          { t: 'cap', text: 'Recomanat: 251 €', nota: 'ara 190 €' },
+          { t: 'nota', text: 'Per què: demanda +70 % i festiu.' },
+          { t: 'boto', text: 'Acceptar' },
+        ],
       },
       {
         step: 4,
         title: 'Es publica a Airbnb i Booking',
         body: 'Hostly publica els preus cada matí i cada cop que canvies alguna cosa.',
+        pantalla: [
+          { t: 'ok', text: 'Airbnb', val: '251 €' },
+          { t: 'ok', text: 'Booking.com', val: '251 €' },
+          { t: 'nota', text: 'Publicat aquest matí.' },
+        ],
       },
     ],
     advantages: [
@@ -453,21 +553,40 @@ export const FEATURES_CA: Feature[] = [
         step: 1,
         title: 'Escrius cada plantilla una vegada',
         body: 'Benvinguda, check-in, check-out, neteja, entrada anticipada, sortida tardana i quatre missatges lliures. Si vols, una versió diferent per a cada pis.',
+        pantalla: [
+          { t: 'ok', text: 'Benvinguda' },
+          { t: 'ok', text: 'Check-in' },
+          { t: 'ok', text: 'Check-out' },
+          { t: 'nota', text: 'I neteja, entrada anticipada, sortida tardana i quatre de lliures.' },
+        ],
       },
       {
         step: 2,
         title: 'Fas servir variables',
         body: 'L\'enllaç de check-in, els codis, les dates. Hostly les omple amb les dades de cada reserva.',
+        pantalla: [
+          { t: 'auto', text: 'Hola [[nom]], fes el check-in aquí: [[enllaç de check-in]]', et: 'Plantilla' },
+          { t: 'auto', text: 'Hola Marta, fes el check-in aquí:', et: 'Reserva de la Marta', enllac: 'hostlylabs.com/i/k7q2' },
+        ],
       },
       {
         step: 3,
         title: 'Hostly la tradueix',
         body: 'Cada missatge surt traduït a l\'idioma de l\'hoste. Tu escrius la plantilla una sola vegada.',
+        pantalla: [
+          { t: 'auto', text: 'Benvinguda! T\'esperem divendres.', et: 'Tu escrius' },
+          { t: 'auto', text: 'Bienvenue ! On vous attend vendredi.', et: 'Li arriba a la Camille, en francès' },
+        ],
       },
       {
         step: 4,
         title: 'Surt pel canal que toca',
         body: 'Per WhatsApp si tens el número de l\'hoste. Si no, per Airbnb o Booking. Tot queda a l\'historial de la reserva.',
+        pantalla: [
+          { t: 'conversa', qui: 'Thomas', canal: 'whatsapp', text: 'Instruccions d\'arribada', estat: 'Enviat' },
+          { t: 'conversa', qui: 'Camille', canal: 'airbnb', text: 'Instruccions d\'arribada', estat: 'Enviat' },
+          { t: 'nota', text: 'Sense el número de l\'hoste, per Airbnb o Booking.' },
+        ],
       },
     ],
     advantages: [
@@ -539,16 +658,32 @@ export const FEATURES_CA: Feature[] = [
         step: 1,
         title: 'Convides cada persona',
         body: 'Li envies una invitació amb el seu paper: gestor, neteja o propietari. Si no l\'accepta, la invitació caduca.',
+        pantalla: [
+          { t: 'persona', nom: 'Laura', nota: 'Gestora · convidada' },
+          { t: 'persona', nom: 'Jordi', nota: 'Propietari · convidat' },
+          { t: 'persona', nom: 'Pilar', nota: 'Neteja · convidada' },
+        ],
       },
       {
         step: 2,
         title: 'Tries els seus pisos',
         body: 'Un gestor pot portar tots els teus pisos o només alguns. La neteja i els propietaris, només els seus.',
+        pantalla: [
+          { t: 'cap', text: 'Laura · gestora', nota: 'Els seus pisos' },
+          { t: 'tria', text: 'Cala Moreta', si: true },
+          { t: 'tria', text: 'Àtic Born', si: true },
+          { t: 'tria', text: 'Mas Pinell', si: false },
+        ],
       },
       {
         step: 3,
         title: 'Cadascú entra amb el seu compte',
         body: 'Des del mòbil o l\'ordinador. La neteja veu les seves neteges; el propietari, el calendari i les finances dels seus pisos, sense poder canviar res.',
+        pantalla: [
+          { t: 'persona', nom: 'Pilar', nota: 'Veu les seves neteges' },
+          { t: 'persona', nom: 'Jordi', nota: 'Veu el calendari i les finances' },
+          { t: 'nota', text: 'El propietari, sense poder canviar res.' },
+        ],
       },
     ],
     advantages: [
@@ -620,21 +755,37 @@ export const FEATURES_CA: Feature[] = [
         step: 1,
         title: 'Ens expliques què necessites',
         body: 'Què fas a mà, amb quines eines i cada quant. Escriu-nos amb el teu cas.',
+        pantalla: [
+          { t: 'enviat', text: 'Cada mes passo a mà les dades que em demana la gestoria.', et: 'Tu' },
+        ],
       },
       {
         step: 2,
         title: 'Et proposem com i quant',
         body: 'Ho estudiem i et diem què es pot automatitzar i quina seria la quota mensual. No comencem fins que ens diguis que sí.',
+        pantalla: [
+          { t: 'rebut', text: 'Es pot automatitzar. Aquí tens la proposta i la quota mensual.', et: 'Hostly' },
+          { t: 'boto', text: 'Sí, endavant' },
+        ],
       },
       {
         step: 3,
         title: 'Ho construïm',
         body: 'Ho connectem amb el teu Hostly sense que hagis de tocar res. T\'avisem quan estigui funcionant.',
+        pantalla: [
+          { t: 'ok', text: 'Connectat amb el teu Hostly' },
+          { t: 'rebut', text: 'Ja està funcionant.', et: 'Hostly' },
+        ],
       },
       {
         step: 4,
         title: 'Funciona sol',
         body: 'S\'executa cada cop que toca. Tu no has de fer res més.',
+        pantalla: [
+          { t: 'ok', text: 'Dades per a la gestoria', val: '1 nov.' },
+          { t: 'ok', text: 'Dades per a la gestoria', val: '1 des.' },
+          { t: 'nota', text: 'Cada mes, sense que facis res.' },
+        ],
       },
     ],
     advantages: [
@@ -706,21 +857,41 @@ export const FEATURES_CA: Feature[] = [
         step: 1,
         title: 'Els teus ingressos, al dia',
         body: 'Cada reserva entra amb el seu import i la comissió de la plataforma ja calculada. Veus el que et queda sense copiar res.',
+        pantalla: [
+          { t: 'xifra', et: 'Reserva de la Camille', val: '435,00 €' },
+          { t: 'xifra', et: 'Comissió d\'Airbnb', val: '−13,05 €' },
+          { t: 'xifra', et: 'Et queda', val: '421,95 €', total: true },
+        ],
       },
       {
         step: 2,
         title: 'Filtra per pis, canal o període',
         body: 'Els ingressos d\'un pis, d\'Airbnb o de Booking, o d\'un mes concret, en un moment.',
+        pantalla: [
+          { t: 'xips', items: [{ text: 'Cala Moreta', to: 'gris' }, { text: 'Airbnb', to: 'gris' }, { text: 'Agost', to: 'gris' }] },
+          { t: 'xifra', et: 'Ingressos', val: '3.840 €', total: true },
+        ],
       },
       {
         step: 3,
         title: 'Liquidació al propietari en quatre passos',
         body: 'Si gestiones pisos de tercers, un assistent et guia amb els teus honoraris i la neteja ja calculats. Cada propietari veu la seva a la seva app.',
+        pantalla: [
+          { t: 'cap', text: 'Liquidació · Jordi', nota: '2 / 4' },
+          { t: 'barra', fets: 2, de: 4 },
+          { t: 'xifra', et: 'Honoraris', val: '−576 €' },
+          { t: 'xifra', et: 'Neteja', val: '−160 €' },
+        ],
       },
       {
         step: 4,
         title: 'Exporta el que necessitis',
         body: 'Les liquidacions, en CSV o PDF. La taxa turística, en Excel o CSV, a punt per presentar.',
+        pantalla: [
+          { t: 'doc', text: 'Liquidació octubre.pdf' },
+          { t: 'doc', text: 'Liquidacions.csv' },
+          { t: 'doc', text: 'Taxa turística.xlsx' },
+        ],
       },
     ],
     advantages: [
@@ -787,21 +958,39 @@ export const FEATURES_CA: Feature[] = [
         step: 1,
         title: 'Hostly sap quina tarifa et toca',
         body: 'La calcula amb la llei vigent i el municipi de cada pis. No has de buscar res.',
+        pantalla: [
+          { t: 'camp', et: 'Municipi', val: 'Begur' },
+          { t: 'camp', et: 'Tipus', val: 'Habitatge d\'ús turístic' },
+          { t: 'camp', et: 'Per persona i nit', val: '1,75 €' },
+        ],
       },
       {
         step: 2,
         title: 'Calcula cada estada',
         body: 'Amb les dades de cada reserva, calcula l\'import de la taxa i el total per pis de cada període.',
+        pantalla: [
+          { t: 'xifra', et: 'Hostes', val: '2' },
+          { t: 'xifra', et: 'Nits', val: '4' },
+          { t: 'xifra', et: 'Taxa de l\'estada', val: '14,00 €', total: true },
+        ],
       },
       {
         step: 3,
         title: 'T\'avisa quan toca presentar-la',
         body: 'Quan toca presentar-la, veus un avís a l\'app.',
+        pantalla: [
+          { t: 'avis', text: 'Toca presentar la taxa', val: 'abr.–set.' },
+          { t: 'nota', text: 'Ho veus a l\'app.' },
+        ],
       },
       {
         step: 4,
         title: 'Exportes, presentes i ho marques',
         body: 'Descarregues l\'Excel o el CSV a punt per presentar. Quan l\'has presentada, prems «ja l\'he presentada».',
+        pantalla: [
+          { t: 'doc', text: 'Taxa turística abr–set.xlsx' },
+          { t: 'boto', text: 'Ja l\'he presentada' },
+        ],
       },
     ],
     advantages: [

@@ -160,7 +160,7 @@ export default function BlogIndex() {
               >
                 <div className="flex items-start justify-between mb-8 gap-6">
                   <div>
-                    <span className={`inline-flex items-center text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-full mb-3 ${cat.color}`}>
+                    <span className={`inline-flex items-center text-[10px] max-md:text-xs font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-full mb-3 ${cat.color}`}>
                       {t(`categories.${cat.key}.label`)}
                     </span>
                     <p className="text-sm text-slate-500 max-w-sm">{t(`categories.${cat.key}.description`)}</p>
@@ -188,7 +188,7 @@ export default function BlogIndex() {
                           {post!.description}
                         </p>
                         <div className="mt-auto flex items-center justify-between pt-2 border-t border-slate-50">
-                          <span className="flex items-center gap-1 text-[11px] text-slate-500">
+                          <span className="flex items-center gap-1 text-[11px] max-md:text-xs text-slate-500">
                             <Clock className="w-3 h-3" /> {t('index.min_read', { count: post!.readingTime })}
                           </span>
                           <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-primary transition-colors" />

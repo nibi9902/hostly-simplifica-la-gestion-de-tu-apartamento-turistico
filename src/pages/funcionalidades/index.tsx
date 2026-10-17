@@ -44,7 +44,7 @@ export default function FuncionalidadesIndex() {
             <div className="w-11 h-11 rounded-xl bg-[#eff6ff] flex items-center justify-center">
               <Icon className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} />
             </div>
-            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-primary">
+            <span className="text-[11px] max-md:text-xs font-bold uppercase tracking-[0.15em] text-primary">
               {/* A quin pla és: abans hi deia «Hostly ·» i res més */}
               {t(PLA_DE_LA_FUNCIO[f.slug] ?? 'index.card_plan_completo')}
             </span>

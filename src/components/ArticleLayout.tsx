@@ -140,9 +140,9 @@ export default function ArticleLayout({ post }: Props) {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease }}>
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-sm text-slate-500 mb-8">
-              <LangLink to="/" className="hover:text-slate-600 transition-colors">Hostly</LangLink>
+              <LangLink to="/" className="hover:text-slate-600 transition-colors max-md:py-3 max-md:-my-3">Hostly</LangLink>
               <span>/</span>
-              <LangLink to="/blog" className="hover:text-slate-600 transition-colors flex items-center gap-1">
+              <LangLink to="/blog" className="hover:text-slate-600 transition-colors flex items-center gap-1 max-md:py-3 max-md:-my-3">
                 <ArrowLeft className="w-3.5 h-3.5" /> {t('index.breadcrumb')}
               </LangLink>
             </div>
@@ -270,7 +270,7 @@ export default function ArticleLayout({ post }: Props) {
                   <h3 className="text-sm font-bold text-[#0f172a] group-hover:text-primary transition-colors leading-snug">
                     {p.title}
                   </h3>
-                  <span className="flex items-center gap-1 text-[11px] text-slate-500 mt-auto">
+                  <span className="flex items-center gap-1 text-[11px] max-md:text-xs text-slate-500 mt-auto">
                     <Clock className="w-3 h-3" /> {p.readingTime} min
                   </span>
                 </MotionLangLink>

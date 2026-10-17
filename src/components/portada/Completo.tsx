@@ -18,12 +18,14 @@
  * Tot el que s'hi diu és el que fa l'app: el late checkout l'ofereix un missatge automàtic amb l'enllaç
  * de l'app (hostlylabs.com/i/…) i es paga en línia; la web pròpia i «Conéctalo todo» són a part.
  * Amb «reduir moviment», tot quiet en l'estat final.
+ * Al mòbil, les cinc rajoles llisquen amb el dit, amb els punts a sota (opció 3B del Biel, 17-10; fins
+ * llavors hi havia una llista de cinc línies sense les demos).
  */
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowLeft, ArrowRight, ArrowUpRight, CalendarDays, Check, ClipboardList, Clock, Globe, Link2, LineChart, MessageCircle, Plus, Receipt, RefreshCw, Sparkles, TrendingUp, Users, Zap } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ClipboardList, Clock, Globe, Link2, LineChart, Plus, Receipt, RefreshCw, Sparkles, Users, Zap } from "lucide-react";
 import { LangLink } from "@/i18n/LangLink";
 import { useLang } from "@/i18n/useLang";
 import fotoMissatges from "@/assets/portada/gestor-tarda.webp";
@@ -35,6 +37,8 @@ import airbnb from "@/assets/connexions/airbnb.webp";
 import booking from "@/assets/connexions/booking.webp";
 import whatsapp from "@/assets/connexions/whatsapp.webp";
 import iconaApp from "@/assets/portada/icona-app.webp";
+import PuntsLliscador from "./PuntsLliscador";
+import { useLliscador } from "./useLliscador";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -426,13 +430,13 @@ export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
   const { t } = useTranslation("home");
   const { lang } = useLang();
   const seccioRef = useRef<HTMLElement>(null);
-  const graellaRef = useRef<HTMLDivElement>(null);
+  const llisca = useLliscador(":scope > .pt-cmp-t");
+  const graellaRef = llisca.ref;
   const volRef = useRef<HTMLDivElement>(null);
   const filaRef = useRef<HTMLDivElement>(null);
   const totalRef = useRef<HTMLSpanElement>(null);
   const [quiet, setQuiet] = useState(false);
   const [aterrat, setAterrat] = useState(true);
-  const [pas, setPas] = useState(0);
   const noms = t("portada.completo.nom_pas", { returnObjects: true }) as string[];
 
   useEffect(() => { setQuiet(window.matchMedia("(prefers-reduced-motion: reduce)").matches); }, []);
@@ -465,7 +469,7 @@ export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
       .to(vol, { y: y1, duration: 0.9, ease: "sine.in" }, 1.1)
       .to(vol, { opacity: 0, scale: 0.9, duration: 0.4, ease: "sine.in" }, 1.85)
       .call(aterra, undefined, 1.9);
-  }, [aterra]);
+  }, [aterra, graellaRef]);
   // Amb el ratolí a sobre d'Extras, només Extras: la fila torna a entrar i el total torna a sumar
   const extresEntra = useCallback(() => { treu(); window.setTimeout(aterra, 350); }, [treu, aterra]);
 
@@ -486,22 +490,6 @@ export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
     return () => mm.revert();
   }, [lang]);
 
-  // Al mòbil, les rajoles llisquen: els botons i els punts. Les distàncies es mesuren a la pantalla.
-  const rajoles = () => [...(graellaRef.current?.querySelectorAll<HTMLElement>(":scope > .pt-cmp-t") ?? [])];
-  const inici = (g: HTMLElement) => g.getBoundingClientRect().left + (parseFloat(getComputedStyle(g).scrollPaddingInlineStart) || 0);
-  const vesA = useCallback((i: number) => {
-    const g = graellaRef.current;
-    const fill = rajoles()[i];
-    if (g && fill) g.scrollTo({ left: g.scrollLeft + fill.getBoundingClientRect().left - inici(g), behavior: quiet ? "auto" : "smooth" });
-  }, [quiet]);
-  const enLliscar = () => {
-    const g = graellaRef.current;
-    if (!g) return;
-    const vora = inici(g);
-    const dist = rajoles().map((f) => Math.abs(f.getBoundingClientRect().left - vora));
-    setPas(dist.indexOf(Math.min(...dist)));
-  };
-
   return (
     <section ref={seccioRef} id="completo" className="pt-seccio pt-cmp" aria-labelledby="pt-cmp-titol">
       <div className="contenidor">
@@ -518,16 +506,8 @@ export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
           </div>
         </div>
 
-        {/* Al mòbil, les cinc coses en llista (es veuen totes sense lliscar); les rajoles, a l'ordinador i a la tauleta */}
-        <ul className="pt-cmp-llista">
-          <li><MessageCircle className="pt-ic" aria-hidden="true" /><span><b>{t("portada.completo.missatges.titol")}</b>{t("portada.completo.missatges.text")}</span></li>
-          <li><TrendingUp className="pt-ic" aria-hidden="true" /><span><b>{t("portada.completo.preus.titol")}</b>{t("portada.completo.preus.text")}</span></li>
-          <li><Users className="pt-ic" aria-hidden="true" /><span><b>{noms[2]}</b>{t("portada.completo.neteja.titol")} {t("portada.completo.neteja.titol_gris")}</span></li>
-          <li><CalendarDays className="pt-ic" aria-hidden="true" /><span><b>{noms[3]}</b>{t("portada.completo.calendari.text")}</span></li>
-          <li><Receipt className="pt-ic" aria-hidden="true" /><span><b>{noms[4]}</b>{t("portada.completo.extres.titol")} {t("portada.completo.extres.titol_a")} <em className="pt-cmp-terme">{t("portada.completo.extres.terme")}</em>{t("portada.completo.extres.titol_b")} {t("portada.completo.extres.text")}</span></li>
-        </ul>
-
-        <div ref={graellaRef} className="pt-cmp-graella" onScroll={enLliscar}>
+        {/* A l'ordinador i a la tauleta, la graella; al mòbil, la mateixa tira de rajoles llisca amb el dit */}
+        <div ref={graellaRef} className="pt-cmp-graella pt-llisca" onScroll={llisca.enLliscar}>
           <Missatges quiet={quiet} enOferir={treu} enAcceptar={vola} />
           <Preus quiet={quiet} />
           <Neteja quiet={quiet} nom={noms[2]} />
@@ -539,13 +519,7 @@ export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
           </div>
         </div>
 
-        {/* Al mòbil: per passar d'una rajola a l'altra */}
-        <div className="pt-cmp-control">
-          <button type="button" onClick={() => vesA(Math.max(0, pas - 1))} aria-label={t("portada.completo.anterior")} disabled={pas === 0}><ArrowLeft className="pt-ic" aria-hidden="true" /></button>
-          <div className="pt-cmp-punts" aria-hidden="true">{noms.map((_, i) => <i key={i} className={i === pas ? "ara" : undefined} />)}</div>
-          <span className="pt-cmp-nom" aria-live="polite">{noms[pas]}</span>
-          <button type="button" onClick={() => vesA(Math.min(noms.length - 1, pas + 1))} aria-label={t("portada.completo.seguent")} disabled={pas === noms.length - 1}><ArrowRight className="pt-ic" aria-hidden="true" /></button>
-        </div>
+        <PuntsLliscador n={noms.length} pas={llisca.pas} vesA={llisca.vesA} />
 
         <Funcions />
       </div>

@@ -189,11 +189,11 @@ export default function Empezar() {
       <header className="sticky top-0 z-40 bg-background/90 backdrop-blur-md border-b border-slate-100">
         <div className="contenidor h-16 flex items-center justify-between gap-4">
           {/* el mateix logotip que el capçal de la web */}
-          <LangLink to="/" className="flex items-center shrink-0" aria-label={t("empezar.inicio")}>
+          <LangLink to="/" className="flex items-center shrink-0 max-md:min-h-11" aria-label={t("empezar.inicio")}>
             <img src={hostlyMarca} alt="" width={160} height={24} className="h-6 w-auto" />
           </LangLink>
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-medium text-muted-foreground tabular-nums">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <span className="text-xs font-medium text-muted-foreground tabular-nums whitespace-nowrap">
               {t("empezar.paso", { n: NUM_PAS[pas] })}
             </span>
             <div className="flex gap-1.5" aria-hidden="true">
@@ -201,7 +201,7 @@ export default function Empezar() {
                 <span
                   key={n}
                   className={cn(
-                    "h-1.5 w-7 rounded-full transition-colors duration-300",
+                    "h-1.5 w-4 sm:w-7 rounded-full transition-colors duration-300",
                     n <= NUM_PAS[pas] ? "bg-primary" : "bg-slate-200",
                   )}
                 />
@@ -218,7 +218,7 @@ export default function Empezar() {
           <button
             type="button"
             onClick={() => { setErrors({}); if (pas === "datos") tornaDOnVenia(); else setPas(enrere[pas]!); }}
-            className="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary max-md:min-h-11 max-md:-mt-3 max-md:mb-3"
           >
             <ArrowLeft className="w-4 h-4" />
             {t("empezar.atras")}
@@ -335,7 +335,7 @@ export default function Empezar() {
                 >
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <span className="text-xl font-bold tracking-tight">{t("empezar.plan.completo_nombre")}</span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider bg-white/15 rounded-full px-2.5 py-1">
+                    <span className="text-[11px] max-md:text-xs font-bold uppercase tracking-wider bg-white/15 rounded-full px-2.5 py-1">
                       {t("empezar.plan.recomendado")}
                     </span>
                   </div>
@@ -455,11 +455,11 @@ export default function Empezar() {
                           : "bg-white border-slate-200 text-foreground hover:border-slate-300",
                       )}
                     >
-                      <span className={cn("text-[11px] font-semibold uppercase tracking-wide", triat ? "text-white/70" : "text-muted-foreground")}>
+                      <span className={cn("text-[11px] max-md:text-xs font-semibold uppercase tracking-wide", triat ? "text-white/70" : "text-muted-foreground")}>
                         {e.setmana}
                       </span>
                       <span className="text-xl font-bold tabular-nums leading-tight">{e.dia}</span>
-                      <span className={cn("text-[11px]", triat ? "text-white/70" : "text-muted-foreground")}>{e.mes}</span>
+                      <span className={cn("text-[11px] max-md:text-xs", triat ? "text-white/70" : "text-muted-foreground")}>{e.mes}</span>
                     </button>
                   );
                 })}

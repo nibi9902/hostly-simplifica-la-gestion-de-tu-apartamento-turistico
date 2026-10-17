@@ -15,6 +15,7 @@
     "problem_eyebrow": "El problema",
     "how_eyebrow": "Com funciona",
     "how_title": "{{count}} passos i ho tens funcionant.",
+    "step_of": "Pas {{n}} de {{total}}",
     "advantages_eyebrow": "Què et dona de diferent",
     "advantages_title": "El que notaràs des del primer dia.",
     "usage_eyebrow": "A la pràctica",

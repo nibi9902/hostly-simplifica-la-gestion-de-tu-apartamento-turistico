@@ -202,10 +202,6 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-pend .pt-boto-blau { align-self: flex-start; }
 /* la incidència: una etiqueta, no un botó (15-10) */
 .pt-u-etiqueta { align-self: flex-start; display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 9999px; background: hsl(220 14% 93%); color: var(--pt-gris); font-size: 13px; font-weight: 600; }
-@media (max-width: 767px) {
-  /* al mòbil, 4 de les 8 coses (15-10): la llista era massa llarga */
-  .pt-u-totes li:nth-child(n+5) { display: none; }
-}
 /* la línia del dia, supermínima: un fil gris, un sol punt blau que avança, i els trams en gris */
 .pt-lm { position: relative; width: 100%; height: 44px; margin-top: 30px; }
 .pt-lm-pista { position: absolute; left: 0; right: 0; top: 8px; height: 2px; margin-top: -1px; border-radius: 9999px; background: hsl(220 13% 89%); }
@@ -294,6 +290,35 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-pantalla .pt-fin { transform: scale(.5); }
 }
 
+/* Al mòbil (< 768 px), en lloc de la U: el 8 i l'1 en dues targetes que canvien el que es veu a sota
+   (opció 4C del Biel, 17-10). Abans hi havia 4 de les 8 coses, la pantalla petita i l'1 a sota de tot. */
+.pt-u-mobil { display: none; }
+@media (max-width: 767px) {
+  .pt-u { display: none; }
+  .pt-u-mobil { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+  .pt-u-tria { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .pt-u-tria button { min-width: 0; padding: 14px; border: 0; border-radius: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; text-align: left; font-family: inherit; color: var(--pt-text); background: var(--pt-blanc); box-shadow: inset 0 0 0 1px var(--pt-linia); cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+  .pt-u-tria button[aria-pressed="true"] { background: var(--pt-fosc); color: #fff; box-shadow: none; }
+  .pt-u-tria button[aria-pressed="true"] .pt-num-blau { color: inherit; }
+  .pt-u-tria-n { font-size: 52px; line-height: .9; font-weight: 700; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+  .pt-u-tria-n + span { font-size: 14px; line-height: 1.3; font-weight: 600; }
+  .pt-u-llista, .pt-u-incid { animation: pt-u-entra .25s cubic-bezier(.22, 1, .36, 1); }
+  .pt-u-llista { padding: 4px 16px; border-radius: 20px; background: var(--pt-blanc); box-shadow: inset 0 0 0 1px var(--pt-linia); }
+  .pt-u-llista li { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; }
+  .pt-u-llista li + li { box-shadow: 0 -1px 0 hsl(220 14% 95%); }
+  .pt-u-llista .pt-ic { width: 16px; height: 16px; margin-top: 2px; color: var(--pt-verd); }
+  .pt-u-llista b { display: block; font-size: 15px; line-height: 1.3; font-weight: 600; }
+  .pt-u-llista small { display: block; margin-top: 1px; font-size: 14px; line-height: 1.4; color: var(--pt-gris); }
+  .pt-u-incid { padding: 18px; border-radius: 20px; background: var(--pt-blanc); box-shadow: inset 0 0 0 2px var(--pt-blau); display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .pt-u-incid-que { font-size: 12px; font-weight: 600; color: var(--pt-gris); }
+  .pt-u-incid-que span { color: hsl(0 72% 51%); }
+  .pt-u-incid-titol { font-size: 19px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; }
+  .pt-u-incid-qui { font-size: 15px; line-height: 1.45; color: var(--pt-gris); }
+  .pt-u-incid .pt-u-etiqueta { margin-top: 6px; }
+}
+@keyframes pt-u-entra { from { opacity: 0; transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .pt-u-llista, .pt-u-incid { animation: none; } .pt-u-tria button { transition: none; } }
+
 /* ── 4 · Gratis per sempre: la banda del 0 €, la taxa que es calcula i el pagament online ── */
 .pt-gratis { min-height: 790px; padding-block: 72px; background: var(--pt-blanc); }
 .pt-gratis .pt-h2 { font-size: 52px; }
@@ -307,6 +332,8 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-gz-c-txt b { font-size: 18px; letter-spacing: -0.01em; }
 .pt-gz-c-txt span { font-size: 14px; color: var(--pt-gris); }
 .pt-gratis-banda .pt-tile { grid-row: 2; min-height: 250px; }
+/* l'embolcall de les quatre peces només existeix al mòbil, on és la tira que llisca (.pt-llisca) */
+.pt-gratis-peces { display: contents; }
 @media (max-width: 1100px) {
   .pt-gratis-banda .pt-tile { grid-row: auto; min-height: 0; }
 }
@@ -529,12 +556,6 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-cmp-preu p { margin: 0; font-size: 16px; color: var(--pt-gris); }
 .pt-cmp-preu p b { color: var(--pt-text); font-weight: 600; }
 .pt-cmp-preu .pt-pill { height: 40px; }
-/* al mòbil, la llista (en lloc de les rajoles) */
-.pt-cmp-llista { display: none; }
-
-/* Les fletxes i els punts: ja no es fan servir (al mòbil hi ha la llista) */
-.pt-cmp-control { display: none; }
-
 @media (max-width: 1100px) {
   .pt-cmp { padding-block: 56px; }
   .pt-cmp .pt-h2 { font-size: 34px; }
@@ -549,16 +570,11 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-cmp-gros { font-size: 36px; }
 }
 @media (max-width: 640px) {
-  .pt-cmp-graella, .pt-cmp .pt-cmp-control { display: none !important; }
-  .pt-cmp-llista { display: flex; flex-direction: column; gap: 8px; list-style: none; margin: 24px 0 0; padding: 0; }
-  .pt-cmp-llista li { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 18px; background: hsl(220 14% 96%); box-shadow: inset 0 0 0 1px var(--pt-linia); font-size: 14px; line-height: 1.45; color: var(--pt-gris); }
-  .pt-cmp-llista li > .pt-ic { width: 36px; height: 36px; padding: 9px; border-radius: 12px; background: var(--pt-blanc); color: var(--pt-blau); box-shadow: inset 0 0 0 1px var(--pt-linia); flex-shrink: 0; }
-  .pt-cmp-llista b { display: block; font-size: 16px; font-weight: 600; color: var(--pt-text); margin-bottom: 2px; }
   .pt-cmp-preu { flex-direction: column; gap: 10px; }
   .pt-cmp-preu p { font-size: 15px; text-align: center; }
-  .pt-cmp-graella-vell { display: flex; gap: 12px; margin-inline: -20px; padding-inline: 20px; scroll-padding-inline: 20px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
-  .pt-cmp-graella::-webkit-scrollbar { display: none; }
-  .pt-cmp-t { flex: 0 0 86%; min-height: 470px; scroll-snap-align: start; }
+  /* les rajoles llisquen (.pt-llisca, al final del fitxer): cadascuna, tota l'alçada de la seva demo */
+  .pt-cmp-graella { margin-top: 24px; }
+  .pt-cmp-t { min-height: 470px; }
   .pt-cmp-missatges { min-height: 540px; padding: 22px; }
   .pt-cmp-preus { padding: 20px; }
   .pt-cmp-gros { font-size: 34px; }
@@ -570,13 +586,6 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-cmp-mini-f em, .pt-cmp-r small { display: none; }
   .pt-cmp-mini { margin-block: auto; padding: 12px 12px 14px; gap: 8px; }
   .pt-cmp-r { height: 30px; font-size: 12px; }
-  .pt-cmp-control { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
-  .pt-cmp-control button { width: 44px; height: 44px; border-radius: 9999px; border: 0; display: grid; place-items: center; background: hsl(220 14% 96%); color: var(--pt-text); box-shadow: inset 0 0 0 1px var(--pt-linia); }
-  .pt-cmp-control button:disabled { opacity: .35; }
-  .pt-cmp-punts { display: flex; gap: 5px; }
-  .pt-cmp-punts i { width: 6px; height: 6px; border-radius: 9999px; background: hsl(220 11% 82%); transition: width .25s ease, background-color .25s ease; }
-  .pt-cmp-punts i.ara { width: 18px; background: var(--pt-fosc); }
-  .pt-cmp-nom { flex: 1; text-align: center; font-size: 14px; font-weight: 600; }
   /* «Y además»: el text a dalt i les rodones a sota, repartides */
   .pt-cmp-funcions { flex-direction: column; align-items: stretch; gap: 10px; border-radius: 22px; padding: 14px; }
   .pt-cmp-funcions > p { white-space: normal; }
@@ -584,8 +593,10 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-cmp-fila { flex-wrap: wrap; row-gap: 6px; }
   .pt-cmp-fila .pt-cmp-qui { flex: 1 1 calc(100% - 44px); }
   .pt-cmp-fila > b { margin-left: auto; }
-  .pt-cmp-rodones { justify-content: space-between; }
-  .pt-cmp-fn, .pt-cmp-fletxa-petita { width: 38px; height: 38px; }
+  /* les rodones, sempre en una sola fila (el Biel, 17-10): columnes iguals que s'encongeixen si la
+     pantalla és estreta, sense passar de 40 px */
+  .pt-cmp-rodones { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 4px; justify-items: center; }
+  .pt-cmp-fn, .pt-cmp-fletxa-petita { width: 100%; max-width: 40px; height: auto; aspect-ratio: 1; }
   .pt-cmp-fn::after { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -639,6 +650,7 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-ad-passos { grid-template-columns: minmax(0, 1fr); }
   .pt-ad-final { padding: 26px 22px; }
   .pt-ad-peu { padding-bottom: 88px; }
+  .pt-ad-peu-in a { padding-block: 11px; margin-block: -11px; }
 }
 
 /* ── 5 · Així es comença ── */
@@ -660,10 +672,16 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-passos-camp:focus-within { box-shadow: inset 0 0 0 2px var(--pt-blau); }
 .pt-passos-error { flex-basis: 100%; font-size: 13px; color: hsl(350 89% 46%); }
 .pt-passos-fet { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--pt-verd-fosc); }
+/* al mòbil, 44 px de toc: l'enllaç creix sense moure la línia, i el telèfon i el botó es fan més alts */
+@media (max-width: 767px) {
+  .pt-passos-enllac { padding-block: 9px; margin-block: -9px; }
+  .pt-passos-camp { height: 48px; }
+  .pt-passos-camp input, .pt-passos-camp button { height: 42px; }
+}
 .pt-tres { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px; margin-top: 40px; }
-.pt-pas small { display: block; font-size: 96px; line-height: .9; font-weight: 700; letter-spacing: -0.05em; color: hsl(220 12% 85%); font-variant-numeric: tabular-nums; }
-.pt-pas h3 { font-size: 26px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; margin-top: 16px; }
-.pt-pas p { font-size: 17px; line-height: 1.5; color: var(--pt-gris); margin-top: 8px; }
+.pt-pas > small { display: block; font-size: 96px; line-height: .9; font-weight: 700; letter-spacing: -0.05em; color: hsl(220 12% 85%); font-variant-numeric: tabular-nums; }
+.pt-pas > h3 { font-size: 26px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; margin-top: 16px; }
+.pt-pas > p { font-size: 17px; line-height: 1.5; color: var(--pt-gris); margin-top: 8px; }
 
 /* ── 6 · Preus ── */
 .pt-preus { min-height: 760px; padding-block: 64px; background: var(--pt-blanc); }
@@ -715,6 +733,19 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-preus-calcula a { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 500; color: var(--pt-blau); }
 .pt-preus-calcula a:hover { color: var(--pt-blau-fosc); }
 .pt-preus-calcula .pt-ic { width: 16px; height: 16px; }
+@media (max-width: 767px) { .pt-preus-calcula a { padding-block: 10px; margin-block: -10px; } }
+/* Al mòbil (< 768 px): el commutador i un sol pla a la vista, el Completo d'entrada (opció 6A del Biel,
+   17-10). Abans, els dos plans un sota l'altre: dues pantalles i mitja de llista. */
+.pt-plans-tria { display: none; }
+@media (max-width: 767px) {
+  .pt-plans-tria { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; max-width: 420px; margin: 28px auto 0; padding: 4px; border-radius: 9999px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); }
+  .pt-plans-tria button { min-width: 0; height: 44px; padding: 0 8px; border: 0; border-radius: 9999px; background: transparent; color: hsl(220 14% 25%); font-family: inherit; font-size: 15px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+  .pt-plans-tria button[aria-pressed="true"] { background: var(--pt-fosc); color: #fff; }
+  .pt-plans { margin-top: 14px; }
+  .pt-plans[data-pla="complet"] > .pt-pla:not(.pt-pla-top), .pt-plans[data-pla="gratis"] > .pt-pla-top { display: none; }
+  .pt-plans > .pt-pla { animation: pt-u-entra .25s cubic-bezier(.22, 1, .36, 1); }
+}
+@media (prefers-reduced-motion: reduce) { .pt-plans > .pt-pla { animation: none; } .pt-plans-tria button { transition: none; } }
 
 /* Les preguntes de /precios: el títol a l'esquerra (es queda quiet) i les preguntes a la dreta */
 .pt-preguntes { padding-block: 88px; background: var(--pt-fons); }
@@ -733,6 +764,8 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-fp-entrada-graella { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 64px; align-items: center; }
 .pt-molles { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 22px; font-size: 13px; color: var(--pt-gris); }
 .pt-molles a:hover { color: var(--pt-text); }
+/* al mòbil, 44 px de toc sense moure el text */
+@media (max-width: 767px) { .pt-molles a { padding-block: 11px; margin-block: -11px; } }
 .pt-fp-h1 { margin-top: 14px; font-size: 52px; line-height: 1.06; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
 .pt-fp-entrada .pt-lead { margin-top: 18px; max-width: 36em; }
 .pt-fp-botons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
@@ -744,8 +777,8 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-fp-dues { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: start; }
 .pt-fp-text { padding-top: 30px; max-width: 62ch; font-size: 19px; line-height: 1.6; color: var(--pt-gris); }
 .pt-fp-passos { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 40px; margin-top: 40px; }
-.pt-fp-passos .pt-pas h3 { font-size: 22px; }
-.pt-fp-passos .pt-pas p { font-size: 16px; }
+.pt-fp-passos .pt-pas > h3 { font-size: 22px; }
+.pt-fp-passos .pt-pas > p { font-size: 16px; }
 .pt-fp-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 48px; max-width: 1040px; margin-top: 36px; }
 .pt-fp-checks li { display: flex; gap: 12px; font-size: 17px; line-height: 1.45; }
 .pt-fp-checks .pt-ic { width: 20px; height: 20px; margin-top: 2px; color: var(--pt-verd); }
@@ -759,6 +792,73 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-fp-enllac > .pt-ic { width: 22px; height: 22px; color: var(--pt-text); }
 .pt-fp-mes { margin-top: auto; padding-top: 6px; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--pt-blau); }
 .pt-fp-mes .pt-ic { width: 15px; height: 15px; }
+/* Al mòbil (17-10, opcions 8B i 9A del Biel): els passos, targetes blanques que llisquen amb «Paso 1 de 4»
+   a dalt i la mini pantalla a baix; «En la práctica» i les relacionades també llisquen (.pt-llisca). */
+.pt-fp-paso, .pt-mini { display: none; }
+@media (max-width: 640px) {
+  .pt-fp-passos.pt-llisca { gap: 12px; margin-top: 28px; }
+  .pt-fp-passos .pt-pas { padding: 20px; border-radius: 24px; background: var(--pt-blanc); display: flex; flex-direction: column; gap: 8px; }
+  .pt-fp-passos .pt-pas > small { display: none; }
+  .pt-fp-passos .pt-pas > .pt-fp-paso { display: block; margin: 0; font-size: 13px; line-height: 1.3; font-weight: 600; color: var(--pt-blau); }
+  .pt-fp-passos .pt-pas > h3 { margin-top: 0; font-size: 20px; line-height: 1.25; }
+  .pt-fp-passos .pt-pas > p { margin-top: 0; font-size: 15px; line-height: 1.5; }
+  .pt-fp-peces.pt-llisca { margin-top: 28px; }
+  .pt-fp-relacionades.pt-llisca > * { flex-basis: 72%; }
+  /* la mini pantalla: a baix de la targeta, amb les files de l'app */
+  .pt-mini { display: flex; flex-direction: column; gap: 6px; margin-top: auto; padding: 12px; border-radius: 16px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); font-size: 13.5px; line-height: 1.35; color: var(--pt-text); }
+  .pt-mini p { margin: 0; }
+  .pt-mini .pt-ic { width: 15px; height: 15px; }
+  .pt-mini-cap { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 14px; }
+  .pt-mini-cap span, .pt-mini-nota { color: var(--pt-gris); }
+  .pt-mini-nota { font-size: 12.5px; }
+  .pt-mini-barra { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 4px; }
+  .pt-mini-barra span { height: 4px; border-radius: 9999px; background: var(--pt-linia); }
+  .pt-mini-barra span.fet { background: var(--pt-blau-app); }
+  .pt-mini-camp, .pt-mini-doc, .pt-mini-conversa, .pt-mini-tria, .pt-mini-persona { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; background: var(--pt-blanc); box-shadow: inset 0 0 0 1px var(--pt-linia); }
+  .pt-mini-camp { justify-content: space-between; }
+  .pt-mini-camp span { color: var(--pt-gris); }
+  .pt-mini-camp b, .pt-mini-ok b, .pt-mini-avis b { margin-left: auto; font-weight: 600; text-align: right; }
+  .pt-mini-ok, .pt-mini-avis { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; }
+  .pt-mini-ok { background: hsl(142 76% 95%); color: hsl(142 72% 24%); }
+  .pt-mini-avis { background: hsl(48 100% 94%); color: hsl(32 81% 28%); }
+  .pt-mini-doc .pt-ic { color: var(--pt-gris); }
+  .pt-mini-tria span { width: 16px; height: 16px; flex-shrink: 0; border-radius: 5px; display: grid; place-items: center; box-shadow: inset 0 0 0 1.5px hsl(220 9% 70%); }
+  .pt-mini-tria.si span { background: var(--pt-blau-app); box-shadow: none; color: #fff; }
+  .pt-mini-tria span .pt-ic { width: 11px; height: 11px; }
+  .pt-mini-tria:not(.si) { color: var(--pt-gris); }
+  .pt-mini-xifra { display: flex; justify-content: space-between; gap: 10px; font-variant-numeric: tabular-nums; }
+  .pt-mini-xifra span { color: var(--pt-gris); }
+  .pt-mini-xifra b { font-weight: 500; }
+  .pt-mini-xifra.total { margin-top: 2px; padding-top: 7px; box-shadow: 0 -1px 0 var(--pt-linia); font-size: 14.5px; }
+  .pt-mini-xifra.total span { color: var(--pt-text); font-weight: 600; }
+  .pt-mini-xifra.total b { font-weight: 700; }
+  .pt-mini-xips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pt-mini-xips span { padding: 3px 9px; border-radius: 9999px; font-size: 12px; font-weight: 600; }
+  .pt-mini-xips .blau { background: hsl(214 100% 96%); color: var(--pt-blau-fosc); }
+  .pt-mini-xips .ambre { background: hsl(48 100% 94%); color: hsl(32 81% 30%); }
+  .pt-mini-xips .gris { background: var(--pt-blanc); color: var(--pt-text); box-shadow: inset 0 0 0 1px var(--pt-linia); }
+  .pt-mini-reserva { display: flex; justify-content: space-between; gap: 8px; padding: 9px 11px; border-radius: 10px; font-size: 13px; }
+  .pt-mini-reserva.airbnb { background: hsl(351 100% 95%); color: hsl(343 70% 32%); }
+  .pt-mini-reserva.booking { background: hsl(214 95% 93%); color: hsl(224 64% 33%); }
+  .pt-mini-reserva.directa { background: hsl(142 70% 93%); color: hsl(142 72% 22%); }
+  .pt-mini-reserva.despl { margin-left: 48px; }
+  .pt-mini-av { width: 26px; height: 26px; flex-shrink: 0; border-radius: 9999px; display: grid; place-items: center; color: #fff; font-size: 12px; font-weight: 600; }
+  .pt-mini-persona > span:last-child, .pt-mini-conversa > span { min-width: 0; display: flex; flex-direction: column; }
+  .pt-mini-persona small, .pt-mini-conversa small { font-size: 12px; color: var(--pt-gris); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pt-mini-conversa > span { flex: 1; }
+  .pt-mini-conversa img { width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0; }
+  .pt-mini-conversa em { flex-shrink: 0; font-style: normal; font-size: 11.5px; font-weight: 600; color: hsl(142 72% 26%); }
+  .pt-mini-bomb { display: flex; flex-direction: column; gap: 3px; max-width: 92%; }
+  .pt-mini-bomb small { font-size: 11.5px; color: var(--pt-gris); }
+  .pt-mini-bomb p { padding: 8px 11px; font-size: 13.5px; line-height: 1.4; overflow-wrap: anywhere; }
+  .pt-mini-bomb.rebut { align-self: flex-start; }
+  .pt-mini-bomb.rebut p { border-radius: 14px 14px 14px 4px; background: var(--pt-blanc); box-shadow: inset 0 0 0 1px var(--pt-linia); }
+  .pt-mini-bomb.enviat { align-self: flex-end; align-items: flex-end; }
+  .pt-mini-bomb.enviat p { border-radius: 14px 14px 4px 14px; background: var(--pt-blau-app); color: #fff; }
+  .pt-mini-enllac { color: var(--pt-blau); }
+  .pt-mini-var { display: inline-block; padding: 0 6px; border-radius: 6px; background: hsl(214 100% 96%); color: var(--pt-blau-fosc); font-size: 12.5px; font-weight: 600; }
+  .pt-mini-boto { align-self: flex-start; display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 9999px; background: var(--pt-blau-app); color: #fff; font-size: 13px; font-weight: 600; }
+}
 .pt-preguntes-cap .pt-retol + h2 { margin-top: 12px; }
 
 /* ── La 404: «Esta página ya ha hecho el check-out», amb el clauer que es gronxa ── */
@@ -929,7 +1029,7 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; }
   .pt-passos .pt-cap { flex-direction: column; align-items: flex-start; gap: 12px; }
   .pt-passos .pt-cap h2 { font-size: 32px; }
-  .pt-pas small { font-size: 64px; }
+  .pt-pas > small { font-size: 64px; }
   .pt-plans { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   /* apilats, primer el Completo (és el pla principal: decisió de la versió 09) */
   .pt-pla.pt-pla-top { order: -1; }
@@ -1007,3 +1107,19 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-camp { flex-wrap: wrap; }
   .pt-camp input { font-size: 18px; }
 }
+
+/* ── Al mòbil, les peces que llisquen amb el dit (17-10, opcions 2A, 3B, 8B i 9A del Biel) ──
+   `useLliscador.ts` i `PuntsLliscador.tsx`. Cada peça fa el 86 % de l'amplada: es veu un tros de la
+   següent, que diu «n'hi ha més». A l'ordinador i a la tauleta no canvia res: la classe només fa
+   alguna cosa per sota de 641 px. */
+.pt-llisca-punts { display: none; }
+@media (max-width: 640px) {
+  .pt-llisca { display: flex; gap: 12px; margin-inline: calc(-1 * var(--web-marge)); padding: 4px var(--web-marge); scroll-padding-inline: var(--web-marge); overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .pt-llisca::-webkit-scrollbar { display: none; }
+  .pt-llisca > * { flex: 0 0 86%; min-width: 0; scroll-snap-align: start; }
+  .pt-llisca-punts { display: flex; justify-content: center; margin-top: 6px; }
+  .pt-llisca-punts button { width: 20px; height: 32px; padding: 0; border: 0; background: none; display: grid; place-items: center; cursor: pointer; }
+  .pt-llisca-punts i { display: block; width: 6px; height: 6px; border-radius: 9999px; background: hsl(220 11% 82%); transition: width .25s ease, background-color .25s ease; }
+  .pt-llisca-punts .ara i { width: 18px; background: var(--pt-blau); }
+}
+@media (prefers-reduced-motion: reduce) { .pt-llisca-punts i { transition: none; } }
