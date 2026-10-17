@@ -48,11 +48,11 @@ export default function AvisGaletes() {
   const [analitica, setAnalitica] = useState(false);
   const [publicitat, setPublicitat] = useState(false);
   const ambPublicitat = hiHaPublicitat();
-  // «Meta y Google» i «Instagram, Facebook, Google y YouTube», segons el que hi hagi configurat
+  // «Instagram, Facebook, Google y YouTube», segons el que hi hagi configurat (a «Configurar»). El bàner
+  // en si, curt i sense noms (el Biel, 17-10: «només el necessari»); els noms, aquí i a la política.
   const { lang } = useLang();
   const llista = (xs: string[]) =>
     xs.length <= 1 ? xs[0] ?? "" : `${xs.slice(0, -1).join(", ")}${lang === "ca" ? " i " : " y "}${xs[xs.length - 1]}`;
-  const empreses = llista([EINES_PUBLICITAT.meta && "Meta", EINES_PUBLICITAT.google && "Google"].filter(Boolean) as string[]);
   const llocs = llista([...(EINES_PUBLICITAT.meta ? ["Instagram", "Facebook"] : []), ...(EINES_PUBLICITAT.google ? ["Google", "YouTube"] : [])]);
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function AvisGaletes() {
           style={{ marginBottom: "env(safe-area-inset-bottom, 0px)" }}
         >
           <p className="text-sm text-foreground leading-relaxed">
-            {ambPublicitat ? t("galetes.text_publicitat", { empreses }) : t("galetes.text")}{" "}
+            {ambPublicitat ? t("galetes.text_publicitat") : t("galetes.text")}{" "}
             <LangLink to="/cookies" className="underline underline-offset-2 text-muted-foreground hover:text-foreground">
               {t("galetes.mes")}
             </LangLink>

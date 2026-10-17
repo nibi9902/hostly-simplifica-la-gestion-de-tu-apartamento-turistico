@@ -8,7 +8,9 @@
 > - **L'enllaç que es mou sol** (sempre l'última versió de la branca):
 >   https://hostly-simplifica-la-gestion-de-t-git-d0d465-nibi9902s-projects.vercel.app/es
 >
-> Res d'això és a producció: hostlylabs.com segueix sent la `versio-00`.
+> **Des del 17-10-2026, hostlylabs.com és la `versio-18`** (la branca `redisseny-2026-10` d'aquell dia,
+> publicada amb el vistiplau del Biel). Per tornar enrere de seguida: a Vercel, *Instant Rollback* al
+> desplegament anterior; amb git, `main` = `versio-00`.
 
 | Versió | Data | Què hi ha | Etiqueta · commit | Enllaç |
 |---|---|---|---|---|
@@ -30,3 +32,4 @@
 | **15** | 10-10-2026 | **Tot el web a la mateixa línia, també a l'ordinador gran.** Una sola caixa (fins a 1440 px; marges de 20/32/48/64 px) per al capçal, les seccions i el peu: abans cada secció tenia la seva amplada i, a 1920 px, la portada feia 9 vores diferents i les interiors ocupaven el 30–45 % de la pantalla. Les seccions omplen l'amplada amb columnes (títol al costat, graelles plenes, preus amb columna lateral, articles i legals amb índex, `/empezar` i `/calcula` amb «Cómo funciona»); entrada dels perfils amb demo; peu en quatre columnes. Mòbil: 20 px a tot arreu i res que surti per la dreta. Regles: `docs/MAQUETACIO.md`; prova: `prova-amplada.cjs` (155/155). | `versio-15` · `5cf167b` | https://hostly-simplifica-la-gestion-de-tu-apartamento-turis-bder0bdw3.vercel.app/es |
 | **16** | 10-10-2026 | **Retargeting (Meta i Google Ads), només amb consentiment.** Bàner amb «Configurar» (Analítica / Publicidad); el píxel i l'etiqueta només es carreguen amb «Publicidad» acceptada; `Lead` i `Schedule` sense dades personals. **Apagat** fins que hi hagi els identificadors a Vercel: sense ells, el web és la 15. Què cal fer: `docs/SEGUIMENT-I-RETARGETING.md`; prova: `prova-publicitat.cjs` (34/34). | `versio-16` · `6adfdba` | https://hostly-simplifica-la-gestion-de-tu-apartamento-turis-8lrp3ue8t.vercel.app/es |
 | **17** | 10-10-2026 | **El seguiment, més net (es veu igual que la 16).** Els esdeveniments d'Analytics ja no arriben a Google Ads (hi anaven amb el resultat de la calculadora i el dia de la demo); la resposta del bàner val per a les eines que hi havia (si se n'hi afegeix una, es torna a preguntar; i mentre no hi hagi identificadors no es desa cap «no» a la publicitat); les pàgines vistes de Meta les compta el web (el píxel comptava també els clics a l'índex dels articles). Prova: `prova-publicitat.cjs` (42/42; amb el codi de la 16, 5 errors). **És la versió recomanada per revisar.** | `versio-17` · `90c8795` | https://hostly-simplifica-la-gestion-de-tu-apartamento-turis-pq7rte9rr.vercel.app/es |
+| **18** | 17-10-2026 | **Publicada.** La portada nova (13–16-10), el Completo amb les demos, el mòbil amb les opcions que va triar el Biel (capçal que marxa, Gratis i Completo que llisquen, «Hostly está pendiente» amb el 8 i l'1, preus amb commutador, passos de les funcionalitats amb mini pantalla), el check-in i la taxa com a pla Gratis (amb la taxa cobrada a l'hoste), «Empezar» amb els pisos al pas 1 i el bàner de galetes curt. Píxel de Meta a *Production*. | `versio-18` | https://hostlylabs.com |

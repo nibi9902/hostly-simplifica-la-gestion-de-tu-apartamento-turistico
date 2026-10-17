@@ -6,6 +6,11 @@ redisseny, l'estil i la manera de parlar… i vés autoavaluant si tot és corre
 
 Res no es publica fins que la llista és sencera i el Biel ho ha vist a la previsualització.
 
+> **Publicada el 17-10-2026** (`versio-18`, `docs/VERSIONS.md`). El Biel: «pujem-ho». El píxel de Meta
+> (`VITE_META_PIXEL_ID`) es va posar a *Production* el mateix dia, abans de pujar. Queden per després: els
+> identificadors de Google Ads, el vídeo de l'Àngel (sense vídeo no cal el permís) i les dades que rep
+> Telegram (el Biel: «de moment no tocarem res perquè en breus farem algunes connexions noves»).
+
 ## Com s'avalua cada punt
 
 Abans de donar un punt per fet, ha de complir tot això:

@@ -420,7 +420,7 @@ function Funcions() {
           <ArrowUpRight className="pt-ic" aria-hidden="true" />
         </LangLink>
       </div>
-      <div className={`pt-cmp-pop${f ? " obert" : ""}`} role="dialog" aria-hidden={!f}
+      <div className={`pt-cmp-pop${f ? " obert" : ""}`} role={f ? "dialog" : undefined} aria-hidden={!f}
         style={{ left: pos.esq, width: pos.ample, ["--fletxa" as string]: `${pos.fletxa}px` }}>
         {f && (
           <>

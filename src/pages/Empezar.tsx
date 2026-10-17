@@ -434,7 +434,11 @@ export default function Empezar() {
               <p className="text-lg text-muted-foreground mb-8">{t("empezar.gratis.subtitulo")}</p>
               <a
                 href={URL_ALTA_GRATUITA}
-                onClick={() => track("empezar_cuenta", { variant: "gratis" })}
+                onClick={() => {
+                  track("empezar_cuenta", { variant: "gratis" });
+                  // el pla, un altre cop: si el desat del pas 2 hagués fallat, sense pla no arriba cap avís
+                  void desaLead({ plan: "gratis" }, lang, desde);
+                }}
                 className={cn(botoPrimari, "w-full sm:w-auto")}
               >
                 {t("empezar.gratis.boton")}

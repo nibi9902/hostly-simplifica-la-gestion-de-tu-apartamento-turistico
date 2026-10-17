@@ -141,10 +141,13 @@ export async function desaLead(dades: DadesLead, lang: string, pagina?: string):
   };
   for (let intent = 0; intent < 2; intent++) {
     try {
+      // keepalive: el desat acaba encara que la persona marxi de la pàgina just després (17-10: el botó
+      // de crear el compte gratis porta a l'app de seguida)
       const r = await fetch(`${URL_BD}/rest/v1/rpc/web_lead_desa`, {
         method: "POST",
         headers: { apikey: CLAU_PUBLICA, "Content-Type": "application/json" },
         body: JSON.stringify(cos),
+        keepalive: true,
       });
       if (r.ok) {
         const j = (await r.json()) as { ok?: boolean; motiu?: string } | null;
