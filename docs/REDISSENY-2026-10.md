@@ -208,6 +208,46 @@ Biel). Resolt el 17-10 a la nit («està tot okay; la IA és de WhatsApp i totes
   vídeo diu que ofereix extres): bé com són. La pàgina de la taxa no parla del NRUA
   (`revisio-web` encara el prohibeix a les pàgines de Hostly).
 
+## Les landings dels anuncis (18-10-2026)
+
+El Biel volia, per als anuncis d'Instagram, una landing del check-in i una de tot el Completo,
+«que només sigui la landing directa, amb formulari, i fins que no facin el formulari no poden veure
+el vídeo», i que «converteixi el màxim». Al llenç de tres maneres
+(https://claude.ai/artifact/JgrtWC7Seow6o7M2Ny1wz2) va triar la **B, «primer el que guanyes»**, amb
+dos canvis: el formulari no surt de primeres («si no, la gent se n'anirà de primeres»): primer el
+vídeo amb el play i, en prémer-lo, el formulari; i demana **nom, telèfon i pisos**. El subtítol, el de
+la A.
+
+- `/registro-de-viajeros-gratis` (la del check-in): la mateixa adreça que ja porten els anuncis; el que
+  hi havia del 15-10 (el mòbil amb el check-in i els tres passos) és a l'historial. El vídeo de la
+  funció només és en castellà: a /ca també surt aquest.
+- `/hostly-completo` (nova): el lema de la portada i el vídeo de /demo (en català a /ca). /demo es
+  queda com està.
+- Totes dues, sense menú ni enllaços cap a fora (els legals, al peu), i fora del cercador (noindex).
+
+**Com va** (`src/components/anuncis/VideoAmbFormulari.tsx`): el vídeo net amb el play a baix (que no
+tapi el títol de la portada); en prémer-lo, el vídeo creix i la targeta del formulari surt a sobre,
+amb el vídeo en marxa per sota, borrós i sense so; els pisos comencen a 1. En enviar-lo, el vídeo es
+destapa i comença amb so **dins del mateix clic** (la comprovació bona del telèfon i el desat van
+just després; si no, el mòbil no el deixa sonar). La creu torna al play. A sota del vídeo, la frase
+amb els seus pisos i el pas següent; quan el vídeo s'acaba, el mateix pas surt a sobre:
+- check-in: «Empieza gratis, sin tarjeta» → l'alta gratuïta de l'app;
+- Completo: «¿Te llamamos y dejamos tus N pisos listos contigo?» amb la foto del Biel i «Sí,
+  llamadme» (de 21 a 9, «Llamadme mañana»). Cap botó per començar el Complet sol.
+
+**On van els contactes.** Com el pas 1 de /empezar (`web_lead_desa`, origen `empezar`), amb el pla de
+la pàgina i `answers.pisos`: l'avís de Telegram surt al cap de 2 minuts (nom, telèfon, pla, pisos i
+«Ve de» amb l'adreça de la landing) o de seguida si demana la trucada, que es desa com «Llamadme
+ahora» de /empezar. Sense tocar la base de dades. Als anuncis: prémer el play és `VerVideo` (per
+tornar a ensenyar l'anunci a qui no va deixar les dades), el formulari és `Lead`, crear el compte és
+`EmpezarGratis` i la trucada, `Schedule`.
+
+**La prova:** `scripts/revisio/prova-anuncis.cjs` fa el recorregut sencer al mòbil i a l'ordinador
+(sense desar res: la crida a `web_lead_desa` es contesta al navegador). Les dues adreces també són a
+`revisio-web` i a `prova-amplada`. L'estil és a `portada.css` (`.pt-ad-*`); l'alçada del vídeo surt de
+l'amplada de la columna (unitats de contenidor), i la columna porta `.contenidor.pt-ad-columna` perquè
+la regla general de `.contenidor`, que es carrega després, no li torni a posar l'amplada de tot el web.
+
 ## Preguntes obertes per al Biel
 
 1. **Segon cognom i adreça fiscal** per a l'avís legal (LSSI art. 10): `src/lib/titular.ts`.

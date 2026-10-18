@@ -31,6 +31,7 @@ const FeatureRoute = lazy(() => import("./pages/funcionalidades/FeatureRoute"));
 const PreciosPage = lazy(() => import("./pages/Precios"));
 const Demo = lazy(() => import("./pages/Demo"));
 const RegistroGratis = lazy(() => import("./pages/RegistroGratis"));
+const HostlyCompleto = lazy(() => import("./pages/HostlyCompleto"));
 const SobreHostly = lazy(() => import("./pages/SobreHostly"));
 const Privacidad = lazy(() => import("./pages/legal/Privacidad"));
 const Cookies = lazy(() => import("./pages/legal/Cookies"));
@@ -177,8 +178,9 @@ const App = () => (
 
               {/* L'única porta del web i la calculadora (octubre 2026) */}
               <Route path="empezar" element={<Empezar />} />
-              {/* la pàgina dels anuncis del registre de viatgers (15-10) */}
+              {/* les landings dels anuncis: el registre de viatgers (15-10; amb el vídeo, 18-10) i el Completo (18-10) */}
               <Route path="registro-de-viajeros-gratis" element={<RegistroGratis />} />
+              <Route path="hostly-completo" element={<HostlyCompleto />} />
               <Route path="calcula" element={<Calcula />} />
 
               {/* Funciones (velles) → Funcionalidades */}

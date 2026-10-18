@@ -547,49 +547,8 @@
     "retol": "Per a pisos turístics",
     "titol": "El registre de viatgers.",
     "titol_gris": "Gratis.",
-    "lead": "L’hoste fa el check-in des del mòbil i Hostly envia el registre a la policia cada dia. Per sempre, sense targeta i sense límit de pisos.",
-    "boto": "Començar",
-    "peu_boto": "Sense targeta · Et crees el compte en cinc minuts.",
+    "lead": "L’hoste fa el check-in des del mòbil i Hostly l’envia a la policia cada dia.",
     "sistemes": "L’envia a la policia que et toca: SES.Hospedajes o Mossos d’Esquadra.",
-    "mobil": {
-      "titol": "Check-in · Cala Moreta",
-      "camps": [
-        {
-          "nom": "Nom",
-          "valor": "Camille Durand"
-        },
-        {
-          "nom": "Document",
-          "valor": "Passaport"
-        },
-        {
-          "nom": "Número",
-          "valor": "C01X 4417"
-        },
-        {
-          "nom": "Arribada",
-          "valor": "14 abr · 16:00"
-        }
-      ],
-      "ok": "Enviat a la policia"
-    },
-    "passos_retol": "Així funciona",
-    "passos_titol": "Tres passos.",
-    "passos_titol_gris": "Tu, cap.",
-    "passos": [
-      {
-        "titol": "Et crees el compte",
-        "text": "Amb el teu pis i les teves dades per a la policia. En cinc minuts."
-      },
-      {
-        "titol": "L’hoste fa el check-in",
-        "text": "Li arriba l’enllaç i l’omple des del mòbil, en tres pantalles."
-      },
-      {
-        "titol": "Hostly l’envia cada dia",
-        "text": "A la policia, i et guarda el comprovant. També calcula la taxa turística."
-      }
-    ],
     "preguntes_titol": "El que potser et preguntes.",
     "preguntes": [
       {
@@ -611,6 +570,47 @@
       "privacitat": "Privacitat",
       "galetes": "Galetes",
       "avis": "Avís legal"
-    }
+    },
+    "video_titol": "Mira-ho en 29 segons",
+    "video_aria": "Com funciona el check-in gratis de Hostly, en 29 segons",
+    "gracies": "Gràcies, {{nom}}. Per als teus {{pisos}} pisos, també gratis: no hi ha límit de pisos.",
+    "gracies_un": "Gràcies, {{nom}}. Per al teu pis, gratis per sempre i sense targeta.",
+    "nota_compte": "Et crees el compte en cinc minuts.",
+    "xifres_aria": "Hostly, en xifres"
+  },
+  "anunci_completo": {
+    "seo_titol": "Hostly Complet, en un minut i mig | Hostly",
+    "lead": "Contesta els teus hostes, quadra Airbnb i Booking i avisa la neteja. Mira-ho en un minut i mig.",
+    "video_titol": "Mira-ho en un minut i mig",
+    "video_aria": "El que fa Hostly per tu, en un minut i mig",
+    "truca_titol": "Gràcies, {{nom}}. Et truquem i deixem els teus {{pisos}} pisos a punt amb tu?",
+    "truca_titol_un": "Gràcies, {{nom}}. Et truquem i deixem el teu pis a punt amb tu?",
+    "truca_boto": "Sí, truqueu-me",
+    "truca_nota": "El primer mes, gratis. Sense permanència.",
+    "final_video": "Et truquem i ho deixem a punt amb tu?",
+    "final_titol": "El primer mes, gratis. Sense permanència.",
+    "final_text": "Després, 40 € + IVA al mes per pis.",
+    "preguntes": [
+      {
+        "q": "Què inclou exactament el pla de 40 € + IVA al mes?",
+        "a": "Tot el del pla Gratis i, a més: les respostes automàtiques als teus hostes, a qualsevol hora; Airbnb i Booking en un sol calendari; la neteja, que es crea sola amb cada sortida; preus que pugen i baixen cada dia segons la demanda, i els extres i els comptes. El primer mes el configurem amb tu. L'única cosa a part són les automatitzacions a mida, si algun dia les vols."
+      },
+      {
+        "q": "Hi ha permanència?",
+        "a": "No. Si no et simplifica la vida, ho deixes quan vulguis, sense penalització."
+      },
+      {
+        "q": "Quant triga a funcionar?",
+        "a": "El primer pis, en uns minuts. Al Complet, les connexions amb Airbnb i Booking les fem amb tu."
+      }
+    ]
+  },
+  "anunci_video": {
+    "play": "Mira com funciona",
+    "play_aria": "Veure com funciona ({{durada}})",
+    "tancar": "Tancar",
+    "veure": "Veure el vídeo",
+    "tornar": "Tornar-lo a veure",
+    "subtitols": "Subtítols"
   }
 }

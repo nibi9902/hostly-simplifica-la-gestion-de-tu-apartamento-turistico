@@ -24,6 +24,7 @@ if (OUT) fs.mkdirSync(OUT, { recursive: true });
 const BLOG = ['cuanto-cuesta-gestionar-piso-turistico', 'ses-hospedajes-guia-completa-2026', 'hostify-vs-lodgify-vs-smoobu-comparativa'];
 const RUTES = (process.env.NOMES_RUTES ? process.env.NOMES_RUTES.split(',') : [
   '/es', '/es/empezar', '/es/calcula', '/es/precios', '/es/demo', '/es/guia', '/es/comparativa/chekin',
+  '/es/registro-de-viajeros-gratis', '/es/hostly-completo',
   '/es/propietarios', '/es/gestores-pequenos', '/es/segunda-residencia', '/es/hereus',
   '/es/blog', ...BLOG.map((s) => `/es/blog/${s}`),
   '/es/alternativas', '/es/alternativas/smoobu', '/es/alternativas/icnea',

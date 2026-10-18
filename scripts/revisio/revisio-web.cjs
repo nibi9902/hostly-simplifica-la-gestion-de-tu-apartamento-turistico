@@ -20,6 +20,7 @@ const FUNCIONS = ['ia-whatsapp', 'check-in-online', 'channel-manager', 'gestion-
 
 const RUTES = [
   '', '/empezar', '/calcula', '/precios', '/demo', '/guia', '/comparativa/chekin',
+  '/registro-de-viajeros-gratis', '/hostly-completo',
   '/propietarios', '/gestores-pequenos', '/segunda-residencia', '/hereus',
   '/blog', ...BLOG.map((s) => `/blog/${s}`),
   '/alternativas', ...ALTERNATIVES.map((s) => `/alternativas/${s}`),

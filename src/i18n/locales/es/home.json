@@ -547,49 +547,8 @@
     "retol": "Para pisos turísticos",
     "titol": "El registro de viajeros.",
     "titol_gris": "Gratis.",
-    "lead": "El huésped hace el check-in desde su móvil y Hostly envía el registro a la policía cada día. Para siempre, sin tarjeta y sin límite de pisos.",
-    "boto": "Empezar",
-    "peu_boto": "Sin tarjeta · Te creas la cuenta en cinco minutos.",
+    "lead": "El huésped hace el check-in desde su móvil y Hostly lo envía a la policía cada día.",
     "sistemes": "Lo envía a la policía que te toca: SES.Hospedajes o Mossos d’Esquadra.",
-    "mobil": {
-      "titol": "Check-in · Cala Moreta",
-      "camps": [
-        {
-          "nom": "Nombre",
-          "valor": "Camille Durand"
-        },
-        {
-          "nom": "Documento",
-          "valor": "Pasaporte"
-        },
-        {
-          "nom": "Número",
-          "valor": "C01X 4417"
-        },
-        {
-          "nom": "Llegada",
-          "valor": "14 abr · 16:00"
-        }
-      ],
-      "ok": "Enviado a la policía"
-    },
-    "passos_retol": "Así funciona",
-    "passos_titol": "Tres pasos.",
-    "passos_titol_gris": "Tú, ninguno.",
-    "passos": [
-      {
-        "titol": "Te creas la cuenta",
-        "text": "Con tu piso y tus datos para la policía. En cinco minutos."
-      },
-      {
-        "titol": "El huésped hace el check-in",
-        "text": "Le llega el enlace y lo rellena desde su móvil, en tres pantallas."
-      },
-      {
-        "titol": "Hostly lo envía cada día",
-        "text": "A la policía, y te guarda el comprobante. También calcula la tasa turística."
-      }
-    ],
     "preguntes_titol": "Lo que quizá te estás preguntando.",
     "preguntes": [
       {
@@ -611,6 +570,47 @@
       "privacitat": "Privacidad",
       "galetes": "Cookies",
       "avis": "Aviso legal"
-    }
+    },
+    "video_titol": "Míralo en 29 segundos",
+    "video_aria": "Cómo funciona el check-in gratis de Hostly, en 29 segundos",
+    "gracies": "Gracias, {{nom}}. Para tus {{pisos}} pisos, también gratis: no hay límite de pisos.",
+    "gracies_un": "Gracias, {{nom}}. Para tu piso, gratis para siempre y sin tarjeta.",
+    "nota_compte": "Te creas la cuenta en cinco minutos.",
+    "xifres_aria": "Hostly, en cifras"
+  },
+  "anunci_completo": {
+    "seo_titol": "Hostly Completo, en minuto y medio | Hostly",
+    "lead": "Contesta a tus huéspedes, cuadra Airbnb y Booking y avisa a la limpieza. Míralo en minuto y medio.",
+    "video_titol": "Míralo en minuto y medio",
+    "video_aria": "Lo que hace Hostly por ti, en minuto y medio",
+    "truca_titol": "Gracias, {{nom}}. ¿Te llamamos y dejamos tus {{pisos}} pisos listos contigo?",
+    "truca_titol_un": "Gracias, {{nom}}. ¿Te llamamos y dejamos tu piso listo contigo?",
+    "truca_boto": "Sí, llamadme",
+    "truca_nota": "El primer mes, gratis. Sin permanencia.",
+    "final_video": "¿Te llamamos y lo dejamos listo contigo?",
+    "final_titol": "El primer mes, gratis. Sin permanencia.",
+    "final_text": "Después, 40 € + IVA al mes por piso.",
+    "preguntes": [
+      {
+        "q": "¿Qué incluye exactamente el plan de 40 € + IVA al mes?",
+        "a": "Todo lo del plan Gratis y, además: las respuestas automáticas a tus huéspedes, a cualquier hora; Airbnb y Booking en un solo calendario; la limpieza, que se crea sola con cada salida; precios que suben y bajan cada día según la demanda, y los extras y las cuentas. El primer mes lo configuramos contigo. Lo único aparte son las automatizaciones a medida, si algún día las quieres."
+      },
+      {
+        "q": "¿Hay permanencia?",
+        "a": "No. Si no te simplifica la vida, lo dejas cuando quieras, sin penalización."
+      },
+      {
+        "q": "¿Cuánto tarda en estar funcionando?",
+        "a": "El primer piso, en unos minutos. En el Completo, las conexiones con Airbnb y Booking las hacemos contigo."
+      }
+    ]
+  },
+  "anunci_video": {
+    "play": "Mira cómo funciona",
+    "play_aria": "Ver cómo funciona ({{durada}})",
+    "tancar": "Cerrar",
+    "veure": "Ver el vídeo",
+    "tornar": "Volver a verlo",
+    "subtitols": "Subtítulos"
   }
 }

@@ -44,6 +44,11 @@ export type ResultatDesa = { ok: boolean; motiu?: string };
 // La llibreria pesa ~100 kB: es carrega només quan algú envia un telèfon.
 let llibreria: Promise<typeof import("libphonenumber-js")> | null = null;
 
+/** Comença a carregar la llibreria abans d'hora (les landings dels anuncis: en prémer el play). */
+export function precarregaTelefon(): void {
+  void (llibreria ??= import("libphonenumber-js"));
+}
+
 /** Qualsevol format → dígits E.164 sense «+» (`34612345678`), o `null` si no és vàlid. */
 export async function telefonPerBD(input: string | null | undefined): Promise<string | null> {
   if (input == null) return null;
@@ -58,6 +63,13 @@ export async function telefonPerBD(input: string | null | undefined): Promise<st
   const b = parsePhoneNumberFromString(str, "ES");
   if (b?.isValid()) return b.format("E.164").replace("+", "");
   return null;
+}
+
+/** El telèfon desat (`34612345678`), per llegir-lo: «612 34 56 78» si és d'aquí (com a /empezar; el fan servir les landings dels anuncis). */
+export function telefonVisible(tel: string): string {
+  const d = tel.replace(/\D/g, "");
+  const nacional = d.length === 11 && d.startsWith("34") ? d.slice(2) : d.length === 9 ? d : null;
+  return nacional ? nacional.replace(/(\d{3})(\d{2})(\d{2})(\d{2})/, "$1 $2 $3 $4") : `+${d}`;
 }
 
 export function correuValid(input: string): boolean {

@@ -604,53 +604,133 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   .pt-cmp-fletxa, .pt-cmp-nova, .pt-cmp-nova.hi, .pt-cmp-equip .pt-cmp-av, .pt-cmp-fn, .pt-cmp-pop { transition: none; }
 }
 
-/* ── La pàgina dels anuncis: /registro-de-viajeros-gratis (15-10) ── */
+/* ── Les landings dels anuncis: /registro-de-viajeros-gratis (15-10; amb el vídeo, 18-10) i /hostly-completo (18-10) ──
+   La B del llenç «Landings dels anuncis»: el que fa Hostly, el vídeo amb el play i, en prémer-lo, el formulari a
+   sobre del vídeo (`anuncis/VideoAmbFormulari`). Primer per al mòbil; a l'ordinador, la mateixa columna, centrada.
+   L'alçada del vídeo surt de l'amplada de la columna (unitats de contenidor), perquè pugui créixer amb transició. */
+/* amb el `.contenidor` davant: si no, la regla general (que es carrega després) torna a posar l'amplada de tot el web */
+.contenidor.pt-ad-columna { max-width: calc(680px + 2 * var(--web-marge)); container-type: inline-size; }
 .pt-ad-capcal { position: sticky; top: 0; z-index: 30; background: rgba(255, 255, 255, .94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--pt-linia); }
-.pt-ad-capcal-in { height: 68px; display: flex; align-items: center; justify-content: space-between; }
-.pt-ad-capcal-boto { height: 40px; padding-inline: 18px; }
-.pt-ad-hero { padding-block: 56px 48px; background: var(--pt-fons); }
-.pt-ad-dues { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 48px; align-items: center; }
-.pt-ad-h1 { margin: 12px 0 0; font-size: 60px; line-height: 1.02; font-weight: 700; letter-spacing: -0.035em; text-wrap: balance; }
+.pt-ad-capcal-in { height: 68px; display: flex; align-items: center; }
+.pt-ad-entrada { padding-block: 48px 64px; background: var(--pt-fons); }
+.pt-ad-h1 { margin: 12px 0 0; font-size: 56px; line-height: 1.03; font-weight: 700; letter-spacing: -0.035em; text-wrap: balance; }
 .pt-ad-h1 span { color: hsl(220 9% 62%); }
-.pt-ad-lead { margin-top: 18px; max-width: 34rem; }
-.pt-ad-accio { margin-top: 26px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
-.pt-ad-accio span { font-size: 14px; color: var(--pt-gris); }
-.pt-ad-mobil { justify-self: center; width: 270px; border-radius: 40px; padding: 9px; background: #111; box-shadow: 0 24px 60px rgba(17, 24, 39, .18); }
-.pt-ad-mobil > div { border-radius: 32px; background: var(--pt-blanc); padding: 22px 16px; display: flex; flex-direction: column; gap: 10px; min-height: 400px; }
-.pt-ad-mobil-t { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
-.pt-ad-camp { margin: 0; height: 42px; border-radius: 12px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 12px; font-size: 13px; color: var(--pt-gris); }
-.pt-ad-camp b { color: var(--pt-text); font-weight: 600; }
-.pt-ad-ok { margin: auto 0 0; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 14px; background: hsl(138 76% 94%); color: hsl(142 76% 26%); padding: 12px; font-size: 13.5px; font-weight: 600; }
-.pt-ad-ok .pt-ic { width: 15px; height: 15px; }
-.pt-ad-sistemes { margin: 32px 0 0; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 14.5px; color: var(--pt-gris); text-align: center; }
+.pt-ad-h1-llarg { font-size: 46px; line-height: 1.06; }
+.pt-ad-lead { margin-top: 16px; max-width: 36rem; }
+
+/* El vídeo: el play; en prémer-lo, la targeta del formulari a sobre i el vídeo, borrós, creix fins on cal;
+   en enviar-lo, el vídeo amb so i els controls del navegador */
+.pt-ad-video { position: relative; margin-top: 28px; height: calc(100cqi * 9 / 16); border-radius: 24px; overflow: hidden; background: hsl(220 13% 18%); box-shadow: 0 30px 60px -32px rgba(15, 23, 42, .5); transition: height .5s cubic-bezier(.22, 1, .36, 1); }
+.pt-ad-video.form { height: max(calc(100cqi * 9 / 16), var(--alcada-form)); }
+@supports not (height: 1cqi) {
+  .pt-ad-video { height: auto; aspect-ratio: 16 / 9; }
+  .pt-ad-video.form { aspect-ratio: auto; height: var(--alcada-form); }
+}
+.pt-ad-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: filter .5s ease, transform .5s cubic-bezier(.22, 1, .36, 1); }
+.pt-ad-video.form video { filter: blur(14px) brightness(.8) saturate(1.1); transform: scale(1.2); }
+.pt-ad-play { position: absolute; inset: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 16px 22px; border: 0; background: linear-gradient(to top, rgba(15, 23, 42, .28), rgba(15, 23, 42, 0) 55%); font: inherit; cursor: pointer; transition: opacity .25s ease, visibility 0s linear .25s; }
+.pt-ad-video.form .pt-ad-play, .pt-ad-video.obert .pt-ad-play { opacity: 0; visibility: hidden; }
+.pt-ad-play-pindola { display: inline-flex; align-items: center; gap: 12px; height: 60px; padding: 0 22px 0 8px; border-radius: 9999px; background: #fff; color: var(--pt-text); font-size: 17px; font-weight: 600; box-shadow: 0 16px 36px -14px rgba(15, 23, 42, .6); transition: transform .2s ease; }
+.pt-ad-play:hover .pt-ad-play-pindola { transform: translateY(-2px); }
+.pt-ad-play-pindola i { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 9999px; background: var(--pt-blau); color: #fff; }
+.pt-ad-play-pindola svg { width: 18px; height: 18px; margin-left: 3px; fill: currentColor; }
+.pt-ad-play-pindola small { font-size: 15px; font-weight: 500; color: var(--pt-gris); font-variant-numeric: tabular-nums; }
+.pt-ad-carta { position: absolute; top: 12px; left: 12px; right: 12px; max-width: 440px; margin-inline: auto; display: flex; flex-direction: column; gap: 12px; padding: 18px; border-radius: 20px; background: var(--pt-blanc); box-shadow: 0 24px 50px -20px rgba(15, 23, 42, .6); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
+.pt-ad-video.form .pt-ad-carta { opacity: 1; visibility: visible; transform: none; transition: opacity .35s ease .15s, transform .35s cubic-bezier(.22, 1, .36, 1) .15s, visibility 0s; }
+.pt-ad-carta-cap { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pt-ad-carta-t { margin: 0; font-size: 20px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; }
+.pt-seccio .pt-ad-carta-t:focus-visible { outline: none; }
+.pt-ad-tanca { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; margin: -10px -10px -10px 0; padding: 0; border: 0; border-radius: 9999px; background: none; color: var(--pt-gris); cursor: pointer; transition: background-color .2s ease; }
+.pt-ad-tanca:hover { background: hsl(220 14% 96%); color: var(--pt-text); }
+.pt-ad-tanca .pt-ic { width: 20px; height: 20px; }
+.pt-ad-camp { display: flex; flex-direction: column; gap: 6px; }
+.pt-ad-camp label { font-size: 14px; font-weight: 600; color: hsl(220 14% 25%); }
+.pt-ad-input, .pt-ad-tel { height: 50px; border-radius: 14px; background: var(--pt-blanc); box-shadow: inset 0 0 0 1px hsl(220 13% 82%); transition: box-shadow .2s ease; }
+.pt-ad-input { width: 100%; min-width: 0; padding: 0 16px; border: 0; font: 400 17px/1.2 Inter, ui-sans-serif, system-ui, sans-serif; color: var(--pt-text); outline: none; }
+.pt-ad-tel { display: flex; align-items: center; }
+.pt-ad-tel span { display: flex; align-items: center; height: 26px; padding: 0 10px 0 16px; border-right: 1px solid var(--pt-linia); font-size: 17px; font-weight: 500; color: var(--pt-gris); }
+.pt-ad-tel input { flex: 1; min-width: 0; height: 100%; padding: 0 14px 0 10px; border: 0; border-radius: 0 14px 14px 0; background: transparent; font: 400 17px/1.2 Inter, ui-sans-serif, system-ui, sans-serif; color: var(--pt-text); outline: none; }
+.pt-ad-input:focus, .pt-ad-tel:focus-within { box-shadow: inset 0 0 0 2px var(--pt-blau); }
+.pt-ad-input[aria-invalid="true"], .pt-ad-tel.amb-error { box-shadow: inset 0 0 0 2px hsl(350 89% 50%); }
+.pt-ad-input::placeholder, .pt-ad-tel input::placeholder { color: hsl(220 9% 58%); }
+/* el camp ja s'il·lumina sencer: sense el rectangle blau del focus (MAQUETACIO, regla 14) */
+.pt-seccio .pt-ad-input:focus-visible, .pt-seccio .pt-ad-tel input:focus-visible { outline: none; }
+.pt-ad-pisos { display: flex; align-items: center; gap: 8px; }
+.pt-ad-pisos button { display: grid; place-items: center; flex-shrink: 0; width: 50px; height: 50px; padding: 0; border: 0; border-radius: 14px; background: hsl(220 14% 96%); color: var(--pt-text); cursor: pointer; transition: background-color .2s ease; }
+.pt-ad-pisos button:hover:not(:disabled) { background: hsl(214 100% 96%); color: var(--pt-blau-fosc); }
+.pt-ad-pisos button:disabled { opacity: .4; cursor: default; }
+.pt-ad-pisos input { text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; -moz-appearance: textfield; appearance: textfield; }
+.pt-ad-pisos input::-webkit-outer-spin-button, .pt-ad-pisos input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.pt-ad-error { margin: 0; font-size: 14px; line-height: 1.4; color: hsl(350 89% 42%); }
+.pt-ad-enviar { width: 100%; height: 52px; font-size: 17px; font-weight: 600; }
+.pt-ad-enviar svg { width: 14px; height: 14px; fill: currentColor; }
+.pt-ad-privacitat { margin: 0; font-size: 12px; line-height: 1.45; color: hsl(220 8% 42%); }
+.pt-ad-privacitat a { text-decoration: underline; text-underline-offset: 2px; }
+.pt-ad-fi { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px; background: rgba(17, 24, 39, .94); color: #fff; text-align: center; }
+.pt-ad-fi > p { margin: 0; max-width: 28rem; font-size: 18px; line-height: 1.3; font-weight: 600; text-wrap: balance; }
+.pt-ad-fi > p.pt-ad-fi-ok { font-size: 15px; font-weight: 500; color: hsl(138 60% 82%); }
+.pt-ad-fi-torna { display: inline-flex; align-items: center; gap: 6px; height: 44px; padding: 0 12px; border: 0; background: none; color: rgba(255, 255, 255, .88); font: 500 14.5px/1 Inter, ui-sans-serif, system-ui, sans-serif; cursor: pointer; }
+.pt-ad-fi-torna .pt-ic { width: 16px; height: 16px; }
+
+/* Després del formulari: el pas següent, a sota del vídeo */
+.pt-ad-despres { margin-top: 22px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.pt-ad-gracies { margin: 0; font-size: 20px; line-height: 1.35; font-weight: 600; letter-spacing: -0.01em; text-wrap: pretty; }
+.pt-ad-nota { margin: 0; font-size: 14px; line-height: 1.45; color: var(--pt-gris); }
+.pt-ad-truca { margin-top: 22px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 22px; border-radius: 24px; background: var(--pt-blanc); box-shadow: 0 0 0 1px var(--pt-linia), 0 16px 36px -24px rgba(15, 23, 42, .35); }
+.pt-ad-truca .pt-signa-fila { margin: 0; }
+.pt-ad-ok { margin: 0; display: flex; align-items: center; gap: 10px; padding: 13px 14px; border-radius: 14px; background: hsl(138 76% 94%); color: hsl(142 76% 24%); font-size: 15px; line-height: 1.4; font-weight: 600; }
+.pt-ad-ok .pt-ic { width: 18px; height: 18px; }
+.pt-ad-truca .pt-pill:disabled, .pt-ad-final .pt-pill:disabled, .pt-ad-fi .pt-pill:disabled { opacity: .6; cursor: default; }
+
+/* A sota: les xifres, a qui s'envia o amb què es connecta, les preguntes, el final i el peu */
+.pt-ad-confianca { padding-block: 48px; background: var(--pt-blanc); }
+.pt-ad-confianca .pt-ad-columna { display: flex; flex-direction: column; gap: 28px; }
+.pt-ad-con { display: flex; flex-direction: column; gap: 12px; }
+.pt-ad-xifres { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.pt-ad-xifres li { display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.35; color: var(--pt-gris); }
+.pt-ad-xifres b { font-size: 32px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; color: var(--pt-text); font-variant-numeric: tabular-nums; }
+.pt-ad-sistemes { margin: 0; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); font-size: 14.5px; line-height: 1.45; color: hsl(220 9% 32%); }
 .pt-ad-sistemes img { width: 44px; height: auto; flex-shrink: 0; }
-.pt-ad-passos-s { padding-block: 64px 32px; background: var(--pt-blanc); }
-.pt-ad-h2 { margin-top: 10px; font-size: 44px; }
-.pt-ad-passos { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.pt-ad-passos li { border-radius: 22px; background: hsl(220 14% 96%); box-shadow: inset 0 0 0 1px var(--pt-linia); padding: 22px; display: flex; flex-direction: column; gap: 8px; }
-.pt-ad-passos b { width: 30px; height: 30px; border-radius: 9999px; display: grid; place-items: center; background: var(--pt-fosc); color: #fff; font-size: 13px; }
-.pt-ad-passos h3 { margin: 4px 0 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
-.pt-ad-passos p { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--pt-gris); }
-.pt-ad-preguntes { background: var(--pt-blanc); padding-block: 40px; }
-.pt-ad-final-s { padding-block: 24px 72px; background: var(--pt-blanc); }
+.pt-ad-connexions { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.pt-ad-connexions li { display: grid; place-items: center; width: 64px; height: 56px; border-radius: 16px; background: var(--pt-fons); box-shadow: inset 0 0 0 1px var(--pt-linia); }
+.pt-ad-connexions img { width: 30px; height: 30px; object-fit: contain; }
+.pt-ad-preguntes { padding-block: 16px 40px; background: var(--pt-blanc); }
+.pt-ad-h2 { margin: 0 0 24px; font-size: 32px; line-height: 1.1; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
+.pt-ad-final-s { padding-block: 8px 72px; background: var(--pt-blanc); }
 .pt-ad-final { border-radius: 28px; background: var(--pt-fosc); color: #fff; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .pt-ad-final-t { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
 .pt-ad-final p:not(.pt-ad-final-t) { margin: 6px 0 0; font-size: 15px; color: hsl(220 9% 76%); max-width: 34rem; }
+.pt-ad-final p.pt-ad-final-ok { margin: 0; color: hsl(138 60% 80%); }
 .pt-ad-peu { padding-block: 24px; background: var(--pt-fons); box-shadow: inset 0 1px 0 var(--pt-linia); }
 .pt-ad-peu-in { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13.5px; color: var(--pt-gris); }
 .pt-ad-peu-in a:hover { color: var(--pt-text); }
 @media (max-width: 767px) {
   .pt-ad-capcal-in { height: 60px; }
-  .pt-ad-hero { padding-block: 32px 40px; }
-  .pt-ad-dues { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-  .pt-ad-h1 { font-size: 40px; }
-  .pt-ad-mobil { width: 230px; }
-  .pt-ad-mobil > div { min-height: 340px; }
-  .pt-ad-h2 { font-size: 32px; }
-  .pt-ad-passos { grid-template-columns: minmax(0, 1fr); }
+  .pt-ad-entrada { padding-block: 24px 40px; }
+  .pt-ad-h1 { font-size: 36px; }
+  .pt-ad-h1-llarg { font-size: 30px; line-height: 1.08; }
+  .pt-ad-lead { margin-top: 12px; font-size: 17px; }
+  .pt-ad-video { margin-top: 20px; border-radius: 20px; }
+  .pt-ad-play { padding-bottom: 14px; }
+  .pt-ad-play-pindola { height: 52px; gap: 10px; padding: 0 18px 0 6px; font-size: 16px; }
+  .pt-ad-play-pindola i { width: 40px; height: 40px; }
+  .pt-ad-carta { padding: 16px; gap: 11px; }
+  .pt-ad-fi { gap: 6px; padding: 10px; }
+  .pt-ad-fi > p { font-size: 16px; }
+  .pt-ad-fi .pt-entrada-boto { height: 46px; }
+  /* els botons principals, a tota l'amplada (MAQUETACIO, regla 5) */
+  .pt-ad-despres .pt-pill, .pt-ad-truca .pt-pill, .pt-ad-final .pt-pill { width: 100%; }
+  .pt-ad-truca { padding: 18px; }
+  .pt-ad-confianca { padding-block: 36px; }
+  .pt-ad-xifres { gap: 12px; }
+  .pt-ad-xifres b { font-size: 24px; }
+  .pt-ad-xifres li { font-size: 12.5px; }
+  .pt-ad-h2 { font-size: 26px; margin-bottom: 18px; }
   .pt-ad-final { padding: 26px 22px; }
-  .pt-ad-peu { padding-bottom: 88px; }
   .pt-ad-peu-in a { padding-block: 11px; margin-block: -11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pt-ad-video, .pt-ad-video video, .pt-ad-play, .pt-ad-play-pindola, .pt-ad-carta, .pt-ad-video.form .pt-ad-carta { transition: none; }
 }
 
 /* ── 5 · Així es comença ── */
