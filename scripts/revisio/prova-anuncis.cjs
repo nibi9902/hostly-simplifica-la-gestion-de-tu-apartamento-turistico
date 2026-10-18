@@ -39,8 +39,12 @@ const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
       await p.waitForTimeout(500);
       const lead = await p.locator('.pt-ad-lead').innerText();
       ok(`${tag} · el subtítol és el de la A`, completo
-        ? lead.startsWith('Contesta a tus huéspedes, cuadra Airbnb y Booking')
+        ? lead.startsWith('Hostly contesta a tus huéspedes, cuadra Airbnb y Booking')
         : lead === 'El huésped hace el check-in desde su móvil y Hostly lo envía a la policía cada día.');
+      const h1 = (await p.locator('h1').innerText()).replace(/\s+/g, ' ');
+      ok(`${tag} · el títol («${h1}»)`, completo
+        ? h1 === 'Los mensajes, las limpiezas, la policía. Te olvidas.'
+        : h1 === 'El registro de viajeros. Gratis.');
       ok(`${tag} · d'entrada, el play i cap formulari`, await p.locator('.pt-ad-play').isVisible() && !(await p.locator('.pt-ad-carta').isVisible()));
       const a0 = (await p.locator('.pt-ad-video').boundingBox()).height;
       const amplada = (await p.locator('.pt-ad-video').boundingBox()).width;

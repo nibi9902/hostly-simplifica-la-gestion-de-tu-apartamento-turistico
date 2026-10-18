@@ -580,7 +580,9 @@
   },
   "anunci_completo": {
     "seo_titol": "Hostly Complet, en un minut i mig | Hostly",
-    "lead": "Contesta els teus hostes, quadra Airbnb i Booking i avisa la neteja. Mira-ho en un minut i mig.",
+    "titol": "Els missatges, les neteges, la policia.",
+    "titol_gris": "Te n’oblides.",
+    "lead": "Hostly contesta els teus hostes, quadra Airbnb i Booking i avisa la neteja. Mira-ho en un minut i mig.",
     "video_titol": "Mira-ho en un minut i mig",
     "video_aria": "El que fa Hostly per tu, en un minut i mig",
     "truca_titol": "Gràcies, {{nom}}. Et truquem i deixem els teus {{pisos}} pisos a punt amb tu?",

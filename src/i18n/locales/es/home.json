@@ -580,7 +580,9 @@
   },
   "anunci_completo": {
     "seo_titol": "Hostly Completo, en minuto y medio | Hostly",
-    "lead": "Contesta a tus huéspedes, cuadra Airbnb y Booking y avisa a la limpieza. Míralo en minuto y medio.",
+    "titol": "Los mensajes, las limpiezas, la policía.",
+    "titol_gris": "Te olvidas.",
+    "lead": "Hostly contesta a tus huéspedes, cuadra Airbnb y Booking y avisa a la limpieza. Míralo en minuto y medio.",
     "video_titol": "Míralo en minuto y medio",
     "video_aria": "Lo que hace Hostly por ti, en minuto y medio",
     "truca_titol": "Gracias, {{nom}}. ¿Te llamamos y dejamos tus {{pisos}} pisos listos contigo?",

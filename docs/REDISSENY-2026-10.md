@@ -221,9 +221,13 @@ la A.
 - `/registro-de-viajeros-gratis` (la del check-in): la mateixa adreça que ja porten els anuncis; el que
   hi havia del 15-10 (el mòbil amb el check-in i els tres passos) és a l'historial. El vídeo de la
   funció només és en castellà: a /ca també surt aquest.
-- `/hostly-completo` (nova): el lema de la portada i el vídeo de /demo (en català a /ca). /demo es
-  queda com està.
+- `/hostly-completo` (nova): «Los mensajes, las limpiezas, la policía. *Te olvidas.*» i el vídeo de
+  /demo (en català a /ca). Primer hi havia el lema de la portada, i el Biel el va trobar «molt
+  genèric»: el va voler «més punyent». El títol nou fa servir «te olvidas», que el Biel va aprovar el
+  17-10, i segueix el ritme del check-in. /demo es queda com està.
 - Totes dues, sense menú ni enllaços cap a fora (els legals, al peu), i fora del cercador (noindex).
+- De moment, pensades per al mòbil, d'on ve la gent dels anuncis. A l'ordinador es veu la mateixa
+  columna, centrada. El Biel ho vol així de moment (18-10). El disseny per a l'ordinador queda pendent.
 
 **Com va** (`src/components/anuncis/VideoAmbFormulari.tsx`): el vídeo net amb el play a baix (que no
 tapi el títol de la portada); en prémer-lo, el vídeo creix i la targeta del formulari surt a sobre,

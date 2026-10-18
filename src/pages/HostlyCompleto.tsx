@@ -1,8 +1,8 @@
 /**
  * La landing dels anuncis de Hostly Completo (/hostly-completo), 18-10-2026.
  *
- * Com la del registre (`RegistroGratis`), però per a tot el Completo: el lema de la portada, el vídeo de
- * /demo (minut i mig) amb el formulari a dins (`VideoAmbFormulari`) i, després, la trucada: «¿Te llamamos
+ * Com la del registre (`RegistroGratis`), però per a tot el Completo: «Los mensajes, las limpiezas, la
+ * policía. Te olvidas.», el vídeo de /demo (minut i mig) amb el formulari a dins (`VideoAmbFormulari`) i, després, la trucada: «¿Te llamamos
  * y dejamos tus pisos listos contigo?», amb la foto del Biel. El Complet no s'activa sol: el Biel truca i
  * el deixa llest amb la persona (17/18-10), per això aquí no hi ha cap botó per començar-lo sol.
  * La trucada es desa com «Llamadme ahora» de /empezar (de 21 a 9, hora de Madrid, «Llamadme mañana») i
@@ -105,8 +105,10 @@ export default function HostlyCompleto() {
         <section className="pt-seccio pt-ad-entrada" aria-labelledby="pt-ad-titol">
           <div className="contenidor pt-ad-columna">
             <p className="pt-retol">{t("anunci_registre.retol")}</p>
+            {/* El Biel (18-10): el lema de la portada, aquí, era «molt genèric»; més punyent i en dos temps,
+                com el del check-in */}
             <h1 id="pt-ad-titol" className="pt-ad-h1 pt-ad-h1-llarg">
-              {t("hero.h1_line1")} <span>{t("hero.h1_line2")}</span>
+              {t("anunci_completo.titol")} <span>{t("anunci_completo.titol_gris")}</span>
             </h1>
             <p className="pt-lead pt-ad-lead">{t("anunci_completo.lead")}</p>
 
