@@ -8,14 +8,14 @@
 > - **L'enllaç que es mou sol** (sempre l'última versió de la branca):
 >   https://hostly-simplifica-la-gestion-de-t-git-d0d465-nibi9902s-projects.vercel.app/es
 >
-> **Des del 18-10-2026, hostlylabs.com és la `versio-23`**: les landings dels anuncis
-> (`/registro-de-viajeros-gratis` i `/hostly-completo`), amb el vistiplau del Biel: «pengeu-la normal».
-> Abans, la `versio-22` (17-10, nit): els vídeos de les funcionalitats, la web de reserves directes i
-> /ca/demo en català.
+> **Des del 21-10-2026, hostlylabs.com és la `versio-24`**: l'alta sense fricció (els botons de crear
+> el compte porten el pla i les dades, el Completo ja no acaba en un compte gratuït) i fora el «primer
+> mes gratis», amb el vistiplau del Biel.
+> Abans, la `versio-23` (18-10): les landings dels anuncis (`/registro-de-viajeros-gratis` i `/hostly-completo`).
 > Per tornar enrere de seguida:
-> - a Vercel, *Instant Rollback* al desplegament anterior (el de la 22 és
->   `dpl_7MtSk7azUVgJd9cmUQw47K9XhRKc`);
-> - amb git, `main` = `versio-22`, `versio-18` o `versio-00`.
+> - a Vercel, *Instant Rollback* al desplegament anterior (el de la 23 és
+>   `dpl_DY6WYRjt5T8Jx4tLanPLBNkYYpod`);
+> - amb git, `main` = `versio-23`, `versio-22` o `versio-00`.
 
 | Versió | Data | Què hi ha | Etiqueta · commit | Enllaç |
 |---|---|---|---|---|
@@ -43,3 +43,4 @@
 | **21** | 17-10-2026 | **Publicada.** La 20 i, amb el vistiplau del Biel, la pàgina de la IA ja diu que respon per WhatsApp, Airbnb i Booking («IA que responde a tus huéspedes»), i a finances, que la liquidació li arriba al propietari en PDF al correu, com diuen els vídeos. | `versio-21` | https://hostlylabs.com |
 | **22** | 17-10-2026 | **Publicada.** /ca/demo amb la demo en català, «El que fa Hostly per tu» (veu de l'Anna; les pantalles de l'app, en castellà), i sense l'avís «El vídeo és en castellà». El Biel: «publica-ho». | `versio-22` | https://hostlylabs.com |
 | **23** | 18-10-2026 | **Publicada.** Les landings dels anuncis, la B del llenç amb el subtítol de la A. A `/registro-de-viajeros-gratis` (la del check-in, l'adreça que ja porten els anuncis) i a `/hostly-completo` (nova) es veu el vídeo amb el play; en prémer-lo, surt el formulari (nom, telèfon i pisos) i, en enviar-lo, el vídeo sona. Després, «Empieza gratis, sin tarjeta» o «Sí, llamadme». El títol del Completo: «Los mensajes, las limpiezas, la policía. Te olvidas.». De moment, pensades per al mòbil. El Biel: «pengeu-la normal». | `versio-23` · `896c3a1` | https://hostlylabs.com |
+| **24** | 21-10-2026 | **Publicada.** Alta sense fricció. Tots els botons de crear el compte (landings dels anuncis i /empezar) porten a l'alta de l'app amb el pla, l'idioma i les UTM; el nom, el telèfon i el correu van darrere de `#` i l'app els omple sols. Després de demanar la trucada, «Crear mi cuenta» fa un compte del Completo (abans, gratuït). Fora el «primer mes gratis» de tota la web: només el dona l'enllaç especial (decisió del Biel). | `versio-24` · `3fce845` | https://hostlylabs.com |
