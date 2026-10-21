@@ -2,7 +2,7 @@
   "cta": "Començar",
   "empezar": {
     "meta_title": "Començar amb Hostly",
-    "meta_desc": "Quatre dades i tries com començar: gratis amb el check-in i la policia, o Hostly Complet amb el primer mes gratis.",
+    "meta_desc": "Quatre dades i tries com començar: gratis amb el check-in i la policia, o Hostly Complet, que deixem a punt amb tu.",
     "paso": "Pas {{n}} de 3",
     "atras": "Enrere",
     "inicio": "Tornar al web",
@@ -41,7 +41,7 @@
         "L'hoste paga la taxa online"
       ],
       "completo_nombre": "Hostly Complet",
-      "completo_precio": "40 € + IVA al mes per pis · el primer mes, gratis",
+      "completo_precio": "40 € + IVA al mes per pis · sense permanència",
       "completo_items": [
         "Tot el del pla Gratis",
         "Contesta els teus hostes automàticament, 24/7",
@@ -60,7 +60,7 @@
     },
     "demo": {
       "titulo": "Genial, {{nombre}}. T'ajudem a connectar-ho tot.",
-      "subtitulo": "Perquè et funcioni bé des del primer dia, ho deixem a punt amb tu en una trucada: mirem els teus pisos i connectem Airbnb i Booking. El primer mes és gratis.",
+      "subtitulo": "Perquè et funcioni bé des del primer dia, ho deixem a punt amb tu en una trucada: mirem els teus pisos i connectem Airbnb i Booking.",
       "dia": "Tria el dia",
       "hora": "Tria l'hora",
       "zona": "Hora d'Espanya peninsular",
@@ -68,8 +68,8 @@
       "boton_falta": "Tria dia i hora",
       "hecho_titulo": "Apuntat, {{nombre}}: {{dia}} a les {{hora}}.",
       "hecho_texto": "T'ho confirmem per WhatsApp.",
-      "mientras": "Mentrestant, si vols, crea el teu compte gratis.",
-      "mientras_boton": "Crear el meu compte gratis",
+      "mientras": "Mentrestant, si vols, crea el teu compte: el deixarem a punt a la trucada.",
+      "mientras_boton": "Crear el meu compte",
       "cambiar": "Canviar l'hora",
       "titulo_sense_nom": "Genial. T'ajudem a connectar-ho tot.",
       "ara": "Truqueu-me ara",
@@ -87,7 +87,7 @@
         },
         {
           "titulo": "Tries el pla",
-          "texto": "Gratis: el check-in i la policia, per sempre. Complet: 40 € + IVA al mes per pis, el primer mes gratis."
+          "texto": "Gratis: el check-in i la policia, per sempre. Complet: 40 € + IVA al mes per pis, sense permanència."
         },
         {
           "titulo": "Comences",

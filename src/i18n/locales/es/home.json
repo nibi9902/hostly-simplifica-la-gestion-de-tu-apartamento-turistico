@@ -43,7 +43,7 @@
   },
   "precios_page": {
     "meta_title": "Precios · Hostly",
-    "meta_description": "Un plan gratis para siempre con el check-in y el registro a la policía. Un plan completo de 40 € + IVA al mes por piso, el primer mes gratis.",
+    "meta_description": "Un plan gratis para siempre con el check-in y el registro a la policía. Un plan completo de 40 € + IVA al mes por piso, sin permanencia.",
     "faq_heading": "Preguntas sobre el precio",
     "faq_subheading": "Lo que nos preguntan casi todos antes de empezar.",
     "faqs": [
@@ -53,7 +53,7 @@
       },
       {
         "q": "¿Puedo empezar gratis y pasarme a Hostly Completo más adelante?",
-        "a": "Sí, así está pensado. Cuando quieras el resto de Hostly, nos lo dices (desde «Empezar» o escribiéndonos), te llamamos, lo dejamos listo contigo y lo activamos ese mismo día, con el primer mes gratis y sin permanencia."
+        "a": "Sí, así está pensado. Cuando quieras el resto de Hostly, nos lo dices (desde «Empezar» o escribiéndonos), te llamamos, lo dejamos listo contigo y lo activamos ese mismo día, sin permanencia."
       },
       {
         "q": "¿Qué incluye exactamente el plan de 40 € + IVA al mes?",
@@ -263,7 +263,7 @@
       "retol": "Hostly Completo",
       "titol": "Con el Completo,",
       "titol_gris": "todo lo demás.",
-      "primer_mes": "El primer mes, gratis.",
+      "a_punt": "Lo dejamos listo contigo.",
       "sense_permanencia": "Sin permanencia.",
       "empezar": "Empezar",
       "veure": "Ver cómo funciona: {{que}}",
@@ -485,7 +485,7 @@
         "recomanat": "Recomendado",
         "preu": "40 €",
         "periode": "+ IVA al mes por piso",
-        "nota": "35 € + IVA desde 5 pisos · el primer mes, gratis",
+        "nota": "35 € + IVA desde 5 pisos · sin permanencia",
         "inclou": [
           "Todo lo del plan Gratis",
           "Contesta a tus huéspedes automáticamente, 24/7",
@@ -533,7 +533,7 @@
         },
         {
           "q": "¿Puedo empezar gratis y pasarme al Completo más adelante?",
-          "a": "Sí. Nos lo dices, te llamamos, lo dejamos listo contigo y lo activamos ese mismo día, con el primer mes gratis y sin permanencia."
+          "a": "Sí. Nos lo dices, te llamamos, lo dejamos listo contigo y lo activamos ese mismo día, sin permanencia."
         },
         {
           "q": "¿Cuánto tarda en estar funcionando?",
@@ -561,7 +561,7 @@
       },
       {
         "q": "¿Y si quiero que Hostly haga más?",
-        "a": "Con Hostly Completo, también contesta a tus huéspedes, ajusta los precios y avisa a la limpieza. 40 € + IVA al mes por piso, el primer mes gratis y sin permanencia."
+        "a": "Con Hostly Completo, también contesta a tus huéspedes, ajusta los precios y avisa a la limpieza. 40 € + IVA al mes por piso, sin permanencia."
       }
     ],
     "final_titol": "El registro de viajeros, gratis para siempre.",
@@ -588,10 +588,10 @@
     "truca_titol": "Gracias, {{nom}}. ¿Te llamamos y dejamos tus {{pisos}} pisos listos contigo?",
     "truca_titol_un": "Gracias, {{nom}}. ¿Te llamamos y dejamos tu piso listo contigo?",
     "truca_boto": "Sí, llamadme",
-    "truca_nota": "El primer mes, gratis. Sin permanencia.",
+    "truca_nota": "Sin permanencia.",
     "final_video": "¿Te llamamos y lo dejamos listo contigo?",
-    "final_titol": "El primer mes, gratis. Sin permanencia.",
-    "final_text": "Después, 40 € + IVA al mes por piso.",
+    "final_titol": "Te lo dejamos listo contigo.",
+    "final_text": "40 € + IVA al mes por piso. Sin permanencia.",
     "preguntes": [
       {
         "q": "¿Qué incluye exactamente el plan de 40 € + IVA al mes?",

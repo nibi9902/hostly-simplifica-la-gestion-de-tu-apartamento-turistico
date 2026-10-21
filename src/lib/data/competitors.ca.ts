@@ -23,7 +23,7 @@ export const competitorsCa: Competitor[] = [
       { title: 'Preus que segueixen la demanda', body: 'Cada nit té un preu recomanat, tu hi poses mínims i temporades, i Hostly el publica a Airbnb i Booking cada dia.' },
       { title: 'App moderna i configuració amb tu', body: 'A Hostly Complet, el primer mes ho configurem tot amb tu en una videotrucada 1 a 1: pisos, canals i reserves.' },
       { title: 'Check-in i registre gratis', body: registreGratis },
-      { title: 'Pagues per pis', body: '40 €/mes per pis + IVA, 35 € a partir de 5, sense comissions per reserva: amb un o dos pisos, pagues només per aquests. El primer mes, gratis.' },
+      { title: 'Pagues per pis', body: '40 €/mes per pis + IVA, 35 € a partir de 5, sense comissions per reserva: amb un o dos pisos, pagues només per aquests.' },
     ],
     comparison: [
       { feature: 'IA a WhatsApp', hostly: true, them: consultar },
@@ -75,7 +75,7 @@ export const competitorsCa: Competitor[] = [
       { title: 'IA que contesta per tu', body: "La IA de Hostly contesta la majoria de missatges dels hostes a l'instant, les 24 hores i en el seu idioma. Quan cal una persona, t'avisa." },
       { title: 'Check-in i registre gratis', body: registreGratis },
       { title: 'A Hostly Complet, ho configurem amb tu', body: "El primer mes, en una videotrucada 1 a 1, deixem a punt els teus pisos, els teus canals i els teus missatges. Després t'atén una persona, en català o castellà." },
-      { title: 'Preu previsible', body: '40 €/mes per pis + IVA, 35 € a partir de 5, sense comissions per reserva ni percentatges sobre els teus ingressos. El primer mes, gratis.' },
+      { title: 'Preu previsible', body: '40 €/mes per pis + IVA, 35 € a partir de 5, sense comissions per reserva ni percentatges sobre els teus ingressos.' },
     ],
     comparison: [
       { feature: 'Web propi / reserves directes', hostly: 'A mida, a part', them: 'El seu punt fort' },

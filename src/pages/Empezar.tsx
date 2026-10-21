@@ -30,7 +30,7 @@ import { cn } from "@/lib/utils";
 import { track } from "@/lib/analytics";
 import { correuValid, dadesRecordades, desaLead, recordaDades, telefonPerBD } from "@/lib/leads";
 import { diaLlarg, diesDemo, etiquetaDia, isoDemo, trucadaDema } from "@/lib/demo";
-import { URL_ALTA_GRATUITA, type EstatEmpezar } from "@/lib/empezar";
+import { urlAlta, type EstatEmpezar } from "@/lib/empezar";
 
 type Pas = "datos" | "plan" | "gratis" | "demo" | "demo_hecha" | "trucant";
 const NUM_PAS: Record<Pas, number> = { datos: 1, plan: 2, gratis: 3, demo: 3, demo_hecha: 3, trucant: 3 };
@@ -433,7 +433,7 @@ export default function Empezar() {
               </h1>
               <p className="text-lg text-muted-foreground mb-8">{t("empezar.gratis.subtitulo")}</p>
               <a
-                href={URL_ALTA_GRATUITA}
+                href={urlAlta("gratuit", { nom, telefon, correu, lang })}
                 onClick={() => {
                   track("empezar_cuenta", { variant: "gratis" });
                   // el pla, un altre cop: si el desat del pas 2 hagués fallat, sense pla no arriba cap avís
@@ -584,7 +584,7 @@ export default function Empezar() {
                   <p className="text-sm text-foreground/85">{t("empezar.demo.mientras")}</p>
                 </div>
                 <a
-                  href={URL_ALTA_GRATUITA}
+                  href={urlAlta("completo", { nom, telefon, correu, lang })}
                   onClick={() => track("empezar_cuenta", { variant: "despues_llamada" })}
                   className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full border border-slate-200 text-sm font-semibold text-foreground hover:bg-slate-50 transition-colors shrink-0"
                 >
@@ -620,7 +620,7 @@ export default function Empezar() {
                   <p className="text-sm text-foreground/85">{t("empezar.demo.mientras")}</p>
                 </div>
                 <a
-                  href={URL_ALTA_GRATUITA}
+                  href={urlAlta("completo", { nom, telefon, correu, lang })}
                   onClick={() => track("empezar_cuenta", { variant: "despues_demo" })}
                   className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full border border-slate-200 text-sm font-semibold text-foreground hover:bg-slate-50 transition-colors shrink-0"
                 >

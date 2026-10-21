@@ -99,7 +99,7 @@ Lo que significa en la práctica:
 - Hostly envía el registro de viajeros a la policía cada día, de forma automática, y guarda el comprobante. Si algo falla, te avisa.
 - La tasa turística también está incluida: Hostly la calcula por estancia y la deja lista para declarar.
 
-**Precio de Hostly:** el plan Gratis (check-in online, registro a la policía, tasa turística y calendario de Airbnb y Booking, leído cada 30 minutos) cuesta 0 €, para siempre. Hostly Completo cuesta 40 € + IVA al mes por piso (35 € desde 5), con el primer mes gratis y sin permanencia.
+**Precio de Hostly:** el plan Gratis (check-in online, registro a la policía, tasa turística y calendario de Airbnb y Booking, leído cada 30 minutos) cuesta 0 €, para siempre. Hostly Completo cuesta 40 € + IVA al mes por piso (35 € desde 5), sin permanencia.
 
 Si ahora mismo pagas por una herramienta de check-in separada y además por un channel manager u otras herramientas de gestión, tener todo en un solo sitio te ahorra tiempo y contraseñas; en precio, haz números con la [calculadora](/calcula).
 

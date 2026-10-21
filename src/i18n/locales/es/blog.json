@@ -16,7 +16,7 @@
     "min_read": "{{count}} min",
     "final_eyebrow": "Hostly",
     "final_title": "La app que simplifica todo lo que lees aquí.",
-    "final_subtitle": "Registro a la policía, mensajes, limpiezas y precios, en una sola app. El primer mes, gratis.",
+    "final_subtitle": "Registro a la policía, mensajes, limpiezas y precios, en una sola app. Sin permanencia.",
     "final_cta": "Empezar"
   },
   "categories": {
@@ -44,7 +44,7 @@
     "min_read_full": "{{count}} min de lectura",
     "cta_eyebrow": "Hostly",
     "cta_title": "Deja que Hostly haga el trabajo repetitivo.",
-    "cta_body": "Registro a la policía, mensajes y limpiezas, en una sola app. El primer mes, gratis.",
+    "cta_body": "Registro a la policía, mensajes y limpiezas, en una sola app. Sin permanencia.",
     "cta_button": "Empezar",
     "related_label": "También te puede interesar",
     "index": "En este artículo"

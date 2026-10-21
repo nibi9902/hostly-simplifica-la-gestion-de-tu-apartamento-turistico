@@ -2,7 +2,7 @@
   "cta": "Empezar",
   "empezar": {
     "meta_title": "Empezar con Hostly",
-    "meta_desc": "Cuatro datos y eliges cómo empezar: gratis con el check-in y la policía, o Hostly Completo con el primer mes gratis.",
+    "meta_desc": "Cuatro datos y eliges cómo empezar: gratis con el check-in y la policía, o Hostly Completo, que dejamos listo contigo.",
     "paso": "Paso {{n}} de 3",
     "atras": "Atrás",
     "inicio": "Volver a la web",
@@ -41,7 +41,7 @@
         "El huésped paga la tasa online"
       ],
       "completo_nombre": "Hostly Completo",
-      "completo_precio": "40 € + IVA al mes por piso · el primer mes, gratis",
+      "completo_precio": "40 € + IVA al mes por piso · sin permanencia",
       "completo_items": [
         "Todo lo del plan Gratis",
         "Contesta a tus huéspedes automáticamente, 24/7",
@@ -60,7 +60,7 @@
     },
     "demo": {
       "titulo": "Genial, {{nombre}}. Te ayudamos a conectarlo todo.",
-      "subtitulo": "Para que te funcione bien desde el primer día, lo dejamos listo contigo en una llamada: vemos tus pisos y conectamos Airbnb y Booking. El primer mes es gratis.",
+      "subtitulo": "Para que te funcione bien desde el primer día, lo dejamos listo contigo en una llamada: vemos tus pisos y conectamos Airbnb y Booking.",
       "dia": "Elige el día",
       "hora": "Elige la hora",
       "zona": "Hora de España peninsular",
@@ -68,8 +68,8 @@
       "boton_falta": "Elige día y hora",
       "hecho_titulo": "Apuntado, {{nombre}}: {{dia}} a las {{hora}}.",
       "hecho_texto": "Te lo confirmamos por WhatsApp.",
-      "mientras": "Mientras tanto, si quieres, crea tu cuenta gratis.",
-      "mientras_boton": "Crear mi cuenta gratis",
+      "mientras": "Mientras tanto, si quieres, crea tu cuenta: la dejaremos lista en la llamada.",
+      "mientras_boton": "Crear mi cuenta",
       "cambiar": "Cambiar la hora",
       "titulo_sense_nom": "Genial. Te ayudamos a conectarlo todo.",
       "ara": "Llamadme ahora",
@@ -87,7 +87,7 @@
         },
         {
           "titulo": "Eliges plan",
-          "texto": "Gratis: el check-in y la policía, para siempre. Completo: 40 € + IVA al mes por piso, el primer mes gratis."
+          "texto": "Gratis: el check-in y la policía, para siempre. Completo: 40 € + IVA al mes por piso, sin permanencia."
         },
         {
           "titulo": "Empiezas",

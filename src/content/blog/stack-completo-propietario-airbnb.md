@@ -89,7 +89,7 @@ Hostly está diseñado para ser la app del día a día de un propietario o gesto
 | Gestión de la tasa turística | Tasa turística de Cataluña calculada por estancia, lista para declarar cada semestre, gratis para siempre |
 | WhatsApp con la limpiadora | Limpiezas asignadas solas en cada salida, con fotos e incidencias |
 
-**Precio:** Hostly Completo, 40 € + IVA al mes por piso (35 € desde 5), con el primer mes gratis. El check-in, el registro a la policía y la tasa turística, gratis para siempre con el plan Gratis.
+**Precio:** Hostly Completo, 40 € + IVA al mes por piso (35 € desde 5), sin permanencia. El check-in, el registro a la policía y la tasa turística, gratis para siempre con el plan Gratis.
 
 La diferencia no está en el precio, sino en tenerlo todo en un solo lugar: no tienes que mantener la coherencia entre sistemas. Una reserva entra, el calendario se actualiza, el huésped recibe el enlace del check-in y el registro llega a la policía. Sin copiar datos de una app a otra.
 

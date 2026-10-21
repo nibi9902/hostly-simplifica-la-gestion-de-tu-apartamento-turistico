@@ -135,6 +135,12 @@ function arribada(): Arribada {
   return arribadaEnMemoria ?? {};
 }
 
+/** Les UTM i l'identificador d'anunci de la visita, per passar-les a l'alta de l'app. */
+export function origenDeLaVisita(): Record<string, string> {
+  const { entrada: _entrada, referrer: _referrer, ...utm } = arribada();
+  return Object.fromEntries(Object.entries(utm).filter((e): e is [string, string] => !!e[1]));
+}
+
 /* ─── Desar ─── */
 
 /**

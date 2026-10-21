@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 import SEO from "@/components/SEO";
 import { useLang } from "@/i18n/useLang";
 import { track } from "@/lib/analytics";
-import { URL_ALTA_GRATUITA } from "@/lib/empezar";
+import { urlAlta } from "@/lib/empezar";
 import { desaLead } from "@/lib/leads";
 import { videoDeLaFuncio } from "@/lib/data/videosFuncions";
 import VideoAmbFormulari, { type DadesAnunci, type ReproductorAnunci } from "@/components/anuncis/VideoAmbFormulari";
@@ -48,7 +48,7 @@ export default function RegistroGratis() {
       : t("anunci_registre.gracies", { nom: primerNom, pisos: dades.pisos })
     : "";
   const botoCompte = (variant: string, classe: string) => (
-    <a className={`pt-pill ${classe} pt-entrada-boto`} href={URL_ALTA_GRATUITA} onClick={alCompte(variant)}>
+    <a className={`pt-pill ${classe} pt-entrada-boto`} href={urlAlta("gratuit", { nom: dades?.nom, telefon: dades?.telefon, lang })} onClick={alCompte(variant)}>
       {t("portada.entrada.empezar")}
     </a>
   );

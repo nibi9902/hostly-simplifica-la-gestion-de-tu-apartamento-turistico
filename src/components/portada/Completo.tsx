@@ -522,9 +522,10 @@ export default function Completo({ onEmpezar }: { onEmpezar: () => void }) {
             {t("portada.completo.titol")} <span className="pt-cmp-gris">{t("portada.completo.titol_gris")}</span>
           </h2>
           {/* el botó aquí mateix (revisió de màrqueting del 15-10: el Completo no tancava). El preu no: el Biel
-              (16-10) el vol només a la secció dels preus; aquí, el primer mes gratis, en negreta */}
+              (16-10) el vol només a la secció dels preus. El «primer mes gratis» ja no es promet (21-10: només
+              l'enllaç especial el dona); en negreta, que ho deixem a punt amb ell */}
           <div className="pt-cmp-preu">
-            <p><b>{t("portada.completo.primer_mes")}</b> {t("portada.completo.sense_permanencia")}</p>
+            <p><b>{t("portada.completo.a_punt")}</b> {t("portada.completo.sense_permanencia")}</p>
             <button type="button" onClick={onEmpezar} className="pt-pill pt-pill-pri">{t("portada.completo.empezar")}</button>
           </div>
         </div>

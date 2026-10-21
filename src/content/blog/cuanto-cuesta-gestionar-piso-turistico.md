@@ -104,6 +104,6 @@ El check-in online, el registro a la policía y la tasa turística son **gratis 
 
 ---
 
-Si quieres comprobarlo sin comprometerte a nada, el check-in y el registro a la policía son gratis para siempre, y Hostly Completo tiene el primer mes gratis.
+Si quieres comprobarlo sin comprometerte a nada, el check-in y el registro a la policía son gratis para siempre, y Hostly Completo no tiene permanencia.
 
 **[Empieza hoy con Hostly →](/es/empezar)**

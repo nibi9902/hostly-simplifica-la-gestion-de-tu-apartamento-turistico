@@ -16,7 +16,7 @@ import { useLang } from "@/i18n/useLang";
 import type { Lang } from "@/i18n/config";
 import { track } from "@/lib/analytics";
 import { trucadaDema } from "@/lib/demo";
-import { URL_ALTA_GRATUITA } from "@/lib/empezar";
+import { urlAlta } from "@/lib/empezar";
 import { desaLead, telefonVisible } from "@/lib/leads";
 import VideoAmbFormulari, { type DadesAnunci, type ReproductorAnunci, type VideoAnunci } from "@/components/anuncis/VideoAmbFormulari";
 import { CapcalAnunci, PeuAnunci, XifresAnunci } from "@/components/anuncis/peces";
@@ -150,7 +150,8 @@ export default function HostlyCompleto() {
                     <p className="pt-ad-nota">{tE("empezar.demo.mientras")}</p>
                     <a
                       className="pt-pill pt-pill-sec pt-entrada-boto"
-                      href={URL_ALTA_GRATUITA}
+                      // El compte ja neix del Complet, esperant la trucada (abans: un compte gratuït).
+                      href={urlAlta("completo", { nom: dades.nom, telefon: dades.telefon, lang })}
                       onClick={() => track("empezar_cuenta", { variant: "anunci_despues_llamada" })}
                     >
                       {tE("empezar.demo.mientras_boton")}

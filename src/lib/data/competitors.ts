@@ -32,7 +32,7 @@ export const competitors: Competitor[] = [
       { title: 'Precios que siguen a la demanda', body: 'Cada noche tiene un precio recomendado, tú pones mínimos y temporadas, y Hostly lo publica en Airbnb y Booking cada día.' },
       { title: 'App moderna y configuración contigo', body: 'En Hostly Completo, el primer mes lo configuramos todo contigo en una videollamada 1 a 1: pisos, canales y reservas.' },
       { title: 'Check-in y registro gratis', body: registroGratis },
-      { title: 'Pagas por piso', body: '40 €/mes por piso + IVA, 35 € desde 5, sin comisiones por reserva: con uno o dos pisos, pagas solo por esos. El primer mes, gratis.' },
+      { title: 'Pagas por piso', body: '40 €/mes por piso + IVA, 35 € desde 5, sin comisiones por reserva: con uno o dos pisos, pagas solo por esos.' },
     ],
     comparison: [
       { feature: 'IA en WhatsApp', hostly: true, them: consultar },
@@ -94,7 +94,7 @@ export const competitors: Competitor[] = [
       { title: 'IA que contesta por ti', body: 'La IA de Hostly contesta la mayoría de mensajes de los huéspedes al momento, 24/7 y en su idioma. Cuando hace falta una persona, te avisa.' },
       { title: 'Check-in y registro gratis', body: registroGratis },
       { title: 'En Hostly Completo, lo configuramos contigo', body: 'El primer mes, en una videollamada 1 a 1, dejamos listos tus pisos, tus canales y tus mensajes. Después te atiende una persona, en castellano o catalán.' },
-      { title: 'Precio predecible', body: '40 €/mes por piso + IVA, 35 € desde 5, sin comisiones por reserva ni porcentajes sobre tus ingresos. El primer mes, gratis.' },
+      { title: 'Precio predecible', body: '40 €/mes por piso + IVA, 35 € desde 5, sin comisiones por reserva ni porcentajes sobre tus ingresos.' },
     ],
     comparison: [
       { feature: 'Web propia / reservas directas', hostly: 'A medida, aparte', them: 'Su punto fuerte' },

@@ -103,7 +103,9 @@ const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
     await p.click('text=Solo el check-in y la policía');
     await p.waitForSelector('text=Crear mi cuenta gratis');
     const href = await p.getAttribute('a:has-text("Crear mi cuenta gratis")', 'href');
-    ok(`${nom} · el gratuït porta a l'alta de l'app (${href})`, href === 'https://app.hostlylabs.com/signup?pla=gratuit');
+    // Des del 21-10: amb el pla, l'idioma i, darrere de #, el que ha escrit (no torna a escriure res)
+    ok(`${nom} · el gratuït porta a l'alta de l'app amb les seves dades (${href})`,
+      href === 'https://app.hostlylabs.com/signup?pla=gratuit&lang=es#nom=Marta+Puig&tel=%2B34612345678&email=marta%40exemple.com');
     await p.screenshot({ path: `${OUT}/${nom}-empezar-gratis.png`, fullPage: true });
     // 6. Català
     await p.goto(`${BASE}/ca/empezar`, { waitUntil: 'networkidle' });

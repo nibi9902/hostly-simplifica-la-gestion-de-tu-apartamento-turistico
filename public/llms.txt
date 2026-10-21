@@ -7,7 +7,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 ## Planes y precios
 
 - **Gratis, para siempre y sin tarjeta:** check-in online del huésped, registro a la policía, cálculo de la tasa turística, lectura del calendario de Airbnb y Booking por iCal cada 30 minutos y avisos cuando falta un check-in. No incluye IA, limpiezas, mensajes automáticos ni precios dinámicos.
-- **Hostly completo:** 40 €/mes por apartamento + IVA; con 5 apartamentos o más, 35 €/mes + IVA cada uno. El primer mes es gratis. Se activa con una llamada en la que lo dejamos listo con el cliente. Sin permanencia. Durante el primer mes, la configuración se hace 1 a 1 con el equipo de Hostly.
+- **Hostly completo:** 40 €/mes por apartamento + IVA; con 5 apartamentos o más, 35 €/mes + IVA cada uno. Se activa con una llamada en la que lo dejamos listo con el cliente. Sin permanencia. Durante el primer mes, la configuración se hace 1 a 1 con el equipo de Hostly.
 - **Web de reservas directas:** servicio aparte, a medida: una web propia del gestor con reservas y pago online por Stripe, sin comisiones de plataforma. Los precios y los días libres salen de Hostly, y cada reserva cierra esos días en Airbnb y Booking.
 - **Automatizaciones a medida («Conéctalo todo»):** servicio aparte para conectar Hostly con la gestoría, la web, el ERP u otras herramientas del cliente. Cuota mensual según lo que se automatice.
 - **Programa de referidos:** por cada 5 propietarios que traigas y sigan activos en Hostly, uno de tus apartamentos deja de pagar mientras sigan activos.
@@ -29,7 +29,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 
 - [Inicio](https://hostlylabs.com/es): qué es Hostly, planes y preguntas frecuentes.
 - [Empezar](https://hostlylabs.com/es/empezar): alta en el plan gratis o, para Hostly completo, una llamada (al momento o el día que se elija).
-- [Precios](https://hostlylabs.com/es/precios): plan gratis y Hostly completo (40 €/mes por apartamento + IVA, 35 € desde 5, primer mes gratis).
+- [Precios](https://hostlylabs.com/es/precios): plan gratis y Hostly completo (40 €/mes por apartamento + IVA, 35 € desde 5).
 - [Calculadora](https://hostlylabs.com/es/calcula): cinco preguntas para ver si Hostly te sale a cuenta.
 - [Super Guía de gestión](https://hostlylabs.com/es/guia): guía en 8 capítulos sobre la gestión de pisos turísticos en España.
 - [Blog](https://hostlylabs.com/es/blog): 20 guías prácticas sobre registro de viajeros, herramientas, operativa y automatización.
@@ -105,7 +105,7 @@ Qué cubre cada herramienta y para quién encaja.
 - **Fundador:** Biel Alsina, desde Barcelona.
 - **Mercado:** España. Atención en castellano y catalán.
 - **Idiomas:** la app está en catalán, castellano e inglés; el check-in del huésped, en castellano, inglés y francés; la IA contesta en el idioma del huésped.
-- **Precio:** plan gratis para siempre; Hostly completo a 40 €/mes por apartamento + IVA (35 € desde 5), primer mes gratis, sin permanencia.
+- **Precio:** plan gratis para siempre; Hostly completo a 40 €/mes por apartamento + IVA (35 € desde 5), sin permanencia.
 - **Canales:** Airbnb y Booking.com; reservas directas con motor propio y pago por Stripe.
 - **WhatsApp:** API oficial de WhatsApp (Meta), con un número gestionado por Hostly.
 - **Precios dinámicos:** incluidos en Hostly Completo.

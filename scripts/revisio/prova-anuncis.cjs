@@ -101,7 +101,9 @@ const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
         : despres.includes('Gracias, Marta. Para tus 3 pisos, también gratis'));
       if (!completo) {
         const href = await p.locator('.pt-ad-despres a').getAttribute('href');
-        ok(`${tag} · «Empieza gratis» porta a crear el compte`, href === 'https://app.hostlylabs.com/signup?pla=gratuit');
+        // Des del 21-10: l'alta porta el pla, l'idioma i, darrere de #, el que ja ha escrit
+        ok(`${tag} · «Empieza gratis» porta a l'alta gratuïta amb les seves dades (${href})`,
+          href === 'https://app.hostlylabs.com/signup?pla=gratuit&lang=es#nom=Marta+Puig&tel=34612345678');
       }
       await p.screenshot({ path: `${OUT}/${nom}-${pagina}-4-video.png` });
       await p.screenshot({ path: `${OUT}/${nom}-${pagina}-4-video-sencera.png`, fullPage: true });
@@ -119,6 +121,10 @@ const BASE = process.env.REVISIO_BASE || 'http://127.0.0.1:8094';
         const t = crides.find((x) => ['ara', 'demà'].includes(x.p_dades?.answers?.trucar))?.p_dades ?? {};
         ok(`${tag} · la trucada es desa com a /empezar (${t.answers?.trucar} · ${t.demo_slot ?? '—'})`, t.plan === 'completo' && !!t.demo_slot);
         ok(`${tag} · el número es llegeix bé (612 34 56 78)`, (await p.locator('.pt-ad-ok').innerText()).includes('612 34 56 78'));
+        // El compte que es crea després de la trucada ja és del Completo (abans: un gratuït)
+        const compte = await p.locator('.pt-ad-truca a').getAttribute('href');
+        ok(`${tag} · «Crear mi cuenta» porta a l'alta del Completo (${compte})`,
+          compte === 'https://app.hostlylabs.com/signup?pla=completo&lang=es#nom=Marta+Puig&tel=34612345678');
         await p.screenshot({ path: `${OUT}/${nom}-${pagina}-6-trucada.png` });
       }
 
