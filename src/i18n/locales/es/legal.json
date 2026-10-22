@@ -115,6 +115,7 @@
     "p_tecnicas": "Las cookies técnicas son imprescindibles para el funcionamiento básico del sitio. No requieren consentimiento según el art. 22.2 LSSI.",
     "h2_analiticas": "Cookies analíticas",
     "p_analiticas_pre": "Usamos Google Analytics para entender cómo se usa el sitio y mejorarlo. Solo se activa si lo aceptas en el aviso de cookies; si lo rechazas, no se carga nada de Google. También puedes optar por no participar en",
+    "p_analiticas_vercel": "También contamos las visitas con Vercel Web Analytics, sin cookies ni datos personales: solo cuántas veces se ve cada página y de dónde llega la visita (por ejemplo, de qué anuncio). No identifica a nadie ni sigue a nadie entre webs, y por eso no necesita tu consentimiento.",
     "h2_gestionar": "Cómo gestionar las cookies",
     "p_gestionar": "Puedes configurar tu navegador para rechazar o eliminar cookies en cualquier momento. Ten en cuenta que desactivar las cookies técnicas puede afectar al funcionamiento del sitio.",
     "h2_contacto": "Contacto",

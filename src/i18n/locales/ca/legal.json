@@ -115,6 +115,7 @@
     "p_tecnicas": "Les galetes tècniques són imprescindibles per al funcionament bàsic del lloc. No requereixen consentiment segons l'art. 22.2 LSSI.",
     "h2_analiticas": "Galetes analítiques",
     "p_analiticas_pre": "Fem servir Google Analytics per entendre com es fa servir el lloc i millorar-lo. Només s'activa si l'acceptes a l'avís de galetes; si el rebutges, no es carrega res de Google. També pots optar per no participar a",
+    "p_analiticas_vercel": "També comptem les visites amb Vercel Web Analytics, sense galetes ni dades personals: només quantes vegades es veu cada pàgina i d'on arriba la visita (per exemple, de quin anunci). No identifica ningú ni segueix ningú entre webs, i per això no necessita el teu consentiment.",
     "h2_gestionar": "Com gestionar les galetes",
     "p_gestionar": "Pots configurar el teu navegador per rebutjar o eliminar galetes en qualsevol moment. Tingues en compte que desactivar les galetes tècniques pot afectar el funcionament del lloc.",
     "h2_contacto": "Contacte",

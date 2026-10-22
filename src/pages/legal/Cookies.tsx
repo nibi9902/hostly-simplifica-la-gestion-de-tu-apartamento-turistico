@@ -75,6 +75,7 @@ export default function Cookies() {
               tools.google.com/dlpage/gaoptout
             </a>.
           </p>
+          <p>{t("cookies.p_analiticas_vercel")}</p>
 
           {hiHaPublicitat() && (
             <>

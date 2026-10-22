@@ -8,7 +8,10 @@
 > - **L'enllaç que es mou sol** (sempre l'última versió de la branca):
 >   https://hostly-simplifica-la-gestion-de-t-git-d0d465-nibi9902s-projects.vercel.app/es
 >
-> **Des del 21-10-2026, hostlylabs.com és la `versio-24`**: l'alta sense fricció (els botons de crear
+> **Des del 22-10-2026, hostlylabs.com és la `versio-25`**: Vercel Web Analytics (visites per pàgina i per UTM, sense
+> galetes ni dades personals, compta també qui rebutja el bàner) i una frase a la política de galetes que ho explica.
+> El Biel: «ja l'he activat ara, lo altre ho pots fer tu?». Per tornar enrere: Instant Rollback al desplegament de la 24.
+> Abans, des del 21-10-2026, la `versio-24`: l'alta sense fricció (els botons de crear
 > el compte porten el pla i les dades, el Completo ja no acaba en un compte gratuït) i fora el «primer
 > mes gratis», amb el vistiplau del Biel.
 > Abans, la `versio-23` (18-10): les landings dels anuncis (`/registro-de-viajeros-gratis` i `/hostly-completo`).
@@ -44,3 +47,4 @@
 | **22** | 17-10-2026 | **Publicada.** /ca/demo amb la demo en català, «El que fa Hostly per tu» (veu de l'Anna; les pantalles de l'app, en castellà), i sense l'avís «El vídeo és en castellà». El Biel: «publica-ho». | `versio-22` | https://hostlylabs.com |
 | **23** | 18-10-2026 | **Publicada.** Les landings dels anuncis, la B del llenç amb el subtítol de la A. A `/registro-de-viajeros-gratis` (la del check-in, l'adreça que ja porten els anuncis) i a `/hostly-completo` (nova) es veu el vídeo amb el play; en prémer-lo, surt el formulari (nom, telèfon i pisos) i, en enviar-lo, el vídeo sona. Després, «Empieza gratis, sin tarjeta» o «Sí, llamadme». El títol del Completo: «Los mensajes, las limpiezas, la policía. Te olvidas.». De moment, pensades per al mòbil. El Biel: «pengeu-la normal». | `versio-23` · `896c3a1` | https://hostlylabs.com |
 | **24** | 21-10-2026 | **Publicada.** Alta sense fricció. Tots els botons de crear el compte (landings dels anuncis i /empezar) porten a l'alta de l'app amb el pla, l'idioma i les UTM; el nom, el telèfon i el correu van darrere de `#` i l'app els omple sols. Després de demanar la trucada, «Crear mi cuenta» fa un compte del Completo (abans, gratuït). Fora el «primer mes gratis» de tota la web: només el dona l'enllaç especial (decisió del Biel). | `versio-24` · `3fce845` | https://hostlylabs.com |
+| **25** | 22-10-2026 | **Visites sense galetes.** `@vercel/analytics` (`inject()` a `main.tsx`): compta totes les visites per pàgina i per UTM (campanya, anunci, ubicació) sense galetes ni dades personals. Frase nova a la política de galetes (ES i CA). Proves: tsc, build, `prova-galetes`, `prova-publicitat` (47 ok). | `versio-25` | https://hostlylabs.com |
