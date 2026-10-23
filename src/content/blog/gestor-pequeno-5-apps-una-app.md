@@ -107,7 +107,7 @@ Lo que incluye Hostly Completo:
 - Panel de reservas, ingresos y ocupación
 - Limpiezas asignadas solas en cada salida, con fotos e incidencias
 
-El primer mes de Hostly Completo es gratis, y lo configuramos contigo en una videollamada: tiempo de sobra para ver si realmente te simplifica la semana.
+Hostly Completo lo configuramos contigo en una llamada, y no tiene permanencia: si no te simplifica la semana, lo dejas cuando quieras.
 
 ---
 

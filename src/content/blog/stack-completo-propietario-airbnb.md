@@ -97,6 +97,6 @@ Para un propietario que ahora mismo gestiona su stack con 5 herramientas distint
 
 ---
 
-El primer mes de Hostly Completo es gratis. Suficiente para ver si realmente te simplifica la gestión o no.
+Hostly Completo lo dejamos listo contigo en una llamada, y no tiene permanencia: si no te simplifica la gestión, lo dejas cuando quieras.
 
 **[Empieza hoy con Hostly →](/es/empezar)**
