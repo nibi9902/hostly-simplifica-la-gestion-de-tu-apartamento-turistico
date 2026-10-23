@@ -240,9 +240,13 @@ feia de marc i, amb el teclat, la caixa creixia i s'encongia i la pàgina saltav
   primera versió del 23-10 pujava des de baix, amb `vaul`: a l'iPhone de debò, en tocar el nom o el
   telèfon, la pantalla baixava molt, perquè el teclat tapava els camps i l'iPhone i la finestra es
   movien alhora. El Biel: «queda super malament».)
+- la pantalla del mòbil (la segona versió del 23-10; la primera, amb tot a dalt i blanc, el Biel la va
+  trobar «correcte però no maco… sembla més un apanyo»): a dalt, la portada del vídeo en petit i el
+  títol; els camps en una targeta blanca sobre el fons gris clar de la web; «Ver el vídeo», ancorat a
+  baix de tot. A l'ordinador, el mateix en un diàleg;
 - nom, telèfon (el +34 ja hi és) i **pisos amb «−», el número i «+»** (el Biel: «simplement un + i un −
-  amb el número al mig»). Comença a 1; el número no s'escriu (no obre el teclat) i, mantenint premut el
-  «+», corre sol;
+  amb el número al mig»), en una fila amb la pregunta, com el selector de persones d'Airbnb. Comença a
+  1; el número no s'escriu (no obre el teclat) i, mantenint premut el «+», corre sol;
 - en enviar, la finestra es tanca i el vídeo comença amb so **dins del mateix toc**: a l'iPhone (també
   dins d'Instagram), a pantalla completa; a l'Android, també. La comprovació bona del telèfon i el desat
   van just després; si el telèfon no és bo, el vídeo s'atura i la finestra torna amb l'error;

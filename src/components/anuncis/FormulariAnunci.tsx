@@ -6,10 +6,11 @@
  * molt malament»). Ara és el contingut d'una pantalla pròpia (al mòbil) o d'un diàleg (a l'ordinador), i aquí
  * només hi ha els camps:
  *   · nom i telèfon, a dalt de tot (el +34 ja hi és; un número d'un altre país s'escriu amb el +);
- *   · quants pisos: «−», el número i «+» (el Biel, 23-10: «simplement un + i un − amb el número al mig»).
- *     Comença a 1, i qui en té un no ha de tocar res. El número no s'escriu (no obre el teclat); mantenint
- *     premut el «+» o el «−», corre sol, com el selector de l'iPhone;
- *   · el botó, que ja diu què passa: «Ver el vídeo».
+ *   · quants pisos: «−», el número i «+» (el Biel, 23-10: «simplement un + i un − amb el número al mig»),
+ *     en una fila amb la pregunta, com el selector de persones d'Airbnb. Comença a 1, i qui en té un no ha de
+ *     tocar res. El número no s'escriu (no obre el teclat); mantenint premut el «+» o el «−», corre sol;
+ *   · els camps, en una targeta blanca; a sota, el botó, que ja diu què passa: «Ver el vídeo» (al mòbil,
+ *     ancorat a baix de tot: el Biel va trobar la primera pantalla, amb tot a dalt, «un apanyo»).
  * La comprovació de debò del telèfon (`telefonPerBD`) la fa qui el rep, just després: el vídeo s'ha de
  * començar dins del mateix toc (si no, el mòbil no el deixa sonar), i aquí només es mira que sembli un número.
  */
@@ -136,81 +137,85 @@ export default function FormulariAnunci({ onEnvia, errorTelefon, esborrany }: Pr
 
   return (
     <form className="pt-ad-form" onSubmit={envia} noValidate>
-      <div className="pt-ad-camp">
-        <label htmlFor={id.nom}>{tE("empezar.datos.nombre")}</label>
-        <input
-          id={id.nom}
-          data-primer
-          className="pt-ad-input"
-          type="text"
-          autoComplete="given-name"
-          autoCapitalize="words"
-          enterKeyHint="next"
-          placeholder={tE("empezar.datos.nombre_placeholder")}
-          value={nom}
-          onChange={(e) => {
-            setNom(e.target.value);
-            setErrors((x) => ({ ...x, nom: undefined }));
-          }}
-          // «Siguiente» del teclat: al telèfon, sense enviar
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-              telRef.current?.focus();
-            }
-          }}
-          aria-invalid={!!errors.nom}
-          aria-describedby={errors.nom ? `${id.nom}-error` : undefined}
-        />
-        {errors.nom && <p id={`${id.nom}-error`} className="pt-ad-error" role="alert">{errors.nom}</p>}
-      </div>
-
-      <div className="pt-ad-camp">
-        <label htmlFor={id.tel}>{tE("empezar.datos.telefono")}</label>
-        <div className={cn("pt-ad-tel", errorTel && "amb-error")}>
-          <span aria-hidden="true">+34</span>
+      <div className="pt-ad-targeta">
+        <div className="pt-ad-camp">
+          <label htmlFor={id.nom}>{tE("empezar.datos.nombre")}</label>
           <input
-            ref={telRef}
-            id={id.tel}
-            type="tel"
-            inputMode="tel"
-            autoComplete="tel-national"
-            enterKeyHint="done"
-            placeholder={tE("empezar.datos.telefono_placeholder")}
-            value={telefon}
+            id={id.nom}
+            data-primer
+            className="pt-ad-input"
+            type="text"
+            autoComplete="given-name"
+            autoCapitalize="words"
+            enterKeyHint="next"
+            placeholder={tE("empezar.datos.nombre_placeholder")}
+            value={nom}
             onChange={(e) => {
-              setTelefon(e.target.value);
-              setErrors((x) => ({ ...x, telefon: undefined }));
+              setNom(e.target.value);
+              setErrors((x) => ({ ...x, nom: undefined }));
             }}
-            aria-invalid={!!errorTel}
-            aria-describedby={errorTel ? `${id.tel}-error` : undefined}
+            // «Siguiente» del teclat: al telèfon, sense enviar
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                telRef.current?.focus();
+              }
+            }}
+            aria-invalid={!!errors.nom}
+            aria-describedby={errors.nom ? `${id.nom}-error` : undefined}
           />
+          {errors.nom && <p id={`${id.nom}-error`} className="pt-ad-error" role="alert">{errors.nom}</p>}
         </div>
-        {errorTel && <p id={`${id.tel}-error`} className="pt-ad-error" role="alert">{errorTel}</p>}
+
+        <div className="pt-ad-camp">
+          <label htmlFor={id.tel}>{tE("empezar.datos.telefono")}</label>
+          <div className={cn("pt-ad-tel", errorTel && "amb-error")}>
+            <span aria-hidden="true">+34</span>
+            <input
+              ref={telRef}
+              id={id.tel}
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel-national"
+              enterKeyHint="done"
+              placeholder={tE("empezar.datos.telefono_placeholder")}
+              value={telefon}
+              onChange={(e) => {
+                setTelefon(e.target.value);
+                setErrors((x) => ({ ...x, telefon: undefined }));
+              }}
+              aria-invalid={!!errorTel}
+              aria-describedby={errorTel ? `${id.tel}-error` : undefined}
+            />
+          </div>
+          {errorTel && <p id={`${id.tel}-error`} className="pt-ad-error" role="alert">{errorTel}</p>}
+        </div>
+
+        <div className="pt-ad-fila-pisos">
+          <span id={`${id.pisos}-t`} className="pt-ad-etiqueta">{tE("empezar.datos.pisos")}</span>
+          <div className="pt-ad-pisos" role="group" aria-labelledby={`${id.pisos}-t`}>
+            <button type="button" className="pt-ad-pas" aria-label={tE("empezar.datos.pisos_menos")} aria-disabled={pisos <= PISOS_MIN} {...menys}>
+              <Minus className="pt-ic" aria-hidden="true" />
+            </button>
+            <output id={id.pisos} className="pt-ad-num" aria-live="polite">
+              {pisos}
+            </output>
+            <button type="button" className="pt-ad-pas" aria-label={tE("empezar.datos.pisos_mas")} aria-disabled={pisos >= PISOS_MAX} {...mes}>
+              <Plus className="pt-ic" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div className="pt-ad-camp">
-        <span id={`${id.pisos}-t`} className="pt-ad-etiqueta">{tE("empezar.datos.pisos")}</span>
-        <div className="pt-ad-pisos" role="group" aria-labelledby={`${id.pisos}-t`}>
-          <button type="button" className="pt-ad-pas" aria-label={tE("empezar.datos.pisos_menos")} aria-disabled={pisos <= PISOS_MIN} {...menys}>
-            <Minus className="pt-ic" aria-hidden="true" />
-          </button>
-          <output id={id.pisos} className="pt-ad-num" aria-live="polite">
-            {pisos}
-          </output>
-          <button type="button" className="pt-ad-pas" aria-label={tE("empezar.datos.pisos_mas")} aria-disabled={pisos >= PISOS_MAX} {...mes}>
-            <Plus className="pt-ic" aria-hidden="true" />
-          </button>
-        </div>
+      <div className="pt-ad-peu-form">
+        <button type="submit" className="pt-pill pt-pill-pri pt-ad-enviar">
+          <Play />
+          {t("anunci_video.veure")}
+        </button>
+        <p className="pt-ad-privacitat">
+          {tE("empezar.datos.privacidad_antes")} <LangLink to="/privacidad">{tE("empezar.datos.privacidad_link")}</LangLink>.
+        </p>
       </div>
-
-      <button type="submit" className="pt-pill pt-pill-pri pt-ad-enviar">
-        <Play />
-        {t("anunci_video.veure")}
-      </button>
-      <p className="pt-ad-privacitat">
-        {tE("empezar.datos.privacidad_antes")} <LangLink to="/privacidad">{tE("empezar.datos.privacidad_link")}</LangLink>.
-      </p>
     </form>
   );
 }

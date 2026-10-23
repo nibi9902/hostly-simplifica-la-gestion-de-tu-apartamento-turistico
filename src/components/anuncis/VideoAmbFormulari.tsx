@@ -87,13 +87,14 @@ interface Props {
  * Al mòbil, abans (23-10, matí) era una finestra que pujava des de baix (`vaul`), i a l'iPhone de debò, en tocar
  * el nom o el telèfon, la pantalla baixava molt (el Biel: «queda super malament»): el teclat tapava els camps,
  * l'iPhone movia la pàgina per ensenyar-los i la finestra es recol·locava alhora. Amb els camps a dalt, el teclat
- * surt per sota i no cal moure res.
+ * surt per sota i no cal moure res. A dalt de tot, la portada del vídeo en petit i el títol.
  */
 function Finestra({
   mobil,
   obert,
   onCanvi,
   titol,
+  portada,
   tancar,
   children,
 }: {
@@ -101,6 +102,8 @@ function Finestra({
   obert: boolean;
   onCanvi: (v: boolean) => void;
   titol: string;
+  /** La portada del vídeo: surt petita al costat del títol (és el que veurà). */
+  portada: string;
   tancar: string;
   children: ReactNode;
 }) {
@@ -122,6 +125,12 @@ function Finestra({
           onCloseAutoFocus={quiet}
         >
           <div className="pt-ad-finestra-cap">
+            <span className="pt-ad-miniatura" aria-hidden="true">
+              <img src={portada} alt="" width={76} height={43} decoding="async" />
+              <i>
+                <Play />
+              </i>
+            </span>
             <Dialog.Title className="pt-ad-finestra-t">{titol}</Dialog.Title>
             <Dialog.Close className="pt-ad-tanca" aria-label={tancar}>
               <X className="pt-ic" aria-hidden="true" />
@@ -289,7 +298,7 @@ const VideoAmbFormulari = forwardRef<ReproductorAnunci, Props>(function VideoAmb
         )}
       </div>
 
-      <Finestra mobil={mobil} obert={obert} onCanvi={setObert} titol={titol} tancar={t("anunci_video.tancar")}>
+      <Finestra mobil={mobil} obert={obert} onCanvi={setObert} titol={titol} portada={video.portada} tancar={t("anunci_video.tancar")}>
         <FormulariAnunci onEnvia={envia} errorTelefon={errorTel} esborrany={esborrany} />
       </Finestra>
     </>
