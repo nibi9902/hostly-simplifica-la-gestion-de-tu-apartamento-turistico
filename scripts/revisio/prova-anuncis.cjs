@@ -2,11 +2,11 @@
  * Prova de les landings dels anuncis: /registro-de-viajeros-gratis i /hostly-completo (18-10-2026; refeta el
  * 23-10-2026, quan el formulari va sortir del vídeo cap a una finestra).
  *
- * El recorregut sencer, al mòbil (390) i a l'ordinador (1440): el play obre la finestra (al mòbil puja des de
- * baix; a l'ordinador, un diàleg) sense moure la pàgina; la creu i el gest d'enrere la tanquen sense sortir de la
- * pàgina; el que s'havia escrit no es perd; els errors; els pisos d'un toc (1–5 i «6+», que demana quants); en
- * enviar, el vídeo comença amb so; el que es desa; el final del vídeo, amb el botó del pas següent i, al Completo,
- * «Sí, llamadme». No desa res de debò: la crida a `web_lead_desa` s'intercepta (cap avís de Telegram ni cap
+ * El recorregut sencer, al mòbil (390) i a l'ordinador (1440): el play obre el formulari (al mòbil, una pantalla
+ * sencera amb el nom i el telèfon a dalt; a l'ordinador, un diàleg) sense moure la pàgina; la creu i el gest
+ * d'enrere el tanquen sense sortir de la pàgina; el que s'havia escrit no es perd; els errors; els pisos amb «−» i
+ * «+» (i mantenint premut); en enviar, el vídeo comença amb so; el que es desa; el final del vídeo, amb el botó del
+ * pas següent i, al Completo, «Sí, llamadme». No desa res de debò: la crida a `web_lead_desa` s'intercepta (cap avís de Telegram ni cap
  * contacte de prova a la BD).
  *
  *   REVISIO_BASE=http://127.0.0.1:8097 node scripts/revisio/prova-anuncis.cjs [carpeta de captures]
@@ -66,11 +66,16 @@ const surtDePantallaCompleta = (p) => p.evaluate(() => { if (document.fullscreen
       await p.click('.pt-ad-play');
       await p.waitForTimeout(800);
       const finestra = await p.locator('.pt-ad-finestra').boundingBox();
-      ok(`${tag} · el play obre la finestra (${mobil ? 'des de baix' : 'al mig'})`, !!finestra && (mobil ? Math.abs(finestra.y + finestra.height - h) < 2 : finestra.y > 0 && finestra.y + finestra.height < h));
+      ok(`${tag} · el play obre el formulari (${mobil ? 'a pantalla sencera' : 'al mig'})`, !!finestra && (mobil ? Math.round(finestra.y) === 0 && Math.round(finestra.height) === h : finestra.y > 0 && finestra.y + finestra.height < h));
+      // Al mòbil, el nom i el telèfon a dalt: amb el teclat obert (~380 px a l'iPhone) es veuen sense moure res
+      if (mobil) {
+        const tel = await p.locator('.pt-ad-finestra input[type="tel"]').boundingBox();
+        ok(`${tag} · el telèfon, per sobre del teclat (acaba a ${Math.round(tel.y + tel.height)} px)`, tel.y + tel.height <= h - 380);
+      }
       ok(`${tag} · la finestra hi cap sencera, amb el botó`, (await p.locator('.pt-ad-finestra .pt-ad-enviar').boundingBox()).y + 52 <= h);
       ok(`${tag} · la pàgina de sota no s'ha mogut`, (await p.evaluate(() => window.scrollY)) === y0);
-      ok(`${tag} · els pisos: 1 marcat d'entrada, i sis botons (1–5 i «6+»)`,
-        (await p.locator('.pt-ad-xip').count()) === 6 && (await p.locator('.pt-ad-xip[aria-pressed="true"]').innerText()) === '1');
+      ok(`${tag} · els pisos comencen a 1 i el «−» no hi baixa`,
+        (await p.locator('.pt-ad-num').innerText()) === '1' && (await p.getByRole('button', { name: 'Un piso menos' }).getAttribute('aria-disabled')) === 'true');
       await p.screenshot({ path: `${OUT}/${nom}-${pagina}-2-finestra.png` });
 
       // 2. La creu la tanca; el gest d'enrere també, sense sortir de la pàgina
@@ -98,7 +103,8 @@ const surtDePantallaCompleta = (p) => p.evaluate(() => { if (document.fullscreen
       // 4. Dades bones: la finestra es tanca i el vídeo comença amb so
       await p.fill('[id$="-nom"]', 'Marta Puig');
       await p.fill('[id$="-tel"]', '612 345 678');
-      await p.locator('.pt-ad-xip', { hasText: /^3$/ }).click();
+      await p.getByRole('button', { name: 'Un piso más' }).click();
+      await p.getByRole('button', { name: 'Un piso más' }).click();
       await p.click('.pt-ad-finestra .pt-ad-enviar');
       await p.waitForTimeout(1500);
       const v = await p.evaluate(() => { const x = document.querySelector('.pt-ad-video video'); return { pausat: x.paused, mut: x.muted, controls: x.controls }; });
@@ -151,7 +157,7 @@ const surtDePantallaCompleta = (p) => p.evaluate(() => { if (document.fullscreen
     }
   }
 
-  // «6+»: demana quants, i sense el número no deixa passar
+  // Molts pisos: mantenint premut el «+», el número corre sol; el que es desa és el que es veu
   {
     const ctx = await b.newContext({ viewport: { width: 390, height: 844 } });
     await ctx.addInitScript(() => { try { localStorage.setItem('hostly_galetes', JSON.stringify({ analitiques: false, data: Date.now() })); } catch (e) {} });
@@ -166,15 +172,18 @@ const surtDePantallaCompleta = (p) => p.evaluate(() => { if (document.fullscreen
     await p.waitForTimeout(700);
     await p.fill('[id$="-nom"]', 'Jordi');
     await p.fill('[id$="-tel"]', '612345678');
-    await p.locator('.pt-ad-xip', { hasText: '6+' }).click();
-    ok('6+ · obre «¿Cuántos?» i hi posa el cursor', await p.locator('[id$="-quants"]').isVisible() && (await p.evaluate(() => document.activeElement?.id || '')).endsWith('-quants'));
-    await p.click('.pt-ad-finestra .pt-ad-enviar');
+    await p.getByRole('button', { name: 'Un piso más' }).hover();
+    await p.mouse.down();
+    await p.waitForTimeout(1500);
+    await p.mouse.up();
     await p.waitForTimeout(300);
-    ok('6+ · sense el número, avisa', (await p.locator('.pt-ad-finestra .pt-ad-error').innerText()) === 'Dinos cuántos pisos gestionas.' && crides.length === 0);
-    await p.fill('[id$="-quants"]', '12');
+    const n = parseInt(await p.locator('.pt-ad-num').innerText(), 10);
+    ok(`molts pisos · mantenint premut el «+», corre sol (${n})`, n >= 8);
+    await p.waitForTimeout(500);
+    ok(`molts pisos · en deixar-lo, s'atura (${n})`, parseInt(await p.locator('.pt-ad-num').innerText(), 10) === n);
     await p.click('.pt-ad-finestra .pt-ad-enviar');
     await p.waitForTimeout(1200);
-    ok(`6+ · desa els pisos que diu (${crides[0]?.p_dades?.answers?.pisos})`, crides[0]?.p_dades?.answers?.pisos === 12);
+    ok(`molts pisos · desa els que es veuen (${crides[0]?.p_dades?.answers?.pisos})`, crides[0]?.p_dades?.answers?.pisos === n);
     await ctx.close();
   }
 

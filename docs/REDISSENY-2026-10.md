@@ -234,11 +234,15 @@ Biel les va provar al mòbil: «la pàgina sola va cap avall… el formulari es 
 molt malament». El formulari dins del vídeo no hi cabia (448 px en una caixa de 200), el vídeo borrós
 feia de marc i, amb el teclat, la caixa creixia i s'encongia i la pàgina saltava. Ara:
 - el vídeo, quiet i en 16:9, amb el play a baix; al mòbil, d'una vora a l'altra de la pantalla;
-- el play obre el formulari en una **finestra**: al mòbil puja des de baix (`vaul`) i es queda per sobre
-  del teclat; a l'ordinador, un diàleg al mig. Es tanca amb la creu, lliscant avall, tocant fora o amb
-  el **gest d'enrere** (no surt de la pàgina). La pàgina de sota no es mou, i el que ha escrit no es perd;
-- nom, telèfon (el +34 ja hi és) i **pisos d'un toc**: 1, 2, 3, 4, 5 o «6+», que obre «¿Cuántos?». De
-  l'1 al 5 el número és exacte (decideix el compte del channel manager);
+- el play obre el formulari en una **pantalla sencera** al mòbil, amb el nom i el telèfon a dalt de tot,
+  on el teclat no els tapa; a l'ordinador, un diàleg al mig. Es tanca amb la creu o amb el **gest
+  d'enrere** (no surt de la pàgina). La pàgina de sota no es mou, i el que ha escrit no es perd. (La
+  primera versió del 23-10 pujava des de baix, amb `vaul`: a l'iPhone de debò, en tocar el nom o el
+  telèfon, la pantalla baixava molt, perquè el teclat tapava els camps i l'iPhone i la finestra es
+  movien alhora. El Biel: «queda super malament».)
+- nom, telèfon (el +34 ja hi és) i **pisos amb «−», el número i «+»** (el Biel: «simplement un + i un −
+  amb el número al mig»). Comença a 1; el número no s'escriu (no obre el teclat) i, mantenint premut el
+  «+», corre sol;
 - en enviar, la finestra es tanca i el vídeo comença amb so **dins del mateix toc**: a l'iPhone (també
   dins d'Instagram), a pantalla completa; a l'Android, també. La comprovació bona del telèfon i el desat
   van just després; si el telèfon no és bo, el vídeo s'atura i la finestra torna amb l'error;

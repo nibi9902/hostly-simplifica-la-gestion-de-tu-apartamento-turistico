@@ -3,17 +3,18 @@
  *
  * Abans vivia a sobre del vídeo (`VideoAmbFormulari`, 18-10): al mòbil no hi cabia, el vídeo borrós feia de
  * marc i, amb el teclat obert, la pàgina saltava (el Biel, 23-10: «el formulari es queda dins del vídeo… es veu
- * molt malament»). Ara és el contingut d'una finestra que puja des de baix (al mòbil) o d'un diàleg (a
- * l'ordinador), i aquí només hi ha els camps:
- *   · nom i telèfon (el +34 ja hi és; un número d'un altre país s'escriu amb el +);
- *   · quants pisos, d'un sol toc: 1, 2, 3, 4, 5 o «6+» («Más de 5» per al lector de pantalla; amb el text
- *     sencer no hi cabien en un iPhone petit), que obre un camp. De l'1 al 5 el número és exacte, que és el
- *     que decideix a quin compte del channel manager va el client (Sympl fins a 5);
+ * molt malament»). Ara és el contingut d'una pantalla pròpia (al mòbil) o d'un diàleg (a l'ordinador), i aquí
+ * només hi ha els camps:
+ *   · nom i telèfon, a dalt de tot (el +34 ja hi és; un número d'un altre país s'escriu amb el +);
+ *   · quants pisos: «−», el número i «+» (el Biel, 23-10: «simplement un + i un − amb el número al mig»).
+ *     Comença a 1, i qui en té un no ha de tocar res. El número no s'escriu (no obre el teclat); mantenint
+ *     premut el «+» o el «−», corre sol, com el selector de l'iPhone;
  *   · el botó, que ja diu què passa: «Ver el vídeo».
  * La comprovació de debò del telèfon (`telefonPerBD`) la fa qui el rep, just després: el vídeo s'ha de
  * començar dins del mateix toc (si no, el mòbil no el deixa sonar), i aquí només es mira que sembli un número.
  */
-import { useEffect, useId, useMemo, useRef, useState, type FormEvent, type MutableRefObject } from "react";
+import { useEffect, useId, useMemo, useRef, useState, type FormEvent, type MutableRefObject, type PointerEvent } from "react";
+import { Minus, Plus } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { LangLink } from "@/i18n/LangLink";
 import { cn } from "@/lib/utils";
@@ -21,11 +22,13 @@ import { dadesRecordades } from "@/lib/leads";
 
 /** El que surt del formulari: el telèfon tal com l'ha escrit (sense el +34 del davant si és d'aquí). */
 export type RespostaAnunci = { nom: string; telefon: string; pisos: number };
-/** El que porta escrit (encara que no l'hagi enviat): si tanca la finestra i la torna a obrir, hi és. */
-export type EsborranyAnunci = { nom: string; telefon: string; tria: number | "mes"; quants: string };
+/** El que porta escrit (encara que no l'hagi enviat): si tanca la pantalla i la torna a obrir, hi és. */
+export type EsborranyAnunci = { nom: string; telefon: string; pisos: number };
 
-const OPCIONS = [1, 2, 3, 4, 5] as const;
+/** Quants pisos es poden dir (com a /empezar). */
+const PISOS_MIN = 1;
 const PISOS_MAX = 999;
+const limita = (n: number) => Math.min(PISOS_MAX, Math.max(PISOS_MIN, n));
 
 /** La comprovació ràpida, dins del toc. La bona ve just després. */
 function semblaTelefon(s: string): boolean {
@@ -33,6 +36,40 @@ function semblaTelefon(s: string): boolean {
   const xifres = net.replace(/\D/g, "");
   if (net.startsWith("+") || net.startsWith("00")) return xifres.length >= 8 && xifres.length <= 17;
   return /^(34)?[6789]\d{8}$/.test(xifres);
+}
+
+/**
+ * Un botó del «−» / «+» que, mantingut premut, repeteix: el primer pas de seguida, i després cada vegada més de
+ * pressa. Amb el teclat (Enter o espai), un pas per prémer.
+ */
+function useRepeteix(pas: () => boolean) {
+  const rellotge = useRef<number | null>(null);
+  const atura = () => {
+    if (rellotge.current !== null) window.clearTimeout(rellotge.current);
+    rellotge.current = null;
+  };
+  useEffect(() => atura, []);
+  return {
+    onPointerDown: (e: PointerEvent<HTMLButtonElement>) => {
+      if (e.button !== 0) return;
+      e.preventDefault(); // ni selecció de text ni el menú de mantenir premut
+      atura();
+      if (!pas()) return;
+      let n = 0;
+      const seguent = () => {
+        n += 1;
+        rellotge.current = pas() ? window.setTimeout(seguent, n < 6 ? 140 : 60) : null;
+      };
+      rellotge.current = window.setTimeout(seguent, 420);
+    },
+    onPointerUp: atura,
+    onPointerLeave: atura,
+    onPointerCancel: atura,
+    onClick: (e: { detail: number }) => {
+      if (e.detail === 0) pas(); // el teclat (el toc ja l'ha comptat `onPointerDown`)
+    },
+    onContextMenu: (e: { preventDefault: () => void }) => e.preventDefault(),
+  };
 }
 
 const Play = () => (
@@ -46,7 +83,7 @@ interface Props {
   onEnvia: (r: RespostaAnunci) => void;
   /** Un error del telèfon que ha vist la comprovació de debò, després d'enviar. */
   errorTelefon?: string | null;
-  /** On es guarda el que porta escrit (el té qui obre i tanca la finestra). */
+  /** On es guarda el que porta escrit (el té qui obre i tanca la pantalla). */
   esborrany?: MutableRefObject<EsborranyAnunci | null>;
 }
 
@@ -54,12 +91,10 @@ export default function FormulariAnunci({ onEnvia, errorTelefon, esborrany }: Pr
   const { t } = useTranslation("home");
   const { t: tE } = useTranslation("embut");
   const base = useId();
-  const id = { nom: `${base}-nom`, tel: `${base}-tel`, pisos: `${base}-pisos`, quants: `${base}-quants` };
+  const id = { nom: `${base}-nom`, tel: `${base}-tel`, pisos: `${base}-pisos` };
   const recordades = useMemo(() => dadesRecordades(), []);
   const previ = esborrany?.current ?? null;
   const telRef = useRef<HTMLInputElement>(null);
-  const quantsRef = useRef<HTMLInputElement>(null);
-  const quantsCaixaRef = useRef<HTMLDivElement>(null);
 
   const [nom, setNom] = useState(previ?.nom ?? recordades.name ?? "");
   // «+34» ja hi és al davant: un número d'aquí recordat s'hi posa sense
@@ -69,29 +104,34 @@ export default function FormulariAnunci({ onEnvia, errorTelefon, esborrany }: Pr
     if (!p) return "";
     return p.startsWith("34") && p.length === 11 ? p.slice(2) : `+${p}`;
   });
-  // Qui en té un no ha de tocar res; qui en va dir més de 5 un altre dia, ho troba posat
-  const [tria, setTria] = useState<number | "mes">(() => {
-    if (previ) return previ.tria;
-    const n = recordades.pisos;
-    return n && n > 5 ? "mes" : n && n >= 1 ? n : 1;
-  });
-  const [quants, setQuants] = useState(() => previ?.quants ?? (recordades.pisos && recordades.pisos > 5 ? String(recordades.pisos) : ""));
+  const [pisos, setPisos] = useState(() => limita(previ?.pisos ?? recordades.pisos ?? PISOS_MIN));
+  // El valor d'ara, per al botó que repeteix (el seu rellotge no veu els canvis d'estat)
+  const pisosRef = useRef(pisos);
+  pisosRef.current = pisos;
   useEffect(() => {
-    if (esborrany) esborrany.current = { nom, telefon, tria, quants };
-  }, [esborrany, nom, telefon, tria, quants]);
-  const [errors, setErrors] = useState<{ nom?: string; telefon?: string; pisos?: string }>({});
+    if (esborrany) esborrany.current = { nom, telefon, pisos };
+  }, [esborrany, nom, telefon, pisos]);
+  const [errors, setErrors] = useState<{ nom?: string; telefon?: string }>({});
   const errorTel = errors.telefon ?? errorTelefon ?? undefined;
+
+  const mou = (d: number) => () => {
+    const nou = limita(pisosRef.current + d);
+    if (nou === pisosRef.current) return false;
+    pisosRef.current = nou;
+    setPisos(nou);
+    return true;
+  };
+  const menys = useRepeteix(mou(-1));
+  const mes = useRepeteix(mou(1));
 
   function envia(e: FormEvent) {
     e.preventDefault();
-    const nQuants = parseInt(quants, 10);
     const nous: typeof errors = {};
     if (nom.trim().length < 2) nous.nom = tE("empezar.error.nombre");
     if (!semblaTelefon(telefon)) nous.telefon = tE("empezar.error.telefono");
-    if (tria === "mes" && !(nQuants > 5 && nQuants <= PISOS_MAX)) nous.pisos = t("anunci_video.error_pisos");
     setErrors(nous);
-    if (nous.nom || nous.telefon || nous.pisos) return;
-    onEnvia({ nom: nom.trim(), telefon: telefon.trim(), pisos: tria === "mes" ? nQuants : tria });
+    if (nous.nom || nous.telefon) return;
+    onEnvia({ nom: nom.trim(), telefon: telefon.trim(), pisos });
   }
 
   return (
@@ -149,62 +189,20 @@ export default function FormulariAnunci({ onEnvia, errorTelefon, esborrany }: Pr
         {errorTel && <p id={`${id.tel}-error`} className="pt-ad-error" role="alert">{errorTel}</p>}
       </div>
 
-      <fieldset className="pt-ad-camp">
-        <legend id={id.pisos}>{tE("empezar.datos.pisos")}</legend>
-        <div className="pt-ad-xips" role="group" aria-labelledby={id.pisos}>
-          {OPCIONS.map((n) => (
-            <button
-              key={n}
-              type="button"
-              aria-pressed={tria === n}
-              className={cn("pt-ad-xip", tria === n && "triat")}
-              onClick={() => {
-                setTria(n);
-                setErrors((x) => ({ ...x, pisos: undefined }));
-              }}
-            >
-              {n}
-            </button>
-          ))}
-          <button
-            type="button"
-            aria-pressed={tria === "mes"}
-            aria-label={t("anunci_video.pisos_mes")}
-            className={cn("pt-ad-xip pt-ad-xip-mes", tria === "mes" && "triat")}
-            onClick={() => {
-              // El camp del número es destapa i s'enfoca DINS del toc: si no, l'iPhone no obre el teclat
-              if (quantsCaixaRef.current) quantsCaixaRef.current.hidden = false;
-              quantsRef.current?.focus();
-              setTria("mes");
-            }}
-          >
-            6+
+      <div className="pt-ad-camp">
+        <span id={`${id.pisos}-t`} className="pt-ad-etiqueta">{tE("empezar.datos.pisos")}</span>
+        <div className="pt-ad-pisos" role="group" aria-labelledby={`${id.pisos}-t`}>
+          <button type="button" className="pt-ad-pas" aria-label={tE("empezar.datos.pisos_menos")} aria-disabled={pisos <= PISOS_MIN} {...menys}>
+            <Minus className="pt-ic" aria-hidden="true" />
+          </button>
+          <output id={id.pisos} className="pt-ad-num" aria-live="polite">
+            {pisos}
+          </output>
+          <button type="button" className="pt-ad-pas" aria-label={tE("empezar.datos.pisos_mas")} aria-disabled={pisos >= PISOS_MAX} {...mes}>
+            <Plus className="pt-ic" aria-hidden="true" />
           </button>
         </div>
-        {/* sempre hi és (amagat): així es pot enfocar dins del toc de «Más de 5» */}
-        <div ref={quantsCaixaRef} className="pt-ad-quants" hidden={tria !== "mes"}>
-            <label htmlFor={id.quants}>{t("anunci_video.pisos_quants")}</label>
-            <input
-              ref={quantsRef}
-              id={id.quants}
-              className="pt-ad-input"
-              type="text"
-              inputMode="numeric"
-              pattern="[0-9]*"
-              enterKeyHint="done"
-              maxLength={3}
-              placeholder="6"
-              value={quants}
-              onChange={(e) => {
-                setQuants(e.target.value.replace(/\D/g, "").slice(0, 3));
-                setErrors((x) => ({ ...x, pisos: undefined }));
-              }}
-              aria-invalid={!!errors.pisos}
-              aria-describedby={errors.pisos ? `${id.quants}-error` : undefined}
-            />
-        </div>
-        {errors.pisos && <p id={`${id.quants}-error`} className="pt-ad-error" role="alert">{errors.pisos}</p>}
-      </fieldset>
+      </div>
 
       <button type="submit" className="pt-pill pt-pill-pri pt-ad-enviar">
         <Play />

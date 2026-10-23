@@ -6,9 +6,9 @@
  * formulari es queda dins del vídeo… es veu molt malament»): el formulari no hi cabia, el vídeo borrós feia de
  * marc i, amb el teclat obert, la caixa creixia i s'encongia i la pàgina saltava. Ara:
  *   1. el vídeo, quiet, amb el play (al mòbil d'una vora a l'altra de la pantalla);
- *   2. en prémer el play, el formulari surt en una finestra: al mòbil puja des de baix (`vaul`: es tanca lliscant
- *      avall, amb la creu, tocant fora o amb el gest d'enrere del mòbil, i es queda per sobre del teclat); a
- *      l'ordinador, un diàleg al mig. La pàgina de sota no es mou;
+ *   2. en prémer el play, el formulari surt en una pantalla sencera al mòbil (amb el nom i el telèfon a dalt, on
+ *      el teclat no els tapa; es tanca amb la creu o amb el gest d'enrere del mòbil) i en un diàleg al mig a
+ *      l'ordinador. La pàgina de sota no es mou;
  *   3. en enviar, la finestra es tanca i el vídeo comença amb so DINS del mateix toc (si no, el mòbil no el deixa
  *      sonar): al mòbil, a pantalla completa (l'iPhone el posa sol si no és «playsinline»; l'Android, amb
  *      `requestFullscreen`), perquè les pantalles de l'app es llegeixin girant el mòbil. Quan s'acaba, se'n surt
@@ -22,7 +22,6 @@
  */
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState, type ReactNode } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Drawer } from "vaul";
 import { RotateCcw, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useLang } from "@/i18n/useLang";
@@ -81,8 +80,15 @@ interface Props {
   final: ReactNode;
 }
 
-/** La finestra del formulari: al mòbil puja des de baix; a l'ordinador, un diàleg al mig. Es pinta en un portal,
-    fora de la pàgina: porta `pt-seccio` perquè hi arribin els colors i la lletra del web. */
+/**
+ * On surt el formulari: al mòbil, una pantalla sencera amb el nom i el telèfon a dalt de tot; a l'ordinador, un
+ * diàleg al mig. Es pinta en un portal, fora de la pàgina: porta `pt-seccio` perquè hi arribin els colors i la
+ * lletra del web.
+ * Al mòbil, abans (23-10, matí) era una finestra que pujava des de baix (`vaul`), i a l'iPhone de debò, en tocar
+ * el nom o el telèfon, la pantalla baixava molt (el Biel: «queda super malament»): el teclat tapava els camps,
+ * l'iPhone movia la pàgina per ensenyar-los i la finestra es recol·locava alhora. Amb els camps a dalt, el teclat
+ * surt per sota i no cal moure res.
+ */
 function Finestra({
   mobil,
   obert,
@@ -105,35 +111,22 @@ function Finestra({
   };
   // En tancar-se, el focus no torna al play (ja no hi és si el vídeo s'ha obert) ni mou la pàgina
   const quiet = (e: Event) => e.preventDefault();
-  const cap = (Titol: typeof Dialog.Title, Tanca: typeof Dialog.Close) => (
-    <div className="pt-ad-finestra-cap">
-      <Titol className="pt-ad-finestra-t">{titol}</Titol>
-      <Tanca className="pt-ad-tanca" aria-label={tancar}>
-        <X className="pt-ic" aria-hidden="true" />
-      </Tanca>
-    </div>
-  );
-
-  if (mobil) {
-    return (
-      <Drawer.Root open={obert} onOpenChange={onCanvi} repositionInputs shouldScaleBackground={false}>
-        <Drawer.Portal>
-          <Drawer.Overlay className="pt-ad-fosc" />
-          <Drawer.Content className="pt-seccio pt-ad-finestra pt-ad-full" aria-describedby={undefined} onOpenAutoFocus={enfocaElNom} onCloseAutoFocus={quiet}>
-            <div className="pt-ad-full-mansa" aria-hidden="true" />
-            {cap(Drawer.Title, Drawer.Close)}
-            {children}
-          </Drawer.Content>
-        </Drawer.Portal>
-      </Drawer.Root>
-    );
-  }
   return (
     <Dialog.Root open={obert} onOpenChange={onCanvi}>
       <Dialog.Portal>
-        <Dialog.Overlay className="pt-ad-fosc" />
-        <Dialog.Content className="pt-seccio pt-ad-finestra pt-ad-modal" aria-describedby={undefined} onOpenAutoFocus={enfocaElNom} onCloseAutoFocus={quiet}>
-          {cap(Dialog.Title, Dialog.Close)}
+        {!mobil && <Dialog.Overlay className="pt-ad-fosc" />}
+        <Dialog.Content
+          className={cn("pt-seccio pt-ad-finestra", mobil ? "pt-ad-pantalla" : "pt-ad-modal")}
+          aria-describedby={undefined}
+          onOpenAutoFocus={enfocaElNom}
+          onCloseAutoFocus={quiet}
+        >
+          <div className="pt-ad-finestra-cap">
+            <Dialog.Title className="pt-ad-finestra-t">{titol}</Dialog.Title>
+            <Dialog.Close className="pt-ad-tanca" aria-label={tancar}>
+              <X className="pt-ic" aria-hidden="true" />
+            </Dialog.Close>
+          </div>
           {children}
         </Dialog.Content>
       </Dialog.Portal>

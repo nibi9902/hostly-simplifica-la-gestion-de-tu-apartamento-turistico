@@ -632,8 +632,11 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
    és un diàleg al mig. Per sobre del capçal i del bàner de galetes. */
 .pt-ad-fosc { position: fixed; inset: 0; z-index: 80; background: rgba(15, 23, 42, .45); }
 .pt-ad-finestra { z-index: 81; display: flex; flex-direction: column; background: var(--pt-blanc); color: var(--pt-text); font-family: Inter, ui-sans-serif, system-ui, sans-serif; outline: none; }
-.pt-ad-full { position: fixed; left: 0; right: 0; bottom: 0; max-height: 92dvh; overflow-y: auto; overscroll-behavior: contain; padding: 8px 20px calc(18px + env(safe-area-inset-bottom, 0px)); border-radius: 24px 24px 0 0; box-shadow: 0 -16px 44px -12px rgba(15, 23, 42, .28); }
-.pt-ad-full-mansa { flex-shrink: 0; width: 40px; height: 5px; margin: 2px auto 12px; border-radius: 9999px; background: hsl(220 13% 84%); }
+.pt-ad-pantalla { position: fixed; inset: 0; overflow-y: auto; overscroll-behavior: contain; padding: calc(8px + env(safe-area-inset-top, 0px)) 20px calc(24px + env(safe-area-inset-bottom, 0px)); }
+/* el nom i el telèfon, tan amunt com es pugui: el teclat de l'iPhone SE dins d'Instagram en deixa ~240 px */
+.pt-ad-pantalla .pt-ad-form { gap: 12px; margin-top: 8px; }
+.pt-ad-pantalla[data-state="open"] { animation: pt-ad-puja .3s cubic-bezier(.22, 1, .36, 1); }
+@keyframes pt-ad-puja { from { opacity: 0; transform: translateY(28px); } }
 .pt-ad-modal { position: fixed; left: 50%; top: 50%; width: min(440px, calc(100vw - 32px)); max-height: calc(100dvh - 48px); overflow-y: auto; padding: 22px 24px 22px; border-radius: 24px; box-shadow: 0 32px 70px -20px rgba(15, 23, 42, .5); transform: translate(-50%, -50%); }
 .pt-ad-modal[data-state="open"] { animation: pt-ad-entra .28s cubic-bezier(.22, 1, .36, 1); }
 .pt-ad-fosc[data-state="open"] { animation: pt-ad-fosc .28s ease; }
@@ -645,10 +648,8 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-ad-tanca:hover { background: hsl(220 14% 96%); color: var(--pt-text); }
 .pt-ad-tanca .pt-ic { width: 20px; height: 20px; }
 .pt-ad-form { display: flex; flex-direction: column; gap: 14px; margin-top: 14px; }
-.pt-ad-form fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
 .pt-ad-camp { display: flex; flex-direction: column; gap: 6px; }
-.pt-ad-camp label, .pt-ad-camp legend { padding: 0; font-size: 14px; font-weight: 600; color: hsl(220 14% 25%); }
-.pt-ad-camp legend { margin-bottom: 6px; }
+.pt-ad-camp label, .pt-ad-etiqueta { padding: 0; font-size: 14px; font-weight: 600; color: hsl(220 14% 25%); }
 .pt-ad-input, .pt-ad-tel { height: 50px; border-radius: 14px; background: var(--pt-blanc); box-shadow: inset 0 0 0 1px hsl(220 13% 82%); transition: box-shadow .2s ease; }
 .pt-ad-input { width: 100%; min-width: 0; padding: 0 16px; border: 0; font: 400 17px/1.2 Inter, ui-sans-serif, system-ui, sans-serif; color: var(--pt-text); outline: none; }
 .pt-ad-tel { display: flex; align-items: center; }
@@ -659,17 +660,15 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-ad-input::placeholder, .pt-ad-tel input::placeholder { color: hsl(220 9% 58%); }
 /* el camp ja s'il·lumina sencer: sense el rectangle blau del focus (MAQUETACIO, regla 14) */
 .pt-ad-finestra .pt-ad-input:focus-visible, .pt-ad-finestra .pt-ad-tel input:focus-visible { outline: none; }
-/* sis botons iguals (1–5 i «6+»): en un iPhone SE en surten de 49 px */
-.pt-ad-xips { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
-@media (max-width: 359px) { .pt-ad-xips { gap: 6px; } }
-.pt-ad-xip { height: 48px; padding: 0; border: 0; border-radius: 14px; background: var(--pt-blanc); box-shadow: inset 0 0 0 1px hsl(220 13% 82%); color: var(--pt-text); font: 600 17px/1 Inter, ui-sans-serif, system-ui, sans-serif; font-variant-numeric: tabular-nums; cursor: pointer; touch-action: manipulation; transition: background-color .15s ease, box-shadow .15s ease, color .15s ease; }
-.pt-ad-xip:hover:not(.triat) { box-shadow: inset 0 0 0 1px var(--pt-blau); }
-.pt-ad-xip.triat { background: var(--pt-blau); box-shadow: none; color: #fff; }
-.pt-ad-xip:focus-visible { outline: 2px solid var(--pt-blau); outline-offset: 2px; }
-.pt-ad-quants { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
-.pt-ad-quants[hidden] { display: none; }
-.pt-ad-quants label { font-size: 15px; font-weight: 500; color: hsl(220 14% 25%); }
-.pt-ad-quants .pt-ad-input { width: 96px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
+/* els pisos: «−», el número i «+» (el número no s'escriu: no obre el teclat) */
+.pt-ad-pisos { display: flex; align-items: center; gap: 10px; }
+.pt-ad-pas { display: grid; place-items: center; flex-shrink: 0; width: 52px; height: 52px; padding: 0; border: 0; border-radius: 9999px; background: hsl(220 14% 96%); color: var(--pt-text); cursor: pointer; touch-action: manipulation; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; transition: background-color .15s ease, transform .1s ease; }
+.pt-ad-pas:hover:not([aria-disabled="true"]) { background: hsl(214 100% 95%); color: var(--pt-blau-fosc); }
+.pt-ad-pas:active:not([aria-disabled="true"]) { transform: scale(.94); }
+.pt-ad-pas[aria-disabled="true"] { opacity: .35; cursor: default; }
+.pt-ad-pas:focus-visible { outline: 2px solid var(--pt-blau); outline-offset: 2px; }
+.pt-ad-pas .pt-ic { width: 20px; height: 20px; }
+.pt-ad-num { flex: 1; min-width: 0; height: 52px; display: grid; place-items: center; border-radius: 14px; box-shadow: inset 0 0 0 1px hsl(220 13% 82%); font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--pt-text); -webkit-user-select: none; user-select: none; }
 .pt-ad-error { margin: 0; font-size: 14px; line-height: 1.4; color: hsl(350 89% 42%); }
 .pt-ad-enviar { width: 100%; height: 52px; font-size: 17px; font-weight: 600; }
 .pt-ad-enviar svg { width: 14px; height: 14px; fill: currentColor; }
@@ -746,8 +745,8 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
   body:has(.pt-ad-pagina) .pt-galetes { top: calc(12px + env(safe-area-inset-top, 0px)); bottom: auto; margin-bottom: 0 !important; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .pt-ad-play, .pt-ad-play-pindola, .pt-ad-xip { transition: none; }
-  .pt-ad-modal[data-state="open"], .pt-ad-fosc[data-state="open"] { animation: none; }
+  .pt-ad-play, .pt-ad-play-pindola, .pt-ad-pas { transition: none; }
+  .pt-ad-modal[data-state="open"], .pt-ad-pantalla[data-state="open"], .pt-ad-fosc[data-state="open"] { animation: none; }
 }
 
 /* ── 5 · Així es comença ── */
