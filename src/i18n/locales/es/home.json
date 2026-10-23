@@ -613,6 +613,9 @@
     "tancar": "Cerrar",
     "veure": "Ver el vídeo",
     "tornar": "Volver a verlo",
-    "subtitols": "Subtítulos"
+    "subtitols": "Subtítulos",
+    "pisos_mes": "Más de 5",
+    "pisos_quants": "¿Cuántos?",
+    "error_pisos": "Dinos cuántos pisos gestionas."
   }
 }

@@ -102,6 +102,10 @@
   La fase del telèfon sí que fa servir la caixa.
 - **La 404** és un missatge al mig de la pantalla, sense capçal: `data-sense-caixa`.
 - El vídeo de `/demo` es queda a 1024 px centrat (un vídeo més gran no cap amb el text a la vista).
+- **El vídeo de les landings dels anuncis**, al mòbil, va d'una vora a l'altra (com a Instagram, d'on ve
+  la gent): `data-amplada="vora"`. El text de la pàgina sí que fa servir la caixa.
+- **El bàner de galetes**, en pantalles baixes (mòbil de 640 px d'alçada o menys, p. ex. dins
+  d'Instagram), a les landings dels anuncis va a dalt: a baix tapava el play.
 
 ## La prova
 

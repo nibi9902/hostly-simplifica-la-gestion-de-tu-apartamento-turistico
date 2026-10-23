@@ -364,12 +364,18 @@
     "rebutjar": "Rebutjar",
     "mes": "Més informació",
     "canviar": "Canviar les meves preferències de galetes",
-    "text_publicitat": "Fem servir galetes, nostres i de tercers, per mesurar el web i ensenyar-te anuncis. Només si ens deixes.",
-    "configurar": "Configurar",
-    "desar": "Desar",
     "analitica_titol": "Analítica",
     "analitica_text": "Quines pàgines es visiten i quines no (Google Analytics).",
     "publicitat_titol": "Publicitat",
-    "publicitat_text": "Anuncis de Hostly a {{llocs}}, i saber quins anuncis porten contactes."
+    "publicitat_text": "Anuncis de Hostly a {{llocs}}, i saber quins anuncis porten contactes.",
+    "text_curt": "Galetes pròpies i de tercers per mesurar el web i ensenyar-te anuncis.",
+    "necessaries": "Només necessàries",
+    "personalitzar": "Personalitzar",
+    "configurar_titol": "Tria quines galetes acceptes",
+    "necessaries_titol": "Necessàries",
+    "necessaries_text": "Fan que el web funcioni: l'idioma i el que escrius als formularis.",
+    "sempre": "Sempre actives",
+    "desar_tria": "Desar la tria",
+    "acceptar_totes": "Acceptar-les totes"
   }
 }

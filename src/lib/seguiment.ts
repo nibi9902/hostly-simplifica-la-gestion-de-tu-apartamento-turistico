@@ -145,6 +145,7 @@ export function carregaPublicitat(): void {
       w.fbq("track", "PageView");
     }
   }
+  enviaPendents();
 }
 
 /** Qui ho havia acceptat i ara ho rebutja: es tanca l'aixeta i s'esborren les galetes de publicitat. */
@@ -152,6 +153,7 @@ export function retiraPublicitat(): void {
   if (typeof document === "undefined") return;
   const w = window as Finestra;
   activa = false;
+  oblidaPendents();
   if (w.fbq) w.fbq("consent", "revoke");
   if (w.gtag) w.gtag("consent", "update", { ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
   esborraGaletes(/^(_fbp|_fbc|_gcl_au|_gcl_aw|_gcl_dc|_gcl_gb)$/);
@@ -248,8 +250,45 @@ async function alServidor(esdeveniment: string, eventID: string): Promise<void> 
   }
 }
 
+/* ─── Els esdeveniments d'abans de dir que sí (23-10-2026) ───
+ * Qui deixa el telèfon i DESPRÉS accepta la publicitat: el «Lead» arriba a Meta en aquell moment (abans no hi
+ * arribava mai, i als anuncis semblava que no havia vingut ningú). Abans del sí no s'envia res i no s'escriu res
+ * al navegador: el NOM de l'esdeveniment (cap dada) es recorda només mentre la pàgina és oberta, com a molt mitja
+ * hora; si la tanca o la recarrega, s'oblida. Qui diu que no a la publicitat no en guarda cap, i el que hi hagués
+ * s'oblida. */
+const PENDENTS_MS = 30 * 60 * 1000;
+let pendents: { nom: string; t: number }[] = [];
+
+function haDitQueNo(): boolean {
+  try {
+    const c = JSON.parse(localStorage.getItem("hostly_galetes") || "null") as { publicitat?: boolean } | null;
+    return !!c && c.publicitat === false;
+  } catch {
+    return false;
+  }
+}
+
+function encua(nom: string): void {
+  if (haDitQueNo()) return;
+  pendents = [...pendents, { nom, t: Date.now() }].slice(-10);
+}
+
+function oblidaPendents(): void {
+  pendents = [];
+}
+
+function enviaPendents(): void {
+  const cua = pendents;
+  pendents = [];
+  const ara = Date.now();
+  for (const p of cua) if (ara - p.t < PENDENTS_MS) conversio(p.nom);
+}
+
 export function conversio(nom: string): void {
-  if (!activa) return;
+  if (!activa) {
+    if (hiHaPublicitat() && META[nom]) encua(nom);
+    return;
+  }
   const w = window as Finestra;
   const m = META[nom];
   if (META_PIXEL && w.fbq && m) {

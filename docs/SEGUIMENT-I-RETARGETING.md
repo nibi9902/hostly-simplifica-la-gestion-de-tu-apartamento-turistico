@@ -26,9 +26,18 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
 
 ## Què fa el web (versió 17)
 
-- **Bàner de galetes amb dues finalitats**: «Rechazar», «Aceptar» i «Configurar» al primer
-  nivell; a «Configurar», un interruptor per a **Analítica** i un per a **Publicidad**, tots dos
-  apagats (`src/components/AvisGaletes.tsx`).
+- **Bàner de galetes amb dues finalitats** (des del 23-10, el «truc que fa servir molta gent» que va
+  demanar el Biel): al primer nivell, «Solo necesarias» i «Aceptar», tan grossos l'un com l'altre, i
+  un enllaç petit, «Personalizar», que ensenya les necessàries (sempre actives, sense interruptor) i un
+  interruptor per a **Analítica** i un per a **Publicidad**, tots dos apagats
+  (`src/components/AvisGaletes.tsx`). Sense publicitat configurada, el bàner és l'antic: «Rechazar» i
+  «Aceptar», només analítica.
+- **Meta no és una galeta necessària** (el Biel ho va preguntar el 23-10): si s'hi posés, el píxel es
+  carregaria sense permís, i això és el que prohibeix l'art. 22.2 LSSI. Per no perdre contactes als
+  anuncis, **qui deixa el telèfon abans de respondre el bàner i després accepta** envia el `Lead` en
+  aquell moment (`seguiment.ts`, «els esdeveniments d'abans de dir que sí»). Abans del sí no s'envia
+  res i no s'escriu res al navegador: el nom de l'esdeveniment es recorda només mentre la pàgina és
+  oberta (mitja hora com a molt). Qui diu que no, l'oblida.
 - **Sense «Publicidad» acceptada no es carrega res** de Meta ni de Google Ads. Si algú ho havia
   acceptat i després ho rebutja («Cambiar mis preferencias»), es tanca l'aixeta i s'esborren les
   galetes `_fbp`, `_fbc` i `_gcl_*` (`src/lib/seguiment.ts`, `src/lib/galetes.ts`).
@@ -124,9 +133,9 @@ Amb això també es veu quins anuncis porten contactes (telèfons deixats, demos
 
 ## Legal, en resum
 
-- Les galetes de publicitat necessiten **consentiment previ i informat**: «Rechazar» tan a mà com
-  «Aceptar», poder triar per finalitat i poder-ho canviar (art. 22.2 LSSI; guia de galetes de
-  l'AEPD). És el que fa el bàner.
+- Les galetes de publicitat necessiten **consentiment previ i informat**: rebutjar («Solo
+  necesarias») tan a mà com «Aceptar», poder triar per finalitat i poder-ho canviar (art. 22.2 LSSI;
+  guia de galetes de l'AEPD). És el que fa el bàner.
 - Meta i Google també són responsables de les dades que reben; i les poden tractar als EUA
   (Marc de Privacitat de Dades UE-EUA). La política de privacitat ho diu quan la publicitat és
   activa.

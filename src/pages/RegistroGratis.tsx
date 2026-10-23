@@ -26,7 +26,9 @@ import "@/components/portada/portada.css";
 
 type Pregunta = { q: string; a: string };
 
-const VIDEO = videoDeLaFuncio("check-in-online", "es")!;
+// La portada, el moment que fa la promesa de la pàgina («Enviado a la policía», segon 22): la del vídeo (el
+// títol sobre gris) no semblava un vídeo (23-10).
+const VIDEO = { ...videoDeLaFuncio("check-in-online", "es")!, portada: "/assets/anuncis/check-in-portada.webp" };
 
 export default function RegistroGratis() {
   const { t } = useTranslation("home");
@@ -54,7 +56,7 @@ export default function RegistroGratis() {
   );
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="pt-ad-pagina min-h-screen bg-white">
       <SEO title={t("anunci_registre.seo_titol")} description={t("anunci_registre.lead")} path="/registro-de-viajeros-gratis" noindex />
       <CapcalAnunci />
 
@@ -75,10 +77,11 @@ export default function RegistroGratis() {
               titol={t("anunci_registre.video_titol")}
               ariaVideo={t("anunci_registre.video_aria")}
               enObrir={setDades}
+              // Al mòbil, quan s'acaba, el bloc de sota és fora de la pantalla: el final porta el botó (23-10)
               final={
                 <>
                   <p>{t("anunci_registre.final_titol")}</p>
-                  {botoCompte("anunci_final_video", "pt-pill-blanc")}
+                  {botoCompte("anunci_video", "pt-pill-blanc")}
                 </>
               }
             />

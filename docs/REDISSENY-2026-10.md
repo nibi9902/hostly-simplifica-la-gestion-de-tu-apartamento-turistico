@@ -229,15 +229,30 @@ la A.
 - De moment, pensades per al mòbil, d'on ve la gent dels anuncis. A l'ordinador es veu la mateixa
   columna, centrada. El Biel ho vol així de moment (18-10). El disseny per a l'ordinador queda pendent.
 
-**Com va** (`src/components/anuncis/VideoAmbFormulari.tsx`): el vídeo net amb el play a baix (que no
-tapi el títol de la portada); en prémer-lo, el vídeo creix i la targeta del formulari surt a sobre,
-amb el vídeo en marxa per sota, borrós i sense so; els pisos comencen a 1. En enviar-lo, el vídeo es
-destapa i comença amb so **dins del mateix clic** (la comprovació bona del telèfon i el desat van
-just després; si no, el mòbil no el deixa sonar). La creu torna al play. A sota del vídeo, la frase
-amb els seus pisos i el pas següent; quan el vídeo s'acaba, el mateix pas surt a sobre:
-- check-in: «Empieza gratis, sin tarjeta» → l'alta gratuïta de l'app;
-- Completo: «¿Te llamamos y dejamos tus N pisos listos contigo?» amb la foto del Biel i «Sí,
-  llamadme» (de 21 a 9, «Llamadme mañana»). Cap botó per començar el Complet sol.
+**Com va, des del 23-10** (`src/components/anuncis/VideoAmbFormulari.tsx` i `FormulariAnunci.tsx`). El
+Biel les va provar al mòbil: «la pàgina sola va cap avall… el formulari es queda dins del vídeo… es veu
+molt malament». El formulari dins del vídeo no hi cabia (448 px en una caixa de 200), el vídeo borrós
+feia de marc i, amb el teclat, la caixa creixia i s'encongia i la pàgina saltava. Ara:
+- el vídeo, quiet i en 16:9, amb el play a baix; al mòbil, d'una vora a l'altra de la pantalla;
+- el play obre el formulari en una **finestra**: al mòbil puja des de baix (`vaul`) i es queda per sobre
+  del teclat; a l'ordinador, un diàleg al mig. Es tanca amb la creu, lliscant avall, tocant fora o amb
+  el **gest d'enrere** (no surt de la pàgina). La pàgina de sota no es mou, i el que ha escrit no es perd;
+- nom, telèfon (el +34 ja hi és) i **pisos d'un toc**: 1, 2, 3, 4, 5 o «6+», que obre «¿Cuántos?». De
+  l'1 al 5 el número és exacte (decideix el compte del channel manager);
+- en enviar, la finestra es tanca i el vídeo comença amb so **dins del mateix toc**: a l'iPhone (també
+  dins d'Instagram), a pantalla completa; a l'Android, també. La comprovació bona del telèfon i el desat
+  van just després; si el telèfon no és bo, el vídeo s'atura i la finestra torna amb l'error;
+- a sota del vídeo, la frase amb els seus pisos i el pas següent; **quan el vídeo s'acaba**, el pas
+  següent surt a sobre del vídeo amb el seu botó (al mòbil el bloc de sota queda fora de la pantalla):
+  - check-in: «Empieza gratis, sin tarjeta» → l'alta gratuïta de l'app;
+  - Completo: «¿Te llamamos y lo dejamos listo contigo?» i «Sí, llamadme» (de 21 a 9, «Llamadme
+    mañana»); a sota, la mateixa pregunta amb els seus pisos i la foto del Biel. Cap botó per començar
+    el Complet sol.
+- La portada del vídeo del check-in és el moment «Enviado a la policía» (`public/assets/anuncis/`): la
+  d'abans, un títol sobre gris, no semblava un vídeo.
+- Ja no hi ha vídeo borrós corrent darrere el formulari (gastava dades).
+- Queda per fer, si cal: una versió dels vídeos per al mòbil (vertical o ampliada). Els d'ara són
+  d'ordinador i al mòbil, sense girar-lo, l'app es veu petita.
 
 **On van els contactes.** Com el pas 1 de /empezar (`web_lead_desa`, origen `empezar`), amb el pla de
 la pàgina i `answers.pisos`: l'avís de Telegram surt al cap de 2 minuts (nom, telèfon, pla, pisos i
@@ -248,9 +263,13 @@ tornar a ensenyar l'anunci a qui no va deixar les dades), el formulari és `Lead
 
 **La prova:** `scripts/revisio/prova-anuncis.cjs` fa el recorregut sencer al mòbil i a l'ordinador
 (sense desar res: la crida a `web_lead_desa` es contesta al navegador). Les dues adreces també són a
-`revisio-web` i a `prova-amplada`. L'estil és a `portada.css` (`.pt-ad-*`); l'alçada del vídeo surt de
-l'amplada de la columna (unitats de contenidor), i la columna porta `.contenidor.pt-ad-columna` perquè
-la regla general de `.contenidor`, que es carrega després, no li torni a posar l'amplada de tot el web.
+`revisio-web` i a `prova-amplada`. L'estil és a `portada.css` (`.pt-ad-*`); la finestra es pinta fora de
+la pàgina (en un portal) i porta `pt-seccio` perquè hi arribin els colors (`--pt-*`); la columna porta
+`.contenidor.pt-ad-columna` perquè la regla general de `.contenidor`, que es carrega després, no li
+torni a posar l'amplada de tot el web.
+El 23-10 també es va provar amb el motor de Safari (el del navegador d'Instagram) com a iPhone 13, iPhone
+SE i Instagram (pantalla de 600 px), amb el Chrome d'Android i a l'ordinador: 261 comprovacions. No s'ha
+pogut provar en un iPhone de debò: la pantalla completa de l'iPhone no es pot simular.
 
 ## Preguntes obertes per al Biel
 

@@ -1,41 +1,36 @@
 /**
- * El vídeo de les landings dels anuncis, amb el formulari a dins (18-10-2026).
+ * El vídeo de les landings dels anuncis, amb el formulari per veure'l (18-10-2026; refet el 23-10-2026).
  *
- * És la B del llenç «Landings dels anuncis», amb el que hi va canviar el Biel: «quan li donin, que surti
- * el play, i quan pitxin el play, que surti el formulari; si no, la gent se n'anirà de primeres». Tres
- * moments del mateix vídeo:
- *   1. net, amb el play gran;
- *   2. en prémer el play, creix i el formulari surt a sobre (nom, telèfon i quants pisos; els pisos
- *      comencen a 1, i qui en té un no ha de tocar res), amb el vídeo en marxa per sota, borrós i mut;
- *   3. en enviar-lo, el vídeo es destapa i torna a començar amb so i amb els controls del navegador.
- *      Comença dins del mateix clic (la comprovació bona del telèfon i el desat van just després): si
- *      no, el navegador del mòbil no el deixa sonar.
- * La creu torna al play. Quan el vídeo s'acaba, surt a sobre el pas següent (`final`).
+ * El 18-10 era la B del llenç «Landings dels anuncis»: el play i, en prémer-lo, el formulari a sobre del vídeo,
+ * que creixia per fer-hi lloc. Al mòbil no funcionava (el Biel, 23-10: «la pàgina sola va cap avall… el
+ * formulari es queda dins del vídeo… es veu molt malament»): el formulari no hi cabia, el vídeo borrós feia de
+ * marc i, amb el teclat obert, la caixa creixia i s'encongia i la pàgina saltava. Ara:
+ *   1. el vídeo, quiet, amb el play (al mòbil d'una vora a l'altra de la pantalla);
+ *   2. en prémer el play, el formulari surt en una finestra: al mòbil puja des de baix (`vaul`: es tanca lliscant
+ *      avall, amb la creu, tocant fora o amb el gest d'enrere del mòbil, i es queda per sobre del teclat); a
+ *      l'ordinador, un diàleg al mig. La pàgina de sota no es mou;
+ *   3. en enviar, la finestra es tanca i el vídeo comença amb so DINS del mateix toc (si no, el mòbil no el deixa
+ *      sonar): al mòbil, a pantalla completa (l'iPhone el posa sol si no és «playsinline»; l'Android, amb
+ *      `requestFullscreen`), perquè les pantalles de l'app es llegeixin girant el mòbil. Quan s'acaba, se'n surt
+ *      i a sobre del vídeo hi ha el pas següent, amb el seu botó: al mòbil, el bloc de sota queda fora de la
+ *      pantalla i una pregunta sense botó obligava a buscar-lo.
+ * La comprovació bona del telèfon i el desat van just després d'arrencar el vídeo; si el telèfon no és bo, el
+ * vídeo s'atura i la finestra torna a sortir amb l'error i el que ja havia escrit.
  *
- * El contacte es desa com el pas 1 de /empezar, amb el pla de la pàgina: `web_lead_desa` avisa el Biel
- * per Telegram (nom, telèfon, pla, pisos i, a «Ve de», l'adreça de la landing) i als anuncis compta com
- * a «Lead» (`empezar_datos`). Prémer el play ja és «VerVideo»: serveix per tornar a ensenyar l'anunci a
- * qui el va prémer i no va deixar les dades.
+ * El contacte es desa com el pas 1 de /empezar, amb el pla de la pàgina: `web_lead_desa` avisa el Biel per
+ * Telegram i als anuncis compta com a «Lead» (`empezar_datos`). Prémer el play ja és «VerVideo».
  */
-import {
-  forwardRef,
-  useImperativeHandle,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-  type CSSProperties,
-  type FormEvent,
-  type ReactNode,
-} from "react";
-import { useReducedMotion } from "framer-motion";
-import { Minus, Plus, RotateCcw, X } from "lucide-react";
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState, type ReactNode } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
+import { Drawer } from "vaul";
+import { RotateCcw, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { LangLink } from "@/i18n/LangLink";
 import { useLang } from "@/i18n/useLang";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/analytics";
-import { dadesRecordades, desaLead, precarregaTelefon, recordaDades, telefonPerBD, type PlaLead } from "@/lib/leads";
+import { desaLead, precarregaTelefon, recordaDades, telefonPerBD, type PlaLead } from "@/lib/leads";
+import FormulariAnunci, { type EsborranyAnunci, type RespostaAnunci } from "./FormulariAnunci";
 
 export type VideoAnunci = { src: string; portada: string; subtitols: string; idioma: string; durada: string };
 /** El que ha deixat: el nom, el telèfon tal com es desa (`34612345678`) i quants pisos gestiona. */
@@ -43,21 +38,7 @@ export type DadesAnunci = { nom: string; telefon: string; pisos: number };
 /** `obre()`: el que fa el play, des d'un altre botó de la pàgina (el del final). */
 export type ReproductorAnunci = { obre: () => void };
 
-type Fase = "play" | "form" | "obert";
-
-/** Quants pisos es poden dir (com a /empezar). */
-const PISOS_MIN = 1;
-const PISOS_MAX = 999;
-/** L'aire entre la targeta del formulari i la vora del vídeo. */
-const MARGE = 12;
-
-/** La comprovació ràpida, dins del clic. La bona (`telefonPerBD`) ve just després. */
-function semblaTelefon(s: string): boolean {
-  const net = s.trim();
-  const xifres = net.replace(/\D/g, "");
-  if (net.startsWith("+") || net.startsWith("00")) return xifres.length >= 8 && xifres.length <= 17;
-  return /^(34)?[6789]\d{8}$/.test(xifres);
-}
+type Fase = "play" | "obert";
 
 const Play = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -65,20 +46,99 @@ const Play = () => (
   </svg>
 );
 
+/** Mateix tall que el CSS (i que `useIsMobile`): per sota de 768 px és el mòbil. */
+const esMobil = () => typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches;
+/** iPhone i iPad (l'iPad es presenta com un Mac amb pantalla tàctil). */
+const esIOS = () =>
+  typeof navigator !== "undefined" &&
+  (/iP(hone|od|ad)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1));
+
+type VideoIOS = HTMLVideoElement & { webkitDisplayingFullscreen?: boolean; webkitExitFullscreen?: () => void };
+
+function surtDePantallaCompleta(v: HTMLVideoElement | null) {
+  const vi = v as VideoIOS | null;
+  try {
+    if (vi?.webkitDisplayingFullscreen) vi.webkitExitFullscreen?.();
+    else if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+  } catch {
+    /* ja n'havia sortit */
+  }
+}
+
 interface Props {
   video: VideoAnunci;
   /** El pla que es desa amb el contacte: el de la pàgina. */
   pla: PlaLead;
   /** D'on ve, per als esdeveniments i els identificadors: «anunci-checkin», «anunci-completo». */
   lloc: string;
-  /** El títol de la targeta: «Míralo en 29 segundos». */
+  /** El títol de la finestra del formulari: «Míralo en 29 segundos». */
   titol: string;
   /** Què és el vídeo, per al lector de pantalla. */
   ariaVideo: string;
   /** Ja l'ha obert: la pàgina hi posa a sota el pas següent. */
   enObrir: (d: DadesAnunci) => void;
-  /** El que surt a sobre del vídeo quan s'acaba. */
+  /** El que surt a sobre del vídeo quan s'acaba: una frase i el botó del pas següent (el mateix que a sota). */
   final: ReactNode;
+}
+
+/** La finestra del formulari: al mòbil puja des de baix; a l'ordinador, un diàleg al mig. Es pinta en un portal,
+    fora de la pàgina: porta `pt-seccio` perquè hi arribin els colors i la lletra del web. */
+function Finestra({
+  mobil,
+  obert,
+  onCanvi,
+  titol,
+  tancar,
+  children,
+}: {
+  mobil: boolean;
+  obert: boolean;
+  onCanvi: (v: boolean) => void;
+  titol: string;
+  tancar: string;
+  children: ReactNode;
+}) {
+  // A l'ordinador, el cursor al nom (el més ràpid); al mòbil no: el teclat s'obre quan toca el camp
+  const enfocaElNom = (e: Event) => {
+    e.preventDefault();
+    if (!mobil) (document.querySelector(".pt-ad-finestra [data-primer]") as HTMLElement | null)?.focus();
+  };
+  // En tancar-se, el focus no torna al play (ja no hi és si el vídeo s'ha obert) ni mou la pàgina
+  const quiet = (e: Event) => e.preventDefault();
+  const cap = (Titol: typeof Dialog.Title, Tanca: typeof Dialog.Close) => (
+    <div className="pt-ad-finestra-cap">
+      <Titol className="pt-ad-finestra-t">{titol}</Titol>
+      <Tanca className="pt-ad-tanca" aria-label={tancar}>
+        <X className="pt-ic" aria-hidden="true" />
+      </Tanca>
+    </div>
+  );
+
+  if (mobil) {
+    return (
+      <Drawer.Root open={obert} onOpenChange={onCanvi} repositionInputs shouldScaleBackground={false}>
+        <Drawer.Portal>
+          <Drawer.Overlay className="pt-ad-fosc" />
+          <Drawer.Content className="pt-seccio pt-ad-finestra pt-ad-full" aria-describedby={undefined} onOpenAutoFocus={enfocaElNom} onCloseAutoFocus={quiet}>
+            <div className="pt-ad-full-mansa" aria-hidden="true" />
+            {cap(Drawer.Title, Drawer.Close)}
+            {children}
+          </Drawer.Content>
+        </Drawer.Portal>
+      </Drawer.Root>
+    );
+  }
+  return (
+    <Dialog.Root open={obert} onOpenChange={onCanvi}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="pt-ad-fosc" />
+        <Dialog.Content className="pt-seccio pt-ad-finestra pt-ad-modal" aria-describedby={undefined} onOpenAutoFocus={enfocaElNom} onCloseAutoFocus={quiet}>
+          {cap(Dialog.Title, Dialog.Close)}
+          {children}
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
 }
 
 const VideoAmbFormulari = forwardRef<ReproductorAnunci, Props>(function VideoAmbFormulari(
@@ -88,265 +148,158 @@ const VideoAmbFormulari = forwardRef<ReproductorAnunci, Props>(function VideoAmb
   const { t } = useTranslation("home");
   const { t: tE } = useTranslation("embut");
   const { lang } = useLang();
-  const reduir = useReducedMotion();
-  const recordades = useMemo(() => dadesRecordades(), []);
+  const mobil = useIsMobile();
 
   const [fase, setFase] = useState<Fase>("play");
-  const [nom, setNom] = useState(recordades.name ?? "");
-  // «+34» ja hi és al davant: un número d'aquí recordat s'hi posa sense
-  const [telefon, setTelefon] = useState(() => {
-    const p = recordades.phone;
-    if (!p) return "";
-    return p.startsWith("34") && p.length === 11 ? p.slice(2) : `+${p}`;
-  });
-  // Es pot escriure o canviar amb − i +; en sortir del camp, es posa entre 1 i 999
-  const [pisos, setPisos] = useState(String(recordades.pisos ?? PISOS_MIN));
-  const nPisos = Math.min(PISOS_MAX, Math.max(PISOS_MIN, parseInt(pisos, 10) || PISOS_MIN));
-  const posaPisos = (n: number) => setPisos(String(Math.min(PISOS_MAX, Math.max(PISOS_MIN, n))));
-  const [errors, setErrors] = useState<{ nom?: string; telefon?: string }>({});
+  const [obert, setObert] = useState(false);
   const [acabat, setAcabat] = useState(false);
-  const [alcadaForm, setAlcadaForm] = useState(0);
+  const [errorTel, setErrorTel] = useState<string | null>(null);
+  // El que ha escrit, perquè no es perdi si tanca la finestra o si torna amb un error
+  const esborrany = useRef<EsborranyAnunci | null>(null);
 
   const escRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const cartaRef = useRef<HTMLFormElement>(null);
-  const titolRef = useRef<HTMLHeadingElement>(null);
-  const playRef = useRef<HTMLButtonElement>(null);
 
-  const id = { titol: `${lloc}-titol`, nom: `${lloc}-nom`, tel: `${lloc}-tel`, pisos: `${lloc}-pisos` };
+  /* El gest d'enrere del mòbil (i el botó del navegador) tanca la finestra en lloc de sortir de la pàgina: en
+     obrir-la es posa una entrada a l'historial (la mateixa adreça i el mateix estat del router) i, si es tanca
+     d'una altra manera, es treu. */
+  useEffect(() => {
+    if (!obert) return;
+    window.history.pushState({ ...(window.history.state ?? {}), hostlyFinestraAnunci: true }, "");
+    let perEnrere = false;
+    const enrere = () => {
+      perEnrere = true;
+      setObert(false);
+    };
+    window.addEventListener("popstate", enrere);
+    return () => {
+      window.removeEventListener("popstate", enrere);
+      if (!perEnrere && window.history.state?.hostlyFinestraAnunci) window.history.back();
+    };
+  }, [obert]);
 
-  // Amb el formulari obert, el vídeo fa l'alçada de la targeta (la base, el 16:9, la posa el CSS).
-  // Es torna a mesurar si surt un error o si canvia l'amplada.
-  useLayoutEffect(() => {
-    if (fase !== "form") return;
-    const mesura = () => setAlcadaForm((cartaRef.current?.offsetHeight ?? 0) + 2 * MARGE);
-    mesura();
-    window.addEventListener("resize", mesura);
-    return () => window.removeEventListener("resize", mesura);
-  }, [fase, errors]);
-
-  function obre() {
+  const obre = useCallback(() => {
     if (fase !== "play") return;
-    setErrors({});
-    setFase("form");
+    setErrorTel(null);
+    setObert(true);
     precarregaTelefon();
     track("video_play", { location: lloc, variant: "formulari" });
-    // Per sota del formulari, el vídeo en marxa (borrós i sense so), si no s'ha demanat menys moviment
+    // Mentre escriu, el vídeo es va carregant (sense reproduir-se): en enviar, comença de seguida
     const v = videoRef.current;
-    if (v && !reduir) {
-      v.muted = true;
-      v.loop = true;
-      v.play().catch(() => {});
+    if (v && v.preload !== "auto") {
+      v.preload = "auto";
+      v.load();
     }
-    requestAnimationFrame(() => titolRef.current?.focus({ preventScroll: true }));
-  }
+  }, [fase, lloc]);
 
   useImperativeHandle(mana, () => ({
     obre: () => {
-      escRef.current?.scrollIntoView({ behavior: reduir ? "auto" : "smooth", block: "center" });
+      // Primer, el vídeo a la vista (de cop: la finestra bloqueja l'scroll mentre és oberta)
+      escRef.current?.scrollIntoView({ block: "center" });
       obre();
     },
   }));
 
-  function tanca() {
+  // Dins del mateix toc del botó: si no, el mòbil no deixa que soni ni que es posi a pantalla completa
+  function arrenca() {
     const v = videoRef.current;
-    if (v) {
-      v.pause();
-      v.loop = false;
-      v.load(); // torna a ensenyar la portada
-    }
-    setErrors({});
-    setFase("play");
-    requestAnimationFrame(() => playRef.current?.focus({ preventScroll: true }));
+    if (!v) return;
+    const mob = esMobil();
+    const ios = esIOS();
+    v.currentTime = 0;
+    v.muted = false;
+    v.controls = true;
+    // L'iPhone (també dins d'Instagram) posa a pantalla completa el vídeo que no és «playsinline»
+    if (mob && ios) v.playsInline = false;
+    v.play().catch(() => {
+      v.muted = true;
+      v.play().catch(() => {});
+    });
+    if (mob && !ios && v.requestFullscreen) v.requestFullscreen().catch(() => {});
   }
 
-  // Dins del mateix clic: si no, el navegador del mòbil no deixa que soni
-  function destapa() {
-    const v = videoRef.current;
-    if (v) {
-      v.loop = false;
-      v.currentTime = 0;
-      v.muted = false;
-      v.controls = true;
-      v.play().catch(() => {
-        v.muted = true;
-        v.play().catch(() => {});
-      });
-    }
-    setAcabat(false);
-    setFase("obert");
-  }
-
-  async function desa() {
-    const tel = await telefonPerBD(telefon);
+  async function desa(r: RespostaAnunci) {
+    const tel = await telefonPerBD(r.telefon);
     if (!tel) {
-      // La comprovació bona no l'accepta: es torna al formulari, amb el vídeo aturat i sense so
+      // La comprovació bona no l'accepta: s'atura el vídeo i la finestra torna amb l'error
       const v = videoRef.current;
+      surtDePantallaCompleta(v);
       if (v) {
         v.pause();
         v.controls = false;
-        v.muted = true;
+        v.playsInline = true;
       }
-      setFase("form");
-      setErrors({ telefon: tE("empezar.error.telefono") });
+      setFase("play");
+      setErrorTel(tE("empezar.error.telefono"));
+      setObert(true);
       return;
     }
-    const d: DadesAnunci = { nom: nom.trim(), telefon: tel, pisos: nPisos };
+    const d: DadesAnunci = { nom: r.nom, telefon: tel, pisos: r.pisos };
     recordaDades({ phone: tel, name: d.nom, pisos: d.pisos });
     enObrir(d);
-    const r = await desaLead({ phone: tel, name: d.nom, source: "empezar", plan: pla, answers: { pisos: d.pisos } }, lang);
-    if (r.ok) track("empezar_datos", { location: lloc });
+    const resultat = await desaLead({ phone: tel, name: d.nom, source: "empezar", plan: pla, answers: { pisos: d.pisos } }, lang);
+    if (resultat.ok) track("empezar_datos", { location: lloc });
   }
 
-  function envia(e: FormEvent) {
-    e.preventDefault();
-    const nous: typeof errors = {};
-    if (nom.trim().length < 2) nous.nom = tE("empezar.error.nombre");
-    if (!semblaTelefon(telefon)) nous.telefon = tE("empezar.error.telefono");
-    setErrors(nous);
-    if (nous.nom || nous.telefon) return;
-    destapa();
-    void desa();
+  function envia(r: RespostaAnunci) {
+    arrenca();
+    setErrorTel(null);
+    setAcabat(false);
+    setFase("obert");
+    setObert(false);
+    void desa(r);
   }
 
   function torna() {
-    const v = videoRef.current;
-    if (v) {
-      v.currentTime = 0;
-      v.play().catch(() => {});
-    }
     setAcabat(false);
+    arrenca();
   }
 
   return (
-    <div
-      ref={escRef}
-      className={cn("pt-ad-video", fase !== "play" && fase)}
-      style={{ "--alcada-form": `${alcadaForm}px` } as CSSProperties}
-    >
-      <video
-        ref={videoRef}
-        src={video.src}
-        poster={video.portada}
-        preload="none"
-        playsInline
-        aria-label={ariaVideo}
-        onEnded={() => fase === "obert" && setAcabat(true)}
-      >
-        <track kind="captions" src={video.subtitols} srcLang={video.idioma} label={t("anunci_video.subtitols")} />
-      </video>
+    <>
+      <div ref={escRef} className={cn("pt-ad-video", fase === "obert" && "obert")} data-amplada="vora">
+        <video
+          ref={videoRef}
+          src={video.src}
+          poster={video.portada}
+          preload="none"
+          playsInline
+          aria-label={ariaVideo}
+          onEnded={() => {
+            if (fase !== "obert") return;
+            setAcabat(true);
+            surtDePantallaCompleta(videoRef.current);
+          }}
+          onPlay={() => setAcabat(false)}
+        >
+          <track kind="captions" src={video.subtitols} srcLang={video.idioma} label={t("anunci_video.subtitols")} />
+        </video>
 
-      <button ref={playRef} type="button" className="pt-ad-play" onClick={obre} aria-label={t("anunci_video.play_aria", { durada: video.durada })}>
-        {/* a baix, perquè no tapi el títol de la portada del vídeo */}
-        <span className="pt-ad-play-pindola">
-          <i><Play /></i>
-          {t("anunci_video.play")} <small>{video.durada}</small>
-        </span>
-      </button>
-
-      <form ref={cartaRef} className="pt-ad-carta" onSubmit={envia} noValidate aria-labelledby={id.titol}>
-        <div className="pt-ad-carta-cap">
-          <h2 ref={titolRef} id={id.titol} className="pt-ad-carta-t" tabIndex={-1}>{titol}</h2>
-          <button type="button" className="pt-ad-tanca" onClick={tanca} aria-label={t("anunci_video.tancar")}>
-            <X className="pt-ic" aria-hidden="true" />
+        {fase === "play" && (
+          <button type="button" className="pt-ad-play" onClick={obre} aria-label={t("anunci_video.play_aria", { durada: video.durada })}>
+            {/* a baix, perquè no tapi el títol de la portada del vídeo */}
+            <span className="pt-ad-play-pindola">
+              <i><Play /></i>
+              {t("anunci_video.play")} <small>{video.durada}</small>
+            </span>
           </button>
-        </div>
+        )}
 
-        <div className="pt-ad-camp">
-          <label htmlFor={id.nom}>{tE("empezar.datos.nombre")}</label>
-          <input
-            id={id.nom}
-            className="pt-ad-input"
-            type="text"
-            autoComplete="given-name"
-            placeholder={tE("empezar.datos.nombre_placeholder")}
-            value={nom}
-            onChange={(e) => {
-              setNom(e.target.value);
-              setErrors((x) => ({ ...x, nom: undefined }));
-            }}
-            aria-invalid={!!errors.nom}
-            aria-describedby={errors.nom ? `${id.nom}-error` : undefined}
-          />
-          {errors.nom && <p id={`${id.nom}-error`} className="pt-ad-error" role="alert">{errors.nom}</p>}
-        </div>
-
-        <div className="pt-ad-camp">
-          <label htmlFor={id.tel}>{tE("empezar.datos.telefono")}</label>
-          <div className={cn("pt-ad-tel", errors.telefon && "amb-error")}>
-            <span aria-hidden="true">+34</span>
-            <input
-              id={id.tel}
-              type="tel"
-              inputMode="tel"
-              autoComplete="tel-national"
-              placeholder={tE("empezar.datos.telefono_placeholder")}
-              value={telefon}
-              onChange={(e) => {
-                setTelefon(e.target.value);
-                setErrors((x) => ({ ...x, telefon: undefined }));
-              }}
-              aria-invalid={!!errors.telefon}
-              aria-describedby={errors.telefon ? `${id.tel}-error` : undefined}
-            />
-          </div>
-          {errors.telefon && <p id={`${id.tel}-error`} className="pt-ad-error" role="alert">{errors.telefon}</p>}
-        </div>
-
-        <div className="pt-ad-camp">
-          <label htmlFor={id.pisos}>{tE("empezar.datos.pisos")}</label>
-          <div className="pt-ad-pisos">
-            <button
-              type="button"
-              onClick={() => posaPisos(nPisos - 1)}
-              disabled={nPisos <= PISOS_MIN}
-              aria-label={tE("empezar.datos.pisos_menos")}
-              aria-controls={id.pisos}
-            >
-              <Minus className="pt-ic" aria-hidden="true" />
-            </button>
-            <input
-              id={id.pisos}
-              className="pt-ad-input"
-              type="number"
-              inputMode="numeric"
-              min={PISOS_MIN}
-              max={PISOS_MAX}
-              value={pisos}
-              onChange={(e) => setPisos(e.target.value)}
-              onBlur={() => posaPisos(nPisos)}
-            />
-            <button
-              type="button"
-              onClick={() => posaPisos(nPisos + 1)}
-              disabled={nPisos >= PISOS_MAX}
-              aria-label={tE("empezar.datos.pisos_mas")}
-              aria-controls={id.pisos}
-            >
-              <Plus className="pt-ic" aria-hidden="true" />
+        {fase === "obert" && acabat && (
+          <div className="pt-ad-fi">
+            {final}
+            <button type="button" className="pt-ad-fi-torna" onClick={torna}>
+              <RotateCcw className="pt-ic" aria-hidden="true" />
+              {t("anunci_video.tornar")}
             </button>
           </div>
-        </div>
+        )}
+      </div>
 
-        <button type="submit" className="pt-pill pt-pill-pri pt-ad-enviar">
-          <Play />
-          {t("anunci_video.veure")}
-        </button>
-        <p className="pt-ad-privacitat">
-          {tE("empezar.datos.privacidad_antes")} <LangLink to="/privacidad">{tE("empezar.datos.privacidad_link")}</LangLink>.
-        </p>
-      </form>
-
-      {fase === "obert" && acabat && (
-        <div className="pt-ad-fi">
-          {final}
-          <button type="button" className="pt-ad-fi-torna" onClick={torna}>
-            <RotateCcw className="pt-ic" aria-hidden="true" />
-            {t("anunci_video.tornar")}
-          </button>
-        </div>
-      )}
-    </div>
+      <Finestra mobil={mobil} obert={obert} onCanvi={setObert} titol={titol} tancar={t("anunci_video.tancar")}>
+        <FormulariAnunci onEnvia={envia} errorTelefon={errorTel} esborrany={esborrany} />
+      </Finestra>
+    </>
   );
 });
 

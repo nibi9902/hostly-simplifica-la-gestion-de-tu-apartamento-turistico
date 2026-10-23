@@ -55,7 +55,7 @@ const te = (llista, pred) => llista.some(pred);
     await p.waitForTimeout(2500);
     const text = await p.locator(BANNER).innerText().catch(() => '');
     prova(text && !/publicidad/i.test(text), 'sense identificadors: el bàner només parla d\'analítica');
-    prova(await p.locator(BANNER).getByRole('button', { name: 'Configurar', exact: true }).count() === 0, 'sense identificadors: no hi ha «Configurar»');
+    prova(await p.locator(BANNER).getByRole('button', { name: 'Personalizar', exact: true }).count() === 0, 'sense identificadors: no hi ha «Personalizar»');
     await p.locator(BANNER).getByRole('button', { name: 'Aceptar', exact: true }).click();
     await p.waitForTimeout(1200);
     prova(peticions.meta.length === 0, `sense identificadors: «Aceptar» no carrega res de Meta (${peticions.meta.length})`);
@@ -80,32 +80,35 @@ const te = (llista, pred) => llista.some(pred);
     await p.goto(PUBLI + '/es', { waitUntil: 'load' });
     await p.waitForTimeout(2500);
     const text = await p.locator(BANNER).innerText().catch(() => '');
-    // des del 17-10 el bàner és curt i sense noms (el Biel: «només el necessari»); els noms, a «Configurar» i a la política
+    // des del 17-10 el bàner és curt i sense noms (el Biel: «només el necessari»); els noms, a «Personalizar» i a la política
     prova(/anuncios/.test(text) && !/Meta|Google/.test(text), 'amb identificadors: el bàner parla d\'anuncis, curt i sense noms');
     prova(peticions.meta.length === 0 && peticions.google.length === 0, `abans de respondre no es carrega res (${peticions.meta.length}/${peticions.google.length})`);
     prova(await p.evaluate(() => typeof window.fbq) === 'undefined', 'abans de respondre no hi ha fbq');
 
-    // «Rechazar»: res
-    await p.locator(BANNER).getByRole('button', { name: 'Rechazar', exact: true }).click();
+    // Des del 23-10, el primer nivell és «Solo necesarias» / «Aceptar», i «Personalizar» en petit (el Biel)
+    prova(await p.locator(BANNER).getByRole('button').count() === 3, 'el bàner té «Solo necesarias», «Aceptar» i «Personalizar»');
+    // «Solo necesarias»: res
+    await p.locator(BANNER).getByRole('button', { name: 'Solo necesarias', exact: true }).click();
     await p.waitForTimeout(1200);
-    prova(peticions.meta.length === 0 && peticions.google.length === 0, '«Rechazar» no carrega res');
+    prova(peticions.meta.length === 0 && peticions.google.length === 0, '«Solo necesarias» no carrega res');
     const desat = await p.evaluate(() => JSON.parse(localStorage.getItem('hostly_galetes') || 'null'));
-    prova(desat && desat.analitiques === false && desat.publicitat === false, '«Rechazar» desa les dues respostes en «no»');
+    prova(desat && desat.analitiques === false && desat.publicitat === false, '«Solo necesarias» desa les dues respostes en «no»');
     await ctx.close();
   }
 
-  // ── 3. «Configurar»: només analítica ──
+  // ── 3. «Personalizar»: només analítica ──
   {
     const { ctx, peticions } = await context(b);
     const p = await ctx.newPage();
     await p.goto(PUBLI + '/es', { waitUntil: 'load' });
     await p.waitForTimeout(2500);
-    await p.locator(BANNER).getByRole('button', { name: 'Configurar', exact: true }).click();
-    prova(await p.locator(BANNER).getByRole('switch').count() === 2, '«Configurar» ensenya dos interruptors (analítica i publicitat)');
-    prova(/Instagram, Facebook, Google y YouTube/.test(await p.locator(BANNER).innerText()), '«Configurar» diu on surten els anuncis (Instagram, Facebook, Google y YouTube)');
+    await p.locator(BANNER).getByRole('button', { name: 'Personalizar', exact: true }).click();
+    prova(await p.locator(BANNER).getByRole('switch').count() === 2, '«Personalizar» ensenya dos interruptors (analítica i publicitat)');
+    prova(/Necesarias[\s\S]*Siempre activas/.test(await p.locator(BANNER).innerText()), 'i les necessàries, sempre actives i sense interruptor');
+    prova(/Instagram, Facebook, Google y YouTube/.test(await p.locator(BANNER).innerText()), '«Personalizar» diu on surten els anuncis (Instagram, Facebook, Google y YouTube)');
     prova(await p.getByRole('switch').first().isChecked() === false && await p.getByRole('switch').nth(1).isChecked() === false, 'els dos comencen apagats');
     await p.locator(BANNER).getByText('Analítica', { exact: true }).click();
-    await p.locator(BANNER).getByRole('button', { name: 'Guardar', exact: true }).click();
+    await p.locator(BANNER).getByRole('button', { name: 'Guardar selección', exact: true }).click();
     await p.waitForTimeout(1500);
     prova(peticions.meta.length === 0, `només analítica: res de Meta (${peticions.meta.length})`);
     prova(peticions.google.some((u) => u.includes(GA)), 'només analítica: Google Analytics carregat');
@@ -181,7 +184,7 @@ const te = (llista, pred) => llista.some(pred);
     if (desenvolupament) console.log("--  en desenvolupament track() no envia res a Analytics: la comprovació següent necessita el web construït (vegeu la capçalera)");
     else prova(te(dl, (a) => a[0] === 'event' && a[1] === 'empezar_datos' && a[2] && a[2].send_to === GA), 'els esdeveniments del web van només a Google Analytics');
 
-    // Canviar d'opinió: «Cambiar mis preferencias» → «Rechazar»
+    // Canviar d'opinió: «Cambiar mis preferencias» → «Solo necesarias»
     await p.evaluate(() => { document.cookie = '_fbp=fb.1.123.456; path=/'; document.cookie = '_gcl_au=1.1.789; path=/'; });
     await p.goto(PUBLI + '/es/cookies', { waitUntil: 'load' });
     await p.waitForTimeout(1200);
@@ -190,7 +193,7 @@ const te = (llista, pred) => llista.some(pred);
     prova(/Cookies de publicidad/.test(cookies), 'i explica les galetes de publicitat');
     await p.getByRole('button', { name: /Cambiar mis preferencias/ }).click();
     await p.waitForTimeout(800);
-    await p.locator(BANNER).getByRole('button', { name: 'Rechazar', exact: true }).click();
+    await p.locator(BANNER).getByRole('button', { name: 'Solo necesarias', exact: true }).click();
     await p.waitForTimeout(800);
     crides = await fb(p);
     prova(te(crides, (c) => c[0] === 'consent' && c[1] === 'revoke'), 'en rebutjar després, Meta deixa de comptar');
@@ -199,6 +202,44 @@ const te = (llista, pred) => llista.some(pred);
     await p.goto(PUBLI + '/es/privacidad', { waitUntil: 'load' });
     await p.waitForTimeout(800);
     prova(/Meta Platforms Ireland/.test(await p.locator('main').innerText()), 'amb identificadors: la privacitat diu qui rep les dades');
+    await ctx.close();
+  }
+
+  // ── 4 bis. Deixar el telèfon ABANS de respondre el bàner (23-10): res fins al sí; amb el sí, el «Lead» ──
+  // (abans del sí no s'escriu res al navegador: el que hi ha pendent viu només a la pàgina oberta)
+  const totElQueHiHaDesat = (p) => p.evaluate(() => [localStorage, sessionStorage].map((m) => Object.keys(m).map((k) => k + '=' + m.getItem(k)).join(';')).join(' | '));
+  for (const resposta of ['Aceptar', 'Solo necesarias']) {
+    const { ctx, peticions } = await context(b);
+    const p = await ctx.newPage();
+    await p.goto(PUBLI + '/es/empezar', { waitUntil: 'load' });
+    await p.waitForTimeout(2000);
+    await p.fill('#emp-tel', '612345678');
+    await p.fill('#emp-nom', 'Prova');
+    await p.fill('#emp-correu', 'prova@example.com');
+    await p.getByRole('button', { name: /Continuar/ }).click();
+    await p.waitForTimeout(1500);
+    prova(peticions.meta.length === 0 && peticions.servidor.length === 0 && await p.evaluate(() => typeof window.fbq) === 'undefined', `sense resposta, deixar el telèfon no envia res a Meta (${peticions.meta.length}/${peticions.servidor.length})`);
+    prova(!/empezar_datos|Lead|pendent/.test(await totElQueHiHaDesat(p)), 'i no deixa res escrit al navegador per a la publicitat');
+    await p.locator(BANNER).getByRole('button', { name: resposta, exact: true }).click();
+    await p.waitForTimeout(1500);
+    const leads = (await fb(p)).filter((c) => c[0] === 'track' && c[1] === 'Lead').length;
+    if (resposta === 'Aceptar') {
+      prova(leads === 1, `en acceptar després, el «Lead» surt cap a Meta, un cop (${leads})`);
+      const leadServidor = peticions.servidor.find((x) => x.event_name === 'Lead');
+      const sha = (v) => require('crypto').createHash('sha256').update(v).digest('hex');
+      prova(!!leadServidor && leadServidor.ph === sha('34612345678'), 'i cap a l\'API de conversions, amb el telèfon xifrat');
+    } else {
+      prova(peticions.meta.length === 0 && peticions.servidor.length === 0, '«Solo necesarias» després: no surt res');
+      // I s'oblida: si més tard canvia d'opinió i accepta, aquell «Lead» ja no surt
+      await p.goto(PUBLI + '/es/cookies', { waitUntil: 'load' });
+      await p.waitForTimeout(800);
+      await p.getByRole('button', { name: /Cambiar mis preferencias/ }).click();
+      await p.waitForTimeout(600);
+      await p.locator(BANNER).getByRole('button', { name: 'Aceptar', exact: true }).click();
+      await p.waitForTimeout(1500);
+      const tard = (await fb(p)).filter((c) => c[0] === 'track' && c[1] === 'Lead').length;
+      prova(tard === 0 && !peticions.servidor.some((x) => x.event_name === 'Lead'), `i el que havia dit que no, s'oblida: acceptar més tard no l'envia (${tard})`);
+    }
     await ctx.close();
   }
 

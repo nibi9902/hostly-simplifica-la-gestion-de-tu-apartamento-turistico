@@ -364,12 +364,18 @@
     "rebutjar": "Rechazar",
     "mes": "Más información",
     "canviar": "Cambiar mis preferencias de cookies",
-    "text_publicitat": "Usamos cookies, nuestras y de terceros, para medir la web y mostrarte anuncios. Solo si nos dejas.",
-    "configurar": "Configurar",
-    "desar": "Guardar",
     "analitica_titol": "Analítica",
     "analitica_text": "Qué páginas se visitan y cuáles no (Google Analytics).",
     "publicitat_titol": "Publicidad",
-    "publicitat_text": "Anuncios de Hostly en {{llocs}}, y saber qué anuncios traen contactos."
+    "publicitat_text": "Anuncios de Hostly en {{llocs}}, y saber qué anuncios traen contactos.",
+    "text_curt": "Cookies propias y de terceros para medir la web y mostrarte anuncios.",
+    "necessaries": "Solo necesarias",
+    "personalitzar": "Personalizar",
+    "configurar_titol": "Elige qué cookies aceptas",
+    "necessaries_titol": "Necesarias",
+    "necessaries_text": "Hacen que la web funcione: el idioma y lo que escribes en los formularios.",
+    "sempre": "Siempre activas",
+    "desar_tria": "Guardar selección",
+    "acceptar_totes": "Aceptar todas"
   }
 }

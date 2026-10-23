@@ -2,7 +2,8 @@
  * La landing dels anuncis de Hostly Completo (/hostly-completo), 18-10-2026.
  *
  * Com la del registre (`RegistroGratis`), però per a tot el Completo: «Los mensajes, las limpiezas, la
- * policía. Te olvidas.», el vídeo de /demo (minut i mig) amb el formulari a dins (`VideoAmbFormulari`) i, després, la trucada: «¿Te llamamos
+ * policía. Te olvidas.», el vídeo de /demo (minut i mig), que es veu deixant les dades a la finestra que obre el play
+ * (`VideoAmbFormulari`), i, després, la trucada: «¿Te llamamos
  * y dejamos tus pisos listos contigo?», amb la foto del Biel. El Complet no s'activa sol: el Biel truca i
  * el deixa llest amb la persona (17/18-10), per això aquí no hi ha cap botó per començar-lo sol.
  * La trucada es desa com «Llamadme ahora» de /empezar (de 21 a 9, hora de Madrid, «Llamadme mañana») i
@@ -97,7 +98,7 @@ export default function HostlyCompleto() {
   const textBotoTruca = dema ? tE("empezar.demo.dema") : t("anunci_completo.truca_boto");
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="pt-ad-pagina min-h-screen bg-white">
       <SEO title={t("anunci_completo.seo_titol")} description={t("anunci_completo.lead")} path="/hostly-completo" noindex />
       <CapcalAnunci />
 
@@ -120,17 +121,19 @@ export default function HostlyCompleto() {
               titol={t("anunci_completo.video_titol")}
               ariaVideo={t("anunci_completo.video_aria")}
               enObrir={setDades}
+              // Al mòbil, quan s'acaba, el bloc de sota és fora de la pantalla: la pregunta porta el seu botó (23-10)
               final={
-                <>
-                  <p>{t("anunci_completo.final_video")}</p>
-                  {trucada === "feta" ? (
-                    <p className="pt-ad-fi-ok">{notaTrucada}</p>
-                  ) : (
+                trucada === "feta" ? (
+                  <p className="pt-ad-fi-ok">{notaTrucada}</p>
+                ) : (
+                  <>
+                    <p>{t("anunci_completo.final_video")}</p>
                     <button type="button" className="pt-pill pt-pill-blanc pt-entrada-boto" onClick={truca} disabled={trucada === "desant"}>
                       {textBotoTruca}
                     </button>
-                  )}
-                </>
+                    {trucada === "error" && <p className="pt-ad-fi-error" role="alert">{tE("empezar.error.guardar")}</p>}
+                  </>
+                )
               }
             />
 

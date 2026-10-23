@@ -1,10 +1,14 @@
 /**
- * El bàner de galetes: es pregunta un cop, «Rechazar» tan a mà com «Aceptar».
- * Sense resposta, no es carrega res de Google ni de Meta (`src/lib/galetes.ts`).
+ * El bàner de galetes: es pregunta un cop. Sense resposta, no es carrega res de Google ni de Meta
+ * (`src/lib/galetes.ts`).
  *
- * Des del 10-10-2026, si hi ha publicitat configurada (`src/lib/seguiment.ts`), són dues
- * finalitats i cadascuna es pot triar a part a «Configurar» (guia de l'AEPD: decidir per
- * finalitat, des del primer nivell). Sense publicitat, el bàner és el d'abans: només analítica.
+ * 23-10-2026 (el Biel: «el truc que fa servir molta gent»): més petit i amb dos botons, «Aceptar» i «Solo
+ * necesarias», i un enllaç petit, «Personalizar», que obre les tres finalitats: les necessàries (sempre actives),
+ * l'analítica i la publicitat, cadascuna amb el seu sí o no (guia de l'AEPD: rebutjar ha de ser tan fàcil com
+ * acceptar, des del primer nivell, i res marcat d'entrada). Meta és publicitat, no una galeta necessària: si es
+ * posés a les necessàries es carregaria sense permís (art. 22.2 LSSI). Qui accepta després d'haver deixat el
+ * telèfon no es perd per als anuncis: el «Lead» surt en aquell moment (`seguiment.ts`, els pendents).
+ * Sense publicitat configurada, el bàner és el d'abans: només analítica.
  */
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -17,7 +21,7 @@ import { cn } from "@/lib/utils";
 
 function Interruptor({ id, titol, text, valor, onCanvia }: { id: string; titol: string; text: string; valor: boolean; onCanvia: (v: boolean) => void }) {
   return (
-    <label htmlFor={id} className="flex items-start justify-between gap-4 py-3 cursor-pointer">
+    <label htmlFor={id} className="flex items-start justify-between gap-4 py-2.5 cursor-pointer">
       <span>
         <span className="block text-sm font-semibold text-foreground">{titol}</span>
         <span className="block text-xs text-muted-foreground leading-relaxed mt-0.5">{text}</span>
@@ -69,6 +73,7 @@ export default function AvisGaletes() {
   }
 
   const boto = "h-11 rounded-full text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20";
+  const enllac = "underline underline-offset-2 text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 rounded";
 
   return (
     <AnimatePresence>
@@ -81,51 +86,56 @@ export default function AvisGaletes() {
           animate={reduir ? { opacity: 1 } : { opacity: 1, y: 0 }}
           exit={reduir ? { opacity: 0 } : { opacity: 0, y: 12 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed z-[60] bottom-4 left-4 right-4 sm:right-auto sm:max-w-md rounded-3xl bg-white border border-slate-200 shadow-[0_18px_50px_rgba(15,23,42,0.16)] p-5"
+          className="pt-galetes fixed z-[60] bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-auto sm:max-w-sm rounded-2xl bg-white border border-slate-200 shadow-[0_14px_40px_rgba(15,23,42,0.16)] px-4 py-3 max-h-[calc(100dvh-24px)] overflow-y-auto"
           style={{ marginBottom: "env(safe-area-inset-bottom, 0px)" }}
         >
-          <p className="text-sm text-foreground leading-relaxed">
-            {ambPublicitat ? t("galetes.text_publicitat") : t("galetes.text")}{" "}
-            <LangLink to="/cookies" className="underline underline-offset-2 text-muted-foreground hover:text-foreground">
-              {t("galetes.mes")}
-            </LangLink>
-          </p>
-
-          {ambPublicitat && configurant && (
-            <div className="mt-3 divide-y divide-slate-100 border-y border-slate-100">
-              <Interruptor id="galeta-analitica" titol={t("galetes.analitica_titol")} text={t("galetes.analitica_text")} valor={analitica} onCanvia={setAnalitica} />
-              <Interruptor id="galeta-publicitat" titol={t("galetes.publicitat_titol")} text={t("galetes.publicitat_text", { llocs })} valor={publicitat} onCanvia={setPublicitat} />
-            </div>
-          )}
-
           {ambPublicitat && configurant ? (
-            <div className="mt-4 grid grid-cols-2 gap-2">
-              <button type="button" onClick={() => respon(false, false)} className={cn(boto, "border border-slate-200 bg-white text-foreground hover:bg-slate-50")}>
-                {t("galetes.rebutjar")}
-              </button>
-              <button type="button" onClick={() => respon(analitica, publicitat)} className={cn(boto, "bg-foreground text-white hover:opacity-90")}>
-                {t("galetes.desar")}
-              </button>
-            </div>
+            <>
+              <p className="text-sm font-semibold text-foreground">{t("galetes.configurar_titol")}</p>
+              <div className="mt-1 divide-y divide-slate-100 border-b border-slate-100">
+                <div className="flex items-start justify-between gap-4 py-2.5">
+                  <span>
+                    <span className="block text-sm font-semibold text-foreground">{t("galetes.necessaries_titol")}</span>
+                    <span className="block text-xs text-muted-foreground leading-relaxed mt-0.5">{t("galetes.necessaries_text")}</span>
+                  </span>
+                  <span className="shrink-0 mt-0.5 text-xs font-semibold text-muted-foreground">{t("galetes.sempre")}</span>
+                </div>
+                <Interruptor id="galeta-analitica" titol={t("galetes.analitica_titol")} text={t("galetes.analitica_text")} valor={analitica} onCanvia={setAnalitica} />
+                <Interruptor id="galeta-publicitat" titol={t("galetes.publicitat_titol")} text={t("galetes.publicitat_text", { llocs })} valor={publicitat} onCanvia={setPublicitat} />
+              </div>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <button type="button" onClick={() => respon(analitica, publicitat)} className={cn(boto, "border border-slate-200 bg-white text-foreground hover:bg-slate-50")}>
+                  {t("galetes.desar_tria")}
+                </button>
+                <button type="button" onClick={() => respon(true, true)} className={cn(boto, "bg-foreground text-white hover:opacity-90")}>
+                  {t("galetes.acceptar_totes")}
+                </button>
+              </div>
+            </>
           ) : (
             <>
-              <div className="mt-4 grid grid-cols-2 gap-2">
+              <p className="text-[12.5px] text-foreground leading-[1.45]">
+                {ambPublicitat ? t("galetes.text_curt") : t("galetes.text")}{" "}
+                <LangLink to="/cookies" className={enllac}>
+                  {t("galetes.mes")}
+                </LangLink>
+                {ambPublicitat && (
+                  <>
+                    {" · "}
+                    <button type="button" onClick={() => setConfigurant(true)} className={enllac}>
+                      {t("galetes.personalitzar")}
+                    </button>
+                  </>
+                )}
+              </p>
+              <div className="mt-2.5 grid grid-cols-2 gap-2">
                 <button type="button" onClick={() => respon(false, false)} className={cn(boto, "border border-slate-200 bg-white text-foreground hover:bg-slate-50")}>
-                  {t("galetes.rebutjar")}
+                  {ambPublicitat ? t("galetes.necessaries") : t("galetes.rebutjar")}
                 </button>
                 <button type="button" onClick={() => respon(true, true)} className={cn(boto, "bg-foreground text-white hover:opacity-90")}>
                   {t("galetes.acceptar")}
                 </button>
               </div>
-              {ambPublicitat && (
-                <button
-                  type="button"
-                  onClick={() => setConfigurant(true)}
-                  className="mt-2 w-full h-9 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground underline underline-offset-2 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20"
-                >
-                  {t("galetes.configurar")}
-                </button>
-              )}
             </>
           )}
         </motion.div>
