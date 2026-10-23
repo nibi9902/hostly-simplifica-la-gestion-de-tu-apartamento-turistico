@@ -1,7 +1,8 @@
 /**
  * «Un plan gratis. Un plan completo. Nada más.» — els dos plans i, a sota, els referits.
  * Els dos botons porten a /empezar (allà es tria el pla). «Cómo funciona» obre una finestra amb la regla
- * dels referits, la mateixa que diuen els termes (5 propietaris al Completo = un pis teu deixa de pagar).
+ * dels referits, la mateixa que diuen els termes (23-10: cada client del Completo regala el primer mes gratis
+ * a fins a 5 persones amb el seu enllaç; ell no té cap descompte. Abans: 5 propietaris = un pis teu gratis).
  * Abans es desplegava a sota; el Biel (13-10): «hauria de sortir un pop-up, no així cap avall».
  * A /precios (`pagina`) és la primera secció: el títol és l'h1, porta una frase a sota i, al final,
  * l'enllaç a la calculadora.
@@ -11,10 +12,10 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as Dialeg from "@radix-ui/react-dialog";
-import { ArrowRight, Check, Home, UserRound, X } from "lucide-react";
+import { ArrowRight, Check, Gift, UserRound, X } from "lucide-react";
 import { LangLink } from "@/i18n/LangLink";
 
-/** La finestra dels referits: cinc propietaris → un pis teu a 0 €, i la regla en dues frases. */
+/** La finestra dels referits: un mes de regal → fins a cinc persones, i la regla en dues frases. */
 function Referits() {
   const { t } = useTranslation("home");
   return (
@@ -25,11 +26,11 @@ function Referits() {
         <Dialeg.Content className="pt-seccio pt-dialeg">
           <p className="pt-retol">{t("portada.preus.referits.etiqueta")}</p>
           <Dialeg.Title className="pt-dialeg-titol">{t("portada.preus.referits.titol")}</Dialeg.Title>
-          {/* cinc propietaris i, a canvi, un pis teu deixa de pagar */}
+          {/* un mes de regal, per a fins a cinc persones */}
           <div className="pt-dialeg-dibuix" aria-hidden="true">
-            <span className="pt-dialeg-cinc">{Array.from({ length: 5 }, (_, i) => <span key={i}><UserRound className="pt-ic" /></span>)}</span>
+            <span className="pt-dialeg-pis"><Gift className="pt-ic" /><b>{t("portada.preus.referits.dibuix")}</b></span>
             <ArrowRight className="pt-ic pt-dialeg-fletxa" />
-            <span className="pt-dialeg-pis"><Home className="pt-ic" /><b>0 €</b></span>
+            <span className="pt-dialeg-cinc">{Array.from({ length: 5 }, (_, i) => <span key={i}><UserRound className="pt-ic" /></span>)}</span>
           </div>
           <Dialeg.Description asChild>
             <div className="pt-dialeg-text">

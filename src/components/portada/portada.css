@@ -826,7 +826,7 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 .pt-dialeg-cinc span:first-child { margin-left: 0; }
 .pt-dialeg-cinc .pt-ic { width: 17px; height: 17px; }
 .pt-dialeg-fletxa { width: 18px; height: 18px; color: var(--pt-gris); flex-shrink: 0; }
-.pt-dialeg-pis { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 14px; background: var(--pt-fosc); color: #fff; }
+.pt-dialeg-pis { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 14px; background: var(--pt-fosc); color: #fff; flex-shrink: 0; white-space: nowrap; }
 .pt-dialeg-pis .pt-ic { width: 18px; height: 18px; }
 .pt-dialeg-pis b { font-size: 17px; font-weight: 700; }
 .pt-dialeg-text { display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.55; color: var(--pt-gris); }
@@ -838,6 +838,11 @@ video.pt-foto { width: 100%; height: 100%; object-fit: cover; animation: none; }
 @keyframes pt-dialeg-fons { from { opacity: 0; } }
 @keyframes pt-dialeg { from { opacity: 0; transform: translate(-50%, calc(-50% + 8px)) scale(.98); } }
 @media (prefers-reduced-motion: reduce) { .pt-dialeg, .pt-dialeg-fons { animation: none; } }
+/* al mòbil estret, «1 mes» i les cinc persones han de cabre en una línia */
+@media (max-width: 420px) {
+  .pt-dialeg-dibuix { gap: 8px; padding-inline: 12px; }
+  .pt-dialeg-cinc span { width: 30px; height: 30px; margin-left: -10px; }
+}
 /* A /precios els preus són la primera secció: sota el capçal fix (80 px) els cal més aire */
 .pt-preus.pt-pagina { min-height: 0; padding-top: 136px; }
 .pt-preus .pt-lead { max-width: 36em; }

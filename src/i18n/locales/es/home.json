@@ -7,8 +7,8 @@
   "pricing": {
     "subtitle": "El check-in y la policía, gratis para siempre. El resto, en un solo precio por piso.",
     "calcula_link": "¿Te sale a cuenta? Haz números en un minuto",
-    "referral_title": "Por cada 5 propietarios que traigas a Hostly Completo, 1 piso tuyo deja de costarte.",
-    "referral_desc": "Mientras sigan en Hostly Completo, no pagas por ese piso. Sin límite: si traes 10, son 2."
+    "referral_title": "Regala un mes gratis a quien tú quieras.",
+    "referral_desc": "Cada cliente de Hostly Completo tiene su enlace. Quien empiece con él tiene el primer mes gratis. Puedes regalarlo hasta a 5 personas."
   },
   "footer": {
     "tagline": "Simplifica la gestión de tu apartamento turístico.",
@@ -69,7 +69,7 @@
       },
       {
         "q": "¿Cómo funciona el programa de referidos?",
-        "a": "Por cada 5 propietarios que traigas a Hostly Completo, dejamos de cobrarte un piso cada mes, mientras sigan activos. Si traes 10, son 2."
+        "a": "Cada cliente de Hostly Completo tiene su propio enlace. Quien empiece con él tiene el primer mes gratis: pone la tarjeta y no se le cobra nada hasta pasados 30 días. Puedes regalarlo hasta a 5 personas. El regalo es para ellos; lo que pagas tú no cambia."
       },
       {
         "q": "¿Cuánto tarda en configurarse?",
@@ -499,9 +499,10 @@
       },
       "referits": {
         "etiqueta": "Referidos",
-        "text": "Trae 5 propietarios y uno de tus pisos deja de pagar.",
+        "text": "Regala un mes gratis hasta a 5 personas.",
         "boto": "Cómo funciona",
         "titol": "Cómo funcionan los referidos",
+        "dibuix": "1 mes",
         "entesos": "Entendido",
         "tancar": "Cerrar"
       }

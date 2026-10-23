@@ -10,7 +10,7 @@ Hostly no se presenta como un PMS, sino como la app del día a día del piso tur
 - **Hostly completo:** 40 €/mes por apartamento + IVA; con 5 apartamentos o más, 35 €/mes + IVA cada uno. Se activa con una llamada en la que lo dejamos listo con el cliente. Sin permanencia. Durante el primer mes, la configuración se hace 1 a 1 con el equipo de Hostly.
 - **Web de reservas directas:** servicio aparte, a medida: una web propia del gestor con reservas y pago online por Stripe, sin comisiones de plataforma. Los precios y los días libres salen de Hostly, y cada reserva cierra esos días en Airbnb y Booking.
 - **Automatizaciones a medida («Conéctalo todo»):** servicio aparte para conectar Hostly con la gestoría, la web, el ERP u otras herramientas del cliente. Cuota mensual según lo que se automatice.
-- **Programa de referidos:** por cada 5 propietarios que traigas y sigan activos en Hostly, uno de tus apartamentos deja de pagar mientras sigan activos.
+- **Programa de referidos:** cada cliente de Hostly completo tiene un enlace personal. Quien empiece con él tiene el primer mes de Hostly completo gratis (se pide tarjeta y se cobra a partir del día 31). Cada cliente puede regalarlo hasta a 5 personas; quien lo regala no tiene ningún descuento.
 
 ## Qué hace Hostly
 

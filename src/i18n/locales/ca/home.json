@@ -7,8 +7,8 @@
   "pricing": {
     "subtitle": "El check-in i la policia, gratis per sempre. La resta, en un sol preu per pis.",
     "calcula_link": "Et surt a compte? Fes números en un minut",
-    "referral_title": "Per cada 5 propietaris que portis a Hostly Complet, 1 pis teu deixa de costar-te.",
-    "referral_desc": "Mentre segueixin a Hostly Complet, no pagues per aquell pis. Sense límit: si en portes 10, en són 2."
+    "referral_title": "Regala un mes gratis a qui vulguis.",
+    "referral_desc": "Cada client de Hostly Complet té el seu enllaç. Qui comenci amb ell té el primer mes gratis. El pots regalar fins a 5 persones."
   },
   "footer": {
     "tagline": "Simplifica la gestió del teu apartament turístic.",
@@ -69,7 +69,7 @@
       },
       {
         "q": "Com funciona el programa de referits?",
-        "a": "Per cada 5 propietaris que portis a Hostly Complet, deixem de cobrar-te un pis cada mes, mentre segueixin actius. Si en portes 10, en són 2."
+        "a": "Cada client de Hostly Complet té el seu propi enllaç. Qui comenci amb ell té el primer mes gratis: posa la targeta i no se li cobra res fins passats 30 dies. El pots regalar fins a 5 persones. El regal és per a ells; el que pagues tu no canvia."
       },
       {
         "q": "Quant triga a configurar-se?",
@@ -499,9 +499,10 @@
       },
       "referits": {
         "etiqueta": "Referits",
-        "text": "Porta 5 propietaris i un dels teus pisos deixa de pagar.",
+        "text": "Regala un mes gratis a fins a 5 persones.",
         "boto": "Com funciona",
         "titol": "Com funcionen els referits",
+        "dibuix": "1 mes",
         "entesos": "Entesos",
         "tancar": "Tancar"
       }
